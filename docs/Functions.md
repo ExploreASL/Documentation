@@ -117,6 +117,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ConvertSubjSess2Subj_Sess.m
 
 #### Function
@@ -127,6 +128,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ConvertTime2Nr.m
 
 #### Function
@@ -137,6 +139,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_CopyMoveFileList.m
 
 #### Function
@@ -147,6 +150,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_CorrectName.m
 
 #### Function
@@ -157,6 +161,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_CreateCSVfile.m
 
 #### Function
@@ -167,6 +172,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_CreateFileReport.m
 
 #### Function
@@ -177,6 +183,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_DefineASLResolution.m
 
 #### Function
@@ -187,6 +194,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_DeleteFilePair.m
 
 #### Function
@@ -197,6 +205,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Dicom2Parms.m
 
 #### Function
@@ -207,6 +216,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_FindByRegExp.m
 
 #### Function
@@ -217,6 +227,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_FindStrIndex.m
 
 #### Function
@@ -227,6 +238,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_GetFsList.m
 
 #### Function
@@ -237,6 +249,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_GetNumFromStr.m
 
 #### Function
@@ -247,6 +260,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_GetPhilipsScaling.m
 
 #### Function
@@ -257,6 +271,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_GetUserName.m
 
 #### Function
@@ -267,6 +282,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Hex2Num.m
 
 #### Function
@@ -277,6 +293,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_LesionResliceList.m
 
 #### Function
@@ -287,6 +304,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Load4DMemMapping.m
 
 #### Function
@@ -297,6 +315,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_LoadParms.m
 
 #### Function
@@ -307,6 +326,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_LoadX.m
 
 #### Function
@@ -317,6 +337,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_OtherListSPM.m
 
 #### Function
@@ -327,6 +348,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Par2Parms.m
 
 #### Function
@@ -337,6 +359,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ParReadHeader.m
 
 #### Function
@@ -347,6 +370,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Remove_1_SPM.m
 
 #### Function
@@ -357,6 +381,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ReplaceSymbols.m
 
 #### Function
@@ -367,6 +392,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ResetVisualizationSlices.m
 
 #### Function
@@ -377,6 +403,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_SaveJSON.m
 
 #### Function
@@ -387,6 +414,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_uiGetInput.m
 
 #### Function
@@ -397,6 +425,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_UnzipOrCopy.m
 
 #### Function
@@ -407,6 +436,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_Voxel2RealWorldCoordinates.m
 
 #### Function
@@ -417,6 +447,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_adm_ZipFileList.m
 
 #### Function
@@ -427,6 +458,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_bids_Add2ParticipantsTSV.m
 
 #### Function
@@ -437,6 +469,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_bids_Dicom2JSON.m
 
 #### Function
@@ -447,6 +480,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_bids_InsertJSONFields.m
 
 #### Function
@@ -457,6 +491,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_bids_parms2BIDS.m
 
 #### Function
@@ -467,6 +502,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_bids_PARREC2JSON.m
 
 #### Function
@@ -477,6 +513,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_fsl_RunFSL.m
 
 #### Function
@@ -487,6 +524,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_fsl_SetFSLdir.m
 
 #### Function
@@ -497,6 +535,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_fsl_TopUp.m
 
 #### Function
@@ -507,6 +546,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_import_json.m
 
 #### Function
@@ -517,6 +557,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_imwrite.m
 
 #### Function
@@ -527,6 +568,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_AddIM2QC.m
 
 #### Function
@@ -537,6 +579,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_BilateralFilter.m
 
 #### Function
@@ -547,6 +590,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CenterOfMass.m
 
 #### Function
@@ -557,6 +601,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CleanupWMHnoise.m
 
 #### Function
@@ -567,6 +612,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ClipExtremes.m
 
 #### Function
@@ -577,6 +623,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_colorbar.m
 
 #### Function
@@ -587,6 +634,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Column2IM.m
 
 #### Function
@@ -597,6 +645,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CompareNIfTIResolutionXYZ.m
 
 #### Function
@@ -607,6 +656,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ComputeDice.m
 
 #### Function
@@ -617,6 +667,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CreateASLDeformationField.m
 
 #### Function
@@ -627,6 +678,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CreatePseudoCBF.m
 
 #### Function
@@ -637,6 +689,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CreateSliceGradient.m
 
 #### Function
@@ -647,6 +700,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CreateVisualFig.m
 
 #### Function
@@ -657,6 +711,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CreateVisualLongReg.m
 
 #### Function
@@ -667,6 +722,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CropParmsAcquire.m
 
 #### Function
@@ -677,6 +733,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_CropParmsApply.m
 
 #### Function
@@ -687,6 +744,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DecomposeAffineTransformation.m
 
 #### Function
@@ -697,6 +755,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DetermineFlip.m
 
 #### Function
@@ -707,6 +766,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DilateErodeFull.m
 
 #### Function
@@ -717,6 +777,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DilateErodeSeparable.m
 
 #### Function
@@ -727,6 +788,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DilateErodeSphere.m
 
 #### Function
@@ -737,6 +799,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_dilateROI.m
 
 #### Function
@@ -747,6 +810,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_DummyOrientationNIfTI.m
 
 #### Function
@@ -757,6 +821,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_EstimateResolution.m
 
 #### Function
@@ -767,6 +832,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Flip.m
 
 #### Function
@@ -777,6 +843,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_FlipOrientation.m
 
 #### Function
@@ -787,6 +854,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_FlipOrientation2.m
 
 #### Function
@@ -797,6 +865,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_IM2Column.m
 
 #### Function
@@ -807,6 +876,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_joinColormap.m
 
 #### Function
@@ -817,6 +887,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_JointHist.m
 
 #### Function
@@ -827,6 +898,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Lesion2CAT.m
 
 #### Function
@@ -837,6 +909,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Lesion2Mask.m
 
 #### Function
@@ -847,6 +920,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_M0ErodeSmoothExtrapolate.m
 
 #### Function
@@ -857,6 +931,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_MaskNegativeVascularSignal.m
 
 #### Function
@@ -867,6 +942,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_MaskPeakVascularSignal.m
 
 #### Function
@@ -877,6 +953,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Modulation.m
 
 #### Function
@@ -887,6 +964,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_NormalizeLabelingTerritories.m
 
 #### Function
@@ -897,6 +975,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_OverlapT1_ASL.m
 
 #### Function
@@ -907,6 +986,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_PCA.m
 
 #### Function
@@ -917,6 +997,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_PreSmooth.m
 
 #### Function
@@ -927,6 +1008,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ProcessM0Conventional.m
 
 #### Function
@@ -937,6 +1019,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ProjectLabelsOverData.m
 
 #### Function
@@ -947,6 +1030,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_PVCbspline.m
 
 #### Function
@@ -957,6 +1041,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_PVCkernel.m
 
 #### Function
@@ -967,6 +1052,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ResampleLinearFair.m
 
 #### Function
@@ -977,6 +1063,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_RescaleLinear.m
 
 #### Function
@@ -987,6 +1074,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_RestoreOrientation.m
 
 #### Function
@@ -997,6 +1085,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_rotate.m
 
 #### Function
@@ -1007,6 +1096,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_SkullStrip.m
 
 #### Function
@@ -1017,6 +1107,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Smooth3D.m
 
 #### Function
@@ -1027,6 +1118,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_TileImages.m
 
 #### Function
@@ -1037,6 +1129,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_TransformData2View.m
 
 #### Function
@@ -1047,6 +1140,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_Upsample.m
 
 #### Function
@@ -1057,6 +1151,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_VisualizeROIs.m
 
 #### Function
@@ -1067,6 +1162,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_VisualQC_TopUp.m
 
 #### Function
@@ -1077,6 +1173,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_im_ZeroEdges.m
 
 #### Function
@@ -1087,6 +1184,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_ConvertM2JSON.m
 
 #### Function
@@ -1097,6 +1195,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_DefaultEffectiveResolution.m
 
 #### Function
@@ -1107,6 +1206,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_DefineStudyData.m
 
 #### Function
@@ -1117,6 +1217,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_FileSystem.m
 
 #### Function
@@ -1127,6 +1228,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_InitializeMutex.m
 
 #### Function
@@ -1137,6 +1239,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_LabelColors.mat
 
 #### Function
@@ -1147,6 +1250,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_LoadMetadata.m
 
 #### Function
@@ -1157,6 +1261,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_LongitudinalRegistration.m
 
 #### Function
@@ -1167,6 +1272,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_init_VisualizationSettings.m
 
 #### Function
@@ -1177,6 +1283,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_CreateNifti.m
 
 #### Function
@@ -1187,6 +1294,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_dcm2nii.m
 
 #### Function
@@ -1197,6 +1305,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_DcmtkRead.m
 
 #### Function
@@ -1207,6 +1316,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_MakeNifti4DICOM.m
 
 #### Function
@@ -1217,6 +1327,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_PairwiseSubtraction.m
 
 #### Function
@@ -1227,6 +1338,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_ReadTheDicom.m
 
 #### Function
@@ -1237,6 +1349,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_io_SplitASL_M0.m
 
 #### Function
@@ -1247,6 +1360,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_Iteration.m
 
 #### Function
@@ -1257,6 +1371,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_num2str.m
 
 #### Function
@@ -1267,6 +1382,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_AsymmetryIndex.m
 
 #### Function
@@ -1277,6 +1393,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CAT12_IQR.m
 
 #### Function
@@ -1287,6 +1404,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CollectParameters.m
 
 #### Function
@@ -1297,6 +1415,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CollectQC_ASL.m
 
 #### Function
@@ -1307,6 +1426,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CollectQC_func.m
 
 #### Function
@@ -1317,6 +1437,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CollectQC_Structural.m
 
 #### Function
@@ -1327,6 +1448,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CollectSoftwareVersions.m
 
 #### Function
@@ -1337,6 +1459,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CompareTemplate.m
 
 #### Function
@@ -1347,6 +1470,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_ComputeFoVCoverage.m
 
 #### Function
@@ -1357,6 +1481,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_ComputeNiftiOrientation.m
 
 #### Function
@@ -1367,6 +1492,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_CreatePDF.m
 
 #### Function
@@ -1377,6 +1503,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_FA_Outliers.m
 
 #### Function
@@ -1387,6 +1514,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_ObtainQCCategoriesFromJPG.m
 
 #### Function
@@ -1397,6 +1525,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_PCPStructural.m
 
 #### Function
@@ -1407,6 +1536,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_PrintOrientation.m
 
 #### Function
@@ -1417,6 +1547,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_TanimotoCoeff.m
 
 #### Function
@@ -1427,6 +1558,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_temporalSNR.m
 
 #### Function
@@ -1437,6 +1569,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_WADQCDC.m
 
 #### Function
@@ -1447,6 +1580,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_qc_WADQC_GenerateDescriptor.m
 
 #### Function
@@ -1457,6 +1591,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_AgeSex2Hct.m
 
 #### Function
@@ -1467,6 +1602,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_FEAST.m
 
 #### Function
@@ -1477,6 +1613,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_GetControlLabelOrder.m
 
 #### Function
@@ -1487,6 +1624,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_Hct2BloodT1.m
 
 #### Function
@@ -1497,6 +1635,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_M0.m
 
 #### Function
@@ -1507,6 +1646,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_quant_SinglePLD.m
 
 #### Function
@@ -1517,6 +1657,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_spm_affine.m
 
 #### Function
@@ -1527,6 +1668,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_spm_BiasfieldCorrection.m
 
 #### Function
@@ -1537,6 +1679,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_spm_coreg.m
 
 #### Function
@@ -1547,6 +1690,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_spm_deface.m
 
 #### Function
@@ -1557,6 +1701,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_spm_deformations.m
 
 #### Function
@@ -1567,6 +1712,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_AtlasForStats.m
 
 #### Function
@@ -1577,6 +1723,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ComputeDifferCoV.m
 
 #### Function
@@ -1587,6 +1734,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ComputeMean.m
 
 #### Function
@@ -1597,6 +1745,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ComputeSpatialCoV.m
 
 #### Function
@@ -1607,6 +1756,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_EqualVariancesTest.m
 
 #### Function
@@ -1617,6 +1767,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_fcdf.m
 
 #### Function
@@ -1627,6 +1778,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_GetROIstatistics.m
 
 #### Function
@@ -1637,6 +1789,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_MadNan.m
 
 #### Function
@@ -1647,6 +1800,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_MeanSSIM.m
 
 #### Function
@@ -1657,6 +1811,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_MultipleLinReg.m
 
 #### Function
@@ -1667,6 +1822,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_PrintStats.m
 
 #### Function
@@ -1677,6 +1833,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_PSNR.m
 
 #### Function
@@ -1687,6 +1844,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_QuantileNan.m
 
 #### Function
@@ -1697,6 +1855,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_RobustMean.m
 
 #### Function
@@ -1707,6 +1866,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ShapiroWilk.m
 
 #### Function
@@ -1717,6 +1877,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_StdNan.m
 
 #### Function
@@ -1727,6 +1888,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_SumNan.m
 
 #### Function
@@ -1737,6 +1899,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_tcdf.m
 
 #### Function
@@ -1747,6 +1910,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ticdf.m
 
 #### Function
@@ -1757,6 +1921,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ttest.m
 
 #### Function
@@ -1767,6 +1932,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_ttest2.m
 
 #### Function
@@ -1777,6 +1943,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_stat_VarNan.m
 
 #### Function
@@ -1787,6 +1954,7 @@ Compares two ExploreASL datasets for reproducibility.
 #### Description
 ...
 
+----
 ### xASL_str2num.m
 
 #### Function
