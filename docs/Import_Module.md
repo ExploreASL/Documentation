@@ -1,8 +1,6 @@
-# Import
 
-## Test
+ExploreASL uses an import Workflow based on ...
 
-### Minor changes
 
 
 
