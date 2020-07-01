@@ -87,17 +87,17 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#xasl_adm_catchnumbersfromstringm">xASL_adm_CatchNumbersFromString.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_catchnumbersfromstring">xASL_adm_CatchNumbersFromString</a></li>
         
-            <li><a class="toctree-l3" href="#xasl_adm_checkfilecountm">xASL_adm_CheckFileCount.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_checkfilecount">xASL_adm_CheckFileCount</a></li>
         
-            <li><a class="toctree-l3" href="#xasl_adm_checkpermissionsm">xASL_adm_CheckPermissions.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_checkpermissions">xASL_adm_CheckPermissions</a></li>
         
-            <li><a class="toctree-l3" href="#xasl_adm_checkspmm">xASL_adm_CheckSPM.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_checkspm">xASL_adm_CheckSPM</a></li>
         
-            <li><a class="toctree-l3" href="#xasl_adm_cleanupbeforererunm">xASL_adm_CleanUpBeforeRerun.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_cleanupbeforererun">xASL_adm_CleanUpBeforeRerun</a></li>
         
-            <li><a class="toctree-l3" href="#xasl_adm_comparedatasetsm">xASL_adm_CompareDataSets.m</a></li>
+            <li><a class="toctree-l3" href="#xasl_adm_comparedatasets">xASL_adm_CompareDataSets</a></li>
         
             <li><a class="toctree-l3" href="#xasl_adm_comparelistsm">xASL_adm_CompareLists.m</a></li>
         
@@ -495,12 +495,52 @@
             <div class="section">
               
                 <h2 id="list-of-exploreasl-functions">List of ExploreASL Functions</h2>
-<h3 id="xasl_adm_catchnumbersfromstringm">xASL_adm_CatchNumbersFromString.m</h3>
-<h3 id="xasl_adm_checkfilecountm">xASL_adm_CheckFileCount.m</h3>
-<h3 id="xasl_adm_checkpermissionsm">xASL_adm_CheckPermissions.m</h3>
-<h3 id="xasl_adm_checkspmm">xASL_adm_CheckSPM.m</h3>
-<h3 id="xasl_adm_cleanupbeforererunm">xASL_adm_CleanUpBeforeRerun.m</h3>
-<h3 id="xasl_adm_comparedatasetsm">xASL_adm_CompareDataSets.m</h3>
+<h3 id="xasl_adm_catchnumbersfromstring">xASL_adm_CatchNumbersFromString</h3>
+<pre><code class="matlab">function [OutputNumber] = xASL_adm_CatchNumbersFromString(InputString)
+</code></pre>
+
+<h3 id="xasl_adm_checkfilecount">xASL_adm_CheckFileCount</h3>
+<p>Checks the given PATH for files corresponding to the SPM_SELECT regular expression EXPR. Returns if the number of files is equal to or higher than MINCOUNT. If FAILIFMISSING is true and not enough files, then throw and error. If everything goes ok and second output argument is specified then return also the list of files.</p>
+<pre><code class="matlab">function [result, files] = xASL_adm_CheckFileCount(path, expr, mincount, failifmissing)
+</code></pre>
+
+<h3 id="xasl_adm_checkpermissions">xASL_adm_CheckPermissions</h3>
+<p>This function does a recursive search through the root folder &amp; makes a list of the attributes of all files and folders.
+It tries to reset the attributes to what we desire, which is by default:</p>
+<ul>
+<li>664 for files (meaning only reading &amp; writing for users &amp; group, &amp; read-only for others) </li>
+<li>775 for folders (meaning reading, writing &amp; opening for current user &amp; current group, &amp; for others only reading &amp; opening) </li>
+</ul>
+<p>For executable files we also want 775. Note that the permission to 'execute a folder' means opening them</p>
+<pre><code class="matlab">function [FilesList, FilesExeList, FoldersList] = xASL_adm_CheckPermissions(InputPath, FilesExecutable)
+</code></pre>
+
+<h3 id="xasl_adm_checkspm">xASL_adm_CheckSPM</h3>
+<p>Checks if the spm function exists and if the reported version matches our development version (SPM8 or SPM12). If the spm toolbox is not available yet, it will try the PROPOSED_SPM_PATH (if specified) or the user selected directory and add it to PATH. The function will fail if SPM cannot be found or if detecting an unsupported version.</p>
+<pre><code class="matlab">function [spm_path, spm_version] = xASL_adm_CheckSPM(modality, proposed_spm_path, check_mode)
+</code></pre>
+
+<h3 id="xasl_adm_cleanupbeforererun">xASL_adm_CleanUpBeforeRerun</h3>
+<p>This function (partly) reverts previous ExploreASL runs, deleting derivatives, while keeping raw data intact. if bAllSubjects==true, then all subjects and all module derivatives will be removed. This function performs the following steps:</p>
+<ol>
+<li>If a Population folder doesn't exist yet but dartel does, rename it</li>
+<li>Remove whole-study data files in AnalysisDir if bAllSubjects</li>
+<li>Remove lock files/folders for reprocessing</li>
+<li>Restore backupped _ORI (original) files</li>
+<li>Delete native space CAT12 temporary folders (always, independent of iModule)</li>
+<li>Remove native space files for iModule</li>
+<li>Remove standard space files for iModule</li>
+<li>Remove population module files</li>
+<li>Remove or clean up stored x-struct &amp; QC file -&gt; THIS HAS NO SESSION SUPPORT YET</li>
+</ol>
+<pre><code class="matlab">function xASL_adm_CleanUpBeforeRerun(AnalysisDir, iModule, bRemoveWMH, bAllSubjects, SubjectID, SessionID)
+</code></pre>
+
+<h3 id="xasl_adm_comparedatasets">xASL_adm_CompareDataSets</h3>
+<p>Compares two ExploreASL datasets for reproducibility.</p>
+<pre><code class="matlab">function [RMS] = xASL_adm_CompareDataSets(RefAnalysisRoot,SourceAnalysisRoot,x,type,mutexState)
+</code></pre>
+
 <h3 id="xasl_adm_comparelistsm">xASL_adm_CompareLists.m</h3>
 <h3 id="xasl_adm_convertdate2nrm">xASL_adm_ConvertDate2Nr.m</h3>
 <h3 id="xasl_adm_convertnr2timem">xASL_adm_ConvertNr2Time.m</h3>

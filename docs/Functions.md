@@ -2,17 +2,67 @@
 
 ## List of ExploreASL Functions
 
-### xASL_adm_CatchNumbersFromString.m
+### xASL_adm_CatchNumbersFromString
 
-### xASL_adm_CheckFileCount.m
+```matlab
+function [OutputNumber] = xASL_adm_CatchNumbersFromString(InputString)
+```
 
-### xASL_adm_CheckPermissions.m
+### xASL_adm_CheckFileCount
 
-### xASL_adm_CheckSPM.m
+Checks the given PATH for files corresponding to the SPM_SELECT regular expression EXPR. Returns if the number of files is equal to or higher than MINCOUNT. If FAILIFMISSING is true and not enough files, then throw and error. If everything goes ok and second output argument is specified then return also the list of files.
 
-### xASL_adm_CleanUpBeforeRerun.m
+```matlab
+function [result, files] = xASL_adm_CheckFileCount(path, expr, mincount, failifmissing)
+```
 
-### xASL_adm_CompareDataSets.m
+### xASL_adm_CheckPermissions
+
+This function does a recursive search through the root folder & makes a list of the attributes of all files and folders.
+It tries to reset the attributes to what we desire, which is by default:
+
+* 664 for files (meaning only reading & writing for users & group, & read-only for others) 
+* 775 for folders (meaning reading, writing & opening for current user & current group, & for others only reading & opening) 
+
+For executable files we also want 775. Note that the permission to 'execute a folder' means opening them
+
+```matlab
+function [FilesList, FilesExeList, FoldersList] = xASL_adm_CheckPermissions(InputPath, FilesExecutable)
+```
+
+### xASL_adm_CheckSPM
+
+Checks if the spm function exists and if the reported version matches our development version (SPM8 or SPM12). If the spm toolbox is not available yet, it will try the PROPOSED_SPM_PATH (if specified) or the user selected directory and add it to PATH. The function will fail if SPM cannot be found or if detecting an unsupported version.
+
+```matlab
+function [spm_path, spm_version] = xASL_adm_CheckSPM(modality, proposed_spm_path, check_mode)
+```
+
+### xASL_adm_CleanUpBeforeRerun
+
+This function (partly) reverts previous ExploreASL runs, deleting derivatives, while keeping raw data intact. if bAllSubjects==true, then all subjects and all module derivatives will be removed. This function performs the following steps:
+
+1. If a Population folder doesn't exist yet but dartel does, rename it
+2. Remove whole-study data files in AnalysisDir if bAllSubjects
+3. Remove lock files/folders for reprocessing
+4. Restore backupped _ORI (original) files
+5. Delete native space CAT12 temporary folders (always, independent of iModule)
+6. Remove native space files for iModule
+7. Remove standard space files for iModule
+8. Remove population module files
+9. Remove or clean up stored x-struct & QC file -> THIS HAS NO SESSION SUPPORT YET
+
+```matlab
+function xASL_adm_CleanUpBeforeRerun(AnalysisDir, iModule, bRemoveWMH, bAllSubjects, SubjectID, SessionID)
+```
+
+### xASL_adm_CompareDataSets
+
+Compares two ExploreASL datasets for reproducibility.
+
+```matlab
+function [RMS] = xASL_adm_CompareDataSets(RefAnalysisRoot,SourceAnalysisRoot,x,type,mutexState)
+```
 
 ### xASL_adm_CompareLists.m
 
