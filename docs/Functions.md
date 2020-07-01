@@ -89,77 +89,77 @@ Compares two ExploreASL datasets for reproducibility.
 
 #### Function
 ```matlab
-...
+function [NewList] = xASL_adm_CompareLists(list1, list2)
 ```
 
 #### Description
-...
+Compare 2 single dimension lists.
 
 ----
 ### xASL_adm_ConvertDate2Nr.m
 
 #### Function
 ```matlab
-...
+function [Nr DayInYear] = xASL_adm_ConvertDate2Nr(TempDate)
 ```
 
 #### Description
-...
+Converts date to number input mmdd -> output mm (with days in fractions/floating point). Inverse from ConvertNrDate.
 
 ----
 ### xASL_adm_ConvertNr2Time.m
 
 #### Function
 ```matlab
-...
+function Time = xASL_adm_ConvertNr2Time(Nr)
 ```
 
 #### Description
-...
+Converts number to time input hh (with minutes in fractions/floating point) -> output hhmm. Inverse from xASL_adm_ConvertTime2Nr.
 
 ----
 ### xASL_adm_ConvertSubjSess2Subj_Sess.m
 
 #### Function
 ```matlab
-...
+function [iSubj iSess] = xASL_adm_ConvertSubjSess2Subj_Sess(nSessions, iSubjSess)
 ```
 
 #### Description
-...
+Converts combined SubjectSession index to subject & session indices. Useful for data lists in ExploreASL.
 
 ----
 ### xASL_adm_ConvertTime2Nr.m
 
 #### Function
 ```matlab
-...
+function Nr = xASL_adm_ConvertTime2Nr(Time)
 ```
 
 #### Description
-...
+Converts time to number input hhmm -> output hh (with minutes in fractions/floating point). Inverse from xASL_adm_ConvertNr2Time.
 
 ----
 ### xASL_adm_CopyMoveFileList.m
 
 #### Function
 ```matlab
-...
+function [List] = xASL_adm_CopyMoveFileList(OriDir, DstDir, StrRegExp, bMove, bDir, bRecursive, bOverwrite, bVerbose)
 ```
 
 #### Description
-...
+Moves a file to a file, a file to a directory, or a directory to a directory. It keeps the initial extensions, no unzipping or zipping after the move. But it makes sure that only one of .nii and .nii.gz exists in the destination directory. Useful to split a large database.
 
 ----
 ### xASL_adm_CorrectName.m
 
 #### Function
 ```matlab
-...
+function strOut = xASL_adm_CorrectName(strIn, bOption, strExclude)
 ```
 
 #### Description
-...
+Finds and replaces all non-word characters either by empty space or by an underscore. Optionally leaves in few selected special characters. Note that if '\_' is excluded from replacement, but option 2 is on, then underscores are replaced anyway.
 
 ----
 ### xASL_adm_CreateCSVfile.m

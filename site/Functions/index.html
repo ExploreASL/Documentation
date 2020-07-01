@@ -563,59 +563,59 @@ It tries to reset the attributes to what we desire, which is by default:</p>
 <hr />
 <h3 id="xasl_adm_comparelistsm">xASL_adm_CompareLists.m</h3>
 <h4 id="function_6">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [NewList] = xASL_adm_CompareLists(list1, list2)
 </code></pre>
 
 <h4 id="description_6">Description</h4>
-<p>...</p>
+<p>Compare 2 single dimension lists.</p>
 <hr />
 <h3 id="xasl_adm_convertdate2nrm">xASL_adm_ConvertDate2Nr.m</h3>
 <h4 id="function_7">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [Nr DayInYear] = xASL_adm_ConvertDate2Nr(TempDate)
 </code></pre>
 
 <h4 id="description_7">Description</h4>
-<p>...</p>
+<p>Converts date to number input mmdd -&gt; output mm (with days in fractions/floating point). Inverse from ConvertNrDate.</p>
 <hr />
 <h3 id="xasl_adm_convertnr2timem">xASL_adm_ConvertNr2Time.m</h3>
 <h4 id="function_8">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function Time = xASL_adm_ConvertNr2Time(Nr)
 </code></pre>
 
 <h4 id="description_8">Description</h4>
-<p>...</p>
+<p>Converts number to time input hh (with minutes in fractions/floating point) -&gt; output hhmm. Inverse from xASL_adm_ConvertTime2Nr.</p>
 <hr />
 <h3 id="xasl_adm_convertsubjsess2subj_sessm">xASL_adm_ConvertSubjSess2Subj_Sess.m</h3>
 <h4 id="function_9">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [iSubj iSess] = xASL_adm_ConvertSubjSess2Subj_Sess(nSessions, iSubjSess)
 </code></pre>
 
 <h4 id="description_9">Description</h4>
-<p>...</p>
+<p>Converts combined SubjectSession index to subject &amp; session indices. Useful for data lists in ExploreASL.</p>
 <hr />
 <h3 id="xasl_adm_converttime2nrm">xASL_adm_ConvertTime2Nr.m</h3>
 <h4 id="function_10">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function Nr = xASL_adm_ConvertTime2Nr(Time)
 </code></pre>
 
 <h4 id="description_10">Description</h4>
-<p>...</p>
+<p>Converts time to number input hhmm -&gt; output hh (with minutes in fractions/floating point). Inverse from xASL_adm_ConvertNr2Time.</p>
 <hr />
 <h3 id="xasl_adm_copymovefilelistm">xASL_adm_CopyMoveFileList.m</h3>
 <h4 id="function_11">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [List] = xASL_adm_CopyMoveFileList(OriDir, DstDir, StrRegExp, bMove, bDir, bRecursive, bOverwrite, bVerbose)
 </code></pre>
 
 <h4 id="description_11">Description</h4>
-<p>...</p>
+<p>Moves a file to a file, a file to a directory, or a directory to a directory. It keeps the initial extensions, no unzipping or zipping after the move. But it makes sure that only one of .nii and .nii.gz exists in the destination directory. Useful to split a large database.</p>
 <hr />
 <h3 id="xasl_adm_correctnamem">xASL_adm_CorrectName.m</h3>
 <h4 id="function_12">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function strOut = xASL_adm_CorrectName(strIn, bOption, strExclude)
 </code></pre>
 
 <h4 id="description_12">Description</h4>
-<p>...</p>
+<p>Finds and replaces all non-word characters either by empty space or by an underscore. Optionally leaves in few selected special characters. Note that if '_' is excluded from replacement, but option 2 is on, then underscores are replaced anyway.</p>
 <hr />
 <h3 id="xasl_adm_createcsvfilem">xASL_adm_CreateCSVfile.m</h3>
 <h4 id="function_13">Function</h4>
