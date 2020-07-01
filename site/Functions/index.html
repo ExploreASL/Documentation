@@ -909,91 +909,111 @@ This function performs the following steps:</p>
 <hr />
 <h3 id="xasl_bids_parrec2jsonm">xASL_bids_PARREC2JSON.m</h3>
 <h4 id="function_45">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function parms = xASL_bids_PARREC2JSON(pathPar, PathJSON)
 </code></pre>
 
 <h4 id="description_45">Description</h4>
-<p>...</p>
+<p>Opens the Philips type PAR file. Reads the relevant DICOM header fields and adds them to the .json sidecar file.</p>
 <hr />
 <h3 id="xasl_fsl_runfslm">xASL_fsl_RunFSL.m</h3>
 <h4 id="function_46">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x, Result1] = xASL_fsl_RunFSL(FSLCommand, x, OutputZipping, NicenessValue, bVerbose)
 </code></pre>
 
 <h4 id="description_46">Description</h4>
-<p>...</p>
+<p>This function runs an FSL command from ExploreASL:</p>
+<ol>
+<li>Checking the FSL dir</li>
+<li>Manage CUDA/CPU parallelization (currently disabled, WIP)</li>
+<li>Setting up FSL environment</li>
+<li>Running the command</li>
+</ol>
+<p>Supports .nii &amp; .nii.gz, Linux, MacOS &amp; Windows (WSL).</p>
 <hr />
 <h3 id="xasl_fsl_setfsldirm">xASL_fsl_SetFSLdir.m</h3>
 <h4 id="function_47">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [FSLdir, x, RootWSLdir] = xASL_fsl_SetFSLdir(x, bAutomaticallyDetectFSL)
 </code></pre>
 
 <h4 id="description_47">Description</h4>
-<p>...</p>
+<p>This function finds the FSLdir &amp; puts it out, also in x.FSLdir to allow repeating this function without having to repeat searching.
+If the FSLdir &amp; RootFSLDir are already defined in x.FSLdir &amp; x.RootFSLDir, this function is skipped.
+Supports Linux, MacOS &amp; Windows (WSL), &amp; several different default installation folders for different Linux distributions.</p>
 <hr />
 <h3 id="xasl_fsl_topupm">xASL_fsl_TopUp.m</h3>
 <h4 id="function_48">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [bSuccess] = xASL_fsl_TopUp(InDir, ScanType, x, OutputPath)
 </code></pre>
 
 <h4 id="description_48">Description</h4>
-<p>...</p>
+<p>This function runs FSL TopUp. It assumes that there are 2 TopUp images, i.e. 1 blip up &amp; 1 blip down.</p>
+<ol>
+<li>Admin: manage ScanType, NIfTI paths, create TopUp parameter file for image to apply TopUp to &amp; for the TopUp NIfTIs, delete files from previous run, define the image with the same acquisition parameters as TopUp (does the image we apply TopUp to, have the Blip up or down?)</li>
+<li>Register images to image that we apply TopUp to (registration between blip up/down images is performed by TopUp)</li>
+<li>Run TopUp estimate (i.e. estimate the geometric distortion field from B0 NIfTI &amp; parameters file), this takes quite long. Also has a x.Quality=0 option that is very fast but inaccurate, to try out this pipeline part. Before TopUp, NaNs (e.g. from resampling) are removed from the images TopUp is run with default settings</li>
+<li>Apply TopUp</li>
+</ol>
 <hr />
 <h3 id="xasl_import_jsonm">xASL_import_json.m</h3>
 <h4 id="function_49">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_import_json(DataParFile)
 </code></pre>
 
 <h4 id="description_49">Description</h4>
-<p>...</p>
+<p>This function reads in a DATA_PAR file and creates the x structure. The name of the DATA_PAR file is given as a string or character array. The output is the x structure.</p>
+<p>If the DATA_PAR file is the dataset_description.json file of the BIDS standard, the x structure is created according to BIDS.</p>
 <hr />
 <h3 id="xasl_imwritem">xASL_imwrite.m</h3>
 <h4 id="function_50">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ImOut] = xASL_imwrite(ImIn, PathOut, ColorMap, bRescale)
 </code></pre>
 
 <h4 id="description_50">Description</h4>
-<p>...</p>
+<p>This functions takes an input image matrix, interpolates it to HD resolution (1920x1080) for visibility, and saves the image as jpg. This function avoids the graphic interface of Matlab, for running from CLI. 
+<strong>Careful:</strong> this function overwrites any existing PathOut.</p>
 <hr />
 <h3 id="xasl_im_addim2qcm">xASL_im_AddIM2QC.m</h3>
 <h4 id="function_51">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_im_AddIM2QC(x,parms)
 </code></pre>
 
 <h4 id="description_51">Description</h4>
-<p>...</p>
+<p>Checks which images already are loaded, and  adds new image.</p>
 <hr />
 <h3 id="xasl_im_bilateralfilterm">xASL_im_BilateralFilter.m</h3>
 <h4 id="function_52">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ovol] = xASL_im_BilateralFilter(volIM, mask, VoxelSize, x)
 </code></pre>
 
 <h4 id="description_52">Description</h4>
-<p>...</p>
+<p>This function runs a spatial lowpass temporally highpass filter, and removes outliers within this signal, and adapts the time-series accordingly</p>
 <hr />
 <h3 id="xasl_im_centerofmassm">xASL_im_CenterOfMass.m</h3>
 <h4 id="function_53">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_CenterOfMass(PathNIfTI, OtherList, AllowedDistance)
 </code></pre>
 
 <h4 id="description_53">Description</h4>
-<p>...</p>
+<p>This function estimates the center of mass of the image matrix, and if this is too far off the current orientation matrix center, the center will be reset.
+This fixes any incorrect orientation outputted by the scanner.
+The realignment is only applied when any of the X/Y/Z dimensions have a higher offset than AllowedDistance</p>
 <hr />
 <h3 id="xasl_im_cleanupwmhnoisem">xASL_im_CleanupWMHnoise.m</h3>
 <h4 id="function_54">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_CleanupWMHnoise(InputPath, OutputPath, MinLesionVolume, pThresh)
 </code></pre>
 
 <h4 id="description_54">Description</h4>
-<p>...</p>
+<p>Threshold white matter lesions, acknowledging the fact that they may be confluent with subresolution connection through a dilation. This part is executed conservatively, as FLAIR hyperintensities inside the GM can be erroneously segmented as WMH, and should not be lesion-filled (otherwise these cannot be fixed later in the Structural module).</p>
+<p>Note that LST lesion filling expects a probability map, doesnt work nicely with binary mask.</p>
 <hr />
 <h3 id="xasl_im_clipextremesm">xASL_im_ClipExtremes.m</h3>
 <h4 id="function_55">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [NewIM] = xASL_im_ClipExtremes(InputIm, ThreshHigh, ThreshLow, bVerbose)
 </code></pre>
 
 <h4 id="description_55">Description</h4>
-<p>...</p>
+<p>Clips image to given percentile. The percentile is found using non-zeros sorted intensities, so both isfinite &amp; non-zeros.</p>
 <hr />
 <h3 id="xasl_im_colorbarm">xASL_im_colorbar.m</h3>
 <h4 id="function_56">Function</h4>
@@ -1005,27 +1025,30 @@ This function performs the following steps:</p>
 <hr />
 <h3 id="xasl_im_column2imm">xASL_im_Column2IM.m</h3>
 <h4 id="function_57">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ImageOut] = xASL_im_Column2IM(ColumnIn, BrainMask)
 </code></pre>
 
 <h4 id="description_57">Description</h4>
-<p>...</p>
+<p>This function "decompresses" an image matrix (or multiple matrices) from a single-dimensional column, by reconstructing the image matrix from the voxel positions within the BrainMask. </p>
+<p><strong>NB:</strong> Important to use the same BrainMask as used for converting the image matrix to the column!</p>
+<p><strong>See also:</strong> xASL_im_IM2Column.m</p>
+<p>The mask mostly used for xASL_im_IM2Column is x.WBmask, which completely engulfes pGM, pWM &amp; pCSF.</p>
 <hr />
 <h3 id="xasl_im_compareniftiresolutionxyzm">xASL_im_CompareNIfTIResolutionXYZ.m</h3>
 <h4 id="function_58">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [IsEqualResolution] = xASL_im_CompareNIfTIResolutionXYZ(PathNIfTI1, PathNIfTI2)
 </code></pre>
 
 <h4 id="description_58">Description</h4>
-<p>...</p>
+<p>This function checks whether the X, Y and Z resolution of a NIfTI with any number of dimensions is equal. It rounds for 2 floating points, for both NIfTIs, to ensure that the same precision is compared.</p>
 <hr />
 <h3 id="xasl_im_computedicem">xASL_im_ComputeDice.m</h3>
 <h4 id="function_59">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function DiceCoeff = xASL_im_ComputeDice(imA, imB)
 </code></pre>
 
 <h4 id="description_59">Description</h4>
-<p>...</p>
+<p>Calculate Dice coefficient of image overlap.</p>
 <hr />
 <h3 id="xasl_im_createasldeformationfieldm">xASL_im_CreateASLDeformationField.m</h3>
 <h4 id="function_60">Function</h4>
