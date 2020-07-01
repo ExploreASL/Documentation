@@ -166,29 +166,37 @@ Finds and replaces all non-word characters either by empty space or by an unders
 
 #### Function
 ```matlab
-...
+function xASL_adm_CreateCSVfile(CSVfilename,CSVdata)
 ```
 
 #### Description
-...
+Creates a CSV file that can be opened with excel from your data.
 
 ----
 ### xASL_adm_CreateFileReport.m
 
 #### Function
 ```matlab
-...
+function x = xASL_adm_CreateFileReport(x, bHasFLAIR, bHasMoCo, bHasM0, bHasLongitudinal)
 ```
 
 #### Description
-...
+Prints a summary of created files or the individual modules (i.e. Structural, Longiutudinal & ASL modules).
+Provides a quick check to see what has been skipped, an whether all files are present.
+
+This script iterates across Native space 1) subject and 2) session files, resampled 3) subject and 4) session files, 5) Lock files and 6) QC Figure files.
+
+For all we perform a A) count of the files present, summarized in fileReportSummary.csv, and we B) list the missing files in
+"Missing\*.csv" files
+
+**PM:** simplify/optimize this code, to make filename variable changing, search within subject-directories, etc. Combine the parts searching for missing & summarizing count
 
 ----
 ### xASL_adm_DefineASLResolution.m
 
 #### Function
 ```matlab
-...
+function x = xASL_adm_DefineASLResolution(x)
 ```
 
 #### Description
@@ -199,77 +207,78 @@ Finds and replaces all non-word characters either by empty space or by an unders
 
 #### Function
 ```matlab
-...
+function filepaths = xASL_adm_DeleteFilePair(path, varargin)
 ```
 
 #### Description
-...
+Delete the file given in PATH, and also deletes files with the same name, but with extension given in EXT1, and potentially also EXT2, EXT3... 
 
 ----
 ### xASL_adm_Dicom2Parms.m
 
 #### Function
 ```matlab
-...
+function [parms, pathDcmDictOut] = xASL_adm_Dicom2Parms(imPar, inp, parmsfile, dcmExtFilter, bUseDCMTK, pathDcmDictIn)
 ```
 
 #### Description
-...
+The function goes through the INP files, reads the DICOM or PAR/REC files and parses their headers.
+It extracts the DICOM parameters important for ASL, makes sure they are in the correct format, if missing then replaces with default value, it also checks if the parameters are consistent across DICOM files for a single sequence.
 
 ----
 ### xASL_adm_FindByRegExp.m
 
 #### Function
 ```matlab
-...
+function [tree, optionalTokens] = xASL_adm_FindByRegExp(root, dirSpecs, varargin)
 ```
 
 #### Description
-...
+Recursively find files in the root directory according to the dirSpecs.
 
 ----
 ### xASL_adm_FindStrIndex.m
 
 #### Function
 ```matlab
-...
+function INDEX = xASL_adm_FindStrIndex(ARRAY, STRING)
 ```
 
 #### Description
-...
+Similar to find, but then for a cell array filled with strings. Only takes 4 dimensions.
 
 ----
 ### xASL_adm_GetFsList.m
 
 #### Function
 ```matlab
-...
+function  RES = xASL_adm_GetFsList(strDirectory, strRegEx, bGetDirNames, bExcludeHidden, bIgnoreCase, nRequired)
 ```
 
 #### Description
-...
+List files or directories from a given path. And optionally uses regular expressions to filter the result with options to exclude hidden files, ignore case, and set a minimal requirement on the number of results. Sorts the results at the end.
 
 ----
 ### xASL_adm_GetNumFromStr.m
 
 #### Function
 ```matlab
-...
+function num = xASL_adm_GetNumFromStr(str)
 ```
 
 #### Description
-...
+Obtains single number from string. CAVE there should only be one number!
 
 ----
 ### xASL_adm_GetPhilipsScaling.m
 
 #### Function
 ```matlab
-...
+function scaleFactor = xASL_adm_GetPhilipsScaling(parms,header)
 ```
 
 #### Description
-...
+This script provides the correct scaling factors for a NIfTI file. It checks the header of the NIfTI that normally has the same scaling as RescaleSlope in DICOM, it checks if dcm2nii (by the info in JSON) has already converted the scale slopes to floating point. And if not, the derive the correct scaling factor to be applied.
 
 ----
 ### xASL_adm_GetUserName.m
