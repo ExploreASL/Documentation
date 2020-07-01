@@ -1,4 +1,4 @@
-# Submodules of the Population Module
+# Submodules of the Population Module ![ICON](./img/favicon/brain_icon_500x500.png){: style="height:40px;width:40px"}
 
 ----
 ## Delete Many Temp Files

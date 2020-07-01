@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Module Structural - ExploreASL</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> ExploreASL</a>
         <div role="search">
@@ -45,92 +47,190 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Home</span>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Modules/">Modules</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Import_Module/">Module Import</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Module Structural</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#submodules-of-the-structural-module">Submodules of the Structural Module</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Modules/">Modules</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Import_Module/">Module Import</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Module Structural</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#clean-up-wmh-segm">Clean Up WMH SEGM</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#clean-up-wmh-segm">Clean Up WMH SEGM</a></li>
-        
-            <li><a class="toctree-l3" href="#flair-biasfield-correction">FLAIR Biasfield Correction</a></li>
-        
-            <li><a class="toctree-l3" href="#get-volumetrics">Get Volumetrics</a></li>
-        
-            <li><a class="toctree-l3" href="#lst-segment-flair-wmh">LST Segment FLAIR WMH</a></li>
-        
-            <li><a class="toctree-l3" href="#lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</a></li>
-        
-            <li><a class="toctree-l3" href="#linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</a></li>
-        
-            <li><a class="toctree-l3" href="#linear-reg-t1w2mni">Linear Reg T1w2MNI</a></li>
-        
-            <li><a class="toctree-l3" href="#resample-2-standard-space">Resample 2 Standard Space</a></li>
-        
-            <li><a class="toctree-l3" href="#segment-t1w">Segment T1w</a></li>
-        
-            <li><a class="toctree-l3" href="#visual-qc-structural">Visual QC Structural</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#function">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition">Interface definition</a>
+    </li>
         </ul>
-    
-
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#flair-biasfield-correction">FLAIR Biasfield Correction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_1">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_1">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_1">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_1">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_1">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get-volumetrics">Get Volumetrics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_2">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_2">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_2">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_2">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_2">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lst-segment-flair-wmh">LST Segment FLAIR WMH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_3">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_3">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_3">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_3">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_3">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_4">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_4">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_4">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_4">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_4">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_5">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_5">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_5">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_5">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_5">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#linear-reg-t1w2mni">Linear Reg T1w2MNI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_6">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_6">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_6">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_6">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_6">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resample-2-standard-space">Resample 2 Standard Space</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_7">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_7">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_7">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_7">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_7">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#segment-t1w">Segment T1w</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_8">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_8">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_8">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_8">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_8">Interface definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visual-qc-structural">Visual QC Structural</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#function_9">Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description_9">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#workflow_9">Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_9">Recommended usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_9">Interface definition</a>
+    </li>
+        </ul>
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ASL_Module/">Module ASL</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Population_Module/">Module Population</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Functions/">Functions</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Requirements/">Requirements</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../License/">License</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../About/">About</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ASL_Module/">Module ASL</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Population_Module/">Module Population</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Functions/">Functions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Requirements/">Requirements</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../License/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../About/">About</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -155,12 +255,13 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
             <div class="section">
               
-                <h1 id="submodules-of-the-structural-module">Submodules of the Structural Module</h1>
+                <h1 id="submodules-of-the-structural-module">Submodules of the Structural Module <img alt="ICON" src="../img/favicon/brain_icon_500x500.png" style="height:40px;width:40px" /></h1>
 <hr />
 <h2 id="clean-up-wmh-segm">Clean Up WMH SEGM</h2>
 <h3 id="function">Function</h3>
@@ -384,7 +485,7 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -394,7 +495,7 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -408,6 +509,11 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

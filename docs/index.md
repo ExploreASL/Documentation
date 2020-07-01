@@ -1,6 +1,6 @@
-# ExploreASL
+![ExploreASL](./img/title.png "ExploreASL")
 
-## Description
+## Description 
 
 **ExploreASL** is a pipeline and toolbox for image processing and statistics of arterial spin labeling perfusion **MR** images. It is designed as a **multi-OS**, open source, collaborative framework that facilitates cross-pollination between image processing method developers and clinical investigators.
 
