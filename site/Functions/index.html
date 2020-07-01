@@ -813,83 +813,99 @@ It extracts the DICOM parameters important for ASL, makes sure they are in the c
 <hr />
 <h3 id="xasl_adm_resetvisualizationslicesm">xASL_adm_ResetVisualizationSlices.m</h3>
 <h4 id="function_35">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_adm_ResetVisualizationSlices(x)
 </code></pre>
 
 <h4 id="description_35">Description</h4>
-<p>...</p>
+<p>Removes any predefined slices that should be visualized, allowing to show the default slices. Comes in handy when different pipeline visualization parts are repeated.</p>
 <hr />
 <h3 id="xasl_adm_savejsonm">xASL_adm_SaveJSON.m</h3>
 <h4 id="function_36">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_adm_SaveJSON(data, jsonFileName)
 </code></pre>
 
 <h4 id="description_36">Description</h4>
-<p>...</p>
+<p>Saves the values in the structure 'data' to a file in JSON forma</p>
 <hr />
 <h3 id="xasl_adm_uigetinputm">xASL_adm_uiGetInput.m</h3>
 <h4 id="function_37">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [Parms] = xASL_adm_uiGetInput(Parms)
 </code></pre>
 
 <h4 id="description_37">Description</h4>
-<p>...</p>
+<p>Checks whether input fields are present, or requests them.</p>
 <hr />
 <h3 id="xasl_adm_unziporcopym">xASL_adm_UnzipOrCopy.m</h3>
 <h4 id="function_38">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function unpackedFiles = xASL_adm_UnzipOrCopy(srcDir, wildCard, destDir, bOverwrite)
 </code></pre>
 
 <h4 id="description_38">Description</h4>
-<p>...</p>
+<p>Unpacks (or copy if unpacked) one or more files matching the regular expression.</p>
 <hr />
 <h3 id="xasl_adm_voxel2realworldcoordinatesm">xASL_adm_Voxel2RealWorldCoordinates.m</h3>
 <h4 id="function_39">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [X Y Z] = xASL_adm_Voxel2RealWorldCoordinates(X,Y,Z,VoxelSize)
 </code></pre>
 
 <h4 id="description_39">Description</h4>
-<p>...</p>
+<p>Converts MNI coordinates from voxel coordinates/indices.
+Assumes X Y Z = LR LeftRight AP AnteriorPosterior IS InferiorSuperior.
+VoxelSize should be [1 3]-sized input.</p>
 <hr />
 <h3 id="xasl_adm_zipfilelistm">xASL_adm_ZipFileList.m</h3>
 <h4 id="function_40">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function filepaths = xASL_adm_ZipFileList(strDirectory, strRegExp, bRecurse, bUseGzip, nRequired, bDelete)
 </code></pre>
 
 <h4 id="description_40">Description</h4>
-<p>...</p>
+<p>Zip the files that match regular expression STRREGEXP in the given directory STRDIRECTORY.
+Zips recursively if specified in BRECURSE. Zips all files unless the number is specified by NREQUIRED, if the number is not met, then does not zip anything and throws an error.</p>
 <hr />
 <h3 id="xasl_bids_add2participantstsvm">xASL_bids_Add2ParticipantsTSV.m</h3>
 <h4 id="function_41">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_bids_Add2ParticipantsTSV(DataIn, DataName, x, bOverwrite)
 </code></pre>
 
 <h4 id="description_41">Description</h4>
-<p>...</p>
+<p>This function adds metadata/statistical variables to the participants.tsv in the root/analysis folder, by the following steps. 
+This function will iterate over Data provided at DataIn and fill them in the participants.tsv, overwriting if allowed.
+Empty data is filled in as 'n/a', and the first column "participants_id" is sorted for participants.</p>
 <hr />
 <h3 id="xasl_bids_dicom2jsonm">xASL_bids_Dicom2JSON.m</h3>
 <h4 id="function_42">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [parms, pathDcmDictOut] = xASL_bids_Dicom2JSON(imPar, inp, PathJSON, dcmExtFilter, bUseDCMTK, pathDcmDictIn)
 </code></pre>
 
 <h4 id="description_42">Description</h4>
-<p>...</p>
+<p>The function goes through the INP files, reads the DICOM or PAR/REC files and parses their headers.
+It extracts the DICOM parameters important for ASL, makes sure they are in the correct format, if missing then replaces with default value, it also checks if the parameters are consistent across DICOM files for a single sequence.</p>
 <hr />
 <h3 id="xasl_bids_insertjsonfieldsm">xASL_bids_InsertJSONFields.m</h3>
 <h4 id="function_43">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ChildJSON] = xASL_bids_InsertJSONFields(ParentJSON, ChildJSON, Fields2Skip)
 </code></pre>
 
 <h4 id="description_43">Description</h4>
-<p>...</p>
+<p>This function takes all parameters from the "parent" JSON &amp; moves them into the "child" JSON.
+In case of co-existence of a field with different values, then the value in the child JSON will prevail, per BIDS inheritance.</p>
 <hr />
 <h3 id="xasl_bids_parms2bidsm">xASL_bids_parms2BIDS.m</h3>
 <h4 id="function_44">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function outParms = xASL_bids_parms2BIDS(inXasl, inBids, bOutBids, bPriorityBids)
 </code></pre>
 
 <h4 id="description_44">Description</h4>
-<p>...</p>
+<p>This functions takes two parameter structures and merges them. At the same time, renames all fields according to the output type (note that only some fields have two standardised names different between the two formats.</p>
+<p>In case of duplicities, takes the field value from the preferred format. 
+Also takes into account that the units in BIDS are s, but in xASL ms.
+This function performs the following steps:</p>
+<ol>
+<li>Define field names that need to be convert/renamed/merged</li>
+<li>Convert XASL fields to the output format (BIDS or XASL)</li>
+<li>Convert BIDS fields to the output format (BIDS or XASL)</li>
+<li>Merge the BIDS and XASL fields, convert field values</li>
+</ol>
 <hr />
 <h3 id="xasl_bids_parrec2jsonm">xASL_bids_PARREC2JSON.m</h3>
 <h4 id="function_45">Function</h4>

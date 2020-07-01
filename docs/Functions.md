@@ -429,110 +429,126 @@ Removes any predefined slices that should be visualized, allowing to show the de
 
 #### Function
 ```matlab
-...
+function [x] = xASL_adm_ResetVisualizationSlices(x)
 ```
 
 #### Description
-...
+Removes any predefined slices that should be visualized, allowing to show the default slices. Comes in handy when different pipeline visualization parts are repeated.
 
 ----
 ### xASL_adm_SaveJSON.m
 
 #### Function
 ```matlab
-...
+function xASL_adm_SaveJSON(data, jsonFileName)
 ```
 
 #### Description
-...
+Saves the values in the structure 'data' to a file in JSON forma
 
 ----
 ### xASL_adm_uiGetInput.m
 
 #### Function
 ```matlab
-...
+function [Parms] = xASL_adm_uiGetInput(Parms)
 ```
 
 #### Description
-...
+Checks whether input fields are present, or requests them.
 
 ----
 ### xASL_adm_UnzipOrCopy.m
 
 #### Function
 ```matlab
-...
+function unpackedFiles = xASL_adm_UnzipOrCopy(srcDir, wildCard, destDir, bOverwrite)
 ```
 
 #### Description
-...
+Unpacks (or copy if unpacked) one or more files matching the regular expression.
 
 ----
 ### xASL_adm_Voxel2RealWorldCoordinates.m
 
 #### Function
 ```matlab
-...
+function [X Y Z] = xASL_adm_Voxel2RealWorldCoordinates(X,Y,Z,VoxelSize)
 ```
 
 #### Description
-...
+Converts MNI coordinates from voxel coordinates/indices.
+Assumes X Y Z = LR LeftRight AP AnteriorPosterior IS InferiorSuperior.
+VoxelSize should be [1 3]-sized input.
 
 ----
 ### xASL_adm_ZipFileList.m
 
 #### Function
 ```matlab
-...
+function filepaths = xASL_adm_ZipFileList(strDirectory, strRegExp, bRecurse, bUseGzip, nRequired, bDelete)
 ```
 
 #### Description
-...
+Zip the files that match regular expression STRREGEXP in the given directory STRDIRECTORY.
+Zips recursively if specified in BRECURSE. Zips all files unless the number is specified by NREQUIRED, if the number is not met, then does not zip anything and throws an error.
 
 ----
 ### xASL_bids_Add2ParticipantsTSV.m
 
 #### Function
 ```matlab
-...
+function xASL_bids_Add2ParticipantsTSV(DataIn, DataName, x, bOverwrite)
 ```
 
 #### Description
-...
+This function adds metadata/statistical variables to the participants.tsv in the root/analysis folder, by the following steps. 
+This function will iterate over Data provided at DataIn and fill them in the participants.tsv, overwriting if allowed.
+Empty data is filled in as 'n/a', and the first column "participants_id" is sorted for participants.
 
 ----
 ### xASL_bids_Dicom2JSON.m
 
 #### Function
 ```matlab
-...
+function [parms, pathDcmDictOut] = xASL_bids_Dicom2JSON(imPar, inp, PathJSON, dcmExtFilter, bUseDCMTK, pathDcmDictIn)
 ```
 
 #### Description
-...
+The function goes through the INP files, reads the DICOM or PAR/REC files and parses their headers.
+It extracts the DICOM parameters important for ASL, makes sure they are in the correct format, if missing then replaces with default value, it also checks if the parameters are consistent across DICOM files for a single sequence.
 
 ----
 ### xASL_bids_InsertJSONFields.m
 
 #### Function
 ```matlab
-...
+function [ChildJSON] = xASL_bids_InsertJSONFields(ParentJSON, ChildJSON, Fields2Skip)
 ```
 
 #### Description
-...
+This function takes all parameters from the "parent" JSON & moves them into the "child" JSON.
+In case of co-existence of a field with different values, then the value in the child JSON will prevail, per BIDS inheritance.
 
 ----
 ### xASL_bids_parms2BIDS.m
 
 #### Function
 ```matlab
-...
+function outParms = xASL_bids_parms2BIDS(inXasl, inBids, bOutBids, bPriorityBids)
 ```
 
 #### Description
-...
+This functions takes two parameter structures and merges them. At the same time, renames all fields according to the output type (note that only some fields have two standardised names different between the two formats.
+
+In case of duplicities, takes the field value from the preferred format. 
+Also takes into account that the units in BIDS are s, but in xASL ms.
+This function performs the following steps:
+
+1. Define field names that need to be convert/renamed/merged
+2. Convert XASL fields to the output format (BIDS or XASL)
+3. Convert BIDS fields to the output format (BIDS or XASL)
+4. Merge the BIDS and XASL fields, convert field values
 
 ----
 ### xASL_bids_PARREC2JSON.m
