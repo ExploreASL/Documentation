@@ -6,6 +6,7 @@ nav:
     - Module Structural:  Structural_Module.md
     - Module ASL:         ASL_Module.md
     - Module Population:  Population_Module.md
+    - Functions:          Functions.md
     - License:            License.md
     - About:              About.md
 
