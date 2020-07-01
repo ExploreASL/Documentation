@@ -1,0 +1,4 @@
+Install:
+
+conda install -c conda-forge mkdocs
+pip install mkdocs-awesome-pages-plugin

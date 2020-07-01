@@ -1,0 +1,17 @@
+site_name: ExploreASL
+nav:
+    - Home:               index.md
+    - Modules:            Modules.md
+    - Module Import:      Import_Module.md
+    - Module Structural:  Structural_Module.md
+    - Module ASL:         ASL_Module.md
+    - Module Population:  Population_Module.md
+    - License:            License.md
+    - About:              About.md
+
+plugins:
+    - search
+    - awesome-pages
+
+theme: readthedocs
+
