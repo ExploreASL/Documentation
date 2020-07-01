@@ -495,16 +495,29 @@
             <div class="section">
               
                 <h2 id="list-of-exploreasl-functions">List of ExploreASL Functions</h2>
+<hr />
 <h3 id="xasl_adm_catchnumbersfromstring">xASL_adm_CatchNumbersFromString</h3>
+<h4 id="function">Function</h4>
 <pre><code class="matlab">function [OutputNumber] = xASL_adm_CatchNumbersFromString(InputString)
 </code></pre>
 
+<h4 id="description">Description</h4>
+<p>...</p>
+<hr />
 <h3 id="xasl_adm_checkfilecount">xASL_adm_CheckFileCount</h3>
-<p>Checks the given PATH for files corresponding to the SPM_SELECT regular expression EXPR. Returns if the number of files is equal to or higher than MINCOUNT. If FAILIFMISSING is true and not enough files, then throw and error. If everything goes ok and second output argument is specified then return also the list of files.</p>
+<h4 id="function_1">Function</h4>
 <pre><code class="matlab">function [result, files] = xASL_adm_CheckFileCount(path, expr, mincount, failifmissing)
 </code></pre>
 
+<h4 id="description_1">Description</h4>
+<p>Checks the given PATH for files corresponding to the SPM_SELECT regular expression EXPR. Returns if the number of files is equal to or higher than MINCOUNT. If FAILIFMISSING is true and not enough files, then throw and error. If everything goes ok and second output argument is specified then return also the list of files.</p>
+<hr />
 <h3 id="xasl_adm_checkpermissions">xASL_adm_CheckPermissions</h3>
+<h4 id="function_2">Function</h4>
+<pre><code class="matlab">function [FilesList, FilesExeList, FoldersList] = xASL_adm_CheckPermissions(InputPath, FilesExecutable)
+</code></pre>
+
+<h4 id="description_2">Description</h4>
 <p>This function does a recursive search through the root folder &amp; makes a list of the attributes of all files and folders.
 It tries to reset the attributes to what we desire, which is by default:</p>
 <ul>
@@ -512,15 +525,19 @@ It tries to reset the attributes to what we desire, which is by default:</p>
 <li>775 for folders (meaning reading, writing &amp; opening for current user &amp; current group, &amp; for others only reading &amp; opening) </li>
 </ul>
 <p>For executable files we also want 775. Note that the permission to 'execute a folder' means opening them</p>
-<pre><code class="matlab">function [FilesList, FilesExeList, FoldersList] = xASL_adm_CheckPermissions(InputPath, FilesExecutable)
-</code></pre>
-
 <h3 id="xasl_adm_checkspm">xASL_adm_CheckSPM</h3>
-<p>Checks if the spm function exists and if the reported version matches our development version (SPM8 or SPM12). If the spm toolbox is not available yet, it will try the PROPOSED_SPM_PATH (if specified) or the user selected directory and add it to PATH. The function will fail if SPM cannot be found or if detecting an unsupported version.</p>
+<h4 id="function_3">Function</h4>
 <pre><code class="matlab">function [spm_path, spm_version] = xASL_adm_CheckSPM(modality, proposed_spm_path, check_mode)
 </code></pre>
 
+<h4 id="description_3">Description</h4>
+<p>Checks if the spm function exists and if the reported version matches our development version (SPM8 or SPM12). If the spm toolbox is not available yet, it will try the PROPOSED_SPM_PATH (if specified) or the user selected directory and add it to PATH. The function will fail if SPM cannot be found or if detecting an unsupported version.</p>
 <h3 id="xasl_adm_cleanupbeforererun">xASL_adm_CleanUpBeforeRerun</h3>
+<h4 id="function_4">Function</h4>
+<pre><code class="matlab">function xASL_adm_CleanUpBeforeRerun(AnalysisDir, iModule, bRemoveWMH, bAllSubjects, SubjectID, SessionID)
+</code></pre>
+
+<h4 id="description_4">Description</h4>
 <p>This function (partly) reverts previous ExploreASL runs, deleting derivatives, while keeping raw data intact. if bAllSubjects==true, then all subjects and all module derivatives will be removed. This function performs the following steps:</p>
 <ol>
 <li>If a Population folder doesn't exist yet but dartel does, rename it</li>
@@ -533,25 +550,90 @@ It tries to reset the attributes to what we desire, which is by default:</p>
 <li>Remove population module files</li>
 <li>Remove or clean up stored x-struct &amp; QC file -&gt; THIS HAS NO SESSION SUPPORT YET</li>
 </ol>
-<pre><code class="matlab">function xASL_adm_CleanUpBeforeRerun(AnalysisDir, iModule, bRemoveWMH, bAllSubjects, SubjectID, SessionID)
-</code></pre>
-
 <h3 id="xasl_adm_comparedatasets">xASL_adm_CompareDataSets</h3>
-<p>Compares two ExploreASL datasets for reproducibility.</p>
+<h4 id="function_5">Function</h4>
 <pre><code class="matlab">function [RMS] = xASL_adm_CompareDataSets(RefAnalysisRoot,SourceAnalysisRoot,x,type,mutexState)
 </code></pre>
 
+<h4 id="description_5">Description</h4>
+<p>Compares two ExploreASL datasets for reproducibility.</p>
 <h3 id="xasl_adm_comparelistsm">xASL_adm_CompareLists.m</h3>
+<h4 id="function_6">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_6">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_convertdate2nrm">xASL_adm_ConvertDate2Nr.m</h3>
+<h4 id="function_7">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_7">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_convertnr2timem">xASL_adm_ConvertNr2Time.m</h3>
+<h4 id="function_8">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_8">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_convertsubjsess2subj_sessm">xASL_adm_ConvertSubjSess2Subj_Sess.m</h3>
+<h4 id="function_9">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_9">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_converttime2nrm">xASL_adm_ConvertTime2Nr.m</h3>
+<h4 id="function_10">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_10">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_copymovefilelistm">xASL_adm_CopyMoveFileList.m</h3>
+<h4 id="function_11">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_11">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_correctnamem">xASL_adm_CorrectName.m</h3>
+<h4 id="function_12">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_12">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_createcsvfilem">xASL_adm_CreateCSVfile.m</h3>
+<h4 id="function_13">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_13">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_createfilereportm">xASL_adm_CreateFileReport.m</h3>
+<h4 id="function_14">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_14">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_defineaslresolutionm">xASL_adm_DefineASLResolution.m</h3>
+<h4 id="function_15">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_15">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_deletefilepairm">xASL_adm_DeleteFilePair.m</h3>
+<h4 id="function_16">Function</h4>
+<pre><code class="matlab">...
+</code></pre>
+
+<h4 id="description_16">Description</h4>
+<p>...</p>
 <h3 id="xasl_adm_dicom2parmsm">xASL_adm_Dicom2Parms.m</h3>
 <h3 id="xasl_adm_findbyregexpm">xASL_adm_FindByRegExp.m</h3>
 <h3 id="xasl_adm_findstrindexm">xASL_adm_FindStrIndex.m</h3>
