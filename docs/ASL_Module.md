@@ -54,10 +54,12 @@ This submodule prepares partial volume correction (**PVC**) by creating correct 
 
 **Else:**
 Run step 3 only, which will use the effective spatial resolution that is default for the respective sequence:
+
 * **2D EPI**: \[1 1 1\] * VoxelSize
-* **3D GRASE**: \[1.1 1.1 1.38\] * VoxelSize
-* **3D spiral**: \[4.3 4.4 10.1\] * VoxelSize (assuming **GE** uses the upsampled 2x2x4 mm 
-& run steps 1&2, but in native space these entail presmoothing & downsampling.)
+* **3D GRASE**: \[1.1 1.1 1.38\] \* VoxelSize
+* **3D spiral**: \[4.3 4.4 10.1\] \* VoxelSize (assuming **GE** uses the upsampled 2x2x4 mm 
+
+...& run steps 1&2, but in native space these entail presmoothing & downsampling.)
 
 ### Recommended usage
 
