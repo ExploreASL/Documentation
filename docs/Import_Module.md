@@ -1,5 +1,5 @@
 
-ExploreASL uses an import Workflow based on ...
+ExploreASL uses an import workflow based on ...
 
 
 

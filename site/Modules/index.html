@@ -62,11 +62,13 @@
     
         <ul>
         
-            <li><a class="toctree-l3" href="#1-module-structural">1. Module Structural</a></li>
+            <li><a class="toctree-l3" href="#1-module-import">1. Module Import</a></li>
         
-            <li><a class="toctree-l3" href="#2-module-asl">2. Module ASL</a></li>
+            <li><a class="toctree-l3" href="#2-module-structural">2. Module Structural</a></li>
         
-            <li><a class="toctree-l3" href="#3-module-population">3. Module Population</a></li>
+            <li><a class="toctree-l3" href="#3-module-asl">3. Module ASL</a></li>
+        
+            <li><a class="toctree-l3" href="#4-module-population">4. Module Population</a></li>
         
         </ul>
     
@@ -138,12 +140,30 @@
               
                 <h1 id="modules">Modules</h1>
 <hr />
-<h2 id="1-module-structural">1. Module Structural</h2>
+<h2 id="1-module-import">1. Module Import</h2>
+<h3 id="functions">Functions</h3>
+<pre><code class="matlab">function ExploreASL_Import(imPar, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, bRunDCM2NII, bClone2Source, x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>...</p>
+<pre><code class="matlab">function imPar = ExploreASL_ImportConfig(StudyRoot)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>...</p>
+<pre><code class="matlab">function [x] = ExploreASL_Initialize(DataParPath, ProcessData, iWorker, nWorkers)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>...</p>
+<hr />
+<h2 id="2-module-structural">2. Module Structural</h2>
 <h3 id="function">Function</h3>
 <pre><code class="matlab">function [result, x] = xASL_module_Structural(x)
 </code></pre>
 
-<h3 id="description">Description</h3>
+<h3 id="description_3">Description</h3>
 <p>This first ExploreASL module processes the structural images, i.e. high-resolution <strong>T1w</strong> and <strong>FLAIR</strong> (if present), on an individual (i.e. subject-to-subject) basis. If a <strong>FLAIR</strong> is present, this is processed first to obtain a <strong>WMH</strong> mask to fill the hypointense lesions on the <strong>T1w</strong>, before segmenting the <strong>T1w</strong>. For the <strong>T1w</strong> segmentation this module uses <strong>CAT12</strong> by default but if this fails it falls back to <strong>SPM</strong> after trying to optimize the image contrast.</p>
 <h3 id="workflow">Workflow</h3>
 <ol>
@@ -208,12 +228,12 @@ x = ExploreASL_Initialize(DataParPath, ProcessData, iWorker, nWorkers);
 <li>...</li>
 </ul>
 <hr />
-<h2 id="2-module-asl">2. Module ASL</h2>
+<h2 id="3-module-asl">3. Module ASL</h2>
 <h3 id="function_1">Function</h3>
 <pre><code class="matlab">function [result, x] = xASL_module_ASL(x)
 </code></pre>
 
-<h3 id="description_1">Description</h3>
+<h3 id="description_4">Description</h3>
 <p>This ExploreASL module processes the ASL images, i.e. ASL4D, M0, etc (if present), on an individual (i.e. session-to-session, where session indicates BIDS "run") basis. Both 2D and 3D options are automatially chosen, as well as processing of time-series (if available), such as motion correction and outlier exclusion.</p>
 <h3 id="workflow_1">Workflow</h3>
 <ol>
@@ -248,12 +268,12 @@ x = ExploreASL_Initialize(DataParPath, ProcessData, iWorker, nWorkers);
 <li>...</li>
 </ul>
 <hr />
-<h2 id="3-module-population">3. Module Population</h2>
+<h2 id="4-module-population">4. Module Population</h2>
 <h3 id="function_2">Function</h3>
 <pre><code class="matlab">function [result, x] = xASL_module_Population(x)
 </code></pre>
 
-<h3 id="description_2">Description</h3>
+<h3 id="description_5">Description</h3>
 <p>This ExploreASL module processes all available images on the group level. It assumes that all images were adequately processed in the previous modules.</p>
 <h3 id="workflow_2">Workflow</h3>
 <ol>

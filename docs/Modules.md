@@ -1,7 +1,37 @@
 # Modules
 
+
 ----
-## 1. Module Structural
+## 1. Module Import
+
+### Functions
+
+```matlab
+function ExploreASL_Import(imPar, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, bRunDCM2NII, bClone2Source, x)
+```
+
+### Description
+...
+
+
+```matlab
+function imPar = ExploreASL_ImportConfig(StudyRoot)
+```
+
+### Description
+...
+
+
+```matlab
+function [x] = ExploreASL_Initialize(DataParPath, ProcessData, iWorker, nWorkers)
+```
+
+### Description
+...
+
+
+----
+## 2. Module Structural
 
 ### Function
 
@@ -68,7 +98,7 @@ Generated files:
 * ...
 
 ----
-## 2. Module ASL
+## 3. Module ASL
 
 ### Function
 
@@ -117,7 +147,7 @@ Generated files:
 * ...
 
 ----
-## 3. Module Population
+## 4. Module Population
 
 ### Function
 
