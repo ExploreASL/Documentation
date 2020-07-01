@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Modules - ExploreASL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Modules";
+    var mkdocs_page_input_path = "Modules.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ExploreASL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Modules</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#modules">Modules</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#1-module-structural">1. Module Structural</a></li>
+        
+            <li><a class="toctree-l3" href="#2-module-asl">2. Module ASL</a></li>
+        
+            <li><a class="toctree-l3" href="#3-module-population">3. Module Population</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Import_Module/">Module Import</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Structural_Module/">Module Structural</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ASL_Module/">Module ASL</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Population_Module/">Module Population</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../License/">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../About/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ExploreASL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Modules</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="modules">Modules</h1>
+<hr />
+<h2 id="1-module-structural">1. Module Structural</h2>
+<h3 id="function">Function</h3>
+<pre><code class="matlab">function [result, x] = xASL_module_Structural(x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>This first ExploreASL module processes the structural images, i.e. high-resolution <strong>T1w</strong> and <strong>FLAIR</strong> (if present), on an individual (i.e. subject-to-subject) basis. If a <strong>FLAIR</strong> is present, this is processed first to obtain a <strong>WMH</strong> mask to fill the hypointense lesions on the <strong>T1w</strong>, before segmenting the <strong>T1w</strong>. For the <strong>T1w</strong> segmentation this module uses <strong>CAT12</strong> by default but if this fails it falls back to <strong>SPM</strong> after trying to optimize the image contrast.</p>
+<h3 id="workflow">Workflow</h3>
+<ol>
+<li>
+<p><strong>LinearReg_T1w2MNI</strong>: Ensure the alignment of subjects' anterior commissure (AC) with the AC in MNI &amp; apply this to all images</p>
+</li>
+<li>
+<p><strong>LinearReg_FLAIR2T1w</strong>: Align the FLAIR (if present) with T1w</p>
+</li>
+<li>
+<p><strong>FLAIR_BiasfieldCorrection</strong>: Perform a biasfield correction (if not performed  by LST in following steps)</p>
+</li>
+<li>
+<p><strong>LST_Segment_FLAIR_WMH</strong>: Segment WMH lesions on FLAIR (if present)</p>
+</li>
+<li>
+<p><strong>LST_T1w_LesionFilling_WMH</strong>: Use WMH segmentation to fill lesions on T1w</p>
+</li>
+<li>
+<p><strong>Segment_T1w</strong>: Tissue segmentation on T1w</p>
+</li>
+<li>
+<p><strong>CleanUpWMH_SEGM</strong>: Extra WMH cleanup of some over- and under-segmentation</p>
+</li>
+<li>
+<p><strong>Resample2StandardSpace</strong>: Clone all images to standard space</p>
+</li>
+<li>
+<p><strong>GetVolumetrics</strong>: Obtain whole-brain volumes of GM, WM, CSF, WMH</p>
+</li>
+<li>
+<p><strong>VisualQC</strong>: Obtain QC parameters &amp; save QC Figures</p>
+</li>
+<li>
+<p><strong>DoWADQCDC</strong>: QC for WAD-QC DICOM server (optional)</p>
+</li>
+</ol>
+<h3 id="recommended-usage">Recommended usage</h3>
+<pre><code class="matlab">% Initialize dataset
+DataParPath = &quot;ExamplePath&quot;;
+ProcessData = true;
+iWorker = 1;
+nWorkers = 1;
+x = ExploreASL_Initialize(DataParPath, ProcessData, iWorker, nWorkers);
+% Run the structural module
+[~, x] = xASL_Iteration(x,'xASL_module_Structural');
+</code></pre>
+
+<h3 id="interface-definition">Interface definition</h3>
+<h4 id="input-x-structure">Input: x structure</h4>
+<p>Required input fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<h4 id="output">Output</h4>
+<p>Added output fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<p>Generated files:</p>
+<ul>
+<li>...</li>
+</ul>
+<hr />
+<h2 id="2-module-asl">2. Module ASL</h2>
+<h3 id="function_1">Function</h3>
+<pre><code class="matlab">function [result, x] = xASL_module_ASL(x)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>This ExploreASL module processes the ASL images, i.e. ASL4D, M0, etc (if present), on an individual (i.e. session-to-session, where session indicates BIDS "run") basis. Both 2D and 3D options are automatially chosen, as well as processing of time-series (if available), such as motion correction and outlier exclusion.</p>
+<h3 id="workflow_1">Workflow</h3>
+<ol>
+<li><strong>TopUpASL</strong>: FSL TopUp geometric distortion correction (if M0 images with reversed phase-encoding are present)</li>
+<li><strong>RealignASL</strong>: If time-series are present, motion correction and outlier exclusion (ENABLE)</li>
+<li><strong>RegisterASL</strong>: Registration of ASL to T1w anatomical images (if lacking, to MNI images)</li>
+<li><strong>ResliceASL</strong>: Resample ASL images to standard space</li>
+<li><strong>PreparePV</strong>: Create partial volume images in ASL space with ASL resolution</li>
+<li><strong>ProcessM0</strong>: M0 image processing</li>
+<li><strong>Quantification</strong>: CBF quantification</li>
+<li><strong>CreateAnalysisMask</strong>: Create mask using FoV, vascular outliers &amp; susceptibility atlas</li>
+<li><strong>VisualQC_ASL</strong>: Generate QC parameters &amp; images</li>
+<li><strong>WADQC</strong>:  QC for WAD-QC DICOM server (OPTIONAL)</li>
+</ol>
+<h3 id="recommended-usage_1">Recommended usage</h3>
+<pre><code class="matlab">[~, x] = xASL_Iteration(x,'xASL_module_ASL');
+</code></pre>
+
+<h3 id="interface-definition_1">Interface definition</h3>
+<h4 id="input-x-structure_1">Input: x structure</h4>
+<p>Required input fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<h4 id="output_1">Output</h4>
+<p>Added output fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<p>Generated files:</p>
+<ul>
+<li>...</li>
+</ul>
+<hr />
+<h2 id="3-module-population">3. Module Population</h2>
+<h3 id="function_2">Function</h3>
+<pre><code class="matlab">function [result, x] = xASL_module_Population(x)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>This ExploreASL module processes all available images on the group level. It assumes that all images were adequately processed in the previous modules.</p>
+<h3 id="workflow_2">Workflow</h3>
+<ol>
+<li><strong>CreatePopulationTemplates</strong>: Create population average images, to compare scanners, cohorts etc without physiological variance</li>
+<li><strong>CreateAnalysisMask</strong>: Generate a group-level mask by combining individuals masks, for ROI-based analysis &amp; VBA</li>
+<li><strong>CreateBiasfield</strong>: When there are multiple scanners, create scanner-specific biasfields (uses Site.mat for this)</li>
+<li><strong>GetDICOMStatistics</strong>: Create TSV file with overview of DICOM parameters</li>
+<li><strong>GetVolumeStatistics</strong>: Create TSV file with overview of volumetric parameters</li>
+<li><strong>GetMotionStatistics</strong>: Create TSV file with overview of motion parameters</li>
+<li><strong>GetROIstatistics</strong>: Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)</li>
+<li><strong>SortBySpatialCoV</strong>: Sort ASL_Check QC images by their spatial CoV in quality bins</li>
+<li><strong>DeleteAndZip</strong>: Delete temporary files and gzip all NIfTIs</li>
+</ol>
+<h3 id="recommended-usage_2">Recommended usage</h3>
+<pre><code class="matlab">[~, x] = xASL_Iteration(x,'xASL_module_Population');
+</code></pre>
+
+<h3 id="interface-definition_2">Interface definition</h3>
+<h4 id="input-x-structure_2">Input: x structure</h4>
+<p>Required input fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<h4 id="output_2">Output</h4>
+<p>Added output fields of the x structure:</p>
+<ul>
+<li>...</li>
+</ul>
+<p>Generated files:</p>
+<ul>
+<li>...</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Import_Module/" class="btn btn-neutral float-right" title="Module Import">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Import_Module/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

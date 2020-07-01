@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Module Population - ExploreASL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Module Population";
+    var mkdocs_page_input_path = "Population_Module.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ExploreASL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Modules/">Modules</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Import_Module/">Module Import</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Structural_Module/">Module Structural</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ASL_Module/">Module ASL</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Module Population</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#submodules-of-the-population-module">Submodules of the Population Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#delete-many-temp-files">Delete Many Temp Files</a></li>
+        
+            <li><a class="toctree-l3" href="#gzip-all-files">Gzip All Files</a></li>
+        
+            <li><a class="toctree-l3" href="#create-analysis-mask">Create Analysis Mask</a></li>
+        
+            <li><a class="toctree-l3" href="#sort-by-spatial-cov">Sort By Spatial CoV</a></li>
+        
+            <li><a class="toctree-l3" href="#compute-ws-cv">Compute Ws CV</a></li>
+        
+            <li><a class="toctree-l3" href="#get-acquisition-time">Get Acquisition Time</a></li>
+        
+            <li><a class="toctree-l3" href="#get-dicom-statistics">Get DICOM Statistics</a></li>
+        
+            <li><a class="toctree-l3" href="#get-motion-statistics">Get Motion Statistics</a></li>
+        
+            <li><a class="toctree-l3" href="#get-volume-statistics">Get Volume Statistics</a></li>
+        
+            <li><a class="toctree-l3" href="#create-biasfield">Create Biasfield</a></li>
+        
+            <li><a class="toctree-l3" href="#create-population-templates">Create Population Templates</a></li>
+        
+            <li><a class="toctree-l3" href="#get-roi-statistics">Get ROI statistics</a></li>
+        
+            <li><a class="toctree-l3" href="#load-4d-mem-mapping-lesions-rois">Load 4D Mem Mapping Lesions ROIs</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../License/">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../About/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ExploreASL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Module Population</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="submodules-of-the-population-module">Submodules of the Population Module</h1>
+<hr />
+<h2 id="delete-many-temp-files">Delete Many Temp Files</h2>
+<h3 id="function">Function</h3>
+<pre><code class="matlab">function xASL_adm_DeleteManyTempFiles(x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>This function removes as many files as possible.</p>
+<h3 id="workflow">Workflow</h3>
+<h3 id="recommended-usage">Recommended usage</h3>
+<h3 id="interface-definition">Interface definition</h3>
+<hr />
+<h2 id="gzip-all-files">Gzip All Files</h2>
+<h3 id="function_1">Function</h3>
+<pre><code class="matlab">function xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>This function zips all .nii files recursively into nii.gz. Note that the linux option cannot deal with spaces in filenames or directories.</p>
+<h3 id="workflow_1">Workflow</h3>
+<h3 id="recommended-usage_1">Recommended usage</h3>
+<h3 id="interface-definition_1">Interface definition</h3>
+<hr />
+<h2 id="create-analysis-mask">Create Analysis Mask</h2>
+<h3 id="function_2">Function</h3>
+<pre><code class="matlab">function [x] = xASL_im_CreateAnalysisMask(x, Threshold)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>Creates population analysis mask.</p>
+<h3 id="workflow_2">Workflow</h3>
+<p>This function takes the mean population-based probability maps of masks, thresholds and combines them:
+1. Creation GM, WM &amp; WholeBrain masks by p&gt;0.5
+2. Create, combine &amp; save vascular, susceptibity &amp; FoV masks:
+    * MaskVascular
+    * MaskSusceptibility = MaskSusceptibility &amp; MaskFoV
+3. Create &amp; save VBA mask
+    * MaskAnalysis = MaskVascular &amp; MaskSusceptibility
+    * x.S.VBAmask = MaskAnalysis &amp; GMmask
+4. Visualization: Creates a figure with columns being following maps/masks overlaid over mean population T1w:
+    * FoV probability 0-50% missing voxels
+    * Vascular 0-7.5% missing voxels
+    * Susceptibility 0-50% missing voxels
+    * Analysis mask</p>
+<h3 id="recommended-usage_2">Recommended usage</h3>
+<h3 id="interface-definition_2">Interface definition</h3>
+<hr />
+<h2 id="sort-by-spatial-cov">Sort By Spatial CoV</h2>
+<h3 id="function_3">Function</h3>
+<pre><code class="matlab">function xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
+</code></pre>
+
+<h3 id="description_3">Description</h3>
+<p>Compute statistics for each ROI.</p>
+<h3 id="workflow_3">Workflow</h3>
+<p>This function organizes the ASL QC images in <strong>//analysis/Population/ASLCheck</strong> into CBF, vascular and artifactual contrast per the spatial CoV thresholds defined above, in folders:</p>
+<ul>
+<li>//analysis/Population/ASLCheck/1_CBFContrast</li>
+<li>//analysis/Population/ASLCheck/2_VascularContrast</li>
+<li>//analysis/Population/ASLCheck/3_ArtifactualContrast</li>
+</ul>
+<p>Invalid spatial CoV numbers (e.g. NaN) will go to:</p>
+<ul>
+<li>//analysis/Population/ASLCheck/4_Unknown_sCoV</li>
+</ul>
+<p>Note: these outputs need to be visually checked; but pre-sorting them by spatial CoV puts them already in categories that are quick to skim through and manually correct by moving the images</p>
+<p>The idea is then that only category 1 images are used for perfusion (CBF) analyses, both categories 1 &amp; 2 for the vascular (sCoV) analyses, and the category 3 images excluded from analysis.</p>
+<p><strong>PM</strong>: this code does not include multiple sessions per subject yet!</p>
+<p><strong>NB</strong>: this code uses the <strong>//analysis/Population/Stats/CoV_qCBF<em>TotalGM</em>.csv</strong> file, make sure that this file isn't edited! </p>
+<h3 id="recommended-usage_3">Recommended usage</h3>
+<h3 id="interface-definition_3">Interface definition</h3>
+<hr />
+<h2 id="compute-ws-cv">Compute Ws CV</h2>
+<h3 id="function_4">Function</h3>
+<pre><code class="matlab">function x = xASL_stat_ComputeWsCV(x)
+</code></pre>
+
+<h3 id="description_4">Description</h3>
+<p>Calculates the within and between-subject coefficient of variance (wsCV and bsCV respectively), to estimate the power to detect effects. This requires 4D images that have been split.</p>
+<h3 id="workflow_4">Workflow</h3>
+<h3 id="recommended-usage_4">Recommended usage</h3>
+<h3 id="interface-definition_4">Interface definition</h3>
+<hr />
+<h2 id="get-acquisition-time">Get Acquisition Time</h2>
+<h3 id="function_5">Function</h3>
+<pre><code class="matlab">function x = xASL_stat_GetAcquisitionTime(x)
+</code></pre>
+
+<h3 id="description_5">Description</h3>
+<p>Summarize the acquisition time of scans.</p>
+<h3 id="workflow_5">Workflow</h3>
+<p>This functions collects the DICOM field AcquisitionTime from each json sidecar (&amp; parms.mat for backward compatibility) and saves them in the participants.tsv. Additionally, it creates a AcquisitionTime histogram of the full study, which can be useful to check time of scanning -&gt; can influence physiological CBF variability.</p>
+<ol>
+<li>Collect times</li>
+<li>Save times</li>
+<li>Create time histogram</li>
+</ol>
+<h3 id="recommended-usage_5">Recommended usage</h3>
+<h3 id="interface-definition_5">Interface definition</h3>
+<hr />
+<h2 id="get-dicom-statistics">Get DICOM Statistics</h2>
+<h3 id="function_6">Function</h3>
+<pre><code class="matlab">function xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions, bOverwrite)
+</code></pre>
+
+<h3 id="description_6">Description</h3>
+<p>Collect DICOM metadata in CSV file to check.</p>
+<h3 id="workflow_6">Workflow</h3>
+<p>This functions prints DICOM metadata (e.g. parameters used for quantification) and collects them in a single tsv (per BIDS).
+Summarizes this for the total population. Can be useful to detect software upgrades, where only slight parameter changes can hint on quantification changes.</p>
+<p>This function carries out the following steps:</p>
+<ol>
+<li>Load &amp; save individual parameter files</li>
+<li>Print summary</li>
+<li>Write TSV file</li>
+</ol>
+<h3 id="recommended-usage_6">Recommended usage</h3>
+<h3 id="interface-definition_6">Interface definition</h3>
+<hr />
+<h2 id="get-motion-statistics">Get Motion Statistics</h2>
+<h3 id="function_7">Function</h3>
+<pre><code class="matlab">function xASL_stat_GetMotionStatistics(x)
+</code></pre>
+
+<h3 id="description_7">Description</h3>
+<p>Summarize motion values.</p>
+<h3 id="workflow_7">Workflow</h3>
+<p>This functions collects motion stats, with the following steps:</p>
+<ol>
+<li>Collect motion data</li>
+<li>If no data, skip this function</li>
+<li>Print motion vs exclusion overview</li>
+<li>Add motion data to participants.tsv</li>
+</ol>
+<h3 id="recommended-usage_7">Recommended usage</h3>
+<h3 id="interface-definition_7">Interface definition</h3>
+<hr />
+<h2 id="get-volume-statistics">Get Volume Statistics</h2>
+<h3 id="function_8">Function</h3>
+<pre><code class="matlab">function xASL_stat_GetVolumeStatistics(x)
+</code></pre>
+
+<h3 id="description_8">Description</h3>
+<p>Summarize volume values.</p>
+<h3 id="workflow_8">Workflow</h3>
+<p>This functions collects motion stats, with the following steps:</p>
+<ol>
+<li>Collect structural volume data</li>
+<li>Collect WMH data</li>
+<li>Add stats in participants.tsv</li>
+</ol>
+<h3 id="recommended-usage_8">Recommended usage</h3>
+<h3 id="interface-definition_8">Interface definition</h3>
+<hr />
+<h2 id="create-biasfield">Create Biasfield</h2>
+<h3 id="function_9">Function</h3>
+<pre><code class="matlab">function xASL_wrp_CreateBiasfield(x)
+</code></pre>
+
+<h3 id="description_9">Description</h3>
+<p>Create sequence-specific intensity biasfields.</p>
+<h3 id="workflow_9">Workflow</h3>
+<p>This function creates a smooth biasfield as intensity map to normalize intensities between different sequences/scanner/sites within a single study.
+This is a simple pragmatic approach and is not validated, but is the best we can do.</p>
+<p>First acquires average additive &amp; multiplicative factors for total GM, then does a smooth voxel-wise rescaling. 
+This doesn't make an assumption whether site or sequence differences are additive or multiplicative, but rather fits them both. 
+Global scaling it performed to GM CBF == 60 mL/100g/min</p>
+<p><strong>NB</strong>: make sure that sequence resolution differences have been taken in account before creating these biasfields.</p>
+<p><strong>PM</strong>: add normalization of between-subjects SD as well.</p>
+<p><strong>PM</strong>: are there other things we can normalize?</p>
+<h3 id="recommended-usage_9">Recommended usage</h3>
+<h3 id="interface-definition_9">Interface definition</h3>
+<hr />
+<h2 id="create-population-templates">Create Population Templates</h2>
+<h3 id="function_10">Function</h3>
+<pre><code class="matlab">function xASL_wrp_CreatePopulationTemplates(x, SaveUnmasked, bCompute4Sets, SpecificScantype, bSkipMissingScans, bRemoveOutliers, FunctionsAre)
+</code></pre>
+
+<h3 id="description_10">Description</h3>
+<p>ExploreASL Population module wrapper, creates population parametric images for each ScanType.</p>
+<h3 id="workflow_10">Workflow</h3>
+<p>This function creates simple parametric images, a.k.a. templates, for different image/scan types, on population level, as well as for different sets (e.g. sites/scanners/cohorts, etc) if specified. By default these images are masked, and transformed into a single column, for quick computations with low memory usage. 
+The default parametric images that are created are the mean, between-subject SD, and the maximal intensity projection (MIP). 
+The latter can e.g. identify intra-vascular signal that is similar between different subjects. Other parametric maps can be decommented (now commented out for speed).</p>
+<h3 id="recommended-usage_10">Recommended usage</h3>
+<h3 id="interface-definition_10">Interface definition</h3>
+<hr />
+<h2 id="get-roi-statistics">Get ROI statistics</h2>
+<h3 id="function_11">Function</h3>
+<pre><code class="matlab">function xASL_wrp_GetROIstatistics(x)
+</code></pre>
+
+<h3 id="description_11">Description</h3>
+<p>Compute statistics for each ROI.</p>
+<h3 id="workflow_11">Workflow</h3>
+<p>This wrapper organizes the computation of statistics for different ROIs in a [1.5 1.5 1.5] mm MNI space:</p>
+<ol>
+<li>Load the atlas: xASL_stat_AtlasForStats</li>
+<li>Organize TSV output name: using x.S.output_ID</li>
+<li>Obtain the ROI statistics: xASL_stat_GetROIstatistics</li>
+<li>Print statistics in TSV files: xASL_stat_PrintStats</li>
+</ol>
+<h3 id="recommended-usage_11">Recommended usage</h3>
+<h3 id="interface-definition_11">Interface definition</h3>
+<hr />
+<h2 id="load-4d-mem-mapping-lesions-rois">Load 4D Mem Mapping Lesions ROIs</h2>
+<h3 id="function_12">Function</h3>
+<pre><code class="matlab">function [x] = xASL_wrp_Load4DMemMapping_LesionsROIs(x)
+</code></pre>
+
+<h3 id="description_12">Description</h3>
+<p>Part of ExploreASL analysis module. Loads data &amp; maps it to memory mapping file on disc, if not done before.</p>
+<h3 id="workflow_12">Workflow</h3>
+<h3 id="recommended-usage_12">Recommended usage</h3>
+<h3 id="interface-definition_12">Interface definition</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../License/" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ASL_Module/" class="btn btn-neutral" title="Module ASL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ASL_Module/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../License/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

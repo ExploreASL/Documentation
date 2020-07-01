@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Module Structural - ExploreASL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Module Structural";
+    var mkdocs_page_input_path = "Structural_Module.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ExploreASL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Modules/">Modules</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Import_Module/">Module Import</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Module Structural</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#submodules-of-the-structural-module">Submodules of the Structural Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#clean-up-wmh-segm">Clean Up WMH SEGM</a></li>
+        
+            <li><a class="toctree-l3" href="#flair-biasfield-correction">FLAIR Biasfield Correction</a></li>
+        
+            <li><a class="toctree-l3" href="#get-volumetrics">Get Volumetrics</a></li>
+        
+            <li><a class="toctree-l3" href="#lst-segment-flair-wmh">LST Segment FLAIR WMH</a></li>
+        
+            <li><a class="toctree-l3" href="#lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</a></li>
+        
+            <li><a class="toctree-l3" href="#linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</a></li>
+        
+            <li><a class="toctree-l3" href="#linear-reg-t1w2mni">Linear Reg T1w2MNI</a></li>
+        
+            <li><a class="toctree-l3" href="#resample-2-standard-space">Resample 2 Standard Space</a></li>
+        
+            <li><a class="toctree-l3" href="#segment-t1w">Segment T1w</a></li>
+        
+            <li><a class="toctree-l3" href="#visual-qc-structural">Visual QC Structural</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ASL_Module/">Module ASL</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Population_Module/">Module Population</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../License/">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../About/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ExploreASL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Module Structural</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="submodules-of-the-structural-module">Submodules of the Structural Module</h1>
+<hr />
+<h2 id="clean-up-wmh-segm">Clean Up WMH SEGM</h2>
+<h3 id="function">Function</h3>
+<pre><code class="matlab">function xASL_wrp_CleanUpWMH_SEGM(x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that cleans up under- and over-segmentations of <strong>WMH SEGM</strong>.</p>
+<h3 id="workflow">Workflow</h3>
+<p>This submodule aims to clean up <strong>WMH</strong> under- or oversegmentations in a conservatively &amp; robust way, i.e. erring on the side of caution.
+It uses input from the tissue class segmentation (e.g. <strong>CAT12</strong>) to repair the WMH segmentation (e.g. <strong>LST LPA/LGA</strong> or externally provided).
+Note that before running the tissue segmentation, the <strong>T1w</strong> was (conservatively) filled for <strong>WMH</strong> lesions.
+This function is not tested a lot, so mainly conservatively set up to improve the <strong>WMH</strong> volumetrics, rather than improve the registration.</p>
+<p>This submodule contains the following steps:</p>
+<ol>
+<li>Administration</li>
+<li>Correct <strong>pGM</strong> islands inside <strong>pWM</strong>: <strong>WMH</strong> can have an intensity similar to <strong>GM</strong> on the <strong>T1w</strong>, which erroneously classifies them as <strong>GM</strong> instead of <strong>WM(H)</strong>. The rule used here, is to define <strong>GM</strong> islands within the <strong>WM</strong> as clusters of <strong>pGM</strong>&gt;0.05 for which 3 layers (dilations) have at least 95% <strong>pWM</strong>. For these islands, <strong>pGM</strong> is given 100% to <strong>pWM</strong>. 50% of <strong>pWM</strong> is given to pWMH (the <strong>pWMH/pNAWM</strong> distinction is made later in the pipeline, here still <strong>pWM=pWMH+pNAWM</strong>). The reason is that not all low <strong>T1w</strong> intensities within the <strong>WM</strong> are <strong>WMH</strong>, we still expect some lacunes, perivascular (Virchow-Robin) spaces, which could be considered pNAWM rather than pWMH.</li>
+<li>Perform brainmasking &amp; join masks</li>
+<li>Correct any <strong>WMH</strong> inside <strong>GM</strong> or <strong>CSF</strong> -&gt; here we assume that <strong>CAT12</strong> did a good segmentation job. If <strong>pGM</strong> is larger than pWM &amp; larger than <strong>pWMH</strong>, we consider a voxel to be <strong>pGM</strong> and remove the pWMH. This effectively removes pWMH segmentation noise in the <strong>GM</strong> or <strong>CSF</strong>, it doesn't correct any significant misclassification of <strong>WMH</strong> in the <strong>GM</strong> or <strong>CSF</strong>. If the <strong>WMH</strong> segmentation does a significant misclassification (e.g. setting the <strong>pWMH</strong> inside <strong>GM</strong> or <strong>CSF</strong> to a probability higher than <strong>GM</strong> or <strong>CSF</strong> is by tissue segmentation), this is lesion filled after the WMH segmentation, on the <strong>T1w</strong>, hence the tissue segmentation won't have a chance to correct this. Fortunately, most oversegmentations in the <strong>GM/CSF</strong> have low <strong>pWMH</strong>, as <strong>WMH</strong> segmentation algorithms already perform a light tissue prior-based clean up themselves.</li>
+<li>Saving &amp; file management</li>
+<li>Prepare visuals for visual <strong>QC</strong> &amp; file management</li>
+</ol>
+<h3 id="recommended-usage">Recommended usage</h3>
+<h3 id="interface-definition">Interface definition</h3>
+<hr />
+<h2 id="flair-biasfield-correction">FLAIR Biasfield Correction</h2>
+<h3 id="function_1">Function</h3>
+<pre><code class="matlab">function xASL_wrp_FLAIR_BiasfieldCorrection(x)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
+<h3 id="workflow_1">Workflow</h3>
+<p>This submodule performs a biasfield correction on <strong>T1w</strong> and applies it on <strong>FLAIR</strong>. This can be useful, when there are large lesions on the <strong>FLAIR</strong> that hamper capturing the biasfield nicely on the <strong>FLAIR</strong> itself. In such cases, the biasfield of the <strong>T1w</strong> might be easier to obtain and should be the same as the <strong>FLAIR</strong>, provided they are scanned in the same scan session (i.e.g same scanner, same coil).</p>
+<p><strong>BE CAREFUL</strong>: this submodule assumes that the biasfields of the <strong>T1w</strong> and <strong>FLAIR</strong> are comparable, which is not the case when one of the two (or both) are already biasfield corrected.</p>
+<h3 id="recommended-usage_1">Recommended usage</h3>
+<h3 id="interface-definition_1">Interface definition</h3>
+<hr />
+<h2 id="get-volumetrics">Get Volumetrics</h2>
+<h3 id="function_2">Function</h3>
+<pre><code class="matlab">function xASL_wrp_GetVolumetrics(x)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that obtains volumes from the tissue segmentations (&amp; <strong>FLAIR WMH</strong> segmentations if they exist).</p>
+<h3 id="workflow_2">Workflow</h3>
+<p>This submodule computes the total volume for each of the tissue classes &amp; stores them in a <strong>TSV</strong> file (per <strong>BIDS</strong>).
+This is computed from the native space segmentation derivatives (<strong>GM, WM &amp; CSF</strong>), from which the <strong>ICV</strong> &amp; relative volumes can be calculated. 
+This is performed for <strong>CAT12</strong> or <strong>SPM12</strong> (whichever was used), and optionally for a <strong>WMH_SEGM</strong>.</p>
+<h3 id="recommended-usage_2">Recommended usage</h3>
+<h3 id="interface-definition_2">Interface definition</h3>
+<hr />
+<h2 id="lst-segment-flair-wmh">LST Segment FLAIR WMH</h2>
+<h3 id="function_3">Function</h3>
+<pre><code class="matlab">function xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath, WMHsegmAlg)
+</code></pre>
+
+<h3 id="description_3">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
+<h3 id="workflow_3">Workflow</h3>
+<p>This submodule runs the <strong>LST WMH</strong> segmentation, either with <strong>LGA</strong> or <strong>LPA</strong>.
+<strong>LPA</strong> is the default choice, it outperforms LGA a bit, depending on the image quality. 
+These algorithms perform optimally with <strong>3T</strong> images, with good contrast. Generally, <strong>LPA</strong> oversegments whereas <strong>LGA</strong> undersegments.
+The <strong>LPA</strong> oversegmentation is corrected in a later submodule.
+If a <strong>WMH_SEGM</strong> already existed, the <strong>LST</strong> is run quickly as dummy only, to be replaced by the original <strong>WMH_SEGM</strong> image. This function has the following parts:</p>
+<ol>
+<li>Reslice <strong>FLAIR</strong> (&amp; <strong>WMH_SEGM</strong>, if exists) to T1w</li>
+<li>Define parameters for segmentation</li>
+<li>Run the segmentation</li>
+<li>Replace by already existing <strong>WMH_SEGM</strong></li>
+<li>File management</li>
+<li>Remove NaNs from segmentations &amp; fix image edges</li>
+</ol>
+<h3 id="recommended-usage_3">Recommended usage</h3>
+<h3 id="interface-definition_3">Interface definition</h3>
+<hr />
+<h2 id="lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</h2>
+<h3 id="function_4">Function</h3>
+<pre><code class="matlab">function xASL_wrp_LST_T1w_LesionFilling_WMH(x, rWMHPath)
+</code></pre>
+
+<h3 id="description_4">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that performs lesion filling on <strong>T1w</strong> based on <strong>WMH</strong> segmented on the <strong>FLAIR</strong>.</p>
+<h3 id="workflow_4">Workflow</h3>
+<p>This submodule runs the <strong>LST</strong> <strong>WMH</strong>-based <strong>T1w</strong> lesion filling, which should improve the registration &amp; segmentation of the <strong>T1w</strong> by e.g. <strong>CAT12/SPM12</strong>. The <strong>WMH</strong> can be either segmented in the previous submodule by <strong>LST LGA/LPGA</strong> or provided externally.
+Before lesion filling, we clean up the WMH segmentation, to make the lesion filling a bit more conservative. 
+Sometimes the <strong>WMH</strong> segmentation oversegments inside the GM (as there can be hyperintensities on the <strong>FLAIR</strong>) &amp; we don't want to lesion-fill these on the <strong>T1w</strong> (which would turn their intensities in intensities similar to <strong>WM</strong>, leading to misclassifications by the <strong>T1w</strong> segmentation).
+Note that this is submodule only performs the lesion filling, and the clean up is also performed for the lesion filling only.
+A more thorough <strong>WMH</strong> clean up (for e.g. <strong>WMH</strong> volumetrics) is performed later in the Structural module, using also the results from the T1w segmentation.</p>
+<p>Note when changing the lesion filling here, <strong>LST</strong> lesion filling expects a probability map, doesnt work nicely with binary mask
+This function runs the following steps:</p>
+<ol>
+<li>File management</li>
+<li>Clean up the WMH segmentation used for lesion filling</li>
+<li>Run lesion filling</li>
+<li>Correction of too much/erronous lesion filling</li>
+<li>File management</li>
+</ol>
+<h3 id="recommended-usage_4">Recommended usage</h3>
+<h3 id="interface-definition_4">Interface definition</h3>
+<hr />
+<h2 id="linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</h2>
+<h3 id="function_5">Function</h3>
+<pre><code class="matlab">function xASL_wrp_LinearReg_FLAIR2T1w(x, bAutoACPC)
+</code></pre>
+
+<h3 id="description_5">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that aligns <strong>FLAIR</strong> with <strong>T1w</strong>.</p>
+<h3 id="workflow_5">Workflow</h3>
+<p>This submodule registers <strong>FLAIR</strong> linearly to the <strong>T1w</strong>.
+The same transformation is applied to all other related scans (<strong>FLAIR</strong>-segmented lesions, <strong>WMH</strong> specifically or other lesions).
+This is required to enable the application of T1w derivatives (e.g. transformations to standard space, tissue segmentation) for <strong>FLAIR</strong> and vice versa (e.g. <strong>WMH</strong> lesion-filling).</p>
+<h3 id="recommended-usage_5">Recommended usage</h3>
+<h3 id="interface-definition_5">Interface definition</h3>
+<hr />
+<h2 id="linear-reg-t1w2mni">Linear Reg T1w2MNI</h2>
+<h3 id="function_6">Function</h3>
+<pre><code class="matlab">function xASL_wrp_LinearReg_T1w2MNI(x, bAutoACPC)
+</code></pre>
+
+<h3 id="description_6">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that aligns <strong>T1w</strong> with <strong>MNI</strong>.</p>
+<h3 id="workflow_6">Workflow</h3>
+<p>This submodule registers T1w linearly to the center of MNI space, a.k.a. <strong>ACPC</strong> alignment.
+The same transformation is applied to all other related scans (<strong>ASL4D, M0, FLAIR,</strong> etc.).
+This facilitates <strong>MNI</strong>-based algorithms (e.g. <strong>SPM</strong>-based segmentation), and allows for visual <strong>QC</strong> with all images roughly in the same space. This submodule first clips high values that can bias the registration algorithm, then performs a center of mass-based <strong>ACPC</strong> alignment, and then several iterations of <strong>SPM</strong> coregistration.
+Assuming that this submodule is run at the start of ExploreASL, all NIfTI orientation matrices are restored before running the registration.</p>
+<h3 id="recommended-usage_6">Recommended usage</h3>
+<h3 id="interface-definition_6">Interface definition</h3>
+<hr />
+<h2 id="resample-2-standard-space">Resample 2 Standard Space</h2>
+<h3 id="function_7">Function</h3>
+<pre><code class="matlab">function xASL_wrp_Resample2StandardSpace(x)
+</code></pre>
+
+<h3 id="description_7">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that resamples all structural images &amp; derivatives.</p>
+<h3 id="workflow_7">Workflow</h3>
+<p>This submodule resamples all structural images &amp; their derivatives to standard space. 
+It uses the transformation fields that were obtained previously in the Structural module, concatenates all transformations into a single transformation (if not already done) &amp; applies the transformation with a single interpolation (either trilinear for low quality or probability maps, or 2nd order B-spline). 
+Finally, it computes the Jacobian determinants (i.e. the derivative of the transformation field) to obtain a map of the volumetric effects of the transformation. 
+This Jacobian map is multiplied with the standard space resampled images, to restore their (local &amp; global) total volume. 
+The sum of volumes in native &amp; standard space are compared as <strong>QC</strong>.
+This submodule is not only part of the structural module, but can be repeated when the transformation map is edited, e.g. after longitudinal registration or after creation of a group-wise template.</p>
+<h3 id="recommended-usage_7">Recommended usage</h3>
+<h3 id="interface-definition_7">Interface definition</h3>
+<hr />
+<h2 id="segment-t1w">Segment T1w</h2>
+<h3 id="function_8">Function</h3>
+<pre><code class="matlab">function [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
+</code></pre>
+
+<h3 id="description_8">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that segments <strong>3D T1</strong> (or <strong>T2</strong>) scan.</p>
+<h3 id="workflow_8">Workflow</h3>
+<p>This submodule segments high resolution structural/anatomical scans into <strong>GM/WM/CSF</strong>/soft tissue/bone/air tissue classes.
+It will save <strong>GM/WM/CSF</strong> in native space, and the transformation from native to standard space.
+This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>.</p>
+<p>This submodule contains the following steps:</p>
+<ol>
+<li>Administration</li>
+<li>Extra segmentation options by Jan Petr</li>
+<li>Segmentation using <strong>CAT12</strong><ul>
+<li>If <strong>CAT12</strong> fails, it will be repeated with higher contrast, higher strength affine preprocessing &amp; less biasfield regularization</li>
+<li>If <strong>CAT12</strong> fails twice, it will be skipped &amp; <strong>SPM12</strong> will be run</li>
+</ul>
+</li>
+<li>Segmentation using SPM12</li>
+<li>File management <strong>CAT12</strong></li>
+<li>File management lesions</li>
+<li>Resample lesions to standard space<ul>
+<li>For the lesion masking. MORE EXPLANATION NEEDED BY JAN</li>
+</ul>
+</li>
+<li>Manage flowfields<ul>
+<li>Smooth combination non-linear flowfield outside the lesion &amp; uniform flowfield within the lesion</li>
+</ul>
+</li>
+<li>File management</li>
+</ol>
+<h3 id="recommended-usage_8">Recommended usage</h3>
+<h3 id="interface-definition_8">Interface definition</h3>
+<hr />
+<h2 id="visual-qc-structural">Visual QC Structural</h2>
+<h3 id="function_9">Function</h3>
+<pre><code class="matlab">function xASL_wrp_VisualQC_Structural(x)
+</code></pre>
+
+<h3 id="description_9">Description</h3>
+<p>Submodule of ExploreASL Structural Module, that performs several visualizations for .</p>
+<h3 id="workflow_9">Workflow</h3>
+<p>This submodule performs several visualizations for visual &amp; quantitative <strong>QC</strong>.</p>
+<ol>
+<li>After initial admin</li>
+<li>It starts with the SPM UP parameters (courtesy of Cyril Pernet, his SPM UP scripts were made more robust &amp; accurate by Jan &amp; Henk, &amp; are implemented here for <strong>T1w</strong> (&amp; optionally <strong>FLAIR</strong>).</li>
+<li>Then it performs a collection of visualizations</li>
+<li>Also repeated specifically for lesions &amp; manually provided <strong>ROIs</strong></li>
+<li>Finally, this contains a report of all missing raw &amp; derivative files, in native &amp; standard space, printing the NIfTI orientation matrix content before (<strong>hdr.mat0</strong>) &amp; after registrations (<strong>hdr.mat</strong>). The determinant of these matrices should be the same, otherwise LeftRight has flipped. This should also be the same across a group scanned at the same scanner. Then various other <strong>QC</strong> functions are called &amp; all are summarized in a PDF report.</li>
+</ol>
+<h3 id="recommended-usage_9">Recommended usage</h3>
+<h3 id="interface-definition_9">Interface definition</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ASL_Module/" class="btn btn-neutral float-right" title="Module ASL">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Import_Module/" class="btn btn-neutral" title="Module Import"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Import_Module/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ASL_Module/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

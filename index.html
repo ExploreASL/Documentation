@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Home - ExploreASL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> ExploreASL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <span class="caption-text">Home</span>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#exploreasl">ExploreASL</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#description">Description</a></li>
+        
+            <li><a class="toctree-l3" href="#highlighted-features">Highlighted Features</a></li>
+        
+            <li><a class="toctree-l3" href="#features">Features</a></li>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#workflow">Workflow</a></li>
+        
+            <li><a class="toctree-l3" href="#developers">Developers</a></li>
+        
+            <li><a class="toctree-l3" href="#other-contributors">Other Contributors</a></li>
+        
+            <li><a class="toctree-l3" href="#acknowledgement">Acknowledgement</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Modules/">Modules</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Import_Module/">Module Import</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Structural_Module/">Module Structural</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="ASL_Module/">Module ASL</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Population_Module/">Module Population</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="License/">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="About/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">ExploreASL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="exploreasl">ExploreASL</h1>
+<h2 id="description">Description</h2>
+<p><strong>ExploreASL</strong> is a pipeline and toolbox for image processing and statistics of arterial spin labeling perfusion <strong>MR</strong> images. It is designed as a <strong>multi-OS</strong>, open source, collaborative framework that facilitates cross-pollination between image processing method developers and clinical investigators.</p>
+<p>The software provides a complete head-to-tail approach that runs fully automatically, encompassing all necessary tasks from data import and structural segmentation, registration and normalization, up to <strong>CBF</strong> quantification. In addition, the software package includes and quality control (<strong>QC</strong>) procedures and region-of-interest (<strong>ROI</strong>) as well as voxel-wise analysis on the extracted data. To-date, <strong>ExploreASL</strong> has been used for processing ~10000 <strong>ASL</strong> datasets from all major <strong>MRI</strong> vendors and <strong>ASL</strong> sequences, and a variety of patient populations, representing ~30 studies. The ultimate goal of <strong>ExploreASL</strong> is to combine data from multiple studies to identify disease related perfusion patterns that may prove crucial in using <strong>ASL</strong> as a diagnostic took and enhance our understanding of the interplay of perfusion and structural changes in neurodegenerative pathophysiology. </p>
+<p>Additionally, this (semi-)automatic pipeline allows us to minimize manual intervention, which increases the reproducibility of studies. </p>
+<h2 id="highlighted-features">Highlighted Features</h2>
+<h2 id="features">Features</h2>
+<h2 id="installation">Installation</h2>
+<p>To use <strong>ExploreASL</strong> within Matlab, you can download a stable release version from the GitHub releases section. Navigate within Matlab to the <strong>ExporeASL</strong> directory, to make <strong>ExploreASL</strong> the current working directory. It is recommended to use the Matlab <strong>set paths</strong> option to add the <strong>ExploreASL</strong> folder and all subfolders to the known paths. Execute the master script to start the interactive <strong>ExploreASL</strong> workflow:</p>
+<pre><code class="matlab">ExploreASL_Master
+</code></pre>
+
+<h2 id="workflow">Workflow</h2>
+<p><img alt="ExploreASL Workflow" src="https://www.researchgate.net/profile/Andrew_Robertson7/publication/337328693/figure/fig1/AS:826578854481921@1574083164220/Schematic-diagram-of-ExploreASL-processing-steps-Steps-marked-with-a-are-optional.ppm" title="Workflow of ExploreASL" /></p>
+<h2 id="developers">Developers</h2>
+<p>Please contact the co-creators for more information:</p>
+<ul>
+<li>Henk-Jan Mutsaerts <em>HenkJanMutsaerts@Gmail.com</em></li>
+<li>Jan Petr <em>j.petr@hzdr.de</em></li>
+</ul>
+<h2 id="other-contributors">Other Contributors</h2>
+<h2 id="acknowledgement">Acknowledgement</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Modules/" class="btn btn-neutral float-right" title="Modules">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="Modules/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0
+Build Date UTC : 2020-07-01 10:09:46
+-->

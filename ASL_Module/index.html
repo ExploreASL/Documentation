@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Module ASL - ExploreASL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Module ASL";
+    var mkdocs_page_input_path = "ASL_Module.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> ExploreASL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Home</span>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Modules/">Modules</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Import_Module/">Module Import</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Structural_Module/">Module Structural</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Module ASL</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#submodules-of-the-asl-module">Submodules of the ASL Module</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#create-analysis-mask">Create Analysis Mask</a></li>
+        
+            <li><a class="toctree-l3" href="#prepare-pv">Prepare PV</a></li>
+        
+            <li><a class="toctree-l3" href="#process-m0">Process M0</a></li>
+        
+            <li><a class="toctree-l3" href="#quantify">Quantify</a></li>
+        
+            <li><a class="toctree-l3" href="#realign-asl">Realign ASL</a></li>
+        
+            <li><a class="toctree-l3" href="#register-asl">Register ASL</a></li>
+        
+            <li><a class="toctree-l3" href="#resample-asl">Resample ASL</a></li>
+        
+            <li><a class="toctree-l3" href="#visual-qc-asl">Visual QC ASL</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Population_Module/">Module Population</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../License/">License</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../About/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">ExploreASL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Module ASL</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="submodules-of-the-asl-module">Submodules of the ASL Module</h1>
+<hr />
+<h2 id="create-analysis-mask">Create Analysis Mask</h2>
+<h3 id="function">Function</h3>
+<pre><code class="matlab">function xASL_wrp_CreateAnalysisMask(x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>Create analysis mask from a combination of FoV &amp; removal of high and negative intravascular ASL voxels.</p>
+<h3 id="workflow">Workflow</h3>
+<ol>
+<li>Create <strong>FoV</strong> mask (native &amp; <strong>MNI</strong> spaces)</li>
+<li>Detect negative vascular signal (native &amp; <strong>MNI</strong> spaces, within <strong>pGM</strong>&gt;0.5)</li>
+<li>Detect peak vascular signal (native &amp; MNI spaces, within <strong>pGM</strong>==80% percentile on <strong>ASL</strong> image)</li>
+<li>Brainmasking &amp; <strong>FoV</strong>-masking (A) native &amp; B) <strong>MNI</strong> spaces): Add <strong>WM</strong> vascular parts back to the mask (defined as pWM&gt;0.8) &amp; remove extracranial signal. In the <strong>WM</strong>, negative or peak signal is more expected from noise rather than from intra-vascular signal, not many big vessels exist in the <strong>WM</strong>.</li>
+<li>Save vascular masks</li>
+<li>Create susceptibility mask (standard space only): Here, we combine manually segmented susceptibility artifact regions in which a population-based susceptibility probability map is created. This map is combined (i.e. taking the product) with the mean control &amp; PWI intensity distribution in these regions. This product is thresholded with the average of the 75th percentile &amp; 15% of the intensity (for a bit more robustness against individual variability in sinus sizes).</li>
+<li>Create standard space CBF_masked image to visualize masking effect</li>
+</ol>
+<h3 id="recommended-usage">Recommended usage</h3>
+<h3 id="interface-definition">Interface definition</h3>
+<hr />
+<h2 id="prepare-pv">Prepare PV</h2>
+<h3 id="function_1">Function</h3>
+<pre><code class="matlab">function x = xASL_wrp_PreparePV(x, bStandardSpace)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>Submodule of ExploreASL <strong>ASL</strong> Module, to prepare <strong>PV</strong> maps on <strong>ASL</strong> resolution.</p>
+<h3 id="workflow_1">Workflow</h3>
+<p>This submodule prepares partial volume correction (<strong>PVC</strong>) by creating correct <strong>PV</strong> maps in <strong>ASL</strong> resolution, in native space, as well as in standard space if requested (to perform <strong>PVC</strong> in standard space).</p>
+<p><strong>If</strong> bStandardSpace:
+1. Create dummy upsampled ASL scan, for registration
+2. Reslice <strong>pGM</strong> &amp; <strong>pWM</strong> to hi-res <strong>ASL</strong>
+3. Estimate effective spatial resolution of <strong>ASL</strong>
+4. Smooth <strong>pGM</strong> &amp; <strong>pWM</strong> to this spatial resolution
+5. Move smoothed tissue posteriors to <strong>MNI</strong> space</p>
+<p><strong>Else:</strong>
+Run step 3 only, which will use the effective spatial resolution that is default for the respective sequence:
+<em> <strong>2D EPI</strong>: [1 1 1] * VoxelSize
+</em> <strong>3D GRASE</strong>: [1.1 1.1 1.38] * VoxelSize
+* <strong>3D spiral</strong>: [4.3 4.4 10.1] * VoxelSize (assuming <strong>GE</strong> uses the upsampled 2x2x4 mm 
+&amp; run steps 1&amp;2, but in native space these entail presmoothing &amp; downsampling.)</p>
+<h3 id="recommended-usage_1">Recommended usage</h3>
+<h3 id="interface-definition_1">Interface definition</h3>
+<hr />
+<h2 id="process-m0">Process M0</h2>
+<h3 id="function_2">Function</h3>
+<pre><code class="matlab">function xASL_wrp_ProcessM0(x)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>Submodule of ExploreASL ASL Module, for M0 image processing.</p>
+<h3 id="workflow_2">Workflow</h3>
+<p>This submodule performs the image processing and quantification of <strong>M0</strong> maps (if they exist), with the following steps:</p>
+<ol>
+<li>Register <strong>M0</strong> to mean control if it exists: Before registration, contrast is equalized between the images &amp; biasfields are removed.</li>
+<li>Quantify <strong>M0</strong> (correction scale slope &amp; incomplete T1 recovery)</li>
+<li>Masking &amp; smoothing of <strong>M0</strong> image, either using:</li>
+<li><strong>A)</strong> traditional technique (very sharp masking &amp; little smoothing)</li>
+<li><strong>B)</strong> new ExploreASL-specific technique:</li>
+<li>extrapolating outside mask (avoiding artifacts from too much or too little masking)</li>
+<li>smooth very extensively, to create a biasfield (increases robustness &amp; comparison of M0 between sequences/patients)</li>
+</ol>
+<p>Any <strong>M0</strong> will be processed here. Even if part of the subjects does not have an <strong>M0</strong>, since this can be later imputed, or an average population <strong>M0</strong> image could be used. Also, without background suppression and without an <strong>M0</strong>, the MeanControl image is before saved as <strong>M0</strong>, and will be processed here as well.</p>
+<p>Note that any voxel-size differences between <strong>M0</strong> and ASL are allowed here: step 0B below rescales the <strong>PD</strong> inside an <strong>M0</strong> voxel to the same as the <strong>ASL</strong> resolution (assuming a voxel with half volume contains half the amount of protons). The M0 is further processed in standard space, and reduced to a biasfield. For the quantification in standard space, the <strong>PWI</strong> and <strong>M0</strong> are now by definition in the same space. Also, the standard space <strong>M0</strong> biasfield is resampled to the native <strong>PWI</strong> space (at the end of step <strong>3B)</strong>, ensuring that both are also in the same native space.</p>
+<h3 id="recommended-usage_2">Recommended usage</h3>
+<h3 id="interface-definition_2">Interface definition</h3>
+<hr />
+<h2 id="quantify">Quantify</h2>
+<h3 id="function_3">Function</h3>
+<pre><code class="matlab">function xASL_wrp_Quantify(x, PWI_Path, OutputPath, M0Path, SliceGradientPath)
+</code></pre>
+
+<h3 id="description_3">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that performs quantfication.</p>
+<h3 id="workflow_3">Workflow</h3>
+<p>This submodule converts PWIs to quantified CBF maps (or related derivatives):</p>
+<ol>
+<li>Load <strong>PWI</strong></li>
+<li>Prepare <strong>M0</strong></li>
+<li>Hematocrit &amp; blood <strong>T1</strong> correction</li>
+<li><strong>ASL</strong> &amp; <strong>M0</strong> parameters comparisons</li>
+<li>Load SliceGradient</li>
+<li>Initialize &amp; define quantification parameters</li>
+<li>Define labeling efficiency</li>
+<li>Perform quantification</li>
+<li>Save files</li>
+<li>Perform FEAST quantification (if exist)</li>
+</ol>
+<h3 id="recommended-usage_3">Recommended usage</h3>
+<h3 id="interface-definition_3">Interface definition</h3>
+<hr />
+<h2 id="realign-asl">Realign ASL</h2>
+<h3 id="function_4">Function</h3>
+<pre><code class="matlab">function xASL_wrp_RealignASL(x,bSubtraction)
+</code></pre>
+
+<h3 id="description_4">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that realigns.</p>
+<h3 id="workflow_4">Workflow</h3>
+<p>This submodule estimates motion by spm_realign, which uses a rigid-body registration (3 translations, 3 rotations). It runs ENABLE to reject outliers and provides a visualization. <strong>ENABLE</strong>, <strong>QC</strong> and visualizations are based on the Net Displacement Vector (<strong>NDV</strong>) (in mm): according to Pythagorean/Euclydian <strong>RMS</strong>.</p>
+<p>Link: <a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1211&amp;L=fsl&amp;P=R34458&amp;1=fsl&amp;9=A&amp;J=on&amp;d=No+Match%3BMatch%3BMatches&amp;z=4">jiscmail</a></p>
+<p>View this link for image of rotation roll, pitch and yaw: <a href="https://www.google.nl/search?q=rotation+pitch+yaw+roll&amp;espv=2&amp;tbm=isch&amp;imgil=LW3Nn1K-L6Oc7M%253A%253B-aSyykkRityJoM%253Bhttp%25253A%25252F%25252Fwww.grc.nasa.gov%25252FWWW%25252Fk-12%25252Fairplane%25252Frotations.html&amp;source=iu&amp;usg=__MlLQ5VuyRbm6kZP0vBJlPxmfbkw%3D&amp;sa=X&amp;ei=TWfjU4WcK4bqyQPqu4Fo&amp;ved=0CD8Q9QEwBQ&amp;biw=1680&amp;bih=946#facrc=_&amp;imgdii=_&amp;imgrc=LW3Nn1K-L6Oc7M%253A%3B-aSyykkRityJoM%3Bhttp%253A%252F%252Fwww.grc.nasa.gov%252FWWW%252Fk-12%252Fairplane%252FImages%252Frotations.gif%3Bhttp%253A%252F%252Fwww.grc.nasa.gov%252FWWW%252Fk-12%252Fairplane%252Frotations.html%3B709%3B533">grcnasa</a></p>
+<p>This submodule performs the following steps:
+1. Estimate motion
+2. Calculate and plot position and motion parameters
+3. Threshold-free spike definition (based on <strong>ENABLE</strong>, but with t-stats rather than the threshold p&lt;0.05)
+4. Remove spike frames from Nifti</p>
+<h3 id="recommended-usage_4">Recommended usage</h3>
+<h3 id="interface-definition_4">Interface definition</h3>
+<hr />
+<h2 id="register-asl">Register ASL</h2>
+<h3 id="function_5">Function</h3>
+<pre><code class="matlab">function xASL_wrp_RegisterASL(x)
+</code></pre>
+
+<h3 id="description_5">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that registers ASL to T1w (or potentially other structural images).</p>
+<h3 id="workflow_5">Workflow</h3>
+<p>This submodule registers ASL images to <strong>T1w</strong> space, by using a combination of the registration techniques below. Note that in the absence of raw structural files (i.e. <strong>T1</strong>.nii[.gz] or <strong>T1_ORI</strong>.nii[.gz], it will recreate dummy files from standard space to do this registration.</p>
+<p><strong>M0-T1w rigid-body</strong>  -&gt; this works well in <strong>2D EPI</strong> sequences
+<strong>PWI-pGM rigid-body</strong> -&gt; this is robust across sequences with different
+                      readouts and consequently different effective spatial resolutions. With
+                      low spatial resolution (e.g. <strong>GE 3D</strong> spiral product sequence), M0-T1w
+                      registration may not work, but <strong>PWI-pGM</strong> will work.
+                      <strong>PWI-pGM</strong> registration fails with large (vascular) artifacts, therefore
+                      this is performed only with relatively low spatial <strong>CoV</strong>.
+<strong>PWI-pGM affine</strong>     -&gt; If the spatial <strong>CoV</strong> is sufficiently low, this can
+                      improve the registration</p>
+<p>These images are registered to <strong>ASL</strong> templates that were inversely
+transformed from <strong>MNI</strong> to the <strong>T1w</strong> space (&amp; resampled to the <strong>ASL</strong> space)
+As this would have an ever higher similarity with the <strong>M0 &amp; PWI</strong>.</p>
+<p>This submodule performs the following steps:</p>
+<ol>
+<li>
+<p>Administration:</p>
+<ul>
+<li><strong>ASL4D</strong> is dealth with, if motion peaks were removed this is called
+  <strong>despiked_ASL4D</strong></li>
+<li>a default "OtherList" is specified. This is used every registration instance, except for removing the ref and src NIfTIs used in the registration instance. Also, inside the registration function the unexisting OtherList NIfTIs are skipped</li>
+<li>Define paths to the ASL templates</li>
+<li>Previous registration output files are removed</li>
+<li>Allow registration without structural data</li>
+<li>native -&gt; <strong>MNI</strong> transformation flow field <strong>y_T1.nii</strong> is smoothed to the effective <strong>ASL</strong> resolution <strong>y_ASL.nii</strong></li>
+<li>
+<p>Registration contrasts are dealth with:</p>
+<ul>
+<li>x.bRegistrationContrast - specifies the image contrast used for registration (OPTIONAL, DEFAULT = 2):<ul>
+<li>0 = Control -&gt; <strong>T1w</strong></li>
+<li>1 = <strong>CBF</strong> -&gt; <strong>pseudoCBF</strong> from template/<strong>pGM</strong>+<strong>pWM</strong> (skip if <strong>sCoV</strong>&gt;0.667)</li>
+<li>2 = automatic (mix of both)</li>
+<li>3 = option 2 &amp; force <strong>CBF</strong>-&gt;<strong>pseudoCBF</strong> irrespective of <strong>sCoV</strong> or Tanimoto coefficient</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Dummy src NIfTIs are created:</p>
+<ul>
+<li><strong>mean_control.nii</strong> to register with <strong>T1w</strong></li>
+<li><strong>mean_PWI_Clipped.nii</strong> to register with <strong>pseudoCBF</strong></li>
+</ul>
+</li>
+<li>Create reference images, downsampled pseudoTissue</li>
+</ul>
+</li>
+<li>
+<p>Registration Center of Mass</p>
+</li>
+<li>Registration <strong>ASL</strong> -&gt; anat (Control -&gt; <strong>T1w</strong>) (this step is only applied if it improves the Tanimoto coefficient)</li>
+<li>Registration CBF-&gt;pseudoCBF (this step is only applied if it improves the Tanimoto coefficient). Also, this step is only applied if the spatial <strong>CoV</strong> &lt; 0.67. Note that this is usually the case for <strong>3D</strong> scans because of their lower effective spatial resolution.<ul>
+<li>x.bAffineRegistration - specifies the <strong>ASL-T1w</strong> rigid-body registration is followed up by an affine registration (OPTIONAL, DEFAULT = 2)<ul>
+<li>0 = affine registration disabled</li>
+<li>1 = affine registration enabled</li>
+<li>2 = affine registration automatically chosen based on spatial <strong>CoV</strong> of <strong>PWI</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="recommended-usage_5">Recommended usage</h3>
+<h3 id="interface-definition_5">Interface definition</h3>
+<hr />
+<h2 id="resample-asl">Resample ASL</h2>
+<h3 id="function_6">Function</h3>
+<pre><code class="matlab">function xASL_wrp_ResampleASL(x)
+</code></pre>
+
+<h3 id="description_6">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that reslices native space images to standard space.</p>
+<h3 id="workflow_6">Workflow</h3>
+<p>This submodule resamples native space NIfTIs to standard space, using the deformation fields computed in the structural module after smoothing these transformation fields to the <strong>ASL</strong> resolution. The applied interpolation is a combination of all transformations (e.g. motion correction, registration to <strong>T1w</strong>, and transformation of T1w to standard space. This submodule performs the following steps:</p>
+<ol>
+<li>Create slice gradient image for quantification reference, in case of <strong>2D ASL</strong></li>
+<li>Reslice <strong>ASL</strong> time series to <strong>MNI</strong> space (currently 1.5 mm^3)</li>
+<li>Create mean control image, if available: This also applies a bilateral filter, if requested. If x.M0 is set as UseControlAsM0, this mean control NIfTI will be copied to an <strong>M0</strong> NIfTI (and processed in the M0 submodule).</li>
+<li>Perform pair-wise subtraction (to create <strong>PWI.nii</strong>), in native space</li>
+<li>Same in standard space</li>
+<li>Save <strong>PWI</strong> NIfTI &amp; time-series-related maps (<strong>SD, SNR</strong>)</li>
+</ol>
+<h3 id="recommended-usage_6">Recommended usage</h3>
+<h3 id="interface-definition_6">Interface definition</h3>
+<hr />
+<h2 id="visual-qc-asl">Visual QC ASL</h2>
+<h3 id="function_7">Function</h3>
+<pre><code class="matlab">function xASL_wrp_VisualQC_ASL(x)
+</code></pre>
+
+<h3 id="description_7">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that performs several visualizations for <strong>QC</strong>.</p>
+<h3 id="workflow_7">Workflow</h3>
+<p>This submodule performs several visualizations for visual &amp; quantitative <strong>QC</strong>.
+1. After initial admin
+2. It starts with making <strong>ASL</strong> NIfTIs ready for visualization &amp; conversion to DICOM (though skipped by default)
+3. Then it performs a collection of visualizations
+4. Visualizes results of the TopUp geometric distortion correction
+5. Visualization of slice gradient
+6. Visualization &amp; calculation of temporal <strong>QC</strong> parameters
+7. Compute <strong>DICE</strong> overlap/intersection of <strong>ASL</strong> brain in <strong>FoV &amp; T1w</strong>, to calculate coverage
+8. Summarize orientation &amp; check left-right flips
+9. Collect several other parameters &amp; store in PDF overview</p>
+<h3 id="recommended-usage_7">Recommended usage</h3>
+<h3 id="interface-definition_7">Interface definition</h3>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Population_Module/" class="btn btn-neutral float-right" title="Module Population">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Structural_Module/" class="btn btn-neutral" title="Module Structural"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Structural_Module/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Population_Module/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
