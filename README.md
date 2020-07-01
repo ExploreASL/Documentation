@@ -2,7 +2,7 @@
 
 This repository includes the interactive GitHub pages documentation of ExploreASL.
 
-### Click me: https://exploreasl.github.io/Documentation/
+You can find the interactive ExploreASL documentation here: https://exploreasl.github.io/Documentation/
 
 ### Build Process
 
