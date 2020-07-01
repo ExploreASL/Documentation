@@ -194,11 +194,13 @@
 4. Smooth <strong>pGM</strong> &amp; <strong>pWM</strong> to this spatial resolution
 5. Move smoothed tissue posteriors to <strong>MNI</strong> space</p>
 <p><strong>Else:</strong>
-Run step 3 only, which will use the effective spatial resolution that is default for the respective sequence:
-<em> <strong>2D EPI</strong>: [1 1 1] * VoxelSize
-</em> <strong>3D GRASE</strong>: [1.1 1.1 1.38] * VoxelSize
-* <strong>3D spiral</strong>: [4.3 4.4 10.1] * VoxelSize (assuming <strong>GE</strong> uses the upsampled 2x2x4 mm 
-&amp; run steps 1&amp;2, but in native space these entail presmoothing &amp; downsampling.)</p>
+Run step 3 only, which will use the effective spatial resolution that is default for the respective sequence:</p>
+<ul>
+<li><strong>2D EPI</strong>: [1 1 1] * VoxelSize</li>
+<li><strong>3D GRASE</strong>: [1.1 1.1 1.38] * VoxelSize</li>
+<li><strong>3D spiral</strong>: [4.3 4.4 10.1] * VoxelSize (assuming <strong>GE</strong> uses the upsampled 2x2x4 mm </li>
+</ul>
+<p>...&amp; run steps 1&amp;2, but in native space these entail presmoothing &amp; downsampling.)</p>
 <h3 id="recommended-usage_1">Recommended usage</h3>
 <h3 id="interface-definition_1">Interface definition</h3>
 <hr />
