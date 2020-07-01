@@ -17,13 +17,13 @@ pip install mkdocs-awesome-pages-plugin
 Download the GitHub repository and test the mkdocs system by typing in the following command in your command window:
 
 ```
-run mkdocs serve
+mkdocs serve
 ```
 
 If you updated markdown files, you can generate a new site with the following command:
 
 ```
-run mkdocs build
+mkdocs build
 ```
 
 
