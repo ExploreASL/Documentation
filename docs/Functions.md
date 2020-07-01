@@ -285,7 +285,7 @@ This script provides the correct scaling factors for a NIfTI file. It checks the
 
 #### Function
 ```matlab
-...
+function UserName = xASL_adm_GetUserName()
 ```
 
 #### Description
@@ -296,99 +296,121 @@ This script provides the correct scaling factors for a NIfTI file. It checks the
 
 #### Function
 ```matlab
-...
+function outNum = xASL_adm_Hex2Num(inStr, type, endian)
 ```
 
 #### Description
-...
+Takes a hexadecimal string and converts it to number. Works also when the string contains escape characters, and for single-floats and for a little and big endian. If containing 8 and less characters than treat as float, if more than as double.
 
 ----
 ### xASL_adm_LesionResliceList.m
 
 #### Function
 ```matlab
-...
+function [INname, OUTname] = xASL_wrp_LesionResliceList(x,bLesion_T1,bLesion_FLAIR,bROI_T1,bROI_FLAIR)
 ```
 
 #### Description
-...
+Creates list of structural image paths to reslice.
 
 ----
 ### xASL_adm_Load4DMemMapping.m
 
 #### Function
 ```matlab
-...
+function LoadFile = xASL_adm_Load4DMemMapping(x, WhichModality)
 ```
 
 #### Description
-...
+Part of ExploreASL analysis module. Loads data & maps it to memory mapping file on disc, if not done before.
 
 ----
 ### xASL_adm_LoadParms.m
 
 #### Function
 ```matlab
-...
+function [Parms, x, Oldx] = xASL_adm_LoadParms(ParmsPath, x, bVerbose)
 ```
 
 #### Description
-...
+This function loads the internal memory x struct, any legacy \*\_parms.mat sidecar, any \*.json BIDS sidecar, to use scan-specific parameters for image processing/quantification. Also, per BIDS inheritance, any x.S.SetsID parameters (from participants.tsv) are loaded as well. This function performs the following steps:
+
+1. Load .mat parameter file
+2. Load JSON file
+3. Deal with warnings
+4. Find fields with scan-specific data in x.S.Sets, and use this if possible (per BIDS inheritance)
+5. Sync Parms.\* with x.(Q.)\* (overwrite x/x.Q)
+6. Fix M0 parameter if not set
 
 ----
 ### xASL_adm_LoadX.m
 
 #### Function
 ```matlab
-...
+function [x, IsLoaded] = xASL_adm_LoadX(x, Path_xASL, bOverwrite)
 ```
 
 #### Description
-...
+This function loads x.Output & x.Output_im struct fields from the x.mat on the hard drive & adds them to the current x struct located in memory. If it didnt exist in the x.mat, it will set IsLoaded to false, which can be catched externally & a warning issued if managed so in the calling function. If it didnt exist in the memory x struct, or bOverwrite was requested, the contents of x.mat will be loaded to the memory x struct.
+
+----
+### xASL_adm_OrderFields.m
+
+#### Function
+```matlab
+function outStruct = xASL_adm_OrderFields(inStruct,orderStruct)
+```
+
+#### Description
+Order fields in the structure inStruct to match orderStruct, unmatching fields in inStruct are copied as they are at the end, unmatching fields in orderStruct are ignored. This is just a cosmetic change and no values are edited.
 
 ----
 ### xASL_adm_OtherListSPM.m
 
 #### Function
 ```matlab
-...
+function [OtherListSPM, OtherListOut] = xASL_adm_OtherListSPM(OtherList, bList4D)
 ```
 
 #### Description
-...
+Takes care of the others list for registration functions. 
+
+**bPadComma1:** is to add the ,1 to the end of the pathstring, which SPM uses to assign the first image of a 4D image array (OPTIONAL, DEFAULT = true)
+
+**bList4D:** boolean, true for listing multiple 4D volumes separately in the list (OPTIONAL, DEFAULT=true).
 
 ----
 ### xASL_adm_Par2Parms.m
 
 #### Function
 ```matlab
-...
+function parms = xASL_adm_Par2Parms(pathPar, pathParms, bRecreate)
 ```
 
 #### Description
-...
+Opens the Philips type PAR file. Reads the relevant DICOM headers and saves them to .MAT file. Only recreates an existing file if bRecreate option is set to TRUE.
 
 ----
 ### xASL_adm_ParReadHeader.m
 
 #### Function
 ```matlab
-...
+function info =xASL_adm_ParReadHeader(filename)
 ```
 
 #### Description
-...
+Function for reading the header of a Philips Par / Rec  MR V4.\* file.
 
 ----
 ### xASL_adm_Remove_1_SPM.m
 
 #### Function
 ```matlab
-...
+function [ OtherList ] = xASL_adm_Remove_1_SPM(OtherList)
 ```
 
 #### Description
-...
+Remove, 1 at end of OtherLists, if exists. These are appended in CoregInit, OldNormalizeWrapper etc, since this should allow 4rd dim (e.g. as in ASL4D).
 
 ----
 ### xASL_adm_ReplaceSymbols.m
