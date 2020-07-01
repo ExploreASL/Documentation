@@ -789,7 +789,7 @@ It extracts the DICOM parameters important for ASL, makes sure they are in the c
 <hr />
 <h3 id="xasl_adm_parreadheaderm">xASL_adm_ParReadHeader.m</h3>
 <h4 id="function_32">Function</h4>
-<pre><code class="matlab">function info =xASL_adm_ParReadHeader(filename)
+<pre><code class="matlab">function info = xASL_adm_ParReadHeader(filename)
 </code></pre>
 
 <h4 id="description_32">Description</h4>
@@ -797,7 +797,7 @@ It extracts the DICOM parameters important for ASL, makes sure they are in the c
 <hr />
 <h3 id="xasl_adm_remove_1_spmm">xASL_adm_Remove_1_SPM.m</h3>
 <h4 id="function_33">Function</h4>
-<pre><code class="matlab">function [ OtherList ] = xASL_adm_Remove_1_SPM(OtherList)
+<pre><code class="matlab">function [OtherList] = xASL_adm_Remove_1_SPM(OtherList)
 </code></pre>
 
 <h4 id="description_33">Description</h4>
@@ -805,11 +805,11 @@ It extracts the DICOM parameters important for ASL, makes sure they are in the c
 <hr />
 <h3 id="xasl_adm_replacesymbolsm">xASL_adm_ReplaceSymbols.m</h3>
 <h4 id="function_34">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_adm_ResetVisualizationSlices(x)
 </code></pre>
 
 <h4 id="description_34">Description</h4>
-<p>...</p>
+<p>Removes any predefined slices that should be visualized, allowing to show the default slices. Comes in handy when different pipeline visualization parts are repeated.</p>
 <hr />
 <h3 id="xasl_adm_resetvisualizationslicesm">xASL_adm_ResetVisualizationSlices.m</h3>
 <h4 id="function_35">Function</h4>
@@ -1925,35 +1925,35 @@ It extracts the DICOM parameters important for ASL, makes sure they are in the c
 <hr />
 <h3 id="xasl_stat_ttestm">xASL_stat_ttest.m</h3>
 <h4 id="function_174">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [H,P,CI,stats] = xASL_stat_ttest(X,M,alpha,tail,dim)
 </code></pre>
 
 <h4 id="description_174">Description</h4>
-<p>...</p>
+<p>Performs a t-test that the distribution of the input data X has a mean different from 0 (or from a given mean M, or that the distributions X and Y have different means). A normal distribution of the data with an unknown variance is assumed.</p>
 <hr />
 <h3 id="xasl_stat_ttest2m">xASL_stat_ttest2.m</h3>
 <h4 id="function_175">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [H,P,CI,stats] = xASL_stat_ttest2(X,Y,alpha,tail,vartype,dim)
 </code></pre>
 
 <h4 id="description_175">Description</h4>
-<p>...</p>
+<p>Performs a unpaired t-test that the distribution of the input data X has a mean different from that of Y.  A normal distribution of the data with an unknown variance is assumed.</p>
 <hr />
 <h3 id="xasl_stat_varnanm">xASL_stat_VarNan.m</h3>
 <h4 id="function_176">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function y = xASL_stat_VarNan(x,w,dim)
 </code></pre>
 
 <h4 id="description_176">Description</h4>
-<p>...</p>
+<p>Calculates variance of values in X while ignoring NaNs.</p>
 <hr />
 <h3 id="xasl_str2numm">xASL_str2num.m</h3>
 <h4 id="function_177">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [DataOut] = xASL_str2num(DataIn)
 </code></pre>
 
 <h4 id="description_177">Description</h4>
-<p>...</p>
+<p>str2num wrapper, replacing 'n/a' with NaN (BIDS convention) and converting only strings to numbers. Also allows inputting cells.</p>
               
             </div>
           </div>

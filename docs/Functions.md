@@ -395,7 +395,7 @@ Opens the Philips type PAR file. Reads the relevant DICOM headers and saves them
 
 #### Function
 ```matlab
-function info =xASL_adm_ParReadHeader(filename)
+function info = xASL_adm_ParReadHeader(filename)
 ```
 
 #### Description
@@ -406,7 +406,7 @@ Function for reading the header of a Philips Par / Rec  MR V4.\* file.
 
 #### Function
 ```matlab
-function [ OtherList ] = xASL_adm_Remove_1_SPM(OtherList)
+function [OtherList] = xASL_adm_Remove_1_SPM(OtherList)
 ```
 
 #### Description
@@ -417,11 +417,12 @@ Remove, 1 at end of OtherLists, if exists. These are appended in CoregInit, OldN
 
 #### Function
 ```matlab
-...
+function [x] = xASL_adm_ResetVisualizationSlices(x)
 ```
 
 #### Description
-...
+Removes any predefined slices that should be visualized, allowing to show the default slices. Comes in handy when different pipeline visualization parts are repeated.
+
 
 ----
 ### xASL_adm_ResetVisualizationSlices.m
@@ -1957,43 +1958,43 @@ Remove, 1 at end of OtherLists, if exists. These are appended in CoregInit, OldN
 
 #### Function
 ```matlab
-...
+function [H,P,CI,stats] = xASL_stat_ttest(X,M,alpha,tail,dim)
 ```
 
 #### Description
-...
+Performs a t-test that the distribution of the input data X has a mean different from 0 (or from a given mean M, or that the distributions X and Y have different means). A normal distribution of the data with an unknown variance is assumed.
 
 ----
 ### xASL_stat_ttest2.m
 
 #### Function
 ```matlab
-...
+function [H,P,CI,stats] = xASL_stat_ttest2(X,Y,alpha,tail,vartype,dim)
 ```
 
 #### Description
-...
+Performs a unpaired t-test that the distribution of the input data X has a mean different from that of Y.  A normal distribution of the data with an unknown variance is assumed.
 
 ----
 ### xASL_stat_VarNan.m
 
 #### Function
 ```matlab
-...
+function y = xASL_stat_VarNan(x,w,dim)
 ```
 
 #### Description
-...
+Calculates variance of values in X while ignoring NaNs.
 
 ----
 ### xASL_str2num.m
 
 #### Function
 ```matlab
-...
+function [DataOut] = xASL_str2num(DataIn)
 ```
 
 #### Description
-...
+str2num wrapper, replacing 'n/a' with NaN (BIDS convention) and converting only strings to numbers. Also allows inputting cells.
 
 
