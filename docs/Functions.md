@@ -1488,238 +1488,372 @@ This function initializes the mutex/lock system of ExploreASL for a module. Mute
 
 #### Function
 ```matlab
-...
+function [x] = xASL_init_LoadMetadata(x)
 ```
 
 #### Description
-...
+This function loads all metadata used in the study, either statistical covariates (age, MMSE) or groups to compare between (site, sequence, cohort), or parameters to be used in quantification/image processing
+
+These parameters should be provided in .mat files in the root analysis folder. Each .mat file should contain a single type of metadata, and the filename should equal the variable name. Metadata content should be a cell array with subjects as first column and metadata as last column. Sessions (runs) can be included as second column.
+
+Metadata can be in any string or numerical format.
+
+participants.tsv is now added per BIDS. It looks for metadata in participants.tsv first, before going through the mat-files.
+
+This function iterates through the following steps for each variable:
+
+1. Admin (what nOptions do we call ordinal, convert subject numeric to string, remove white spaces from data)
+2. Get unique list of data options & check for missing data
+3. Deal with data format (correct NaNs, deal with numeric vs strings)
+4. Distinguish continous data (e.g. age) or ordinal data (groups to compare, e.g. cohort)
+5. Check if data is complete for all subjects
+6. Include complete data in x.S.SETS
 
 ----
 ### xASL_init_LongitudinalRegistration.m
 
 #### Function
 ```matlab
-...
+function [SubjectNlist, TimePoint, IsSubject, SubjectID_FirstVolume] = xASL_init_LongitudinalRegistration(x)
 ```
 
 #### Description
-...
+This function initializes the longitudinal registration for ExploreASL, which implements the SPM longitudinal registration.
+
+This function recognizes and defines visits (i.e. multiple scans per subject) in the initialization of ExploreASL, based on the suffixes \_1 \_2 \_n in the subject names (identified as foldernames).
+
+Specifically, this function is called in the registration modules LongReg and DARTEL, the first carrying out within-subject registration and the second between-subject registration, based on the first time point only.
+For the first function, we specify here a list of visits/timepoints that should be registered longitudinally, for the second function we specify a list of first visits only, as the between-subject registration in ExploreASL is based on the first scan (as opposed to the average subject's scan).
+This function runs the following steps:
+
+1. Get TimePoint-list (list of visits)
+2. Find subject IDs
 
 ----
 ### xASL_init_VisualizationSettings.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_init_VisualizationSettings(x)
 ```
 
 #### Description
-...
+This function defines several visualization settings are used throughout ExploreASL's pipeline and tools, assuming a [121 145 121] matrix with 1.5 mm isotropic resolution in MNI space
+
+INCLUDING:
+
+* Slices*    - defines which transversal slices to show by default
+* TransCrop  - defines default cropping settings for all orientations
+* ColorMaps  - Generate several colormaps
+* VoxelSize  - default voxel-size in standard space/MNI as used by ExploreASL: 1.5 mm
+* skull      - brainmask for skullstripping
 
 ----
 ### xASL_io_CreateNifti.m
 
 #### Function
 ```matlab
-...
+function xASL_io_CreateNifti(pathNewNifti, imNew, resMat, nBits, bGZip)
 ```
 
 #### Description
-...
+This function creates a new NIfTI file, using the SPM "nifti" functionality, with the parameters specified as input arguments. This function performs the following steps:
+
+1. Initialize NIfTI
+2. Choose datatype (bit resolution)
+3. Create scale slopes
+4. Create orientation matrix
+5. Write the new NIfTI, image matrix & scale slopes
+6. Zip and deal with zipping (.nii vs. .nii.gz)
 
 ----
 ### xASL_io_dcm2nii.m
 
 #### Function
 ```matlab
-...
+function [niifiles, ScanNameOut, usedinput, msg] = xASL_io_dcm2nii(inpath, destdir, series_name, varargin)
 ```
 
 #### Description
-...
+Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
 
 ----
 ### xASL_io_DcmtkRead.m
 
 #### Function
 ```matlab
-...
+function header = xASL_io_DcmtkRead(filepath, bPixel)
 ```
 
 #### Description
-...
+Calls the MEX function that uses DCMTK library to read the DICOM header.
+To change which parameters are read and their names - the MEX file needs to be edited. This function also corrects formating of certain parameters.
 
 ----
 ### xASL_io_MakeNifti4DICOM.m
 
 #### Function
 ```matlab
-...
+function xASL_io_MakeNifti4DICOM(PathIn, x, DataType, OrientationPath, ResamplePath)
 ```
 
 #### Description
-...
+This function converts a NIfTI file to one that is ready to convert to DICOM for PACS visualization purposes:
+
+For scaling/visualization:
+
+1. Remove peak signal
+2. Remove valley signal
+3. Remove NaNs
+4. Rescale to 12 bit integers
+5. Save NIfTI. We also zip the NIfTI as this NIfTI won't be opened by ExploreASL
+6. Manage scale slope/datatype
+7. Apply original orientation
+8. Zip NIfTI
 
 ----
 ### xASL_io_PairwiseSubtraction.m
 
 #### Function
 ```matlab
-...
+function xASL_io_PairwiseSubtraction(InputFile,outputPath,do_mask,switch_sign)
 ```
 
 #### Description
-...
+Subtracts controls from labels and takes mean.
+Creates new perfusion-weighted delta_M file, prefaced with 's'.
+Converts into single precision floating point values (32 bit), removes scale slope.
+Only runs if ['s' input_file_ASL] doesn't exist.
+Remember to consider motion correction/ SPM realign (isotropically).
+Alternative to this function is robust fit (Camille Maumet).
 
 ----
 ### xASL_io_ReadTheDicom.m
 
 #### Function
 ```matlab
-...
+function [Info] = xASL_io_ReadTheDicom(bUseDCMTK, DicomPath)
 ```
 
 #### Description
-...
+This function tries to read a DICOM and throws a warning if it fails to.
 
 ----
 ### xASL_io_SplitASL_M0.m
 
 #### Function
 ```matlab
-...
+function xASL_io_SplitASL_M0(InPath,iM0)
 ```
 
 #### Description
-...
+This function splits ASL4D & M0 if they were in the same sequence.
+If dcm2niiX has already splitted the ASL4D NIfTI, this is reconstructed first.
+If no M0 exists, or only ASL splitting is desired, leave iM0 empty ([])
+
+Vendor product sequence examples:
+
+* GE 3D spiral sometimes puts the M0 at the last volume of the series -> iM0 = [2];
+* Philips 3D GRASE puts the M0 as control-label volume pair -> iM0 = [1 2];
+* Siemens 3D GRASE puts the M0 as the first volume -> iM0 = 1;
 
 ----
 ### xASL_Iteration.m
 
 #### Function
 ```matlab
-...
+function [bAborted, xOut] = xASL_Iteration(x, moduleName, dryRun, stopAfterErrors, SelectedSubjects)
 ```
 
 #### Description
-...
+Parses the settings and runs the DatabaseLoop sub-function.
 
 ----
 ### xASL_num2str.m
 
 #### Function
 ```matlab
-...
+function [DataOut] = xASL_num2str(DataIn, f)
 ```
 
 #### Description
-...
+When the provided data is numeric, this function will convert the number to string/characters, rewriting NaN into 'n/a' (BIDS convention) but otherwise preserving the Matlab builtin functionality, also for the second argument "f".
+If non-numeric data is provided, it is bypassed (avoiding any issues "num2str" will have with non-numeric data).
+See builtin num2str for more details.
 
 ----
 ### xASL_qc_AsymmetryIndex.m
 
 #### Function
 ```matlab
-...
+function [AI_perc] = xASL_qc_AsymmetryIndex(ImageIn)
 ```
 
 #### Description
-...
+Extract voxel-wise asymmetry index for QC purposes.
 
 ----
 ### xASL_qc_CAT12_IQR.m
 
 #### Function
 ```matlab
-...
+function [QA_Output] = xASL_qc_CAT12_IQR(InputImage, InputC1, InputC2, InputC3, bFLAIR)
 ```
 
 #### Description
-...
+Prepare and run CAT12s QC parameters (also for other images).
 
 ----
 ### xASL_qc_CollectParameters.m
 
 #### Function
 ```matlab
-...
+function x = xASL_qc_CollectParameters(x, iSubject, ScanType)
 ```
 
 #### Description
-...
+This function collects QC parameters for a module.
 
 ----
 ### xASL_qc_CollectQC_ASL.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_qc_CollectQC_ASL(x, iSubject)
 ```
 
 #### Description
-...
+This functions collects QC parameters for the ASL module.
+These are stored in x.Output.ASL:
+
+* ID - SubjectName
+* ASL_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat & nii.mat0 SPM realign (too much motion is suspicious)
+* MotionMean_mm    - mean motion
+* MotionExcl_Perc  - percentage of excluded outliers
+* MotionMax_mm     - max motion
+* MotionSD_mm      - SD motion
+
+ASL quantification (strange average CBF, or strange GM-WM contrast). ASL acquisition parameters (should be fairly consistent over subjects/scans):
+
+* TE - echo time
+* TR - repetition time
+* RescaleSlope - Philips
+* Scaleslope - Philips
+* Matrix X Y Z - matrix size
+* Matrix Z - number of slices
+* VoxelSize X Y - in plane resolution
+* VoxelSize Z - slice thickness
+* RigidBody2Anat_mm - Net Displacement Vector (RMS) from ASL to T1w image (mm) from registration
 
 ----
 ### xASL_qc_CollectQC_func.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_qc_CollectQC_func(x, iSubject)
 ```
 
 #### Description
-...
+This functions collects QC parameters for the func module. These are stored in x.Output.func:
+
+* ID - SubjectName
+* func_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat & nii.mat0 SPM realign (too much motion is suspicious)
+* MotionMean_mm    - mean motion
+* MotionExcl_Perc  - percentage of excluded outliers
+* MotionMax_mm     - max motion
+* MotionSD_mm      - SD motion
+
+Func quantification (strange average CBF, or strange GM-WM contrast):
+
+* CBF_GM_Median_mL100gmin - median GM CBF
+* CBF_WM_Median_mL100gmin - median WM CBF
+* SpatialCoV_GM_Perc      - GM spatial CoV
+* SpatialCoV_WM_Perc      - WM spatial CoV
+* CBF_GM_WM_Ratio         - GM-WM CBF ratio
+
+Func acquisition parameters (should be fairly consistent over subjects/scans):
+
+* TE - echo time
+* TR - repetition time
+* RescaleSlope - Philips
+* Scaleslope - Philips
+* Matrix X Y Z - matrix size
+* Matrix Z - number of slices
+* VoxelSize X Y - in plane resolution
+* VoxelSize Z - slice thickness
+* RigidBody2Anat_mm - Net Displacement Vector (RMS) from func to T1w image (mm) from registration
 
 ----
 ### xASL_qc_CollectQC_Structural.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_qc_CollectQC_Structural(x, iSubject)
 ```
 
 #### Description
-...
+This functions collects QC parameters for the structural module. These are stored in x.Output.Structural:
+
+* ID - SubjectName
+* T1w_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat & nii.mat0
+
+LST output:
+
+* WMH_vol_mL        - WMH volume
+* WMH_n             - WMH number of lesions
+
+CAT12 output:
+
+* T1w_IQR_Perc      - CAT12 IQR quality parameter for T1w
+
+Volumetric: GM_vol_mL, WM_vol_mL, CSF_vol_mL, ICV_vol_mL, GM_ICV_Ratio
 
 ----
 ### xASL_qc_CollectSoftwareVersions.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_qc_CollectSoftwareVersions(x)
 ```
 
 #### Description
-...
+This functions collects software versions for matlab, SPM, CAT, LST & ExploreASL. These are stored in x.Output.Software.
 
 ----
 ### xASL_qc_CompareTemplate.m
 
 #### Function
 ```matlab
-...
+function [QC] = xASL_qc_CompareTemplate(x, ScanTypePrefix, iSubjectSession)
 ```
 
 #### Description
-...
+This function computes several advanced template-based QC parameters:
+
+* RMSE_Perc        - Root Mean Square Error between image and template (%)
+* nRMSE_Perc       - Same but then normalized
+* AI_Perc          - Asymmetry Index between image and template (%)
+* Mean_SSIM_Perc   - mean structural similarity index -> xASL_stat_MeanSSIM.m
+* PeakSNR_Ratio    - peak signal-to-noise ratio -> xASL_stat_PSNR.m
 
 ----
 ### xASL_qc_ComputeFoVCoverage.m
 
 #### Function
 ```matlab
-...
+function [CoveragePerc] = xASL_qc_ComputeFoVCoverage(InputPath, x)
 ```
 
 #### Description
-...
+This function computes the intersection/overlap between brainmask on field-of-view (FoV) of low resolution image (native space) & the same brainmask with expanded FoV. It uses the pGM+pWM+pCSF as brainmask.
+This assumes that the structural reference image has full brain coverage, and was properly segmented into GM, WM and CSF. Also, we assume that the InputPath contains a single 3D volume.
 
 ----
 ### xASL_qc_ComputeNiftiOrientation.m
 
 #### Function
 ```matlab
-...
+function [Struct] = xASL_qc_ComputeNiftiOrientation(x, PathNIfTI, Struct)
 ```
 
 #### Description
@@ -1730,176 +1864,249 @@ This function initializes the mutex/lock system of ExploreASL for a module. Mute
 
 #### Function
 ```matlab
-...
+function xASL_qc_CreatePDF(x, DoSubject)
 ```
 
 #### Description
-...
+This function iterates over all values in x.Output and all images in x.Output_im, and prints them in a PDF file.
+x.Output & x.Output_im should contain the QC/result output of all ExploreASL pipeline steps.
+
+Further code explanation:
+
+Below, using the Matlab & SPM Figure tools we create an image, which is then printed to a PDF file.
+
+* fg = the main Figure handle
+* ax = "axes" handles, these are objects containing either 1) text or 2) images, with fg as "parent" (1) & (2) images have ax as "parent".
+
+Positions are calculated in such a way that 4 categories can be printed, which will be the first 4 fields found in x.Output then allowing 8 single slice images, and 15 text lines (name & value columns).
 
 ----
 ### xASL_qc_FA_Outliers.m
 
 #### Function
 ```matlab
-...
+function [FA_Outliers_mL] = xASL_qc_FA_Outliers(InputFA)
 ```
 
 #### Description
-...
+Extract the number of FA outliers, i.e. values of FA above 1 or below 0, from a FA image.
 
 ----
 ### xASL_qc_ObtainQCCategoriesFromJPG.m
 
 #### Function
 ```matlab
-...
+function xASL_qc_ObtainQCCategoriesFromJPG(x)
 ```
 
 #### Description
-...
+This function obtains QC categories as covariant/set, based on the JPGs in //Population/ASLCheck. These are initially sorted by spatial CoV, and should be visually checked & put in the correct folder.
 
 ----
 ### xASL_qc_PCPStructural.m
 
 #### Function
 ```matlab
-...
+function [anatQA] = xASL_qc_PCPStructural(PathT1, Pathc1T1, Pathc2T1, x, PopPathT1)
 ```
 
 #### Description
-...
+This function computes several anatomical QC parameters as proposed in SPM Univariate Plus:
+
+* WM_ref_vol_mL    - volume of the WM reference region (mL)
+* WMref_vol_Perc   - same but as percentage of total WM volume
+* SNR_GM           - GM signal-to-Noise Ratio (SNR), ie the mean intensity within GM divided by SD of WM reference region. Higher = better.
+* CNR_GM_WM        - GM-WM Contrast-to-Noise Ratio (CNR), i.e. the mean of GM - mean of WM divided by the SD of the WM reference region. Higher = better.
+* FBER_WMref_Ratio - Foreground to Background Energy Ratio (FBER), i.e. the variance of voxels within the brain (in pGM+pWM mask) divided by the variance of voxels in the WM reference region. Higher = better.
+* EFC_bits         - Shannon Entropy Focus Criterion (EFC), i.e. the entropy of voxel intensities proportional to the maximum possibly entropy for a similarly sized image. Indicates ghosting and head motion-induced blurring. Lower = better.
+* Mean_AI_Perc     - mean relative voxel-wise absolute Asymmetry Index (AI) within the brain (pGM+pWM mask) (%)
+* SD               - same but SD (%)
 
 ----
 ### xASL_qc_PrintOrientation.m
 
 #### Function
 ```matlab
-...
+function xASL_qc_PrintOrientation(DIR, reg_exp_INPUT,OUTPUT_DIR,Name)
 ```
 
 #### Description
-...
+Check orientation of niftis, useful to detect accidental left-right flips (all other flips will be visible). Translations, rotations or shears are not to be worried about, only negative zooms. This can be detected by negative determinants.
+So orientation parameters and determinants should be similar across all scans from single scanner/coil, and registration should not give negative determinant.
 
 ----
 ### xASL_qc_TanimotoCoeff.m
 
 #### Function
 ```matlab
-...
+function TC = xASL_qc_TanimotoCoeff(Image1, Image2, imMask, type, bClip, bSmooth)
 ```
 
 #### Description
-...
+Compares images Image1 and Image2 within the mask imMask. TYPE specifies the input data type.
 
 ----
 ### xASL_qc_temporalSNR.m
 
 #### Function
 ```matlab
-...
+function tSNR = xASL_qc_temporalSNR(pathIm4D,pathImTissueProb)
 ```
 
 #### Description
-...
+This function computes several temporal SNR QC parameters as proposed in SPM Univariate Plus:
+
+* tSNR.tSNR_GM_Ratio      : mean GM signal / std GM over time 
+* tSNR.tSNR.tSNR_WM_Ratio : mean WM signal / std WM over time
+* tSNR.tSNR.tSNR_CSF_Ratio: mean CSF signal / std CSF over time
+* tSNR.tSNR_WMref_Ratio   : mean signal/std over time in eroded deep WM
+* tSNR.tSNR_GMWM_Ratio    : mean (GM+WM) signal / sqrt(std(GM+WM)^2+std(WMref)^2)
+* tSNR.tSNR_GMWM_WMref_Ratio: mean (GM+WM) signal / std WMref over time
+* tSNR.tSNR_Physio2Thermal_Ratio: sqrt((tSNR(GM+WM)/tSNR_GMWM_WMref_Ratio))^2-1)
+* tSNR.tSNR_Slope_Corr:
+
+Differences to the SPM U+ suggestion: 
+* Eroded WM is used for estimating background noise
+* Brainmask is determined in the same way as the structural anatQC,
+* CSF is determined from the pGM&pWM maps;
 
 ----
 ### xASL_qc_WADQCDC.m
 
 #### Function
 ```matlab
-...
+function xASL_qc_WADQCDC(x, iSubject, ScanType)
 ```
 
 #### Description
-...
+This QC function runs WAD-QC specific Python script to zip QC information & incorporate this into a DICOM field for analysis on the WAD-QC server, by the following:
+
+1. Define QCDC script: this is the Python script written by Gaspare, edited by Joost Kuijer & copied to the EPAD CustomScripts folder of ExploreASL
+2. Python installation location is checked, with several known locations, for several servers. If we cannot find it, the QCDC is not ran
+3. Previous QCDC results are cleaned. QCDC stores all its results in a separate folder (Something like 2 layers up from the current folder, here referred to as QCDCDir = [x.D.ROOT 'qcdc_output']) from these result files, only the filled DICOM file is interesting, all the rest are copies of the QC results that we embedded into the DICOM
+4. Run QCDC (if Python installation detected). The following files need to be set as executable:
+    * ('QCDC', 'src', 'qc_data_collector.py')
+    * ('QCDC', 'src', 'bash', 'create_dcm_only_wadqc.sh')
+    * ('QCDC', 'src', 'bash', 'sendwadqc.sh')
+5. Clean up new QCDC results (as above) & move the filled. DICOM to ['qcdc_' DummyFile] within the current ScanType folder.
+6. Sending the DICOM to the WAD-QC server using storescu
 
 ----
 ### xASL_qc_WADQC_GenerateDescriptor.m
 
 #### Function
 ```matlab
-...
+function xASL_qc_WADQC_GenerateDescriptor(x, iSubject, ScanTypeIs)
 ```
 
 #### Description
-...
+This QC function generates a JSON descriptor for Gaspare' QCDC script, by the following steps:
+
+1. include information about where to find the dummy DICOM (i.e. placeholder DICOM)
+2. For ExploreASL' QC fields (as passed through in x.Output), here we note all these QC fields for each ScanType, as the x.Output should have been collected equally in the QC file 'QC_collection_SubjectName.json' by function xASL_qc_CollectParameters
+3. Subfunction xASL_qc_WADQC_images - Includes visual standard space QC images, by searching them on prescribed paths within the Population folder (where currently all derivatives reside)
+4. Insert the PDF report; this PDF report is subject-specific, not scan-specific. For completeness it is added to each QCDC descriptor
+5. Add WAD-QC server details (i.e. IP address etc)
+6. Save the Descriptor JSON file.
 
 ----
 ### xASL_quant_AgeSex2Hct.m
 
 #### Function
 ```matlab
-...
+function Hct = xASL_quant_AgeSex2Hct(age, gender)
 ```
 
 #### Description
-...
+Function to return estimated Hct, based on age and gender. Enter age in years, and for gender: 0=female, 1=male pass NaN is either not known.
+
 
 ----
 ### xASL_quant_FEAST.m
 
 #### Function
 ```matlab
-...
+function xASL_quant_FEAST(x)
 ```
 
 #### Description
-...
+Computation FEAST-based transit times (uses images that were not vasculary treated) if there is a crushed & non-crushed scan, then transit times will be computed by division of these scans, provided sessions are exactly named as defined below.
 
 ----
 ### xASL_quant_GetControlLabelOrder.m
 
 #### Function
 ```matlab
-...
+function [ControlIm, LabelIm, OrderContLabl] = xASL_quant_GetControlLabelOrder(ASLTimeSeries)
 ```
 
 #### Description
-...
+This function automatically checks (and corrects if required) the control and label order of ASL timeseries based on the larger signal in control volumes.
+It supposes that data is acquired in pairs.
 
 ----
 ### xASL_quant_Hct2BloodT1.m
 
 #### Function
 ```matlab
-...
+function BloodT1 = xASL_quant_Hct2BloodT1(Hematocrit, Y, B0, bVerbose)
 ```
 
 #### Description
-...
+This function converts hematocrit to blood T1, according to calculations defined by Patrick Hales. With courtesy and thanks!
+Note that we assume a venous O2 saturation of 68% (Yv=0.68)
+
+This function performs the following steps:
+
+1. Check fraction vs percentage hematocrit & Y, should be between 0 and 1
+2. Specify defaults (Hb, Fe)
+3. Perform calculation
+4. Convert s to ms
+5. Print what we did
 
 ----
 ### xASL_quant_M0.m
 
 #### Function
 ```matlab
-...
+function [M0IM] = xASL_quant_M0(M0IM, x)
 ```
 
 #### Description
-...
+This function quantifies the M0, except for the difference in voxel size between the M0 and ASL source data (which is scaled in xASL_wrp_ProcessM0.m).
 
 ----
 ### xASL_quant_SinglePLD.m
 
 #### Function
 ```matlab
-...
+function [ScaleImage, CBF] = xASL_quant_SinglePLD(PWI, M0_im, SliceGradient, x)
 ```
 
 #### Description
-...
+This script performs a multi-step quantification, by initializing a ScaleImage that travels through this script & gets changed by the following quantification factors:
+
+1. PLD scalefactor (gradient if 2D multi-slice) (if x.ApplyQuantification(3))
+2. Label decay scale factor for single (blood T1) - or dual-compartment (blood+tissue T1) model, CASL or PASL. Single-compartment model: Alsop MRM 2014.
+ Dual-compartment model: Wang MRM 2002: Gevers JMRI 2012 (if x.ApplyQuantification(3))
+3. Scaling to physiological units \[ml/gr/ms =>ml/100gr/min =>(60,000 ms=>min)(1 gr=>100gr)\] (if x.ApplyQuantification(3))
+4. Vendor-specific scalefactor (if x.ApplyQuantification(1) -> future move to dcm2niiX stage)
+5. Divide PWI/M0 (if x.ApplyQuantification(5))
+6. Print parameters used
+
+Note that the output always goes to the CBF image (in the future this could go to different stages, e.g. dcm2niiX or PWI stage)
 
 ----
 ### xASL_spm_affine.m
 
 #### Function
 ```matlab
-...
+function xASL_spm_affine(srcPath, refPath, fwhmSrc, fwhmRef, otherList, bDCT)
 ```
 
 #### Description
-...
+This SPM wrapper runs SPM's old normalize-estimate function, which calculates the affine transformation (i.e. linear + zooming and shearing) that is required to align the source image with the reference image. By default it does not estimate the low-degree Discrete Cosine Transform (DCT) to have a simple affine transformation  but this can be enabled in this wrapper. Also note that this affine transformation uses a correlation cost function, hence it requires the source and reference images to have similar contrasts and resolution - or provide the resolution estimates so the smoothing can be done.
+This function does not change the orientation header by default, but it allows to change those of others through the otherList. If bDCT is used or no otherList given, it stores its estimated affine transformation as orientation difference matrix in a file with the same path but \_sn.mat extension. For the provided smoothing FWHM, note that smoothnesses combine with Pythagoras' rule (i.e. square summing).
 
 ----
 ### xASL_spm_BiasfieldCorrection.m

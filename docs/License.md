@@ -1,9 +1,9 @@
 
 
-The ExploreASL Software is distributed under the license described below, designed to encourage collabortion while at the same time aiming to reuse commercial profit for academical purpose (e.g. hire an ExploreASL developer). All contents, except for those in the folder //External, are proprietary of ExploreASL. The content in the folder //External is not subject to this license.
+The **ExploreASL** Software is distributed under the license described below, designed to encourage collabortion while at the same time aiming to reuse commercial profit for academical purpose (e.g. hire an **ExploreASL** developer). All contents, except for those in the folder //External, are proprietary of ExploreASL. The content in the folder //External is not subject to this license.
 
-Provisionary license ExploreASL. This license will be renewed soon after legal checks.
-ExploreASL, Release 0.999 (c) 2020, Amsterdam University Medical Center (the "Software"). 
+Provisionary license **ExploreASL**. This license will be renewed soon after legal checks.
+**ExploreASL**, Release 0.999 (c) 2020, Amsterdam University Medical Center (the "Software"). 
 The Software remains the property of Amsterdam University Medical Center (AUMC, "the University").
 
 The Software is distributed "AS IS" under this License solely for non-commercial use in the hope that it will be useful, but in order that the University as a charitable foundation protects its assets for the benefit of its educational and research purposes, the University makes clear that no condition is made or to be implied, nor is any warranty given or to be implied, as to the accuracy of the Software, or that it will be suitable for any particular purpose or for use under any specific conditions. Furthermore, the University disclaims all responsibility for the use which is made of the Software. It further disclaims any liability for the outcomes arising from using the Software.

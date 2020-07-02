@@ -2680,175 +2680,309 @@ With different structural scans, from the same participant. This is managed by s
 <hr />
 <h3 id="xasl_init_loadmetadatam">xASL_init_LoadMetadata.m</h3>
 <h4 id="function_113">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_init_LoadMetadata(x)
 </code></pre>
 
 <h4 id="description_113">Description</h4>
-<p>...</p>
+<p>This function loads all metadata used in the study, either statistical covariates (age, MMSE) or groups to compare between (site, sequence, cohort), or parameters to be used in quantification/image processing</p>
+<p>These parameters should be provided in .mat files in the root analysis folder. Each .mat file should contain a single type of metadata, and the filename should equal the variable name. Metadata content should be a cell array with subjects as first column and metadata as last column. Sessions (runs) can be included as second column.</p>
+<p>Metadata can be in any string or numerical format.</p>
+<p>participants.tsv is now added per BIDS. It looks for metadata in participants.tsv first, before going through the mat-files.</p>
+<p>This function iterates through the following steps for each variable:</p>
+<ol>
+<li>Admin (what nOptions do we call ordinal, convert subject numeric to string, remove white spaces from data)</li>
+<li>Get unique list of data options &amp; check for missing data</li>
+<li>Deal with data format (correct NaNs, deal with numeric vs strings)</li>
+<li>Distinguish continous data (e.g. age) or ordinal data (groups to compare, e.g. cohort)</li>
+<li>Check if data is complete for all subjects</li>
+<li>Include complete data in x.S.SETS</li>
+</ol>
 <hr />
 <h3 id="xasl_init_longitudinalregistrationm">xASL_init_LongitudinalRegistration.m</h3>
 <h4 id="function_114">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [SubjectNlist, TimePoint, IsSubject, SubjectID_FirstVolume] = xASL_init_LongitudinalRegistration(x)
 </code></pre>
 
 <h4 id="description_114">Description</h4>
-<p>...</p>
+<p>This function initializes the longitudinal registration for ExploreASL, which implements the SPM longitudinal registration.</p>
+<p>This function recognizes and defines visits (i.e. multiple scans per subject) in the initialization of ExploreASL, based on the suffixes _1 _2 _n in the subject names (identified as foldernames).</p>
+<p>Specifically, this function is called in the registration modules LongReg and DARTEL, the first carrying out within-subject registration and the second between-subject registration, based on the first time point only.
+For the first function, we specify here a list of visits/timepoints that should be registered longitudinally, for the second function we specify a list of first visits only, as the between-subject registration in ExploreASL is based on the first scan (as opposed to the average subject's scan).
+This function runs the following steps:</p>
+<ol>
+<li>Get TimePoint-list (list of visits)</li>
+<li>Find subject IDs</li>
+</ol>
 <hr />
 <h3 id="xasl_init_visualizationsettingsm">xASL_init_VisualizationSettings.m</h3>
 <h4 id="function_115">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_init_VisualizationSettings(x)
 </code></pre>
 
 <h4 id="description_115">Description</h4>
-<p>...</p>
+<p>This function defines several visualization settings are used throughout ExploreASL's pipeline and tools, assuming a [121 145 121] matrix with 1.5 mm isotropic resolution in MNI space</p>
+<p>INCLUDING:</p>
+<ul>
+<li>Slices*    - defines which transversal slices to show by default</li>
+<li>TransCrop  - defines default cropping settings for all orientations</li>
+<li>ColorMaps  - Generate several colormaps</li>
+<li>VoxelSize  - default voxel-size in standard space/MNI as used by ExploreASL: 1.5 mm</li>
+<li>skull      - brainmask for skullstripping</li>
+</ul>
 <hr />
 <h3 id="xasl_io_createniftim">xASL_io_CreateNifti.m</h3>
 <h4 id="function_116">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_io_CreateNifti(pathNewNifti, imNew, resMat, nBits, bGZip)
 </code></pre>
 
 <h4 id="description_116">Description</h4>
-<p>...</p>
+<p>This function creates a new NIfTI file, using the SPM "nifti" functionality, with the parameters specified as input arguments. This function performs the following steps:</p>
+<ol>
+<li>Initialize NIfTI</li>
+<li>Choose datatype (bit resolution)</li>
+<li>Create scale slopes</li>
+<li>Create orientation matrix</li>
+<li>Write the new NIfTI, image matrix &amp; scale slopes</li>
+<li>Zip and deal with zipping (.nii vs. .nii.gz)</li>
+</ol>
 <hr />
 <h3 id="xasl_io_dcm2niim">xASL_io_dcm2nii.m</h3>
 <h4 id="function_117">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [niifiles, ScanNameOut, usedinput, msg] = xASL_io_dcm2nii(inpath, destdir, series_name, varargin)
 </code></pre>
 
 <h4 id="description_117">Description</h4>
-<p>...</p>
+<p>Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.</p>
 <hr />
 <h3 id="xasl_io_dcmtkreadm">xASL_io_DcmtkRead.m</h3>
 <h4 id="function_118">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function header = xASL_io_DcmtkRead(filepath, bPixel)
 </code></pre>
 
 <h4 id="description_118">Description</h4>
-<p>...</p>
+<p>Calls the MEX function that uses DCMTK library to read the DICOM header.
+To change which parameters are read and their names - the MEX file needs to be edited. This function also corrects formating of certain parameters.</p>
 <hr />
 <h3 id="xasl_io_makenifti4dicomm">xASL_io_MakeNifti4DICOM.m</h3>
 <h4 id="function_119">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_io_MakeNifti4DICOM(PathIn, x, DataType, OrientationPath, ResamplePath)
 </code></pre>
 
 <h4 id="description_119">Description</h4>
-<p>...</p>
+<p>This function converts a NIfTI file to one that is ready to convert to DICOM for PACS visualization purposes:</p>
+<p>For scaling/visualization:</p>
+<ol>
+<li>Remove peak signal</li>
+<li>Remove valley signal</li>
+<li>Remove NaNs</li>
+<li>Rescale to 12 bit integers</li>
+<li>Save NIfTI. We also zip the NIfTI as this NIfTI won't be opened by ExploreASL</li>
+<li>Manage scale slope/datatype</li>
+<li>Apply original orientation</li>
+<li>Zip NIfTI</li>
+</ol>
 <hr />
 <h3 id="xasl_io_pairwisesubtractionm">xASL_io_PairwiseSubtraction.m</h3>
 <h4 id="function_120">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_io_PairwiseSubtraction(InputFile,outputPath,do_mask,switch_sign)
 </code></pre>
 
 <h4 id="description_120">Description</h4>
-<p>...</p>
+<p>Subtracts controls from labels and takes mean.
+Creates new perfusion-weighted delta_M file, prefaced with 's'.
+Converts into single precision floating point values (32 bit), removes scale slope.
+Only runs if ['s' input_file_ASL] doesn't exist.
+Remember to consider motion correction/ SPM realign (isotropically).
+Alternative to this function is robust fit (Camille Maumet).</p>
 <hr />
 <h3 id="xasl_io_readthedicomm">xASL_io_ReadTheDicom.m</h3>
 <h4 id="function_121">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [Info] = xASL_io_ReadTheDicom(bUseDCMTK, DicomPath)
 </code></pre>
 
 <h4 id="description_121">Description</h4>
-<p>...</p>
+<p>This function tries to read a DICOM and throws a warning if it fails to.</p>
 <hr />
 <h3 id="xasl_io_splitasl_m0m">xASL_io_SplitASL_M0.m</h3>
 <h4 id="function_122">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_io_SplitASL_M0(InPath,iM0)
 </code></pre>
 
 <h4 id="description_122">Description</h4>
-<p>...</p>
+<p>This function splits ASL4D &amp; M0 if they were in the same sequence.
+If dcm2niiX has already splitted the ASL4D NIfTI, this is reconstructed first.
+If no M0 exists, or only ASL splitting is desired, leave iM0 empty ([])</p>
+<p>Vendor product sequence examples:</p>
+<ul>
+<li>GE 3D spiral sometimes puts the M0 at the last volume of the series -&gt; iM0 = [2];</li>
+<li>Philips 3D GRASE puts the M0 as control-label volume pair -&gt; iM0 = [1 2];</li>
+<li>Siemens 3D GRASE puts the M0 as the first volume -&gt; iM0 = 1;</li>
+</ul>
 <hr />
 <h3 id="xasl_iterationm">xASL_Iteration.m</h3>
 <h4 id="function_123">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [bAborted, xOut] = xASL_Iteration(x, moduleName, dryRun, stopAfterErrors, SelectedSubjects)
 </code></pre>
 
 <h4 id="description_123">Description</h4>
-<p>...</p>
+<p>Parses the settings and runs the DatabaseLoop sub-function.</p>
 <hr />
 <h3 id="xasl_num2strm">xASL_num2str.m</h3>
 <h4 id="function_124">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [DataOut] = xASL_num2str(DataIn, f)
 </code></pre>
 
 <h4 id="description_124">Description</h4>
-<p>...</p>
+<p>When the provided data is numeric, this function will convert the number to string/characters, rewriting NaN into 'n/a' (BIDS convention) but otherwise preserving the Matlab builtin functionality, also for the second argument "f".
+If non-numeric data is provided, it is bypassed (avoiding any issues "num2str" will have with non-numeric data).
+See builtin num2str for more details.</p>
 <hr />
 <h3 id="xasl_qc_asymmetryindexm">xASL_qc_AsymmetryIndex.m</h3>
 <h4 id="function_125">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [AI_perc] = xASL_qc_AsymmetryIndex(ImageIn)
 </code></pre>
 
 <h4 id="description_125">Description</h4>
-<p>...</p>
+<p>Extract voxel-wise asymmetry index for QC purposes.</p>
 <hr />
 <h3 id="xasl_qc_cat12_iqrm">xASL_qc_CAT12_IQR.m</h3>
 <h4 id="function_126">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [QA_Output] = xASL_qc_CAT12_IQR(InputImage, InputC1, InputC2, InputC3, bFLAIR)
 </code></pre>
 
 <h4 id="description_126">Description</h4>
-<p>...</p>
+<p>Prepare and run CAT12s QC parameters (also for other images).</p>
 <hr />
 <h3 id="xasl_qc_collectparametersm">xASL_qc_CollectParameters.m</h3>
 <h4 id="function_127">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function x = xASL_qc_CollectParameters(x, iSubject, ScanType)
 </code></pre>
 
 <h4 id="description_127">Description</h4>
-<p>...</p>
+<p>This function collects QC parameters for a module.</p>
 <hr />
 <h3 id="xasl_qc_collectqc_aslm">xASL_qc_CollectQC_ASL.m</h3>
 <h4 id="function_128">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_qc_CollectQC_ASL(x, iSubject)
 </code></pre>
 
 <h4 id="description_128">Description</h4>
-<p>...</p>
+<p>This functions collects QC parameters for the ASL module.
+These are stored in x.Output.ASL:</p>
+<ul>
+<li>ID - SubjectName</li>
+<li>ASL_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat &amp; nii.mat0 SPM realign (too much motion is suspicious)</li>
+<li>MotionMean_mm    - mean motion</li>
+<li>MotionExcl_Perc  - percentage of excluded outliers</li>
+<li>MotionMax_mm     - max motion</li>
+<li>MotionSD_mm      - SD motion</li>
+</ul>
+<p>ASL quantification (strange average CBF, or strange GM-WM contrast). ASL acquisition parameters (should be fairly consistent over subjects/scans):</p>
+<ul>
+<li>TE - echo time</li>
+<li>TR - repetition time</li>
+<li>RescaleSlope - Philips</li>
+<li>Scaleslope - Philips</li>
+<li>Matrix X Y Z - matrix size</li>
+<li>Matrix Z - number of slices</li>
+<li>VoxelSize X Y - in plane resolution</li>
+<li>VoxelSize Z - slice thickness</li>
+<li>RigidBody2Anat_mm - Net Displacement Vector (RMS) from ASL to T1w image (mm) from registration</li>
+</ul>
 <hr />
 <h3 id="xasl_qc_collectqc_funcm">xASL_qc_CollectQC_func.m</h3>
 <h4 id="function_129">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_qc_CollectQC_func(x, iSubject)
 </code></pre>
 
 <h4 id="description_129">Description</h4>
-<p>...</p>
+<p>This functions collects QC parameters for the func module. These are stored in x.Output.func:</p>
+<ul>
+<li>ID - SubjectName</li>
+<li>func_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat &amp; nii.mat0 SPM realign (too much motion is suspicious)</li>
+<li>MotionMean_mm    - mean motion</li>
+<li>MotionExcl_Perc  - percentage of excluded outliers</li>
+<li>MotionMax_mm     - max motion</li>
+<li>MotionSD_mm      - SD motion</li>
+</ul>
+<p>Func quantification (strange average CBF, or strange GM-WM contrast):</p>
+<ul>
+<li>CBF_GM_Median_mL100gmin - median GM CBF</li>
+<li>CBF_WM_Median_mL100gmin - median WM CBF</li>
+<li>SpatialCoV_GM_Perc      - GM spatial CoV</li>
+<li>SpatialCoV_WM_Perc      - WM spatial CoV</li>
+<li>CBF_GM_WM_Ratio         - GM-WM CBF ratio</li>
+</ul>
+<p>Func acquisition parameters (should be fairly consistent over subjects/scans):</p>
+<ul>
+<li>TE - echo time</li>
+<li>TR - repetition time</li>
+<li>RescaleSlope - Philips</li>
+<li>Scaleslope - Philips</li>
+<li>Matrix X Y Z - matrix size</li>
+<li>Matrix Z - number of slices</li>
+<li>VoxelSize X Y - in plane resolution</li>
+<li>VoxelSize Z - slice thickness</li>
+<li>RigidBody2Anat_mm - Net Displacement Vector (RMS) from func to T1w image (mm) from registration</li>
+</ul>
 <hr />
 <h3 id="xasl_qc_collectqc_structuralm">xASL_qc_CollectQC_Structural.m</h3>
 <h4 id="function_130">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_qc_CollectQC_Structural(x, iSubject)
 </code></pre>
 
 <h4 id="description_130">Description</h4>
-<p>...</p>
+<p>This functions collects QC parameters for the structural module. These are stored in x.Output.Structural:</p>
+<ul>
+<li>ID - SubjectName</li>
+<li>T1w_LR_flip_YesNo - Checks whether any image processing changed the left-right orientation by checking whether the determinant differs between nii.mat &amp; nii.mat0</li>
+</ul>
+<p>LST output:</p>
+<ul>
+<li>WMH_vol_mL        - WMH volume</li>
+<li>WMH_n             - WMH number of lesions</li>
+</ul>
+<p>CAT12 output:</p>
+<ul>
+<li>T1w_IQR_Perc      - CAT12 IQR quality parameter for T1w</li>
+</ul>
+<p>Volumetric: GM_vol_mL, WM_vol_mL, CSF_vol_mL, ICV_vol_mL, GM_ICV_Ratio</p>
 <hr />
 <h3 id="xasl_qc_collectsoftwareversionsm">xASL_qc_CollectSoftwareVersions.m</h3>
 <h4 id="function_131">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_qc_CollectSoftwareVersions(x)
 </code></pre>
 
 <h4 id="description_131">Description</h4>
-<p>...</p>
+<p>This functions collects software versions for matlab, SPM, CAT, LST &amp; ExploreASL. These are stored in x.Output.Software.</p>
 <hr />
 <h3 id="xasl_qc_comparetemplatem">xASL_qc_CompareTemplate.m</h3>
 <h4 id="function_132">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [QC] = xASL_qc_CompareTemplate(x, ScanTypePrefix, iSubjectSession)
 </code></pre>
 
 <h4 id="description_132">Description</h4>
-<p>...</p>
+<p>This function computes several advanced template-based QC parameters:</p>
+<ul>
+<li>RMSE_Perc        - Root Mean Square Error between image and template (%)</li>
+<li>nRMSE_Perc       - Same but then normalized</li>
+<li>AI_Perc          - Asymmetry Index between image and template (%)</li>
+<li>Mean_SSIM_Perc   - mean structural similarity index -&gt; xASL_stat_MeanSSIM.m</li>
+<li>PeakSNR_Ratio    - peak signal-to-noise ratio -&gt; xASL_stat_PSNR.m</li>
+</ul>
 <hr />
 <h3 id="xasl_qc_computefovcoveragem">xASL_qc_ComputeFoVCoverage.m</h3>
 <h4 id="function_133">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [CoveragePerc] = xASL_qc_ComputeFoVCoverage(InputPath, x)
 </code></pre>
 
 <h4 id="description_133">Description</h4>
-<p>...</p>
+<p>This function computes the intersection/overlap between brainmask on field-of-view (FoV) of low resolution image (native space) &amp; the same brainmask with expanded FoV. It uses the pGM+pWM+pCSF as brainmask.
+This assumes that the structural reference image has full brain coverage, and was properly segmented into GM, WM and CSF. Also, we assume that the InputPath contains a single 3D volume.</p>
 <hr />
 <h3 id="xasl_qc_computeniftiorientationm">xASL_qc_ComputeNiftiOrientation.m</h3>
 <h4 id="function_134">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [Struct] = xASL_qc_ComputeNiftiOrientation(x, PathNIfTI, Struct)
 </code></pre>
 
 <h4 id="description_134">Description</h4>
@@ -2856,131 +2990,206 @@ With different structural scans, from the same participant. This is managed by s
 <hr />
 <h3 id="xasl_qc_createpdfm">xASL_qc_CreatePDF.m</h3>
 <h4 id="function_135">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_qc_CreatePDF(x, DoSubject)
 </code></pre>
 
 <h4 id="description_135">Description</h4>
-<p>...</p>
+<p>This function iterates over all values in x.Output and all images in x.Output_im, and prints them in a PDF file.
+x.Output &amp; x.Output_im should contain the QC/result output of all ExploreASL pipeline steps.</p>
+<p>Further code explanation:</p>
+<p>Below, using the Matlab &amp; SPM Figure tools we create an image, which is then printed to a PDF file.</p>
+<ul>
+<li>fg = the main Figure handle</li>
+<li>ax = "axes" handles, these are objects containing either 1) text or 2) images, with fg as "parent" (1) &amp; (2) images have ax as "parent".</li>
+</ul>
+<p>Positions are calculated in such a way that 4 categories can be printed, which will be the first 4 fields found in x.Output then allowing 8 single slice images, and 15 text lines (name &amp; value columns).</p>
 <hr />
 <h3 id="xasl_qc_fa_outliersm">xASL_qc_FA_Outliers.m</h3>
 <h4 id="function_136">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [FA_Outliers_mL] = xASL_qc_FA_Outliers(InputFA)
 </code></pre>
 
 <h4 id="description_136">Description</h4>
-<p>...</p>
+<p>Extract the number of FA outliers, i.e. values of FA above 1 or below 0, from a FA image.</p>
 <hr />
 <h3 id="xasl_qc_obtainqccategoriesfromjpgm">xASL_qc_ObtainQCCategoriesFromJPG.m</h3>
 <h4 id="function_137">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_qc_ObtainQCCategoriesFromJPG(x)
 </code></pre>
 
 <h4 id="description_137">Description</h4>
-<p>...</p>
+<p>This function obtains QC categories as covariant/set, based on the JPGs in //Population/ASLCheck. These are initially sorted by spatial CoV, and should be visually checked &amp; put in the correct folder.</p>
 <hr />
 <h3 id="xasl_qc_pcpstructuralm">xASL_qc_PCPStructural.m</h3>
 <h4 id="function_138">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [anatQA] = xASL_qc_PCPStructural(PathT1, Pathc1T1, Pathc2T1, x, PopPathT1)
 </code></pre>
 
 <h4 id="description_138">Description</h4>
-<p>...</p>
+<p>This function computes several anatomical QC parameters as proposed in SPM Univariate Plus:</p>
+<ul>
+<li>WM_ref_vol_mL    - volume of the WM reference region (mL)</li>
+<li>WMref_vol_Perc   - same but as percentage of total WM volume</li>
+<li>SNR_GM           - GM signal-to-Noise Ratio (SNR), ie the mean intensity within GM divided by SD of WM reference region. Higher = better.</li>
+<li>CNR_GM_WM        - GM-WM Contrast-to-Noise Ratio (CNR), i.e. the mean of GM - mean of WM divided by the SD of the WM reference region. Higher = better.</li>
+<li>FBER_WMref_Ratio - Foreground to Background Energy Ratio (FBER), i.e. the variance of voxels within the brain (in pGM+pWM mask) divided by the variance of voxels in the WM reference region. Higher = better.</li>
+<li>EFC_bits         - Shannon Entropy Focus Criterion (EFC), i.e. the entropy of voxel intensities proportional to the maximum possibly entropy for a similarly sized image. Indicates ghosting and head motion-induced blurring. Lower = better.</li>
+<li>Mean_AI_Perc     - mean relative voxel-wise absolute Asymmetry Index (AI) within the brain (pGM+pWM mask) (%)</li>
+<li>SD               - same but SD (%)</li>
+</ul>
 <hr />
 <h3 id="xasl_qc_printorientationm">xASL_qc_PrintOrientation.m</h3>
 <h4 id="function_139">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_qc_PrintOrientation(DIR, reg_exp_INPUT,OUTPUT_DIR,Name)
 </code></pre>
 
 <h4 id="description_139">Description</h4>
-<p>...</p>
+<p>Check orientation of niftis, useful to detect accidental left-right flips (all other flips will be visible). Translations, rotations or shears are not to be worried about, only negative zooms. This can be detected by negative determinants.
+So orientation parameters and determinants should be similar across all scans from single scanner/coil, and registration should not give negative determinant.</p>
 <hr />
 <h3 id="xasl_qc_tanimotocoeffm">xASL_qc_TanimotoCoeff.m</h3>
 <h4 id="function_140">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function TC = xASL_qc_TanimotoCoeff(Image1, Image2, imMask, type, bClip, bSmooth)
 </code></pre>
 
 <h4 id="description_140">Description</h4>
-<p>...</p>
+<p>Compares images Image1 and Image2 within the mask imMask. TYPE specifies the input data type.</p>
 <hr />
 <h3 id="xasl_qc_temporalsnrm">xASL_qc_temporalSNR.m</h3>
 <h4 id="function_141">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function tSNR = xASL_qc_temporalSNR(pathIm4D,pathImTissueProb)
 </code></pre>
 
 <h4 id="description_141">Description</h4>
-<p>...</p>
+<p>This function computes several temporal SNR QC parameters as proposed in SPM Univariate Plus:</p>
+<ul>
+<li>tSNR.tSNR_GM_Ratio      : mean GM signal / std GM over time </li>
+<li>tSNR.tSNR.tSNR_WM_Ratio : mean WM signal / std WM over time</li>
+<li>tSNR.tSNR.tSNR_CSF_Ratio: mean CSF signal / std CSF over time</li>
+<li>tSNR.tSNR_WMref_Ratio   : mean signal/std over time in eroded deep WM</li>
+<li>tSNR.tSNR_GMWM_Ratio    : mean (GM+WM) signal / sqrt(std(GM+WM)^2+std(WMref)^2)</li>
+<li>tSNR.tSNR_GMWM_WMref_Ratio: mean (GM+WM) signal / std WMref over time</li>
+<li>tSNR.tSNR_Physio2Thermal_Ratio: sqrt((tSNR(GM+WM)/tSNR_GMWM_WMref_Ratio))^2-1)</li>
+<li>tSNR.tSNR_Slope_Corr:</li>
+</ul>
+<p>Differences to the SPM U+ suggestion: 
+* Eroded WM is used for estimating background noise
+* Brainmask is determined in the same way as the structural anatQC,
+* CSF is determined from the pGM&amp;pWM maps;</p>
 <hr />
 <h3 id="xasl_qc_wadqcdcm">xASL_qc_WADQCDC.m</h3>
 <h4 id="function_142">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_qc_WADQCDC(x, iSubject, ScanType)
 </code></pre>
 
 <h4 id="description_142">Description</h4>
-<p>...</p>
+<p>This QC function runs WAD-QC specific Python script to zip QC information &amp; incorporate this into a DICOM field for analysis on the WAD-QC server, by the following:</p>
+<ol>
+<li>Define QCDC script: this is the Python script written by Gaspare, edited by Joost Kuijer &amp; copied to the EPAD CustomScripts folder of ExploreASL</li>
+<li>Python installation location is checked, with several known locations, for several servers. If we cannot find it, the QCDC is not ran</li>
+<li>Previous QCDC results are cleaned. QCDC stores all its results in a separate folder (Something like 2 layers up from the current folder, here referred to as QCDCDir = [x.D.ROOT 'qcdc_output']) from these result files, only the filled DICOM file is interesting, all the rest are copies of the QC results that we embedded into the DICOM</li>
+<li>Run QCDC (if Python installation detected). The following files need to be set as executable:<ul>
+<li>('QCDC', 'src', 'qc_data_collector.py')</li>
+<li>('QCDC', 'src', 'bash', 'create_dcm_only_wadqc.sh')</li>
+<li>('QCDC', 'src', 'bash', 'sendwadqc.sh')</li>
+</ul>
+</li>
+<li>Clean up new QCDC results (as above) &amp; move the filled. DICOM to ['qcdc_' DummyFile] within the current ScanType folder.</li>
+<li>Sending the DICOM to the WAD-QC server using storescu</li>
+</ol>
 <hr />
 <h3 id="xasl_qc_wadqc_generatedescriptorm">xASL_qc_WADQC_GenerateDescriptor.m</h3>
 <h4 id="function_143">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_qc_WADQC_GenerateDescriptor(x, iSubject, ScanTypeIs)
 </code></pre>
 
 <h4 id="description_143">Description</h4>
-<p>...</p>
+<p>This QC function generates a JSON descriptor for Gaspare' QCDC script, by the following steps:</p>
+<ol>
+<li>include information about where to find the dummy DICOM (i.e. placeholder DICOM)</li>
+<li>For ExploreASL' QC fields (as passed through in x.Output), here we note all these QC fields for each ScanType, as the x.Output should have been collected equally in the QC file 'QC_collection_SubjectName.json' by function xASL_qc_CollectParameters</li>
+<li>Subfunction xASL_qc_WADQC_images - Includes visual standard space QC images, by searching them on prescribed paths within the Population folder (where currently all derivatives reside)</li>
+<li>Insert the PDF report; this PDF report is subject-specific, not scan-specific. For completeness it is added to each QCDC descriptor</li>
+<li>Add WAD-QC server details (i.e. IP address etc)</li>
+<li>Save the Descriptor JSON file.</li>
+</ol>
 <hr />
 <h3 id="xasl_quant_agesex2hctm">xASL_quant_AgeSex2Hct.m</h3>
 <h4 id="function_144">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function Hct = xASL_quant_AgeSex2Hct(age, gender)
 </code></pre>
 
 <h4 id="description_144">Description</h4>
-<p>...</p>
+<p>Function to return estimated Hct, based on age and gender. Enter age in years, and for gender: 0=female, 1=male pass NaN is either not known.</p>
 <hr />
 <h3 id="xasl_quant_feastm">xASL_quant_FEAST.m</h3>
 <h4 id="function_145">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_quant_FEAST(x)
 </code></pre>
 
 <h4 id="description_145">Description</h4>
-<p>...</p>
+<p>Computation FEAST-based transit times (uses images that were not vasculary treated) if there is a crushed &amp; non-crushed scan, then transit times will be computed by division of these scans, provided sessions are exactly named as defined below.</p>
 <hr />
 <h3 id="xasl_quant_getcontrollabelorderm">xASL_quant_GetControlLabelOrder.m</h3>
 <h4 id="function_146">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ControlIm, LabelIm, OrderContLabl] = xASL_quant_GetControlLabelOrder(ASLTimeSeries)
 </code></pre>
 
 <h4 id="description_146">Description</h4>
-<p>...</p>
+<p>This function automatically checks (and corrects if required) the control and label order of ASL timeseries based on the larger signal in control volumes.
+It supposes that data is acquired in pairs.</p>
 <hr />
 <h3 id="xasl_quant_hct2bloodt1m">xASL_quant_Hct2BloodT1.m</h3>
 <h4 id="function_147">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function BloodT1 = xASL_quant_Hct2BloodT1(Hematocrit, Y, B0, bVerbose)
 </code></pre>
 
 <h4 id="description_147">Description</h4>
-<p>...</p>
+<p>This function converts hematocrit to blood T1, according to calculations defined by Patrick Hales. With courtesy and thanks!
+Note that we assume a venous O2 saturation of 68% (Yv=0.68)</p>
+<p>This function performs the following steps:</p>
+<ol>
+<li>Check fraction vs percentage hematocrit &amp; Y, should be between 0 and 1</li>
+<li>Specify defaults (Hb, Fe)</li>
+<li>Perform calculation</li>
+<li>Convert s to ms</li>
+<li>Print what we did</li>
+</ol>
 <hr />
 <h3 id="xasl_quant_m0m">xASL_quant_M0.m</h3>
 <h4 id="function_148">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [M0IM] = xASL_quant_M0(M0IM, x)
 </code></pre>
 
 <h4 id="description_148">Description</h4>
-<p>...</p>
+<p>This function quantifies the M0, except for the difference in voxel size between the M0 and ASL source data (which is scaled in xASL_wrp_ProcessM0.m).</p>
 <hr />
 <h3 id="xasl_quant_singlepldm">xASL_quant_SinglePLD.m</h3>
 <h4 id="function_149">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ScaleImage, CBF] = xASL_quant_SinglePLD(PWI, M0_im, SliceGradient, x)
 </code></pre>
 
 <h4 id="description_149">Description</h4>
-<p>...</p>
+<p>This script performs a multi-step quantification, by initializing a ScaleImage that travels through this script &amp; gets changed by the following quantification factors:</p>
+<ol>
+<li>PLD scalefactor (gradient if 2D multi-slice) (if x.ApplyQuantification(3))</li>
+<li>Label decay scale factor for single (blood T1) - or dual-compartment (blood+tissue T1) model, CASL or PASL. Single-compartment model: Alsop MRM 2014.
+ Dual-compartment model: Wang MRM 2002: Gevers JMRI 2012 (if x.ApplyQuantification(3))</li>
+<li>Scaling to physiological units [ml/gr/ms =&gt;ml/100gr/min =&gt;(60,000 ms=&gt;min)(1 gr=&gt;100gr)] (if x.ApplyQuantification(3))</li>
+<li>Vendor-specific scalefactor (if x.ApplyQuantification(1) -&gt; future move to dcm2niiX stage)</li>
+<li>Divide PWI/M0 (if x.ApplyQuantification(5))</li>
+<li>Print parameters used</li>
+</ol>
+<p>Note that the output always goes to the CBF image (in the future this could go to different stages, e.g. dcm2niiX or PWI stage)</p>
 <hr />
 <h3 id="xasl_spm_affinem">xASL_spm_affine.m</h3>
 <h4 id="function_150">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_spm_affine(srcPath, refPath, fwhmSrc, fwhmRef, otherList, bDCT)
 </code></pre>
 
 <h4 id="description_150">Description</h4>
-<p>...</p>
+<p>This SPM wrapper runs SPM's old normalize-estimate function, which calculates the affine transformation (i.e. linear + zooming and shearing) that is required to align the source image with the reference image. By default it does not estimate the low-degree Discrete Cosine Transform (DCT) to have a simple affine transformation  but this can be enabled in this wrapper. Also note that this affine transformation uses a correlation cost function, hence it requires the source and reference images to have similar contrasts and resolution - or provide the resolution estimates so the smoothing can be done.
+This function does not change the orientation header by default, but it allows to change those of others through the otherList. If bDCT is used or no otherList given, it stores its estimated affine transformation as orientation difference matrix in a file with the same path but _sn.mat extension. For the provided smoothing FWHM, note that smoothnesses combine with Pythagoras' rule (i.e. square summing).</p>
 <hr />
 <h3 id="xasl_spm_biasfieldcorrectionm">xASL_spm_BiasfieldCorrection.m</h3>
 <h4 id="function_151">Function</h4>
