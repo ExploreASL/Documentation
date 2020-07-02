@@ -2066,11 +2066,11 @@ The realignment is only applied when any of the X/Y/Z dimensions have a higher o
 <hr />
 <h3 id="xasl_im_colorbarm">xASL_im_colorbar.m</h3>
 <h4 id="function_56">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function axesBar = xASL_io_colorbar(ColorMap,TickLabels)
 </code></pre>
 
 <h4 id="description_56">Description</h4>
-<p>...</p>
+<p>Display a color bar, but replace it with a colorbar with given 'ticks' and colormap.</p>
 <hr />
 <h3 id="xasl_im_column2imm">xASL_im_Column2IM.m</h3>
 <h4 id="function_57">Function</h4>
@@ -2245,7 +2245,7 @@ It uses its own dilate_erode function and crops the image so that it contains on
 <hr />
 <h3 id="xasl_im_dilateroim">xASL_im_dilateROI.m</h3>
 <h4 id="function_72">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_dilateROI(PathIn, PathTemp)
 </code></pre>
 
 <h4 id="description_72">Description</h4>
@@ -2310,11 +2310,12 @@ This can be useful to correct for any erroneous rotations from registration, or 
 <hr />
 <h3 id="xasl_im_joincolormapm">xASL_im_joinColormap.m</h3>
 <h4 id="function_79">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function joinedColormap = xASL_io_joinColormap(blackMiddle,colormap1,colormap2)
 </code></pre>
 
 <h4 id="description_79">Description</h4>
-<p>...</p>
+<p>Take two colormaps and put them together, creating a colormap with 256 values input colormaps 1 and 2 are stacked as colormap1 first, then colormap2.
+They can be of anylength [N1,3] and [N2,3], joinedColormap has size [256,3].</p>
 <hr />
 <h3 id="xasl_im_jointhistm">xASL_im_JointHist.m</h3>
 <h4 id="function_80">Function</h4>
@@ -2382,39 +2383,49 @@ The procedure works as follows:</p>
 <hr />
 <h3 id="xasl_im_maskpeakvascularsignalm">xASL_im_MaskPeakVascularSignal.m</h3>
 <h4 id="function_85">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [MaskIM, TreatedCBF] = xASL_im_MaskPeakVascularSignal(PathCBF, Path_M0, bClip, ClipThresholdValue, CompressionRate)
 </code></pre>
 
 <h4 id="description_85">Description</h4>
-<p>...</p>
+<p>This function searches for an acceptable high threshold as definition of high intra-vascular ASL signal.
+It also allows to compress the values here (when
+bClip==true). Compression retains some variability, but limits their outlying influence on statistics. The procedure works as follows:</p>
+<ol>
+<li>Segment GM on ASL image at 80th percentile of CBF image distribution</li>
+<li>For PWI &amp; CBF images, select voxels higher than median + ClipThresholdValue MAD Vascular artifacts will have a high intensity in both images, whereas errors by division by M0 will only have a high intensity on the M0 image, and high values due to a biasfield will only be noticeable on the PWI image</li>
+<li>Combine the two created masks</li>
+<li>Obtain average clipping value from selected voxels from the combined masks</li>
+<li>Apply compression if requested. If not, output image will have NaNs for intra-vascular voxels.</li>
+</ol>
+<p>Note that the definition of the threshold is obtained within the GM only, but that this threshold is applied to the full image to also remove extracranial extreme values</p>
 <hr />
 <h3 id="xasl_im_modulationm">xASL_im_Modulation.m</h3>
 <h4 id="function_86">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_Modulation(x)
 </code></pre>
 
 <h4 id="description_86">Description</h4>
-<p>...</p>
+<p>Combines the transformations to create Jacobians, &amp; multiplies the standard space segmentations with these to create volumetric images for volumetric analyses.</p>
 <hr />
 <h3 id="xasl_im_normalizelabelingterritoriesm">xASL_im_NormalizeLabelingTerritories.m</h3>
 <h4 id="function_87">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function image_out = xASL_im_NormalizeLabelingTerritories(imageIN, GMmask, x)
 </code></pre>
 
 <h4 id="description_87">Description</h4>
-<p>...</p>
+<p>Normalizes per perfusion territory mask should be GM mask.</p>
 <hr />
 <h3 id="xasl_im_overlapt1_aslm">xASL_im_OverlapT1_ASL.m</h3>
 <h4 id="function_88">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_OverlapT1_ASL(x, ASL)
 </code></pre>
 
 <h4 id="description_88">Description</h4>
-<p>...</p>
+<p>Part of ExploreASL. Shows spatial agreement ASL and probability maps.</p>
 <hr />
 <h3 id="xasl_im_pcam">xASL_im_PCA.m</h3>
 <h4 id="function_89">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [pc, score, eigenvalues, tsquare, loadings, Xmean] = xASL_im_PCA(dataIn)
 </code></pre>
 
 <h4 id="description_89">Description</h4>
@@ -2422,87 +2433,103 @@ The procedure works as follows:</p>
 <hr />
 <h3 id="xasl_im_presmoothm">xASL_im_PreSmooth.m</h3>
 <h4 id="function_90">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function pathOut = xASL_im_PreSmooth(pathRef, pathSrc, pathSmo, resRef, resSrc, srcAffinePath, bInvAffine)
 </code></pre>
 
 <h4 id="description_90">Description</h4>
-<p>...</p>
+<p>It assumes that the FWHM is equal to voxel size, unless the real resolution is given. Then takes into account the voxel sizes and orientation difference between the volumes, but performs the smoothing according to the given real resolution (it is possible to supply the resolution for just one image) - this should be helpful primarily when the. It creates a Gaussian covariance matrix for the reference, transforms it according to the difference between the two images a produces the Gaussian covariance matrix of the pre-smoothing in the source space. Then it performs the smoothing.
+The following steps are performed:</p>
+<ol>
+<li>Obtain the voxel size</li>
+<li>Skip this function if reference resolution is equal to, or lower than source resolution</li>
+<li>Deal with affine transformation</li>
+<li>Obtain the transformation matrix from the Reference to the Source space</li>
+<li>Apply the smoothing filter on the source image(s)</li>
+<li>Save the smoothed image</li>
+</ol>
 <hr />
 <h3 id="xasl_im_processm0conventionalm">xASL_im_ProcessM0Conventional.m</h3>
 <h4 id="function_91">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [Corr_M0] = xASL_im_ProcessM0Conventional(ImIn, x)
 </code></pre>
 
 <h4 id="description_91">Description</h4>
-<p>...</p>
+<p>This function uses the conventional M0 masking, and only a little smoothing, following what Philips uses for its 3D GRASE. Advantages of the newer M0 processing in ExploreASL are the lack of use of M0 threshold-based masking, the removal of high CSF values and higher SNR for ASL division.</p>
 <hr />
 <h3 id="xasl_im_projectlabelsoverdatam">xASL_im_ProjectLabelsOverData.m</h3>
 <h4 id="function_92">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function OutputIM = xASL_im_ProjectLabelsOverData(DataIM, LabelIM, x, ScaleFactorData, ScaleFactorLabel)
 </code></pre>
 
 <h4 id="description_92">Description</h4>
-<p>...</p>
+<p>This script projects labels over an image, but works only in 2D. Make sure to make a 2D image from a 3D or 4D image using xASL_im_TransformData2View.m can be used in combination with xASL_imwrite.m</p>
 <hr />
 <h3 id="xasl_im_pvcbsplinem">xASL_im_PVCbspline.m</h3>
 <h4 id="function_93">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [imPVEC,imCBFrec,imResidual,FWHM] = xASL_im_PVCbspline(imCBF, imPV, bsplineNum)
 </code></pre>
 
 <h4 id="description_93">Description</h4>
-<p>...</p>
+<p>PVEc correction of ASL data using prior GM-,WM-partial volume maps.
+Follows the principles of the PVEc algorithm by I. Asllani (MRM, 2008).
+The PV-corrected CBF_GM and CBF_WM maps are approximated using an uniformly sampled cubic B-splines.
+Free for research use without guarantee. </p>
 <hr />
 <h3 id="xasl_im_pvckernelm">xASL_im_PVCkernel.m</h3>
 <h4 id="function_94">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [imPVEC,imCBFrec,imResidual] = xASL_im_PVCkernel(imCBF, imPV,kernel,mode)
 </code></pre>
 
 <h4 id="description_94">Description</h4>
-<p>...</p>
+<p>PVEc correction of ASL data using prior GM-,WM-partial volume maps.
+Follows the principles of the PVEc algorithm by I. Asllani (MRM, 2008).
+Free for research use without guarantee. If used in a study or publication. Please, acknowledge the author.</p>
 <hr />
 <h3 id="xasl_im_resamplelinearfairm">xASL_im_ResampleLinearFair.m</h3>
 <h4 id="function_95">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [output_res]=xASL_im_ResampleLinearFair(im_input,newsize)
 </code></pre>
 
 <h4 id="description_95">Description</h4>
-<p>...</p>
+<p>Downsample (or upsample, works similarly) old_res image to low_res image, trilinear.</p>
+<p><strong>NB:</strong> new_res should fit exactly integer fold in old_res.</p>
+<p><strong>NB:</strong> All dimensions of new_res should have equal size.</p>
 <hr />
 <h3 id="xasl_im_rescalelinearm">xASL_im_RescaleLinear.m</h3>
 <h4 id="function_96">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ NewMatrix ] = xASL_im_RescaleLinear(OriMatrix, NewMin, NexMax, NonZerosOption)
 </code></pre>
 
 <h4 id="description_96">Description</h4>
-<p>...</p>
+<p>Linearly rescales input matrix to output matrix, applying a new minimum and new maximum.</p>
 <hr />
 <h3 id="xasl_im_restoreorientationm">xASL_im_RestoreOrientation.m</h3>
 <h4 id="function_97">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_RestoreOrientation(PathNIfTI)
 </code></pre>
 
 <h4 id="description_97">Description</h4>
-<p>...</p>
+<p>This function reverts the NIfTI header orientation matrix to the original orientation from the scanner/dcm2nii conversion.</p>
 <hr />
 <h3 id="xasl_im_rotatem">xASL_im_rotate.m</h3>
 <h4 id="function_98">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function rotated = xASL_im_rotate(im, angle)
 </code></pre>
 
 <h4 id="description_98">Description</h4>
-<p>...</p>
+<p>Simple rotation of the first two dimension of a ND image by 0, 90, 180, 270 degrees.</p>
 <hr />
 <h3 id="xasl_im_skullstripm">xASL_im_SkullStrip.m</h3>
 <h4 id="function_99">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_SkullStrip(InPath, PathMNIMask, x, OutPath)
 </code></pre>
 
 <h4 id="description_99">Description</h4>
-<p>...</p>
+<p>Creates skull-stripped T1w image based on MNI -&gt; native space registration from segmentation.</p>
 <hr />
 <h3 id="xasl_im_smooth3dm">xASL_im_Smooth3D.m</h3>
 <h4 id="function_100">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [imSmo,imGaussX,imGaussY,imGaussZ] = xASL_im_Smooth3D(sigma, imIn, PSFtype)
 </code></pre>
 
 <h4 id="description_100">Description</h4>
@@ -2510,91 +2537,138 @@ The procedure works as follows:</p>
 <hr />
 <h3 id="xasl_im_tileimagesm">xASL_im_TileImages.m</h3>
 <h4 id="function_101">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ImOut] = xASL_im_TileImages(ImIn, nColumns)
 </code></pre>
 
 <h4 id="description_101">Description</h4>
-<p>...</p>
+<p>Merges selected slices (3D) into one single 2D picture.</p>
+<p>Plots all slices in one figure with specified rows and columns, aiming for a square tile.</p>
+<p><strong>PM:</strong> can be extended to multiple slices.</p>
 <hr />
 <h3 id="xasl_im_transformdata2viewm">xASL_im_TransformData2View.m</h3>
 <h4 id="function_102">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function FigureOut = xASL_im_TransformData2View(ImagesIn, x)
 </code></pre>
 
 <h4 id="description_102">Description</h4>
-<p>...</p>
+<p>This function changes the dimensionality and reshapes the input images in such a way that they are nicely tiled in a mosaic for visualization purposes.
+Reshaping a series of images with this function can be useful for visualization of SPM/voxel-based analyses.</p>
 <hr />
 <h3 id="xasl_im_upsamplem">xASL_im_Upsample.m</h3>
 <h4 id="function_103">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_Upsample(PathOrig, PathDest, NewVoxelSize, LeaveEmpty, PaddingDim, Kernel)
 </code></pre>
 
 <h4 id="description_103">Description</h4>
-<p>...</p>
+<p>Upsamples an ASL image, without changing the orientation matrix, which can be used e.g. for PVEc in higher resolution but same space.</p>
 <hr />
 <h3 id="xasl_im_visualizeroism">xASL_im_VisualizeROIs.m</h3>
 <h4 id="function_104">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_VisualizeROIs(x, ROI_T1_list, ROI_FLAIR_list)
 </code></pre>
 
 <h4 id="description_104">Description</h4>
-<p>...</p>
+<p>Creates for each subject  a JPEG image containing the original T1w, WMH_SEGM and T1w after lesion-filling.</p>
 <hr />
 <h3 id="xasl_im_visualqc_topupm">xASL_im_VisualQC_TopUp.m</h3>
 <h4 id="function_105">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [MeanAI_PreTopUp_Perc, MeanAI_PostTopUp_Perc] = xASL_im_VisualQC_TopUp(PathPopB0, PathPopUnwarped, x, iSubject, CheckDir)
 </code></pre>
 
 <h4 id="description_105">Description</h4>
-<p>...</p>
+<p>This function creates a Figure that showes the effect of TopUp with 6 images with axial slices: the NormPE, RevPE and their difference image in colorscale, and this before (upper row) &amp; after (lower row) TopUp.</p>
 <hr />
 <h3 id="xasl_im_zeroedgesm">xASL_im_ZeroEdges.m</h3>
 <h4 id="function_106">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [IM] = xASL_im_ZeroEdges(IM, EdgeThicknessPerc)
 </code></pre>
 
 <h4 id="description_106">Description</h4>
-<p>...</p>
+<p>Resampling can sometimes give some strange errors near image edges. These should be NaNs, but sometimes can be zeros or ones, or even weird numbers. For resampling, NaNs should be set to 0 (this is done in another function) as they can influence the resampling (depending on the transformation matrix). To be sure that the edges are nicely fixed, this function sets a border at the image matrix edges to zero.</p>
 <hr />
 <h3 id="xasl_init_convertm2jsonm">xASL_init_ConvertM2JSON.m</h3>
 <h4 id="function_107">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [PathJSON] = xASL_init_ConvertM2JSON(PathM, bOverwrite)
 </code></pre>
 
 <h4 id="description_107">Description</h4>
-<p>...</p>
+<p>This function converts and replaces the legacy data parameter m-format by a JSON file. A DataPar.m was the settings/parameter file, specific to a dataset to be processed by ExploreASL, now replaced to JSON by BIDS. Note that the deployed/compiled version of ExploreASL requires the JSON file, this function should not be compiled along. This function performs the following steps:</p>
+<ol>
+<li>Run the m-file to load parameters</li>
+<li>Escape characters that are illegal in JSON</li>
+<li>Write the JSON</li>
+</ol>
 <hr />
 <h3 id="xasl_init_defaulteffectiveresolutionm">xASL_init_DefaultEffectiveResolution.m</h3>
 <h4 id="function_108">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [EffectiveResolution] = xASL_init_DefaultEffectiveResolution(PathASL, x)
 </code></pre>
 
 <h4 id="description_108">Description</h4>
-<p>...</p>
+<p>This ExploreASL module provides an educated guess on  the effective spatial resolution of ASL. This may depend on the combination of acquisition PSF, reconstruction filter, head motion. Note that the derived/processed images may have a lower effective resolution because of smoothing effects from interpolation. Note that this remains an educated-guess, the actual FWHM may still differ, especially for 3D GRASE sequences, where e.g. the choice of number of segments can affect the smoothness.
+This function conducts the following steps:</p>
+<ol>
+<li>Educated-guess FWHM</li>
+<li>Attempt accounting for in-plane interpolation in reconstruction</li>
+<li>Calculate and report effective spatial resolution</li>
+</ol>
 <hr />
 <h3 id="xasl_init_definestudydatam">xASL_init_DefineStudyData.m</h3>
 <h4 id="function_109">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_init_DefineStudyData(x)
 </code></pre>
 
 <h4 id="description_109">Description</h4>
-<p>...</p>
+<p>This initialization wrapper initializes the parameters for this pipeline run, i.e. subjects, sessions (runs), timepoints (visits), exclusions, sites, cohorts etc.</p>
+<p>Note that ASL sessions are defined here as what BIDS calls "runs".</p>
+<p>The "longitudinal_Registration functions here manage different TimePoints, which is what BIDS calls "visits".
+With different structural scans, from the same participant. This is managed by subject name suffixes _1 _2 _n, and can be used for comparing visits in the population module, or running SPM's longitudinal within-subject registration</p>
+<p>Parallelization is allowed here by calling ExploreASL different times, where it divides the subjects/images for processing across the nWorkers, using iWorker as the reference for the part that the current ExploreASL call will process. This requires having a Matlab license that can be started multiple times on a server, or alternatively running the ExploreASL compilation, and doesn't require the Matlab parallel toolbox.</p>
+<p>This function exists from the following parts:</p>
+<ol>
+<li>Manage included &amp; excluded subjects</li>
+<li>Create dummy defaults (exclusion list, ASL sessions)</li>
+<li>Create list of total baseline &amp; follow-up subjects, before exclusions</li>
+<li>Create TimePoint data-lists</li>
+<li>Manage exclusions</li>
+<li>Add sessions as statistical variable, if they exist</li>
+<li>Parallelization: If running parallel, select cases for this worker</li>
+<li>Add Longitudinal TimePoints (different T1 volumes) as covariate/set, after excluding</li>
+<li>Load &amp; add statistical variables</li>
+<li>Make x.S.SetsOptions horizontal if vertical by transposing</li>
+<li>Create single site dummy, if there were no sites specified</li>
+<li>Check for time points sets</li>
+<li>Create list of baseline &amp; follow-up subjects (i.e. after exclusion)</li>
+<li>Check what excluded from which TimePoints</li>
+</ol>
 <hr />
 <h3 id="xasl_init_filesystemm">xASL_init_FileSystem.m</h3>
 <h4 id="function_110">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_init_FileSystem(x)
 </code></pre>
 
 <h4 id="description_110">Description</h4>
-<p>...</p>
+<p>This function initializes the file system used throughout ExploreASL, for processing a single dataset/scan.</p>
+<p>It is repeated for each scan, and runs the following parts:</p>
+<ol>
+<li>Create folders</li>
+<li>Subject/session definitions</li>
+<li>Add prefixes &amp; suffixes</li>
+<li>Add Subject-specific prefixes</li>
+<li>Add sidecars</li>
+</ol>
 <hr />
 <h3 id="xasl_init_initializemutexm">xASL_init_InitializeMutex.m</h3>
 <h4 id="function_111">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [x] = xASL_init_InitializeMutex(x, ModuleName)
 </code></pre>
 
 <h4 id="description_111">Description</h4>
-<p>...</p>
+<p>This function initializes the mutex/lock system of ExploreASL for a module. Mutex (for mutual exclusion) is a synchronization mechanism for enforcing limits of access to data (here a module for a single scan) to allow parallelization. It also allows stopping and continuing of ExploreASL. This function runs the following steps:</p>
+<ol>
+<li>Lock folder management</li>
+<li>Initialize mutex object</li>
+</ol>
 <hr />
 <h3 id="xasl_init_labelcolorsmat">xASL_init_LabelColors.mat</h3>
 <h4 id="function_112">Function</h4>
