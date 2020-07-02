@@ -2113,253 +2113,305 @@ This function does not change the orientation header by default, but it allows t
 
 #### Function
 ```matlab
-...
+function xASL_spm_BiasfieldCorrection(PathIn, SPMdir, Quality, PathMask, PathOut)
 ```
 
 #### Description
-...
+This function is a wrapper around the SPM "old segment" function, for biasfield removal. It is tested for M0 and mean control images. It conducts the following steps:
+
+1. Create implicit mask
+2. Define SPM 'old segmentation' settings
+3. Run SPM 'old segmentation'
+4. Delete temporary files
+5. Rename temporary SPM file into output file
 
 ----
 ### xASL_spm_coreg.m
 
 #### Function
 ```matlab
-...
+function xASL_spm_coreg(refPath, srcPath, OtherList, x, sep, FastReg)
 ```
 
 #### Description
-...
+This SPM wrapper runs SPMs coregister-estimate function, which calculates the 6 parameter rigid-body transformation (a.k.a. linear) that is required to align the source image with the reference image. This 6 parameter transformation (i.e. 3 XYZ translations and 3 rotations) is applied to the orientation header of the source NIfTI image, and also to the images provided in OtherList (optional).
+
+Note that this SPM registration function uses a normalized mutual information (NMI) by default, enabling registration between two images with different contrast. Note that this algorithm will use the first volume of a multi-volume NIfTI
 
 ----
 ### xASL_spm_deface.m
 
 #### Function
 ```matlab
-...
+function xASL_spm_deface(PathIn, bReplace)
 ```
 
 #### Description
-...
+This function removes the face from an anatomical NIfTI image, e.g. T1w or FLAIR, for disidentification/privacy purposes. When this script is run after the ExploreASL structural module, it does a pretty good job even for 2D images.
+However, note that this can always fail, strip part of the brain, or change the output of pipelines. So best not to compare results from defaced and non-defaced images.
+Also, note that defacing makes it difficult to ensure that the FLAIR and T1w are from the same subject.
 
 ----
 ### xASL_spm_deformations.m
 
 #### Function
 ```matlab
-...
+function xASL_spm_deformations(x, PathIn, PathOut, Interpolation, InverseSpace, AffineTrans, DeformationPath, VoxelSize)
 ```
 
 #### Description
-...
+This ExploreASL wrapper manages the SPM deformation tool. It takes multiple (ExploreASL pipeline) transformations and combines/concatenates them into a single transformation prior to applying it to the input images. 
+This allows to apply multiple transformations with a single interpolation, avoiding propagation of undesired interpolation effects. Mainly used to get native space images into standard space, or vice versa.
+Best to combine as many files as possible within this function, since the deformation calculation (which is the most computation intensive part) needs to be performed once for multi-file resampling.
 
 ----
 ### xASL_stat_AtlasForStats.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_stat_AtlasForStats(x)
 ```
 
 #### Description
-...
+This function loads atlases, checks them, and their ROI names, for later use as ROI definition in xASL_stat_GetROIstatistics.
+Note that the atlases should be integer values, or different 4rd dimensions (i.e. multiple images), that are mutually exclusive. This function takes the following steps:
+
+1. Load atlas ROI names. There should be a TSV sidecar to the atlas NIfTI file, as explained above.
+2. deal with memory mapping
+3. Resample atlas 50 1.5 mm^3 MNI
+4. Converted atlas with integers to 4D binary image
+5. Convert/compress masks into Columns
+6. Print atlas overview image
 
 ----
 ### xASL_stat_ComputeDifferCoV.m
 
 #### Function
 ```matlab
-...
+function diffCoV = xASL_stat_ComputeDifferCoV(imCBF,imMask,bPVC,imGM,imWM,b3D)
 ```
 
 #### Description
-...
+It calculates the spatial DiffCoV value on finite part of imCBF. Optionally a mask IMMASK is provide, and PVC is done for bPVC==2 using imGM and imWM masks and constructing pseudoCoV from pseudoCBF image. For bPVC\~=2, imGM and imWM are ignored. It is calculated in 2D or assuming also 3D edges based on B3D. Calculate derivate spatial CoV, by summing up differences in CBF between neighbors. The derivative uses Sobels filter.
 
 ----
 ### xASL_stat_ComputeMean.m
 
 #### Function
 ```matlab
-...
+function [CBF_GM, CBF_WM] = xASL_stat_ComputeMean(imCBF, imMask, nMinSize, bPVC, imGM, imWM)
 ```
 
 #### Description
-...
+It behaves in a similar way as VAR.
 
 ----
 ### xASL_stat_ComputeSpatialCoV.m
 
 #### Function
 ```matlab
-...
+function sCov = xASL_stat_ComputeSpatialCoV(imCBF,imMask,nMinSize,bPVC,imGM,imWM)
 ```
 
 #### Description
-...
+It calculates the spatial CoV value on finite part of imCBF. Optionally a mask IMMASK is provide, ROIs of size < NMINSIZE are ignored, and PVC is done for bPVC==2 using imGM and imWM masks and constructing pseudoCoV from pseudoCBF image. For bPVC\~=2, imGM and imWM are ignored.
 
 ----
 ### xASL_stat_EqualVariancesTest.m
 
 #### Function
 ```matlab
-...
+function [resTest, P] = xASL_stat_EqualVariancesTest(X, alpha, type)
 ```
 
 #### Description
-...
+Brown-Forsythe or Levene's test for equality of variances. The response variable is transformed (yij = abs(xij - median(xj)) for Brown-Forsythe and yij = abs(xij - mean(xj)) for Levene's test). And then runs a one-way ANOVA F-test to check if the variances are equal.
 
 ----
 ### xASL_stat_fcdf.m
 
 #### Function
 ```matlab
-...
+function p = xASL_stat_fcdf(F,M,N)
 ```
 
 #### Description
-...
+Calculates the cumulative distribution function of the F-distribution for degrees of freedom M, N at value F.
 
 ----
 ### xASL_stat_GetROIstatistics.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_stat_GetROIstatistics(x)
 ```
 
 #### Description
-...
+This function computes mean and spatial CoV for each ROI, in a \[1.5 1.5 1.5\] mm MNI space, with several ASL-specific adaptions:
+
+1. Skip ROI masks that are smaller than 1 mL as this would be too noisy for ASL (skipped when x.S.IsASL==false)
+2. Expand each ROI mask such that it has sufficient WM content (skipped when IsASL==false)
+3. Create for each ROI mask a left, right and bilateral copy
+4. Iterate over all subjects:
+    * Load partial volume maps
+    * Correct for WMH SEGM -> IS THIS STILL REQUIRED???
+    * Load data
+    * Show ROIs projected on ASL image
+    * Actual data computations
+        * Partial Volume Correction (PVC) options:
+        * PVC==0 -> perform masking only, no regression
+        * PVC==1 -> single compartment regression, for pGM
+        * PVC==2 -> dual compartment regression for pGM & pWM (i.e. normal PVC)
+        * Here we mask out susceptibility artifacts (including outside FoV) for all ASL computations, and also mask out vascular artifacts for computing the mean.
+    * While other artifacts/FoV can be masked out on population level (i.e. >0.95 subjects need to have a valid signal in a certain voxel), vascular artifacts differ too much in their location between subjects, so we mask this on subject-level.
+
+Note that the words "mask" and "ROI" are used interchangeably throughout this function, where they can have a different or the same meaning
+
+**PM:** WE COULD CHANGE THIS, INTO MASK BEING USED TO EXCLUDE VOXELS AND ROI FOR INCLUDING VOXELS
 
 ----
 ### xASL_stat_MadNan.m
 
 #### Function
 ```matlab
-...
+function y = xASL_stat_MadNan(x,flag,dim)
 ```
 
 #### Description
-...
+Calculates a Median/Mean Absolute deviation, but ignoring NaNs in the calculation.
+
+xASL_stat_MadNan(X) or xASL_stat_MadNan(X,0) computes xASL_stat_MeanNan(ABS(X-xASL_stat_MeanNan(X))
+
+xASL_stat_MadNan(X,1) computes xASL_stat_MedianNan(ABS(X-xASL_st_MedianNan(X)).
 
 ----
 ### xASL_stat_MeanSSIM.m
 
 #### Function
 ```matlab
-...
+function mssim=xASL_stat_MeanSSIM(imRef,imSrc,dynRange)
 ```
 
 #### Description
-...
+Calculates the similarity index according to Want et al. 
 
 ----
 ### xASL_stat_MultipleLinReg.m
 
 #### Function
 ```matlab
-...
+function [b,CI,pval,stats] = xASL_stat_MultipleLinReg(X,Y,bIntercept)
 ```
 
 #### Description
-...
+Performs a multiple linear regression Y=b \* X+a and provides the intercept and regression coefficients beta including their significance and confidence intervals. It calculates additionally the goodness of the fit.
 
 ----
 ### xASL_stat_PrintStats.m
 
 #### Function
 ```matlab
-...
+function [x] = xASL_stat_PrintStats(x)
 ```
 
 #### Description
-...
+This function prints an overview of statistics from data that were acquired per ROI, in a TSV file. It starts by printing covariates (called "Sets"). Rows will be subjects/sessions, columns will be the sets and
+
+ROI-statistics:
+
+1. First remove previous TSV-file, if already existed printing to a TSV file can be tricky if it is opened by Excel. Make sure to close previous versions first, otherwise this part will crash.
+2. Print overview of sets to TSV as explained above. Uses subfunction xASL\_stat\_CreateLegend to put legends. Aim is to create a single TSV file that has a proper overview of the data, & is self-explanatory to those reading/using it.
+3. Define number of ASL sessions, force to 1 in case of TT or volume metrics
+4. Print the overview
 
 ----
 ### xASL_stat_PSNR.m
 
 #### Function
 ```matlab
-...
+function PSNR=xASL_stat_PSNR(imRef,imSrc)
 ```
 
 #### Description
-...
+Calculates the PSNR, needs two input arguments - 3D images of the same size. 
+Uses 95% percentile instead of MAX.
 
 ----
 ### xASL_stat_QuantileNan.m
 
 #### Function
 ```matlab
-...
+function y = xASL_stat_QuantileNan(x,quant,dim)
 ```
 
 #### Description
-...
+Calculates a quantile, but ignoring NaNs in the calculation.
 
 ----
 ### xASL_stat_RobustMean.m
 
 #### Function
 ```matlab
-...
+function [NotOutliers, iOutliers] = xASL_stat_RobustMean(IM, ParameterFunction)
 ```
 
 #### Description
-...
+This function detects outlier images, that can be used to create a robust average, e.g. for template or biasfield creation. This is based either on the sum-of-squares with the mean image (SoS), or on the average relative asymmetry index (AI). Images that are median+/-3 mad off are defined as outliers. MAD = median/mean absolute difference.
 
 ----
 ### xASL_stat_ShapiroWilk.m
 
 #### Function
 ```matlab
-...
+function [H, P, W] = xASL_stat_ShapiroWilk(x, alpha)
 ```
 
 #### Description
-...
+Performs the statistical test of normality - null hypothesis is that the sample is from normal distribution with unspecified mean and variance. Based on the sample kurtosis it performs either Shapiro-Wilk (for platykurtic) or Shapiro-Francia test (for leptokurtic).
 
 ----
 ### xASL_stat_StdNan.m
 
 #### Function
 ```matlab
-...
+function y = xASL_stat_StdNan(varargin)
 ```
 
 #### Description
-...
+It behaves in a similar way as VAR - it directly passes all arguments to xASL_stat_VarNan.
 
 ----
 ### xASL_stat_SumNan.m
 
 #### Function
 ```matlab
-...
+function y = xASL_stat_SumNan(x,dim)
 ```
 
 #### Description
-...
+It uses the function SUM, but it sets all the NaNs to zero before calling it.
 
 ----
 ### xASL_stat_tcdf.m
 
 #### Function
 ```matlab
-...
+function F = xASL_stat_tcdf(T,nu)
 ```
 
 #### Description
-...
+Calculates the cumulative distribution function of the Student's t-distribution for degrees of freedom nu at value T.
 
 ----
 ### xASL_stat_ticdf.m
 
 #### Function
 ```matlab
-...
+function T = xASL_stat_ticdf(P,nu)
 ```
 
 #### Description
-...
+Calculates the inverse of cumulative distribution function of the Student's t-distribution for degrees of freedom nu at value P.
 
 ----
 ### xASL_stat_ttest.m
