@@ -747,44 +747,81 @@ Calculate Dice coefficient of image overlap.
 
 #### Function
 ```matlab
-...
+function xASL_im_CreateASLDeformationField(x, bOverwrite, EstimatedResolution, PathLowResNIfTI)
 ```
 
 #### Description
-...
+This function smooths a transformation flow field to a lower resolution. Usually, we use a high resolution anatomical image (e.g. 3D T1w) to obtain the flowfields from native space to standard space, and apply these to the lower resolution ASL images. Because of the resolution differences, the flowfields need to be downsampled/smoothed, to avoid deformation effects that are crispier than the functional image that is investigated. This function performs the following steps:
+
+1. Obtain resolutions
+2. Fill NaNs at edges y_T1.nii flowfield to prevent interpolation artifact
+3. Smooth flowfield
+4. Fill NaNs at edges y_ASL.nii
+
+Note that if the resolution of ASL is not significantly (i.e. >0.5 mm in any dimension) lower than T1w, the y_T1.nii is copied to y_ASL.nii
 
 ----
 ### xASL_im_CreatePseudoCBF.m
 
 #### Function
 ```matlab
-...
+function xASL_im_CreatePseudoCBF(x, spatialCoV)
 ```
 
 #### Description
-...
+This function creates a pseudo-CBF image from mean CBF template, arterial transit time (ATT) bias field & vascular artifacts, weighted through spatial CoV.
+The first part of this code puts templates in the native space and creates a pseudoCBF image from a downsampled pGM & pWM tissue (PseudoTissue). The latter is used for registration but also as reference for the template registration, to speed this up.
+The second part of this code computes a pseudoCBF image based on the pseudoTissue & the CBF templates of CBF, ATT biasfield and vascular peaks, based on spatial CoV.
+This submodule performs the following steps:
+
+1. Create the pseudoTissue CBF reference image, if it doesnt exist already
+2. Create the native space copies of ASL templates, if they dont exist already
+3. Spatial CoV input argument check
+4. Load native space copies of templates
+5. Create pseudoTissue from segmentations, mix this with the mean CBF template depending on spatial CoV
+6. Create pseudoCBF reference image used for CBF-based registration
+7. Scale mean_PWI_Clipped source image to the same range as PseudoCBF
 
 ----
 ### xASL_im_CreateSliceGradient.m
 
 #### Function
 ```matlab
-...
+function xASL_im_CreateSliceGradient(x)
 ```
 
 #### Description
-...
+
+When a 2D readout is used with ASL, post-label delay and hence T1 decay will be dependent on slice timing.
+Therefore, quantification part needs slice reference to quantify per slice and correct for effective post-label delay differences
+
+This function uses exact same ASL matrix changes that occurred due to registration to MNI, motion correction and registration to T1.
+
+1.    Create slice gradient in same space as input file
+2.    Reslice slice gradient to MNI (using existing ASL matrix changes from e.g. registration to MNI, motion correction, registration to GM)
+3.    Creating average slice gradient
 
 ----
 ### xASL_im_CreateVisualFig.m
 
 #### Function
 ```matlab
-...
+function [ImOut, FileName] = xASL_im_CreateVisualFig(x, ImIn, DirOut, IntScale, NamePrefix, ColorMap, bClip, MaskIn, bWhite, MaxWindow, bTransparancy)
 ```
 
 #### Description
-...
+This function creates a visualization Figure by merging flexibly rearranging NIfTI slices, input matrix or path, managing colormaps for different merged image layers. Current use is for visual QC figures and overview in papers.
+Function is structured as:
+
+1. Admin, deal with input arguments
+2. Process image layers separately
+    * xASL_im_TransformData2View: Reshapes image data into visualization figure
+    * xASL_im_ClipExtremes: Clips image to given percentile also we scale for peak intensity, we make sure that there is no visible clipping/distortion
+    * Convert to colors, using any input colormaps
+3. Combine image layers, using input argument IntScale
+4. Print figure
+
+This function assumes that the first image is a grascale background image (e.g. for transparancy reasons), if there are multiple images.
 
 ----
 ### xASL_im_CreateVisualLongReg.m
