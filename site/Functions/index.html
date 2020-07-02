@@ -2172,67 +2172,76 @@ Function is structured as:</p>
 <hr />
 <h3 id="xasl_im_createvisuallongregm">xASL_im_CreateVisualLongReg.m</h3>
 <h4 id="function_64">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_CreateVisualLongReg(x, CurrentSub)
 </code></pre>
 
 <h4 id="description_64">Description</h4>
-<p>...</p>
+<p>Creates for each Other TimePoint (TP):</p>
+<ul>
+<li>First row 1) First TP 2) Other TP.</li>
+<li>Second row First TP with normalized difference image between TPs without (1) and with (2) Longitudinal Registration.</li>
+</ul>
 <hr />
 <h3 id="xasl_im_cropparmsacquirem">xASL_im_CropParmsAcquire.m</h3>
 <h4 id="function_65">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [xmin xmax ymin ymax] = xASL_im_CropParmsAcquire(temp_image)
 </code></pre>
 
 <h4 id="description_65">Description</h4>
-<p>...</p>
+<p>Goes from outside to inside to acquire crop settings. Works with grayscale images (2 dimensions per slice).image position information (2D matrix) should be first 2 dimensions. Could include colordimension later on.</p>
 <hr />
 <h3 id="xasl_im_cropparmsapplym">xASL_im_CropParmsApply.m</h3>
 <h4 id="function_66">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function ImageOut = xASL_im_CropParmsApply(ImageIn,CropParameters,Xmax,Ymin,Ymax)
 </code></pre>
 
 <h4 id="description_66">Description</h4>
-<p>...</p>
+<p>This function crops 2D image matrices.</p>
 <hr />
 <h3 id="xasl_im_decomposeaffinetransformationm">xASL_im_DecomposeAffineTransformation.m</h3>
 <h4 id="function_67">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [M, P] = xASL_im_DecomposeAffineTransformation(Mtransformation)
 </code></pre>
 
 <h4 id="description_67">Description</h4>
-<p>...</p>
+<p>This function splits a transformation matrix into individual components, which can be useful to guide the SPM reslicing.
+The components are the same as in spm_(i)matrix.m, except for the shearing: these are included in the rotations, and the 90 degree rotations, these are separated.</p>
+<p>Reason for the separation of the 90 degree rotations, is that these indicate if orientations (transversal, coronal &amp; sagittal) have been switched in the NIfTI.</p>
+<p>This can be useful to correct for any erroneous 90degree rotations from registration, or to put two images in the same orientation order or voxelsize without applying their subtle realignment (e.g. for manipulating registration references).</p>
 <hr />
 <h3 id="xasl_im_determineflipm">xASL_im_DetermineFlip.m</h3>
 <h4 id="function_68">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [QCstruct] = xASL_im_DetermineFlip(x,iS,PathOrientationResults,QCstruct)
 </code></pre>
 
 <h4 id="description_68">Description</h4>
-<p>...</p>
+<p>Check determinants, should be the same before &amp; after registration, otherwise a left-right flip is applied. This is not visible, but detrimental for image analysis/stats.</p>
 <hr />
 <h3 id="xasl_im_dilateerodefullm">xASL_im_DilateErodeFull.m</h3>
 <h4 id="function_69">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function new_mask = xASL_im_DilateErodeFull(mask,type,kernel)
 </code></pre>
 
 <h4 id="description_69">Description</h4>
-<p>...</p>
+<p>Runs dilation or erosion on a binary mask in full three dimensions.
+It uses its own dilate_erode function and crops the image so that it contains only the mask</p>
 <hr />
 <h3 id="xasl_im_dilateerodeseparablem">xASL_im_DilateErodeSeparable.m</h3>
 <h4 id="function_70">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function new_mask = xASL_im_DilateErodeSeparable(mask, type, kernel_x, kernel_y, kernel_z)
 </code></pre>
 
 <h4 id="description_70">Description</h4>
-<p>...</p>
+<p>Runs dilation or erosion on a binary mask separably in three dimensions.
+It uses its own dilate_erode function and crops the image so that it contains only the mask</p>
 <hr />
 <h3 id="xasl_im_dilateerodespherem">xASL_im_DilateErodeSphere.m</h3>
 <h4 id="function_71">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function el = xASL_im_DilateErodeSphere(R)
 </code></pre>
 
 <h4 id="description_71">Description</h4>
-<p>...</p>
+<p>3D structuring element (binary) sphere.</p>
 <hr />
 <h3 id="xasl_im_dilateroim">xASL_im_dilateROI.m</h3>
 <h4 id="function_72">Function</h4>
@@ -2244,51 +2253,60 @@ Function is structured as:</p>
 <hr />
 <h3 id="xasl_im_dummyorientationniftim">xASL_im_DummyOrientationNIfTI.m</h3>
 <h4 id="function_73">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function xASL_im_DummyOrientationNIfTI(PathSrc, PathRef, PathDummyOut, bApplyRotationMinor, bApplyRotation90, bApplyZoom, bApplyTranslation)
+
 </code></pre>
 
 <h4 id="description_73">Description</h4>
-<p>...</p>
+<p>This function creates a dummy image as reference for xASL_spm_reslice, allowing to only apply specific parts of the transformation between the two images. E.g. only the rotation, or only the zooming.
+This can be useful to correct for any erroneous rotations from registration, or to put two images in the same space without applying their realignment. This function performs the following steps:</p>
+<ol>
+<li>Load orientations &amp; calculate transformation</li>
+<li>Calculate the desired transformation</li>
+<li>Calculate new orientation matrix</li>
+<li>Calculate the new image size</li>
+<li>Save the dummy NIfTI</li>
+</ol>
 <hr />
 <h3 id="xasl_im_estimateresolutionm">xASL_im_EstimateResolution.m</h3>
 <h4 id="function_74">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ resFWHM, resSigma,resErr,imSmo,imMask] = xASL_im_EstimateResolution(imCBF,imGM,imWM,imMaskOrig,PSFtype,maxIter)
 </code></pre>
 
 <h4 id="description_74">Description</h4>
-<p>...</p>
+<p>NB: everything in this code is in voxels, not in mm.</p>
 <hr />
 <h3 id="xasl_im_flipm">xASL_im_Flip.m</h3>
 <h4 id="function_75">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [MatrixOut] = xASL_im_Flip(MatrixIn, varargin)
 </code></pre>
 
 <h4 id="description_75">Description</h4>
-<p>...</p>
+<p>Backwards compatibility for flipping left-right in standard space (NB: this can be different than in native space!).</p>
 <hr />
 <h3 id="xasl_im_fliporientationm">xASL_im_FlipOrientation.m</h3>
 <h4 id="function_76">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function image_out = xASL_im_FlipOrientation(image_in)
 </code></pre>
 
 <h4 id="description_76">Description</h4>
-<p>...</p>
+<p>This function flips the 3 dimensions from sagittal to transversal or tra to cor. Leaves other dimensions untouched.</p>
 <hr />
 <h3 id="xasl_im_fliporientation2m">xASL_im_FlipOrientation2.m</h3>
 <h4 id="function_77">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function image_out = xASL_im_FlipOrientation2(image_in)
 </code></pre>
 
 <h4 id="description_77">Description</h4>
-<p>...</p>
+<p>This function flips the 3 dimensions from sagittal to cor or tra to sag. Leaves other dimensions untouched.</p>
 <hr />
 <h3 id="xasl_im_im2columnm">xASL_im_IM2Column.m</h3>
 <h4 id="function_78">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ColumnOut] = xASL_im_IM2Column(ImageIn, BrainMask, ApplyShiftDim)
 </code></pre>
 
 <h4 id="description_78">Description</h4>
-<p>...</p>
+<p>QC Converts an image matrix to a single-dimensional column to save memory space &amp; computation time.</p>
 <hr />
 <h3 id="xasl_im_joincolormapm">xASL_im_joinColormap.m</h3>
 <h4 id="function_79">Function</h4>
@@ -2300,43 +2318,67 @@ Function is structured as:</p>
 <hr />
 <h3 id="xasl_im_jointhistm">xASL_im_JointHist.m</h3>
 <h4 id="function_80">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function imHist = xASL_im_JointHist(imA,imB,imMask,minA,maxA,minB,maxB,nBins)
 </code></pre>
 
 <h4 id="description_80">Description</h4>
-<p>...</p>
+<p>It calculates a joint histogram of two images of any dimensions over a mask of the same size. The boundaries and number of bins can either be given or min and max values are used. Values outside of the bins are counted to the first/last bin.</p>
 <hr />
 <h3 id="xasl_im_lesion2catm">xASL_im_Lesion2CAT.m</h3>
 <h4 id="function_81">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function LesionPathOut = xASL_im_Lesion2CAT(PathIn)
 </code></pre>
 
 <h4 id="description_81">Description</h4>
-<p>...</p>
+<p>For all lesion masks in the anatomical directory, load them, merge them and save them for the CAT segmentation.</p>
 <hr />
 <h3 id="xasl_im_lesion2maskm">xASL_im_Lesion2Mask.m</h3>
 <h4 id="function_82">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function LesionIM = xASL_im_Lesion2Mask(LesionPath, T1path, pGMpath, pWMpath, x)
 </code></pre>
 
 <h4 id="description_82">Description</h4>
-<p>...</p>
+<p>For a standard space lesion mask (or map), this stores the lesion mask, and in additional its perimask (15 mm) and contralateral mask, as 2nd and 3rd volumes.
+It plots the masks on a T1 image, and masks the new masks with the subjects' brainmask (pGM+pWM).</p>
 <hr />
 <h3 id="xasl_im_m0erodesmoothextrapolatem">xASL_im_M0ErodeSmoothExtrapolate.m</h3>
 <h4 id="function_83">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [ImOut] = xASL_im_M0ErodeSmoothExtrapolate(ImIn, x)
 </code></pre>
 
 <h4 id="description_83">Description</h4>
-<p>...</p>
+<p>This function erodes, smooths &amp; extrapolates M0 in standard space.
+It assumes that the M0 image is in standard space &amp; that the GM &amp; WM probability maps are aligned. Here, we mask the M0, to remove high CSF signal and low extracranial signal, enabling us to smooth the image without inserting wrong signal. See also the ExploreASL manuscript for a more extensive explanation. This function performs the following steps:</p>
+<ul>
+<li>Mask 1) Load segmentations, create structural mask</li>
+<li>Mask 2) Create intensity-based mask to remove extracranial signal</li>
+<li>Mask 3) Erode the combined masks</li>
+<li>Mask 4) Determine any odd borders</li>
+<li>5) Smoothing</li>
+<li>6) Extrapolating only</li>
+<li>7) Scale back to the GM M0</li>
+<li>8) Print visual QC figure</li>
+</ul>
+<p>A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in 1.5 mm MNI standard space).</p>
+<p>OutputFile = fullfile(x.D.M0regASLdir, ['M0_im_proc_' x.P.SubjectID '.jpg']);
+The original M0 image (a) is masked with a (pGM+pWM)&gt;50% mask (b) eroded with a two-voxel sphere to limit the influence of the ventricular and extracranial signal (c) and thresholded to exclude significantly high (i.e. median + 3 * mean absolute deviation (MAD)) border region values (d) This masked M0 image is smoothed with a 16x16x16 mm full- width-half-maximum Gaussian filter (Mutsaerts et al., 2018) (e) after which the signal at the border is smoothly extrapolated until the full image is filled (f).</p>
 <hr />
 <h3 id="xasl_im_masknegativevascularsignalm">xASL_im_MaskNegativeVascularSignal.m</h3>
 <h4 id="function_84">Function</h4>
-<pre><code class="matlab">...
+<pre><code class="matlab">function [NegativeMask, TreatedCBF] = xASL_im_MaskNegativeVascularSignal(x, IsSpace)
 </code></pre>
 
 <h4 id="description_84">Description</h4>
-<p>...</p>
+<p>This function segments clusters with significant negative ASL signal. This can be tricky as there is also the negative tail of Gaussian noise from the ASL subtraction. The image feature we use here, is that negative vascular signal will be a relatively large region with significant median negative value, whereas noise will be regions with relatively small negative signal.
+Negative signal from wrong background suppression timing (e.g. in the first slice with 2D EPI) can be masked out with this as well.
+The procedure works as follows:</p>
+<ol>
+<li>Obtain mask of negative voxels within pGM&gt;0.5 mask</li>
+<li>Obtain distribution of subzero clusters</li>
+<li>Define the negative threshold</li>
+<li>Create mask by thresholding whole image</li>
+</ol>
+<p>Note that the definition of the threshold is obtained within the GM only, but that this threshold is applied to the full image.</p>
 <hr />
 <h3 id="xasl_im_maskpeakvascularsignalm">xASL_im_MaskPeakVascularSignal.m</h3>
 <h4 id="function_85">Function</h4>
