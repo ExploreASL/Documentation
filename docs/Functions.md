@@ -1,5 +1,7 @@
+# Functions
 
-# General Functions
+----
+## General Functions
 
 ----
 ### xASL\_Iteration.m
@@ -13,7 +15,7 @@
 #### Description
 Parses the settings and runs the DatabaseLoop sub-function.
 
-# Administration
+## Administration
 
 ----
 ### xASL\_adm\_CatchNumbersFromString.m
@@ -705,7 +707,7 @@ Checks whether input fields are present, or requests them.
 
 
 
-# BIDS
+## BIDS
 
 ----
 ### xASL\_bids\_Add2ParticipantsTSV.m

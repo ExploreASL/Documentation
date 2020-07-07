@@ -74,11 +74,1427 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Functions</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#xasl_iterationm">xASL_Iteration.m</a>
+    <li class="toctree-l2"><a class="reference internal" href="#general-functions">General Functions</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#format">Format</a>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_iterationm">xASL_Iteration.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format">Format</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description">Description</a>
+    <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#administration">Administration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_catchnumbersfromstringm">xASL_adm_CatchNumbersFromString.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_1">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_1">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_checkfilecountm">xASL_adm_CheckFileCount.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_2">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_2">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_checkpermissionsm">xASL_adm_CheckPermissions.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_3">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_3">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_checkspmm">xASL_adm_CheckSPM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_4">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_4">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_cleanupbeforererunm">xASL_adm_CleanUpBeforeRerun.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_5">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_5">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_comparedatasetsm">xASL_adm_CompareDataSets.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_6">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_6">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_comparelistsm">xASL_adm_CompareLists.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_7">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_7">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_convertdate2nrm">xASL_adm_ConvertDate2Nr.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_8">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_8">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_convertnr2timem">xASL_adm_ConvertNr2Time.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_9">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_9">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_convertsubjsess2subj_sessm">xASL_adm_ConvertSubjSess2Subj_Sess.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_10">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_10">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_converttime2nrm">xASL_adm_ConvertTime2Nr.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_11">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_11">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_copymovefilelistm">xASL_adm_CopyMoveFileList.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_12">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_12">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_correctnamem">xASL_adm_CorrectName.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_13">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_13">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_createcsvfilem">xASL_adm_CreateCSVfile.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_14">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_14">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_createfilereportm">xASL_adm_CreateFileReport.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_15">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_15">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_defineaslresolutionm">xASL_adm_DefineASLResolution.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_16">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_16">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_defineaslsequencem">xASL_adm_DefineASLSequence.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_17">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_17">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_deletefilepairm">xASL_adm_DeleteFilePair.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_18">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_18">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_dicom2parmsm">xASL_adm_Dicom2Parms.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_19">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_19">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_findbyregexpm">xASL_adm_FindByRegExp.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_20">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_20">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_findstrindexm">xASL_adm_FindStrIndex.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_21">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_21">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_getfslistm">xASL_adm_GetFsList.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_22">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_22">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_getnumfromstrm">xASL_adm_GetNumFromStr.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_23">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_23">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_getphilipsscalingm">xASL_adm_GetPhilipsScaling.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_24">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_24">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_getusernamem">xASL_adm_GetUserName.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_25">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_25">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_hex2numm">xASL_adm_Hex2Num.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_26">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_26">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_lesionreslicelistm">xASL_adm_LesionResliceList.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_27">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_27">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_load4dmemmappingm">xASL_adm_Load4DMemMapping.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_28">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_28">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_loadparmsm">xASL_adm_LoadParms.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_29">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_29">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_loadxm">xASL_adm_LoadX.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_30">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_30">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_orderfieldsm">xASL_adm_OrderFields.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_31">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_31">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_otherlistspmm">xASL_adm_OtherListSPM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_32">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_32">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_par2parmsm">xASL_adm_Par2Parms.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_33">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_33">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_parreadheaderm">xASL_adm_ParReadHeader.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_34">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_34">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_remove_1_spmm">xASL_adm_Remove_1_SPM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_35">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_35">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_replacesymbolsm">xASL_adm_ReplaceSymbols.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_36">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_36">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_resetvisualizationslicesm">xASL_adm_ResetVisualizationSlices.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_37">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_37">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_savejsonm">xASL_adm_SaveJSON.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_38">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_38">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_unziporcopym">xASL_adm_UnzipOrCopy.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_39">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_39">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_voxel2realworldcoordinatesm">xASL_adm_Voxel2RealWorldCoordinates.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_40">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_40">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_zipfilelistm">xASL_adm_ZipFileList.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_41">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_41">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_adm_uigetinputm">xASL_adm_uiGetInput.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_42">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_42">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bids">BIDS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_bids_add2participantstsvm">xASL_bids_Add2ParticipantsTSV.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_43">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_43">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_bids_dicom2jsonm">xASL_bids_Dicom2JSON.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_44">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_44">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_bids_insertjsonfieldsm">xASL_bids_InsertJSONFields.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_45">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_45">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_bids_parrec2jsonm">xASL_bids_PARREC2JSON.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_46">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_46">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_bids_parms2bidsm">xASL_bids_parms2BIDS.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_47">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_47">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fsl">FSL</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_fsl_runfslm">xASL_fsl_RunFSL.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_48">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_48">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_fsl_setfsldirm">xASL_fsl_SetFSLdir.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_49">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_49">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_fsl_topupm">xASL_fsl_TopUp.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_50">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_50">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#imaging">Imaging</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_bilateralfilterm">xASL_im_BilateralFilter.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_51">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_51">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_centerofmassm">xASL_im_CenterOfMass.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_52">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_52">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_cleanupwmhnoisem">xASL_im_CleanupWMHnoise.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_53">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_53">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_clipextremesm">xASL_im_ClipExtremes.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_54">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_54">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_column2imm">xASL_im_Column2IM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_55">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_55">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_compareniftiresolutionxyzm">xASL_im_CompareNIfTIResolutionXYZ.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_56">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_56">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_computedicem">xASL_im_ComputeDice.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_57">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_57">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_createasldeformationfieldm">xASL_im_CreateASLDeformationField.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_58">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_58">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_createpseudocbfm">xASL_im_CreatePseudoCBF.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_59">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_59">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_createslicegradientm">xASL_im_CreateSliceGradient.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_60">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_60">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_decomposeaffinetransformationm">xASL_im_DecomposeAffineTransformation.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_61">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_61">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_determineflipm">xASL_im_DetermineFlip.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_62">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_62">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_dilateerodefullm">xASL_im_DilateErodeFull.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_63">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_63">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_dilateerodeseparablem">xASL_im_DilateErodeSeparable.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_64">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_64">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_dilateerodespherem">xASL_im_DilateErodeSphere.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_65">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_65">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_dummyorientationniftim">xASL_im_DummyOrientationNIfTI.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_66">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_66">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_estimateresolutionm">xASL_im_EstimateResolution.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_67">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_67">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_flipm">xASL_im_Flip.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_68">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_68">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_im2columnm">xASL_im_IM2Column.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_69">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_69">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_jointhistm">xASL_im_JointHist.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_70">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_70">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_lesion2catm">xASL_im_Lesion2CAT.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_71">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_71">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_lesion2maskm">xASL_im_Lesion2Mask.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_72">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_72">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_m0erodesmoothextrapolatem">xASL_im_M0ErodeSmoothExtrapolate.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_73">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_73">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_masknegativevascularsignalm">xASL_im_MaskNegativeVascularSignal.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_74">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_74">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_maskpeakvascularsignalm">xASL_im_MaskPeakVascularSignal.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_75">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_75">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_modulationm">xASL_im_Modulation.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_76">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_76">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_normalizelabelingterritoriesm">xASL_im_NormalizeLabelingTerritories.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_77">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_77">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_pcam">xASL_im_PCA.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_78">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_78">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_pvcbsplinem">xASL_im_PVCbspline.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_79">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_79">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_pvckernelm">xASL_im_PVCkernel.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_80">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_80">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_presmoothm">xASL_im_PreSmooth.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_81">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_81">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_processm0conventionalm">xASL_im_ProcessM0Conventional.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_82">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_82">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_projectlabelsoverdatam">xASL_im_ProjectLabelsOverData.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_83">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_83">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_resamplelinearfairm">xASL_im_ResampleLinearFair.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_84">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_84">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_restoreorientationm">xASL_im_RestoreOrientation.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_85">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_85">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_skullstripm">xASL_im_SkullStrip.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_86">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_86">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_smooth3dm">xASL_im_Smooth3D.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_87">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_87">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_upsamplem">xASL_im_Upsample.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_88">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_88">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_zeroedgesm">xASL_im_ZeroEdges.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_89">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_89">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_dilateroim">xASL_im_dilateROI.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_90">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_90">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_im_rotatem">xASL_im_rotate.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_91">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_91">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_import_jsonm">xASL_import_json.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_92">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_92">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initialization">Initialization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_convertm2jsonm">xASL_init_ConvertM2JSON.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_93">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_93">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_defaulteffectiveresolutionm">xASL_init_DefaultEffectiveResolution.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_94">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_94">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_definestudydatam">xASL_init_DefineStudyData.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_95">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_95">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_filesystemm">xASL_init_FileSystem.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_96">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_96">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_initializemutexm">xASL_init_InitializeMutex.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_97">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_97">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_loadmetadatam">xASL_init_LoadMetadata.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_98">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_98">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_longitudinalregistrationm">xASL_init_LongitudinalRegistration.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_99">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_99">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_init_visualizationsettingsm">xASL_init_VisualizationSettings.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_100">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_100">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#input-and-output">Input and Output</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_createniftim">xASL_io_CreateNifti.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_101">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_101">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_dcmtkreadm">xASL_io_DcmtkRead.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_102">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_102">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_makenifti4dicomm">xASL_io_MakeNifti4DICOM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_103">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_103">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_pairwisesubtractionm">xASL_io_PairwiseSubtraction.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_104">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_104">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_readthedicomm">xASL_io_ReadTheDicom.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_105">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_105">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_splitasl_m0m">xASL_io_SplitASL_M0.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_106">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_106">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_io_dcm2niim">xASL_io_dcm2nii.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_107">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_107">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_num2strm">xASL_num2str.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_108">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_108">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#qc">QC</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_asymmetryindexm">xASL_qc_AsymmetryIndex.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_109">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_109">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_cat12_iqrm">xASL_qc_CAT12_IQR.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_110">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_110">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_collectparametersm">xASL_qc_CollectParameters.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_111">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_111">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_collectqc_aslm">xASL_qc_CollectQC_ASL.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_112">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_112">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_collectqc_structuralm">xASL_qc_CollectQC_Structural.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_113">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_113">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_collectqc_funcm">xASL_qc_CollectQC_func.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_114">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_114">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_collectsoftwareversionsm">xASL_qc_CollectSoftwareVersions.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_115">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_115">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_comparetemplatem">xASL_qc_CompareTemplate.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_116">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_116">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_computefovcoveragem">xASL_qc_ComputeFoVCoverage.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_117">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_117">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_computeniftiorientationm">xASL_qc_ComputeNiftiOrientation.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_118">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_118">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_createpdfm">xASL_qc_CreatePDF.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_119">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_119">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_fa_outliersm">xASL_qc_FA_Outliers.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_120">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_120">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_obtainqccategoriesfromjpgm">xASL_qc_ObtainQCCategoriesFromJPG.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_121">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_121">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_pcpstructuralm">xASL_qc_PCPStructural.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_122">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_122">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_printorientationm">xASL_qc_PrintOrientation.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_123">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_123">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_tanimotocoeffm">xASL_qc_TanimotoCoeff.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_124">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_124">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_wadqcdcm">xASL_qc_WADQCDC.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_125">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_125">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_wadqc_generatedescriptorm">xASL_qc_WADQC_GenerateDescriptor.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_126">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_126">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_qc_temporalsnrm">xASL_qc_temporalSNR.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_127">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_127">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quantization">Quantization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_agesex2hctm">xASL_quant_AgeSex2Hct.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_128">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_128">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_feastm">xASL_quant_FEAST.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_129">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_129">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_getcontrollabelorderm">xASL_quant_GetControlLabelOrder.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_130">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_130">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_hct2bloodt1m">xASL_quant_Hct2BloodT1.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_131">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_131">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_m0m">xASL_quant_M0.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_132">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_132">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_quant_singlepldm">xASL_quant_SinglePLD.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_133">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_133">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#spm">SPM</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_spm_biasfieldcorrectionm">xASL_spm_BiasfieldCorrection.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_134">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_134">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_spm_affinem">xASL_spm_affine.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_135">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_135">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_spm_coregm">xASL_spm_coreg.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_136">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_136">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_spm_defacem">xASL_spm_deface.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_137">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_137">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_spm_deformationsm">xASL_spm_deformations.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_138">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_138">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#statistics">Statistics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_atlasforstatsm">xASL_stat_AtlasForStats.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_139">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_139">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_computediffercovm">xASL_stat_ComputeDifferCoV.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_140">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_140">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_computemeanm">xASL_stat_ComputeMean.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_141">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_141">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_computespatialcovm">xASL_stat_ComputeSpatialCoV.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_142">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_142">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_equalvariancestestm">xASL_stat_EqualVariancesTest.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_143">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_143">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_getroistatisticsm">xASL_stat_GetROIstatistics.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_144">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_144">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_madnanm">xASL_stat_MadNan.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_145">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_145">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_meanssimm">xASL_stat_MeanSSIM.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_146">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_146">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_multiplelinregm">xASL_stat_MultipleLinReg.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_147">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_147">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_psnrm">xASL_stat_PSNR.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_148">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_148">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_printstatsm">xASL_stat_PrintStats.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_149">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_149">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_quantilenanm">xASL_stat_QuantileNan.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_150">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_150">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_robustmeanm">xASL_stat_RobustMean.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_151">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_151">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_shapirowilkm">xASL_stat_ShapiroWilk.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_152">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_152">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_stdnanm">xASL_stat_StdNan.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_153">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_153">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_sumnanm">xASL_stat_SumNan.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_154">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_154">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_varnanm">xASL_stat_VarNan.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_155">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_155">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_fcdfm">xASL_stat_fcdf.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_156">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_156">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_tcdfm">xASL_stat_tcdf.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_157">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_157">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_ticdfm">xASL_stat_ticdf.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_158">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_158">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_ttestm">xASL_stat_ttest.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_159">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_159">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_stat_ttest2m">xASL_stat_ttest2.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_160">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_160">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_str2numm">xASL_str2num.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_161">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_161">Description</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_addim2qcm">xASL_vis_AddIM2QC.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_162">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_162">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_createvisualfigm">xASL_vis_CreateVisualFig.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_163">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_163">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_cropparmsacquirem">xASL_vis_CropParmsAcquire.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_164">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_164">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_cropparmsapplym">xASL_vis_CropParmsApply.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_165">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_165">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_imwritem">xASL_vis_Imwrite.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_166">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_166">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_overlapt1_aslm">xASL_vis_OverlapT1_ASL.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_167">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_167">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_tileimagesm">xASL_vis_TileImages.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_168">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_168">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_transformdata2viewm">xASL_vis_TransformData2View.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_169">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_169">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_visualqc_topupm">xASL_vis_VisualQC_TopUp.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_170">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_170">Description</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xasl_vis_visualizeroism">xASL_vis_VisualizeROIs.m</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#format_171">Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#description_171">Description</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -129,7 +1545,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="general-functions">General Functions</h1>
+                <h1 id="functions">Functions</h1>
+<hr />
+<h2 id="general-functions">General Functions</h2>
 <hr />
 <h3 id="xasl_iterationm">xASL_Iteration.m</h3>
 <h4 id="format">Format</h4>
@@ -138,7 +1556,7 @@
 
 <h4 id="description">Description</h4>
 <p>Parses the settings and runs the DatabaseLoop sub-function.</p>
-<h1 id="administration">Administration</h1>
+<h2 id="administration">Administration</h2>
 <hr />
 <h3 id="xasl_adm_catchnumbersfromstringm">xASL_adm_CatchNumbersFromString.m</h3>
 <h4 id="format_1">Format</h4>
@@ -601,7 +2019,7 @@ by NREQUIRED, if the number is not met, then does not zip anything and throws an
 
 <h4 id="description_42">Description</h4>
 <p>Checks whether input fields are present, or requests them.</p>
-<h1 id="bids">BIDS</h1>
+<h2 id="bids">BIDS</h2>
 <hr />
 <h3 id="xasl_bids_add2participantstsvm">xASL_bids_Add2ParticipantsTSV.m</h3>
 <h4 id="format_43">Format</h4>
