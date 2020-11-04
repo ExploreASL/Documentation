@@ -307,9 +307,8 @@
 <hr />
 <h2 id="delete-many-temp-files">Delete Many Temp Files</h2>
 <h3 id="function">Function</h3>
-<pre><code class="matlab">function xASL_adm_DeleteManyTempFiles(x)
+<pre><code class="language-matlab">function xASL_adm_DeleteManyTempFiles(x)
 </code></pre>
-
 <h3 id="description">Description</h3>
 <p>This function removes as many files as possible.</p>
 <h3 id="workflow">Workflow</h3>
@@ -318,9 +317,8 @@
 <hr />
 <h2 id="gzip-all-files">Gzip All Files</h2>
 <h3 id="function_1">Function</h3>
-<pre><code class="matlab">function xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
+<pre><code class="language-matlab">function xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
 </code></pre>
-
 <h3 id="description_1">Description</h3>
 <p>This function zips all .nii files recursively into nii.gz. Note that the linux option cannot deal with spaces in filenames or directories.</p>
 <h3 id="workflow_1">Workflow</h3>
@@ -329,9 +327,8 @@
 <hr />
 <h2 id="create-analysis-mask">Create Analysis Mask</h2>
 <h3 id="function_2">Function</h3>
-<pre><code class="matlab">function [x] = xASL_im_CreateAnalysisMask(x, Threshold)
+<pre><code class="language-matlab">function [x] = xASL_im_CreateAnalysisMask(x, Threshold)
 </code></pre>
-
 <h3 id="description_2">Description</h3>
 <p>Creates population analysis mask.</p>
 <h3 id="workflow_2">Workflow</h3>
@@ -353,9 +350,8 @@
 <hr />
 <h2 id="sort-by-spatial-cov">Sort By Spatial CoV</h2>
 <h3 id="function_3">Function</h3>
-<pre><code class="matlab">function xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
+<pre><code class="language-matlab">function xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
 </code></pre>
-
 <h3 id="description_3">Description</h3>
 <p>Compute statistics for each ROI.</p>
 <h3 id="workflow_3">Workflow</h3>
@@ -378,9 +374,8 @@
 <hr />
 <h2 id="compute-ws-cv">Compute Ws CV</h2>
 <h3 id="function_4">Function</h3>
-<pre><code class="matlab">function x = xASL_stat_ComputeWsCV(x)
+<pre><code class="language-matlab">function x = xASL_stat_ComputeWsCV(x)
 </code></pre>
-
 <h3 id="description_4">Description</h3>
 <p>Calculates the within and between-subject coefficient of variance (wsCV and bsCV respectively), to estimate the power to detect effects. This requires 4D images that have been split.</p>
 <h3 id="workflow_4">Workflow</h3>
@@ -389,9 +384,8 @@
 <hr />
 <h2 id="get-acquisition-time">Get Acquisition Time</h2>
 <h3 id="function_5">Function</h3>
-<pre><code class="matlab">function x = xASL_stat_GetAcquisitionTime(x)
+<pre><code class="language-matlab">function x = xASL_stat_GetAcquisitionTime(x)
 </code></pre>
-
 <h3 id="description_5">Description</h3>
 <p>Summarize the acquisition time of scans.</p>
 <h3 id="workflow_5">Workflow</h3>
@@ -406,9 +400,8 @@
 <hr />
 <h2 id="get-dicom-statistics">Get DICOM Statistics</h2>
 <h3 id="function_6">Function</h3>
-<pre><code class="matlab">function xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions, bOverwrite)
+<pre><code class="language-matlab">function xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions, bOverwrite)
 </code></pre>
-
 <h3 id="description_6">Description</h3>
 <p>Collect DICOM metadata in CSV file to check.</p>
 <h3 id="workflow_6">Workflow</h3>
@@ -425,9 +418,8 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="get-motion-statistics">Get Motion Statistics</h2>
 <h3 id="function_7">Function</h3>
-<pre><code class="matlab">function xASL_stat_GetMotionStatistics(x)
+<pre><code class="language-matlab">function xASL_stat_GetMotionStatistics(x)
 </code></pre>
-
 <h3 id="description_7">Description</h3>
 <p>Summarize motion values.</p>
 <h3 id="workflow_7">Workflow</h3>
@@ -443,9 +435,8 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="get-volume-statistics">Get Volume Statistics</h2>
 <h3 id="function_8">Function</h3>
-<pre><code class="matlab">function xASL_stat_GetVolumeStatistics(x)
+<pre><code class="language-matlab">function xASL_stat_GetVolumeStatistics(x)
 </code></pre>
-
 <h3 id="description_8">Description</h3>
 <p>Summarize volume values.</p>
 <h3 id="workflow_8">Workflow</h3>
@@ -460,9 +451,8 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="create-biasfield">Create Biasfield</h2>
 <h3 id="function_9">Function</h3>
-<pre><code class="matlab">function xASL_wrp_CreateBiasfield(x)
+<pre><code class="language-matlab">function xASL_wrp_CreateBiasfield(x)
 </code></pre>
-
 <h3 id="description_9">Description</h3>
 <p>Create sequence-specific intensity biasfields.</p>
 <h3 id="workflow_9">Workflow</h3>
@@ -479,9 +469,8 @@ Global scaling it performed to GM CBF == 60 mL/100g/min</p>
 <hr />
 <h2 id="create-population-templates">Create Population Templates</h2>
 <h3 id="function_10">Function</h3>
-<pre><code class="matlab">function xASL_wrp_CreatePopulationTemplates(x, SaveUnmasked, bCompute4Sets, SpecificScantype, bSkipMissingScans, bRemoveOutliers, FunctionsAre)
+<pre><code class="language-matlab">function xASL_wrp_CreatePopulationTemplates(x, SaveUnmasked, bCompute4Sets, SpecificScantype, bSkipMissingScans, bRemoveOutliers, FunctionsAre)
 </code></pre>
-
 <h3 id="description_10">Description</h3>
 <p>ExploreASL Population module wrapper, creates population parametric images for each ScanType.</p>
 <h3 id="workflow_10">Workflow</h3>
@@ -493,9 +482,8 @@ The latter can e.g. identify intra-vascular signal that is similar between diffe
 <hr />
 <h2 id="get-roi-statistics">Get ROI statistics</h2>
 <h3 id="function_11">Function</h3>
-<pre><code class="matlab">function xASL_wrp_GetROIstatistics(x)
+<pre><code class="language-matlab">function xASL_wrp_GetROIstatistics(x)
 </code></pre>
-
 <h3 id="description_11">Description</h3>
 <p>Compute statistics for each ROI.</p>
 <h3 id="workflow_11">Workflow</h3>
@@ -511,9 +499,8 @@ The latter can e.g. identify intra-vascular signal that is similar between diffe
 <hr />
 <h2 id="load-4d-mem-mapping-lesions-rois">Load 4D Mem Mapping Lesions ROIs</h2>
 <h3 id="function_12">Function</h3>
-<pre><code class="matlab">function [x] = xASL_wrp_Load4DMemMapping_LesionsROIs(x)
+<pre><code class="language-matlab">function [x] = xASL_wrp_Load4DMemMapping_LesionsROIs(x)
 </code></pre>
-
 <h3 id="description_12">Description</h3>
 <p>Part of ExploreASL analysis module. Loads data &amp; maps it to memory mapping file on disc, if not done before.</p>
 <h3 id="workflow_12">Workflow</h3>

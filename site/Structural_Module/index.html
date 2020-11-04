@@ -265,9 +265,8 @@
 <hr />
 <h2 id="clean-up-wmh-segm">Clean Up WMH SEGM</h2>
 <h3 id="function">Function</h3>
-<pre><code class="matlab">function xASL_wrp_CleanUpWMH_SEGM(x)
+<pre><code class="language-matlab">function xASL_wrp_CleanUpWMH_SEGM(x)
 </code></pre>
-
 <h3 id="description">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that cleans up under- and over-segmentations of <strong>WMH SEGM</strong>.</p>
 <h3 id="workflow">Workflow</h3>
@@ -289,9 +288,8 @@ This function is not tested a lot, so mainly conservatively set up to improve th
 <hr />
 <h2 id="flair-biasfield-correction">FLAIR Biasfield Correction</h2>
 <h3 id="function_1">Function</h3>
-<pre><code class="matlab">function xASL_wrp_FLAIR_BiasfieldCorrection(x)
+<pre><code class="language-matlab">function xASL_wrp_FLAIR_BiasfieldCorrection(x)
 </code></pre>
-
 <h3 id="description_1">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_1">Workflow</h3>
@@ -302,9 +300,8 @@ This function is not tested a lot, so mainly conservatively set up to improve th
 <hr />
 <h2 id="get-volumetrics">Get Volumetrics</h2>
 <h3 id="function_2">Function</h3>
-<pre><code class="matlab">function xASL_wrp_GetVolumetrics(x)
+<pre><code class="language-matlab">function xASL_wrp_GetVolumetrics(x)
 </code></pre>
-
 <h3 id="description_2">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that obtains volumes from the tissue segmentations (&amp; <strong>FLAIR WMH</strong> segmentations if they exist).</p>
 <h3 id="workflow_2">Workflow</h3>
@@ -316,9 +313,8 @@ This is performed for <strong>CAT12</strong> or <strong>SPM12</strong> (whicheve
 <hr />
 <h2 id="lst-segment-flair-wmh">LST Segment FLAIR WMH</h2>
 <h3 id="function_3">Function</h3>
-<pre><code class="matlab">function xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath, WMHsegmAlg)
+<pre><code class="language-matlab">function xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath, WMHsegmAlg)
 </code></pre>
-
 <h3 id="description_3">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_3">Workflow</h3>
@@ -340,9 +336,8 @@ If a <strong>WMH_SEGM</strong> already existed, the <strong>LST</strong> is run 
 <hr />
 <h2 id="lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</h2>
 <h3 id="function_4">Function</h3>
-<pre><code class="matlab">function xASL_wrp_LST_T1w_LesionFilling_WMH(x, rWMHPath)
+<pre><code class="language-matlab">function xASL_wrp_LST_T1w_LesionFilling_WMH(x, rWMHPath)
 </code></pre>
-
 <h3 id="description_4">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs lesion filling on <strong>T1w</strong> based on <strong>WMH</strong> segmented on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_4">Workflow</h3>
@@ -365,9 +360,8 @@ This function runs the following steps:</p>
 <hr />
 <h2 id="linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</h2>
 <h3 id="function_5">Function</h3>
-<pre><code class="matlab">function xASL_wrp_LinearReg_FLAIR2T1w(x, bAutoACPC)
+<pre><code class="language-matlab">function xASL_wrp_LinearReg_FLAIR2T1w(x, bAutoACPC)
 </code></pre>
-
 <h3 id="description_5">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that aligns <strong>FLAIR</strong> with <strong>T1w</strong>.</p>
 <h3 id="workflow_5">Workflow</h3>
@@ -379,9 +373,8 @@ This is required to enable the application of T1w derivatives (e.g. transformati
 <hr />
 <h2 id="linear-reg-t1w2mni">Linear Reg T1w2MNI</h2>
 <h3 id="function_6">Function</h3>
-<pre><code class="matlab">function xASL_wrp_LinearReg_T1w2MNI(x, bAutoACPC)
+<pre><code class="language-matlab">function xASL_wrp_LinearReg_T1w2MNI(x, bAutoACPC)
 </code></pre>
-
 <h3 id="description_6">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that aligns <strong>T1w</strong> with <strong>MNI</strong>.</p>
 <h3 id="workflow_6">Workflow</h3>
@@ -394,9 +387,8 @@ Assuming that this submodule is run at the start of ExploreASL, all NIfTI orient
 <hr />
 <h2 id="resample-2-standard-space">Resample 2 Standard Space</h2>
 <h3 id="function_7">Function</h3>
-<pre><code class="matlab">function xASL_wrp_Resample2StandardSpace(x)
+<pre><code class="language-matlab">function xASL_wrp_Resample2StandardSpace(x)
 </code></pre>
-
 <h3 id="description_7">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that resamples all structural images &amp; derivatives.</p>
 <h3 id="workflow_7">Workflow</h3>
@@ -411,9 +403,8 @@ This submodule is not only part of the structural module, but can be repeated wh
 <hr />
 <h2 id="segment-t1w">Segment T1w</h2>
 <h3 id="function_8">Function</h3>
-<pre><code class="matlab">function [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
+<pre><code class="language-matlab">function [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
 </code></pre>
-
 <h3 id="description_8">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that segments <strong>3D T1</strong> (or <strong>T2</strong>) scan.</p>
 <h3 id="workflow_8">Workflow</h3>
@@ -447,9 +438,8 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
 <hr />
 <h2 id="visual-qc-structural">Visual QC Structural</h2>
 <h3 id="function_9">Function</h3>
-<pre><code class="matlab">function xASL_wrp_VisualQC_Structural(x)
+<pre><code class="language-matlab">function xASL_wrp_VisualQC_Structural(x)
 </code></pre>
-
 <h3 id="description_9">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs several visualizations for .</p>
 <h3 id="workflow_9">Workflow</h3>
