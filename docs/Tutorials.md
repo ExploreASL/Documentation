@@ -21,7 +21,10 @@ The `ExploreASL_Master` script will have the following format:
 **Parameter descriptions:**
 
 - `DataParPath`: Path to data parameter file (`OPTIONAL`)
-    - `DEFAULT`: Prompting user input
+    |                  | DataParPath           |
+    | ---------------- |:---------------------:|
+    | **Type**         | `CHAR ARRAY`          |
+    | **Default**      | Prompting user input  |
 
 - `ImportModules`: Multi-step import workflow (`OPTIONAL`)
     - `DCM2NII`: Run the DICOM to NIFTI conversion
@@ -45,11 +48,22 @@ The `ExploreASL_Master` script will have the following format:
     | **Default**      | `false`       | `false`       | `false`       |  
     
 - `bPause`: Pause workflow before ExploreASL pipeline (`OPTIONAL`)
-    - `DEFAULT`: `false`
+    |                  | bPause                |
+    | ---------------- |:---------------------:|
+    | **Type**         | `BOOLEAN`             |
+    | **Default**      | `false`               |
+
 - `iWorker`: Allows parallelization when called externally  (`OPTIONAL`)
-    - `DEFAULT`: `1`
+    |                  | iWorker               |
+    | ---------------- |:---------------------:|
+    | **Type**         | `INTEGER`             |
+    | **Default**      | `1`                   |
+
 - `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`)
-    - `DEFAULT`: `1`
+    |                  | nWorkers              |
+    | ---------------- |:---------------------:|
+    | **Type**         | `INTEGER`             |
+    | **Default**      | `1`                   |
 
 In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.
 
