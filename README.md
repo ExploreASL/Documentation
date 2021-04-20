@@ -9,6 +9,7 @@ This repository includes the interactive GitHub pages documentation of ExploreAS
 
 ### Build process
 
-- GitHub actions [workflow](https://github.com/features/actions) in `.github/workflows/`
-- Workflow is triggered automatically if you push to this repository
+- Update `gh-pages` using `mike deploy --push --update-aliases 1.x.x latest`.
+- **No** need to run `mkdocs build` or other commands.
+- Testing can be done using `mike serve`.
 
