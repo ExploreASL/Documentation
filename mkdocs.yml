@@ -22,6 +22,7 @@ plugins:
 theme:
   name: material
   logo: img/favicon/brain_icon_500x500.png
+  favicon: img/favicon/favicon-96x96.png
 
 markdown_extensions:
     - attr_list

@@ -11,7 +11,7 @@
       
         <link rel="canonical" href="https://github.com/ExploreASL/1.6.0/Tutorials/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
     
     
@@ -786,9 +786,24 @@
 <ul>
 <li>
 <p><code>DataParPath</code>: Path to data parameter file (<code>OPTIONAL</code>)</p>
-<ul>
-<li><code>DEFAULT</code>: Prompting user input</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">DataParPath</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>CHAR ARRAY</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center">Prompting user input</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><code>ImportModules</code>: Multi-step import workflow (<code>OPTIONAL</code>)</p>
@@ -860,17 +875,66 @@
 </li>
 <li>
 <p><code>bPause</code>: Pause workflow before ExploreASL pipeline (<code>OPTIONAL</code>)</p>
-<ul>
-<li><code>DEFAULT</code>: <code>false</code></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">bPause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>BOOLEAN</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>false</code></td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)<ul>
-<li><code>DEFAULT</code>: <code>1</code></li>
-</ul>
+<li>
+<p><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">iWorker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>INTEGER</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>1</code></td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)<ul>
-<li><code>DEFAULT</code>: <code>1</code></li>
-</ul>
+<li>
+<p><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">nWorkers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>INTEGER</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>1</code></td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
 <p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.</p>

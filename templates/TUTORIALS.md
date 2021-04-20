@@ -21,6 +21,7 @@ The `ExploreASL_Master` script will have the following format:
 **Parameter descriptions:**
 
 - `DataParPath`: Path to data parameter file (`OPTIONAL`)
+
     |                  | DataParPath           |
     | ---------------- |:---------------------:|
     | **Type**         | `CHAR ARRAY`          |
@@ -48,18 +49,21 @@ The `ExploreASL_Master` script will have the following format:
     | **Default**      | `false`       | `false`       | `false`       |  
     
 - `bPause`: Pause workflow before ExploreASL pipeline (`OPTIONAL`)
+
     |                  | bPause                |
     | ---------------- |:---------------------:|
     | **Type**         | `BOOLEAN`             |
     | **Default**      | `false`               |
 
 - `iWorker`: Allows parallelization when called externally  (`OPTIONAL`)
+
     |                  | iWorker               |
     | ---------------- |:---------------------:|
     | **Type**         | `INTEGER`             |
     | **Default**      | `1`                   |
 
 - `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`)
+
     |                  | nWorkers              |
     | ---------------- |:---------------------:|
     | **Type**         | `INTEGER`             |
