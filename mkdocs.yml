@@ -15,7 +15,12 @@ plugins:
     - search
     - awesome-pages
 
-theme: readthedocs
+theme:
+  name: material
 
 markdown_extensions:
     - attr_list
+
+extra:
+  version:
+    provider: mike
