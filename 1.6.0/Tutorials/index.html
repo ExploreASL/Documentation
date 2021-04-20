@@ -785,10 +785,11 @@
 <p><strong>Parameter descriptions:</strong></p>
 <ul>
 <li>
-<p><code>DataParPath</code>: Path to data parameter file (<code>OPTIONAL</code>)</p>
-<ul>
-<li><code>DEFAULT</code>: Prompting user input</li>
-</ul>
+<p><code>DataParPath</code>: Path to data parameter file (<code>OPTIONAL</code>)
+    |                  | DataParPath           |
+    | ---------------- |:---------------------:|
+    | <strong>Type</strong>         | <code>CHAR ARRAY</code>          |
+    | <strong>Default</strong>      | Prompting user input  |</p>
 </li>
 <li>
 <p><code>ImportModules</code>: Multi-step import workflow (<code>OPTIONAL</code>)</p>
@@ -859,18 +860,25 @@
 </table>
 </li>
 <li>
-<p><code>bPause</code>: Pause workflow before ExploreASL pipeline (<code>OPTIONAL</code>)</p>
-<ul>
-<li><code>DEFAULT</code>: <code>false</code></li>
-</ul>
+<p><code>bPause</code>: Pause workflow before ExploreASL pipeline (<code>OPTIONAL</code>)
+    |                  | bPause                |
+    | ---------------- |:---------------------:|
+    | <strong>Type</strong>         | <code>BOOLEAN</code>             |
+    | <strong>Default</strong>      | <code>false</code>               |</p>
 </li>
-<li><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)<ul>
-<li><code>DEFAULT</code>: <code>1</code></li>
-</ul>
+<li>
+<p><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)
+    |                  | iWorker               |
+    | ---------------- |:---------------------:|
+    | <strong>Type</strong>         | <code>INTEGER</code>             |
+    | <strong>Default</strong>      | <code>1</code>                   |</p>
 </li>
-<li><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)<ul>
-<li><code>DEFAULT</code>: <code>1</code></li>
-</ul>
+<li>
+<p><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)
+    |                  | nWorkers              |
+    | ---------------- |:---------------------:|
+    | <strong>Type</strong>         | <code>INTEGER</code>             |
+    | <strong>Default</strong>      | <code>1</code>                   |</p>
 </li>
 </ul>
 <p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.</p>
