@@ -1,0 +1,3268 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.4.0/SPMxASL/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>SPM xASL Functions - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spm-xasl-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SPM xASL Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SPM xASL Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SPM xASL Functions
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_copym" class="md-nav__link">
+    xASL_Copy.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_Copy.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_movem" class="md-nav__link">
+    xASL_Move.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_Move.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_1" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_syscopym" class="md-nav__link">
+    xASL_SysCopy.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_SysCopy.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_2" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_sysmovem" class="md-nav__link">
+    xASL_SysMove.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_SysMove.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_3" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_trackprogressm" class="md-nav__link">
+    xASL_TrackProgress.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_TrackProgress.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_4" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_convertseconds2timestringm" class="md-nav__link">
+    xASL_adm_ConvertSeconds2TimeString.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ConvertSeconds2TimeString.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_5" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_convertslashm" class="md-nav__link">
+    xASL_adm_ConvertSlash.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ConvertSlash.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_6" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_createdirm" class="md-nav__link">
+    xASL_adm_CreateDir.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_CreateDir.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_7" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_deletefilelistm" class="md-nav__link">
+    xASL_adm_DeleteFileList.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_DeleteFileList.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_8" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_getfilelistm" class="md-nav__link">
+    xASL_adm_GetFileList.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_GetFileList.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_9" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_gzipniftim" class="md-nav__link">
+    xASL_adm_GzipNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_GzipNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_10" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_managemocomatm" class="md-nav__link">
+    xASL_adm_ManageMoCoMat.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ManageMoCoMat.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_11" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_unixpathm" class="md-nav__link">
+    xASL_adm_UnixPath.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_UnixPath.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_12" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_unzipniftim" class="md-nav__link">
+    xASL_adm_UnzipNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_UnzipNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_13" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_13" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_zipfilenamehandlingm" class="md-nav__link">
+    xASL_adm_ZipFileNameHandling.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ZipFileNameHandling.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_14" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_14" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_bids_csv2tsvreadwritem" class="md-nav__link">
+    xASL_bids_csv2tsvReadWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_bids_csv2tsvReadWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_15" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_15" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_csvreadm" class="md-nav__link">
+    xASL_csvRead.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_csvRead.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_16" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_16" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_csvwritem" class="md-nav__link">
+    xASL_csvWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_csvWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_17" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_17" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_deletem" class="md-nav__link">
+    xASL_delete.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_delete.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_18" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_18" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_existm" class="md-nav__link">
+    xASL_exist.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_exist.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_19" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_19" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_filepartsm" class="md-nav__link">
+    xASL_fileparts.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_fileparts.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_20" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_20" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_convertmap2maskm" class="md-nav__link">
+    xASL_im_ConvertMap2Mask.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ConvertMap2Mask.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_21" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_21" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_distancetransformm" class="md-nav__link">
+    xASL_im_DistanceTransform.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_DistanceTransform.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_22" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_22" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_fillnansm" class="md-nav__link">
+    xASL_im_FillNaNs.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_FillNaNs.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_23" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_23" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_lesionremoval4catm" class="md-nav__link">
+    xASL_im_LesionRemoval4CAT.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_LesionRemoval4CAT.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_24" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_24" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_resampleimm" class="md-nav__link">
+    xASL_im_ResampleIM.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ResampleIM.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_25" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_25" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_saveoriginal4catm" class="md-nav__link">
+    xASL_im_SaveOriginal4CAT.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_SaveOriginal4CAT.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_26" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_26" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_conv3dsepm" class="md-nav__link">
+    xASL_im_conv3Dsep.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_conv3Dsep.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_27" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_27" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_ndnanfilterm" class="md-nav__link">
+    xASL_im_ndnanfilter.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ndnanfilter.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_28" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_28" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_nifti2imm" class="md-nav__link">
+    xASL_io_Nifti2Im.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_Nifti2Im.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_29" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_29" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_readniftim" class="md-nav__link">
+    xASL_io_ReadNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_ReadNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_30" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_30" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_saveniftim" class="md-nav__link">
+    xASL_io_SaveNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_SaveNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_31" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_31" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_roundm" class="md-nav__link">
+    xASL_round.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_round.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_32" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_32" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_adminm" class="md-nav__link">
+    xASL_spm_admin.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_admin.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_33" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_33" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_reslicem" class="md-nav__link">
+    xASL_spm_reslice.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_reslice.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_34" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_34" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_smoothm" class="md-nav__link">
+    xASL_spm_smooth.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_smooth.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_35" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_35" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_meannanm" class="md-nav__link">
+    xASL_stat_MeanNan.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_stat_MeanNan.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_36" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_36" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_mediannanm" class="md-nav__link">
+    xASL_stat_MedianNan.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_stat_MedianNan.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_37" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_37" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_tsvreadm" class="md-nav__link">
+    xASL_tsvRead.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_tsvRead.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_38" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_38" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_tsvwritem" class="md-nav__link">
+    xASL_tsvWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_tsvWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_39" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_39" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_wrp_dartelsaveintermedtransm" class="md-nav__link">
+    xASL_wrp_DARTELSaveIntermedTrans.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_wrp_DARTELSaveIntermedTrans.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_40" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_40" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_wrp_gssaveintermedtransm" class="md-nav__link">
+    xASL_wrp_GSSaveIntermedTrans.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_wrp_GSSaveIntermedTrans.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_41" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_41" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/" class="md-nav__link">
+        Tutorials & FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_copym" class="md-nav__link">
+    xASL_Copy.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_Copy.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_movem" class="md-nav__link">
+    xASL_Move.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_Move.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_1" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_syscopym" class="md-nav__link">
+    xASL_SysCopy.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_SysCopy.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_2" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_sysmovem" class="md-nav__link">
+    xASL_SysMove.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_SysMove.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_3" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_trackprogressm" class="md-nav__link">
+    xASL_TrackProgress.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_TrackProgress.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_4" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_convertseconds2timestringm" class="md-nav__link">
+    xASL_adm_ConvertSeconds2TimeString.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ConvertSeconds2TimeString.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_5" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_convertslashm" class="md-nav__link">
+    xASL_adm_ConvertSlash.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ConvertSlash.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_6" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_createdirm" class="md-nav__link">
+    xASL_adm_CreateDir.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_CreateDir.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_7" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_deletefilelistm" class="md-nav__link">
+    xASL_adm_DeleteFileList.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_DeleteFileList.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_8" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_getfilelistm" class="md-nav__link">
+    xASL_adm_GetFileList.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_GetFileList.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_9" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_gzipniftim" class="md-nav__link">
+    xASL_adm_GzipNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_GzipNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_10" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_managemocomatm" class="md-nav__link">
+    xASL_adm_ManageMoCoMat.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ManageMoCoMat.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_11" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_unixpathm" class="md-nav__link">
+    xASL_adm_UnixPath.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_UnixPath.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_12" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_unzipniftim" class="md-nav__link">
+    xASL_adm_UnzipNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_UnzipNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_13" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_13" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_adm_zipfilenamehandlingm" class="md-nav__link">
+    xASL_adm_ZipFileNameHandling.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_adm_ZipFileNameHandling.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_14" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_14" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_bids_csv2tsvreadwritem" class="md-nav__link">
+    xASL_bids_csv2tsvReadWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_bids_csv2tsvReadWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_15" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_15" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_csvreadm" class="md-nav__link">
+    xASL_csvRead.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_csvRead.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_16" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_16" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_csvwritem" class="md-nav__link">
+    xASL_csvWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_csvWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_17" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_17" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_deletem" class="md-nav__link">
+    xASL_delete.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_delete.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_18" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_18" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_existm" class="md-nav__link">
+    xASL_exist.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_exist.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_19" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_19" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_filepartsm" class="md-nav__link">
+    xASL_fileparts.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_fileparts.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_20" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_20" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_convertmap2maskm" class="md-nav__link">
+    xASL_im_ConvertMap2Mask.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ConvertMap2Mask.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_21" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_21" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_distancetransformm" class="md-nav__link">
+    xASL_im_DistanceTransform.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_DistanceTransform.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_22" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_22" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_fillnansm" class="md-nav__link">
+    xASL_im_FillNaNs.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_FillNaNs.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_23" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_23" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_lesionremoval4catm" class="md-nav__link">
+    xASL_im_LesionRemoval4CAT.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_LesionRemoval4CAT.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_24" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_24" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_resampleimm" class="md-nav__link">
+    xASL_im_ResampleIM.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ResampleIM.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_25" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_25" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_saveoriginal4catm" class="md-nav__link">
+    xASL_im_SaveOriginal4CAT.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_SaveOriginal4CAT.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_26" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_26" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_conv3dsepm" class="md-nav__link">
+    xASL_im_conv3Dsep.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_conv3Dsep.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_27" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_27" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_im_ndnanfilterm" class="md-nav__link">
+    xASL_im_ndnanfilter.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_im_ndnanfilter.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_28" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_28" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_nifti2imm" class="md-nav__link">
+    xASL_io_Nifti2Im.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_Nifti2Im.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_29" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_29" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_readniftim" class="md-nav__link">
+    xASL_io_ReadNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_ReadNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_30" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_30" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_io_saveniftim" class="md-nav__link">
+    xASL_io_SaveNifti.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_io_SaveNifti.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_31" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_31" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_roundm" class="md-nav__link">
+    xASL_round.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_round.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_32" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_32" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_adminm" class="md-nav__link">
+    xASL_spm_admin.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_admin.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_33" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_33" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_reslicem" class="md-nav__link">
+    xASL_spm_reslice.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_reslice.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_34" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_34" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_spm_smoothm" class="md-nav__link">
+    xASL_spm_smooth.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_spm_smooth.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_35" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_35" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_meannanm" class="md-nav__link">
+    xASL_stat_MeanNan.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_stat_MeanNan.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_36" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_36" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_mediannanm" class="md-nav__link">
+    xASL_stat_MedianNan.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_stat_MedianNan.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_37" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_37" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_tsvreadm" class="md-nav__link">
+    xASL_tsvRead.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_tsvRead.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_38" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_38" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_tsvwritem" class="md-nav__link">
+    xASL_tsvWrite.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_tsvWrite.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_39" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_39" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_wrp_dartelsaveintermedtransm" class="md-nav__link">
+    xASL_wrp_DARTELSaveIntermedTrans.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_wrp_DARTELSaveIntermedTrans.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_40" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_40" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_wrp_gssaveintermedtransm" class="md-nav__link">
+    xASL_wrp_GSSaveIntermedTrans.m
+  </a>
+  
+    <nav class="md-nav" aria-label="xASL_wrp_GSSaveIntermedTrans.m">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format_41" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_41" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/SPMxASL.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="spm-xasl-functions">SPM xASL Functions</h1>
+<hr />
+<h3 id="xasl_copym">xASL_Copy.m</h3>
+<h4 id="format">Format</h4>
+<pre><code class="matlab">xASL_Copy(SrxASL_SysCopyath, DstPath[, bOverwrite, bVerbose)])
+</code></pre>
+
+<h4 id="description">Description</h4>
+<p>Copies a file to a file or a directory to a directory. For a file, it zips it in the end if the destination path contains nii.gz.
+It also makes sure that only one of .nii and .nii.gz exists
+in the destination directory. It is faster than the default
+Matlab function, and runs on multiple OSes.</p>
+<p>NB: This function calls xASL_SysMove for the actual copying.
+Run xASL_SysMove instead of xASL_Move if you don't want the
+.nii|.nii.gz management/checking</p>
+<hr />
+<h3 id="xasl_movem">xASL_Move.m</h3>
+<h4 id="format_1">Format</h4>
+<pre><code class="matlab">xASL_Move(SrcPath, DstPath[, bOverwrite, bVerbose])
+</code></pre>
+
+<h4 id="description_1">Description</h4>
+<p>Moves a file to a file, a file to a directory, or a directory to a directory. It keeps the initial extensions, no unzipping or zipping
+after the move. But it makes sure that only one of .nii and .nii.gz exists in the destination directory.
+Bypass inefficient matlab stuff on linux and windows, but
+can only move on the same file system.</p>
+<p>NB: This function calls xASL_SysMove for the actual moving.
+Run xASL_SysMove instead of xASL_Move if you don't want the
+.nii|.nii.gz management/checking</p>
+<hr />
+<h3 id="xasl_syscopym">xASL_SysCopy.m</h3>
+<h4 id="format_2">Format</h4>
+<pre><code class="matlab">xASL_SysCopy(SrcPath, DstPath, bOverwrite, bVerbose)
+</code></pre>
+
+<h4 id="description_2">Description</h4>
+<p>Copies a file to a file or a directory to a directory. Bypass inefficient matlab stuff on linux and windows,
+but can only move on the same file system.</p>
+<hr />
+<h3 id="xasl_sysmovem">xASL_SysMove.m</h3>
+<h4 id="format_3">Format</h4>
+<pre><code class="matlab">xASL_SysMove(SrcPath, DstPath[, bForce, bSourceCheck])
+</code></pre>
+
+<h4 id="description_3">Description</h4>
+<p>Moves a file to a file, a file to a directory, or a directory to a directory. SBypass inefficient matlab stuff on linux and windows, but can only move on same file system!</p>
+<hr />
+<h3 id="xasl_trackprogressm">xASL_TrackProgress.m</h3>
+<h4 id="format_4">Format</h4>
+<pre><code class="matlab">xASL_TrackProgress(iCurrent[, iMax])
+</code></pre>
+
+<h4 id="description_4">Description</h4>
+<p>Counts the percentage of the work done and display on the screen. Either iCurrent of iMax are given. Or only the percentages are given.</p>
+<hr />
+<h3 id="xasl_adm_convertseconds2timestringm">xASL_adm_ConvertSeconds2TimeString.m</h3>
+<h4 id="format_5">Format</h4>
+<pre><code class="matlab">TimeString = xASL_adm_ConvertSeconds2TimeString(Seconds)
+</code></pre>
+
+<h4 id="description_5">Description</h4>
+<p>Converts number to time
+input hh (with minutes in fractions/floating point) -&gt; output hhmm
+Inverse from xASL_adm_ConvertTime2Nr.</p>
+<hr />
+<h3 id="xasl_adm_convertslashm">xASL_adm_ConvertSlash.m</h3>
+<h4 id="format_6">Format</h4>
+<pre><code class="matlab">[newString] = xASL_adm_ConvertSlash( StringOriginal,ForceUnix)
+</code></pre>
+
+<h4 id="description_6">Description</h4>
+<p>Converts Windows forward slashes to backward slashes
+Prevents confusion file separation &amp; regular expression forward slashes
+in Windows.</p>
+<hr />
+<h3 id="xasl_adm_createdirm">xASL_adm_CreateDir.m</h3>
+<h4 id="format_7">Format</h4>
+<pre><code class="matlab">status = xASL_adm_CreateDir(strPath)                  create all missing subdirs
+status = xASL_adm_CreateDir(strPath, strBranch)       create strBranch (if missing) under existing strPath
+status = xASL_adm_CreateDir(strPath, nMaxNewDirs)     impose limit on the number of new directories
+</code></pre>
+
+<h4 id="description_7">Description</h4>
+<p>Recursively creates missing directories at the given path or for given subdirectories, with an option
+to limit the number of newly created directories.</p>
+<hr />
+<h3 id="xasl_adm_deletefilelistm">xASL_adm_DeleteFileList.m</h3>
+<h4 id="format_8">Format</h4>
+<pre><code class="matlab">filepaths = xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
+xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
+</code></pre>
+
+<h4 id="description_8">Description</h4>
+<p>Delete the files that match regular expression STRREGEXP in the given directory STRDIRECTORY.
+Deletes recursively if specified in BRECURSE. Deletes all files unless the number is specified
+by NREQUIRED, if the number is not met, then does not delete anything and throws an error.</p>
+<hr />
+<h3 id="xasl_adm_getfilelistm">xASL_adm_GetFileList.m</h3>
+<h4 id="format_9">Format</h4>
+<pre><code class="matlab">filepaths = xASL_adm_GetFileList(strDirectory[, strRegEx, mode, nRequired, bGetDirNames])
+</code></pre>
+
+<h4 id="description_9">Description</h4>
+<p>List files or directories from a given path. And optionally uses regular expressions to filter the result
+with option to set a minimal requirement on the number of results.</p>
+<hr />
+<h3 id="xasl_adm_gzipniftim">xASL_adm_GzipNifti.m</h3>
+<h4 id="format_10">Format</h4>
+<pre><code class="matlab">pathOut = xASL_adm_GzipNifti(pathIn [,bOverwrite])
+</code></pre>
+
+<h4 id="description_10">Description</h4>
+<p>Take the input file, zips it, overwriting any existing zipped file and return the path of the zipped file.</p>
+<hr />
+<h3 id="xasl_adm_managemocomatm">xASL_adm_ManageMoCoMat.m</h3>
+<h4 id="format_11">Format</h4>
+<pre><code class="matlab">xASL_adm_ManageMoCoMat(PathIn)
+</code></pre>
+
+<h4 id="description_11">Description</h4>
+<p>This function manages the orientation matrices that SPM puts
+in an external .mat sidecar file if there are more than 1
+volumes. The first volume should be equal to the orientation
+header of the NIfTI, if not, we assume that the NIfTI
+header is correct.
+This function performs several checks &amp; corrects if
+necessary, combined with throwing a warning:
+A) the nVolumes in .mat &amp; .nii image should be equal, if not, delete sidecar
+B) .mat should have more than one volume, if not delete sidecar
+C) If there are illegal numbers in the diagonal of the .mat
+orientation matrices (here only checked for zeros or non
+finite values) then the .mat is removed
+D) If this is true for the first volume only, the .mat is
+retained but the first volume orientation is overwritten
+with a zero matrix</p>
+<hr />
+<h3 id="xasl_adm_unixpathm">xASL_adm_UnixPath.m</h3>
+<h4 id="format_12">Format</h4>
+<pre><code class="matlab">[PathIs] = xASL_adm_UnixPath(PathIs)
+</code></pre>
+
+<h4 id="description_12">Description</h4>
+<p>This function performs the following steps to convert a path to a path that is compatible with the Unix-filesystem
+as used in e.g. Linux/MacOS/Windows Subsystem for Linux (WSL).</p>
+<ol>
+<li>Skip this function without Unix-filesystem</li>
+<li>Trim whitespace</li>
+<li>Selectively convert forward to backward slashes (ignore already escaped whitespace)</li>
+<li>Escape characters and residual whitespaces (ignore already escaped whitespaces)</li>
+<li>If WSL: add mounting prefix</li>
+</ol>
+<hr />
+<h3 id="xasl_adm_unzipniftim">xASL_adm_UnzipNifti.m</h3>
+<h4 id="format_13">Format</h4>
+<pre><code class="matlab">pathOut = xASL_adm_UnzipNifti(pathIn[, bOverwrite])
+</code></pre>
+
+<h4 id="description_13">Description</h4>
+<p>Takes the input file, unzips if needed, delete the zipped file and return the path to the unzipped file.
+If the input is already unzipped, then does nothing, but returns the original filename - so it
+can be run just to be sure a file is unzipped without much overhead.
+Returns error if more than one file is in the archive, if the filename does not exist, is a directory etc.
+If there's a NII and NII.GZ already existing, then return error, or just overwrite in case overwrite is set to 1</p>
+<hr />
+<h3 id="xasl_adm_zipfilenamehandlingm">xASL_adm_ZipFileNameHandling.m</h3>
+<h4 id="format_14">Format</h4>
+<pre><code class="matlab">[srcOut, dstOut] = xASL_adm_ZipFileNameHandling(srcIn, dstIn)
+</code></pre>
+
+<h4 id="description_14">Description</h4>
+<p>Adjusts the source and destination filenames of a nifti file to reflect if NII or NII.GZ exist on the input.
+If either .nii or .nii.gz is corrupt, it automatically deletes the corrupt one and keeps the healthy one,
+while reporting a warning. This happens when you restart the pipeline after it crashed, if it crashed while unzipping.</p>
+<hr />
+<h3 id="xasl_bids_csv2tsvreadwritem">xASL_bids_csv2tsvReadWrite.m</h3>
+<h4 id="format_15">Format</h4>
+<pre><code class="matlab">[PathTSV, CellContents] = xASL_bids_csv2tsvReadWrite(PathIn[, bDeleteCSV, bWriteTSV])
+</code></pre>
+
+<h4 id="description_15">Description</h4>
+<p>This function PathIn and loads it, also trying CSV or TSV
+extensions if these exist. It outputs the contents to a cell array. If a
+CSV file exists but not a TSV file, it converts and replaces the CSV to
+TSV file, per BIDS. This function has the following parts:</p>
+<p>1) Read the CSV or TSV file
+2) Write the TSV file (if requested)
+3) Delete the CSV file (if requested)</p>
+<hr />
+<h3 id="xasl_csvreadm">xASL_csvRead.m</h3>
+<h4 id="format_16">Format</h4>
+<pre><code class="matlab">[CellContents] = xASL_csvRead(PathCSV)
+</code></pre>
+
+<h4 id="description_16">Description</h4>
+<p>This function loads a comma-separated value (csv) file - which
+is the format that BIDS prefers - and outputs it to a cell array.</p>
+<hr />
+<h3 id="xasl_csvwritem">xASL_csvWrite.m</h3>
+<h4 id="format_17">Format</h4>
+<pre><code class="matlab">xASL_csvWrite(InputCell, PathCSV, bOverwrite)
+</code></pre>
+
+<h4 id="description_17">Description</h4>
+<p>Rudimentary function, please use xASL_tsvWrite instead.
+For usage, type help xASL_tsvWrite.
+This function will still work though.</p>
+<hr />
+<h3 id="xasl_deletem">xASL_delete.m</h3>
+<h4 id="format_18">Format</h4>
+<pre><code class="matlab">xASL_delete(InputPath)
+</code></pre>
+
+<h4 id="description_18">Description</h4>
+<p>Delete the file in the given path. If a NIFTI file with extension '.nii' or '.nii.gz' is given,
+Then delete both the .nii and .nii.gz files.</p>
+<hr />
+<h3 id="xasl_existm">xASL_exist.m</h3>
+<h4 id="format_19">Format</h4>
+<pre><code class="matlab">xASL_exist(PathIn[,Type])
+</code></pre>
+
+<h4 id="description_19">Description</h4>
+<p>Check if the given path exists, wrapper around the Matlab
+exist function, to allow checking for either .nii or .nii.gz
+Otherwise, exist is used normally.</p>
+<hr />
+<h3 id="xasl_filepartsm">xASL_fileparts.m</h3>
+<h4 id="format_20">Format</h4>
+<pre><code class="matlab">[Fpath, Ffile, Fext] = xASL_fileparts(InputPath)
+</code></pre>
+
+<h4 id="description_20">Description</h4>
+<p>Returns the path, file name, and file extension for InputPath using the fileparts.m function.
+If a file ending at nii.gz is given, then the whole nii.gz is returned as the extension.
+Does not verify the existence of the file, or existence of .nii or .nii.gz</p>
+<hr />
+<h3 id="xasl_im_convertmap2maskm">xASL_im_ConvertMap2Mask.m</h3>
+<h4 id="format_21">Format</h4>
+<pre><code class="matlab">[IMout] = xASL_im_ConvertMap2Mask(IMin)
+</code></pre>
+
+<h4 id="description_21">Description</h4>
+<p>Provides a robust way of conversion of
+a continuous map to a binary mask, which can be used for lesions, ROIs,
+or tissue probability maps. Based on the assumption that a map should
+be thresholded at 50% to form a map, which is often the case for
+automatic segmentations.</p>
+<hr />
+<h3 id="xasl_im_distancetransformm">xASL_im_DistanceTransform.m</h3>
+<h4 id="format_22">Format</h4>
+<pre><code class="matlab">[dist, x, y, z] = xASL_im_DistanceTransform(im)
+</code></pre>
+
+<h4 id="description_22">Description</h4>
+<p>Calculates the distance transform in a binary image
+Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
+5x5x5 window.</p>
+<hr />
+<h3 id="xasl_im_fillnansm">xASL_im_FillNaNs.m</h3>
+<h4 id="format_23">Format</h4>
+<pre><code class="matlab">xASL_im_FillNaNs(InputPath[, UseMethod, bQuality])
+</code></pre>
+
+<h4 id="description_23">Description</h4>
+<p>This function fills any NaNs in an image. In SPM, any voxels
+outside the boundary box/field of view are filled by NaNs
+when resampling. These NaNs can confuse some algorithms,
+hence it doesn't hurt replacing them in some cases (e.g. for
+flowfields). Also, smoothing restricted in a mask is done in
+ExploreASL with the function xASL_im_ndnanfilter, after
+first setting all voxels outside the mask to NaN. In this
+case, this functon can be useful to extrapolate the smoothed
+image to avoid any division artifact near brain edges (e.g.
+for reducing the M0 image to a smooth biasfield).
+This function performs the following 3 steps:
+1) Load image
+2) Replace NaNs
+3) Save image</p>
+<hr />
+<hr />
+<h3 id="xasl_im_lesionremoval4catm">xASL_im_LesionRemoval4CAT.m</h3>
+<h4 id="format_24">Format</h4>
+<pre><code class="matlab">[Ycls, LesionImOut] = xASL_im_LesionRemoval4CAT(Ycls, PathIn)
+</code></pre>
+
+<h4 id="description_24">Description</h4>
+<p>For all lesion masks in the anatomical directory, remove
+them from the current segmentations.</p>
+<hr />
+<h3 id="xasl_im_resampleimm">xASL_im_ResampleIM.m</h3>
+<h4 id="format_25">Format</h4>
+<pre><code class="matlab">[imOut] = xASL_im_ResampleIM(imIn,matIn,matOut,dimOut,intMethod)
+</code></pre>
+
+<h4 id="description_25">Description</h4>
+<p>Resamples an image using Matlab interp3 function.</p>
+<hr />
+<h3 id="xasl_im_saveoriginal4catm">xASL_im_SaveOriginal4CAT.m</h3>
+<h4 id="format_26">Format</h4>
+<pre><code class="matlab">xASL_im_SaveOriginal4CAT(Ycls, PathIn)
+</code></pre>
+
+<h4 id="description_26">Description</h4>
+<p>Save the segmentation before lesion masking.</p>
+<hr />
+<h3 id="xasl_im_conv3dsepm">xASL_im_conv3Dsep.m</h3>
+<h4 id="format_27">Format</h4>
+<pre><code class="matlab">[imConv] = xASL_mex_conv3Dsep(im,kX,[kY,kZ])
+</code></pre>
+
+<h4 id="description_27">Description</h4>
+<p>3D separable convolution with a supplied kernel
+It converts the results to double
+Returned is the convoluted image
+The wrapper makes sure that kX are Nx1 format, removes nan, and removes
+excessive zeros at the ends.</p>
+<hr />
+<h3 id="xasl_im_ndnanfilterm">xASL_im_ndnanfilter.m</h3>
+<h4 id="format_28">Format</h4>
+<pre><code class="matlab">[Y,fil] = xASL_im_ndnanfilter(X,filterType,F,WNAN)
+</code></pre>
+
+<h4 id="description_28">Description</h4>
+<p>This function applies a 3-dimensional convolution of X with given kernel.
+NaNs elements are taken into account (ignored).</p>
+<p>By default, edges are not padded and one-sided filter is used at the image edges.</p>
+<p>Notes:
+* Accepts empty value for any input. When X is empty, the program can
+be used as a N-dimensional window generator.
+* NaNs elements surrounded by no-NaNs elements (which will depend on
+window width) are the ones that will be interpolated. The others
+are leaved untouched.
+* When WNAN=2, the programs acts like an NAN-interpolat/GAP-filling,
+leaving untouched the no-NaNs elements but the filtering is
+perfomed anyway. I recommend the default behaviour (WNAN=0) in order
+to keep the filtered data in the workspace, and then use the code
+at the end of this function to get/remove the interpolated NaNs
+* To achieve similar results as ndnanfilter previously, use same F
+as with the 'rect' filter.
+* Note that the FWHM of Gaussian is given in VOXELS, not in mm
+* For the Gaussian filter, use (previous N, new FWHM)
+N= 1 ~ FWHM 0.94
+N= 2 ~ FWHM 1.885
+N= 4 ~ FWHM 3.76
+N= 6 ~ FWHM 5.652
+N= 8 ~ FWHM 7.536
+N=10 ~ FWHM 9.42
+N=12 ~ FWHM 11.3
+N=16 ~ FWHM 15.07
+N=20 ~ FWHM 18.84
+N=10/2.355 ~ FWHM 4
+Basically divide by 1.06</p>
+<hr />
+<h3 id="xasl_io_nifti2imm">xASL_io_Nifti2Im.m</h3>
+<h4 id="format_29">Format</h4>
+<pre><code class="matlab">imOut = xASL_io_Nifti2Im(niftiIn [, ImageSize])
+</code></pre>
+
+<h4 id="description_29">Description</h4>
+<p>This function loads a NIfTI image matrix with flexible input
+(as explained under INPUT: niftiIn). It does the following.
+1) Try to load a NIfTI
+2) If NIfTI successfully loaded, try to load the NIfTI image
+3) If the above didnt work, try to create a dummy image
+4) Convert to single precision data format
+5) Also able to load NIfTI as .nii.mat format</p>
+<hr />
+<h3 id="xasl_io_readniftim">xASL_io_ReadNifti.m</h3>
+<h4 id="format_30">Format</h4>
+<pre><code class="matlab">[NiftiObject, pathIn] = xASL_io_ReadNifti(pathIn)
+</code></pre>
+
+<h4 id="description_30">Description</h4>
+<p>Read Nifti file given by the path. Return the NII object. And also return the actual path to the loaded
+Nifti if by any reason the name changed during the function runtime (e.g. unzipping).</p>
+<hr />
+<h3 id="xasl_io_saveniftim">xASL_io_SaveNifti.m</h3>
+<h4 id="format_31">Format</h4>
+<pre><code class="matlab">xASL_io_SaveNifti(pathOrigNifti, pathNewNifti, imNew[, nBits, bGZip, newMat])
+</code></pre>
+
+<h4 id="description_31">Description</h4>
+<p>It loads the pathOrigNifti, takes all the parameters from it, and creates a new Nifti file with
+these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.</p>
+<hr />
+<h3 id="xasl_roundm">xASL_round.m</h3>
+<h4 id="format_32">Format</h4>
+<pre><code class="matlab">[OutputN] = xASL_round(InputN[, PrecisionN])
+</code></pre>
+
+<h4 id="description_32">Description</h4>
+<p>Recent Matlab versions support a second input that specifies that number of decimals to round at,
+but earlier Matlab versions do not support this. For backward compatibility, use this wrapper instead of round.</p>
+<hr />
+<h3 id="xasl_spm_adminm">xASL_spm_admin.m</h3>
+<h4 id="format_33">Format</h4>
+<pre><code class="matlab">[InPath] = xASL_spm_admin(InPath, bPadComma1)
+</code></pre>
+
+<h4 id="description_33">Description</h4>
+<p>n/a</p>
+<hr />
+<h3 id="xasl_spm_reslicem">xASL_spm_reslice.m</h3>
+<h4 id="format_34">Format</h4>
+<pre><code class="matlab">xASL_spm_reslice(refPath, srcPath[, srcAffinePath, bInvAffine, bQuality, NewName, InterpolationPar])
+</code></pre>
+
+<h4 id="description_34">Description</h4>
+<p>This wrapper runs SPM's reslice function (a.k.a. coregister: reslice) which resamples a source image into the space of a reference image,
+taking into account any orientation differences between the two images that are defined in the orientation matrix in the NIfTI header.
+When the source image contains multiple volumes, they are all resampled.
+The source image will get the same orientation matrix as the reference image,
+as it is now in the same space as the reference image. This can be useful when two images are to be compared voxel-by-voxel, e.g. when
+overlaying a CBF image over a structural image, or when wanting to use a mask from a different space. When after running this function, the
+reference and source images are not in alignment, they need to be registered first (i.e. xASL_spm_register).
+Resampling/reslicing needs an interpolation method to know from which voxels of the source image, a voxel in the new image will be computed.
+A simplistic explanation is that this determines the number of surrounding neighborhood voxels it uses to determine the new voxel value.
+The example syntax below would reslice/resample the CBF image to the T1w space (assuming the Affine was done to register CBF to T1w)
+It also works with the external .mat file of the source file that has the same name as the source file. It also can optionally take a _sn.mat containing the
+affine transformation information.</p>
+<hr />
+<h3 id="xasl_spm_smoothm">xASL_spm_smooth.m</h3>
+<h4 id="format_35">Format</h4>
+<pre><code class="matlab">xASL_spm_smooth(pathIn, fwhmSmooth[, pathNew])
+</code></pre>
+
+<h4 id="description_35">Description</h4>
+<p>This SPM wrapper runs SPM's smooth function, which spatially smooths the input image with a Gaussian kernel.
+In the case of multiple volumes (i.e. a 4D NIfTI), each 3D volume is spatially smoothed separately.
+Note that smoothnesses combine with Pythagoras' rule (i.e. sum quadratically)</p>
+<hr />
+<h3 id="xasl_stat_meannanm">xASL_stat_MeanNan.m</h3>
+<h4 id="format_36">Format</h4>
+<pre><code class="matlab">y = xASL_stat_MeanNan(x[,dim])
+</code></pre>
+
+<h4 id="description_36">Description</h4>
+<p>It calculates the sum using the SUM functions and divides by the number of values but ignoring NaNs.</p>
+<hr />
+<h3 id="xasl_stat_mediannanm">xASL_stat_MedianNan.m</h3>
+<h4 id="format_37">Format</h4>
+<pre><code class="matlab">y = xASL_stat_MedianNan(x[,dim])
+</code></pre>
+
+<h4 id="description_37">Description</h4>
+<p>It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.</p>
+<hr />
+<h3 id="xasl_tsvreadm">xASL_tsvRead.m</h3>
+<h4 id="format_38">Format</h4>
+<pre><code class="matlab">[CellContents] = xASL_tsvRead(PathTSV[, bStruct])
+</code></pre>
+
+<h4 id="description_38">Description</h4>
+<p>This function loads a tab-separated value (TSV) file - which
+is the format that BIDS prefers - and outputs it to a cell array.</p>
+<hr />
+<h3 id="xasl_tsvwritem">xASL_tsvWrite.m</h3>
+<h4 id="format_39">Format</h4>
+<pre><code class="matlab">xASL_tsvWrite(InputCell, PathTSV[, bOverwrite, bCSV])
+</code></pre>
+
+<h4 id="description_39">Description</h4>
+<p>This function loads a cell array and prints it to a
+tab-separated value (TSV) file, which is the format that BIDS prefers.</p>
+<hr />
+<h3 id="xasl_wrp_dartelsaveintermedtransm">xASL_wrp_DARTELSaveIntermedTrans.m</h3>
+<h4 id="format_40">Format</h4>
+<pre><code class="matlab">xASL_wrp_DARTELSaveIntermedTrans(Yy,u,odim,rdim,idim,Mar,mat,M0,M1,fname,it)
+</code></pre>
+
+<h4 id="description_40">Description</h4>
+<p>n/a</p>
+<hr />
+<h3 id="xasl_wrp_gssaveintermedtransm">xASL_wrp_GSSaveIntermedTrans.m</h3>
+<h4 id="format_41">Format</h4>
+<pre><code class="matlab">xASL_wrp_GSSaveIntermedTrans(y,idim,odim,rdim,M0,M1,R,M1t,M1r,fname,it)
+</code></pre>
+
+<h4 id="description_41">Description</h4>
+<p>n/a</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Functions/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Functions
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Tutorials/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tutorials & FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
