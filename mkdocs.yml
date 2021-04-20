@@ -1,4 +1,7 @@
 site_name: ExploreASL
+repo_url: https://github.com/ExploreASL/Documentation
+site_url: https://github.com/ExploreASL/Documentation
+
 nav:
     - Home:               index.md
     - Modules:            Modules.md
