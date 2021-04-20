@@ -1,8 +1,6 @@
-# Documentation
+# [Documentation](https://exploreasl.github.io/Documentation/)
 
 This repository includes the interactive GitHub pages documentation of ExploreASL.
-
-You can find the interactive ExploreASL documentation here: https://exploreasl.github.io/Documentation/
 
 ### Build Process
 
@@ -11,19 +9,8 @@ Then you have to install the following libraries:
 
 ```
 pip install mkdocs
-pip install mkdocs-awesome-pages-plugin
+pip install mike
 ```
 
-Download the GitHub repository and test the mkdocs system by typing in the following command in your command window:
-
-```
-mkdocs serve
-```
-
-If you updated markdown files, you can generate a new site with the following command:
-
-```
-mkdocs build
-```
-
+- Examples [mike](https://github.com/jimporter/mike)
 
