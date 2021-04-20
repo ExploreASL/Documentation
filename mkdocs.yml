@@ -15,7 +15,6 @@ nav:
 
 plugins:
     - search
-    - awesome-pages
 
 theme:
   name: material
