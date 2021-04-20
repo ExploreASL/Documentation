@@ -7,6 +7,8 @@ nav:
     - Module ASL:         ASL_Module.md
     - Module Population:  Population_Module.md
     - Functions:          Functions.md
+    - SPM xASL Functions: SPMxASL.md
+    - Tutorials & FAQ:    Tutorials.md
     - Requirements:       Requirements.md
     - License:            License.md
     - About:              About.md

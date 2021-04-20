@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exploreasl" class="md-skip">
+        <a href="#exploreasl-v140" class="md-skip">
           Skip to content
         </a>
       
@@ -244,6 +244,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    Contributors ✨
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-cite" class="md-nav__link">
     How to cite
   </a>
@@ -343,6 +350,36 @@
     <li class="md-nav__item">
       <a href="Functions/" class="md-nav__link">
         Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tutorials/" class="md-nav__link">
+        Tutorials & FAQ
       </a>
     </li>
   
@@ -461,6 +498,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    Contributors ✨
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-cite" class="md-nav__link">
     How to cite
   </a>
@@ -481,7 +525,11 @@
                 
                 
                 <p><img alt="ExploreASL" src="img/title.png" title="ExploreASL" /></p>
-<h1 id="exploreasl">ExploreASL</h1>
+<h1 id="exploreasl-v140">ExploreASL v1.4.0</h1>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+<p><a href="#contributors-"><img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square" /></a> <a href="https://doi.org/10.5281/zenodo.3905262"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.3905262.svg" /></a> <a href="https://nl.mathworks.com/matlabcentral/fileexchange/83203-exploreasl"><img alt="View ExploreASL on File Exchange" src="https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg" /></a>
+<!-- ALL-CONTRIBUTORS-BADGE:END --></p>
 <ul>
 <li><a href="#exploreasl">ExploreASL</a><ul>
 <li><a href="#description">Description</a></li>
@@ -496,31 +544,65 @@
 </ul>
 <h2 id="description">Description</h2>
 <p><strong>ExploreASL</strong> is a pipeline and toolbox for image processing and statistics of arterial spin labeling perfusion <strong>MR</strong> images. It is designed as a <strong>multi-OS</strong>, open source, collaborative framework that facilitates cross-pollination between image processing method developers and clinical investigators.</p>
-<p>The software provides a complete head-to-tail approach that runs fully automatically, encompassing all necessary tasks from data import and structural segmentation, registration and normalization, up to <strong>CBF</strong> quantification. In addition, the software package includes and quality control (<strong>QC</strong>) procedures and region-of-interest (<strong>ROI</strong>) as well as voxel-wise analysis on the extracted data. To-date, <strong>ExploreASL</strong> has been used for processing ~10000 <strong>ASL</strong> datasets from all major <strong>MRI</strong> vendors and <strong>ASL</strong> sequences, and a variety of patient populations, representing ~30 studies. The ultimate goal of <strong>ExploreASL</strong> is to combine data from multiple studies to identify disease related perfusion patterns that may prove crucial in using <strong>ASL</strong> as a diagnostic tool and enhance our understanding of the interplay of perfusion and structural changes in neurodegenerative pathophysiology. </p>
-<p>Additionally, this (semi-)automatic pipeline allows us to minimize manual intervention, which increases the reproducibility of studies. </p>
+<p>The software provides a complete head-to-tail approach that runs fully automatically, encompassing all necessary tasks from data import and structural segmentation, registration and normalization, up to <strong>CBF</strong> quantification. In addition, the software package includes and quality control (<strong>QC</strong>) procedures and region-of-interest (<strong>ROI</strong>) as well as voxel-wise analysis on the extracted data. To-date, <strong>ExploreASL</strong> has been used for processing ~10000 <strong>ASL</strong> datasets from all major <strong>MRI</strong> vendors and <strong>ASL</strong> sequences, and a variety of patient populations, representing ~30 studies. The ultimate goal of <strong>ExploreASL</strong> is to combine data from multiple studies to identify disease related perfusion patterns that may prove crucial in using <strong>ASL</strong> as a diagnostic tool and enhance our understanding of the interplay of perfusion and structural changes in neurodegenerative pathophysiology.</p>
+<p>Additionally, this (semi-)automatic pipeline allows us to minimize manual intervention, which increases the reproducibility of studies.</p>
 <h2 id="installation">Installation</h2>
 <p>To use <strong>ExploreASL</strong> within Matlab, you can download a stable release version from the GitHub releases section. Navigate within Matlab to the <strong>ExporeASL</strong> directory, to make <strong>ExploreASL</strong> the current working directory. To start ExploreASL from Matlab, type:</p>
 <pre><code>ExploreASL
 </code></pre>
 
 <h2 id="workflow">Workflow</h2>
-<p><img alt="ExploreASL Workflow" src="img/ExploreASL_Workflow.jpg" title="Workflow of ExploreASL" /></p>
+<p><img alt="ExploreASL Workflow" src="img/ExploreASL_Workflow.jpg" title="Workflow ExploreASL" /></p>
 <h2 id="documentation">Documentation</h2>
 <p>Additional information about ExploreASL can be found in the <a href="[https://pubmed.ncbi.nlm.nih.gov/32526385/">Neuroimage paper</a> and on the <a href="www.ExploreASL.org">ExploreASL</a> website, including the walkthrough document and how-to videos. Further documentation is work in progress. For any help please contact the lead authors/developers at h.j.mutsaerts@amsterdamumc.nl or j.petr@hzdr.de.</p>
 <h2 id="exploreasl-team">ExploreASL team</h2>
 <ul>
-<li><a href="h.j.mutsaerts@amsterdamumc.nl">Henk Mutsaerts</a> - co-creator</li>
-<li><a href="j.petr@hzdr.de">Jan Petr</a> - co-creator</li>
-<li><a href="stritt.michael@gmail.com">Michael Stritt</a> - ASPIRE PhD</li>
-<li><a href="p.f.c.groot@amsterdamumc.nl">Paul Groot</a> - developer backbone, IT specialist</li>
-<li><a href="pieter.vandemaele@gmail.com">Pieter Vandemaele</a> - developer Matlab BIDS app</li>
-<li><a href="l.lorenzini@amsterdamumc.nl">Luigi Lorenzini</a> - developer ExploreQC</li>
-<li><a href="maurice.pasternak@mail.utoronto.ca">Maurice Pasternak</a> - developer GUI</li>
-<li><a href="Sandeep.g.bio@gmail.com">Sandeep Ganji</a> - developer integration Philips ISD</li>
-<li><a href="Patricia.Clement@ugent.be">Patricia Clement</a> - developer ASL-BIDS &amp; organizer</li>
+<li><a href="mailto:h.j.mutsaerts@amsterdamumc.nl?subject=[GitHub]%20ExploreASL">Henk Mutsaerts</a> - co-creator</li>
+<li><a href="mailto:j.petr@hzdr.de?subject=[GitHub]%20ExploreASL">Jan Petr</a> - co-creator</li>
+<li><a href="mailto:m.stritt@mediri.com?subject=[GitHub]%20ExploreASL">Michael Stritt</a> - ASPIRE PhD</li>
+<li><a href="mailto:p.f.c.groot@amsterdamumc.nl?subject=[GitHub]%20ExploreASL">Paul Groot</a> - developer backbone, IT specialist</li>
+<li><a href="mailto:pieter.vandemaele@gmail.com?subject=[GitHub]%20ExploreASL">Pieter Vandemaele</a> - developer Matlab BIDS app</li>
+<li><a href="mailto:l.lorenzini@amsterdamumc.nl?subject=[GitHub]%20ExploreASL">Luigi Lorenzini</a> - developer ExploreQC</li>
+<li><a href="mailto:maurice.pasternak@mail.utoronto.ca?subject=[GitHub]%20ExploreASL">Maurice Pasternak</a> - developer GUI</li>
+<li><a href="mailto:m.b.dijsselhof@amsterdamumc.nl?subject=[GitHub]%20ExploreASL">Mathijs Dijsselhof</a> - PhD student Cerebrovascular Age</li>
+<li><a href="mailto:Sandeep.g.bio@gmail.com?subject=[GitHub]%20ExploreASL">Sandeep Ganji</a> - developer integration Philips ISD</li>
+<li><a href="mailto:Patricia.Clement@ugent.be?subject=[GitHub]%20ExploreASL">Patricia Clement</a> - developer ASL-BIDS &amp; organizer</li>
 </ul>
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>This project has received support from the following EU/EFPIA Innovative Medicines Initiatives (1 and 2) Joint Undertakings: <a href="http://ep-ad.org/">EPAD</a> grant no. 115736, <a href="https://amypad.eu/">AMYPAD</a> grant no. 115952. Additionally, this work received support from the EU-EFPIA Innovative Medicines Initiatives Joint Undertaking (grant No 115952), and <a href="https://www.amsterdamresearch.org/web/neuroscience/home.htm">Amsterdam Neuroscience</a>. The authors wish to thank the <a href="https://asl-network.org/">COST-AID</a> (European Cooperation in Science and Technology - Arterial spin labeling Initiative in Dementia) Action BM1103 and the Open Source Initiative for Perfusion Imaging <a href="https://www.osipi.org/">(OSIPI)</a> and the <a href="https://www.ismrm.org/study-groups/perfusion-mr/">ISMRM Perfusion Study groups</a> for facilitating meetings for researchers to discuss the implementation of ExploreASL. The authors acknowledge Guillaume Flandin, Robert Dahnke, and Paul Schmidt for reviewing the structural module for its implementation of <a href="https://www.fil.ion.ucl.ac.uk/spm/software/spm12/">SPM12</a>, <a href="http://www.neuro.uni-jena.de/cat/">CAT12</a>, and <a href="https://www.applied-statistics.de/lst.html">LST</a>, respectively; Krzysztof Gorgolewksi for his advice on the <a href="https://bids.neuroimaging.io/">BIDS</a> implementation; Jens Maus for help with MEX compilation; Cyril Pernet for providing the <a href="https://osf.io/wn3h8/">SPM Univariate Plus</a> QC scripts.</p>
+<h2 id="contributors">Contributors ✨</h2>
+<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- prettier-ignore-start -->
+
+<!-- markdownlint-disable -->
+
+<table>
+  <tr>
+    <td align="center"><a href="http://www.ExploreASL.org"><img src="https://avatars0.githubusercontent.com/u/27774254?v=4" width="100px;" alt=""/><br /><sub><b>Henk Mutsaerts</b></sub></a><br /><a href="#creator-HenkMutsaerts" title="Mentor and Creator">👨‍🔬</a> <a href="#content-HenkMutsaerts" title="Content">🖋</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=HenkMutsaerts" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jan-petr"><img src="https://avatars0.githubusercontent.com/u/29886537?v=4" width="100px;" alt=""/><br /><sub><b>Jan Petr</b></sub></a><br /><a href="#creator-jan-petr" title="Mentor and Creator">👨‍🔬</a> <a href="#content-jan-petr" title="Content">🖋</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=jan-petr" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MichaelStritt"><img src="https://avatars0.githubusercontent.com/u/46593074?v=4" width="100px;" alt=""/><br /><sub><b>Michael Stritt</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=MichaelStritt" title="Code">💻</a> <a href="#content-MichaelStritt" title="Content">🖋</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=MichaelStritt" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.amsterdamumc.nl"><img src="https://avatars0.githubusercontent.com/u/18597189?v=4" width="100px;" alt=""/><br /><sub><b>Paul Groot</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=pfcgroot" title="Code">💻</a> <a href="#content-pfcgroot" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/pvdemael"><img src="https://avatars1.githubusercontent.com/u/37624277?v=4" width="100px;" alt=""/><br /><sub><b>Pieter Vandemaele</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=pvdemael" title="Code">💻</a> <a href="#ideas-pvdemael" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-pvdemael" title="Data Acquisition & Management">🧠</a></td>
+    <td align="center"><a href="https://github.com/luislorenzini"><img src="https://avatars2.githubusercontent.com/u/57985241?v=4" width="100px;" alt=""/><br /><sub><b>luislorenzini</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=luislorenzini" title="Code">💻</a> <a href="#tool-luislorenzini" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://github.com/MauricePasternak"><img src="https://avatars3.githubusercontent.com/u/57411571?v=4" width="100px;" alt=""/><br /><sub><b>MauricePasternak</b></sub></a><br /><a href="#gui-MauricePasternak" title="Graphical User Interface">📊</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=MauricePasternak" title="Code">💻</a> <a href="#design-MauricePasternak" title="Design">🎨</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/MDijsselhof"><img src="https://avatars0.githubusercontent.com/u/75380250?v=4" width="100px;" alt=""/><br /><sub><b>Mathijs Dijsselhof</b></sub></a><br /><a href="#content-MDijsselhof" title="Content">🖋</a> <a href="#data-MDijsselhof" title="Data Acquisition & Management">🧠</a></td>
+    <td align="center"><a href="https://github.com/sandeepganji"><img src="https://avatars0.githubusercontent.com/u/12124746?v=4" width="100px;" alt=""/><br /><sub><b>Sandeep Ganji</b></sub></a><br /><a href="#content-sandeepganji" title="Content">🖋</a> <a href="#ideas-sandeepganji" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-sandeepganji" title="Data Acquisition & Management">🧠</a></td>
+    <td align="center"><a href="https://github.com/jozsait"><img src="https://avatars0.githubusercontent.com/u/19532128?v=4" width="100px;" alt=""/><br /><sub><b>jozsait</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=jozsait" title="Code">💻</a> <a href="#maintenance-jozsait" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/DaveThoma5"><img src="https://avatars0.githubusercontent.com/u/3704113?v=4" width="100px;" alt=""/><br /><sub><b>DaveThoma5</b></sub></a><br /><a href="#ideas-DaveThoma5" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-DaveThoma5" title="Data Acquisition & Management">🧠</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<p>This project follows the <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification. Contributions of any kind welcome!</p>
 <h2 id="how-to-cite">How to cite</h2>
 <p>The bare minimum of references is the <a href="https://www.sciencedirect.com/science/article/pii/S1053811920305176">ExploreASL manuscript</a> and the used ExploreASL release, which you can find on Zenodo (e.g. <a href="https://zenodo.org/record/4095518#.X4rTL5P7Rts">version 1.3.0</a>).</p>
 <p>The following provides an example as how to correctly cite ExploreASL and its third-party tools. The versions of the included third-party tools are described in <a href="https://github.com/ExploreASL/ExploreASL/blob/master/CHANGES.md">CHANGES.md</a> for each ExploreASL release.</p>
