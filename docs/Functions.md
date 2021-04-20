@@ -557,8 +557,7 @@ This function performs the following steps:
 5. Manage compilation paths
 6. Run SPM compilation
 7. Run ExploreASL compilation
-8. Copy .bat file for Windows compilation
-9. Save Log-file
+8. Print done
 
 
 ----
@@ -1965,7 +1964,7 @@ that the edges are nicely fixed, this function sets a border at the image matrix
 #### Format
 
 ```matlab
-xASL_im_dilateROI(PathIn, PathOut)
+xASL_im_dilateROI(PathIn, [PathOut, minVolume])
 ```
 
 #### Description
@@ -3009,6 +3008,36 @@ PWI stage)
 
 
 ----
+### xASL\_quant\_SliceTiming.m
+
+#### Format
+
+```matlab
+SliceTiming = xASL_quant_SliceTiming(x, inputIm)
+```
+
+#### Description
+This function takes the x.Q.SliceReadoutTime and returns the SliceTiming parameter.
+The function creates a vector (of the relatives timings for each slices) out of it with the correct
+length corresponding to the number of slices in the inputIm
+corresponding to the BIDS definition. It also checks the x.readout\_dim, and for 3D readouts it returns 0.
+It loads the image from inputIm and calculates the SliceTiming according to the number of slices in the third dimension
+If a path is given, it also checks if it can find a JSON sidecar, then it loads the JSON sidecar, and looks for SliceTiming inside it. If
+SliceTiming/SliceReadoutTime is found in the JSON sidecar, it prioritize it over the value in the x-struct
+For reference, we use these terms:
+
+SliceTiming (the BIDS parameter) - it is a vector with the same length as the number of slices and contains the timing of the start
+of the readout of each slice relative to the first slice
+SliceReadoutTime - Legacy xASL parameter that will be phased out. It contains either a vector matching the BIDS definition of SliceTiming
+or a scalar with difference in readout times between the consecutives slices (i.e. the xASL legacy definition of SliceTiming)
+SliceTimingDiff - Internal parameter in this function for calculating the time difference between consecutive slices.
+
+0. Admin
+1. ShortestTR
+2. Assign the vector value and check for vector consistency
+
+
+----
 ### xASL\_quant\_SliceTiming\_ShortestTR.m
 
 #### Format
@@ -3191,11 +3220,21 @@ The derivative uses Sobels filter.
 #### Format
 
 ```matlab
-[CBF_GM CBF_WM] = xASL_stat_ComputeMean(imCBF [,imMask,nMinSize,bPVC,imGM,imWM])
+[CBF_GM CBF_WM] = xASL_stat_ComputeMean(imCBF[, imMask, nMinSize, bPVC, bParametric, imGM, imWM])
 ```
 
 #### Description
-It behaves in a similar way as VAR.
+It calculates mean or median of CBF over the mask imMask if the mask volume exceeds nMinSize. It calculates either
+a mean, a median, or a mean after PVC, depending on the settings of bPVC. For the PVC options, it needs also imGM and imWM and returns the
+separate PV-corrected values calculated over the entire ROI.
+
+1. Admin
+2. Mask calculations
+3. Calculate the ROI statistics
+3a. No PVC and simple mean
+3b. No PVC and median
+3c. Simple PVC
+3d. Full PVC on a region
 
 
 ----
@@ -3204,16 +3243,17 @@ It behaves in a similar way as VAR.
 #### Format
 
 ```matlab
-sCov = xASL_stat_ComputeSpatialCoV(imCBF)
-sCov = xASL_stat_ComputeSpatialCoV(imCBF,imMask)
-sCov = xASL_stat_ComputeSpatialCoV(imCBF,imMask,nMinSize)
-sCov = xASL_stat_ComputeSpatialCoV(imCBF,imMask,nMinSize,bPVC,imGM,imWM)
+sCov = xASL_stat_ComputeSpatialCoV(imCBF[, imMask, nMinSize, bPVC, bParametric, imGM, imWM])
 ```
 
 #### Description
 It calculates the spatial CoV value on finite part of imCBF. Optionally a mask IMMASK is provide,
 ROIs of size < NMINSIZE are ignored, and PVC is done for bPVC==2 using imGM and imWM masks and constructing
 pseudoCoV from pseudoCBF image. For bPVC~=2, imGM and imWM are ignored
+
+1. Admin
+2. Create masks
+3. sCoV computation
 
 
 ----

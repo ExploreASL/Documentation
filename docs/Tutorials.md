@@ -18,7 +18,7 @@ The `ExploreASL_Master` script will have the following format:
 [x] = ExploreASL([DataParPath, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
 ```
 
-Parameter descriptions:
+**Parameter descriptions:**
 
 - `DataParPath`: Path to data parameter file (`OPTIONAL`, `DEFAULT = ` prompting user input)
 - `ImportModules`: `[DCM2NII, NII2BIDS, ANONYMIZE, BIDS2LEGACY]`
@@ -34,28 +34,25 @@ Parameter descriptions:
 - `iWorker`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
 - `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
 
+In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.
+
 ----
 #### DICOM source data
 
-(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)
+Converting DICOM source data according to the [ASL BIDS](https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html) standard can be done using the new import workflow. For the upcoming release **v1.6.0** we're preparing an exemplary DICOM source dataset based on the [ASL DRO](https://pypi.org/project/asldro/). To run this workflow, you have to use the path to your `sourceStructure.json` file instead of the path to your `DataPar.json` file for the `DataParPath` input argument. Do not forget to set up the source dataset correctly. You'll be required to define a `studyPar.json` file as well. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.
 
-(Explanation about the benefit of being able to use data which basically comes from the scanner directly)
-
-(Mention flavor library and state of development)
-
-(Description about the first import workflow step of converting DCM2NII using dcm2niix)
+The first step to convert your **DICOM** source data to **NIFTI** source data is to run the following command:
 
 ```matlab
 [x] = ExploreASL('sourceStructure.json', [1 0 0 0], 0, 0, 1, 1);
 ```
 
+Here we tell **ExploreASL** to run the `DCM2NII` import module by setting the first boolean variable of the `ImportModules` to `1`.
 
 ----
 #### NIFTI source data
 
-(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)
-
-(Description about the second import workflow step of converting NII2BIDS)
+Let's assume we have **NIFTI** source data according to the [ASL BIDS](https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html) standard now. To convert this **ASL BIDS** source data to **ASL BIDS** raw data, we have to run the second part of the import workflow. To run the second step, we set the second variable of the `ImportModules` to `1`. Similar to the previous step, we pass the path to the `sourceStructure.json` file to **ExploreASL**.
 
 ```matlab
 [x] = ExploreASL('sourceStructure.json', [0 1 0 0], 0, 0, 1, 1);
@@ -65,7 +62,7 @@ Parameter descriptions:
 ----
 #### Data anonymization
 
-(Description about the anonymization step)
+There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the path to the `sourceStructure.json` file to **ExploreASL**.
 
 ```matlab
 [x] = ExploreASL('sourceStructure.json', [0 0 1 0], 0, 0, 1, 1);
@@ -75,21 +72,47 @@ Parameter descriptions:
 ----
 #### Data in ExploreASL legacy format
 
-(Description about BIDS2LEGACY)
+Right now, **ExploreASL** still uses the conventional data structure. To convert our **ASL BIDS** rawdata to the **ExploreASL** legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the path to the `sourceStructure.json` file to **ExploreASL**.
 
 ```matlab
 [x] = ExploreASL('sourceStructure.json', [0 0 0 1], 0, 0, 1, 1);
 ```
 
+The import workflow will also generate a `DataPar.json` file. To adapt your pipeline, you can still use the same settings as before, by changing the **JSON** fields.
+
+
+----
+#### ExploreASL processing pipeline
+
+If you just want to use the conventional **ExploreASL** processing pipeline, you can simply turn off the import workflow by setting all `ImportModules` variables to `0` individually or by using a single `0` for the `ImportModules`. This results in the following notation:
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', 0, 1, 0, 1, 1);
+```
+
+To run individual modules, you can set the `ProcessModules` individually. If you only want to the `Structural Module` for example, you can use a `[1 0 0]` vector. To run all modules, you can use a single `1` or a vector of ones, which should look like this `[1 1 1]`. Running the full processing pipeline can therefore be done like this as well:
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', 0, [1 1 1], 0, 1, 1);
+```
 
 ----
 #### Full pipeline
 
-(Minor example of how the full pipeline can be used)
+Running the full pipeline including both import workflow and processing pipeline, can be done by setting both `ImportModules` and `ProcessModules` to `1`.
 
 ```matlab
 [x] = ExploreASL('sourceStructure.json', 1, 1, 0, 1, 1);
 ```
+
+----
+#### Other tips and tricks
+
+Note that we changed both name and behavior of the `SkipPause` variable. The variable is called `bPause` now. Setting it to `true` or `1`, will result in the pipeline being paused before the processing. We removed the `iModules`, but the functionality of `ProcessModules` is basically the same. We use boolean notation now, so instead of `[1 2 3]` you have to use `[1 1 1]` now.
+
+The overall import functionality is a work in progress right now. We expect stable behavior in release `v1.6.0` though. If you plan on using the `develop` branch until then, you have to live with more or less unstable import behavior.
+
+The examples shown below are related to versions `v1.5.1` and older. They will be updated soon. If you want to work with the current `develop` version, these examples obviously do not apply anymore.
 
 
 ----
@@ -99,13 +122,14 @@ The first thing you have to do, to use **ExploreASL**, is to clone the **Explore
 
 If you are new to Matlab, we recommend checking out a [Matlab tutorial](https://www.mathworks.com/support/learn-with-matlab-tutorials.html). It can be helpful to add the **ExploreASL** directory to your Matlab paths. Open Matlab, select the **Home** tab, and add the **ExploreASL** directory including its subfolders using the **Set Path** option. Now change your working directory, using the **Current Folder** tab or the **cd** command, to the **ExploreASL** directory.
 
-To run **ExploreASL** you have to type in the following command in the **Command Window**: `ExploreASL`. If you already created an **ASL-BIDS dataset**, you can run the full default **ExploreASL** pipeline like this:
+To run **ExploreASL** you have to type in the following command in the **Command Window**: `ExploreASL`. If you already created an **ASL-BIDS dataset** in sourcedata format, you can run the full default **ExploreASL** pipeline like this:
 
 ```matlab
 DataParPath = 'C:\...\MY-BIDS-DATASET\DataParFile.json';
-ProcessData = true;
-SkipPause = true;
-[x] = ExploreASL_Master(DataParPath, ProcessData, SkipPause);
+ImportModules = true;
+ProcessModules = true;
+bPause = false;
+[x] = ExploreASL_Master(DataParPath, ImportModules, ProcessModules, bPause);
 ```
 
 ----
@@ -117,127 +141,45 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 
 #### Windows
 
-Let's assume you want to run the compiled version of **ExploreASL v1.4.0**. Check the contents of the folder created by `xASL_adm_MakeStandalone.m`, which contains the compiled version. There should be a file called `xASL_1_4_0.exe`. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in `cmd` to open the command prompt in the current folder. The following command will start **ExploreASL** and process the dataset of the DataParFile:
+Let's assume you want to run the compiled version of **ExploreASL latest**. Check the contents of the folder created by `xASL_adm_MakeStandalone.m`, which contains the compiled version. There should be a file called `xASL_latest.exe`. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in `cmd` to open the command prompt in the current folder. The following command will start **ExploreASL**, import the **ASL-BIDS dataset** in sourcedata format, and process the dataset of your `sourceStructure.json` file:
 
 ```console
-xASL_1_4_0.exe "c:\path_to_your\DataParFile.json"
+xASL_latest.exe "c:\MY-BIDS-DATASET\sourceStructure.json" "1" "1"
 ```
 
 The executable will extract all necessary data from the CTF archive within the folder. This is totally normal. Within the command window you should see that **ExploreASL** is starting to process the given dataset:
 
 ```console
-xASL_1_4_0.exe "c:\path_to_your\DataParFile.json"
-```
-
-```console
-==============================================================================================
-ctfroot:  .\xASL_1_4_0\xASL_1_4_0_mcr
-x.MyPath: .\xASL_1_4_0\xASL_1_4_0_mcr\xASL_1_4_0
-==============================================================================================
- ___  ____  __  __
-/ __)(  _ \(  \/  )  modified xASL version
-\__ \ )___/ )    (   Statistical Parametric Mapping
-(___/(__)  (_/\/\_)  SPM12 - http://www.fil.ion.ucl.ac.uk/spm/
-
---> Initializing ExploreASL v1.4.0...
-
-
-==============================================================================================
- ________                      __                                 ______    ______   __
-/        |                    /  |                               /      \  /      \ /  |
-########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |
-## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |
-##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |
-#####/     ##  ##<  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |
-## |_____  /####  \ ## |__## |## |## \__## |## |      ########/ ## |  ## |/  \__## |## |_____
-##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |
-########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/
-                    ## |
-                    ## |
-                    ##/
-==============================================================================================
-
-
-ExploreASL initialized <--
-Automatically defining sessions...
--------------------------------------------
-ExploreASL will run with following settings:
-
-Root folder = .\TestDataSet\analysis
-
-1 scans - 0 exclusions, resulting in 1 scans of:
-Longitudinal timePoint 1 = 1 scans - 0 exclusions = 1 scans
-ASL sessions: 1
-
-Ancillary data, sets:
-3 sets are defined for 1 "SubjectsSessions":
-Set 1 = "LongitudinalTimePoint" options "TimePoint_1", codes for paired data
-Set 2 = "SubjectNList" options "SubjectNList", codes for paired data
-Set 3 = "Site" options "SingleSite", codes for two-sample data
-x.DELETETEMP = 1 (delete temporary files)
-x.Quality    = 0 (0 = fast try-out; 1 = normal high quality)
-
----------------------------------------------
-
-
-Running xASL_module_Structural ...
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-...
+xASL_latest.exe "c:\MY-BIDS-DATASET\sourceStructure.json" "1" "1"
+(insert example here)
 ```
 
 To test if it is possible to initialize **ExploreASL** without the processing of a dataset, you could run the following command:
 
 ```console
-xASL_1_4_0.exe "" "0" "1" "1" "1"
+xASL_latest.exe "" "0" "0"
 ```
 
-The usual **ExploreASL** parameters (DataParPath, ProcessData, SkipPause, iWorker, nWorkers) have to be given to the compiled **ExploreASL** version as strings. The resulting output could look like this:
+The usual **ExploreASL** parameters (`DataParPath`, `ImportModules`, `ProcessModules`, `bPause`, `iWorker`, `nWorkers`) have to be given to the compiled **ExploreASL** version as strings. The resulting output could look like this:
 
 ```console
-xASL_1_4_0.exe "" "0" "1" "1" "1"
-==============================================================================================
-ctfroot:  .\xASL_1_4_0\xASL_1_4_0_mcr
-x.MyPath: .\xASL_1_4_0\xASL_1_4_0_mcr\xASL_1_4_0
-==============================================================================================
- ___  ____  __  __
-/ __)(  _ \(  \/  )  modified xASL version
-\__ \ )___/ )    (   Statistical Parametric Mapping
-(___/(__)  (_/\/\_)  SPM12 - http://www.fil.ion.ucl.ac.uk/spm/
-
---> Initializing ExploreASL v1.4.0...
-
-
-==============================================================================================
- ________                      __                                 ______    ______   __
-/        |                    /  |                               /      \  /      \ /  |
-########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |
-## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |
-##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |
-#####/     ##  ##<  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |
-## |_____  /####  \ ## |__## |## |## \__## |## |      ########/ ## |  ## |/  \__## |## |_____
-##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |
-########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/
-                    ## |
-                    ## |
-                    ##/
-==============================================================================================
-
-
-ExploreASL initialized <--
+xASL_latest.exe "" "0" "0"
+(insert example here)
 ```
 
 #### Linux
 
-On Linux you can basically do the same as above. Let's assume we chose the option to create a compiled **ExploreASL** version labelled with the **latest** tag within `xASL_adm_MakeStandalone.m` script. We can run the ExploreASL shell script with a specified Matlab MCR (here we use version 96 e.g.) using the following command:
+On Linux you can basically do the same as above. We can run the ExploreASL shell script with a specified Matlab MCR (here we use **version 96** e.g.) using the following command:
 
 ```console
-./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "" "0" "1" "1" "1"
+./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "" "0" "0"
 ```
 
-Using the options `"" "0" "1" "1" "1"` we initialize **ExploreASL**, but do not process a dataset. To run a dataset, we have to switch the ProcessData parameter from 0 to 1 and pass a path for the DataParPath. This could look something like this:
+Using the options `"" "0" "0"` we initialize **ExploreASL**, but do not process a dataset. To run a dataset, we have to switch the `ImportModules` and/or the `ProcessModules` parameter from 0 to 1 and pass a path for the DataParPath. This could look something like this:
 
 ```console
-./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "/home/TestDataSet/analysis/DataParFile.json" "1" "1" "1" "1"
+./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "/home/TestDataSet/analysis/DataParFile.json" "1" "1"
+(insert example here)
 ```
 
 
@@ -256,10 +198,13 @@ If you want to rename the docker image, you can use the docker tag command:
 docker tag docker.pkg.github.com/exploreasl/docker/xasl:1.x.x xasl:1.x.x
 ```
 
-To start a docker container of a dataset you can use the following command:
+To start a docker container of **ExploreASL v1.6.0** e.g., you can use the following command:
 
 ```console
-docker run -e DATAPARFILE="DataSet/DataParFile.json" -v /home/.../incoming:/data/incoming -v /home/.../outgoing:/data/outgoing xasl:1.x.x
+docker run -e DATAPARFILE="TestDataSet/sourceStructure.json"
+       -e IMPORTMODULES="1" -e PROCESSMODULES="1"
+       -v /home/.../incoming:/data/incoming 
+       -v /home/.../outgoing:/data/outgoing xasl:1.6.0
 ```
 
 - Here DATAPARFILE is an environment variable which is a relative path to the data parameter file of your dataset.
@@ -277,7 +222,7 @@ docker run -e DATAPARFILE="DataSet/DataParFile.json" -v /home/.../incoming:/data
 Let's assume you want to read in a NIFTI image and apply a mask on it. As a good first step we always recommend to initialize `ExploreASL` first by running the following command.
 
 ```matlab
-[x] = ExploreASL_Initialize([],0);
+[x] = ExploreASL_Initialize;
 ```
 
 Now let's read in the image by defining the image path and using the `xASL_io_Nifti2Im` function.
