@@ -493,7 +493,7 @@ Creates list of structural image paths to reslice.
 #### Format
 
 ```matlab
-[Parms, x, Oldx] = xASL_adm_LoadParms(ParmsPath[, x, bVerbose])
+[Parms, x] = xASL_adm_LoadParms(ParmsPath[, x, bVerbose])
 ```
 
 #### Description
@@ -674,20 +674,6 @@ pipeline visualization parts are repeated.
 
 
 ----
-### xASL\_adm\_SaveJSON.m
-
-#### Format
-
-```matlab
-xASL_adm_SaveJSON(data, jsonFileName)
-```
-
-#### Description
-Saves the values in the structure 'data' to a file in JSON format.
-
-
-
-----
 ### xASL\_adm\_SaveX.m
 
 #### Format
@@ -852,6 +838,42 @@ Creates several structures necessary for configuring the DICOM to BIDS conversio
 
 
 ----
+### xASL\_bids\_CreateDatasetDescriptionTemplate.m
+
+#### Format
+
+```matlab
+[json] = xASL_bids_CreateDatasetDescriptionTemplate(draft)
+```
+
+#### Description
+This script creates a JSON structure which can be saved
+using spm\_jsonwrite to get a dataset\_description.json template.
+Missing fields that are required are added. BIDSVersion checked against the current configured version.
+Remaining fields will be validated. Other fields not belonging to dataset\_description.json are ignored.
+
+
+
+----
+### xASL\_bids\_DRO2BIDS.m
+
+#### Format
+
+```matlab
+xASL_bids_DRO2BIDS(droTestPatient,[droSubject])
+```
+
+#### Description
+Prepare DRO test patient for BIDS2RAW conversion.
+This script uses the output of the asldro python script and
+converts it into a bids structure that can be read by our
+xASL\_bids\_BIDS2Legacy script.
+An exemplary usage is shown in the unit test called
+xASL\_ut\_UnitTest\_function\_BIDS2Legacy.
+
+
+
+----
 ### xASL\_bids\_Dicom2JSON.m
 
 #### Format
@@ -881,28 +903,6 @@ replaces with default value, it also checks if the parameters are consistent acr
 Function that reads raw DICOM data (".dcm" or ".IMA") and extracts the phoenix protocol parameters.
 Only works for Siemens DICOM data with phoenix protocol (tag = [0x29,0x1020]).
 
-
-
-
-----
-### xASL\_bids\_InsertJSONFields.m
-
-#### Format
-
-```matlab
-[ChildJSON] = xASL_bids_InsertJSONFields(ParentJSON, ChildJSON[, Fields2Skip])
-```
-
-#### Description
-This function takes all parameters from the "parent" JSON & moves them into the "child" JSON.
-In case of co-existence of a field with different values,
-then the value in the child JSON will prevail, per BIDS inheritance.
-
-This function runs the following steps:
-
-1. Load JSON or parms.mat (legacy), if the inputs were paths
-2. Insert the fields
-3. Save a new JSON file (if ChildJSON was a path)
 
 
 
@@ -947,11 +947,12 @@ of the last number in the filename (Y) alternating the tags and controls
 This function performs the following steps in subfunctions:
 
 1. xASL\_bids\_MergeNifti\_M0Files Generic merging of M0 files
-2. xASL\_bids\_MergeNifti\_SiemensASLFiles Merge Siemens ASL files with specific filename pattern
-3. xASL\_bids\_MergeNifti\_AllASLFiles Merge any ASL files
-4. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
-5. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
-6. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
+2. xASL\_bids\_MergeNifti\_GEASLFiles Merge GE ASL files and extract scan order from DICOM tags
+3. xASL\_bids\_MergeNifti\_SiemensASLFiles Merge Siemens ASL files with specific filename pattern
+4. xASL\_bids\_MergeNifti\_AllASLFiles Merge any ASL files
+5. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
+6. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
+7. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
 
 
 ----
@@ -1049,7 +1050,8 @@ xASL_bids_parseM0(pathASLNifti)
 #### Description
 Check the .JSON and aslContext.tsv sidecards of an ASL file in BIDS format and find the
 specified M0 possibilities. Then it converts the ASL file to ExploreASL legacy format including
-splitting of ASL and M0 NIFTIes if needed.
+splitting of ASL and M0 NIFTIes if needed. Note that the sidecars are in BIDS, but the file-structure
+is already expected to be in Legacy format
 
 
 ## FSL
@@ -1851,6 +1853,8 @@ can be used in combination with xASL\_vis\_Imwrite.m
 #### Description
 Downsample (or upsample, works similarly) old\_res image to
 low\_res image, trilinear.
+We recommend using "xASL\_spm\_Resample" instead, because of
+better performance.
 
 **NB:** new\_res should fit exactly integer fold in old\_res
 
@@ -1986,49 +1990,7 @@ Simple rotation of the first two dimension of a ND image by
 
 
 
-----
-### xASL\_import\_json.m
-
-#### Format
-
-```matlab
-[x] = xASL_import_json(DataParFile)
-```
-
-#### Description
-This function reads in a DATA\_PAR file and creates the x
-structure. The name of the DATA\_PAR file is given as a string or
-character array. The output is the x structure.
-
-If the DATA\_PAR file is the dataset\_description.json file of the BIDS
-standard, the x structure is created according to BIDS.
-
-
-
-
 ## Initialization
-
-----
-### xASL\_init\_ConvertM2JSON.m
-
-#### Format
-
-```matlab
-[PathJSON] = xASL_init_ConvertM2JSON(PathM)
-```
-
-#### Description
-This function converts and replaces the legacy data parameter m-format
-by a JSON file. A DataPar.m was the settings/parameter file, specific to a dataset to be
-processed by ExploreASL, now replaced to JSON by BIDS.
-Note that the deployed/compiled version of ExploreASL
-requires the JSON file, this function should not be compiled
-along. This function performs the following steps:
-
-1. Run the m-file to load parameters
-2. Escape characters that are illegal in JSON
-3. Write the JSON
-
 
 ----
 ### xASL\_init\_DefaultEffectiveResolution.m
@@ -2289,6 +2251,22 @@ This function also corrects formating of certain parameters.
 
 
 ----
+### xASL\_io\_ExportVTK.m
+
+#### Format
+
+```matlab
+xASL_io_ExportVTK(nifti, [mask, exportPath])
+```
+
+#### Description
+Export a VTK image file based on a 3D NIFTI or a 3D/4D image matrix.
+4D images will be exported as a VTK time series (export-1.vtk, export-2.vtk, etc.).
+This script uses vtkwrite (MIT License, Copyright 2016, Joe Yeh).
+
+
+
+----
 ### xASL\_io\_MakeNifti4DICOM.m
 
 #### Format
@@ -2330,6 +2308,28 @@ Converts into single precision floating point values (32 bit), removes scale slo
 Only runs if ['s' input\_file\_ASL] doesn't exist.
 Remember to consider motion correction/ SPM realign (isotropically).
 Alternative to this function is robust fit (Camille Maumet).
+
+
+
+----
+### xASL\_io\_ReadDataPar.m
+
+#### Format
+
+```matlab
+[x] = xASL_io_ReadDataPar(pathDataPar)
+```
+
+#### Description
+This function reads the data-parameter file, which is a file containing settings specific to processing a certain dataset or study
+(abbreviated as DataPar) and creates the x-structure out of it. The file can be in .json or .m format.
+The input file name pathDataPar is given as a string or character array. The output is the x structure. It only loads the data, removes the x-prefixes,
+but keeps all the field names and units. It doesn't do any conversions to or from BIDS. The
+only added value to normal json-read is that it detects invalid entries (numbers in strings, and
+weird arrays), converts them correctly and reports this incorrect entries so that they can be manually
+fixed. Also, if an .m file is provided, it converts and saves it to a JSON file (doesn't overwrite)
+and reports that you should stop using .m files.
+
 
 
 
@@ -3006,29 +3006,6 @@ Note that the output always goes to the CBF image (in the
 future this could go to different stages, e.g. dcm2niiX or
 PWI stage)
 
-
-
-----
-### xASL\_quant\_SliceTiming.m
-
-#### Format
-
-```matlab
-SliceTiming = xASL_quant_SliceTiming(x, inputIm)
-```
-
-#### Description
-This function takes the x.SliceReadoutTime, which can be a vector (of start of readout per slices relative to the
-readout of the first slice) or scalar (with difference in readout times between two consecutives slices) and creates a vector
-(of the relatives timings for each slices) out of it with the correct length corresponding to the number of slices in the inputIm.
-It also checks the x.readout\_dim, and for 3D readouts it returns 0.
-It loads the image from inputIm and calculates the SliceTiming according to the number of slices in the third dimension
-If a path is given, it also checks if it can find a JSON sidecar, then it loads the JSON sidecar, and looks for SliceTiming inside it. If
-SliceTiming/SliceReadoutTime is found in the JSON sidecar, it prioritize it over the value in the x-struct
-
-0. Admin
-1. ShortestTR
-2. Assign the vector value
 
 
 ----

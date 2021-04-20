@@ -5,7 +5,91 @@
 ## Beginner Tutorials
 
 ----
-### How to set up an ASL-BIDS dataset
+### ExploreASL & ASL-BIDS
+
+----
+#### Background information
+
+Starting with version **v1.6.0**, **ExploreASL** will support an import workflow which allows the user to convert **DICOM** and **NIFTI** data to the **ASL-BIDS** format. Since **ExploreASL** does not fully utilize the **BIDS** format internally, there will also be an automated workflow to convert from **ASL-BIDS** to the **ExploreASL** **legacy format**. In the following subsections we will explain how you can use the automated **ExploreASL** import workflow to convert your data structure to **ASL-BIDS** and how you can process it.
+
+The `ExploreASL_Master` script will have the following format:
+
+```matlab
+[x] = ExploreASL([DataParPath, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
+```
+
+Parameter descriptions:
+
+- `DataParPath`: Path to data parameter file (`OPTIONAL`, `DEFAULT = ` prompting user input)
+- `ImportModules`: `[DCM2NII, NII2BIDS, ANONYMIZE, BIDS2LEGACY]`
+    - `DCM2NII`: Run the DICOM to NIFTI conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+    - `NII2BIDS`: Run the NIFTI to BIDS conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+    - `ANONYMIZE`: Run the defacing and full anonymization (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+    - `BIDS2LEGACY`: Run the BIDS to LEGACY conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+- `ProcessModules`: `[STRUCTURAL, ASL, POPULATION]`
+    - `STRUCTURAL`: Run the Structural Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+    - `ASL`: Run the ASL Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+    - `POPULATION`: Run the Population Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+- `bPause`: Pause workflow before ExploreASL pipeline (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
+- `iWorker`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
+- `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
+
+----
+#### DICOM source data
+
+(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)
+
+(Explanation about the benefit of being able to use data which basically comes from the scanner directly)
+
+(Mention flavor library and state of development)
+
+(Description about the first import workflow step of converting DCM2NII using dcm2niix)
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', [1 0 0 0], 0, 0, 1, 1);
+```
+
+
+----
+#### NIFTI source data
+
+(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)
+
+(Description about the second import workflow step of converting NII2BIDS)
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', [0 1 0 0], 0, 0, 1, 1);
+```
+
+
+----
+#### Data anonymization
+
+(Description about the anonymization step)
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', [0 0 1 0], 0, 0, 1, 1);
+```
+
+
+----
+#### Data in ExploreASL legacy format
+
+(Description about BIDS2LEGACY)
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', [0 0 0 1], 0, 0, 1, 1);
+```
+
+
+----
+#### Full pipeline
+
+(Minor example of how the full pipeline can be used)
+
+```matlab
+[x] = ExploreASL('sourceStructure.json', 1, 1, 0, 1, 1);
+```
 
 
 ----

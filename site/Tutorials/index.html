@@ -358,9 +358,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-set-up-an-asl-bids-dataset" class="md-nav__link">
-    How to set up an ASL-BIDS dataset
+  <a href="#exploreasl-asl-bids" class="md-nav__link">
+    ExploreASL &amp; ASL-BIDS
   </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL &amp; ASL-BIDS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-information" class="md-nav__link">
+    Background information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom-source-data" class="md-nav__link">
+    DICOM source data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nifti-source-data" class="md-nav__link">
+    NIFTI source data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-anonymization" class="md-nav__link">
+    Data anonymization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-in-exploreasl-legacy-format" class="md-nav__link">
+    Data in ExploreASL legacy format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-pipeline" class="md-nav__link">
+    Full pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -538,9 +586,57 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-set-up-an-asl-bids-dataset" class="md-nav__link">
-    How to set up an ASL-BIDS dataset
+  <a href="#exploreasl-asl-bids" class="md-nav__link">
+    ExploreASL &amp; ASL-BIDS
   </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL &amp; ASL-BIDS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background-information" class="md-nav__link">
+    Background information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom-source-data" class="md-nav__link">
+    DICOM source data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nifti-source-data" class="md-nav__link">
+    NIFTI source data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-anonymization" class="md-nav__link">
+    Data anonymization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-in-exploreasl-legacy-format" class="md-nav__link">
+    Data in ExploreASL legacy format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-pipeline" class="md-nav__link">
+    Full pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -652,7 +748,68 @@
 <hr />
 <h2 id="beginner-tutorials">Beginner Tutorials</h2>
 <hr />
-<h3 id="how-to-set-up-an-asl-bids-dataset">How to set up an ASL-BIDS dataset</h3>
+<h3 id="exploreasl-asl-bids">ExploreASL &amp; ASL-BIDS</h3>
+<hr />
+<h4 id="background-information">Background information</h4>
+<p>Starting with version <strong>v1.6.0</strong>, <strong>ExploreASL</strong> will support an import workflow which allows the user to convert <strong>DICOM</strong> and <strong>NIFTI</strong> data to the <strong>ASL-BIDS</strong> format. Since <strong>ExploreASL</strong> does not fully utilize the <strong>BIDS</strong> format internally, there will also be an automated workflow to convert from <strong>ASL-BIDS</strong> to the <strong>ExploreASL</strong> <strong>legacy format</strong>. In the following subsections we will explain how you can use the automated <strong>ExploreASL</strong> import workflow to convert your data structure to <strong>ASL-BIDS</strong> and how you can process it.</p>
+<p>The <code>ExploreASL_Master</code> script will have the following format:</p>
+<pre><code class="matlab">[x] = ExploreASL([DataParPath, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
+</code></pre>
+
+<p>Parameter descriptions:</p>
+<ul>
+<li><code>DataParPath</code>: Path to data parameter file (<code>OPTIONAL</code>, <code>DEFAULT =</code> prompting user input)</li>
+<li><code>ImportModules</code>: <code>[DCM2NII, NII2BIDS, ANONYMIZE, BIDS2LEGACY]</code><ul>
+<li><code>DCM2NII</code>: Run the DICOM to NIFTI conversion (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>NII2BIDS</code>: Run the NIFTI to BIDS conversion (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>ANONYMIZE</code>: Run the defacing and full anonymization (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>BIDS2LEGACY</code>: Run the BIDS to LEGACY conversion (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+</ul>
+</li>
+<li><code>ProcessModules</code>: <code>[STRUCTURAL, ASL, POPULATION]</code><ul>
+<li><code>STRUCTURAL</code>: Run the Structural Module (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>ASL</code>: Run the ASL Module (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>POPULATION</code>: Run the Population Module (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+</ul>
+</li>
+<li><code>bPause</code>: Pause workflow before ExploreASL pipeline (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 0</code>)</li>
+<li><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 1</code>)</li>
+<li><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>, <code>BOOLEAN</code>, <code>DEFAULT = 1</code>)</li>
+</ul>
+<hr />
+<h4 id="dicom-source-data">DICOM source data</h4>
+<p>(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)</p>
+<p>(Explanation about the benefit of being able to use data which basically comes from the scanner directly)</p>
+<p>(Mention flavor library and state of development)</p>
+<p>(Description about the first import workflow step of converting DCM2NII using dcm2niix)</p>
+<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', [1 0 0 0], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h4 id="nifti-source-data">NIFTI source data</h4>
+<p>(Description about how the DICOM source data has to look like, with regard to the corresponding sourceStructure.json file)</p>
+<p>(Description about the second import workflow step of converting NII2BIDS)</p>
+<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', [0 1 0 0], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h4 id="data-anonymization">Data anonymization</h4>
+<p>(Description about the anonymization step)</p>
+<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', [0 0 1 0], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h4 id="data-in-exploreasl-legacy-format">Data in ExploreASL legacy format</h4>
+<p>(Description about BIDS2LEGACY)</p>
+<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', [0 0 0 1], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h4 id="full-pipeline">Full pipeline</h4>
+<p>(Minor example of how the full pipeline can be used)</p>
+<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', 1, 1, 0, 1, 1);
+</code></pre>
+
 <hr />
 <h3 id="how-to-run-exploreasl-using-matlab">How to run ExploreASL using Matlab</h3>
 <p>The first thing you have to do, to use <strong>ExploreASL</strong>, is to clone the <strong>ExploreASL</strong> repository. If you want to run <strong>ExploreASL</strong> from Matlab, we recommend to clone the main repository directly from the official <a href="https://github.com/ExploreASL/ExploreASL">GitHub website</a>. You also have the option to download the zipped version or to download an older <a href="https://github.com/ExploreASL/ExploreASL/releases">release</a>.</p>
