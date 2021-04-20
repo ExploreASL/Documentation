@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.3.0/ASL_Module/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Module ASL - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submodules-of-the-asl-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module ASL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Module ASL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Module ASL
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-analysis-mask" class="md-nav__link">
+    Create Analysis Mask
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Analysis Mask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-pv" class="md-nav__link">
+    Prepare PV
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare PV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-m0" class="md-nav__link">
+    Process M0
+  </a>
+  
+    <nav class="md-nav" aria-label="Process M0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantify" class="md-nav__link">
+    Quantify
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realign-asl" class="md-nav__link">
+    Realign ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Realign ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-asl" class="md-nav__link">
+    Register ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Register ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resample-asl" class="md-nav__link">
+    Resample ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Resample ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-qc-asl" class="md-nav__link">
+    Visual QC ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual QC ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-analysis-mask" class="md-nav__link">
+    Create Analysis Mask
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Analysis Mask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-pv" class="md-nav__link">
+    Prepare PV
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare PV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-m0" class="md-nav__link">
+    Process M0
+  </a>
+  
+    <nav class="md-nav" aria-label="Process M0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantify" class="md-nav__link">
+    Quantify
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realign-asl" class="md-nav__link">
+    Realign ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Realign ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-asl" class="md-nav__link">
+    Register ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Register ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resample-asl" class="md-nav__link">
+    Resample ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Resample ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-qc-asl" class="md-nav__link">
+    Visual QC ASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual QC ASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/ASL_Module.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="submodules-of-the-asl-module">Submodules of the ASL Module</h1>
+<hr />
+<h2 id="create-analysis-mask">Create Analysis Mask</h2>
+<h3 id="function">Function</h3>
+<pre><code class="matlab">function xASL_wrp_CreateAnalysisMask(x)
+</code></pre>
+
+<h3 id="description">Description</h3>
+<p>Create analysis mask from a combination of FoV &amp; removal of high and negative intravascular ASL voxels.</p>
+<h3 id="workflow">Workflow</h3>
+<ol>
+<li>Create <strong>FoV</strong> mask (native &amp; <strong>MNI</strong> spaces)</li>
+<li>Detect negative vascular signal (native &amp; <strong>MNI</strong> spaces, within <strong>pGM</strong>&gt;0.5)</li>
+<li>Detect peak vascular signal (native &amp; MNI spaces, within <strong>pGM</strong>==80% percentile on <strong>ASL</strong> image)</li>
+<li>Brainmasking &amp; <strong>FoV</strong>-masking (A) native &amp; B) <strong>MNI</strong> spaces): Add <strong>WM</strong> vascular parts back to the mask (defined as pWM&gt;0.8) &amp; remove extracranial signal. In the <strong>WM</strong>, negative or peak signal is more expected from noise rather than from intra-vascular signal, not many big vessels exist in the <strong>WM</strong>.</li>
+<li>Save vascular masks</li>
+<li>Create susceptibility mask (standard space only): Here, we combine manually segmented susceptibility artifact regions in which a population-based susceptibility probability map is created. This map is combined (i.e. taking the product) with the mean control &amp; PWI intensity distribution in these regions. This product is thresholded with the average of the 75th percentile &amp; 15% of the intensity (for a bit more robustness against individual variability in sinus sizes).</li>
+<li>Create standard space CBF_masked image to visualize masking effect</li>
+</ol>
+<h3 id="recommended-usage">Recommended usage</h3>
+<h3 id="interface-definition">Interface definition</h3>
+<hr />
+<h2 id="prepare-pv">Prepare PV</h2>
+<h3 id="function_1">Function</h3>
+<pre><code class="matlab">function x = xASL_wrp_PreparePV(x, bStandardSpace)
+</code></pre>
+
+<h3 id="description_1">Description</h3>
+<p>Submodule of ExploreASL <strong>ASL</strong> Module, to prepare <strong>PV</strong> maps on <strong>ASL</strong> resolution.</p>
+<h3 id="workflow_1">Workflow</h3>
+<p>This submodule prepares partial volume correction (<strong>PVC</strong>) by creating correct <strong>PV</strong> maps in <strong>ASL</strong> resolution, in native space, as well as in standard space if requested (to perform <strong>PVC</strong> in standard space).</p>
+<p><strong>If</strong> bStandardSpace:
+1. Create dummy upsampled ASL scan, for registration
+2. Reslice <strong>pGM</strong> &amp; <strong>pWM</strong> to hi-res <strong>ASL</strong>
+3. Estimate effective spatial resolution of <strong>ASL</strong>
+4. Smooth <strong>pGM</strong> &amp; <strong>pWM</strong> to this spatial resolution
+5. Move smoothed tissue posteriors to <strong>MNI</strong> space</p>
+<p><strong>Else:</strong>
+Run step 3 only, which will use the effective spatial resolution that is default for the respective sequence:</p>
+<ul>
+<li><strong>2D EPI</strong>: [1 1 1] * VoxelSize</li>
+<li><strong>3D GRASE</strong>: [1.1 1.1 1.38] * VoxelSize</li>
+<li><strong>3D spiral</strong>: [4.3 4.4 10.1] * VoxelSize (assuming <strong>GE</strong> uses the upsampled 2x2x4 mm </li>
+</ul>
+<p>...&amp; run steps 1&amp;2, but in native space these entail presmoothing &amp; downsampling.)</p>
+<h3 id="recommended-usage_1">Recommended usage</h3>
+<h3 id="interface-definition_1">Interface definition</h3>
+<hr />
+<h2 id="process-m0">Process M0</h2>
+<h3 id="function_2">Function</h3>
+<pre><code class="matlab">function xASL_wrp_ProcessM0(x)
+</code></pre>
+
+<h3 id="description_2">Description</h3>
+<p>Submodule of ExploreASL ASL Module, for M0 image processing.</p>
+<h3 id="workflow_2">Workflow</h3>
+<p>This submodule performs the image processing and quantification of <strong>M0</strong> maps (if they exist), with the following steps:</p>
+<ol>
+<li>Register <strong>M0</strong> to mean control if it exists: Before registration, contrast is equalized between the images &amp; biasfields are removed.</li>
+<li>Quantify <strong>M0</strong> (correction scale slope &amp; incomplete T1 recovery)</li>
+<li>Masking &amp; smoothing of <strong>M0</strong> image, either using:</li>
+<li><strong>A)</strong> traditional technique (very sharp masking &amp; little smoothing)</li>
+<li><strong>B)</strong> new ExploreASL-specific technique:</li>
+<li>extrapolating outside mask (avoiding artifacts from too much or too little masking)</li>
+<li>smooth very extensively, to create a biasfield (increases robustness &amp; comparison of M0 between sequences/patients)</li>
+</ol>
+<p>Any <strong>M0</strong> will be processed here. Even if part of the subjects does not have an <strong>M0</strong>, since this can be later imputed, or an average population <strong>M0</strong> image could be used. Also, without background suppression and without an <strong>M0</strong>, the MeanControl image is before saved as <strong>M0</strong>, and will be processed here as well.</p>
+<p>Note that any voxel-size differences between <strong>M0</strong> and ASL are allowed here: step 0B below rescales the <strong>PD</strong> inside an <strong>M0</strong> voxel to the same as the <strong>ASL</strong> resolution (assuming a voxel with half volume contains half the amount of protons). The M0 is further processed in standard space, and reduced to a biasfield. For the quantification in standard space, the <strong>PWI</strong> and <strong>M0</strong> are now by definition in the same space. Also, the standard space <strong>M0</strong> biasfield is resampled to the native <strong>PWI</strong> space (at the end of step <strong>3B)</strong>, ensuring that both are also in the same native space.</p>
+<h3 id="recommended-usage_2">Recommended usage</h3>
+<h3 id="interface-definition_2">Interface definition</h3>
+<hr />
+<h2 id="quantify">Quantify</h2>
+<h3 id="function_3">Function</h3>
+<pre><code class="matlab">function xASL_wrp_Quantify(x, PWI_Path, OutputPath, M0Path, SliceGradientPath)
+</code></pre>
+
+<h3 id="description_3">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that performs quantfication.</p>
+<h3 id="workflow_3">Workflow</h3>
+<p>This submodule converts PWIs to quantified CBF maps (or related derivatives):</p>
+<ol>
+<li>Load <strong>PWI</strong></li>
+<li>Prepare <strong>M0</strong></li>
+<li>Hematocrit &amp; blood <strong>T1</strong> correction</li>
+<li><strong>ASL</strong> &amp; <strong>M0</strong> parameters comparisons</li>
+<li>Load SliceGradient</li>
+<li>Initialize &amp; define quantification parameters</li>
+<li>Define labeling efficiency</li>
+<li>Perform quantification</li>
+<li>Save files</li>
+<li>Perform FEAST quantification (if exist)</li>
+</ol>
+<h3 id="recommended-usage_3">Recommended usage</h3>
+<h3 id="interface-definition_3">Interface definition</h3>
+<hr />
+<h2 id="realign-asl">Realign ASL</h2>
+<h3 id="function_4">Function</h3>
+<pre><code class="matlab">function xASL_wrp_RealignASL(x,bSubtraction)
+</code></pre>
+
+<h3 id="description_4">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that realigns.</p>
+<h3 id="workflow_4">Workflow</h3>
+<p>This submodule estimates motion by spm_realign, which uses a rigid-body registration (3 translations, 3 rotations). It runs ENABLE to reject outliers and provides a visualization. <strong>ENABLE</strong>, <strong>QC</strong> and visualizations are based on the Net Displacement Vector (<strong>NDV</strong>) (in mm): according to Pythagorean/Euclydian <strong>RMS</strong>.</p>
+<p>Link: <a href="https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind1211&amp;L=fsl&amp;P=R34458&amp;1=fsl&amp;9=A&amp;J=on&amp;d=No+Match%3BMatch%3BMatches&amp;z=4">jiscmail</a></p>
+<p>View this link for image of rotation roll, pitch and yaw: <a href="https://www.google.nl/search?q=rotation+pitch+yaw+roll&amp;espv=2&amp;tbm=isch&amp;imgil=LW3Nn1K-L6Oc7M%253A%253B-aSyykkRityJoM%253Bhttp%25253A%25252F%25252Fwww.grc.nasa.gov%25252FWWW%25252Fk-12%25252Fairplane%25252Frotations.html&amp;source=iu&amp;usg=__MlLQ5VuyRbm6kZP0vBJlPxmfbkw%3D&amp;sa=X&amp;ei=TWfjU4WcK4bqyQPqu4Fo&amp;ved=0CD8Q9QEwBQ&amp;biw=1680&amp;bih=946#facrc=_&amp;imgdii=_&amp;imgrc=LW3Nn1K-L6Oc7M%253A%3B-aSyykkRityJoM%3Bhttp%253A%252F%252Fwww.grc.nasa.gov%252FWWW%252Fk-12%252Fairplane%252FImages%252Frotations.gif%3Bhttp%253A%252F%252Fwww.grc.nasa.gov%252FWWW%252Fk-12%252Fairplane%252Frotations.html%3B709%3B533">grcnasa</a></p>
+<p>This submodule performs the following steps:
+1. Estimate motion
+2. Calculate and plot position and motion parameters
+3. Threshold-free spike definition (based on <strong>ENABLE</strong>, but with t-stats rather than the threshold p&lt;0.05)
+4. Remove spike frames from Nifti</p>
+<h3 id="recommended-usage_4">Recommended usage</h3>
+<h3 id="interface-definition_4">Interface definition</h3>
+<hr />
+<h2 id="register-asl">Register ASL</h2>
+<h3 id="function_5">Function</h3>
+<pre><code class="matlab">function xASL_wrp_RegisterASL(x)
+</code></pre>
+
+<h3 id="description_5">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that registers ASL to T1w (or potentially other structural images).</p>
+<h3 id="workflow_5">Workflow</h3>
+<p>This submodule registers ASL images to <strong>T1w</strong> space, by using a combination of the registration techniques below. Note that in the absence of raw structural files (i.e. <strong>T1</strong>.nii[.gz] or <strong>T1_ORI</strong>.nii[.gz], it will recreate dummy files from standard space to do this registration.</p>
+<p><strong>M0-T1w rigid-body</strong>  -&gt; this works well in <strong>2D EPI</strong> sequences
+<strong>PWI-pGM rigid-body</strong> -&gt; this is robust across sequences with different
+                      readouts and consequently different effective spatial resolutions. With
+                      low spatial resolution (e.g. <strong>GE 3D</strong> spiral product sequence), M0-T1w
+                      registration may not work, but <strong>PWI-pGM</strong> will work.
+                      <strong>PWI-pGM</strong> registration fails with large (vascular) artifacts, therefore
+                      this is performed only with relatively low spatial <strong>CoV</strong>.
+<strong>PWI-pGM affine</strong>     -&gt; If the spatial <strong>CoV</strong> is sufficiently low, this can
+                      improve the registration</p>
+<p>These images are registered to <strong>ASL</strong> templates that were inversely
+transformed from <strong>MNI</strong> to the <strong>T1w</strong> space (&amp; resampled to the <strong>ASL</strong> space)
+As this would have an ever higher similarity with the <strong>M0 &amp; PWI</strong>.</p>
+<p>This submodule performs the following steps:</p>
+<ol>
+<li>
+<p>Administration:</p>
+<ul>
+<li><strong>ASL4D</strong> is dealth with, if motion peaks were removed this is called
+  <strong>despiked_ASL4D</strong></li>
+<li>a default "OtherList" is specified. This is used every registration instance, except for removing the ref and src NIfTIs used in the registration instance. Also, inside the registration function the unexisting OtherList NIfTIs are skipped</li>
+<li>Define paths to the ASL templates</li>
+<li>Previous registration output files are removed</li>
+<li>Allow registration without structural data</li>
+<li>native -&gt; <strong>MNI</strong> transformation flow field <strong>y_T1.nii</strong> is smoothed to the effective <strong>ASL</strong> resolution <strong>y_ASL.nii</strong></li>
+<li>
+<p>Registration contrasts are dealth with:</p>
+<ul>
+<li>x.bRegistrationContrast - specifies the image contrast used for registration (OPTIONAL, DEFAULT = 2):<ul>
+<li>0 = Control -&gt; <strong>T1w</strong></li>
+<li>1 = <strong>CBF</strong> -&gt; <strong>pseudoCBF</strong> from template/<strong>pGM</strong>+<strong>pWM</strong> (skip if <strong>sCoV</strong>&gt;0.667)</li>
+<li>2 = automatic (mix of both)</li>
+<li>3 = option 2 &amp; force <strong>CBF</strong>-&gt;<strong>pseudoCBF</strong> irrespective of <strong>sCoV</strong> or Tanimoto coefficient</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Dummy src NIfTIs are created:</p>
+<ul>
+<li><strong>mean_control.nii</strong> to register with <strong>T1w</strong></li>
+<li><strong>mean_PWI_Clipped.nii</strong> to register with <strong>pseudoCBF</strong></li>
+</ul>
+</li>
+<li>Create reference images, downsampled pseudoTissue</li>
+</ul>
+</li>
+<li>
+<p>Registration Center of Mass</p>
+</li>
+<li>Registration <strong>ASL</strong> -&gt; anat (Control -&gt; <strong>T1w</strong>) (this step is only applied if it improves the Tanimoto coefficient)</li>
+<li>Registration CBF-&gt;pseudoCBF (this step is only applied if it improves the Tanimoto coefficient). Also, this step is only applied if the spatial <strong>CoV</strong> &lt; 0.67. Note that this is usually the case for <strong>3D</strong> scans because of their lower effective spatial resolution.<ul>
+<li>x.bAffineRegistration - specifies the <strong>ASL-T1w</strong> rigid-body registration is followed up by an affine registration (OPTIONAL, DEFAULT = 2)<ul>
+<li>0 = affine registration disabled</li>
+<li>1 = affine registration enabled</li>
+<li>2 = affine registration automatically chosen based on spatial <strong>CoV</strong> of <strong>PWI</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="recommended-usage_5">Recommended usage</h3>
+<h3 id="interface-definition_5">Interface definition</h3>
+<hr />
+<h2 id="resample-asl">Resample ASL</h2>
+<h3 id="function_6">Function</h3>
+<pre><code class="matlab">function xASL_wrp_ResampleASL(x)
+</code></pre>
+
+<h3 id="description_6">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that reslices native space images to standard space.</p>
+<h3 id="workflow_6">Workflow</h3>
+<p>This submodule resamples native space NIfTIs to standard space, using the deformation fields computed in the structural module after smoothing these transformation fields to the <strong>ASL</strong> resolution. The applied interpolation is a combination of all transformations (e.g. motion correction, registration to <strong>T1w</strong>, and transformation of T1w to standard space. This submodule performs the following steps:</p>
+<ol>
+<li>Create slice gradient image for quantification reference, in case of <strong>2D ASL</strong></li>
+<li>Reslice <strong>ASL</strong> time series to <strong>MNI</strong> space (currently 1.5 mm^3)</li>
+<li>Create mean control image, if available: This also applies a bilateral filter, if requested. If x.M0 is set as UseControlAsM0, this mean control NIfTI will be copied to an <strong>M0</strong> NIfTI (and processed in the M0 submodule).</li>
+<li>Perform pair-wise subtraction (to create <strong>PWI.nii</strong>), in native space</li>
+<li>Same in standard space</li>
+<li>Save <strong>PWI</strong> NIfTI &amp; time-series-related maps (<strong>SD, SNR</strong>)</li>
+</ol>
+<h3 id="recommended-usage_6">Recommended usage</h3>
+<h3 id="interface-definition_6">Interface definition</h3>
+<hr />
+<h2 id="visual-qc-asl">Visual QC ASL</h2>
+<h3 id="function_7">Function</h3>
+<pre><code class="matlab">function xASL_wrp_VisualQC_ASL(x)
+</code></pre>
+
+<h3 id="description_7">Description</h3>
+<p>Submodule of ExploreASL ASL Module, that performs several visualizations for <strong>QC</strong>.</p>
+<h3 id="workflow_7">Workflow</h3>
+<p>This submodule performs several visualizations for visual &amp; quantitative <strong>QC</strong>.
+1. After initial admin
+2. It starts with making <strong>ASL</strong> NIfTIs ready for visualization &amp; conversion to DICOM (though skipped by default)
+3. Then it performs a collection of visualizations
+4. Visualizes results of the TopUp geometric distortion correction
+5. Visualization of slice gradient
+6. Visualization &amp; calculation of temporal <strong>QC</strong> parameters
+7. Compute <strong>DICE</strong> overlap/intersection of <strong>ASL</strong> brain in <strong>FoV &amp; T1w</strong>, to calculate coverage
+8. Summarize orientation &amp; check left-right flips
+9. Collect several other parameters &amp; store in PDF overview</p>
+<h3 id="recommended-usage_7">Recommended usage</h3>
+<h3 id="interface-definition_7">Interface definition</h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Structural_Module/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Module Structural
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Population_Module/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Module Population
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
