@@ -20,19 +20,36 @@ The `ExploreASL_Master` script will have the following format:
 
 **Parameter descriptions:**
 
-- `DataParPath`: Path to data parameter file (`OPTIONAL`, `DEFAULT = ` prompting user input)
-- `ImportModules`: `[DCM2NII, NII2BIDS, ANONYMIZE, BIDS2LEGACY]`
-    - `DCM2NII`: Run the DICOM to NIFTI conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-    - `NII2BIDS`: Run the NIFTI to BIDS conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-    - `ANONYMIZE`: Run the defacing and full anonymization (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-    - `BIDS2LEGACY`: Run the BIDS to LEGACY conversion (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-- `ProcessModules`: `[STRUCTURAL, ASL, POPULATION]`
-    - `STRUCTURAL`: Run the Structural Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-    - `ASL`: Run the ASL Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-    - `POPULATION`: Run the Population Module (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-- `bPause`: Pause workflow before ExploreASL pipeline (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 0`)
-- `iWorker`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
-- `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`, `BOOLEAN`, `DEFAULT = 1`)
+- `DataParPath`: Path to data parameter file (`OPTIONAL`)
+    - `DEFAULT`: Prompting user input
+
+- `ImportModules`: Multi-step import workflow (`OPTIONAL`)
+    - `DCM2NII`: Run the DICOM to NIFTI conversion
+    - `NII2BIDS`: Run the NIFTI to BIDS conversion
+    - `ANONYMIZE`: Run the defacing and full anonymization
+    - `BIDS2LEGACY`: Run the BIDS to LEGACY conversion
+
+    | ImportModules    | DCM2NII       | NII2BIDS      | ANONYMIZE     | BIDS2LEGACY   |
+    | ---------------- |:-------------:|:-------------:|:-------------:|:-------------:|
+    | **Type**         | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     |
+    | **Default**      | `false`       | `false`       | `false`       | `false`       |
+    
+- `ProcessModules`: Multi-step processing pipeline (`OPTIONAL`)
+    - `STRUCTURAL`: Run the Structural Module
+    - `ASL`: Run the ASL Module
+    - `POPULATION`: Run the Population Module
+    
+    | ProcessModules   | STRUCTURAL    | ASL           | POPULATION    |
+    | ---------------- |:-------------:|:-------------:|:-------------:|
+    | **Type**         | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     |
+    | **Default**      | `false`       | `false`       | `false`       |  
+    
+- `bPause`: Pause workflow before ExploreASL pipeline (`OPTIONAL`)
+    - `DEFAULT`: `false`
+- `iWorker`: Allows parallelization when called externally  (`OPTIONAL`)
+    - `DEFAULT`: `1`
+- `nWorkers`: Allows parallelization when called externally  (`OPTIONAL`)
+    - `DEFAULT`: `1`
 
 In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.
 
