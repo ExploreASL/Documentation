@@ -1,314 +1,1642 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Module Population - ExploreASL</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Module Population";
-    var mkdocs_page_input_path = "Population_Module.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> ExploreASL</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Module Population - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submodules-of-the-population-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Modules/">Modules</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Import_Module/">Module Import</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Structural_Module/">Module Structural</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ASL_Module/">Module ASL</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Module Population</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#delete-many-temp-files">Delete Many Temp Files</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#gzip-all-files">Gzip All Files</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_1">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_1">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_1">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_1">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_1">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#create-analysis-mask">Create Analysis Mask</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_2">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_2">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_2">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_2">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_2">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sort-by-spatial-cov">Sort By Spatial CoV</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_3">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_3">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_3">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_3">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_3">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#compute-ws-cv">Compute Ws CV</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_4">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_4">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_4">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_4">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_4">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-acquisition-time">Get Acquisition Time</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_5">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_5">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_5">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_5">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_5">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-dicom-statistics">Get DICOM Statistics</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_6">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_6">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_6">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_6">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_6">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-motion-statistics">Get Motion Statistics</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_7">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_7">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_7">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_7">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_7">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-volume-statistics">Get Volume Statistics</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_8">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_8">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_8">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_8">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_8">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#create-biasfield">Create Biasfield</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_9">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_9">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_9">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_9">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_9">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#create-population-templates">Create Population Templates</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_10">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_10">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_10">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_10">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_10">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-roi-statistics">Get ROI statistics</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_11">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_11">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_11">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_11">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_11">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#load-4d-mem-mapping-lesions-rois">Load 4D Mem Mapping Lesions ROIs</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_12">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_12">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_12">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_12">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_12">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Functions/">Functions</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Requirements/">Requirements</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../License/">License</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../About/">About</a>
-                    </li>
-                </ul>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module Population
+            
+          </span>
+        </div>
       </div>
     </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    ExploreASL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Module Population
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Module Population
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#delete-many-temp-files" class="md-nav__link">
+    Delete Many Temp Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete Many Temp Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
     </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+  
+</li>
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">ExploreASL</a>
-      </nav>
-
+        <li class="md-nav__item">
+  <a href="#gzip-all-files" class="md-nav__link">
+    Gzip All Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Gzip All Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
+        <li class="md-nav__item">
+  <a href="#create-analysis-mask" class="md-nav__link">
+    Create Analysis Mask
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Analysis Mask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
-    
-    <li>Module Population</li>
-    <li class="wy-breadcrumbs-aside">
+        <li class="md-nav__item">
+  <a href="#sort-by-spatial-cov" class="md-nav__link">
+    Sort By Spatial CoV
+  </a>
+  
+    <nav class="md-nav" aria-label="Sort By Spatial CoV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compute-ws-cv" class="md-nav__link">
+    Compute Ws CV
+  </a>
+  
+    <nav class="md-nav" aria-label="Compute Ws CV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-acquisition-time" class="md-nav__link">
+    Get Acquisition Time
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Acquisition Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-dicom-statistics" class="md-nav__link">
+    Get DICOM Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get DICOM Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-motion-statistics" class="md-nav__link">
+    Get Motion Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Motion Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-volume-statistics" class="md-nav__link">
+    Get Volume Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Volume Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_8" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_8" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_8" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_8" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-biasfield" class="md-nav__link">
+    Create Biasfield
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Biasfield">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_9" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_9" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_9" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_9" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-population-templates" class="md-nav__link">
+    Create Population Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Population Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_10" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_10" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_10" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_10" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-roi-statistics" class="md-nav__link">
+    Get ROI statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get ROI statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_11" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_11" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_11" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_11" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-4d-mem-mapping-lesions-rois" class="md-nav__link">
+    Load 4D Mem Mapping Lesions ROIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Load 4D Mem Mapping Lesions ROIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_12" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_12" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_12" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_12" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
-  </ul>
   
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
               
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#delete-many-temp-files" class="md-nav__link">
+    Delete Many Temp Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete Many Temp Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gzip-all-files" class="md-nav__link">
+    Gzip All Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Gzip All Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-analysis-mask" class="md-nav__link">
+    Create Analysis Mask
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Analysis Mask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort-by-spatial-cov" class="md-nav__link">
+    Sort By Spatial CoV
+  </a>
+  
+    <nav class="md-nav" aria-label="Sort By Spatial CoV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compute-ws-cv" class="md-nav__link">
+    Compute Ws CV
+  </a>
+  
+    <nav class="md-nav" aria-label="Compute Ws CV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-acquisition-time" class="md-nav__link">
+    Get Acquisition Time
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Acquisition Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-dicom-statistics" class="md-nav__link">
+    Get DICOM Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get DICOM Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-motion-statistics" class="md-nav__link">
+    Get Motion Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Motion Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-volume-statistics" class="md-nav__link">
+    Get Volume Statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Volume Statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_8" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_8" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_8" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_8" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-biasfield" class="md-nav__link">
+    Create Biasfield
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Biasfield">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_9" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_9" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_9" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_9" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-population-templates" class="md-nav__link">
+    Create Population Templates
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Population Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_10" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_10" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_10" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_10" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-roi-statistics" class="md-nav__link">
+    Get ROI statistics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get ROI statistics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_11" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_11" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_11" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_11" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-4d-mem-mapping-lesions-rois" class="md-nav__link">
+    Load 4D Mem Mapping Lesions ROIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Load 4D Mem Mapping Lesions ROIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_12" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_12" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_12" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_12" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
                 <h1 id="submodules-of-the-population-module">Submodules of the Population Module</h1>
 <hr />
 <h2 id="delete-many-temp-files">Delete Many Temp Files</h2>
 <h3 id="function">Function</h3>
-<pre><code class="language-matlab">function xASL_adm_DeleteManyTempFiles(x)
+<pre><code class="matlab">function xASL_adm_DeleteManyTempFiles(x)
 </code></pre>
+
 <h3 id="description">Description</h3>
 <p>This function removes as many files as possible.</p>
 <h3 id="workflow">Workflow</h3>
@@ -317,8 +1645,9 @@
 <hr />
 <h2 id="gzip-all-files">Gzip All Files</h2>
 <h3 id="function_1">Function</h3>
-<pre><code class="language-matlab">function xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
+<pre><code class="matlab">function xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
 </code></pre>
+
 <h3 id="description_1">Description</h3>
 <p>This function zips all .nii files recursively into nii.gz. Note that the linux option cannot deal with spaces in filenames or directories.</p>
 <h3 id="workflow_1">Workflow</h3>
@@ -327,8 +1656,9 @@
 <hr />
 <h2 id="create-analysis-mask">Create Analysis Mask</h2>
 <h3 id="function_2">Function</h3>
-<pre><code class="language-matlab">function [x] = xASL_im_CreateAnalysisMask(x, Threshold)
+<pre><code class="matlab">function [x] = xASL_im_CreateAnalysisMask(x, Threshold)
 </code></pre>
+
 <h3 id="description_2">Description</h3>
 <p>Creates population analysis mask.</p>
 <h3 id="workflow_2">Workflow</h3>
@@ -350,8 +1680,9 @@
 <hr />
 <h2 id="sort-by-spatial-cov">Sort By Spatial CoV</h2>
 <h3 id="function_3">Function</h3>
-<pre><code class="language-matlab">function xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
+<pre><code class="matlab">function xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
 </code></pre>
+
 <h3 id="description_3">Description</h3>
 <p>Compute statistics for each ROI.</p>
 <h3 id="workflow_3">Workflow</h3>
@@ -374,8 +1705,9 @@
 <hr />
 <h2 id="compute-ws-cv">Compute Ws CV</h2>
 <h3 id="function_4">Function</h3>
-<pre><code class="language-matlab">function x = xASL_stat_ComputeWsCV(x)
+<pre><code class="matlab">function x = xASL_stat_ComputeWsCV(x)
 </code></pre>
+
 <h3 id="description_4">Description</h3>
 <p>Calculates the within and between-subject coefficient of variance (wsCV and bsCV respectively), to estimate the power to detect effects. This requires 4D images that have been split.</p>
 <h3 id="workflow_4">Workflow</h3>
@@ -384,8 +1716,9 @@
 <hr />
 <h2 id="get-acquisition-time">Get Acquisition Time</h2>
 <h3 id="function_5">Function</h3>
-<pre><code class="language-matlab">function x = xASL_stat_GetAcquisitionTime(x)
+<pre><code class="matlab">function x = xASL_stat_GetAcquisitionTime(x)
 </code></pre>
+
 <h3 id="description_5">Description</h3>
 <p>Summarize the acquisition time of scans.</p>
 <h3 id="workflow_5">Workflow</h3>
@@ -400,8 +1733,9 @@
 <hr />
 <h2 id="get-dicom-statistics">Get DICOM Statistics</h2>
 <h3 id="function_6">Function</h3>
-<pre><code class="language-matlab">function xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions, bOverwrite)
+<pre><code class="matlab">function xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions, bOverwrite)
 </code></pre>
+
 <h3 id="description_6">Description</h3>
 <p>Collect DICOM metadata in CSV file to check.</p>
 <h3 id="workflow_6">Workflow</h3>
@@ -418,8 +1752,9 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="get-motion-statistics">Get Motion Statistics</h2>
 <h3 id="function_7">Function</h3>
-<pre><code class="language-matlab">function xASL_stat_GetMotionStatistics(x)
+<pre><code class="matlab">function xASL_stat_GetMotionStatistics(x)
 </code></pre>
+
 <h3 id="description_7">Description</h3>
 <p>Summarize motion values.</p>
 <h3 id="workflow_7">Workflow</h3>
@@ -435,8 +1770,9 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="get-volume-statistics">Get Volume Statistics</h2>
 <h3 id="function_8">Function</h3>
-<pre><code class="language-matlab">function xASL_stat_GetVolumeStatistics(x)
+<pre><code class="matlab">function xASL_stat_GetVolumeStatistics(x)
 </code></pre>
+
 <h3 id="description_8">Description</h3>
 <p>Summarize volume values.</p>
 <h3 id="workflow_8">Workflow</h3>
@@ -451,8 +1787,9 @@ Summarizes this for the total population. Can be useful to detect software upgra
 <hr />
 <h2 id="create-biasfield">Create Biasfield</h2>
 <h3 id="function_9">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_CreateBiasfield(x)
+<pre><code class="matlab">function xASL_wrp_CreateBiasfield(x)
 </code></pre>
+
 <h3 id="description_9">Description</h3>
 <p>Create sequence-specific intensity biasfields.</p>
 <h3 id="workflow_9">Workflow</h3>
@@ -469,8 +1806,9 @@ Global scaling it performed to GM CBF == 60 mL/100g/min</p>
 <hr />
 <h2 id="create-population-templates">Create Population Templates</h2>
 <h3 id="function_10">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_CreatePopulationTemplates(x, SaveUnmasked, bCompute4Sets, SpecificScantype, bSkipMissingScans, bRemoveOutliers, FunctionsAre)
+<pre><code class="matlab">function xASL_wrp_CreatePopulationTemplates(x, SaveUnmasked, bCompute4Sets, SpecificScantype, bSkipMissingScans, bRemoveOutliers, FunctionsAre)
 </code></pre>
+
 <h3 id="description_10">Description</h3>
 <p>ExploreASL Population module wrapper, creates population parametric images for each ScanType.</p>
 <h3 id="workflow_10">Workflow</h3>
@@ -482,8 +1820,9 @@ The latter can e.g. identify intra-vascular signal that is similar between diffe
 <hr />
 <h2 id="get-roi-statistics">Get ROI statistics</h2>
 <h3 id="function_11">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_GetROIstatistics(x)
+<pre><code class="matlab">function xASL_wrp_GetROIstatistics(x)
 </code></pre>
+
 <h3 id="description_11">Description</h3>
 <p>Compute statistics for each ROI.</p>
 <h3 id="workflow_11">Workflow</h3>
@@ -499,64 +1838,87 @@ The latter can e.g. identify intra-vascular signal that is similar between diffe
 <hr />
 <h2 id="load-4d-mem-mapping-lesions-rois">Load 4D Mem Mapping Lesions ROIs</h2>
 <h3 id="function_12">Function</h3>
-<pre><code class="language-matlab">function [x] = xASL_wrp_Load4DMemMapping_LesionsROIs(x)
+<pre><code class="matlab">function [x] = xASL_wrp_Load4DMemMapping_LesionsROIs(x)
 </code></pre>
+
 <h3 id="description_12">Description</h3>
 <p>Part of ExploreASL analysis module. Loads data &amp; maps it to memory mapping file on disc, if not done before.</p>
 <h3 id="workflow_12">Workflow</h3>
 <h3 id="recommended-usage_12">Recommended usage</h3>
 <h3 id="interface-definition_12">Interface definition</h3>
+                
               
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../ASL_Module/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Module ASL
             </div>
           </div>
-          <footer>
+        </a>
+      
+      
+        <a href="../Functions/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Functions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Functions/" class="btn btn-neutral float-right" title="Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../ASL_Module/" class="btn btn-neutral" title="Module ASL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
       
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
   </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
-      
-        <span><a href="../ASL_Module/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Functions/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+    
+  </body>
 </html>

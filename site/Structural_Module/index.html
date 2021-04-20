@@ -1,272 +1,1354 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Module Structural - ExploreASL</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Module Structural";
-    var mkdocs_page_input_path = "Structural_Module.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> ExploreASL</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Module Structural - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submodules-of-the-structural-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Modules/">Modules</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Import_Module/">Module Import</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Module Structural</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#clean-up-wmh-segm">Clean Up WMH SEGM</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#flair-biasfield-correction">FLAIR Biasfield Correction</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_1">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_1">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_1">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_1">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_1">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#get-volumetrics">Get Volumetrics</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_2">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_2">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_2">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_2">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_2">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lst-segment-flair-wmh">LST Segment FLAIR WMH</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_3">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_3">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_3">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_3">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_3">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_4">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_4">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_4">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_4">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_4">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_5">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_5">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_5">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_5">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_5">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#linear-reg-t1w2mni">Linear Reg T1w2MNI</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_6">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_6">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_6">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_6">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_6">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#resample-2-standard-space">Resample 2 Standard Space</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_7">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_7">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_7">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_7">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_7">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#segment-t1w">Segment T1w</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_8">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_8">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_8">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_8">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_8">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#visual-qc-structural">Visual QC Structural</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#function_9">Function</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description_9">Description</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#workflow_9">Workflow</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#recommended-usage_9">Recommended usage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#interface-definition_9">Interface definition</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ASL_Module/">Module ASL</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Population_Module/">Module Population</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Functions/">Functions</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Requirements/">Requirements</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../License/">License</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../About/">About</a>
-                    </li>
-                </ul>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module Structural
+            
+          </span>
+        </div>
       </div>
     </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    ExploreASL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Module Structural
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Module Structural
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up-wmh-segm" class="md-nav__link">
+    Clean Up WMH SEGM
+  </a>
+  
+    <nav class="md-nav" aria-label="Clean Up WMH SEGM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
     </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+  
+</li>
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">ExploreASL</a>
-      </nav>
-
+        <li class="md-nav__item">
+  <a href="#flair-biasfield-correction" class="md-nav__link">
+    FLAIR Biasfield Correction
+  </a>
+  
+    <nav class="md-nav" aria-label="FLAIR Biasfield Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
+        <li class="md-nav__item">
+  <a href="#get-volumetrics" class="md-nav__link">
+    Get Volumetrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Volumetrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
-    
-    <li>Module Structural</li>
-    <li class="wy-breadcrumbs-aside">
+        <li class="md-nav__item">
+  <a href="#lst-segment-flair-wmh" class="md-nav__link">
+    LST Segment FLAIR WMH
+  </a>
+  
+    <nav class="md-nav" aria-label="LST Segment FLAIR WMH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lst-t1w-lesion-filling-wmh" class="md-nav__link">
+    LST T1w Lesion Filling WMH
+  </a>
+  
+    <nav class="md-nav" aria-label="LST T1w Lesion Filling WMH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-reg-flair-2-t1w" class="md-nav__link">
+    Linear Reg FLAIR 2 T1w
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Reg FLAIR 2 T1w">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-reg-t1w2mni" class="md-nav__link">
+    Linear Reg T1w2MNI
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Reg T1w2MNI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resample-2-standard-space" class="md-nav__link">
+    Resample 2 Standard Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Resample 2 Standard Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-t1w" class="md-nav__link">
+    Segment T1w
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment T1w">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_8" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_8" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_8" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_8" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-qc-structural" class="md-nav__link">
+    Visual QC Structural
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual QC Structural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_9" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_9" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_9" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_9" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
-  </ul>
   
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
               
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up-wmh-segm" class="md-nav__link">
+    Clean Up WMH SEGM
+  </a>
+  
+    <nav class="md-nav" aria-label="Clean Up WMH SEGM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flair-biasfield-correction" class="md-nav__link">
+    FLAIR Biasfield Correction
+  </a>
+  
+    <nav class="md-nav" aria-label="FLAIR Biasfield Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_1" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_1" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_1" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_1" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-volumetrics" class="md-nav__link">
+    Get Volumetrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Volumetrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_2" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_2" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_2" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_2" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lst-segment-flair-wmh" class="md-nav__link">
+    LST Segment FLAIR WMH
+  </a>
+  
+    <nav class="md-nav" aria-label="LST Segment FLAIR WMH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_3" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_3" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_3" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_3" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lst-t1w-lesion-filling-wmh" class="md-nav__link">
+    LST T1w Lesion Filling WMH
+  </a>
+  
+    <nav class="md-nav" aria-label="LST T1w Lesion Filling WMH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_4" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_4" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_4" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_4" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-reg-flair-2-t1w" class="md-nav__link">
+    Linear Reg FLAIR 2 T1w
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Reg FLAIR 2 T1w">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_5" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_5" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_5" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_5" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-reg-t1w2mni" class="md-nav__link">
+    Linear Reg T1w2MNI
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Reg T1w2MNI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_6" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_6" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_6" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_6" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resample-2-standard-space" class="md-nav__link">
+    Resample 2 Standard Space
+  </a>
+  
+    <nav class="md-nav" aria-label="Resample 2 Standard Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_7" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_7" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_7" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_7" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#segment-t1w" class="md-nav__link">
+    Segment T1w
+  </a>
+  
+    <nav class="md-nav" aria-label="Segment T1w">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_8" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_8" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_8" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_8" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-qc-structural" class="md-nav__link">
+    Visual QC Structural
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual QC Structural">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function_9" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow_9" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage_9" class="md-nav__link">
+    Recommended usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-definition_9" class="md-nav__link">
+    Interface definition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
                 <h1 id="submodules-of-the-structural-module">Submodules of the Structural Module</h1>
 <hr />
 <h2 id="clean-up-wmh-segm">Clean Up WMH SEGM</h2>
 <h3 id="function">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_CleanUpWMH_SEGM(x)
+<pre><code class="matlab">function xASL_wrp_CleanUpWMH_SEGM(x)
 </code></pre>
+
 <h3 id="description">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that cleans up under- and over-segmentations of <strong>WMH SEGM</strong>.</p>
 <h3 id="workflow">Workflow</h3>
@@ -288,8 +1370,9 @@ This function is not tested a lot, so mainly conservatively set up to improve th
 <hr />
 <h2 id="flair-biasfield-correction">FLAIR Biasfield Correction</h2>
 <h3 id="function_1">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_FLAIR_BiasfieldCorrection(x)
+<pre><code class="matlab">function xASL_wrp_FLAIR_BiasfieldCorrection(x)
 </code></pre>
+
 <h3 id="description_1">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_1">Workflow</h3>
@@ -300,8 +1383,9 @@ This function is not tested a lot, so mainly conservatively set up to improve th
 <hr />
 <h2 id="get-volumetrics">Get Volumetrics</h2>
 <h3 id="function_2">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_GetVolumetrics(x)
+<pre><code class="matlab">function xASL_wrp_GetVolumetrics(x)
 </code></pre>
+
 <h3 id="description_2">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that obtains volumes from the tissue segmentations (&amp; <strong>FLAIR WMH</strong> segmentations if they exist).</p>
 <h3 id="workflow_2">Workflow</h3>
@@ -313,8 +1397,9 @@ This is performed for <strong>CAT12</strong> or <strong>SPM12</strong> (whicheve
 <hr />
 <h2 id="lst-segment-flair-wmh">LST Segment FLAIR WMH</h2>
 <h3 id="function_3">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath, WMHsegmAlg)
+<pre><code class="matlab">function xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath, WMHsegmAlg)
 </code></pre>
+
 <h3 id="description_3">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs a biasfield correction on <strong>T1w</strong> &amp; applies it on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_3">Workflow</h3>
@@ -336,8 +1421,9 @@ If a <strong>WMH_SEGM</strong> already existed, the <strong>LST</strong> is run 
 <hr />
 <h2 id="lst-t1w-lesion-filling-wmh">LST T1w Lesion Filling WMH</h2>
 <h3 id="function_4">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_LST_T1w_LesionFilling_WMH(x, rWMHPath)
+<pre><code class="matlab">function xASL_wrp_LST_T1w_LesionFilling_WMH(x, rWMHPath)
 </code></pre>
+
 <h3 id="description_4">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs lesion filling on <strong>T1w</strong> based on <strong>WMH</strong> segmented on the <strong>FLAIR</strong>.</p>
 <h3 id="workflow_4">Workflow</h3>
@@ -360,8 +1446,9 @@ This function runs the following steps:</p>
 <hr />
 <h2 id="linear-reg-flair-2-t1w">Linear Reg FLAIR 2 T1w</h2>
 <h3 id="function_5">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_LinearReg_FLAIR2T1w(x, bAutoACPC)
+<pre><code class="matlab">function xASL_wrp_LinearReg_FLAIR2T1w(x, bAutoACPC)
 </code></pre>
+
 <h3 id="description_5">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that aligns <strong>FLAIR</strong> with <strong>T1w</strong>.</p>
 <h3 id="workflow_5">Workflow</h3>
@@ -373,8 +1460,9 @@ This is required to enable the application of T1w derivatives (e.g. transformati
 <hr />
 <h2 id="linear-reg-t1w2mni">Linear Reg T1w2MNI</h2>
 <h3 id="function_6">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_LinearReg_T1w2MNI(x, bAutoACPC)
+<pre><code class="matlab">function xASL_wrp_LinearReg_T1w2MNI(x, bAutoACPC)
 </code></pre>
+
 <h3 id="description_6">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that aligns <strong>T1w</strong> with <strong>MNI</strong>.</p>
 <h3 id="workflow_6">Workflow</h3>
@@ -387,8 +1475,9 @@ Assuming that this submodule is run at the start of ExploreASL, all NIfTI orient
 <hr />
 <h2 id="resample-2-standard-space">Resample 2 Standard Space</h2>
 <h3 id="function_7">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_Resample2StandardSpace(x)
+<pre><code class="matlab">function xASL_wrp_Resample2StandardSpace(x)
 </code></pre>
+
 <h3 id="description_7">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that resamples all structural images &amp; derivatives.</p>
 <h3 id="workflow_7">Workflow</h3>
@@ -403,8 +1492,9 @@ This submodule is not only part of the structural module, but can be repeated wh
 <hr />
 <h2 id="segment-t1w">Segment T1w</h2>
 <h3 id="function_8">Function</h3>
-<pre><code class="language-matlab">function [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
+<pre><code class="matlab">function [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
 </code></pre>
+
 <h3 id="description_8">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that segments <strong>3D T1</strong> (or <strong>T2</strong>) scan.</p>
 <h3 id="workflow_8">Workflow</h3>
@@ -438,8 +1528,9 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
 <hr />
 <h2 id="visual-qc-structural">Visual QC Structural</h2>
 <h3 id="function_9">Function</h3>
-<pre><code class="language-matlab">function xASL_wrp_VisualQC_Structural(x)
+<pre><code class="matlab">function xASL_wrp_VisualQC_Structural(x)
 </code></pre>
+
 <h3 id="description_9">Description</h3>
 <p>Submodule of ExploreASL Structural Module, that performs several visualizations for .</p>
 <h3 id="workflow_9">Workflow</h3>
@@ -453,57 +1544,79 @@ This transformation includes Geodesic Shooting/DARTEL for <strong>CAT12</strong>
 </ol>
 <h3 id="recommended-usage_9">Recommended usage</h3>
 <h3 id="interface-definition_9">Interface definition</h3>
+                
               
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Import_Module/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Module Import
             </div>
           </div>
-          <footer>
+        </a>
+      
+      
+        <a href="../ASL_Module/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Module ASL
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../ASL_Module/" class="btn btn-neutral float-right" title="Module ASL">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Import_Module/" class="btn btn-neutral" title="Module Import"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
       
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
   </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
-      
-        <span><a href="../Import_Module/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../ASL_Module/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+    
+  </body>
 </html>
