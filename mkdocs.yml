@@ -21,16 +21,11 @@ plugins:
 
 theme:
   name: material
+  logo: img/favicon/brain_icon_500x500.png
 
 markdown_extensions:
     - attr_list
 
 extra:
   version:
-    - mike:
-        # these fields are all optional; the defaults are as below...
-        version_selector: true   # set to false to leave out the version selector
-        css_dir: css             # the directory to put the version selector's CSS
-        javascript_dir: js       # the directory to put the version selector's JS
-        canonical_version: null  # the version for <link rel="canonical">; `null`
-                                 # uses the version specified via `mike deploy`
+    provider: mike
