@@ -27,7 +27,7 @@ Parses the settings and runs the DatabaseLoop sub-function.
 ```
 
 #### Description
-...
+Extracts a number from a char array.
 
 
 ----
@@ -146,7 +146,7 @@ Compare data sets is used to ...
 ```
 
 #### Description
-...
+This script compares two single dimension lists.
 
 
 
@@ -282,7 +282,10 @@ x = xASL_adm_DefineASLResolution(x)
 ```
 
 #### Description
-...
+If the parameters x.ResolutionEstimation == 1, it initializes the resolution with expected values
+per sequence type and then runs the procedure xASL\_im\_ResolutionEstim to estimate the resolution from the
+mismatch between ASL and structural data. For x.ResolutionEstimation == 0, xASL\_init\_DefaultEffectiveResolution
+the educated guess is used for the estimated resolution using previous data and analyzis.
 
 
 
@@ -450,7 +453,7 @@ UserName = xASL_adm_GetUserName()
 ```
 
 #### Description
-...
+Get the name of the current user.
 
 
 
@@ -481,21 +484,6 @@ characters than treat as float, if more than as double.
 
 #### Description
 Creates list of structural image paths to reslice.
-
-
-
-----
-### xASL\_adm\_Load4DMemMapping.m
-
-#### Format
-
-```matlab
-LoadFile = xASL_adm_Load4DMemMapping(x, WhichModality)
-```
-
-#### Description
-Part of ExploreASL analysis module.
-Loads data & maps it to memory mapping file on disc, if not done before.
 
 
 
@@ -583,8 +571,8 @@ outStruct = xASL_adm_OrderFields(inStruct,orderStruct)
 ```
 
 #### Description
-Order fields in the structure **inStruct** to match
-{{orderStruct}}, unmatching fields in inStruct are copied as
+Order fields in the structure **inStruct** to match **orderStruct**,
+unmatching fields in inStruct are copied as
 they are at the end, unmatching fields in **orderStruct** are
 ignored. This is just a cosmetic change and no values are
 edited.
@@ -609,20 +597,6 @@ list (OPTIONAL, DEFAULT=true).
 
 
 ----
-### xASL\_adm\_Par2Parms.m
-
-#### Format
-
-```matlab
-parms = xASL_adm_Par2Parms(pathPar, pathParms[, bRecreate])
-```
-
-#### Description
-Opens the Philips type PAR file. Reads the relevant DICOM headers and saves them to .MAT file.
-Only recreates an existing file if bRecreate option is set to TRUE.
-
-
-----
 ### xASL\_adm\_ParReadHeader.m
 
 #### Format
@@ -634,6 +608,21 @@ info =xASL_adm_ParReadHeader(filename)
 #### Description
 Function for reading the header of a Philips Par /
 Rec  MR V4.\* file.
+
+
+
+
+----
+### xASL\_adm\_RemoveLogFilesForRerun.m
+
+#### Format
+
+```matlab
+xASL_adm_RemoveLogFilesForRerun(rootDir);
+```
+
+#### Description
+Removes all log files from any directory containing .log files.
 
 
 
@@ -802,6 +791,38 @@ This function runs the following steps:
 
 
 ----
+### xASL\_bids\_BIDS2Legacy.m
+
+#### Format
+
+```matlab
+xASL_bids_BIDS2Legacy(pathStudy[, bOverwrite, dataPar])
+```
+
+#### Description
+This function converts BIDS rawdata (in pathStudy/rawdata/)
+to xASL legacy derivative format (e.g. pathStudy/derivatives/ExploreASL/)
+
+Can be updated step-by-step when ExploreASL's derivative structure moves to BIDS
+NB: ask how Visits/session layer is defined in bids-matlab (should be
+separate layer within subjects, but now isn't?)
+
+This function performs the following steps:
+
+1. Parse a folder using bids-matlab
+2. Define Subject
+3. Define SubjectVisit
+4. Parse modality
+5. Parse scantype
+6. Compile paths for copying
+7. Manage sidecars to copy
+8. Copy files
+9. Parse M0
+10. Create DataPar.json
+
+
+
+----
 ### xASL\_bids\_CompareStructures.m
 
 #### Format
@@ -818,16 +839,29 @@ We recommend to set bPrintReport to true, because you otherwise can't see signif
 
 
 ----
+### xASL\_bids\_Config.m
+
+#### Format
+
+```matlab
+bidsPar = xASL_bids_Config()
+```
+
+#### Description
+Creates several structures necessary for configuring the DICOM to BIDS conversion and saving of BIDS JSON files and NII structure.
+
+
+----
 ### xASL\_bids\_Dicom2JSON.m
 
 #### Format
 
 ```matlab
-[parms pathDcmDictOut] = xASL_bids_Dicom2Parms(inp[, parmsfile, dcmExtFilter, bUseDCMTK, pathDcmDictIn])
+[parms pathDcmDictOut] = xASL_bids_Dicom2Parms(imPar, pathIn[, pathJSON, dcmExtFilter, bUseDCMTK, pathDcmDictIn])
 ```
 
 #### Description
-The function goes through the INP files, reads the DICOM or PAR/REC files and parses their headers.
+The function goes through the pathIn files, reads the DICOM or PAR/REC files and parses their headers.
 It extracts the DICOM parameters important for ASL, makes sure they are in the correct format, if missing then
 replaces with default value, it also checks if the parameters are consistent across DICOM files for a single sequence.
 
@@ -873,6 +907,21 @@ This function runs the following steps:
 
 
 ----
+### xASL\_bids\_JsonCheck.m
+
+#### Format
+
+```matlab
+jsonOut = xASL_bids_JsonCheck(jsonIn,fileType)
+```
+
+#### Description
+
+It checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
+the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition
+
+
+----
 ### xASL\_bids\_MergeNifti.m
 
 #### Format
@@ -906,16 +955,19 @@ This function performs the following steps in subfunctions:
 
 
 ----
-### xASL\_bids\_PARREC2JSON.m
+### xASL\_bids\_Par2JSON.m
 
 #### Format
 
 ```matlab
-parms = xASL_adm_Par2Parms(pathPar, PathJSON)
+parms = xASL_bids_Par2JSON(pathPar, pathJSON)
 ```
 
 #### Description
-Opens the Philips type PAR file. Reads the relevant DICOM header fields and adds them to the .json sidecar file.
+Opens the Philips PAR file. Reads the relevant DICOM headers and saves them to JSON sidecar in a BIDS format.
+The JSON file is created automatically by the dcm2nii readout, so it always looks for this JSON file and
+add the same time reads the PAR file and adds further parameters to the JSON that were not identified by
+the dcm2nii tool.
 
 
 ----
@@ -924,7 +976,7 @@ Opens the Philips type PAR file. Reads the relevant DICOM header fields and adds
 #### Format
 
 ```matlab
-[xasl,parameters] = xASL_bids_PhoenixProtocolAnalyzer(parameterList);
+[bidsPar,sourcePar] = xASL_bids_PhoenixProtocolAnalyzer(parameterList);
 ```
 
 #### Description
@@ -950,12 +1002,26 @@ Function to parse the raw phoenix protocol. This function is usually called from
 
 
 ----
+### xASL\_bids\_VendorFieldCheck.m
+
+#### Format
+
+```matlab
+jsonOut = xASL_bids_VendorFieldCheck(jsonIn,bIsASL)
+```
+
+#### Description
+
+It checks all the JSON fields, make sure that they are renamed from vendor specific names to common BIDS names
+
+
+----
 ### xASL\_bids\_parms2BIDS.m
 
 #### Format
 
 ```matlab
-outBids = xASL_bids_parms2BIDS(inParms[, inBids, bOutBids, priorityBids])
+outBids = xASL_bids_parms2BIDS(inXasl[, inBids, bOutBids, priorityBids])
 ```
 
 #### Description
@@ -969,6 +1035,21 @@ This function performs the following steps:
 2. Convert XASL fields to the output format (BIDS or XASL)
 3. Convert BIDS fields to the output format (BIDS or XASL)
 4. Merge the BIDS and XASL fields, convert field values
+
+
+----
+### xASL\_bids\_parseM0.m
+
+#### Format
+
+```matlab
+xASL_bids_parseM0(pathASLNifti)
+```
+
+#### Description
+Check the .JSON and aslContext.tsv sidecards of an ASL file in BIDS format and find the
+specified M0 possibilities. Then it converts the ASL file to ExploreASL legacy format including
+splitting of ASL and M0 NIFTIes if needed.
 
 
 ## FSL
@@ -1107,7 +1188,7 @@ Note that LST lesion filling expects a probability map, doesnt work nicely with 
 #### Format
 
 ```matlab
-[NewIM] = xASL_im_ClipExtremes(InputIm[, ThreshHigh, ThreshLow, bVerbose])
+[NewIM] = xASL_im_ClipExtremes(InputIm[, ThreshHigh, ThreshLow, bVerbose, bNormalize])
 ```
 
 #### Description
@@ -1118,7 +1199,8 @@ This function performs the following steps:
 1. Constrain clippable intensities
 2. Clip high intensities
 3. Clip low intensities
-4. Save as NIfTI if the input was a NIfTI
+4. Normalize to 4096 (12 bit, 12^2)
+5. Save as NIfTI if the input was a NIfTI
 
 
 
@@ -1319,15 +1401,13 @@ This is not visible, but detrimental for image analysis/stats.
 #### Format
 
 ```matlab
-new_mask = xASL_im_DilateErodeFull(mask,type,kernel)
+imOut = xASL_im_DilateErodeFull(imIn, type, kernel)
 ```
 
 #### Description
-Runs dilation or erosion on a binary mask in full three dimensions
+Runs dilation or erosion on a binary imIn in full three dimensions.
 It uses its own dilate\_erode function and crops the image so that it
-contains only the mask.
-
-Works only with odd sized kernels.
+contains only the mask. The size of all three dimensions of the kernel needs to be an odd number.
 
 
 
@@ -1337,14 +1417,13 @@ Works only with odd sized kernels.
 #### Format
 
 ```matlab
-new_mask = xASL_im_DilateErodeSeparable(mask,type,kernel_x,kernel_y,kernel_z)
+imOut = xASL_im_DilateErodeSeparable(imIn, type, kernel_x, kernel_y, kernel_z)
 ```
 
 #### Description
-Runs dilation or erosion on a binary mask separably in three dimensions
-It uses its own dilate\_erode function and crops the image so that it
-contains only the mask.
-
+Runs dilation or erosion on a binary imIn separably in three dimensions. Dilation/erosion
+in each dimension is done by using the specified kernels. It uses its own dilate\_erode function
+and crops the image so that it contains only the mask.
 Works only with odd sized kernels
 
 
@@ -1359,7 +1438,7 @@ el = xASL_im_DilateErodeSphere(R)
 ```
 
 #### Description
-3D structuring element (binary) sphere.
+Creates a 3D structuring element (binary) sphere with the given diameter (R) and size 2\*R+1
 
 
 
@@ -1394,11 +1473,15 @@ realignment. This function performs the following steps:
 #### Format
 
 ```matlab
-[resFWHM, resSigma,resErr,imSmo,imMask] = xASL_im_EstimateResolution(imCBF,imGM,imWM,imMaskOrig,PSFtype,maxIter)
+[resFWHM, resSigma, resErr, imSmo, imMask] = xASL_im_EstimateResolution(imCBF, imGM, imWM[, imMaskOrig, PSFtype, maxIter])
 ```
 
 #### Description
-NB: everything in this code is in voxels, not in mm
+Creates a high-resolution pseudo-CBF image based on segmented GM and WM maps and iteratively adjusts its resolution
+by smoothing until reaching a perfect fit with the CBF image thus obtaining the resolution difference between the GM and CBF image and
+uses this to calculate the estimated effective resolution of hte CBF. Note that all the calculations are done using voxels as measures
+and not mm, so the output resolution is also in voxels and has to be transfered to mm by using the knowledge about the voxel size.
+It is assumed that for imGM and imWM, the voxel size equals the resolution, and the imCBF is upsampled to the smaller voxels of imGM.
 
 
 
@@ -1647,7 +1730,7 @@ Normalizes per perfusion territory mask should be GM mask.
 ```
 
 #### Description
-...
+Perform a Principal Component Analysis.
 
 
 
@@ -1657,18 +1740,24 @@ Normalizes per perfusion territory mask should be GM mask.
 #### Format
 
 ```matlab
-[imPVEC,imCBFrec,imResidual,FWHM] = xASL_im_PVCbspline(imCBF,imPV,bsplineNum)
-
-
+[imPVEC,imCBFrec,imResidual,FWHM] = xASL_im_PVCbspline(imCBF,imPV[,bsplineNum])
 ```
 
 #### Description
-PVEc correction of ASL data using prior GM-,WM-partial volume maps.
+PVC of ASL data using prior GM-,WM-partial volume maps.
 Follows the principles of the PVEc algorithm by I. Asllani (MRM, 2008).
 The PV-corrected CBF\_GM and CBF\_WM maps are approximated using an
 uniformly sampled cubic B-splines.
-Free for research use without guarantee.
-Created by Jan Petr, j.petr@hzdr.de
+----------------------------------------------------------------------------------------------
+
+REFERENCES:
+-Asllani I, Borogovac A, Brown TR. Regression algorithm correcting for
+partial volume effects in arterial spin labeling MRI. Magnetic Resonance
+in Medicine. 2008 Dec 1;60(6):1362-71.
+-Petr J, Mutsaerts HJ, De Vita E, Steketee RM, Smits M, Nederveen AJ,
+Hofheinz F, van den Hoff J, Asllani I. Effects of systematic partial
+volume errors on the estimation of gray matter cerebral blood flow with
+arterial spin labeling MRI. MAGMA 2018. DOI:10.1007/s10334-018-0691-y
 
 
 
@@ -1678,17 +1767,12 @@ Created by Jan Petr, j.petr@hzdr.de
 #### Format
 
 ```matlab
-[imPVEC,imCBFrec,imResidual] = xASL_im_PVCkernel(imCBF, imPV,kernel,mode)
-
-
+[imPVC,imCBFrec,imResidual] = xASL_im_PVCkernel(imCBF, imPV [,kernel,mode])
 ```
 
 #### Description
-PVEc correction of ASL data using prior GM-,WM-partial volume maps.
-Follows the principles of the PVEc algorithm by I. Asllani (MRM, 2008).
-Free for research use without guarantee. If used in a study or
-publication. Please, acknowledge the author.
-Created by Jan Petr, j.petr@hzdr.de
+Partial volume correction (PVC) of ASL data using prior GM-,WM-partial volume maps.
+Follows the principles of the PVC algorithm by I. Asllani (MRM, 2008).
 
 
 
@@ -1810,11 +1894,11 @@ space registration from segmentation.
 #### Format
 
 ```matlab
-[imSmo,imGaussX,imGaussY,imGaussZ] = xASL_im_Smooth3D(sigma,imIn,PSFtype)
+[imSmo, imGaussX, imGaussY, imGaussZ] = xASL_im_Smooth3D(imIn, sigma[, PSFtype])
 ```
 
 #### Description
-...
+It smooths the 3D image with a 3D kernels that has defined the shape and SD of the smoothing separably in three dimension.
 
 
 
@@ -1877,11 +1961,13 @@ that the edges are nicely fixed, this function sets a border at the image matrix
 #### Format
 
 ```matlab
-xASL_im_dilateROI(PathIn, PathTemp)
+xASL_im_dilateROI(PathIn, PathOut)
 ```
 
 #### Description
-...
+The function loads a binary image from PathIn and if smaller than the defined volume (40 mL by default) it
+dilates it with a 3x3 sphere element until a minimal volume is reached. When it is small enough, it is saved to PathOut.
+40 mm^3 is equal to 3 voxels in all directions in DARTEL space, or around the highest obtainable ASL effective resolution (3x3x4 mm).
 
 
 
@@ -2038,6 +2124,7 @@ It is repeated for each scan, and runs the following parts:
 3. Add prefixes & suffixes
 4. Add Subject-specific prefixes
 5. Add sidecars
+6. Add atlas paths
 
 
 
@@ -2260,23 +2347,26 @@ This function tries to read a DICOM and throws a warning if it fails to
 
 
 ----
-### xASL\_io\_SplitASL\_M0.m
+### xASL\_io\_SplitASL.m
 
 #### Format
 
 ```matlab
-xASL_io_SplitASL_M0(InPath,iM0)
+xASL_io_SplitASL(inPath[, iM0, iDummy])
 ```
 
 #### Description
-This function splits ASL4D & M0 if they were in the same sequence.
+This function splits ASL4D & M0 & Dummy images if they were in the same sequence.
 If dcm2niiX has already splitted the ASL4D NIfTI, this is reconstructed first.
-If no M0 exists, or only ASL splitting is desired, leave iM0 empty ([])
+If no M0 exists, or only ASL splitting is desired, leave iM0 empty ([]).
+The dummy scans can be excluded from the ASL sequence during the splitting. Both iM0 and iDummy
+are the absolute positions of both in the original time series
 
 Vendor product sequence examples:
 GE 3D spiral sometimes puts the M0 at the last volume of the series -> iM0 = [2];
 Philips 3D GRASE puts the M0 as control-label volume pair -> iM0 = [1 2];
 Siemens 3D GRASE puts the M0 as the first volume -> iM0 = 1;
+Some Siemens 3D GRASE puts a second Dummy control image -> iDummy = 2;
 
 
 ----
@@ -2303,7 +2393,7 @@ Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
 ```
 
 #### Description
-when the provided data is numeric, this function will convert the number to string/characters,
+When the provided data is numeric, this function will convert the number to string/characters,
 rewriting NaN into 'n/a' (BIDS convention) but otherwise preserving the Matlab builtin functionality, also for the second argument "f".
 If non-numeric data is provided, it is bypassed (avoiding any issues "num2str" will have with non-numeric data).
 It can concatenate an array/matrix of strings, taking first the columns in the first row, and then going across the rows.
@@ -2336,7 +2426,7 @@ Extract voxel-wise asymmetry index for QC purposes.
 ```
 
 #### Description
-...
+Prepare and run CAT12s QC parameters (also for other images).
 
 
 
@@ -2350,7 +2440,7 @@ x = xASL_qc_CollectParameters(x, iSubject, ScanType, CollectQCFunction)
 ```
 
 #### Description
-This function collects QC parameters for a module
+This function collects QC parameters for a module.
 
 
 ----
@@ -2511,11 +2601,13 @@ Also, we assume that the InputPath contains a single 3D volume
 #### Format
 
 ```matlab
-[Struct] = xASL_qc_ComputeNiftiOrientation(x, PathNIfTI, Struct)
+[structOut] = xASL_qc_ComputeNiftiOrientation(PathNIfTI[, structIn])
 ```
 
 #### Description
-...
+It loads the input Nifti, finds its dimension, voxel size and a net vector distance from its
+original position before registration. Adds all these information into an output structure structOut
+while copying all from structIn and keeping it intact.
 
 
 
@@ -2867,7 +2959,7 @@ This function performs the following steps:
 #### Format
 
 ```matlab
-[M0IM] = xASL_quant_M0(M0IM, x)
+[M0IM] = xASL_quant_M0(inputM0, x)
 ```
 
 #### Description
@@ -2891,7 +2983,7 @@ xASL\_wrp\_ProcessM0.m). This function runs the following steps:
 #### Format
 
 ```matlab
-[ScaleImage[, CBF]] = xASL_quant_SinglePLD(PWI, M0_im, SliceGradient, x)
+[ScaleImage[, CBF]] = xASL_quant_SinglePLD(PWI, M0_im, imSliceNumber, x)
 ```
 
 #### Description
@@ -2917,12 +3009,35 @@ PWI stage)
 
 
 ----
-### xASL\_quant\_SliceReadoutTime\_ShortestTR.m
+### xASL\_quant\_SliceTiming.m
 
 #### Format
 
 ```matlab
-[x] = xASL_quant_SliceReadoutTime_ShortestTR(x)
+SliceTiming = xASL_quant_SliceTiming(x, inputIm)
+```
+
+#### Description
+This function takes the x.SliceReadoutTime, which can be a vector (of start of readout per slices relative to the
+readout of the first slice) or scalar (with difference in readout times between two consecutives slices) and creates a vector
+(of the relatives timings for each slices) out of it with the correct length corresponding to the number of slices in the inputIm.
+It also checks the x.readout\_dim, and for 3D readouts it returns 0.
+It loads the image from inputIm and calculates the SliceTiming according to the number of slices in the third dimension
+If a path is given, it also checks if it can find a JSON sidecar, then it loads the JSON sidecar, and looks for SliceTiming inside it. If
+SliceTiming/SliceReadoutTime is found in the JSON sidecar, it prioritize it over the value in the x-struct
+
+0. Admin
+1. ShortestTR
+2. Assign the vector value
+
+
+----
+### xASL\_quant\_SliceTiming\_ShortestTR.m
+
+#### Format
+
+```matlab
+[x] = xASL_quant_SliceTiming_ShortestTR(x)
 ```
 
 #### Description
@@ -3490,6 +3605,25 @@ has some other functionality as described in bKeepCell &
 bReplaceNonNumerical above.
 
 
+----
+### xASL\_test\_GetLogContent.m
+
+#### Format
+
+```matlab
+[logContent] = xASL_test_GetLogContent(rootDir, [printContent], [storeRelativePath], [exportTable])
+```
+
+#### Description
+Get warnings and errors from log files.
+
+0. Input check
+1. Load all log files
+2. Iterate over log files
+3. Optional: Print log content
+4. Optional: Export (0 = no export, 1 = TSV export, 2 = XLSX export)
+
+
 ## Visualization
 
 ----
@@ -3606,7 +3740,7 @@ Shows spatial agreement ASL and probability maps.
 #### Format
 
 ```matlab
-...
+[ImOut] = xASL_vis_TileImages(ImIn, nColumns)
 ```
 
 #### Description
@@ -3664,5 +3798,18 @@ xASL_vis_VisualizeROIs(x, ROI_list)
 Creates for each subject a JPEG image containing
 the original T1w, WMH\_SEGM and T1w after lesion-filling.
 
+
+
+----
+### xASL\_wrp\_LinearReg\_Others2T1w.m
+
+#### Format
+
+```matlab
+xASL_wrp_LinearReg_Others2T1w(x[, bAutoACPC])
+```
+
+#### Description
+This submodule registers T1c and T2 linearly to the T1w
 
 

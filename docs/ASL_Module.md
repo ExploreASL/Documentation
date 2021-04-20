@@ -31,6 +31,27 @@ is thresholded with the average of the 75th percentile &
 
 
 ----
+### xASL\_wrp\_PVC.m
+
+#### Format
+
+```matlab
+xASL_wrp_PVC(x)
+```
+
+#### Description
+This submodule performs partial volume correction (PVC) in native ASL space. It runs the Asllani's method
+for partial volume correction by linear regression. It has two main extensions - first it uses a 3D kernel.
+Second, it can use a Gaussian weights instead of the default flat kernel.
+
+0. Admin and checking values and files
+1. Getting the resolution and preparing parameters
+2. Running PV-correction
+3. Saving files and cleaning
+
+
+
+----
 ### xASL\_wrp\_PreparePV.m
 
 #### Format

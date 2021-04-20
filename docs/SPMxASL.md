@@ -1,6 +1,20 @@
 # SPM xASL Functions
 
 ----
+### CorrClusTh.m
+
+#### Format
+
+```matlab
+function [k,Pc] = CorrClusTh(SPM,u,alpha,guess)
+```
+
+#### Description
+Finds the corrected cluster size (spatial extent) threshold for a given
+cluster defining threshold u and FWE-corrected level alpha.
+
+
+----
 ### xASL\_Copy.m
 
 #### Format
@@ -179,12 +193,13 @@ header of the NIfTI, if not, we assume that the NIfTI
 header is correct.
 This function performs several checks & corrects if
 necessary, combined with throwing a warning:
-A) the nVolumes in .mat & .nii image should be equal, if not, delete sidecar
-B) .mat should have more than one volume, if not delete sidecar
-C) If there are illegal numbers in the diagonal of the .mat
+
+- A) the nVolumes in .mat & .nii image should be equal, if not, delete sidecar
+- B) .mat should have more than one volume, if not delete sidecar
+- C) If there are illegal numbers in the diagonal of the .mat
 orientation matrices (here only checked for zeros or non
 finite values) then the .mat is removed
-D) If this is true for the first volume only, the .mat is
+- D) If this is true for the first volume only, the .mat is
 retained but the first volume orientation is overwritten
 with a zero matrix
 
@@ -195,12 +210,18 @@ with a zero matrix
 #### Format
 
 ```matlab
-[PathIs] = xASL_adm_UnixPath(PathIs)
+[PathIs] = xASL_adm_UnixPath(PathIs[, bTryWSL])
 ```
 
 #### Description
 This function performs the following steps to convert a path to a path that is compatible with the Unix-filesystem
-as used in e.g. Linux/MacOS/Windows Subsystem for Linux (WSL).
+as used in e.g. Linux/MacOS. It also has special support for Windows Subsystem for Linux (WSL),
+though this should only be activated specifically for WSL calls.
+
+Note that we want to use this function for most Unix calls
+(to fix paths), but in the case of WSL only for some calls,
+where Matlab in Windows calls Linux-code through WSL (e.g.
+for FSL) - these have to be explicitly specified by the bTryWSL option.
 
 1. Skip this function without Unix-filesystem
 2. Trim whitespace
@@ -256,9 +277,10 @@ extensions if these exist. It outputs the contents to a cell array. If a
 CSV file exists but not a TSV file, it converts and replaces the CSV to
 TSV file, per BIDS. This function has the following parts:
 
-1) Read the CSV or TSV file
-2) Write the TSV file (if requested)
-3) Delete the CSV file (if requested)
+1. Read the CSV or TSV file
+2. Write the TSV file (if requested)
+3. Delete the CSV file (if requested)
+
 
 
 ----
@@ -385,9 +407,11 @@ case, this functon can be useful to extrapolate the smoothed
 image to avoid any division artifact near brain edges (e.g.
 for reducing the M0 image to a smooth biasfield).
 This function performs the following 3 steps:
-1) Load image
-2) Replace NaNs
-3) Save image
+
+1. Load image
+2. Replace NaNs
+3. Save image
+
 --------------------------------------------------------------------------------------------------------------------
 
 ----
@@ -410,11 +434,17 @@ them from the current segmentations.
 #### Format
 
 ```matlab
-[imOut] = xASL_im_ResampleIM(imIn,matIn,matOut,dimOut,intMethod)
+[imOut] = xASL_im_ResampleIM(imIn, matIn, matOut, dimOut[, interpolationType])
 ```
 
 #### Description
-Resamples an image using Matlab interp3 function.
+Resamples an input image imIn oriented according to the homogeneous matrix matIn to and output
+image imOut that has dimension dimOut and matrix matOut. This allows to resample images between
+two spaces with different orientation and matrix sizes. It uses the Matlab interp3 function and
+the interpolation method used by this method can be chosen. Note that the recommended use of this
+function is resampling between space with similar resolution or upsampling. For downsampling, simple
+interpolation does not delivery correct results respecting the point-spread-function and a combination of
+xASL\_im\_PreSmooth and xASL\_spm\_reslice should be used instead.
 
 
 ----
@@ -464,31 +494,33 @@ NaNs elements are taken into account (ignored).
 By default, edges are not padded and one-sided filter is used at the image edges.
 
 Notes:
-\* Accepts empty value for any input. When X is empty, the program can
+
+- \* Accepts empty value for any input. When X is empty, the program can
 be used as a N-dimensional window generator.
-\* NaNs elements surrounded by no-NaNs elements (which will depend on
+- \* NaNs elements surrounded by no-NaNs elements (which will depend on
 window width) are the ones that will be interpolated. The others
 are leaved untouched.
-\* When WNAN=2, the programs acts like an NAN-interpolat/GAP-filling,
+- \* When WNAN=2, the programs acts like an NAN-interpolat/GAP-filling,
 leaving untouched the no-NaNs elements but the filtering is
 perfomed anyway. I recommend the default behaviour (WNAN=0) in order
 to keep the filtered data in the workspace, and then use the code
 at the end of this function to get/remove the interpolated NaNs
-\* To achieve similar results as ndnanfilter previously, use same F
+- \* To achieve similar results as ndnanfilter previously, use same F
 as with the 'rect' filter.
-\* Note that the FWHM of Gaussian is given in VOXELS, not in mm
-\* For the Gaussian filter, use (previous N, new FWHM)
-N= 1 ~ FWHM 0.94
-N= 2 ~ FWHM 1.885
-N= 4 ~ FWHM 3.76
-N= 6 ~ FWHM 5.652
-N= 8 ~ FWHM 7.536
-N=10 ~ FWHM 9.42
-N=12 ~ FWHM 11.3
-N=16 ~ FWHM 15.07
-N=20 ~ FWHM 18.84
-N=10/2.355 ~ FWHM 4
-Basically divide by 1.06
+- \* Note that the FWHM of Gaussian is given in VOXELS, not in mm
+- \* For the Gaussian filter, use (previous N, new FWHM)
+
+- N= 1 ~ FWHM 0.94
+- N= 2 ~ FWHM 1.885
+- N= 4 ~ FWHM 3.76
+- N= 6 ~ FWHM 5.652
+- N= 8 ~ FWHM 7.536
+- N=10 ~ FWHM 9.42
+- N=12 ~ FWHM 11.3
+- N=16 ~ FWHM 15.07
+- N=20 ~ FWHM 18.84
+- N=10/2.355 ~ FWHM 4
+- Basically divide by 1.06
 
 
 ----
@@ -503,11 +535,12 @@ imOut = xASL_io_Nifti2Im(niftiIn [, ImageSize])
 #### Description
 This function loads a NIfTI image matrix with flexible input
 (as explained under INPUT: niftiIn). It does the following.
-1) Try to load a NIfTI
-2) If NIfTI successfully loaded, try to load the NIfTI image
-3) If the above didnt work, try to create a dummy image
-4) Convert to single precision data format
-5) Also able to load NIfTI as .nii.mat format
+
+1. Try to load a NIfTI
+2. If NIfTI successfully loaded, try to load the NIfTI image
+3. If the above didnt work, try to create a dummy image
+4. Convert to single precision data format
+5. Also able to load NIfTI as .nii.mat format
 
 
 
@@ -563,7 +596,7 @@ but earlier Matlab versions do not support this. For backward compatibility, use
 ```
 
 #### Description
-n/a
+Force ,1 at end of IMname. This is useful for refIM/srcIM in CoregInit, OldNormalizeWrapper etc.
 
 
 ----
@@ -666,11 +699,16 @@ tab-separated value (TSV) file, which is the format that BIDS prefers.
 #### Format
 
 ```matlab
-xASL_wrp_DARTELSaveIntermedTrans(Yy,u,odim,rdim,idim,Mar,mat,M0,M1,fname,it)
+xASL_wrp_DARTELSaveIntermedTrans(Yy, u, odim, rdim, idim, Mar, mat, M0, M1, nameOut, numIteration)
 ```
 
 #### Description
-n/a
+This function is called from the CAT12 segmentation function to save the intermediate results
+of the DARTEL transformation. Normally, the registration only saves the final results -
+the final transformation field. This function enables to save also the intermediate transformation field.
+It takes all the internal variables from the transformation and save the field to a sub-directory 'mri'
+that normally contains all the intermediate results of the CAT12 segmentation. It adds a 'y\_' prefix
+and adds the specified iteration number as postfix.
 
 
 ----
@@ -679,10 +717,15 @@ n/a
 #### Format
 
 ```matlab
-xASL_wrp_GSSaveIntermedTrans(y,idim,odim,rdim,M0,M1,R,M1t,M1r,fname,it)
+xASL_wrp_GSSaveIntermedTrans(y, idim, odim, rdim, M0, M1, R, M1t, M1r, nameOut, numIteration)
 ```
 
 #### Description
-n/a
+This function is called from the CAT12 segmentation function to save the intermediate results
+of the Geodesic shooting transformation. Normally, the registration only saves the final results -
+the final transformation field. This function enables to save also the intermediate transformation field.
+It takes all the internal variables from the transformation and save the field to a sub-directory 'mri'
+that normally contains all the intermediate results of the CAT12 segmentation. It adds a 'y\_' prefix
+and adds the specified iteration number as postfix.
 
 

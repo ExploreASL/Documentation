@@ -1,9 +1,9 @@
 ![ExploreASL](./img/title.png "ExploreASL")
 
-# ExploreASL v1.4.0
+# ExploreASL v1.5.0
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3905262.svg)](https://doi.org/10.5281/zenodo.3905262) [![View ExploreASL on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://nl.mathworks.com/matlabcentral/fileexchange/83203-exploreasl)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3905262.svg)](https://doi.org/10.5281/zenodo.3905262) [![View ExploreASL on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://nl.mathworks.com/matlabcentral/fileexchange/83203-exploreasl) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ExploreASL/ExploreASL) [![GitHub last commit](https://img.shields.io/github/last-commit/ExploreASL/Documentation?label=mkdocs)](https://exploreasl.github.io/Documentation/)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 * [ExploreASL](#exploreasl)
@@ -43,12 +43,13 @@ Additional information about ExploreASL can be found in the [Neuroimage paper]([
 
 * [Henk Mutsaerts](mailto:h.j.mutsaerts@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - co-creator
 * [Jan Petr](mailto:j.petr@hzdr.de?subject=[GitHub]%20ExploreASL) - co-creator
-* [Michael Stritt](mailto:m.stritt@mediri.com?subject=[GitHub]%20ExploreASL) - ASPIRE PhD
+* [Michael Stritt](mailto:m.stritt@mediri.com?subject=[GitHub]%20ExploreASL) - PhD student, ASPIRE
 * [Paul Groot](mailto:p.f.c.groot@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - developer backbone, IT specialist
 * [Pieter Vandemaele](mailto:pieter.vandemaele@gmail.com?subject=[GitHub]%20ExploreASL) - developer Matlab BIDS app
 * [Luigi Lorenzini](mailto:l.lorenzini@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - developer ExploreQC
 * [Maurice Pasternak](mailto:maurice.pasternak@mail.utoronto.ca?subject=[GitHub]%20ExploreASL) - developer GUI
-* [Mathijs Dijsselhof](mailto:m.b.dijsselhof@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - PhD student Cerebrovascular Age
+* [Mathijs Dijsselhof](mailto:m.b.dijsselhof@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - PhD student, Cerebrovascular Age
+* [Beatriz Padrela](mailto:b.estevespadrela@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - PhD student, BBB-ASL
 * [Sandeep Ganji](mailto:Sandeep.g.bio@gmail.com?subject=[GitHub]%20ExploreASL) - developer integration Philips ISD
 * [Patricia Clement](mailto:Patricia.Clement@ugent.be?subject=[GitHub]%20ExploreASL) - developer ASL-BIDS & organizer
 
@@ -73,8 +74,11 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/MauricePasternak"><img src="https://avatars3.githubusercontent.com/u/57411571?v=4" width="100px;" alt=""/><br /><sub><b>MauricePasternak</b></sub></a><br /><a href="#gui-MauricePasternak" title="Graphical User Interface">📊</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=MauricePasternak" title="Code">💻</a> <a href="#design-MauricePasternak" title="Design">🎨</a></td>
   </tr>
   <tr>
+    <td align="center"><a href="https://github.com/patsycle"><img src="https://avatars0.githubusercontent.com/u/41481345?v=4" width="100px;" alt=""/><br /><sub><b>Patricia Clement</b></sub></a><br /> <a href="#data-patsycle" title="Data Acquisition & Management">🧠</a> <a href="#ideas-patsycle" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=patsycle" title="Documentation">📖</a> </td>
   	<td align="center"><a href="https://github.com/MDijsselhof"><img src="https://avatars0.githubusercontent.com/u/75380250?v=4" width="100px;" alt=""/><br /><sub><b>Mathijs Dijsselhof</b></sub></a><br /><a href="#content-MDijsselhof" title="Content">🖋</a> <a href="#data-MDijsselhof" title="Data Acquisition & Management">🧠</a></td>
+    <td align="center"><a href="https://github.com/BeatrizPadrela"><img src="https://avatars0.githubusercontent.com/u/73699072?v=4" width="100px;" alt=""/><br /><sub><b>Beatriz Padrela</b></sub></a><br /><a href="#content-BeatrizPadrela" title="Content">🖋</a> <a href="#data-BeatrizPadrela" title="Data Acquisition & Management">🧠</a></td>
     <td align="center"><a href="https://github.com/sandeepganji"><img src="https://avatars0.githubusercontent.com/u/12124746?v=4" width="100px;" alt=""/><br /><sub><b>Sandeep Ganji</b></sub></a><br /><a href="#content-sandeepganji" title="Content">🖋</a> <a href="#ideas-sandeepganji" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-sandeepganji" title="Data Acquisition & Management">🧠</a></td>
+    <td align="center"><a href="https://github.com/mcraig-ibme"><img src="https://avatars0.githubusercontent.com/u/26383586?v=4" width="100px;" alt=""/><br /><sub><b>Martin Craig</b></sub></a><br /><a href="#content-mcraig-ibme" title="Content">🖋</a> <a href="https://github.com/ExploreASL/ExploreASL/commits?author=mcraig-ibme" title="Code">💻</a> <a href="#data-mcraig-ibme" title="Data Acquisition & Management">🧠</a></td>
     <td align="center"><a href="https://github.com/jozsait"><img src="https://avatars0.githubusercontent.com/u/19532128?v=4" width="100px;" alt=""/><br /><sub><b>jozsait</b></sub></a><br /><a href="https://github.com/ExploreASL/ExploreASL/commits?author=jozsait" title="Code">💻</a> <a href="#maintenance-jozsait" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/DaveThoma5"><img src="https://avatars0.githubusercontent.com/u/3704113?v=4" width="100px;" alt=""/><br /><sub><b>DaveThoma5</b></sub></a><br /><a href="#ideas-DaveThoma5" title="Ideas, Planning, & Feedback">🤔</a> <a href="#data-DaveThoma5" title="Data Acquisition & Management">🧠</a></td>
   </tr>
