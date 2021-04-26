@@ -618,22 +618,23 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 <hr />
 <h2 id="how-to-run-exploreasl-using-the-docker-image">How to run ExploreASL using the docker image</h2>
 <p>First you have to pull an official docker image from the <strong>ExploreASL</strong> repository:</p>
-<pre><code class="console">docker pull docker.pkg.github.com/exploreasl/docker/xasl:1.x.x
+<pre><code class="console">docker pull exploreasl/xasl:latest
 </code></pre>
 
-<p>If you want to rename the docker image, you can use the docker tag command:</p>
-<pre><code class="console">docker tag docker.pkg.github.com/exploreasl/docker/xasl:1.x.x xasl:1.x.x
+<p>Check out your local images using <code>docker images</code>. If you want to rename the docker image, tag your image using the docker tag command:</p>
+<pre><code class="console">docker tag exploreasl/xasl:latest xasl:my-version
 </code></pre>
 
 <p>To start a docker container of <strong>ExploreASL v1.6.0</strong> e.g., you can use the following command:</p>
-<pre><code class="console">docker run -e DATAPARFILE=&quot;TestDataSet/sourceStructure.json&quot;
-       -e IMPORTMODULES=&quot;1&quot; -e PROCESSMODULES=&quot;1&quot;
+<pre><code class="console">docker run -e DATAPARFILE=TestDataSet/sourceStructure.json
+       -e IMPORTMODULES=1 -e PROCESSMODULES=1
        -v /home/.../incoming:/data/incoming 
        -v /home/.../outgoing:/data/outgoing xasl:1.6.0
 </code></pre>
 
 <ul>
-<li>Here DATAPARFILE is an environment variable which is a relative path to the data parameter file of your dataset.</li>
+<li>Here <code>DATAPARFILE</code> is an environment variable which is a relative path to the data parameter file of your dataset.</li>
+<li>The <code>IMPORTMODULES</code> and <code>PROCESSMODULES</code> are the parameters of ExploreASL_Master</li>
 <li><code>/home/.../incoming:/data/incoming</code> is used to mount your dataset folder (<code>/home/.../incoming</code>) to its corresponding docker dataset folder (<code>/data/incoming</code>). </li>
 <li>The same notation is used to mount the docker dataset output folder (<code>/data/outgoing</code>) to its corresponding real output folder on your drive (<code>/home/.../outgoing</code>).</li>
 </ul>
