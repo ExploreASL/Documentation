@@ -255,26 +255,6 @@
     xASL_module_Import
   </a>
   
-    <nav class="md-nav" aria-label="xASL_module_Import">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -294,26 +274,6 @@
   <a href="#xasl_module_structural" class="md-nav__link">
     xASL_module_Structural
   </a>
-  
-    <nav class="md-nav" aria-label="xASL_module_Structural">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_1" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_1" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -335,26 +295,6 @@
     xASL_module_ASL
   </a>
   
-    <nav class="md-nav" aria-label="xASL_module_ASL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_2" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_2" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -374,26 +314,6 @@
   <a href="#xasl_module_population" class="md-nav__link">
     xASL_module_Population
   </a>
-  
-    <nav class="md-nav" aria-label="xASL_module_Population">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_3" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_3" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -643,26 +563,6 @@
     xASL_module_Import
   </a>
   
-    <nav class="md-nav" aria-label="xASL_module_Import">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -682,26 +582,6 @@
   <a href="#xasl_module_structural" class="md-nav__link">
     xASL_module_Structural
   </a>
-  
-    <nav class="md-nav" aria-label="xASL_module_Structural">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_1" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_1" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -723,26 +603,6 @@
     xASL_module_ASL
   </a>
   
-    <nav class="md-nav" aria-label="xASL_module_ASL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_2" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_2" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -762,26 +622,6 @@
   <a href="#xasl_module_population" class="md-nav__link">
     xASL_module_Population
   </a>
-  
-    <nav class="md-nav" aria-label="xASL_module_Population">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format_3" class="md-nav__link">
-    Format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#description_3" class="md-nav__link">
-    Description
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -812,11 +652,11 @@
 <h2 id="1-import-module">1. Import Module</h2>
 <hr />
 <h3 id="xasl_module_import">xASL_module_Import</h3>
-<h4 id="format">Format</h4>
+<p><strong>Format:</strong></p>
 <pre><code class="matlab">xASL_module_Import(studyPath, imParPath, studyParPath, bRunSubmodules, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, bClone2Source, x)
 </code></pre>
 
-<h4 id="description">Description</h4>
+<p><strong>Description:</strong></p>
 <p>Import batch <code>T1</code>, <code>T2</code>, <code>FLAIR</code>, <code>DWI</code>, <code>fMRI</code>, <code>M0</code>, <code>ASL</code> data from dicom 2 NIfTI in ASL-BIDS format and structure.
 Uses dcm2niiX for the conversion, and additionally collects important DICOM header data
 and puts them in <code>.json</code> sidecars to be used with the ExploreASL pipeline.
@@ -888,11 +728,11 @@ Examples:
 <h2 id="2-structural-module">2. Structural Module</h2>
 <hr />
 <h3 id="xasl_module_structural">xASL_module_Structural</h3>
-<h4 id="format_1">Format</h4>
+<p><strong>Format:</strong></p>
 <pre><code class="matlab">[result, x] = xASL_module_Structural(x)
 </code></pre>
 
-<h4 id="description_1">Description</h4>
+<p><strong>Description:</strong></p>
 <p>This first ExploreASL module processes the structural
 images, i.e. high-resolution T1w and FLAIR (if present), on an individual (i.e. subject-to-subject) basis.
 If a FLAIR is present, this is processed first to obtain a WMH mask to fill the hypointense lesions on the T1w,
@@ -900,67 +740,67 @@ before segmenting the T1w. For the T1w segmentation this module uses CAT12
 by default but if this fails it falls back to SPM after trying to
 optimize the image contrast. This module has the following steps/submodules/wrappers:</p>
 <ul>
-<li>010_LinearReg_T1w2MNI         - Ensure the alignment of subjects' anterior commissure (AC) with the AC in MNI &amp; apply this to all images</li>
-<li>020_LinearReg_FLAIR2T1w       - Align the FLAIR (if present) with T1w</li>
-<li>030_FLAIR_BiasfieldCorrection - Perform a biasfield correction (if not performed  by LST in following steps)</li>
-<li>040_LST_Segment_FLAIR_WMH     - Segment WMH lesions on FLAIR (if present)</li>
-<li>050_LST_T1w_LesionFilling_WMH - Use WMH segmentation to fill lesions on T1w</li>
-<li>060_Segment_T1w               - Tissue segmentation on T1w</li>
-<li>070_CleanUpWMH_SEGM           - Extra WMH cleanup of some over- and under-segmentation</li>
-<li>080_Resample2StandardSpace    - Clone all images to standard space</li>
-<li>090_GetVolumetrics            - Obtain whole-brain volumes of GM, WM, CSF, WMH</li>
-<li>100_VisualQC                  - Obtain QC parameters &amp; save QC Figures</li>
-<li>110_DoWADQCDC                 - QC for WAD-QC DICOM server (OPTIONAL)</li>
+<li><code>010\_LinearReg\_T1w2MNI</code>         - Ensure the alignment of subjects' anterior commissure (AC) with the AC in MNI &amp; apply this to all images</li>
+<li><code>020\_LinearReg\_FLAIR2T1w</code>       - Align the FLAIR (if present) with T1w</li>
+<li><code>030\_FLAIR\_BiasfieldCorrection</code> - Perform a biasfield correction (if not performed  by LST in following steps)</li>
+<li><code>040\_LST\_Segment\_FLAIR\_WMH</code>     - Segment WMH lesions on FLAIR (if present)</li>
+<li><code>050\_LST\_T1w\_LesionFilling\_WMH</code> - Use WMH segmentation to fill lesions on T1w</li>
+<li><code>060\_Segment\_T1w</code>               - Tissue segmentation on T1w</li>
+<li><code>070\_CleanUpWMH\_SEGM</code>           - Extra WMH cleanup of some over- and under-segmentation</li>
+<li><code>080\_Resample2StandardSpace</code>    - Clone all images to standard space</li>
+<li><code>090\_GetVolumetrics</code>            - Obtain whole-brain volumes of GM, WM, CSF, WMH</li>
+<li><code>100\_VisualQC</code>                  - Obtain QC parameters &amp; save QC Figures</li>
+<li><code>110\_DoWADQCDC</code>                 - QC for WAD-QC DICOM server (OPTIONAL)</li>
 </ul>
 <hr />
 <h2 id="3-asl-module">3. ASL Module</h2>
 <hr />
 <h3 id="xasl_module_asl">xASL_module_ASL</h3>
-<h4 id="format_2">Format</h4>
+<p><strong>Format:</strong></p>
 <pre><code class="matlab">[result, x] = xASL_module_ASL(x)
 </code></pre>
 
-<h4 id="description_2">Description</h4>
+<p><strong>Description:</strong></p>
 <p>This ExploreASL module processes the ASL
 images, i.e. ASL4D, M0, etc (if present), on an individual (i.e. session-to-session, where session indicates BIDS "run") basis.
 Both 2D and 3D options are automatially chosen, as well as processing of time-series (if available), such as motion correction and outlier
 exclusion. This module has the following submodules/wrappers:</p>
 <ul>
-<li>010_TopUpASL          - FSL TopUp geometric distortion correction (if M0 images with reversed phase-encoding are present)</li>
-<li>020_RealignASL        - If time-series are present, motion correction and outlier exclusion (ENABLE)</li>
-<li>030_RegisterASL       - Registration of ASL to T1w anatomical images (if lacking, to MNI images)</li>
-<li>040_ResliceASL        - Resample ASL images to standard space</li>
-<li>050_PreparePV         - Create partial volume images in ASL space with ASL resolution</li>
-<li>060_ProcessM0         - M0 image processing</li>
-<li>070_CreateAnalysisMask- Create mask using FoV, vascular outliers &amp; susceptibility atlas</li>
-<li>080_Quantification    - CBF quantification</li>
-<li>090_VisualQC_ASL      - Generate QC parameters &amp; images</li>
-<li>100_WADQC             - QC for WAD-QC DICOM server (OPTIONAL)</li>
+<li><code>010\_TopUpASL</code>           - FSL TopUp geometric distortion correction (if M0 images with reversed phase-encoding are present)</li>
+<li><code>020\_RealignASL</code>         - If time-series are present, motion correction and outlier exclusion (ENABLE)</li>
+<li><code>030\_RegisterASL</code>        - Registration of ASL to T1w anatomical images (if lacking, to MNI images)</li>
+<li><code>040\_ResliceASL</code>         - Resample ASL images to standard space</li>
+<li><code>050\_PreparePV</code>          - Create partial volume images in ASL space with ASL resolution</li>
+<li><code>060\_ProcessM0</code>          - M0 image processing</li>
+<li><code>070\_CreateAnalysisMask</code> - Create mask using FoV, vascular outliers &amp; susceptibility atlas</li>
+<li><code>080\_Quantification</code>     - CBF quantification</li>
+<li><code>090\_VisualQC\_ASL</code>       - Generate QC parameters &amp; images</li>
+<li><code>100\_WADQC</code>              - QC for WAD-QC DICOM server (OPTIONAL)</li>
 </ul>
 <hr />
 <h2 id="4-population-module">4. Population Module</h2>
 <hr />
 <h3 id="xasl_module_population">xASL_module_Population</h3>
-<h4 id="format_3">Format</h4>
+<p><strong>Format:</strong></p>
 <pre><code class="matlab">[result, x] = xASL_module_Population(x)
 </code></pre>
 
-<h4 id="description_3">Description</h4>
+<p><strong>Description:</strong></p>
 <p>This ExploreASL module processes all available images on the
 group level. It assumes that all images were adequately processed in the
 previous modules. It will perform the following group-wise processing and
 checks:</p>
 <ul>
-<li>010_CreatePopulationTemplates - Create population average images, to compare scanners, cohorts etc without physiological variance</li>
-<li>020_CreateAnalysisMask        - Generate a group-level mask by combining individuals masks, for ROI-based analysis &amp; VBA</li>
-<li>030_CreateBiasfield           - When there are multiple scanners, create scanner-specific biasfields (uses Site.mat for this)</li>
-<li>040_GetDICOMStatistics        - Create TSV file with overview of DICOM parameters</li>
-<li>050_GetVolumeStatistics       - Create TSV file with overview of volumetric parameters</li>
-<li>060_GetMotionStatistics       - Create TSV file with overview of motion parameters</li>
-<li>065_GetRegistrationStatistics - Create TSV file with overview of the registration statistics</li>
-<li>070_GetROIstatistics          - Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)</li>
-<li>080_SortBySpatialCoV          - Sort ASL_Check QC images by their spatial CoV in quality bins</li>
-<li>090_DeleteAndZip              - Delete temporary files and gzip all NIfTIs</li>
+<li><code>010\_CreatePopulationTemplates</code> - Create population average images, to compare scanners, cohorts etc without physiological variance</li>
+<li><code>020\_CreateAnalysisMask</code>        - Generate a group-level mask by combining individuals masks, for ROI-based analysis &amp; VBA</li>
+<li><code>030\_CreateBiasfield</code>           - When there are multiple scanners, create scanner-specific biasfields (uses Site.mat for this)</li>
+<li><code>040\_GetDICOMStatistics</code>        - Create TSV file with overview of DICOM parameters</li>
+<li><code>050\_GetVolumeStatistics</code>       - Create TSV file with overview of volumetric parameters</li>
+<li><code>060\_GetMotionStatistics</code>       - Create TSV file with overview of motion parameters</li>
+<li><code>065\_GetRegistrationStatistics</code> - Create TSV file with overview of the registration statistics</li>
+<li><code>070\_GetROIstatistics</code>          - Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)</li>
+<li><code>080\_SortBySpatialCoV</code>          - Sort ASL_Check QC images by their spatial CoV in quality bins</li>
+<li><code>090\_DeleteAndZip</code>              - Delete temporary files and gzip all NIfTIs</li>
 </ul>
                 
               
