@@ -3,13 +3,14 @@
 ----
 ### xASL\_adm\_DeleteManyTempFiles.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_adm_DeleteManyTempFiles(x)
 ```
 
-#### Description
+**Description:**
+
 This function removes as many files as possible.
 
 
@@ -17,13 +18,14 @@ This function removes as many files as possible.
 ----
 ### xASL\_adm\_GzipAllFiles.m
 
-#### Format
+**Format:**
 
 ```matlab
-xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux)
+xASL_adm_GzipAllFiles(ROOT, bFolder, bUseLinux, pathExternal)
 ```
 
-#### Description
+**Description:**
+
 This function zips NIfTI files or folders recursively and deletes
 the original file/folder after zipping.
 
@@ -31,13 +33,14 @@ the original file/folder after zipping.
 ----
 ### xASL\_im\_CreateAnalysisMask.m
 
-#### Format
+**Format:**
 
 ```matlab
 [x] = xASL_im_CreateAnalysisMask(x, Threshold)
 ```
 
-#### Description
+**Description:**
+
 This function takes the mean population-based probability
 maps of masks, thresholds and combines them:
 
@@ -61,13 +64,14 @@ following maps/masks overlaid over mean population T1w:
 ----
 ### xASL\_qc\_SortBySpatialCoV.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_qc_SortBySpatialCoV(x, Threshold1, Threshold2)
 ```
 
-#### Description
+**Description:**
+
 This function organizes the ASL QC images in //analysis/Population/ASLCheck
 into CBF, vascular and artifactual contrast per the
 spatial CoV thresholds defined above, in folders:
@@ -94,13 +98,14 @@ make sure that this file isn't edited!
 ----
 ### xASL\_stat\_ComputeWsCV.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_stat_ComputeWsCV(x)
 ```
 
-#### Description
+**Description:**
+
 Calculates the within and between-subject
 coefficient of variance (wsCV and bsCV respectively), to estimate the
 power to detect effects.
@@ -112,13 +117,14 @@ This requires 4D images that have been split.
 ----
 ### xASL\_stat\_GetAcquisitionTime.m
 
-#### Format
+**Format:**
 
 ```matlab
 [x] = xASL_stat_GetAcquisitionTime(x)
 ```
 
-#### Description
+**Description:**
+
 This functions collects the DICOM field AcquisitionTime from
 each json sidecar (& parms.mat for backward compatibility) and saves them
 in the participants.tsv. Additionally, it creates a AcquisitionTime histogram of the
@@ -134,13 +140,14 @@ influence physiological CBF variability.
 ----
 ### xASL\_stat\_GetDICOMStatistics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_stat_GetDICOMStatistics(x, ScanType, HasSessions)
 ```
 
-#### Description
+**Description:**
+
 This functions prints DICOM metadata (e.g. parameters used
 for quantification) and collects them in a single tsv (per BIDS).
 Summarizes this for the total population.
@@ -156,13 +163,14 @@ This function carries out the following steps:
 ----
 ### xASL\_stat\_GetMotionStatistics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_stat_GetMotionStatistics(x)
 ```
 
-#### Description
+**Description:**
+
 This functions collects motion stats, with the following steps:
 
 1. Collect motion data
@@ -175,13 +183,14 @@ This functions collects motion stats, with the following steps:
 ----
 ### xASL\_stat\_GetRegistrationStatistics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_stat_GetRegistrationStatistics(x)
 ```
 
-#### Description
+**Description:**
+
 Loads the data from the study given in the QC\_collection\*.json files. Goes through all subjects and
 sessions and prints the Tanimoto coefficients that define the quality of the registrations. Steps:
 
@@ -193,13 +202,14 @@ sessions and prints the Tanimoto coefficients that define the quality of the reg
 ----
 ### xASL\_stat\_GetVolumeStatistics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_stat_GetVolumeStatistics(x)
 ```
 
-#### Description
+**Description:**
+
 This functions collects motion stats, with the following. Steps:
 
 1. Collect structural volume data
@@ -211,13 +221,14 @@ This functions collects motion stats, with the following. Steps:
 ----
 ### xASL\_wrp\_CreateBiasfield.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_CreateBiasfield(x)
 ```
 
-#### Description
+**Description:**
+
 This function creates a smooth biasfield as intensity map to
 normalize intensities between different
 sequences/scanner/sites within a single study.
@@ -239,13 +250,14 @@ PM: are there other things we can normalize?
 ----
 ### xASL\_wrp\_CreatePopulationTemplates.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_CreatePopulationTemplates(x[, bSaveUnmasked, Compute4Sets, SpecificScantype, bSkipWhenMissingScans, bRemoveOutliers, FunctionsAre])
 ```
 
-#### Description
+**Description:**
+
 This function creates simple parametric images, a.k.a. templates, for
 different image/scan types, on population level, as well as for different
 sets (e.g. sites/scanners/cohorts, etc) if specified. By default these
@@ -278,13 +290,14 @@ This function performs the following steps:
 ----
 ### xASL\_wrp\_GetROIstatistics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_GetROIstatistics(x)
 ```
 
-#### Description
+**Description:**
+
 This wrapper organizes the computation of statistics for different ROIs
 in a [1.5 1.5 1.5] mm MNI space:
 

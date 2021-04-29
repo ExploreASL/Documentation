@@ -3,13 +3,14 @@
 ----
 ### CorrClusTh.m
 
-#### Format
+**Format:**
 
 ```matlab
 function [k,Pc] = CorrClusTh(SPM,u,alpha,guess)
 ```
 
-#### Description
+**Description:**
+
 Finds the corrected cluster size (spatial extent) threshold for a given
 cluster defining threshold u and FWE-corrected level alpha.
 
@@ -17,13 +18,14 @@ cluster defining threshold u and FWE-corrected level alpha.
 ----
 ### xASL\_Copy.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_Copy(SrxASL_SysCopyath, DstPath[, bOverwrite, bVerbose)])
 ```
 
-#### Description
+**Description:**
+
 Copies a file to a file or a directory to a directory. For a file, it zips it in the end if the destination path contains nii.gz.
 It also makes sure that only one of .nii and .nii.gz exists
 in the destination directory. It is faster than the default
@@ -37,13 +39,14 @@ Run xASL\_SysMove instead of xASL\_Move if you don't want the
 ----
 ### xASL\_Move.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_Move(SrcPath, DstPath[, bOverwrite, bVerbose])
 ```
 
-#### Description
+**Description:**
+
 Moves a file to a file, a file to a directory, or a directory to a directory. It keeps the initial extensions, no unzipping or zipping
 after the move. But it makes sure that only one of .nii and .nii.gz exists in the destination directory.
 Bypass inefficient matlab stuff on linux and windows, but
@@ -57,50 +60,54 @@ Run xASL\_SysMove instead of xASL\_Move if you don't want the
 ----
 ### xASL\_SysCopy.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_SysCopy(SrcPath, DstPath, bOverwrite, bVerbose)
 ```
 
-#### Description
+**Description:**
+
 Copies a file to a file or a directory to a directory. Bypass inefficient matlab stuff on linux and windows,
 but can only move on the same file system.
 
 ----
 ### xASL\_SysMove.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_SysMove(SrcPath, DstPath[, bForce, bSourceCheck])
 ```
 
-#### Description
+**Description:**
+
 Moves a file to a file, a file to a directory, or a directory to a directory. SBypass inefficient matlab stuff on linux and windows, but can only move on same file system!
 
 ----
 ### xASL\_TrackProgress.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_TrackProgress(iCurrent[, iMax])
 ```
 
-#### Description
+**Description:**
+
 Counts the percentage of the work done and display on the screen. Either iCurrent of iMax are given. Or only the percentages are given.
 
 ----
 ### xASL\_adm\_ConvertSeconds2TimeString.m
 
-#### Format
+**Format:**
 
 ```matlab
 TimeString = xASL_adm_ConvertSeconds2TimeString(Seconds)
 ```
 
-#### Description
+**Description:**
+
 Converts number to time
 input hh (with minutes in fractions/floating point) -> output hhmm
 Inverse from xASL\_adm\_ConvertTime2Nr.
@@ -109,13 +116,14 @@ Inverse from xASL\_adm\_ConvertTime2Nr.
 ----
 ### xASL\_adm\_ConvertSlash.m
 
-#### Format
+**Format:**
 
 ```matlab
 [newString] = xASL_adm_ConvertSlash( StringOriginal,ForceUnix)
 ```
 
-#### Description
+**Description:**
+
 Converts Windows forward slashes to backward slashes
 Prevents confusion file separation & regular expression forward slashes
 in Windows.
@@ -123,7 +131,7 @@ in Windows.
 ----
 ### xASL\_adm\_CreateDir.m
 
-#### Format
+**Format:**
 
 ```matlab
 status = xASL_adm_CreateDir(strPath)                  create all missing subdirs
@@ -131,21 +139,23 @@ status = xASL_adm_CreateDir(strPath, strBranch)       create strBranch (if missi
 status = xASL_adm_CreateDir(strPath, nMaxNewDirs)     impose limit on the number of new directories
 ```
 
-#### Description
+**Description:**
+
 Recursively creates missing directories at the given path or for given subdirectories, with an option
 to limit the number of newly created directories.
 
 ----
 ### xASL\_adm\_DeleteFileList.m
 
-#### Format
+**Format:**
 
 ```matlab
 filepaths = xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
 xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
 ```
 
-#### Description
+**Description:**
+
 Delete the files that match regular expression STRREGEXP in the given directory STRDIRECTORY.
 Deletes recursively if specified in BRECURSE. Deletes all files unless the number is specified
 by NREQUIRED, if the number is not met, then does not delete anything and throws an error.
@@ -153,39 +163,42 @@ by NREQUIRED, if the number is not met, then does not delete anything and throws
 ----
 ### xASL\_adm\_GetFileList.m
 
-#### Format
+**Format:**
 
 ```matlab
 filepaths = xASL_adm_GetFileList(strDirectory[, strRegEx, mode, nRequired, bGetDirNames])
 ```
 
-#### Description
+**Description:**
+
 List files or directories from a given path. And optionally uses regular expressions to filter the result
 with option to set a minimal requirement on the number of results.
 
 ----
 ### xASL\_adm\_GzipNifti.m
 
-#### Format
+**Format:**
 
 ```matlab
 pathOut = xASL_adm_GzipNifti(pathIn [,bOverwrite])
 ```
 
-#### Description
+**Description:**
+
 Take the input file, zips it, overwriting any existing zipped file and return the path of the zipped file.
 
 
 ----
 ### xASL\_adm\_ManageMoCoMat.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_adm_ManageMoCoMat(PathIn)
 ```
 
-#### Description
+**Description:**
+
 This function manages the orientation matrices that SPM puts
 in an external .mat sidecar file if there are more than 1
 volumes. The first volume should be equal to the orientation
@@ -207,13 +220,14 @@ with a zero matrix
 ----
 ### xASL\_adm\_UnixPath.m
 
-#### Format
+**Format:**
 
 ```matlab
 [PathIs] = xASL_adm_UnixPath(PathIs[, bTryWSL])
 ```
 
-#### Description
+**Description:**
+
 This function performs the following steps to convert a path to a path that is compatible with the Unix-filesystem
 as used in e.g. Linux/MacOS. It also has special support for Windows Subsystem for Linux (WSL),
 though this should only be activated specifically for WSL calls.
@@ -233,13 +247,14 @@ for FSL) - these have to be explicitly specified by the bTryWSL option.
 ----
 ### xASL\_adm\_UnzipNifti.m
 
-#### Format
+**Format:**
 
 ```matlab
 pathOut = xASL_adm_UnzipNifti(pathIn[, bOverwrite])
 ```
 
-#### Description
+**Description:**
+
 Takes the input file, unzips if needed, delete the zipped file and return the path to the unzipped file.
 If the input is already unzipped, then does nothing, but returns the original filename - so it
 can be run just to be sure a file is unzipped without much overhead.
@@ -250,13 +265,14 @@ If there's a NII and NII.GZ already existing, then return error, or just overwri
 ----
 ### xASL\_adm\_ZipFileNameHandling.m
 
-#### Format
+**Format:**
 
 ```matlab
 [srcOut, dstOut] = xASL_adm_ZipFileNameHandling(srcIn, dstIn)
 ```
 
-#### Description
+**Description:**
+
 Adjusts the source and destination filenames of a nifti file to reflect if NII or NII.GZ exist on the input.
 If either .nii or .nii.gz is corrupt, it automatically deletes the corrupt one and keeps the healthy one,
 while reporting a warning. This happens when you restart the pipeline after it crashed, if it crashed while unzipping.
@@ -265,13 +281,14 @@ while reporting a warning. This happens when you restart the pipeline after it c
 ----
 ### xASL\_bids\_csv2tsvReadWrite.m
 
-#### Format
+**Format:**
 
 ```matlab
 [PathTSV, CellContents] = xASL_bids_csv2tsvReadWrite(PathIn[, bDeleteCSV, bWriteTSV])
 ```
 
-#### Description
+**Description:**
+
 This function PathIn and loads it, also trying CSV or TSV
 extensions if these exist. It outputs the contents to a cell array. If a
 CSV file exists but not a TSV file, it converts and replaces the CSV to
@@ -286,13 +303,14 @@ TSV file, per BIDS. This function has the following parts:
 ----
 ### xASL\_csvRead.m
 
-#### Format
+**Format:**
 
 ```matlab
 [CellContents] = xASL_csvRead(PathCSV)
 ```
 
-#### Description
+**Description:**
+
 This function loads a comma-separated value (csv) file - which
 is the format that BIDS prefers - and outputs it to a cell array.
 
@@ -300,13 +318,14 @@ is the format that BIDS prefers - and outputs it to a cell array.
 ----
 ### xASL\_csvWrite.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_csvWrite(InputCell, PathCSV, bOverwrite)
 ```
 
-#### Description
+**Description:**
+
 Rudimentary function, please use xASL\_tsvWrite instead.
 For usage, type help xASL\_tsvWrite.
 This function will still work though.
@@ -315,26 +334,28 @@ This function will still work though.
 ----
 ### xASL\_delete.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_delete(InputPath)
 ```
 
-#### Description
+**Description:**
+
 Delete the file in the given path. If a NIFTI file with extension '.nii' or '.nii.gz' is given,
 Then delete both the .nii and .nii.gz files.
 
 ----
 ### xASL\_exist.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_exist(PathIn[,Type])
 ```
 
-#### Description
+**Description:**
+
 Check if the given path exists, wrapper around the Matlab
 exist function, to allow checking for either .nii or .nii.gz
 Otherwise, exist is used normally.
@@ -343,13 +364,14 @@ Otherwise, exist is used normally.
 ----
 ### xASL\_fileparts.m
 
-#### Format
+**Format:**
 
 ```matlab
 [Fpath, Ffile, Fext] = xASL_fileparts(InputPath)
 ```
 
-#### Description
+**Description:**
+
 Returns the path, file name, and file extension for InputPath using the fileparts.m function.
 If a file ending at nii.gz is given, then the whole nii.gz is returned as the extension.
 Does not verify the existence of the file, or existence of .nii or .nii.gz
@@ -357,13 +379,14 @@ Does not verify the existence of the file, or existence of .nii or .nii.gz
 ----
 ### xASL\_im\_ConvertMap2Mask.m
 
-#### Format
+**Format:**
 
 ```matlab
 [IMout] = xASL_im_ConvertMap2Mask(IMin)
 ```
 
-#### Description
+**Description:**
+
 Provides a robust way of conversion of
 a continuous map to a binary mask, which can be used for lesions, ROIs,
 or tissue probability maps. Based on the assumption that a map should
@@ -374,13 +397,14 @@ automatic segmentations.
 ----
 ### xASL\_im\_DistanceTransform.m
 
-#### Format
+**Format:**
 
 ```matlab
 [dist, x, y, z] = xASL_im_DistanceTransform(im)
 ```
 
-#### Description
+**Description:**
+
 Calculates the distance transform in a binary image
 Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
 5x5x5 window.
@@ -389,13 +413,14 @@ Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
 ----
 ### xASL\_im\_FillNaNs.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_im_FillNaNs(InputPath[, UseMethod, bQuality])
 ```
 
-#### Description
+**Description:**
+
 This function fills any NaNs in an image. In SPM, any voxels
 outside the boundary box/field of view are filled by NaNs
 when resampling. These NaNs can confuse some algorithms,
@@ -417,13 +442,14 @@ This function performs the following 3 steps:
 ----
 ### xASL\_im\_LesionRemoval4CAT.m
 
-#### Format
+**Format:**
 
 ```matlab
 [Ycls, LesionImOut] = xASL_im_LesionRemoval4CAT(Ycls, PathIn)
 ```
 
-#### Description
+**Description:**
+
 For all lesion masks in the anatomical directory, remove
 them from the current segmentations.
 
@@ -431,13 +457,14 @@ them from the current segmentations.
 ----
 ### xASL\_im\_ResampleIM.m
 
-#### Format
+**Format:**
 
 ```matlab
 [imOut] = xASL_im_ResampleIM(imIn, matIn, matOut, dimOut[, interpolationType])
 ```
 
-#### Description
+**Description:**
+
 Resamples an input image imIn oriented according to the homogeneous matrix matIn to and output
 image imOut that has dimension dimOut and matrix matOut. This allows to resample images between
 two spaces with different orientation and matrix sizes. It uses the Matlab interp3 function and
@@ -450,26 +477,28 @@ xASL\_im\_PreSmooth and xASL\_spm\_reslice should be used instead.
 ----
 ### xASL\_im\_SaveOriginal4CAT.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_im_SaveOriginal4CAT(Ycls, PathIn)
 ```
 
-#### Description
+**Description:**
+
 Save the segmentation before lesion masking.
 
 
 ----
 ### xASL\_im\_conv3Dsep.m
 
-#### Format
+**Format:**
 
 ```matlab
 [imConv] = xASL_mex_conv3Dsep(im,kX,[kY,kZ])
 ```
 
-#### Description
+**Description:**
+
 3D separable convolution with a supplied kernel
 It converts the results to double
 Returned is the convoluted image
@@ -480,13 +509,14 @@ excessive zeros at the ends.
 ----
 ### xASL\_im\_ndnanfilter.m
 
-#### Format
+**Format:**
 
 ```matlab
 [Y,fil] = xASL_im_ndnanfilter(X,filterType,F,WNAN)
 ```
 
-#### Description
+**Description:**
+
 
 This function applies a 3-dimensional convolution of X with given kernel.
 NaNs elements are taken into account (ignored).
@@ -526,13 +556,14 @@ as with the 'rect' filter.
 ----
 ### xASL\_io\_Nifti2Im.m
 
-#### Format
+**Format:**
 
 ```matlab
 imOut = xASL_io_Nifti2Im(niftiIn [, ImageSize])
 ```
 
-#### Description
+**Description:**
+
 This function loads a NIfTI image matrix with flexible input
 (as explained under INPUT: niftiIn). It does the following.
 
@@ -547,13 +578,14 @@ This function loads a NIfTI image matrix with flexible input
 ----
 ### xASL\_io\_ReadNifti.m
 
-#### Format
+**Format:**
 
 ```matlab
 [NiftiObject, pathIn] = xASL_io_ReadNifti(pathIn)
 ```
 
-#### Description
+**Description:**
+
 Read Nifti file given by the path. Return the NII object. And also return the actual path to the loaded
 Nifti if by any reason the name changed during the function runtime (e.g. unzipping).
 
@@ -561,13 +593,14 @@ Nifti if by any reason the name changed during the function runtime (e.g. unzipp
 ----
 ### xASL\_io\_SaveNifti.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_io_SaveNifti(pathOrigNifti, pathNewNifti, imNew[, nBits, bGZip, newMat])
 ```
 
-#### Description
+**Description:**
+
 It loads the pathOrigNifti, takes all the parameters from it, and creates a new Nifti file with
 these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.
 
@@ -575,13 +608,14 @@ these parameters, but new image matrix from imNew. It saves the result in pathNe
 ----
 ### xASL\_round.m
 
-#### Format
+**Format:**
 
 ```matlab
 [OutputN] = xASL_round(InputN[, PrecisionN])
 ```
 
-#### Description
+**Description:**
+
 Recent Matlab versions support a second input that specifies that number of decimals to round at,
 but earlier Matlab versions do not support this. For backward compatibility, use this wrapper instead of round.
 
@@ -589,26 +623,28 @@ but earlier Matlab versions do not support this. For backward compatibility, use
 ----
 ### xASL\_spm\_admin.m
 
-#### Format
+**Format:**
 
 ```matlab
 [InPath] = xASL_spm_admin(InPath, bPadComma1)
 ```
 
-#### Description
+**Description:**
+
 Force ,1 at end of IMname. This is useful for refIM/srcIM in CoregInit, OldNormalizeWrapper etc.
 
 
 ----
 ### xASL\_spm\_reslice.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_spm_reslice(refPath, srcPath[, srcAffinePath, bInvAffine, bQuality, NewName, InterpolationPar])
 ```
 
-#### Description
+**Description:**
+
 This wrapper runs SPM's reslice function (a.k.a. coregister: reslice) which resamples a source image into the space of a reference image,
 taking into account any orientation differences between the two images that are defined in the orientation matrix in the NIfTI header.
 When the source image contains multiple volumes, they are all resampled.
@@ -626,13 +662,14 @@ affine transformation information.
 ----
 ### xASL\_spm\_smooth.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_spm_smooth(pathIn, fwhmSmooth[, pathNew])
 ```
 
-#### Description
+**Description:**
+
 This SPM wrapper runs SPM's smooth function, which spatially smooths the input image with a Gaussian kernel.
 In the case of multiple volumes (i.e. a 4D NIfTI), each 3D volume is spatially smoothed separately.
 Note that smoothnesses combine with Pythagoras' rule (i.e. sum quadratically)
@@ -642,39 +679,42 @@ Note that smoothnesses combine with Pythagoras' rule (i.e. sum quadratically)
 ----
 ### xASL\_stat\_MeanNan.m
 
-#### Format
+**Format:**
 
 ```matlab
 y = xASL_stat_MeanNan(x[,dim])
 ```
 
-#### Description
+**Description:**
+
 It calculates the sum using the SUM functions and divides by the number of values but ignoring NaNs.
 
 
 ----
 ### xASL\_stat\_MedianNan.m
 
-#### Format
+**Format:**
 
 ```matlab
 y = xASL_stat_MedianNan(x[,dim])
 ```
 
-#### Description
+**Description:**
+
 It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.
 
 
 ----
 ### xASL\_tsvRead.m
 
-#### Format
+**Format:**
 
 ```matlab
 [CellContents] = xASL_tsvRead(PathTSV[, bStruct])
 ```
 
-#### Description
+**Description:**
+
 This function loads a tab-separated value (TSV) file - which
 is the format that BIDS prefers - and outputs it to a cell array.
 
@@ -682,13 +722,14 @@ is the format that BIDS prefers - and outputs it to a cell array.
 ----
 ### xASL\_tsvWrite.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_tsvWrite(InputCell, PathTSV[, bOverwrite, bCSV])
 ```
 
-#### Description
+**Description:**
+
 This function loads a cell array and prints it to a
 tab-separated value (TSV) file, which is the format that BIDS prefers.
 
@@ -696,13 +737,14 @@ tab-separated value (TSV) file, which is the format that BIDS prefers.
 ----
 ### xASL\_wrp\_DARTELSaveIntermedTrans.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_DARTELSaveIntermedTrans(Yy, u, odim, rdim, idim, Mar, mat, M0, M1, nameOut, numIteration)
 ```
 
-#### Description
+**Description:**
+
 This function is called from the CAT12 segmentation function to save the intermediate results
 of the DARTEL transformation. Normally, the registration only saves the final results -
 the final transformation field. This function enables to save also the intermediate transformation field.
@@ -714,13 +756,14 @@ and adds the specified iteration number as postfix.
 ----
 ### xASL\_wrp\_GSSaveIntermedTrans.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_GSSaveIntermedTrans(y, idim, odim, rdim, M0, M1, R, M1t, M1r, nameOut, numIteration)
 ```
 
-#### Description
+**Description:**
+
 This function is called from the CAT12 segmentation function to save the intermediate results
 of the Geodesic shooting transformation. Normally, the registration only saves the final results -
 the final transformation field. This function enables to save also the intermediate transformation field.

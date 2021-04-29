@@ -3,13 +3,14 @@
 ----
 ### xASL\_wrp\_CleanUpWMH\_SEGM.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_CleanUpWMH_SEGM(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule aims to clean up WMH under- or oversegmentations in a conservatively & robust way,
 i.e. erring on the side of caution. It uses input from the tissue class segmentation (e.g. CAT12) to repair the
 WMH segmentation (e.g. LST LPA/LGA or externally provided). Note that before running the tissue segmentation, the T1w was
@@ -41,13 +42,14 @@ clean up themselves.
 ----
 ### xASL\_wrp\_FLAIR\_BiasfieldCorrection.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_FLAIR_BiasfieldCorrection(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule performs a biasfield correction on T1w and applies it on FLAIR. This can be useful, when there are large lesions
 on the FLAIR that hamper capturing the biasfield nicely on the FLAIR itself. In such cases, the biasfield of the T1w might be easier to obtain
 and should be the same as the FLAIR, provided they are scanned in the same scan session (i.e.g same scanner, same coil).
@@ -58,13 +60,14 @@ already biasfield corrected.
 ----
 ### xASL\_wrp\_GetVolumetrics.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_GetVolumetrics(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule computes the total volume for each of the tissue classes & stores them in a TSV file (per BIDS).
 This is computed from the native space segmentation derivatives (GM, WM & CSF), from which the ICV & relative volumes can be
 calculated. This is performed for CAT12 or SPM12 (whichever was used), and optionally for a WMH\_SEGM.
@@ -73,13 +76,14 @@ calculated. This is performed for CAT12 or SPM12 (whichever was used), and optio
 ----
 ### xASL\_wrp\_LST\_Segment\_FLAIR\_WMH.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_LST_Segment_FLAIR_WMH(x, rWMHPath[, WMHsegmAlg])
 ```
 
-#### Description
+**Description:**
+
 This submodule runs the LST WMH segmentation, either with LGA or LPA.
 LPA is the default choice, it outperforms LGA a bit, depending on the image quality. These algorithms
 perform optimally with 3T images, with good contrast. Generally, LPA oversegments whereas LGA undersegments.
@@ -101,13 +105,14 @@ WMH\_SEGM == T1w space
 ----
 ### xASL\_wrp\_LST\_T1w\_LesionFilling\_WMH.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_LST_T1w_LesionFilling_WMH(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule runs the LST WMH-based T1w lesion filling, which should improve the registration & segmentation
 of the T1w by e.g. CAT12/SPM12. The WMH can be either segmented in the previous submodule by LST LGA/LPGA or provided externally.
 Before lesion filling, we clean up the WMH segmentation, to make the lesion filling a bit more conservative. Sometimes the WMH
@@ -130,13 +135,14 @@ This function runs the following steps:
 ----
 ### xASL\_wrp\_LinearReg\_FLAIR2T1w.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_LinearReg_FLAIR2T1w(x[, bAutoACPC])
 ```
 
-#### Description
+**Description:**
+
 This submodule registers FLAIR linearly to the T1w
 The same transformation is applied to all other related scans (FLAIR-segmented lesions, WMH specifically or other lesions)
 This is required to enable the application of T1w derivatives (e.g. transformations to standard space, tissue segmentation) for FLAIR
@@ -146,13 +152,14 @@ and vice versa (e.g. WMH lesion-filling).
 ----
 ### xASL\_wrp\_LinearReg\_T1w2MNI.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_LinearReg_T1w2MNI(x[, bAutoACPC])
 ```
 
-#### Description
+**Description:**
+
 This submodule registers T1w linearly to the center of MNI space, a.k.a. ACPC alignment
 The same transformation is applied to all other related scans (ASL4D, M0, FLAIR, etc.)
 This facilitates MNI-based algorithms (e.g. SPM-based segmentation), and allows for visual QC with all images
@@ -164,13 +171,14 @@ Assuming that this submodule is run at the start of ExploreASL, all NIfTI orient
 ----
 ### xASL\_wrp\_Resample2StandardSpace.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_Resample2StandardSpace(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule resamples all structural images & their derivatives to standard space. It uses the transformation
 fields that were obtained previously in the Structural module, concatenates all transformations into a single transformation
 (if not already done) & applies the transformation with a single interpolation (either trilinear for low quality or probability
@@ -185,13 +193,14 @@ longitudinal registration or after creation of a group-wise template.
 ----
 ### xASL\_wrp\_SegmentT1w.m
 
-#### Format
+**Format:**
 
 ```matlab
 [x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
 ```
 
-#### Description
+**Description:**
+
 This submodule segments high resolution structural/anatomical scans into GM/WM/CSF/soft tissue/bone/air tissue classes.
 It will save GM/WM/CSF in native space, and the transformation from native to standard space.
 This transformation includes Geodesic Shooting/DARTEL for CAT12.
@@ -217,13 +226,14 @@ This submodule contains the following steps:
 ----
 ### xASL\_wrp\_VisualQC\_Structural.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_VisualQC_Structural(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule performs several visualizations for visual & quantitative QC.
 
 1. After initial admin

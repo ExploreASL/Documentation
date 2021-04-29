@@ -3,13 +3,14 @@
 ----
 ### xASL\_wrp\_CreateAnalysisMask.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_CreateAnalysisMask(x)
 ```
 
-#### Description
+**Description:**
+
 This function creates an analysis mask with the following steps:
 0. Create FoV mask (native & MNI spaces)
 1. Detect negative vascular signal (native & MNI spaces, within pGM>0.5)
@@ -33,13 +34,14 @@ is thresholded with the average of the 75th percentile &
 ----
 ### xASL\_wrp\_PVC.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_PVC(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule performs partial volume correction (PVC) in native ASL space. It runs the Asllani's method
 for partial volume correction by linear regression. It has two main extensions - first it uses a 3D kernel.
 Second, it can use a Gaussian weights instead of the default flat kernel.
@@ -54,13 +56,14 @@ Second, it can use a Gaussian weights instead of the default flat kernel.
 ----
 ### xASL\_wrp\_PreparePV.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_PreparePV(x, bStandardSpace)
 ```
 
-#### Description
+**Description:**
+
 This submodule prepares partial volume correction (PVC) by creating correct PV maps in ASL resolution, in native space,
 as well as in standard space if requested (to perform PVC in
 standard space):
@@ -85,13 +88,14 @@ downsampling.
 ----
 ### xASL\_wrp\_ProcessM0.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_ProcessM0(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule performs the image processing and
 quantification of M0 maps (if they exist), with the following steps:
 
@@ -128,13 +132,14 @@ same native space.
 ----
 ### xASL\_wrp\_Quantify.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_Quantify(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule converts PWIs to quantified CBF maps (or
 related derivatives). Note that we don't delete x.P.Path\_PWI4D here, as
 this NIfTI file may be needed by xASL\_wrp\_VisualQC\_ASL.m
@@ -155,13 +160,14 @@ this NIfTI file may be needed by xASL\_wrp\_VisualQC\_ASL.m
 ----
 ### xASL\_wrp\_RealignASL.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_RealignASL(x[,bSubtraction])
 ```
 
-#### Description
+**Description:**
+
 This submodule estimates motion by spm\_realign, which uses a
 rigid-body registration (3 translations, 3 rotations). It runs ENABLE to
 reject outliers and provides a visualization. ENABLE, QC and visualizations
@@ -181,13 +187,14 @@ This submodule performs the following steps:
 ----
 ### xASL\_wrp\_RegisterASL.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_RegisterASL(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule registers ASL images to T1w space, by using a
 combination of the registration techniques below. Note that in the
 absence of raw structural files (i.e. T1.nii[.gz] or T1\_ORI.nii[.gz],
@@ -257,13 +264,14 @@ affine are thus also taken into account (OPTIONAL, DEFAULT = 0)
 ----
 ### xASL\_wrp\_ResampleASL.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_ResampleASL(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule resamples native space NIfTIs to standard space, using the deformation fields computed in the structural module
 after smoothing these transformation fields to the ASL resolution.
 The applied interpolation is a combination of all transformations (e.g. motion correction, registration to
@@ -286,13 +294,14 @@ T1w, and transformation of T1w to standard space. This submodule performs the fo
 ----
 ### xASL\_wrp\_VisualQC\_ASL.m
 
-#### Format
+**Format:**
 
 ```matlab
 xASL_wrp_VisualQC_ASL(x)
 ```
 
-#### Description
+**Description:**
+
 This submodule performs several visualizations for visual & quantitative QC.
 
 1. After initial admin
