@@ -13,6 +13,7 @@ nav:
     - SPM xASL Functions:   SPMxASL.md
     - Tutorials (ASL-BIDS): Tutorials-ASL-BIDS.md
     - Tutorials (Basics):   Tutorials-Basics.md
+    - Tutorials (QC):       Tutorials-QC.md
     - Tutorials (Advanced): Tutorials-Advanced.md
     - FAQ:                  FAQ.md
     - Requirements:         Requirements.md
