@@ -2519,6 +2519,16 @@ Philips 3D GRASE puts the M0 as control-label volume pair -> iM0 = [1 2];
 Siemens 3D GRASE puts the M0 as the first volume -> iM0 = 1;
 Some Siemens 3D GRASE puts a second Dummy control image -> iDummy = 2;
 
+1. Input parameter admin
+2. Prepare paths
+3. First concatenate NIfTIs
+4. Save M0 NIfTI
+5. Determine ASL indices
+6. Save ASL4D NIfTI
+7. Split relevant JSON parameters/arrays
+8. Copy sidecars
+
+
 
 ----
 ### xASL\_io\_dcm2nii.m

@@ -626,12 +626,17 @@ but earlier Matlab versions do not support this. For backward compatibility, use
 **Format:**
 
 ```matlab
-[InPath] = xASL_spm_admin(InPath, bPadComma1)
+xASL_spm_admin(pathIn[, bPadComma1])
 ```
 
 **Description:**
 
-Force ,1 at end of IMname. This is useful for refIM/srcIM in CoregInit, OldNormalizeWrapper etc.
+This SPM admin function takes a NIfTI path and does a few
+checks to make this valid to SPM. It accepts both .nii and .nii.gz.
+It runs the following steps:
+1. Unzip .nii.gz
+2. Convert char to cell
+3. Add ',1' suffix
 
 
 ----
@@ -665,7 +670,7 @@ affine transformation information.
 **Format:**
 
 ```matlab
-xASL_spm_smooth(pathIn, fwhmSmooth[, pathNew])
+xASL_spm_smooth(pathIn, fwhmSmooth, pathNew])
 ```
 
 **Description:**
