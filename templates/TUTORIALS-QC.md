@@ -22,7 +22,56 @@ When you perform this walkthrough on your own data, there are three first main c
 ----
 ## 1. Data inclusion
 
-ADD UP-TO-DATE SCREENSHOT HERE
+```
+>> dataPar = '\drive\TestDataSet\derivatives\ExploreASL\dataPar.json';
+>> [x] = ExploreASL_Master(dataPar,0,1,1);
+ExploreASL will run the processing pipeline...
+
+
+==============================================================================================
+ ________                      __                                 ______    ______   __        
+/        |                    /  |                               /      \  /      \ /  |      
+########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |      
+## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |      
+##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |      
+#####/     ##  ##<  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |      
+## |_____  /####  \ ## |__## |## |## \__## |## |      ########/ ## |  ## |/  \__## |## |_____ 
+##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |
+########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/ 
+                    ## |                                                                      
+                    ## |                                                                      
+                    ##/  
+
+==================================== ExploreASL Settings =====================================
+DataParPath         \drive\TestDataSet\derivatives\ExploreASL\dataPar.json
+Import Modules         
+Process Modules     Structural ASL Population
+bPause              True
+iWorker             1
+nWorkers            1
+==============================================================================================
+ExploreASL v1.5.1 initialized ... 
+Automatically defining sessions...
+==================================== Additional Settings =====================================
+1 scans - 0 exclusions, resulting in 1 scans of: 
+Longitudinal timePoint 1 = 1 scans - 0 exclusions = 1 scans
+ASL sessions: 1
+
+Ancillary data, sets: 3 sets are defined for 1 "SubjectsSessions"
+Set 1 = "LongitudinalTimePoint" options "TimePoint_1", codes for paired data
+Set 2 = "SubjectNList" options "SubjectNList", codes for paired data
+Set 3 = "Site" options "SingleSite", codes for two-sample data
+x.D.ROOT            \drive\TestDataSet\derivatives\ExploreASL
+x.DELETETEMP        1 (delete temporary files)
+x.Quality           1 (0 = fast try-out; 1 = normal high quality)
+
+==============================================================================================
+
+
+Press any key to start processing & analyzing
+Please ensure you have a read-only copy of your original data as they may be overwritten
+Or press CTRL/command-C to cancel... 
+```
 
 You should obtain a similar initial screen showing which subjects and scans are found to be processed (how many exclusions, how many subjects for each time point etc.), as well as potentially included co-variates (e.g. site, age, cohort, sex). Note that we run the pipeline on low quality (`x.Quality=0`): while this will provide poorer results (segmentation, registration, etc) this will allow us to quickly test the full pipeline. On a relatively new computer, the full pipeline should run either within 5-10 min (`x.Quality=0`) or 30-60 min (`x.Quality=1`). 
 
@@ -150,7 +199,10 @@ x.S.InputDataStr = 'qCBF';
 x.S.InputAtlasPath = '/ExploreASL/External/AtlasesNonCommercial/HOcort_CONN.nii'; 
 % (replace this by the atlas of your choice)
 xASL_wrp_GetROIstatistics(x); 
-% (Note that this may provide a warning that x.Sequence is not defined yet, if you haven't predefined any ASL sequence yet (which should go semi-automatically with your own data). x.Sequence should contain your ASL sequence, e.g. x.Sequence = ‘2D_EPI’ (in the case of the TestDataSet))
+% (Note that this may provide a warning that x.Sequence is not defined yet, 
+% if you haven't predefined any ASL sequence yet (which should go semi-automatically 
+% with your own data). x.Sequence should contain your ASL sequence, e.g. x.Sequence 
+% = ‘2D_EPI’ (in the case of the TestDataSet))
 ```
 
 **E) Check the ROI analysis**
