@@ -1906,6 +1906,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Tutorials-Advanced/" class="md-nav__link">
         Tutorials (Advanced)
       </a>
@@ -5231,6 +5246,16 @@ GE 3D spiral sometimes puts the M0 at the last volume of the series -&gt; iM0 = 
 Philips 3D GRASE puts the M0 as control-label volume pair -&gt; iM0 = [1 2];
 Siemens 3D GRASE puts the M0 as the first volume -&gt; iM0 = 1;
 Some Siemens 3D GRASE puts a second Dummy control image -&gt; iDummy = 2;</p>
+<ol>
+<li>Input parameter admin</li>
+<li>Prepare paths</li>
+<li>First concatenate NIfTIs</li>
+<li>Save M0 NIfTI</li>
+<li>Determine ASL indices</li>
+<li>Save ASL4D NIfTI</li>
+<li>Split relevant JSON parameters/arrays</li>
+<li>Copy sidecars</li>
+</ol>
 <hr />
 <h3 id="xasl_io_dcm2niim">xASL_io_dcm2nii.m</h3>
 <p><strong>Format:</strong></p>

@@ -1,0 +1,889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.6.0/Tutorials-QC/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Tutorials (QC) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials-qc-quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (QC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-ASL-BIDS/" class="md-nav__link">
+        Tutorials (ASL-BIDS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Basics/" class="md-nav__link">
+        Tutorials (Basics)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials (QC)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tutorials (QC)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-run-testdataset-to-check-exploreasl-compatibility" class="md-nav__link">
+    0. Run TestDataSet to check ExploreASL compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-data-inclusion" class="md-nav__link">
+    1. Data inclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-missing-files" class="md-nav__link">
+    2. Missing files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-qc-structural-module" class="md-nav__link">
+    3. QC structural module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dicom-values" class="md-nav__link">
+    4. DICOM values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-qc-of-asl-module" class="md-nav__link">
+    5. QC of ASL module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#61-qualitative-analysis-visual-inspection-in-detail" class="md-nav__link">
+    6.1 Qualitative analysis: visual inspection in detail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-quantitative-analysis-create-region-of-interest-roi-based-statistics" class="md-nav__link">
+    6.2 Quantitative analysis: create region-of-interest (ROI)-based statistics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Advanced/" class="md-nav__link">
+        Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-run-testdataset-to-check-exploreasl-compatibility" class="md-nav__link">
+    0. Run TestDataSet to check ExploreASL compatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-data-inclusion" class="md-nav__link">
+    1. Data inclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-missing-files" class="md-nav__link">
+    2. Missing files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-qc-structural-module" class="md-nav__link">
+    3. QC structural module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dicom-values" class="md-nav__link">
+    4. DICOM values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-qc-of-asl-module" class="md-nav__link">
+    5. QC of ASL module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#61-qualitative-analysis-visual-inspection-in-detail" class="md-nav__link">
+    6.1 Qualitative analysis: visual inspection in detail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-quantitative-analysis-create-region-of-interest-roi-based-statistics" class="md-nav__link">
+    6.2 Quantitative analysis: create region-of-interest (ROI)-based statistics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Tutorials-QC.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="tutorials-qc-quick-start">Tutorials (QC - Quick Start)</h1>
+<p>This document provides a “quick start” walk-through for a dataset processed by ExploreASL. This can be either the attached example dataset (n=1) or a clinical study. It is always recommended to first test the compatibility of ExploreASL with the example dataset (Step 0 below), and to create a file report for steps 1-6, to get accustomed to the data and to make sure that ExploreASL runs properly. Note that ExploreASL is in development, so naming conventions may change, especially when we move to a complete BIDS adherence.</p>
+<hr />
+<h2 id="0-run-testdataset-to-check-exploreasl-compatibility">0. Run TestDataSet to check ExploreASL compatibility</h2>
+<p>First, try to run the test data set. Note that according to good practice, it is important to separate code and data. The user should copy <code>/ExploreASL/External/TestDataSet</code> to a directory with read and write permissions outside of the ExploreASL toolbox, and keep the ExploreASL directory structure unchanged. Let’s assume your copy of the TestDataSet is now in the folder <code>/drive/folder/TestDataSet</code>. Open Matlab, go to the directory of ExploreASL, run  <code>ExploreASL(‘drive/folder/TestDataSet/derivatives/ExploreASL/dataPar.json’, 0, 1);</code> to process the TestDataSet. The <code>dataPar.json</code> file in the example dataset contains all image processing and quantification parameters that ExploreASL needs.  (Note that for your own study, you would need to create this parameter file. You can find a list of parameters in <code>/ExploreASL/DataParTemplate.m</code>). If you only want to run a quick test, we recommend to  set the <code>Quality</code> parameter within dataPar.json to 0. Please note that in the future, the structure of this  test dataset  will be replaced by the BIDS format. Also, you can add the same parameters to the JSON sidecars of the ASL NIfTI files, which will allow processing ASL scans with different parameters within the same study. In the case of a multi-center study, and/or multiple sequences or scanner updates, the JSON sidecars allow to have different ASL parameters within a single study.</p>
+<p>Upon successful completion of the processing, ExploreASL creates a result file (<code>//Population/Stats/ median_qCBF_(Native|Standard)Space_total_GM_n=1_*_PVC0.tsv</code>). Verify that the GM CBF here (without partial volume (PV) correction, i.e. PVC0)) is approximately <code>65 mL/100g/min</code>. If this file does not exist, then there could be a problem with ExploreASL compatibility. If the file exists and values are the same as reported here, then your software and hardware are ExploreASL compatible. In case ExploreASL processing runs for the example data set and not for other datasets then the problem is probably data related and not compatibility related.</p>
+<p>When you perform this walkthrough on your own data, there are three first main cases to note:</p>
+<ol>
+<li>Data completeness, note down any data that was not imported or somehow not got processed;</li>
+<li>Proper processing, check visually whether the processing went well, e.g. nicely segmented and registered;</li>
+<li>Large anatomical deviations, check visually if there are large anatomical variations that can make subjects outliers</li>
+</ol>
+<hr />
+<h2 id="1-data-inclusion">1. Data inclusion</h2>
+<pre><code>&gt;&gt; dataPar = '\drive\TestDataSet\derivatives\ExploreASL\dataPar.json';
+&gt;&gt; [x] = ExploreASL_Master(dataPar,0,1,1);
+ExploreASL will run the processing pipeline...
+
+
+==============================================================================================
+ ________                      __                                 ______    ______   __        
+/        |                    /  |                               /      \  /      \ /  |      
+########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |      
+## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |      
+##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |      
+#####/     ##  ##&lt;  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |      
+## |_____  /####  \ ## |__## |## |## \__## |## |      ########/ ## |  ## |/  \__## |## |_____ 
+##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |
+########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/ 
+                    ## |                                                                      
+                    ## |                                                                      
+                    ##/  
+
+==================================== ExploreASL Settings =====================================
+DataParPath         \drive\TestDataSet\derivatives\ExploreASL\dataPar.json
+Import Modules         
+Process Modules     Structural ASL Population
+bPause              True
+iWorker             1
+nWorkers            1
+==============================================================================================
+ExploreASL v1.5.1 initialized ... 
+Automatically defining sessions...
+==================================== Additional Settings =====================================
+1 scans - 0 exclusions, resulting in 1 scans of: 
+Longitudinal timePoint 1 = 1 scans - 0 exclusions = 1 scans
+ASL sessions: 1
+
+Ancillary data, sets: 3 sets are defined for 1 &quot;SubjectsSessions&quot;
+Set 1 = &quot;LongitudinalTimePoint&quot; options &quot;TimePoint_1&quot;, codes for paired data
+Set 2 = &quot;SubjectNList&quot; options &quot;SubjectNList&quot;, codes for paired data
+Set 3 = &quot;Site&quot; options &quot;SingleSite&quot;, codes for two-sample data
+x.D.ROOT            \drive\TestDataSet\derivatives\ExploreASL
+x.DELETETEMP        1 (delete temporary files)
+x.Quality           1 (0 = fast try-out; 1 = normal high quality)
+
+==============================================================================================
+
+
+Press any key to start processing &amp; analyzing
+Please ensure you have a read-only copy of your original data as they may be overwritten
+Or press CTRL/command-C to cancel... 
+</code></pre>
+
+<p>You should obtain a similar initial screen showing which subjects and scans are found to be processed (how many exclusions, how many subjects for each time point etc.), as well as potentially included co-variates (e.g. site, age, cohort, sex). Note that we run the pipeline on low quality (<code>x.Quality=0</code>): while this will provide poorer results (segmentation, registration, etc) this will allow us to quickly test the full pipeline. On a relatively new computer, the full pipeline should run either within 5-10 min (<code>x.Quality=0</code>) or 30-60 min (<code>x.Quality=1</code>). </p>
+<hr />
+<h2 id="2-missing-files">2. Missing files</h2>
+<p>Check the files <code>//ROOT/Missing*Files.csv</code>. These provide an overview of any missing files. Files can either be missing when they are not imported (<code>Missing*NativeFiles.csv</code>, for native space files), or when they are not processed (mainly <code>Missing*MNIFiles.csv</code>, for MNI space files). If no files are specified in these files, or they do not exist, this means that there were no missing files.</p>
+<hr />
+<h2 id="3-qc-structural-module">3. QC structural module</h2>
+<p>The structural module processes the anatomical (T1-weighted, T1w) images, to provide segmentations/partial volume (PV) maps and for spatial normalization to MNI space. Optionally, if FLAIR images exist, these are used to correct the white matter hyperintensities (WMH) on the T1w images. Check (from left to right):</p>
+<p><img alt="ExploreASL Workflow" src="../img/qc_tutorial/03_qc_structural_module_1.png" title="03 QC Structural Module 1" /></p>
+<ul>
+<li><code>//Population/T1Check/Tra_Src_rT1_*.jpg</code> for T1w quality, structural anomalies, normalization to MNI</li>
+<li><code>//Population/T1Check/Tra_Reg_rT1_*.jpg</code> same as previous, but after lesion filling (if FLAIR exists)</li>
+<li><code>//Population/T1Check/Tra_Seg_rT1_*.jpg</code> for T1w segmentation (WM segmentation in red)</li>
+<li><code>//Population/TissueVolume/Tissue_volume_*.tsv</code> for the GM, WM and CSF volumes</li>
+<li>Note that all QC images are prefixed with ‘Tra_’ (transversal/axial)/ ‘Cor_’ (coronal) or ‘Sag_’ (sagittal) denoting the plane of the slices.</li>
+</ul>
+<p>Check, if FLAIR exists (from left to right):</p>
+<p><img alt="ExploreASL Workflow" src="../img/qc_tutorial/03_qc_structural_module_2.png" title="03 QC Structural Module 2" /></p>
+<ul>
+<li><code>//Population/FLAIRCheck/Tra_Src_rFLAIR_*.jpg</code> for FLAIR quality, structural anomalies</li>
+<li><code>//Population/FLAIRCheck/Tra_Reg_rFLAIR_*reg.jpg</code> for WMH segmentation, compare with previous</li>
+<li><code>//Population/FLAIR_REGDIR/Tra_Seg_rFLAIR_*reg.jpg</code> for registration FLAIR-&gt;T1w 
+(red=T1w WM segmentation)</li>
+<li><code>//Population/TissueVolume/WMH_LST_*.tsv</code> for the WMH Total Lesion Volume (TLV) and number (N) of WMH</li>
+</ul>
+<p>For a population data quality overview (if nScans&gt;1), inspect //Population/Templates/Template_mean_T1.nii, as well as //Population/Templates/Template_sd_T1.nii for the between-subject variation. Do the same for pGM and pWM, and FLAIR and WMH_SEGM if available.</p>
+<hr />
+<h2 id="4-dicom-values">4. DICOM values</h2>
+<p><code>//Population/DICOMparameters/ASL4D_quantification_parameters.csv</code> and <code>//Population/DICOMparameters/M0_quantification_parameters.csv</code> summarize the data in the files <code>//ROOT/SubjectName/ASL_1/ASL4D_parms.mat</code> and <code>//ROOT/SubjectName/ASL_1/M0_parms.mat</code>, including the different DICOM header parameters that are imported and can be used in the quantification process. It is important to check that the TR, TE, and scale slopes are comparable for all scans on a single scanner. If not, they allude to situations where the scans were performed with not completely similar protocols, due to e.g. a software update, or use of different scanners. Ignoring this can lead to undesired variance in the whole-brain CBF quantification.</p>
+<hr />
+<h2 id="5-qc-of-asl-module">5. QC of ASL module</h2>
+<p>The ASL module processes the perfusion (ASL, M0) images, from motion correction to registration to quantification and PV correction. Check for general ASL quality, vascular artifacts, good GM-WM contrast, WM-CSF contrast, artifacts on the temporal standard deviation (SD) images, geometrical distortion, and signal drop out from EPI susceptibility artifacts, whole-brain coverage (slice_gradient). Check also for registration to standard space, all images should be in the same position/orientation, i.e. meaning that you always see the same slices, with the same angulation. Check for motion artifacts as a bright halo around the CBF and temporal SD images. In a study QC report, you could show some worst, median, and best examples. Check (from left to right):</p>
+<ul>
+<li><code>//Population/ASLCheck/Tra_qCBF_untreated_*ASL_*.jpg</code> for the CBF images without vascular treatment (qCBF*)</li>
+<li><code>//Population/ASLCheck/Tra_Reg_pWM_qCBF_untreated_*ASL_*.jpg</code> for the ASL-&gt;T1w registration (T1w WM segmentation in red)</li>
+<li><code>//Population/SliceGradientCheck/SliceGradient_*.jpg</code> for the orientation of native slices in MNI space</li>
+</ul>
+<p><img alt="ExploreASL Workflow" src="../img/qc_tutorial/05_qc_of_asl_module_1.png" title="05 QC ASL Module 1" /></p>
+<p>If time-series exist (from left to right):</p>
+<p><img alt="ExploreASL Workflow" src="../img/qc_tutorial/05_qc_of_asl_module_2.png" title="05 QC ASL Module 2" /></p>
+<ul>
+<li><code>//Population/RawSourceIMCheck/Tra_mean_control_*.jpg</code> for the inspection of the average ASL source image</li>
+<li><code>//Population/SD_SNR/Tra_SD*ASL_*.jpg</code> for the temporal SD image. This should be a smooth, noisy image, with only vascular peaks.</li>
+<li><code>//Population/MotionASL/rp_*ASL*motion.jpg</code> to inspect subject motion (net displacement vector)</li>
+<li><code>//Population/MotionASL/rp_*ASL*threshold_free_spike_detection.jpg</code> to inspect the performance of ENABLE</li>
+</ul>
+<p>If an M0 scan exists (from left to right):</p>
+<p><img alt="ExploreASL Workflow" src="../img/qc_tutorial/05_qc_of_asl_module_3.png" title="05 QC ASL Module 3" /></p>
+<ul>
+<li><code>//Population/M0Check/Tra_noSmooth_M0_*_ASL*.jpg</code> for the inspection of M0</li>
+<li><code>//Population/M0_Reg_ASL/Tra_Reg_pGM_noSmooth_M0_*ASL*.jpg</code> for the M0-&gt;T1w registration 
+(pGM in red)</li>
+<li><code>//Population/M0_Reg_ASL/M0_im_proc_*.jpg</code> for processing of M0 into a smooth bias field (masking &amp; smoothing). Verify that the mask correctly removes the CSF &amp; extracranial signal, to avoid smoothing of this into the M0 bias field.</li>
+</ul>
+<p>If population data exists (i.e. <code>nScans&gt;1</code>):
+For a population data quality overview, inspect <code>//Population/Templates/Template_mean_CBF.nii</code>, as well as <code>//Population/Templates/Template_sd_CBF.nii</code> for the between-subject variation. Do the same for the other QC images if available.</p>
+<hr />
+<h2 id="61-qualitative-analysis-visual-inspection-in-detail">6.1 Qualitative analysis: visual inspection in detail</h2>
+<p><strong>A) Reproduce some of the above JPG images by loading the NIfTIs, creating an overlay, and scrolling through</strong></p>
+<p>To go through the images in more detail, we advise using Chris Rorden’ mricron32.exe, which is a very light-weight, flexible, and easy-to-use tool. Please go to the population folder, and repeat the visual QC above in detail by opening the standard space NIfTIs. E.g., start with the original T1, resliced into standard space (<code>rT1_ORI*.nii(.gz)</code>), and then overlay the gray matter (GM) and/or white matter (WM) segmentations (<code>rc1T1*.nii(.gz)</code> and <code>rc2T1*.nii(.gz)</code> respectively. You do this, by keeping the original T1 NIfTI open, in the top menu click <code>‘Overlay’</code> - ‘Add’ and select the NIfTI you want to overlay. Then you can select a color at the right drop-down menu. You can change the transparency of the overlay by ‘Overlay’ - ‘Transparency on background’. Then, keep the same NIfTI open, and start a second instance of mricron32, and load another NIfTI there, e.g. the FLAIR (<code>rFLAIR*.nii(.gz)</code>), note how you can scroll through both NIfTIs in sync. (if this doesn’t work, you need to enable ‘View’ - ‘Yoke’ at both MRIcron instances). With the DEL key, you can activate the crosshair. You can layout the two MRIcron instances side-to-side by using the Windows key-Left Windows key-Right combination.</p>
+<p><strong>B) Relate the ASL CBF image to the structural T1w image</strong></p>
+<p>Load the ASL image (<code>qCBF*.nii(.gz)</code> and notice how much lower its resolution is compared to the structural/anatomical images. Then open the T1w and ASL images side to side, to scroll through them in sync, and notice how this allows you to identify the structural reference of your ASL perfusion signal. Can you observe structural contrast in the ASL image? Do you see that the CBF is indeed higher in the GM than in the WM? </p>
+<p><strong>C) Relate the temporal SD image to the structural T1w image</strong></p>
+<p>Now do the same with the temporal SD image (<code>SD*.nii.(gz)</code>, not <code>SD_control*</code>), open it side-to-side with the T1w image. This image shows the temporal variations of the ASL signal. Where does this come from?</p>
+<p><strong>D) Overlay the CBF image over the T1w image</strong></p>
+<p>To create a nice visualization, open the T1w NIfTI, and then load the ASL CBF image as an overlay. Then choose a nice color scale, proper transparency, and play with the low and high-intensity thresholds, to create an overlay of the CBF image in ‘false colors’ over the grayscale anatomical NIfTI. Again, notice the relatively low resolution (i.e. blurriness/smooth appearance) of the ASL image. Try to make a really nice overlay!</p>
+<hr />
+<h2 id="62-quantitative-analysis-create-region-of-interest-roi-based-statistics">6.2 Quantitative analysis: create region-of-interest (ROI)-based statistics</h2>
+<p><strong>E) Check the default, basic ROI overview of the data in <code>//Population/Stats/*.tsv</code>. These filenames are built up as:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(mean\|median\|spatialCoV)</code></td>
+<td>The statistic: either the mean, median, or coefficient of variance over the ROI</td>
+</tr>
+<tr>
+<td><code>(qCBF_untreated)</code></td>
+<td>The input data (this can be anything, e.g. M0, pGM, FLAIR)</td>
+</tr>
+<tr>
+<td><code>(TotalGM\|DeepWM\|MNI_structural)</code></td>
+<td>The applied atlas, which specifies which ROIs to use</td>
+</tr>
+<tr>
+<td><code>(n=x)</code></td>
+<td>The number of subjects in the analysis (these are rows in the TSV file)</td>
+</tr>
+<tr>
+<td><code>(07-Mar-2019)</code></td>
+<td>The date of the analysis</td>
+</tr>
+<tr>
+<td><code>PVC(0\|2)</code></td>
+<td>Partial volume correction (PVC) options: 0 (no PVC), 2 (two-compartment, classical PVC)</td>
+</tr>
+</tbody>
+</table>
+<p>Start by opening ‘mean_qCBF_untreated_MNI_structural_n=1_07-Mar-2019_PVC2.tsv’. Notice that columns A to L are the ‘covariates’, whereas the remaining columns are the results of the ROI analysis. See the names of the MNI_structural atlas (Caudate, Cerebellum, Frontal, etc), and notice how from each of them, 3 columns are created, with the B (bilateral), L (left), or R (right) part of the ROI.</p>
+<p><strong>F) Run an ROI analysis with a custom atlas</strong></p>
+<p><strong>1) Pick an atlas</strong></p>
+<p>Go to folder <code>/ExploreASL/External/AtlasesNonCommercial</code> and choose an atlas. Open the NIfTI file of the atlas, and notice how it has a label number for each ROI: you can see this number in the lower-left corner of MRIcron. By overlaying the atlas over the T1w of the subject, and creating a nice color scheme and transparency (e.g. color scheme ‘NIH’ and 60% transparency), and can see if you like the ROIs of this atlas for your analysis. Suggestions are ‘Hammers’, ‘HOcort_CONN’ (the CONN-toolbox version of the Harvard-Oxford atlas, cortical part), or HOsub_CONN (same as previous but subcortical part). Note how each NIfTI file of the atlases have their own .tsv file, which specifies the name of the ROIs (the column number corresponds to the label number in the NIfTI file). Remember the full path of the atlas NIfTI. Note that you can also provide your own atlas, as long as the ROIs contain the same label numbers in the NIfTI as in the .tsv file.</p>
+<p><strong>2) Pick a data type</strong></p>
+<p>Pick the data type you want to perform your ROI analysis on, e.g. qCBF (see other available data types in the Population folder).</p>
+<p><strong>3) Restart ExploreASL</strong></p>
+<p>For this, we first need to restart ExploreASL, but without running the whole analysis (since we already did this). 
+Open Matlab, initialize ExploreASL using the command [x] = ExploreASL_Initialize;. To process a dataset you can use the ExploreASL function. Tell ExploreASL which dataset to load, by providing the path of your data parameter file to ExploreASL by running [x] = ExploreASL_(‘drive/folder/dataPar.son’). Notice how this loads the dataset without any processing (i.e. without running the structural, ASL, or any other modules).</p>
+<p><strong>4) Run the ROI analysis, by typing in Matlab:</strong></p>
+<pre><code class="matlab">x.S.InputDataStr = 'qCBF'; 
+% (qCBF can be replaced by another datatype)
+x.S.InputAtlasPath = '/ExploreASL/External/AtlasesNonCommercial/HOcort_CONN.nii'; 
+% (replace this by the atlas of your choice)
+xASL_wrp_GetROIstatistics(x); 
+% (Note that this may provide a warning that x.Sequence is not defined yet, 
+% if you haven't predefined any ASL sequence yet (which should go semi-automatically 
+% with your own data). x.Sequence should contain your ASL sequence, e.g. x.Sequence 
+% = ‘2D_EPI’ (in the case of the TestDataSet))
+</code></pre>
+
+<p><strong>E) Check the ROI analysis</strong></p>
+<p>Repeat the steps in (E) above, but then with the correct atlas name. Note how the ROIs (columns M and upwards) are now the bilateral (B), left (L) and right (R) parts of the atlas you selected.
+Recommendable software</p>
+<p>Free software that is recommendable, includes:</p>
+<ul>
+<li><a href="https://github.com/MauricePasternak/ExploreASL_GUI">ExploreASL GUI</a> to work with ExploreASL using a graphical user interface</li>
+<li><a href="https://www.nitrc.org/projects/mricron">MRIcron</a>, to open NIfTIs outside of Matlab/ExploreASL</li>
+<li><a href="https://github.com/ExploreASL/bids-matlab">bids-matlab</a> to work with files in BIDS format</li>
+</ul>
+<p>When not indicated otherwise, installation settings should be kept on default.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Tutorials-Basics/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Tutorials (Basics)
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Tutorials-Advanced/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tutorials (Advanced)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
