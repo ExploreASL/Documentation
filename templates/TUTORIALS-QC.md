@@ -87,7 +87,7 @@ Check the files `//ROOT/Missing*Files.csv`. These provide an overview of any mis
 
 The structural module processes the anatomical (T1-weighted, T1w) images, to provide segmentations/partial volume (PV) maps and for spatial normalization to MNI space. Optionally, if FLAIR images exist, these are used to correct the white matter hyperintensities (WMH) on the T1w images. Check (from left to right):
 
-ADD UP-TO-DATE SCREENSHOTS HERE
+![ExploreASL Workflow](./img/qc_tutorial/03_qc_structural_module_1.png "03 QC Structural Module 1")
 
 - `//Population/T1Check/Tra_Src_rT1_*.jpg` for T1w quality, structural anomalies, normalization to MNI
 - `//Population/T1Check/Tra_Reg_rT1_*.jpg` same as previous, but after lesion filling (if FLAIR exists)
@@ -97,7 +97,7 @@ ADD UP-TO-DATE SCREENSHOTS HERE
 
 Check, if FLAIR exists (from left to right):
 
-ADD UP-TO-DATE SCREENSHOTS HERE
+![ExploreASL Workflow](./img/qc_tutorial/03_qc_structural_module_2.png "03 QC Structural Module 2")
 
 - `//Population/FLAIRCheck/Tra_Src_rFLAIR_*.jpg` for FLAIR quality, structural anomalies
 - `//Population/FLAIRCheck/Tra_Reg_rFLAIR_*reg.jpg` for WMH segmentation, compare with previous
@@ -123,11 +123,11 @@ The ASL module processes the perfusion (ASL, M0) images, from motion correction 
 - `//Population/ASLCheck/Tra_Reg_pWM_qCBF_untreated_*ASL_*.jpg` for the ASL->T1w registration (T1w WM segmentation in red)
 - `//Population/SliceGradientCheck/SliceGradient_*.jpg` for the orientation of native slices in MNI space
 
-ADD UP-TO-DATE SCREENSHOTS HERE
+![ExploreASL Workflow](./img/qc_tutorial/05_qc_of_asl_module_1.png "05 QC ASL Module 1")
 
 If time-series exist (from left to right):
 
-ADD UP-TO-DATE SCREENSHOTS HERE
+![ExploreASL Workflow](./img/qc_tutorial/05_qc_of_asl_module_2.png "05 QC ASL Module 2")
 
 - `//Population/RawSourceIMCheck/Tra_mean_control_*.jpg` for the inspection of the average ASL source image
 - `//Population/SD_SNR/Tra_SD*ASL_*.jpg` for the temporal SD image. This should be a smooth, noisy image, with only vascular peaks.
@@ -136,7 +136,7 @@ ADD UP-TO-DATE SCREENSHOTS HERE
 
 If an M0 scan exists (from left to right):
 
-ADD UP-TO-DATE SCREENSHOTS HERE
+![ExploreASL Workflow](./img/qc_tutorial/05_qc_of_asl_module_3.png "05 QC ASL Module 3")
 
 - `//Population/M0Check/Tra_noSmooth_M0_*_ASL*.jpg` for the inspection of M0
 - `//Population/M0_Reg_ASL/Tra_Reg_pGM_noSmooth_M0_*ASL*.jpg` for the M0->T1w registration 
@@ -171,7 +171,14 @@ To create a nice visualization, open the T1w NIfTI, and then load the ASL CBF im
 
 **E) Check the default, basic ROI overview of the data in `//Population/Stats/*.tsv`. These filenames are built up as:**
 
-ADD_TABLE_HERE
+| Values                              | Description                                                                             |
+|-------------------------------------|-----------------------------------------------------------------------------------------|
+| `(mean\|median\|spatialCoV)`        | The statistic: either the mean, median, or coefficient of variance over the ROI         |
+| `(qCBF_untreated)`                  | The input data (this can be anything, e.g. M0, pGM, FLAIR)                              |
+| `(TotalGM\|DeepWM\|MNI_structural)` | The applied atlas, which specifies which ROIs to use                                    |
+| `(n=x)`                             | The number of subjects in the analysis (these are rows in the TSV file)                 |
+| `(07-Mar-2019)`                     | The date of the analysis                                                                |
+| `PVC(0\|2)`                         | Partial volume correction (PVC) options: 0 (no PVC), 2 (two-compartment, classical PVC) |
 
 Start by opening ‘mean_qCBF_untreated_MNI_structural_n=1_07-Mar-2019_PVC2.tsv’. Notice that columns A to L are the ‘covariates’, whereas the remaining columns are the results of the ROI analysis. See the names of the MNI_structural atlas (Caudate, Cerebellum, Frontal, etc), and notice how from each of them, 3 columns are created, with the B (bilateral), L (left), or R (right) part of the ROI.
 
