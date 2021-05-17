@@ -730,6 +730,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_deletem" class="md-nav__link">
+    xASL_bids_MergeNifti_Delete.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_mergem" class="md-nav__link">
+    xASL_bids_MergeNifti_Merge.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_renameparmsm" class="md-nav__link">
+    xASL_bids_MergeNifti_RenameParms.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_siemensaslfilesm" class="md-nav__link">
+    xASL_bids_MergeNifti_SiemensASLFiles.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_par2jsonm" class="md-nav__link">
     xASL_bids_Par2JSON.m
   </a>
@@ -1059,6 +1087,13 @@
           <li class="md-nav__item">
   <a href="#xasl_im_projectlabelsoverdatam" class="md-nav__link">
     xASL_im_ProjectLabelsOverData.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_im_replacelabelm" class="md-nav__link">
+    xASL_im_ReplaceLabel.m
   </a>
   
 </li>
@@ -1440,6 +1475,13 @@
           <li class="md-nav__item">
   <a href="#xasl_quant_bsupcalculationm" class="md-nav__link">
     xASL_quant_BSupCalculation.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_quant_basilm" class="md-nav__link">
+    xASL_quant_Basil.m
   </a>
   
 </li>
@@ -2426,6 +2468,34 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_deletem" class="md-nav__link">
+    xASL_bids_MergeNifti_Delete.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_mergem" class="md-nav__link">
+    xASL_bids_MergeNifti_Merge.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_renameparmsm" class="md-nav__link">
+    xASL_bids_MergeNifti_RenameParms.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_siemensaslfilesm" class="md-nav__link">
+    xASL_bids_MergeNifti_SiemensASLFiles.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_par2jsonm" class="md-nav__link">
     xASL_bids_Par2JSON.m
   </a>
@@ -2755,6 +2825,13 @@
           <li class="md-nav__item">
   <a href="#xasl_im_projectlabelsoverdatam" class="md-nav__link">
     xASL_im_ProjectLabelsOverData.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_im_replacelabelm" class="md-nav__link">
+    xASL_im_ReplaceLabel.m
   </a>
   
 </li>
@@ -3136,6 +3213,13 @@
           <li class="md-nav__item">
   <a href="#xasl_quant_bsupcalculationm" class="md-nav__link">
     xASL_quant_BSupCalculation.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_quant_basilm" class="md-nav__link">
+    xASL_quant_Basil.m
   </a>
   
 </li>
@@ -4110,6 +4194,7 @@ separate layer within subjects, but now isn't?)</p>
 <li>Copy files</li>
 <li>Parse M0</li>
 <li>Create DataPar.json</li>
+<li>Clean up</li>
 </ol>
 <hr />
 <h3 id="xasl_bids_comparestructuresm">xASL_bids_CompareStructures.m</h3>
@@ -4164,6 +4249,11 @@ and parses their headers. It extracts the DICOM parameters important for ASL,
 makes sure they are in the correct format, if missing then replaces with default
 value, it also checks if the parameters are consistent across DICOM files for a
 single sequence.</p>
+<ol>
+<li>Admin</li>
+<li>Set up the default values</li>
+<li>Recreate the parameter file from raw data</li>
+</ol>
 <hr />
 <h3 id="xasl_bids_getphoenixprotocolm">xASL_bids_GetPhoenixProtocol.m</h3>
 <p><strong>Format:</strong></p>
@@ -4212,6 +4302,38 @@ of the last number in the filename (Y) alternating the tags and controls</li>
 <li>xASL_bids_MergeNifti_Delete Delete NiftiPaths and associated JSONs</li>
 <li>xASL_bids_MergeNifti_RenameParms Find *_parms.m files in directory and shorten to provided name</li>
 </ol>
+<hr />
+<h3 id="xasl_bids_mergenifti_deletem">xASL_bids_MergeNifti_Delete.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_bids_MergeNifti_Delete(NiftiPaths);
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Delete NiftiPaths and associated JSONs.</p>
+<hr />
+<h3 id="xasl_bids_mergenifti_mergem">xASL_bids_MergeNifti_Merge.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">pathOut = xASL_bids_MergeNifti_Merge(NiftiPaths,indexSortedFile,nameMerged,bAlternatingControlLabel)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Merge NiftiPaths &amp; save to pathOut.</p>
+<hr />
+<h3 id="xasl_bids_mergenifti_renameparmsm">xASL_bids_MergeNifti_RenameParms.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_bids_MergeNifti_RenameParms(Fpath,Fname);
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Find *_parms.m files in directory and shorten to provided name.</p>
+<hr />
+<h3 id="xasl_bids_mergenifti_siemensaslfilesm">xASL_bids_MergeNifti_SiemensASLFiles.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">pathOut = xASL_bids_MergeNifti_SiemensASLFiles(NiftiPaths)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible (Siemens).</p>
 <hr />
 <h3 id="xasl_bids_par2jsonm">xASL_bids_Par2JSON.m</h3>
 <p><strong>Format:</strong></p>
@@ -4873,6 +4995,20 @@ but works only in 2D. Make sure to make a 2D image from a 3D or 4D image
 using xASL_vis_TransformData2View.m
 can be used in combination with xASL_vis_Imwrite.m</p>
 <hr />
+<h3 id="xasl_im_replacelabelm">xASL_im_ReplaceLabel.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_im_ReplaceLabel(pathNifti, LabelNumbersOld, LabelNumbersNew, pathNewNifti)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This function replaces label values/numbers inside a NIfTI
+image, by the following steps:</p>
+<ol>
+<li>Load NIfTI</li>
+<li>Replace numbers</li>
+<li>Save NIfTI</li>
+</ol>
+<hr />
 <h3 id="xasl_im_resamplelinearfairm">xASL_im_ResampleLinearFair.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">[output_res]=xASL_im_ResampleLinearFair(im_input,newsize)
@@ -5254,6 +5390,8 @@ Some Siemens 3D GRASE puts a second Dummy control image -&gt; iDummy = 2;</p>
 <li>Determine ASL indices</li>
 <li>Save ASL4D NIfTI</li>
 <li>Split relevant JSON parameters/arrays</li>
+<li>Split ASL4D_aslContext.tsv</li>
+<li>Modify JSON fields</li>
 <li>Copy sidecars</li>
 </ol>
 <hr />
@@ -5264,6 +5402,19 @@ Some Siemens 3D GRASE puts a second Dummy control image -&gt; iDummy = 2;</p>
 
 <p><strong>Description:</strong></p>
 <p>Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.</p>
+<ol>
+<li>Initial settings</li>
+<li>Parse parameters</li>
+<li>Locate dcm2nii executable</li>
+<li>Set default arguments dcm2nii</li>
+<li>Set dcm2niiX initialization loading</li>
+<li>Check if we are reading a DICOM folder</li>
+<li>Check for existing targets</li>
+<li>Create temporary subfolder for converting</li>
+<li>Run dcm2nii and move files to final destination using specified series name</li>
+<li>Cleanup temp</li>
+<li>Optionally return the used input file</li>
+</ol>
 <hr />
 <h3 id="xasl_num2strm">xASL_num2str.m</h3>
 <p><strong>Format:</strong></p>
@@ -5646,6 +5797,23 @@ It assumes that the signal is, at first, optionally saturated by a 90 degree fli
 Then follows a series of BSup pulses (times before readout are given) that do a 180 degree flip. The observed tissue relaxes with time
 T1time and the signal attenuation is calculated for several slices acquired at times relative to the readout.</p>
 <hr />
+<h3 id="xasl_quant_basilm">xASL_quant_Basil.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[CBF_nocalib] = xASL_quant_Basil(PWI, x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This script performs quantification of the PWI using the FSL Basil pipeline. Final calibration to
+physiological units is performed by dividing the quantified PWI by the M0 image/value.
+This function performs the following steps:
+1. Define paths
+2. Delete previous BASIL output
+3. Write the PWI as Nifti file for Basil to read as input
+4. Create option_file that contains options which are passed to Fabber
+5. Run Basil and retrieve CBF output
+6. Scaling to physiological units
+7. Householding</p>
+<hr />
 <h3 id="xasl_quant_feastm">xASL_quant_FEAST.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">xASL_quant_FEAST(x)
@@ -5738,6 +5906,9 @@ Finally, we:</li>
 <p>Note that the output always goes to the CBF image (in the
 future this could go to different stages, e.g. dcm2niiX or
 PWI stage)</p>
+<p>Note that BASIL is also implemented, but it doesn't allow a
+standard space quantification yet (it would need to use
+imSliceNumber)</p>
 <hr />
 <h3 id="xasl_quant_slicetimingm">xASL_quant_SliceTiming.m</h3>
 <p><strong>Format:</strong></p>
