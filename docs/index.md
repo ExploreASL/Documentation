@@ -103,9 +103,3 @@ The following provides an example as how to correctly cite ExploreASL and its th
 * Ref6: Matlab publishes a release twice yearly, which can be reviewed here: https://www.mathworks.com/products/compiler/matlab-runtime.html. You can provide the release number (e.g. 9.4) or year number (e.g. 2018a), or both.
 
 
-
-
-
-
-
-
