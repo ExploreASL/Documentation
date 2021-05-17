@@ -850,6 +850,7 @@ This function performs the following steps:
 8. Copy files
 9. Parse M0
 10. Create DataPar.json
+11. Clean up
 
 
 
@@ -939,6 +940,10 @@ makes sure they are in the correct format, if missing then replaces with default
 value, it also checks if the parameters are consistent across DICOM files for a
 single sequence.
 
+1. Admin
+2. Set up the default values
+3. Recreate the parameter file from raw data
+
 
 
 
@@ -1008,6 +1013,62 @@ This function performs the following steps in subfunctions:
 5. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
 6. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
 7. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
+
+
+----
+### xASL\_bids\_MergeNifti\_Delete.m
+
+**Format:**
+
+```matlab
+xASL_bids_MergeNifti_Delete(NiftiPaths);
+```
+
+**Description:**
+
+Delete NiftiPaths and associated JSONs.
+
+
+----
+### xASL\_bids\_MergeNifti\_Merge.m
+
+**Format:**
+
+```matlab
+pathOut = xASL_bids_MergeNifti_Merge(NiftiPaths,indexSortedFile,nameMerged,bAlternatingControlLabel)
+```
+
+**Description:**
+
+Merge NiftiPaths & save to pathOut.
+
+
+----
+### xASL\_bids\_MergeNifti\_RenameParms.m
+
+**Format:**
+
+```matlab
+xASL_bids_MergeNifti_RenameParms(Fpath,Fname);
+```
+
+**Description:**
+
+Find \*\_parms.m files in directory and shorten to provided name.
+
+
+----
+### xASL\_bids\_MergeNifti\_SiemensASLFiles.m
+
+**Format:**
+
+```matlab
+pathOut = xASL_bids_MergeNifti_SiemensASLFiles(NiftiPaths)
+```
+
+**Description:**
+
+Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible (Siemens).
 
 
 ----
@@ -1969,6 +2030,26 @@ can be used in combination with xASL\_vis\_Imwrite.m
 
 
 ----
+### xASL\_im\_ReplaceLabel.m
+
+**Format:**
+
+```matlab
+xASL_im_ReplaceLabel(pathNifti, LabelNumbersOld, LabelNumbersNew, pathNewNifti)
+```
+
+**Description:**
+
+This function replaces label values/numbers inside a NIfTI
+image, by the following steps:
+
+1. Load NIfTI
+2. Replace numbers
+3. Save NIfTI
+
+
+
+----
 ### xASL\_im\_ResampleLinearFair.m
 
 **Format:**
@@ -2526,7 +2607,9 @@ Some Siemens 3D GRASE puts a second Dummy control image -> iDummy = 2;
 5. Determine ASL indices
 6. Save ASL4D NIfTI
 7. Split relevant JSON parameters/arrays
-8. Copy sidecars
+8. Split ASL4D\_aslContext.tsv
+9. Modify JSON fields
+10. Copy sidecars
 
 
 
@@ -2542,6 +2625,18 @@ Some Siemens 3D GRASE puts a second Dummy control image -> iDummy = 2;
 **Description:**
 
 Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
+
+1. Initial settings
+2. Parse parameters
+3. Locate dcm2nii executable
+4. Set default arguments dcm2nii
+5. Set dcm2niiX initialization loading
+6. Check if we are reading a DICOM folder
+7. Check for existing targets
+8. Create temporary subfolder for converting
+9. Run dcm2nii and move files to final destination using specified series name
+10. Cleanup temp
+11. Optionally return the used input file
 
 
 
@@ -3073,6 +3168,29 @@ T1time and the signal attenuation is calculated for several slices acquired at t
 
 
 ----
+### xASL\_quant\_Basil.m
+
+**Format:**
+
+```matlab
+[CBF_nocalib] = xASL_quant_Basil(PWI, x)
+```
+
+**Description:**
+
+This script performs quantification of the PWI using the FSL Basil pipeline. Final calibration to
+physiological units is performed by dividing the quantified PWI by the M0 image/value.
+This function performs the following steps:
+1. Define paths
+2. Delete previous BASIL output
+3. Write the PWI as Nifti file for Basil to read as input
+4. Create option\_file that contains options which are passed to Fabber
+5. Run Basil and retrieve CBF output
+6. Scaling to physiological units
+7. Householding
+
+
+----
 ### xASL\_quant\_FEAST.m
 
 **Format:**
@@ -3194,6 +3312,10 @@ Finally, we:
 Note that the output always goes to the CBF image (in the
 future this could go to different stages, e.g. dcm2niiX or
 PWI stage)
+
+Note that BASIL is also implemented, but it doesn't allow a
+standard space quantification yet (it would need to use
+imSliceNumber)
 
 
 

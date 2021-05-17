@@ -48,6 +48,27 @@ Append Parms Parameters.
 
 
 ----
+### xASL\_imp\_BIDS2Legacy.m
+
+**Format:**
+
+```matlab
+[x] = xASL_imp_BIDS2Legacy(x);
+```
+
+**Description:**
+
+BIDS to Legacy conversion script which calls xASL\_bids\_BIDS2Legacy.
+
+1. Start with checking dataset\_description.json & rawdata
+- 1. The input is dataset\_description.json in the rawdata folder
+- 2. The input is dataPar.json or sourceStructure.json - have to look for a rawdata folder
+2. Run the legacy conversion: Check if a dataPar is provided, otherwise use the defaults
+3. Overwrite DataParPath
+
+
+
+----
 ### xASL\_imp\_CatchErrors.m
 
 **Format:**
@@ -68,7 +89,7 @@ Catch reported warnings/errors, print them if verbose, & add them to a structure
 **Format:**
 
 ```matlab
-xASL_imp_CreateSummaryFile(imPar, numOf, listsIDs, PrintDICOMFields, globalCounts, scanNames, summary_lines, fid_summary)
+xASL_imp_CreateSummaryFile(imPar, PrintDICOMFields, x, fid_summary)
 ```
 
 **Description:**
@@ -86,7 +107,7 @@ Create summary file.
 **Format:**
 
 ```matlab
-xASL_imp_DCM2NII(imPar, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, bClone2Source,x)
+xASL_imp_DCM2NII(imPar, x)
 ```
 
 **Description:**
@@ -130,13 +151,109 @@ Initialize DCM2NII.
 **Format:**
 
 ```matlab
-[imPar, summary_lines, PrintDICOMFields, globalCounts, dcm2niiCatchedErrors, pathDcmDict] = xASL_imp_DCM2NII_Subject(x, imPar, listsIDs, numOf, settings, globalCounts, iSubject, summary_lines, matches, dcm2niiCatchedErrors, pathDcmDict)
+[imPar, summary_lines, PrintDICOMFields, globalCounts, scanNames, dcm2niiCatchedErrors, pathDcmDict] = xASL_imp_DCM2NII_Subject(x, imPar, iSubject, matches, dcm2niiCatchedErrors)
 ```
 
 **Description:**
 
 Run DCM2NII for one individual subject.
 
+1. Run DCM2NII for one individual subject
+2. Iterate over visits
+3. Loop through all sessions
+4. Iterate over scans
+- 1. Initialize variables (scanID, summary\_line, first\_match)
+- 2. Convert scan ID to a suitable name and set scan-specific parameters
+- 3. Minimalistic feedback of where we are
+- 4. Now pick the matching one from the folder list
+- 5. Determine input and output paths
+- 6. Start the conversion if this scan should not be skipped
+- 7. Store JSON files
+- 8. In case of a single NII ASL file loaded from PAR/REC, we need to shuffle the dynamics from CCCC...LLLL order to CLCLCLCL... order
+- 9. Make a copy of analysisdir in sourcedir
+- 10. Store the summary info so it can be sorted and printed below
+
+
+
+----
+### xASL\_imp\_DCM2NII\_Subject\_CopyAnalysisDir.m
+
+**Format:**
+
+```matlab
+xASL_imp_DCM2NII_Subject_CopyAnalysisDir(nii_files, bClone2Source)
+```
+
+**Description:**
+
+Make a copy of analysisdir in sourcedir.
+
+
+
+----
+### xASL\_imp\_DCM2NII\_Subject\_ShuffleTheDynamics.m
+
+**Format:**
+
+```matlab
+[nii_files, summary_line, globalCounts, ASLContext] = xASL_imp_DCM2NII_Subject_ShuffleTheDynamics(globalCounts, scanpath, scan_name, nii_files, iSubject, iSession, iScan)
+```
+
+**Description:**
+
+Shuffle the dynamics.
+
+1. Fallbacks
+2. Fill NIfTI Table
+3. Get ASL context if possible
+4. Only try shuffling if you dont know the ASL context already
+5. Merge NIfTIs if there are multiples for ASL or M0, merge multiple files
+6. Extract relevant parameters from nifti header and append to summary file
+
+
+
+----
+### xASL\_imp\_DCM2NII\_Subject\_StartConversion.m
+
+**Format:**
+
+```matlab
+[imPar, globalCounts, x, summary_line, destdir, scanpath, scan_name, dcm2niiCatchedErrors, nii_files, first_match] = xASL_imp_DCM2NII_Subject_StartConversion(imPar, globalCounts, x, bSkipThisOne, summary_line, destdir, scanpath, scan_name, dcm2niiCatchedErrors)
+```
+
+**Description:**
+
+Start of DCM2NII subject conversion.
+
+
+
+----
+### xASL\_imp\_DCM2NII\_Subject\_StoreJSON.m
+
+**Format:**
+
+```matlab
+[parms, pathDcmDict] = xASL_imp_DCM2NII_Subject_StoreJSON(imPar, SavePathJSON, first_match, bUseDCMTK, pathDcmDict)
+```
+
+**Description:**
+
+Store JSON.
+
+
+
+----
+### xASL\_imp\_Import\_UpdateDataParPath.m
+
+**Format:**
+
+```matlab
+[x] = xASL_imp_Import_UpdateDataParPath(x, studyPath)
+```
+
+**Description:**
+
+Update x.DataParPath to dataset\_description.json after NII2BIDS conversion
 
 ----
 ### xASL\_imp\_NII2BIDS.m
@@ -172,7 +289,54 @@ Run NII to ASL-BIDS for one individual subject.
 
 1. Initialize
 2. Process all the anatomical files
-3. Process the perfusion files
+3. Process the perfusion files (iterate over sessions)
+- 1. Make a subject directory
+- 2. Iterate over runs
+
+
+
+----
+### xASL\_imp\_NII2BIDS\_SubjectSession.m
+
+**Format:**
+
+```matlab
+[imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel] = xASL_imp_NII2BIDS_SubjectSession(imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel, kk)
+```
+
+**Description:**
+
+NII2BIDS conversion for a single sessions.
+
+
+
+----
+### xASL\_imp\_NII2BIDS\_SubjectSessionRun.m
+
+**Format:**
+
+```matlab
+[imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject] = xASL_imp_NII2BIDS_SubjectSessionRun(imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject, kk, mm)
+```
+
+**Description:**
+
+NII2BIDS conversion for a single sessions, single run.
+
+
+
+----
+### xASL\_imp\_NII2BIDS\_Subject\_DefineM0Type.m
+
+**Format:**
+
+```matlab
+[studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel, bJsonLocalM0isFile] = xASL_imp_NII2BIDS_Subject_DefineM0Type(studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel)
+```
+
+**Description:**
+
+Define M0 Type.
 
 
 

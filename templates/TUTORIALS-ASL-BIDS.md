@@ -101,10 +101,10 @@ There's also a new option to anonymize your data. To do this, you can run the th
 ----
 ## Data in ExploreASL legacy format
 
-Right now, **ExploreASL** still uses the conventional data structure. To convert our **ASL BIDS** rawdata to the **ExploreASL** legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the path to the `sourceStructure.json` file to **ExploreASL**.
+Right now, **ExploreASL** still uses the conventional data structure. To convert our **ASL BIDS** rawdata to the **ExploreASL** legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the `ImportModules` to `1`. Now we pass the path to the `dataset_description.json` file to **ExploreASL**.
 
 ```matlab
-[x] = ExploreASL('sourceStructure.json', [0 0 0 1], 0, 0, 1, 1);
+[x] = ExploreASL('dataset_description.json', [0 0 0 1], 0, 0, 1, 1);
 ```
 
 The import workflow will also generate a `DataPar.json` file. To adapt your pipeline, you can still use the same settings as before, by changing the **JSON** fields.
