@@ -800,8 +800,8 @@
 
 <hr />
 <h2 id="data-in-exploreasl-legacy-format">Data in ExploreASL legacy format</h2>
-<p>Right now, <strong>ExploreASL</strong> still uses the conventional data structure. To convert our <strong>ASL BIDS</strong> rawdata to the <strong>ExploreASL</strong> legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the path to the <code>sourceStructure.json</code> file to <strong>ExploreASL</strong>.</p>
-<pre><code class="matlab">[x] = ExploreASL('sourceStructure.json', [0 0 0 1], 0, 0, 1, 1);
+<p>Right now, <strong>ExploreASL</strong> still uses the conventional data structure. To convert our <strong>ASL BIDS</strong> rawdata to the <strong>ExploreASL</strong> legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the <code>ImportModules</code> to <code>1</code>. Now we pass the path to the <code>dataset_description.json</code> file to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('dataset_description.json', [0 0 0 1], 0, 0, 1, 1);
 </code></pre>
 
 <p>The import workflow will also generate a <code>DataPar.json</code> file. To adapt your pipeline, you can still use the same settings as before, by changing the <strong>JSON</strong> fields.</p>
