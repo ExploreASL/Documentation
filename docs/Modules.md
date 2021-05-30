@@ -25,7 +25,7 @@ specified in the imPar definition. Follow the steps below, for study `"MyStudy"`
 Create a root folder with study ID name, and put the DICOMs in any structure in the sourcedata folder within the study ID root folder
 Examples:
 imPar.StudyID: MyStudy
-StudyRoot folder: `//MyDisk/MyStudy`
+Dataset Root folder: `//MyDisk/MyStudy`
 sourcedata folder containing DICOMs: `//MyDisk/MyStudy/sourcedata`
 2. Make sure that your DICOM data has any structure that can be retrieved
 from the folder and/or file names. This function doesn't yet read the DICOM headers

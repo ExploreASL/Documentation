@@ -850,7 +850,8 @@ This function performs the following steps:
 8. Copy files
 9. Parse M0
 10. Create DataPar.json
-11. Clean up
+11. Copy participants.tsv
+12. Clean up
 
 
 
@@ -2237,6 +2238,48 @@ This function conducts the following steps:
 
 
 ----
+### xASL\_init\_DefineDataDependentSettings.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_DefineDataDependentSettings(x)
+```
+
+**Description:**
+
+Define ExploreASL environment parameters, dependent of loaded data.
+
+
+----
+### xASL\_init\_DefineIndependentSettings.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_DefineIndependentSettings(x)
+```
+
+**Description:**
+
+Define ExploreASL environment parameters, independent of loaded data.
+
+
+----
+### xASL\_init\_DefinePaths.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_DefinePaths(x)
+```
+
+**Description:**
+
+Define paths used by ExploreASL.
+
+
+----
 ### xASL\_init\_DefineStudyData.m
 
 **Format:**
@@ -2334,6 +2377,20 @@ steps:
 
 
 ----
+### xASL\_init\_LoadDataParameterFile.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_LoadDataParameterFile(x, DataParPath, SelectParFile)
+```
+
+**Description:**
+
+Load data parameter file.
+
+
+----
 ### xASL\_init\_LoadMetadata.m
 
 **Format:**
@@ -2407,6 +2464,27 @@ This function runs the following steps:
 
 
 ----
+### xASL\_init\_PrintCheckSettings.m
+
+**Format:**
+
+```matlab
+x = xASL_init_PrintCheckSettings(x)
+```
+
+**Description:**
+
+Check whether pre-defined settings existed in `dataPar.json`.
+
+Prints these on the screen as the start of the pipeline.
+Runs following steps:
+
+1. Set default settings if not defined
+2. Print data/study specific settings
+3. Print warnings
+
+
+----
 ### xASL\_init\_VisualizationSettings.m
 
 **Format:**
@@ -2420,6 +2498,20 @@ This function runs the following steps:
 This function defines several visualization settings are
 used throughout ExploreASL's pipeline and tools, assuming a [121 145 121]
 matrix with 1.5 mm isotropic resolution in MNI space.
+
+
+----
+### xASL\_init\_printSettings.m
+
+**Format:**
+
+```matlab
+xASL_init_printSettings(x)
+```
+
+**Description:**
+
+Print chosen settings.
 
 
 ## Input and Output
@@ -2659,6 +2751,21 @@ See builtin num2str for more details
 
 
 ## QC
+
+----
+### xASL\_qc\_AddLoggingInfo.m
+
+**Format:**
+
+```matlab
+[x] = xASL_qc_AddLoggingInfo(x, loggingEntry)
+```
+
+**Description:**
+
+Logging of errors and warnings within the x structure.
+
+
 
 ----
 ### xASL\_qc\_AsymmetryIndex.m

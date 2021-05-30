@@ -60,11 +60,12 @@ Append Parms Parameters.
 
 BIDS to Legacy conversion script which calls xASL\_bids\_BIDS2Legacy.
 
-1. Start with checking dataset\_description.json & rawdata
+1. Input check
+2. Start with checking dataset\_description.json & rawdata
 - 1. The input is dataset\_description.json in the rawdata folder
 - 2. The input is dataPar.json or sourceStructure.json - have to look for a rawdata folder
-2. Run the legacy conversion: Check if a dataPar is provided, otherwise use the defaults
-3. Overwrite DataParPath
+3. Run the legacy conversion: Check if a dataPar is provided, otherwise use the defaults
+4. Overwrite DatasetRoot
 
 
 
@@ -176,17 +177,21 @@ Run DCM2NII for one individual subject.
 
 
 ----
-### xASL\_imp\_DCM2NII\_Subject\_CopyAnalysisDir.m
+### xASL\_imp\_DCM2NII\_Subject\_CopyTempDir.m
 
 **Format:**
 
 ```matlab
-xASL_imp_DCM2NII_Subject_CopyAnalysisDir(nii_files, bClone2Source)
+xASL_imp_DCM2NII_Subject_CopyTempDir(nii_files, bClone2Source)
 ```
 
 **Description:**
 
-Make a copy of analysisdir in sourcedir.
+Make a copy of the temp directory in the source directory.
+
+1. Iterate over the NIfTI files
+2. Copy the NIfTIs
+3. Copy the JSONs
 
 
 
@@ -243,17 +248,17 @@ Store JSON.
 
 
 ----
-### xASL\_imp\_Import\_UpdateDataParPath.m
+### xASL\_imp\_Import\_UpdateDatasetRoot.m
 
 **Format:**
 
 ```matlab
-[x] = xASL_imp_Import_UpdateDataParPath(x, studyPath)
+[x] = xASL_imp_Import_UpdateDatasetRoot(x, studyPath)
 ```
 
 **Description:**
 
-Update x.DataParPath to dataset\_description.json after NII2BIDS conversion
+Update x.opts.DatasetRoot to dataset\_description.json after NII2BIDS conversion
 
 ----
 ### xASL\_imp\_NII2BIDS.m

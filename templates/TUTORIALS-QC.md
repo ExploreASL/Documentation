@@ -1,6 +1,8 @@
 
 # Tutorials (QC - Quick Start)
 
+**Attention: Unfortunately, the following tutorial is outdated. We are working on an up-to-date version right now.**
+
 This document provides a “quick start” walk-through for a dataset processed by ExploreASL. This can be either the attached example dataset (n=1) or a clinical study. It is always recommended to first test the compatibility of ExploreASL with the example dataset (Step 0 below), and to create a file report for steps 1-6, to get accustomed to the data and to make sure that ExploreASL runs properly. Note that ExploreASL is in development, so naming conventions may change, especially when we move to a complete BIDS adherence.
 
 ----

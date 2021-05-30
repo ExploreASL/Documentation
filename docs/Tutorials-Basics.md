@@ -11,11 +11,11 @@ If you are new to Matlab, we recommend checking out a [Matlab tutorial](https://
 To run **ExploreASL** you have to type in the following command in the **Command Window**: `ExploreASL`. If you already created an **ASL-BIDS dataset** in sourcedata format, you can run the full default **ExploreASL** pipeline like this:
 
 ```matlab
-DataParPath = 'C:\...\MY-BIDS-DATASET\DataParFile.json';
+DatasetRoot = 'C:\...\MY-BIDS-DATASET';
 ImportModules = true;
 ProcessModules = true;
 bPause = false;
-[x] = ExploreASL_Master(DataParPath, ImportModules, ProcessModules, bPause);
+[x] = ExploreASL_Master(DatasetRoot, ImportModules, ProcessModules, bPause);
 ```
 
 ----
@@ -27,16 +27,16 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 
 ### Windows
 
-Let's assume you want to run the compiled version of **ExploreASL latest**. Check the contents of the folder created by `xASL_adm_MakeStandalone.m`, which contains the compiled version. There should be a file called `xASL_latest.exe`. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in `cmd` to open the command prompt in the current folder. The following command will start **ExploreASL**, import the **ASL-BIDS dataset** in sourcedata format, and process the dataset of your `sourceStructure.json` file:
+Let's assume you want to run the compiled version of **ExploreASL latest**. Check the contents of the folder created by `xASL_adm_MakeStandalone.m`, which contains the compiled version. There should be a file called `xASL_latest.exe`. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in `cmd` to open the command prompt in the current folder. The following command will start **ExploreASL**, import the **ASL-BIDS dataset** in sourcedata format, and process the dataset corresponding to your `DatasetRoot` directory:
 
 ```console
-xASL_latest.exe "c:\MY-BIDS-DATASET\sourceStructure.json" "1" "1"
+xASL_latest.exe "c:\MY-BIDS-DATASET" "1" "1"
 ```
 
 The executable will extract all necessary data from the CTF archive within the folder. This is totally normal. Within the command window you should see that **ExploreASL** is starting to process the given dataset:
 
 ```console
-xASL_latest.exe "c:\MY-BIDS-DATASET\sourceStructure.json" "1" "1"
+xASL_latest.exe "c:\MY-BIDS-DATASET" "1" "1"
 (insert example here)
 ```
 
@@ -46,7 +46,7 @@ To test if it is possible to initialize **ExploreASL** without the processing of
 xASL_latest.exe "" "0" "0"
 ```
 
-The usual **ExploreASL** parameters (`DataParPath`, `ImportModules`, `ProcessModules`, `bPause`, `iWorker`, `nWorkers`) have to be given to the compiled **ExploreASL** version as strings. The resulting output could look like this:
+The usual **ExploreASL** parameters (`DatasetRoot`, `ImportModules`, `ProcessModules`, `bPause`, `iWorker`, `nWorkers`) have to be given to the compiled **ExploreASL** version as strings. The resulting output could look like this:
 
 ```console
 xASL_latest.exe "" "0" "0"
@@ -61,10 +61,10 @@ On Linux you can basically do the same as above. We can run the ExploreASL shell
 ./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "" "0" "0"
 ```
 
-Using the options `"" "0" "0"` we initialize **ExploreASL**, but do not process a dataset. To run a dataset, we have to switch the `ImportModules` and/or the `ProcessModules` parameter from 0 to 1 and pass a path for the DataParPath. This could look something like this:
+Using the options `"" "0" "0"` we initialize **ExploreASL**, but do not process a dataset. To run a dataset, we have to switch the `ImportModules` and/or the `ProcessModules` parameter from `0` to `1` and pass a path for the `DatasetRoot` directory. This could look something like this:
 
 ```console
-./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "/home/TestDataSet/analysis/DataParFile.json" "1" "1"
+./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "/home/MY-BIDS-DATASET" "1" "1"
 (insert example here)
 ```
 
@@ -84,16 +84,16 @@ Check out your local images using `docker images`. If you want to rename the doc
 docker tag exploreasl/xasl:latest xasl:my-version
 ```
 
-To start a docker container of **ExploreASL v1.6.0** e.g., you can use the following command:
+To start a docker container of **ExploreASL v1.7.0** e.g., you can use the following command:
 
 ```console
-docker run -e DATAPARFILE=TestDataSet/sourceStructure.json
+docker run -e DATASETROOT=MY-BIDS-DATASET
        -e IMPORTMODULES=1 -e PROCESSMODULES=1
        -v /home/.../incoming:/data/incoming 
-       -v /home/.../outgoing:/data/outgoing xasl:1.6.0
+       -v /home/.../outgoing:/data/outgoing xasl:1.7.0
 ```
 
-- Here `DATAPARFILE` is an environment variable which is a relative path to the data parameter file of your dataset.
+- Here `DATASETROOT` is an environment variable which is a relative path to the `DATASETROOT` directory of your dataset.
 - The `IMPORTMODULES` and `PROCESSMODULES` are the parameters of ExploreASL_Master
 - ```/home/.../incoming:/data/incoming``` is used to mount your dataset folder (```/home/.../incoming```) to its corresponding docker dataset folder (```/data/incoming```). 
 - The same notation is used to mount the docker dataset output folder (```/data/outgoing```) to its corresponding real output folder on your drive (```/home/.../outgoing```).
