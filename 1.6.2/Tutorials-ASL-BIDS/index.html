@@ -1,0 +1,904 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.6.2/Tutorials-ASL-BIDS/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Tutorials (ASL-BIDS) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials-asl-bids" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (ASL-BIDS)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials (ASL-BIDS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tutorials (ASL-BIDS)
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-asl-bids" class="md-nav__link">
+    ExploreASL &amp; ASL-BIDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicom-source-data" class="md-nav__link">
+    DICOM source data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nifti-source-data" class="md-nav__link">
+    NIFTI source data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-anonymization" class="md-nav__link">
+    Data anonymization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-in-exploreasl-legacy-format" class="md-nav__link">
+    Data in ExploreASL legacy format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-processing-pipeline" class="md-nav__link">
+    ExploreASL processing pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-pipeline" class="md-nav__link">
+    Full pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tips-and-tricks" class="md-nav__link">
+    Other tips and tricks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Basics/" class="md-nav__link">
+        Tutorials (Basics)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Advanced/" class="md-nav__link">
+        Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-asl-bids" class="md-nav__link">
+    ExploreASL &amp; ASL-BIDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicom-source-data" class="md-nav__link">
+    DICOM source data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nifti-source-data" class="md-nav__link">
+    NIFTI source data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-anonymization" class="md-nav__link">
+    Data anonymization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-in-exploreasl-legacy-format" class="md-nav__link">
+    Data in ExploreASL legacy format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-processing-pipeline" class="md-nav__link">
+    ExploreASL processing pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-pipeline" class="md-nav__link">
+    Full pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-tips-and-tricks" class="md-nav__link">
+    Other tips and tricks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Tutorials-ASL-BIDS.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="tutorials-asl-bids">Tutorials (ASL-BIDS)</h1>
+<hr />
+<h2 id="exploreasl-asl-bids">ExploreASL &amp; ASL-BIDS</h2>
+<p>Starting with version <strong>v1.6.0</strong>, <strong>ExploreASL</strong> will support an import workflow which allows the user to convert <strong>DICOM</strong> and <strong>NIFTI</strong> data to the <strong>ASL-BIDS</strong> format. Since <strong>ExploreASL</strong> does not fully utilize the <strong>BIDS</strong> format internally, there will also be an automated workflow to convert from <strong>ASL-BIDS</strong> to the <strong>ExploreASL</strong> <strong>legacy format</strong>. In the following subsections we will explain how you can use the automated <strong>ExploreASL</strong> import workflow to convert your data structure to <strong>ASL-BIDS</strong> and how you can process it.</p>
+<p>The <code>ExploreASL_Master</code> script will have the following format:</p>
+<pre><code class="matlab">[x] = ExploreASL([DataParPath, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
+</code></pre>
+
+<p><strong>Parameter descriptions:</strong></p>
+<ul>
+<li>
+<p><code>DataParPath</code>: Path to the study root directory (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">DataParPath</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>CHAR ARRAY</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center">Prompting user input</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>ImportModules</code>: Multi-step import workflow (<code>OPTIONAL</code>)</p>
+<ul>
+<li><code>DCM2NII</code>: Run the DICOM to NIFTI conversion</li>
+<li><code>NII2BIDS</code>: Run the NIFTI to BIDS conversion</li>
+<li><code>ANONYMIZE</code>: Run the defacing and full anonymization</li>
+<li><code>BIDS2LEGACY</code>: Run the BIDS to LEGACY conversion</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ImportModules</th>
+<th align="center">DCM2NII</th>
+<th align="center">NII2BIDS</th>
+<th align="center">ANONYMIZE</th>
+<th align="center">BIDS2LEGACY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>BOOLEAN</code></td>
+<td align="center"><code>BOOLEAN</code></td>
+<td align="center"><code>BOOLEAN</code></td>
+<td align="center"><code>BOOLEAN</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>false</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>ProcessModules</code>: Multi-step processing pipeline (<code>OPTIONAL</code>)</p>
+<ul>
+<li><code>STRUCTURAL</code>: Run the Structural Module</li>
+<li><code>ASL</code>: Run the ASL Module</li>
+<li><code>POPULATION</code>: Run the Population Module</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ProcessModules</th>
+<th align="center">STRUCTURAL</th>
+<th align="center">ASL</th>
+<th align="center">POPULATION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>BOOLEAN</code></td>
+<td align="center"><code>BOOLEAN</code></td>
+<td align="center"><code>BOOLEAN</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>false</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>bPause</code>: Pause workflow before ExploreASL pipeline (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">bPause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>BOOLEAN</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>false</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>iWorker</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">iWorker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>INTEGER</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>nWorkers</code>: Allows parallelization when called externally  (<code>OPTIONAL</code>)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">nWorkers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td align="center"><code>INTEGER</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td align="center"><code>1</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.</p>
+<hr />
+<h2 id="dicom-source-data">DICOM source data</h2>
+<p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.6.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>study root directory</strong>. This study root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file and optionally also a <code>dataPar.json</code> file. Do not forget to set up the source dataset correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>
+<p>The first step to convert your <strong>DICOM</strong> source data to <strong>NIFTI</strong> source data is to run the following command:</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [1 0 0 0], 0, 0, 1, 1);
+</code></pre>
+
+<p>Here we tell <strong>ExploreASL</strong> to run the <code>DCM2NII</code> import module by setting the first boolean variable of the <code>ImportModules</code> to <code>1</code>.</p>
+<hr />
+<h2 id="nifti-source-data">NIFTI source data</h2>
+<p>Let's assume we have <strong>NIFTI</strong> source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard now. To convert this <strong>ASL BIDS</strong> source data to <strong>ASL BIDS</strong> raw data, we have to run the second part of the import workflow. To run the second step, we set the second variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous step, we pass the path to the <code>sourceStructure.json</code> file to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 1 0 0], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h2 id="data-anonymization">Data anonymization</h2>
+<p>There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the path to the <code>sourceStructure.json</code> file to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 0 1 0], 0, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h2 id="data-in-exploreasl-legacy-format">Data in ExploreASL legacy format</h2>
+<p>Right now, <strong>ExploreASL</strong> still uses the conventional data structure. To convert our <strong>ASL BIDS</strong> rawdata to the <strong>ExploreASL</strong> legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the <code>ImportModules</code> to <code>1</code>. Now we pass the path to the <code>dataset_description.json</code> file to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 0 0 1], 0, 0, 1, 1);
+</code></pre>
+
+<p>The import workflow will also generate a <code>dataPar.json</code> file. To adapt your pipeline, you can still use the same settings as before, by changing the <strong>JSON</strong> fields.</p>
+<hr />
+<h2 id="exploreasl-processing-pipeline">ExploreASL processing pipeline</h2>
+<p>If you just want to use the conventional <strong>ExploreASL</strong> processing pipeline, you can simply turn off the import workflow by setting all <code>ImportModules</code> variables to <code>0</code> individually or by using a single <code>0</code> for the <code>ImportModules</code>. This results in the following notation:</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 0, 1, 0, 1, 1);
+</code></pre>
+
+<p>To run individual modules, you can set the <code>ProcessModules</code> individually. If you only want to the <code>Structural Module</code> for example, you can use a <code>[1 0 0]</code> vector. To run all modules, you can use a single <code>1</code> or a vector of ones, which should look like this <code>[1 1 1]</code>. Running the full processing pipeline can therefore be done like this as well:</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 0, [1 1 1], 0, 1, 1);
+</code></pre>
+
+<hr />
+<h2 id="full-pipeline">Full pipeline</h2>
+<p>Running the full pipeline including both import workflow and processing pipeline, can be done by setting both <code>ImportModules</code> and <code>ProcessModules</code> to <code>1</code>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 1, 1, 0, 1, 1);
+</code></pre>
+
+<hr />
+<h2 id="other-tips-and-tricks">Other tips and tricks</h2>
+<p>Note that we changed both name and behavior of the <code>SkipPause</code> variable. The variable is called <code>bPause</code> now. Setting it to <code>true</code> or <code>1</code>, will result in the pipeline being paused before the processing. We removed the <code>iModules</code>, but the functionality of <code>ProcessModules</code> is basically the same. We use boolean notation now, so instead of <code>[1 2 3]</code> you have to use <code>[1 1 1]</code> now.</p>
+<p>The overall import functionality is a work in progress right now. We expect stable behavior in release <code>v1.6.0</code> though. If you plan on using the <code>develop</code> branch until then, you have to live with more or less unstable import behavior.</p>
+<p>The examples shown below are related to versions <code>v1.5.1</code> and older. They will be updated soon. If you want to work with the current <code>develop</code> version, these examples obviously do not apply anymore.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../SPMxASL/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              SPM xASL Functions
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Tutorials-Basics/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tutorials (Basics)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
