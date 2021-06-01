@@ -24,10 +24,10 @@ The `ExploreASL_Master` script will have the following format:
 - `ImportModules`: Multi-step import workflow (`OPTIONAL`)
     - `DCM2NII`: Run the DICOM to NIFTI conversion
     - `NII2BIDS`: Run the NIFTI to BIDS conversion
-    - `DEFACE`: Run the defacing of structural scans
+    - `ANONYMIZE`: Run the defacing (anonymization is still work in progress)
     - `BIDS2LEGACY`: Run the BIDS to LEGACY conversion
 
-    | ImportModules    | DCM2NII       | NII2BIDS      | DEFACE        | BIDS2LEGACY   |
+    | ImportModules    | DCM2NII       | NII2BIDS      | ANONYMIZE     | BIDS2LEGACY   |
     | ---------------- |:-------------:|:-------------:|:-------------:|:-------------:|
     | **Type**         | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     |
     | **Default**      | `false`       | `false`       | `false`       | `false`       |
@@ -89,9 +89,9 @@ Let's assume we have intermediate **NIFTI** data now. To convert this intermedia
 
 
 ----
-## Data defacing
+## Data anonymization
 
-There's also a new option to deface your structural scans. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the `DatasetRoot` directory to **ExploreASL**.
+There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the `DatasetRoot` directory to **ExploreASL**.
 
 ```matlab
 [x] = ExploreASL('drive/.../datasetRoot', [0 0 1 0], 0, 0, 1, 1);

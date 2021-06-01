@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/1.6.2/Tutorials-ASL-BIDS/">
+        <link rel="canonical" href="https://github.com/ExploreASL/1.7.0/Tutorials-ASL-BIDS/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
@@ -494,6 +494,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../License/" class="md-nav__link">
         License
       </a>
@@ -617,20 +632,20 @@
                 <h1 id="tutorials-asl-bids">Tutorials (ASL-BIDS)</h1>
 <hr />
 <h2 id="exploreasl-asl-bids">ExploreASL &amp; ASL-BIDS</h2>
-<p>Starting with version <strong>v1.6.0</strong>, <strong>ExploreASL</strong> will support an import workflow which allows the user to convert <strong>DICOM</strong> and <strong>NIFTI</strong> data to the <strong>ASL-BIDS</strong> format. Since <strong>ExploreASL</strong> does not fully utilize the <strong>BIDS</strong> format internally, there will also be an automated workflow to convert from <strong>ASL-BIDS</strong> to the <strong>ExploreASL</strong> <strong>legacy format</strong>. In the following subsections we will explain how you can use the automated <strong>ExploreASL</strong> import workflow to convert your data structure to <strong>ASL-BIDS</strong> and how you can process it.</p>
+<p>Starting with version <strong>v1.7.0</strong>, <strong>ExploreASL</strong> will support an import workflow which allows the user to convert <strong>DICOM</strong> and <strong>NIFTI</strong> data to the <strong>ASL-BIDS</strong> format. Since <strong>ExploreASL</strong> does not fully utilize the <strong>BIDS</strong> format internally, there will also be an automated workflow to convert from <strong>ASL-BIDS</strong> to the <strong>ExploreASL</strong> <strong>legacy format</strong>. In the following subsections we will explain how you can use the automated <strong>ExploreASL</strong> import workflow to convert your data structure to <strong>ASL-BIDS</strong> and how you can process it.</p>
 <p>The <code>ExploreASL_Master</code> script will have the following format:</p>
-<pre><code class="matlab">[x] = ExploreASL([DataParPath, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
+<pre><code class="matlab">[x] = ExploreASL([DatasetRoot, ImportModules, ProcessModules, bPause, iWorker, nWorkers])
 </code></pre>
 
 <p><strong>Parameter descriptions:</strong></p>
 <ul>
 <li>
-<p><code>DataParPath</code>: Path to the study root directory (<code>OPTIONAL</code>)</p>
+<p><code>DatasetRoot</code>: Path to the BIDS dataset root directory (<code>OPTIONAL</code>)</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th align="center">DataParPath</th>
+<th align="center">DatasetRoot</th>
 </tr>
 </thead>
 <tbody>
@@ -650,7 +665,7 @@
 <ul>
 <li><code>DCM2NII</code>: Run the DICOM to NIFTI conversion</li>
 <li><code>NII2BIDS</code>: Run the NIFTI to BIDS conversion</li>
-<li><code>ANONYMIZE</code>: Run the defacing and full anonymization</li>
+<li><code>ANONYMIZE</code>: Run the defacing (anonymization is still work in progress)</li>
 <li><code>BIDS2LEGACY</code>: Run the BIDS to LEGACY conversion</li>
 </ul>
 <table>
@@ -780,52 +795,52 @@
 <p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.</p>
 <hr />
 <h2 id="dicom-source-data">DICOM source data</h2>
-<p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.6.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>study root directory</strong>. This study root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file and optionally also a <code>dataPar.json</code> file. Do not forget to set up the source dataset correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>
+<p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.7.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>dataset root directory</strong>. This dataset root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file and optionally also a <code>dataPar.json</code> file. Do not forget to set up the source dataset correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>
 <p>The first step to convert your <strong>DICOM</strong> source data to <strong>NIFTI</strong> source data is to run the following command:</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [1 0 0 0], 0, 0, 1, 1);
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', [1 0 0 0], 0, 0, 1, 1);
 </code></pre>
 
 <p>Here we tell <strong>ExploreASL</strong> to run the <code>DCM2NII</code> import module by setting the first boolean variable of the <code>ImportModules</code> to <code>1</code>.</p>
 <hr />
 <h2 id="nifti-source-data">NIFTI source data</h2>
-<p>Let's assume we have <strong>NIFTI</strong> source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard now. To convert this <strong>ASL BIDS</strong> source data to <strong>ASL BIDS</strong> raw data, we have to run the second part of the import workflow. To run the second step, we set the second variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous step, we pass the path to the <code>sourceStructure.json</code> file to <strong>ExploreASL</strong>.</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 1 0 0], 0, 0, 1, 1);
+<p>Let's assume we have intermediate <strong>NIFTI</strong> data now. To convert this intermediate data to <strong>ASL-BIDS</strong> raw data, we have to run the second part of the import workflow. To run the second step, we set the second variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous step, we pass the <code>DatasetRoot</code> directory to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 1 0 0], 0, 0, 1, 1);
 </code></pre>
 
 <hr />
 <h2 id="data-anonymization">Data anonymization</h2>
-<p>There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the path to the <code>sourceStructure.json</code> file to <strong>ExploreASL</strong>.</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 0 1 0], 0, 0, 1, 1);
+<p>There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the <code>DatasetRoot</code> directory to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 1 0], 0, 0, 1, 1);
 </code></pre>
 
 <hr />
 <h2 id="data-in-exploreasl-legacy-format">Data in ExploreASL legacy format</h2>
-<p>Right now, <strong>ExploreASL</strong> still uses the conventional data structure. To convert our <strong>ASL BIDS</strong> rawdata to the <strong>ExploreASL</strong> legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the <code>ImportModules</code> to <code>1</code>. Now we pass the path to the <code>dataset_description.json</code> file to <strong>ExploreASL</strong>.</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', [0 0 0 1], 0, 0, 1, 1);
+<p>Right now, <strong>ExploreASL</strong> still uses the conventional data structure. To convert our <strong>ASL-BIDS</strong> rawdata to the <strong>ExploreASL</strong> legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the <code>ImportModules</code> to <code>1</code>. Like in the steps before, we pass the <code>DatasetRoot</code> directory to <strong>ExploreASL</strong>.</p>
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1], 0, 0, 1, 1);
 </code></pre>
 
 <p>The import workflow will also generate a <code>dataPar.json</code> file. To adapt your pipeline, you can still use the same settings as before, by changing the <strong>JSON</strong> fields.</p>
 <hr />
 <h2 id="exploreasl-processing-pipeline">ExploreASL processing pipeline</h2>
 <p>If you just want to use the conventional <strong>ExploreASL</strong> processing pipeline, you can simply turn off the import workflow by setting all <code>ImportModules</code> variables to <code>0</code> individually or by using a single <code>0</code> for the <code>ImportModules</code>. This results in the following notation:</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 0, 1, 0, 1, 1);
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', 0, 1, 0, 1, 1);
 </code></pre>
 
 <p>To run individual modules, you can set the <code>ProcessModules</code> individually. If you only want to the <code>Structural Module</code> for example, you can use a <code>[1 0 0]</code> vector. To run all modules, you can use a single <code>1</code> or a vector of ones, which should look like this <code>[1 1 1]</code>. Running the full processing pipeline can therefore be done like this as well:</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 0, [1 1 1], 0, 1, 1);
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', 0, [1 1 1], 0, 1, 1);
 </code></pre>
 
 <hr />
 <h2 id="full-pipeline">Full pipeline</h2>
 <p>Running the full pipeline including both import workflow and processing pipeline, can be done by setting both <code>ImportModules</code> and <code>ProcessModules</code> to <code>1</code>.</p>
-<pre><code class="matlab">[x] = ExploreASL('drive/.../studyRoot', 1, 1, 0, 1, 1);
+<pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', 1, 1, 0, 1, 1);
 </code></pre>
 
 <hr />
 <h2 id="other-tips-and-tricks">Other tips and tricks</h2>
 <p>Note that we changed both name and behavior of the <code>SkipPause</code> variable. The variable is called <code>bPause</code> now. Setting it to <code>true</code> or <code>1</code>, will result in the pipeline being paused before the processing. We removed the <code>iModules</code>, but the functionality of <code>ProcessModules</code> is basically the same. We use boolean notation now, so instead of <code>[1 2 3]</code> you have to use <code>[1 1 1]</code> now.</p>
-<p>The overall import functionality is a work in progress right now. We expect stable behavior in release <code>v1.6.0</code> though. If you plan on using the <code>develop</code> branch until then, you have to live with more or less unstable import behavior.</p>
-<p>The examples shown below are related to versions <code>v1.5.1</code> and older. They will be updated soon. If you want to work with the current <code>develop</code> version, these examples obviously do not apply anymore.</p>
+<p>The overall import functionality is a work in progress right now. We expect stable behavior in release <code>v1.7.0</code> though. If you plan on using the <code>develop</code> branch until then, you have to live with more or less unstable import behavior.</p>
+<p>Some of the examples shown on the following pages were written for versions <code>v1.5.1</code> and older. They will be updated soon. If you want to work with the current <code>develop</code> version, these examples obviously do not apply anymore.</p>
                 
               
               

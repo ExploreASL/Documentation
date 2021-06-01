@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/1.6.2/Tutorials-Basics/">
+        <link rel="canonical" href="https://github.com/ExploreASL/1.7.0/Tutorials-Basics/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
@@ -479,6 +479,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../License/" class="md-nav__link">
         License
       </a>
@@ -590,11 +605,11 @@
 <p>The first thing you have to do, to use <strong>ExploreASL</strong>, is to clone the <strong>ExploreASL</strong> repository. If you want to run <strong>ExploreASL</strong> from Matlab, we recommend to clone the main repository directly from the official <a href="https://github.com/ExploreASL/ExploreASL">GitHub website</a>. You also have the option to download the zipped version or to download an older <a href="https://github.com/ExploreASL/ExploreASL/releases">release</a>.</p>
 <p>If you are new to Matlab, we recommend checking out a <a href="https://www.mathworks.com/support/learn-with-matlab-tutorials.html">Matlab tutorial</a>. It can be helpful to add the <strong>ExploreASL</strong> directory to your Matlab paths. Open Matlab, select the <strong>Home</strong> tab, and add the <strong>ExploreASL</strong> directory including its subfolders using the <strong>Set Path</strong> option. Now change your working directory, using the <strong>Current Folder</strong> tab or the <strong>cd</strong> command, to the <strong>ExploreASL</strong> directory.</p>
 <p>To run <strong>ExploreASL</strong> you have to type in the following command in the <strong>Command Window</strong>: <code>ExploreASL</code>. If you already created an <strong>ASL-BIDS dataset</strong> in sourcedata format, you can run the full default <strong>ExploreASL</strong> pipeline like this:</p>
-<pre><code class="matlab">DataParPath = 'C:\...\MY-BIDS-DATASET\DataParFile.json';
+<pre><code class="matlab">DatasetRoot = 'C:\...\MY-BIDS-DATASET';
 ImportModules = true;
 ProcessModules = true;
 bPause = false;
-[x] = ExploreASL_Master(DataParPath, ImportModules, ProcessModules, bPause);
+[x] = ExploreASL_Master(DatasetRoot, ImportModules, ProcessModules, bPause);
 </code></pre>
 
 <hr />
@@ -602,12 +617,12 @@ bPause = false;
 <p>To compile ExploreASL you have to run the <code>xASL_adm_MakeStandalone.m</code> script. If necessary, you can also ask the developer team for a specific compiled version. Providing a compiled version for every operating system and corresponding Matlab version is currently not feasible for us. Please feel free to ask us for help though!
 A compiled version of ExploreASL always requires the corresponding Matlab Runtime. Please checkout the official <a href="https://mathworks.com/products/compiler/matlab-runtime.html">Matlab Documentation</a>. Download the Matlab Runtime of the Matlab Version which was used for the compilation. Make sure to install the Matlab Runtime correctly. If you're using Windows, it is important that the path to the Matlab Runtime is added to Windows <strong>PATH</strong> during the installation.</p>
 <h3 id="windows">Windows</h3>
-<p>Let's assume you want to run the compiled version of <strong>ExploreASL latest</strong>. Check the contents of the folder created by <code>xASL_adm_MakeStandalone.m</code>, which contains the compiled version. There should be a file called <code>xASL_latest.exe</code>. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in <code>cmd</code> to open the command prompt in the current folder. The following command will start <strong>ExploreASL</strong>, import the <strong>ASL-BIDS dataset</strong> in sourcedata format, and process the dataset of your <code>sourceStructure.json</code> file:</p>
-<pre><code class="console">xASL_latest.exe &quot;c:\MY-BIDS-DATASET\sourceStructure.json&quot; &quot;1&quot; &quot;1&quot;
+<p>Let's assume you want to run the compiled version of <strong>ExploreASL latest</strong>. Check the contents of the folder created by <code>xASL_adm_MakeStandalone.m</code>, which contains the compiled version. There should be a file called <code>xASL_latest.exe</code>. We recommend using the command line interface now. For this you can go to the address bar of your file explorer. Type in <code>cmd</code> to open the command prompt in the current folder. The following command will start <strong>ExploreASL</strong>, import the <strong>ASL-BIDS dataset</strong> in sourcedata format, and process the dataset corresponding to your <code>DatasetRoot</code> directory:</p>
+<pre><code class="console">xASL_latest.exe &quot;c:\MY-BIDS-DATASET&quot; &quot;1&quot; &quot;1&quot;
 </code></pre>
 
 <p>The executable will extract all necessary data from the CTF archive within the folder. This is totally normal. Within the command window you should see that <strong>ExploreASL</strong> is starting to process the given dataset:</p>
-<pre><code class="console">xASL_latest.exe &quot;c:\MY-BIDS-DATASET\sourceStructure.json&quot; &quot;1&quot; &quot;1&quot;
+<pre><code class="console">xASL_latest.exe &quot;c:\MY-BIDS-DATASET&quot; &quot;1&quot; &quot;1&quot;
 (insert example here)
 </code></pre>
 
@@ -615,7 +630,7 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 <pre><code class="console">xASL_latest.exe &quot;&quot; &quot;0&quot; &quot;0&quot;
 </code></pre>
 
-<p>The usual <strong>ExploreASL</strong> parameters (<code>DataParPath</code>, <code>ImportModules</code>, <code>ProcessModules</code>, <code>bPause</code>, <code>iWorker</code>, <code>nWorkers</code>) have to be given to the compiled <strong>ExploreASL</strong> version as strings. The resulting output could look like this:</p>
+<p>The usual <strong>ExploreASL</strong> parameters (<code>DatasetRoot</code>, <code>ImportModules</code>, <code>ProcessModules</code>, <code>bPause</code>, <code>iWorker</code>, <code>nWorkers</code>) have to be given to the compiled <strong>ExploreASL</strong> version as strings. The resulting output could look like this:</p>
 <pre><code class="console">xASL_latest.exe &quot;&quot; &quot;0&quot; &quot;0&quot;
 (insert example here)
 </code></pre>
@@ -625,8 +640,8 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 <pre><code class="console">./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ &quot;&quot; &quot;0&quot; &quot;0&quot;
 </code></pre>
 
-<p>Using the options <code>"" "0" "0"</code> we initialize <strong>ExploreASL</strong>, but do not process a dataset. To run a dataset, we have to switch the <code>ImportModules</code> and/or the <code>ProcessModules</code> parameter from 0 to 1 and pass a path for the DataParPath. This could look something like this:</p>
-<pre><code class="console">./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ &quot;/home/TestDataSet/analysis/DataParFile.json&quot; &quot;1&quot; &quot;1&quot;
+<p>Using the options <code>"" "0" "0"</code> we initialize <strong>ExploreASL</strong>, but do not process a dataset. To run a dataset, we have to switch the <code>ImportModules</code> and/or the <code>ProcessModules</code> parameter from <code>0</code> to <code>1</code> and pass a path for the <code>DatasetRoot</code> directory. This could look something like this:</p>
+<pre><code class="console">./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ &quot;/home/MY-BIDS-DATASET&quot; &quot;1&quot; &quot;1&quot;
 (insert example here)
 </code></pre>
 
@@ -640,15 +655,15 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 <pre><code class="console">docker tag exploreasl/xasl:latest xasl:my-version
 </code></pre>
 
-<p>To start a docker container of <strong>ExploreASL v1.6.0</strong> e.g., you can use the following command:</p>
-<pre><code class="console">docker run -e DATAPARFILE=TestDataSet/sourceStructure.json
+<p>To start a docker container of <strong>ExploreASL v1.7.0</strong> e.g., you can use the following command:</p>
+<pre><code class="console">docker run -e DATASETROOT=MY-BIDS-DATASET
        -e IMPORTMODULES=1 -e PROCESSMODULES=1
        -v /home/.../incoming:/data/incoming 
-       -v /home/.../outgoing:/data/outgoing xasl:1.6.0
+       -v /home/.../outgoing:/data/outgoing xasl:1.7.0
 </code></pre>
 
 <ul>
-<li>Here <code>DATAPARFILE</code> is an environment variable which is a relative path to the data parameter file of your dataset.</li>
+<li>Here <code>DATASETROOT</code> is an environment variable which is a relative path to the <code>DATASETROOT</code> directory of your dataset.</li>
 <li>The <code>IMPORTMODULES</code> and <code>PROCESSMODULES</code> are the parameters of ExploreASL_Master</li>
 <li><code>/home/.../incoming:/data/incoming</code> is used to mount your dataset folder (<code>/home/.../incoming</code>) to its corresponding docker dataset folder (<code>/data/incoming</code>). </li>
 <li>The same notation is used to mount the docker dataset output folder (<code>/data/outgoing</code>) to its corresponding real output folder on your drive (<code>/home/.../outgoing</code>).</li>

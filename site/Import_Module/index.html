@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/1.6.2/Import_Module/">
+        <link rel="canonical" href="https://github.com/ExploreASL/1.7.0/Import_Module/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
@@ -321,8 +321,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_copyanalysisdirm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_CopyAnalysisDir.m
+  <a href="#xasl_imp_dcm2nii_subject_copytempdirm" class="md-nav__link">
+    xASL_imp_DCM2NII_Subject_CopyTempDir.m
   </a>
   
 </li>
@@ -349,8 +349,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_import_updatedataparpathm" class="md-nav__link">
-    xASL_imp_Import_UpdateDataParPath.m
+  <a href="#xasl_imp_import_updatedatasetrootm" class="md-nav__link">
+    xASL_imp_Import_UpdateDatasetRoot.m
   </a>
   
 </li>
@@ -571,6 +571,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../License/" class="md-nav__link">
         License
       </a>
@@ -682,8 +697,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_copyanalysisdirm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_CopyAnalysisDir.m
+  <a href="#xasl_imp_dcm2nii_subject_copytempdirm" class="md-nav__link">
+    xASL_imp_DCM2NII_Subject_CopyTempDir.m
   </a>
   
 </li>
@@ -710,8 +725,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_import_updatedataparpathm" class="md-nav__link">
-    xASL_imp_Import_UpdateDataParPath.m
+  <a href="#xasl_imp_import_updatedatasetrootm" class="md-nav__link">
+    xASL_imp_Import_UpdateDatasetRoot.m
   </a>
   
 </li>
@@ -807,6 +822,7 @@
 <p><strong>Description:</strong></p>
 <p>BIDS to Legacy conversion script which calls xASL_bids_BIDS2Legacy.</p>
 <ol>
+<li>Input check</li>
 <li>Start with checking dataset_description.json &amp; rawdata</li>
 <li>
 <ol>
@@ -819,7 +835,7 @@
 </ol>
 </li>
 <li>Run the legacy conversion: Check if a dataPar is provided, otherwise use the defaults</li>
-<li>Overwrite DataParPath</li>
+<li>Overwrite DatasetRoot</li>
 </ol>
 <hr />
 <h3 id="xasl_imp_catcherrorsm">xASL_imp_CatchErrors.m</h3>
@@ -938,13 +954,18 @@
 </li>
 </ol>
 <hr />
-<h3 id="xasl_imp_dcm2nii_subject_copyanalysisdirm">xASL_imp_DCM2NII_Subject_CopyAnalysisDir.m</h3>
+<h3 id="xasl_imp_dcm2nii_subject_copytempdirm">xASL_imp_DCM2NII_Subject_CopyTempDir.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_DCM2NII_Subject_CopyAnalysisDir(nii_files, bClone2Source)
+<pre><code class="matlab">xASL_imp_DCM2NII_Subject_CopyTempDir(nii_files, bClone2Source)
 </code></pre>
 
 <p><strong>Description:</strong></p>
-<p>Make a copy of analysisdir in sourcedir.</p>
+<p>Make a copy of the temp directory in the source directory.</p>
+<ol>
+<li>Iterate over the NIfTI files</li>
+<li>Copy the NIfTIs</li>
+<li>Copy the JSONs</li>
+</ol>
 <hr />
 <h3 id="xasl_imp_dcm2nii_subject_shufflethedynamicsm">xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m</h3>
 <p><strong>Format:</strong></p>
@@ -978,13 +999,13 @@
 <p><strong>Description:</strong></p>
 <p>Store JSON.</p>
 <hr />
-<h3 id="xasl_imp_import_updatedataparpathm">xASL_imp_Import_UpdateDataParPath.m</h3>
+<h3 id="xasl_imp_import_updatedatasetrootm">xASL_imp_Import_UpdateDatasetRoot.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[x] = xASL_imp_Import_UpdateDataParPath(x, studyPath)
+<pre><code class="matlab">[x] = xASL_imp_Import_UpdateDatasetRoot(x, studyPath)
 </code></pre>
 
 <p><strong>Description:</strong></p>
-<p>Update x.DataParPath to dataset_description.json after NII2BIDS conversion</p>
+<p>Update x.opts.DatasetRoot to dataset_description.json after NII2BIDS conversion</p>
 <hr />
 <h3 id="xasl_imp_nii2bidsm">xASL_imp_NII2BIDS.m</h3>
 <p><strong>Format:</strong></p>

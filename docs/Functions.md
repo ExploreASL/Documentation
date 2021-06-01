@@ -851,7 +851,8 @@ This function performs the following steps:
 9. Parse M0
 10. Create DataPar.json
 11. Copy participants.tsv
-12. Clean up
+12. Add dataset\_description.json
+13. Clean up
 
 
 

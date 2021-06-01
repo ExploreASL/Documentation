@@ -1,0 +1,1370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.7.0/Changes/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Change Log - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exploreasl-v162" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Change Log
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-ASL-BIDS/" class="md-nav__link">
+        Tutorials (ASL-BIDS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Basics/" class="md-nav__link">
+        Tutorials (Basics)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Advanced/" class="md-nav__link">
+        Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Change Log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Change Log
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Changes.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="exploreasl-v162">ExploreASL v1.6.2</h1>
+<hr />
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="589-fix-scaling-issues-in-jsons-in-testdatasetderivatives">589 Fix scaling issues in JSONs in TestDataSet/derivatives</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v161">ExploreASL v1.6.1</h1>
+<hr />
+<h2 id="bug-fixes_1">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="578-fix-incorrect-path-searching-by-providing-error-if-no-json-file-is-inputted">578 Fix incorrect path searching by providing error if no .json-file is inputted</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v160">ExploreASL v1.6.0</h1>
+<hr />
+<h2 id="versions-included-software">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15 </p>
+<hr />
+<h2 id="feature-improvements-still-backward-compatible">Feature improvements (still backward compatible)</h2>
+<ul>
+<li>
+<h1 id="62-266-449-json-io-unify-and-use-spm_jsonread-and-spm_jsonwrite-for-all-operations">62, #266, #449: JSON i/o unify and use spm_jsonread and spm_jsonwrite for all operations</h1>
+</li>
+<li>
+<h1 id="349-improve-screenprint-of-the-current-subjectssessionsmodules-by-xasl_iteration">349: Improve screenprint of the current subjects/sessions/modules by xASL_Iteration</h1>
+</li>
+<li>
+<h1 id="384-add-method-to-export-image-matrices-as-structured-points-in-vtk-format">384: Add method to export image matrices as structured points in VTK format</h1>
+</li>
+<li>
+<h1 id="523-update-exploreasl_importconfig-to-work-with-jsons-and-add-alert-for-users">523: Update ExploreASL_ImportConfig to work with JSONs and add alert for users</h1>
+</li>
+<li>
+<h1 id="538-function-to-user-replace-label-values-in-atlas-nifti-written-for-the-cicero-study">538: Function to user-replace label values in atlas NIfTI, written for the CICERO study</h1>
+</li>
+<li>
+<h1 id="559-add-option-xmakenifti4dicom-to-create-cbf-optimized-for-dicom-creationpacs-export">559: Add option x.MakeNIfTI4DICOM to create CBF optimized for DICOM creation/PACS export</h1>
+</li>
+</ul>
+<hr />
+<h2 id="work-in-progress">Work in progress</h2>
+<h3 id="basil">BASIL</h3>
+<ul>
+<li>
+<h1 id="20-data-pre-processing-prepared-for-basil">20: Data pre-processing prepared for BASIL</h1>
+</li>
+<li>
+<h1 id="391-add-single-pld-model-for-basil">391: Add single-PLD model for BASIL</h1>
+</li>
+</ul>
+<h3 id="asl-bids">ASL-BIDS</h3>
+<ul>
+<li>
+<h1 id="290483484-initial-version-of-the-asl-bids-import-workflow">290,#483,#484: Initial version of the ASL-BIDS import workflow</h1>
+</li>
+<li>
+<h1 id="353-correct-conversion-bids-legacy-for-m0-with-reversed-pe-direction">353: Correct conversion BIDS-&gt;Legacy for M0 with reversed PE direction</h1>
+</li>
+<li>
+<h1 id="394514545-improve-modularity-of-the-asl-bids-import-module">394,#514,#545: Improve modularity of the ASL-BIDS import module</h1>
+</li>
+<li>
+<h1 id="411-delete-temporary-folders-in-dicom-bids-conversion">411: Delete temporary folders in DICOM-&gt;BIDS conversion</h1>
+</li>
+<li>
+<h1 id="421-use-imagetype-dicom-field-to-detect-scan-order-in-ge-in-dicom-bids-import">421: Use ImageType DICOM field to detect scan order in GE in DICOM-&gt;BIDS import</h1>
+</li>
+<li>
+<h1 id="426-reading-pld-from-dicom-for-ge-in-import-to-bids">426: Reading PLD from DICOM for GE in import to BIDS</h1>
+</li>
+<li>
+<h1 id="479-asl-bids-import-for-hadamard-encoded-fme-sequences">479: ASL-BIDS import for Hadamard encoded FME sequences</h1>
+</li>
+</ul>
+<h3 id="dro-and-qasper">DRO and QASPER</h3>
+<ul>
+<li>
+<h1 id="361443-import-and-import-test-of-dro">361,#443: Import and import test of DRO</h1>
+</li>
+<li>
+<h1 id="467-improve-script-to-generate-asl-bids-version-of-asl-dro-v220">467: Improve script to generate ASL-BIDS version of ASL DRO v2.2.0</h1>
+</li>
+</ul>
+<h3 id="compilationstand-alone-version">Compilation/stand-alone version</h3>
+<ul>
+<li>
+<h1 id="_1"></h1>
+</li>
+</ul>
+<hr />
+<h2 id="bug-fixes_2">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="184-skip-pvc-in-population-statistics-when-this-does-not-make-sense-for-a-given-roi">184: Skip PVC in Population statistics, when this does not make sense for a given ROI</h1>
+</li>
+<li>
+<h1 id="262-improve-gzip-on-windows">262: Improve GZIP on windows</h1>
+</li>
+<li>
+<h1 id="341-reduce-extensive-usage-of-exploreasl-cli-progress-tracker">341: Reduce extensive usage of ExploreASL CLI progress tracker</h1>
+</li>
+<li>
+<h1 id="368-fix-problem-with-writing-trailing-zeros-in-real-numbers-in-spm_jsonwrite">368: Fix problem with writing trailing zeros in real numbers in spm_jsonwrite</h1>
+</li>
+<li>
+<h1 id="387-remove-graphical-waitbar-interface-from-xasl_im_resamplelinearfair">387: Remove graphical waitbar interface from xASL_im_ResampleLinearFair</h1>
+</li>
+<li>
+<h1 id="415-xasl_copy-allow-recursive-copying-of-directories">415: xASL_Copy: Allow recursive copying of directories</h1>
+</li>
+<li>
+<h1 id="418-verifies-the-slicetiming-parameter-if-timing-difference-is-consistent-between-slices">418: Verifies the SliceTiming parameter if timing difference is consistent between slices</h1>
+</li>
+<li>
+<h1 id="424454-remove-string-and-contains-functions-to-ensure-matlab-compatibility-for-r2016">424,#454: Remove <code>string</code> and <code>contains</code> functions to ensure Matlab compatibility for R2016</h1>
+</li>
+<li>
+<h1 id="430-fix-xasl_adm_replacesymbols-crash-when-trying-to-replace-sub-strings-in-phoenixprotocol-field">430: Fix xASL_adm_ReplaceSymbols crash when trying to replace sub-strings in PhoenixProtocol field</h1>
+</li>
+<li>
+<h1 id="433474542-splitting-of-asl-and-m0-fix-on-rerun-split-metadata-backup-aslcontexttsv">433,#474,#542: Splitting of ASL and M0 - fix on rerun, split metadata, backup aslcontext.tsv</h1>
+</li>
+<li>
+<h1 id="451-clean-unused-code-and-cleaned-the-development-directory">451: Clean unused code and cleaned the development directory</h1>
+</li>
+<li>
+<h1 id="466-warning-if-the-equal-sign-is-used-in-json-files-instead-of-colon">466: Warning if the equal sign is used in JSON files instead of colon</h1>
+</li>
+<li>
+<h1 id="475-fix-error-with-studies-that-have-a-special-character-in-their-name">475: Fix error with studies that have a special character in their name</h1>
+</li>
+<li>
+<h1 id="477-change-vascular-territory-atlases-file-extensions-to-niigz">477: Change vascular territory atlases file extensions to .nii.gz</h1>
+</li>
+<li>
+<h1 id="496-fixed-session-numbers-in-population-module">496: Fixed session numbers in population module</h1>
+</li>
+<li>
+<h1 id="502-fix-smoothing-of-4d-niftis">502: Fix smoothing of 4D NIfTIs</h1>
+</li>
+<li>
+<h1 id="505-allow-token-aliases-in-import-to-be-row-vectors-in-import">505: Allow Token Aliases in import to be row vectors in import</h1>
+</li>
+<li>
+<h1 id="518-exploreasl-logo-and-verbose-overview-shown-only-once-in-a-single-pipeline-run">518: ExploreASL logo and verbose overview shown only once in a single pipeline run</h1>
+</li>
+<li>
+<h1 id="520-stop-import-workflow-from-creating-population-folder-in-root-directory">520: Stop import workflow from creating Population folder in root directory</h1>
+</li>
+<li>
+<h1 id="543-minor-fix-of-xasl_num2str-behavior">543: Minor fix of xASL_num2str behavior</h1>
+</li>
+<li>
+<h1 id="563-minor-design-fix-for-exploreasl-dataset-initialization">563: Minor design fix for ExploreASL dataset initialization</h1>
+</li>
+</ul>
+<hr />
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>
+<h1 id="403423457-improved-inline-comments-and-headers">403,#423,#457: Improved inline comments and headers</h1>
+</li>
+<li>
+<h1 id="452-provide-descriptions-of-available-atlas-options">452: Provide descriptions of available atlas options</h1>
+</li>
+<li>
+<h1 id="463-remove-remaining-markdown-file-to-a-separate-documentation-repository">463: Remove remaining markdown file to a separate Documentation repository</h1>
+</li>
+<li>
+<h1 id="486489-introduce-document-templates-for-github-qc-workflow">486,#489: Introduce document templates for GitHub QC Workflow</h1>
+</li>
+<li>
+<h1 id="499-make-heading-in-documentation-work-in-dark-mode-as-well">499: Make heading in documentation work in dark mode as well</h1>
+</li>
+<li>
+<h1 id="515-added-tutorials-to-documentation">515: Added tutorials to documentation</h1>
+</li>
+<li>
+<h1 id="536-create-a-first-version-of-the-qc-walkthrough-document-in-markdown">536: Create a first version of the QC walkthrough document in markdown</h1>
+</li>
+</ul>
+<h2 id="testing">Testing</h2>
+<ul>
+<li>
+<h1 id="156-make-internal-error-messages-more-specific-by-providing-subject-information">156: Make internal error messages more specific by providing subject information</h1>
+</li>
+<li>
+<h1 id="352-improve-parsing-of-errors-and-warnings-from-log-files">352: Improve parsing of errors and warnings from log files</h1>
+</li>
+<li>
+<h1 id="395416-improve-testing-of-bids-import">395,#416: Improve testing of BIDS import</h1>
+</li>
+<li>
+<h1 id="517-improve-unit-testing-scripts">517: Improve unit testing scripts</h1>
+</li>
+<li>
+<h1 id="529-testdataset-is-in-bids-derivatives-format">529: TestDataSet is in BIDS derivatives format</h1>
+</li>
+<li>
+<h1 id="570-release-testing-and-minor-documentation-improvements">570: Release testing and minor documentation improvements</h1>
+</li>
+</ul>
+<h1 id="exploreasl-v151">ExploreASL v1.5.1</h1>
+<hr />
+<h2 id="bug-fixes_3">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="439-fix-population-module-error-by-correctly-renaming-mni_structural-files">439 Fix population module error by correctly renaming MNI_Structural.* files</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v150">ExploreASL v1.5.0</h1>
+<hr />
+<h2 id="versions-included-software_1">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15 </p>
+<hr />
+<h2 id="feature-improvements-still-backward-compatible_1">Feature improvements (still backward compatible)</h2>
+<ul>
+<li>
+<h1 id="39-create-pv-corrected-gm-wm-cbf-maps-in-native-space">39: Create PV-corrected GM &amp; WM CBF maps in native space</h1>
+</li>
+<li>
+<h1 id="56410-add-mindboggle-atlas-to-exploreasl-and-restructure-general-atlas-access-in-population-module">56,#410: Add Mindboggle atlas to ExploreASL and restructure general atlas access in population module</h1>
+</li>
+<li>
+<h1 id="283-xasl_stat_getroistatistics-provide-more-feedback-on-missing-images">283: <code>xASL_stat_GetROIstatistics</code> provide more feedback on missing images</h1>
+</li>
+<li>
+<h1 id="299-move-customscripts-with-study-specific-scripts-to-a-separate-repository">299: Move <code>CustomScripts</code> with study-specific scripts to a separate repository</h1>
+</li>
+<li>
+<h1 id="302-remove-server-calls-in-cat12-functions">302: Remove server calls in CAT12 functions</h1>
+</li>
+<li>
+<h1 id="313-move-gui-to-a-separate-repository">313: Move GUI to a separate repository</h1>
+</li>
+<li>
+<h1 id="351-t2-and-t1c-files-are-now-also-aligned-to-the-t1w-and-outputted-to-standard-space">351: T2 and T1c files are now also aligned to the T1w and outputted to standard space</h1>
+</li>
+<li>
+<h1 id="354-added-an-option-xdummyscanpositioninasl4d-that-removes-marked-dummy-scans-when-splitting-asl-to-aslm0dummy">354: Added an option <code>x.DummyScanPositionInASL4D</code> that removes marked dummy scans when splitting ASL to ASL+M0+dummy</h1>
+</li>
+<li>
+<h1 id="356396397-internally-restructure-slicetime-allowing-exploreasl-now-to-work-with-multi-band-2d-epi-as-well-or-any-other-slicetime-order">356,#396,#397: Internally restructure SliceTime allowing ExploreASL now to work with multi-band 2D EPI as well or any other SliceTime order</h1>
+</li>
+</ul>
+<hr />
+<h2 id="work-in-progress_1">Work in progress</h2>
+<h3 id="asl-bids_1">ASL-BIDS</h3>
+<ul>
+<li>
+<h1 id="163189357373-conversion-from-dicom-to-bids">163,#189,#357,#373: Conversion from DICOM to BIDS</h1>
+</li>
+<li>
+<h1 id="334382-import-of-par-rec-to-bids">334,#382: Import of PAR-REC to BIDS</h1>
+</li>
+<li>
+<h1 id="343-add-separate-m0-option-to-mtrial-import">343: Add separate M0 option to mTrial import</h1>
+</li>
+</ul>
+<h3 id="compilationstand-alone-version_1">Compilation/stand-alone version</h3>
+<ul>
+<li>
+<h1 id="335-all-input-arguments-can-be-passed-in-the-deployed-mode">335: All input arguments can be passed in the deployed mode</h1>
+</li>
+<li>
+<h1 id="380-enable-advanced-input-parsing-for-xasl-compiled">380: Enable advanced input parsing for xASL compiled</h1>
+</li>
+</ul>
+<hr />
+<h2 id="bug-fixes_4">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="228-fix-cat12-warnings-with-non-existent-field-cm">228: Fix CAT12 warnings with non-existent field cm</h1>
+</li>
+<li>
+<h1 id="272-fix-errors-in-json-import-of-asl-sidecars">272: Fix errors in JSON import of ASL sidecars</h1>
+</li>
+<li>
+<h1 id="273285291363-minor-fixes-in-input-parameter-administration">273,#285,#291,#363: Minor fixes in input parameter administration</h1>
+</li>
+<li>
+<h1 id="276280288329400-fix-error-in-reading-tsv-files-with-unclear-number-of-columns">276,#280,#288,#329,#400: Fix error in reading TSV files with unclear number of columns</h1>
+</li>
+<li>
+<h1 id="282-population-module-is-run-serially-in-otherwise-parallel-mode">282: Population module is run serially in otherwise parallel mode</h1>
+</li>
+<li>
+<h1 id="292-xasl_qc_sortbyspatialcov-now-use-all-subjects-without-skipping">292: <code>xASL_qc_SortBySpatialCoV</code> now use all subjects without skipping</h1>
+</li>
+<li>
+<h1 id="305-xasl_adm_unixpath-bug-with-windowswsl">305: <code>xASL_adm_UnixPath</code>: bug with Windows+WSL</h1>
+</li>
+<li>
+<h1 id="306378-fix-json-reading-with-i-interpreted-as-a-complex-number">306,#378: Fix JSON reading with 'i' interpreted as a complex number</h1>
+</li>
+<li>
+<h1 id="309-fix-non-linear-registration-of-t1w-to-standard-space-with-too-high-t1w-values">309: Fix non-linear registration of T1w to standard space with too high T1w values</h1>
+</li>
+<li>
+<h1 id="312-xasl_stat_getroistatistics-fix-skipping-of-actual-roi-extraction">312: <code>xASL_stat_GetROIstatistics</code> fix skipping of actual ROI extraction</h1>
+</li>
+<li>
+<h1 id="325-xasl_adm_cleanupbeforererun-delete-files-correctly">325: <code>xASL_adm_CleanUpBeforeRerun</code> delete files correctly</h1>
+</li>
+<li>
+<h1 id="339-fix-json-reading-of-special-characters">339: Fix JSON reading of special characters</h1>
+</li>
+<li>
+<h1 id="399-fix-special-characters-in-windows-filenames">399: Fix special characters in Windows filenames</h1>
+</li>
+<li>
+<h1 id="405-fix-range-check-error-in-background-suppression-timing-calculation">405: Fix range-check error in Background Suppression timing calculation</h1>
+</li>
+<li>
+<h1 id="406-fix-xasl_stat_mediannan-for-all-nan-input">406: Fix <code>xASL_stat_MedianNan</code> for all-NaN input</h1>
+</li>
+<li>
+<h1 id="408409-skip-missing-fields-in-cat-during-reports-in-compiled-exploreasl">408,#409: Skip missing fields in CAT during reports in compiled ExploreASL</h1>
+</li>
+</ul>
+<hr />
+<h2 id="documentation_1">Documentation</h2>
+<ul>
+<li>
+<h1 id="7-create-readme-files-in-subfolders-and-added-to-interactive-documentation">7: Create README files in subfolders and added to interactive documentation</h1>
+</li>
+<li>
+<h1 id="279-345-move-documentation-to-a-separate-repository">279, #345: Move documentation to a separate repository</h1>
+</li>
+<li>
+<h1 id="300318-improve-exploreasl-tutorial">300,#318: Improve ExploreASL tutorial</h1>
+</li>
+<li>
+<h1 id="355-documentation-improvements-regarding-input-parameters">355: Documentation improvements regarding input parameters</h1>
+</li>
+</ul>
+<h2 id="testing_1">Testing</h2>
+<ul>
+<li>
+<h1 id="193350398-testing-dicom-to-bids-conversion-against-a-reference">193,#350,#398: Testing DICOM to BIDS conversion against a reference</h1>
+</li>
+<li>
+<h1 id="294-implement-initial-unit-testing-framework">294: Implement initial unit testing framework</h1>
+</li>
+<li>
+<h1 id="326-parse-warningserrors-from-all-log-in-all-subdirectories">326: Parse warnings/errors from all log in all subdirectories</h1>
+</li>
+<li>
+<h1 id="369-unit-testing-of-xasl_test_getlogcontent">369: Unit testing of <code>xASL_test_getLogContent</code></h1>
+</li>
+<li>
+<h1 id="371376404-testing-script-for-the-dicom-bids-legacy-conversion-and-processing">371,#376,#404: Testing script for the DICOM-&gt;BIDS-&gt;Legacy conversion and processing</h1>
+</li>
+</ul>
+<h1 id="exploreasl-v140">ExploreASL v1.4.0</h1>
+<hr />
+<h2 id="versions-included-software_2">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15 </p>
+<hr />
+<h2 id="feature-improvements-still-backward-compatible_2">Feature improvements (still backward compatible)</h2>
+<ul>
+<li>
+<h1 id="20-implement-basil-changed-order-quantificationmasking-and-always-save-resampled-pwi4d-for-quantification-facilitating-basil">20 Implement BASIL -&gt; changed order quantification/masking, and always save resampled PWI4D for quantification, facilitating BASIL</h1>
+</li>
+<li>
+<h1 id="35-calculation-background-suppression-efficiency-for-pseudo-m0-in-case-of-missing-separate-m0-images-but-still-using-background-suppressed-mean-control-as-pseudo-m0-a-single-correction-value-3d-or-slice-wise-correction-value-2d-are-applied-to-the-pseudo-m0-imageslices">35 Calculation background suppression efficiency for pseudo-M0 -&gt; in case of missing separate M0 images but still using background suppressed mean control as pseudo-M0, a single correction value (3D) or slice-wise correction value (2D) are applied to the pseudo-M0 image/slices</h1>
+</li>
+<li>
+<h1 id="131-exploreasl_gui-beta-testing-enhancements-set-1-aesthetic-improvements-in-certain-modules-fixed-incorrect-removal-of-philips-related-json-sidecar-fields-in-dcm2bids-import-module-correction-of-asl-image-flickering-bug-and-ability-for-the-user-to-subset-without-having-to-reload-the-data-added-ability-to-clarify-data-type-of-variables-without-the-need-to-reload-data-added-auto-select-auto-complete-functionality-in-the-parmsmaker-module-as-soon-as-the-user-indicates-an-analysis-directory-ie-auto-completion-of-slicereadouttime-for-pcasl">131 ExploreASL_GUI beta-testing enhancements set 1 -&gt; Aesthetic improvements in certain modules, fixed incorrect removal of Philips-related json-sidecar fields in DCM2BIDS / Import module. Correction of ASL image flickering bug and ability for the user to subset without having to reload the data. Added ability to clarify data type of variables without the need to reload data. Added auto-select / auto-complete functionality in the ParmsMaker module as soon as the user indicates an analysis directory (i.e auto-completion of SliceReadoutTime for pCASL)</h1>
+</li>
+<li>
+<h1 id="166-update-adni-import-in-exploreasl_import">166 Update ADNI import in ExploreASL_Import</h1>
+</li>
+<li>
+<h1 id="179-finish-creation-average-maps-for-cicero-improvements-xasl_wrp_createpopulationtemplates">179 Finish creation average maps for CICERO -&gt; improvements xASL_wrp_CreatePopulationTemplates</h1>
+</li>
+<li>
+<h1 id="190-hammers-atlas-option-cat12-restored-the-original-hammers-atlas-option-for-a-colleague-note-its-license-though">190 Hammers atlas option CAT12 -&gt; restored the original Hammers atlas option for a colleague (note it's license though!)</h1>
+</li>
+<li>
+<h1 id="225-create-datapar-option-for-running-spm12-longitudinal-registration">225 Create DataPar option for running SPM12 longitudinal registration</h1>
+</li>
+<li>
+<h1 id="241-add-warning-when-loading-data-without-x-output-structure">241 Add warning when loading data without x output structure</h1>
+</li>
+<li>
+<h1 id="243-shorten-spm-initialization-time-removed-configuration-loading-of-unused-toolboxes-check-if-the-spm-dicom-import-module-is-still-needed">243 Shorten SPM initialization time -&gt; removed configuration loading of unused toolboxes (check if the SPM DICOM import module is still needed)</h1>
+</li>
+</ul>
+<hr />
+<h2 id="work-in-progress_2">Work in progress</h2>
+<h3 id="asl-bids_2">ASL-BIDS</h3>
+<ul>
+<li>
+<h1 id="193-comparing-bids-folders-for-testing-purpose">193 Comparing BIDS folders (for testing purpose)</h1>
+</li>
+<li>
+<h1 id="226-add-new-dicom-tags-to-dcmtk-import">226 Add new DICOM tags to DCMTK import</h1>
+</li>
+</ul>
+<hr />
+<h2 id="bug-fixes_5">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="191-wmh-warning-when-no-flair-analyzed-this-warning-is-now-removed-if-no-flair-was-present-in-the-data">191 WMH warning when no FLAIR analyzed -&gt; this warning is now removed if no FLAIR was present in the data</h1>
+</li>
+<li>
+<h1 id="248-temporary-fix-native-space-processing-in-population-module">248 Temporary fix native space processing -&gt; in Population module</h1>
+</li>
+<li>
+<h1 id="252-population-modules-analysis-masks-minor-errors">252 Population modules analysis masks - minor errors</h1>
+</li>
+<li>
+<h1 id="267-error-in-reading-jsons-from-epad">267 Error in reading JSONs from EPAD</h1>
+</li>
+</ul>
+<hr />
+<h2 id="documentation_2">Documentation</h2>
+<ul>
+<li>
+<h1 id="196-all-contributors-all-contributors-are-now-automatically-added-to-the-main-readmemd">196 All contributors -&gt; all contributors are now automatically added to the main README.md</h1>
+</li>
+<li>
+<h1 id="217-documentation-improvements">217 Documentation improvements</h1>
+</li>
+<li>
+<h1 id="219-add-user-to-documentation">219 Add user to documentation</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v130">ExploreASL v1.3.0</h1>
+<hr />
+<h2 id="versions-included-software_3">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15 </p>
+<hr />
+<h2 id="feature-improvements-still-backward-compatible_3">Feature improvements (still backward compatible)</h2>
+<ul>
+<li>
+<h1 id="59-assign-weights-to-status-files-allowing-the-external-python-exploreasl-gui-to-provide-a-better-estimate-of-the-progress">59: Assign "weights" to status files, allowing the external Python ExploreASL GUI to provide a better estimate of the progress</h1>
+</li>
+<li>
+<h1 id="71-remove-custom-lesions-lesion_flairt1_dnii-from-wmh_segmnii">71 Remove custom lesions <code>(Lesion\_(FLAIR|T1)\_\\d\\.nii)</code> from <code>WMH_SEGM.nii</code></h1>
+</li>
+<li>
+<h1 id="76-improve-functionality-of-exploreasl-through-command-line-interface-cli-ie-without-using-the-graphical-user-interface-gui-of-matlab">76: Improve functionality of ExploreASL through Command Line Interface (CLI), i.e. without using the Graphical User Interface (GUI) of Matlab</h1>
+</li>
+<li>
+<h1 id="123-create-status-files-also-for-skipped-processing-parts-this-is-mainly-the-case-for-running-the-structural-module-without-a-flair-scan-having-all-status-files-helps-third-party-tools-such-as-the-python-exploreasl-gui-to-know-that-processing-has-succesfully-completed-duplicate-issues-137-and-129">123 Create status files also for skipped processing parts: this is mainly the case for running the structural module without a FLAIR scan. Having all status files helps third-party tools such as the Python ExploreASL GUI to know that processing has succesfully completed (duplicate issues #137 and #129)</h1>
+</li>
+<li>The same was done for the ASL realignment status file, in case realignment is skipped for a 3D scan</li>
+<li>
+<h1 id="145-improve-niigz-management-in-xasl_spm_deformations-allow-either-nii-or-niigz-as-input-treat-them-equally-and-when-niigz-is-provided-as-output-path-zip-the-resulting-deformed-image">145: Improve .nii(.gz) management in xASL_spm_deformations: allow either .nii or .nii.gz as input, treat them equally, and when .nii.gz is provided as output path, zip the resulting deformed image</h1>
+</li>
+</ul>
+<hr />
+<h2 id="work-in-progress_3">Work in progress</h2>
+<ul>
+<li>
+<h1 id="32-docker-integration">32 Docker integration</h1>
+</li>
+<li>
+<h1 id="55-exploreasl-gui-written-in-python">55 ExploreASL GUI, written in Python</h1>
+</li>
+<li>
+<h1 id="106-xasl_im_splitimagelabels-allow-splitting-labels-and-warping-them-to-standard-space">106 <code>xASL_im_SplitImageLabels</code>: Allow splitting labels, and warping them to standard space.</h1>
+This is part of a continuous development on creating average flow territory templates and figures.</li>
+<li>
+<h1 id="162-remove-bnativespaceprocessing-from-testdataset-for-now-return-this-when-bnativespaceprocess-is-made-more-modular">162 Remove <code>bNativeSpaceProcessing</code> from TestDataSet for now, return this when <code>bNativeSpaceProcess</code> is made more modular</h1>
+</li>
+</ul>
+<h3 id="asl-bids_3">ASL-BIDS</h3>
+<ul>
+<li>
+<h1 id="82-avoid-4d-files-with-nt1-which-is-not-allowed-in-the-bids-validator">82 Avoid 4D files with nT==1, which is not allowed in the BIDS validator</h1>
+</li>
+</ul>
+<h3 id="compilationstand-alone-version_2">Compilation/stand-alone version</h3>
+<ul>
+<li>
+<h1 id="88-xasl_sysmove-error-in-windows-when-a-path-includes-whitespaces">88 <code>xASL_SysMove</code> error in Windows when a path includes whitespaces ' '</h1>
+</li>
+</ul>
+<hr />
+<h2 id="bug-fixes_6">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="85-improvement-applyquantification">85 Improvement ApplyQuantification</h1>
+</li>
+<li>
+<h1 id="99-improve-loading-of-metadata-xasl_str2num-xasl_init_loadmetadata">99 Improve loading of metadata (<code>xASL_str2num</code> &amp; <code>xASL_init_LoadMetaData</code>)</h1>
+</li>
+<li>
+<h1 id="105-in-case-of-missing-data-fill-xssubjectid-and-sdat-data-for-the-last-subjectsession">105 In case of missing data, fill <code>x.S.SUBJECTID</code> and <code>S.DAT</code> data for the last subject/session</h1>
+</li>
+<li>
+<h1 id="119-create-status-file-for-last-subject-if-its-processing-is-skipped">119 Create status file for last subject, if it's processing is skipped</h1>
+</li>
+<li>
+<h1 id="120-xasl_im_createanalysismask-in-native-space-mode-when-in-parallel-execution">120 <code>xASL_im_CreateAnalysisMask</code> in native space mode when in parallel execution</h1>
+</li>
+<li>
+<h1 id="138-fix-structure-testdatajson-its-json-files">138 Fix structure TestDataJSON &amp; its JSON files</h1>
+</li>
+<li>
+<h1 id="139-ensure-that-x-fields-are-not-case-sensitive-by-eg-replacing-strcmp-by-strcmpi">139 Ensure that x fields are not case sensitive, by e.g. replacing <code>strcmp</code> by <code>strcmpi</code></h1>
+</li>
+<li>
+<h1 id="141-solve-conflicts-between-develop-and-master-these-were-minor-edits-that-werent-implemented-in-develop-yet">141 Solve conflicts between develop and master, these were minor edits that weren't implemented in develop yet</h1>
+</li>
+<li>
+<h1 id="143-ensure-that-vba-masks-are-also-created-for-a-3d-spiral-sequence-this-was-not-created-yet-as-the-susceptibility-masks-were-missing-for-this-sequence">143 ensure that VBA masks are also created for a 3D spiral sequence (this was not created yet as the susceptibility masks were missing for this sequence)</h1>
+</li>
+<li>
+<h1 id="148-syncing-the-roilesion-processing-of-t1w-flair">148 Syncing the ROI/lesion processing of T1w &amp; FLAIR</h1>
+</li>
+<li>
+<h1 id="151-minor-bugfixes-for-topup">151 Minor bugfixes for TopUp</h1>
+</li>
+<li>
+<h1 id="177-fix-xasl_adm_unzipnifti-xasl_io_savenifti-when-path-is-incomplete">177 Fix <code>xASL_adm_UnzipNifti</code> &amp; <code>xASL_io_SaveNifti</code> when path is incomplete</h1>
+</li>
+<li>
+<ul>
+<li>Skip warnings for small populations (in the start of <code>xASL_module_Population</code>)</li>
+</ul>
+</li>
+<li>Fix regular expression in <code>xASL_init_LoadMetaData</code></li>
+<li><code>iRow</code> counting fix in <code>xASL_bids_Add2ParticipantsTSV</code></li>
+</ul>
+<hr />
+<h2 id="documentation_3">Documentation</h2>
+<h1 id="7-documentationrevamp-xasl_im_clipextremes">7 Documentation/revamp <code>xASL_im_ClipExtremes</code></h1>
+<h1 id="159-ensure-that-all-sequence-notations-use-underscores-instead-of-whitespace-eg-3d_spiral-instead-of-3d-spiral">159 Ensure that all sequence notations use underscores instead of whitespace, e.g. <code>3D_spiral</code> instead of <code>3D spiral</code></h1>
+<h2 id="testing_2">Testing</h2>
+<ul>
+<li>
+<h1 id="86-xasl_qc_testexploreasl-improve-table-creation">86 <code>xASL_qc_TestExploreASL</code>: improve Table creation</h1>
+</li>
+<li>
+<h1 id="112-save-tanimoto-coefficient-ie-a-fuzzy-overlapdice-score-of-the-final-asl-t1w-registration">112 Save Tanimoto Coefficient (i.e. a fuzzy overlap/Dice score) of the final ASL-T1w registration</h1>
+</li>
+<li>
+<h1 id="128-improved-one-internal-test-dataset">128 Improved one internal test dataset</h1>
+</li>
+<li>
+<h1 id="130-xasl_qc_testexploreasl-complete-functionality-by-allowing-windows-parallelization-testing-the-windows-exploreasl-compilation-also-added-unit-testing-framework-in-the-same-issue">130 <code>xASL_qc_TestExploreASL</code>: Complete functionality by allowing Windows parallelization &amp; testing the Windows ExploreASL compilation. Also added unit testing framework in the same issue.</h1>
+</li>
+</ul>
+<h1 id="exploreasl-v122">ExploreASL v1.2.2</h1>
+<hr />
+<h2 id="bug-fixes_7">Bug Fixes</h2>
+<ul>
+<li>
+<h1 id="119-xasl_wrp_linearreg_t1w2mnim-roi-nii-files-correctly-aligned-with-t1">119 xASL_wrp_LinearReg_T1w2MNI.m: ROI .nii files correctly aligned with T1</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v121">ExploreASL v1.2.1</h1>
+<hr />
+<h2 id="bug-fixes_8">Bug Fixes</h2>
+<ul>
+<li>xASL_qc_TestExploreASL: Remove locked folders if rerun</li>
+<li>
+<h1 id="90-xasl_io_nifti2im-manage-the-detection-of-odd-scaling">90 xASL_io_Nifti2Im: manage the detection of odd scaling</h1>
+</li>
+<li>
+<h1 id="93-xasl_sysmove-diz-illegal-symbols-windows">93 xASL_SysMove: diz illegal symbols Windows</h1>
+</li>
+<li>
+<h1 id="102-xasl_wrp_createpopulationtemplates-minor-bugfix">102 xASL_wrp_CreatePopulationTemplates: minor bugfix</h1>
+</li>
+<li>
+<h1 id="104-fix-creation-resultstable-for-testcases-also-86">104 Fix creation ResultsTable for TestCases (also #86)</h1>
+</li>
+<li>
+<h1 id="114-acquiring-matlab-version-doesnt-crash-anymore-in-deployed-mode">114 Acquiring Matlab version doesn't crash anymore in deployed mode</h1>
+</li>
+<li>
+<h1 id="115-fixing-nans-problem-in-m0-mask-computation">115 Fixing NaNs problem in M0 mask computation</h1>
+</li>
+<li>
+<h1 id="118-xasl_adm_gzipallfiles-doesnt-crash-anymore-in-windows">118 xASL_adm_GzipAllFiles doesn't crash anymore in Windows</h1>
+</li>
+<li>
+<h1 id="116-exploreasl-testing-fixes">116 ExploreASL testing fixes:</h1>
+<p><strong> Edit header of saved .tsv-file
+</strong> Cosmetic changes\nUnzip before SPM
+<strong> Clear variables before loading .mat
+</strong> Replace spaces in headers with underscores (which happened automatically apparently upon saving)
+** Remove SPM cellstring </p>
+</li>
+</ul>
+<hr />
+<h2 id="asl-bids-related-bug-fixes">ASL-BIDS-related bug fixes</h2>
+<ul>
+<li>
+<h1 id="96-fix-order-of-magnitude-in-json-sidecars">96 Fix order of magnitude in JSON sidecars</h1>
+</li>
+<li>
+<h1 id="109-no-warning-if-slicereadouttime-not-provided-in-datapar">109 No warning if SliceReadoutTime not provided in DataPar</h1>
+</li>
+<li>
+<h1 id="110-xasl_bids_parms2bidsm-now-deals-correctly-with-vectors-and-slicereadouttime-shortesttr-created-function-for-this-xasl_quant_slicereadouttime_shortest_tr">110 xASL_bids_parms2BIDS.m now deals correctly with vectors and SliceReadoutTime = 'shortestTR': created function for this: xASL_quant_SliceReadoutTime_Shortest_TR</h1>
+</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v120">ExploreASL v1.2.0</h1>
+<hr />
+<h2 id="versions-included-software_4">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15</p>
+<hr />
+<h2 id="major-feature-improvements-still-backward-compatible">Major feature improvements (still backward compatible)</h2>
+<ul>
+<li>Add user flexibility for creating average maps, allowing flipping</li>
+<li>Provide a lesion or ROI mask, to be used not only for cost function masking but also as standard space ROI for ROI-analysis
+  This use is now easier, by simply adding Lesion_FLAIR_1.nii or Lesion_T1_2.nii etc, and visualization improved. These masks are now automatically created   (where lesion can be any other ROI):<blockquote>
+<blockquote>
+<ol>
+<li>Intralesional</li>
+<li>Perilesional, pGM+pWM</li>
+<li>Hemisphere (ipsilateral to lesion)</li>
+<li>Contralateral (i)</li>
+<li>Contralateral (ii)</li>
+<li>Contralateral (iii)</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>Option x.S.bMasking added, allowing specifying masking separately for:<blockquote>
+<blockquote>
+<ol>
+<li>bSusceptibilityMask</li>
+<li>bVascularMask</li>
+<li>subject-wise bGMMask (e.g. the pGM&gt;0.7)</li>
+<li>brainmasking when loading for lower memory usage</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>Affine registration improved &amp; Discrete Cosine Transform (DCT) non-linear registration option added, including an option with partial volume correction built-in for improved DCT-based registration</li>
+</ul>
+<hr />
+<h2 id="bug-fixes_9">Bug Fixes</h2>
+<ul>
+<li>Allow zipping in Unix-based OS without JavaVirtualMachine </li>
+<li>Quantification issue with Philips scale slopes</li>
+<li>DCTMK fix, import parameters</li>
+<li>Use <em>xASL_adm_UnixPath()</em> for Unix system calls, for correct path usage (e.g. for spaces that need escaping)</li>
+<li>Double escaping of backslashes in converting .m to .json for DataPar file - subject-regexp</li>
+<li>Compilation path error</li>
+<li>Correctly concatenate numbers when <em>xASL_num2str</em></li>
+<li>Improvements <em>xASL_adm_LoadParms</em> for converting parameters ASL flavors to BIDS/ExploreASL internally</li>
+</ul>
+<hr />
+<h2 id="features">Features</h2>
+<ul>
+<li>New startup option for starting ExploreASL, loading data, without processing data</li>
+<li>Shortcut <em>ExploreASL</em> for <em>ExploreASL_Master</em></li>
+<li>Now we have <em>xASL_csvWrite</em>, <em>xASL_csvRead</em>, <em>xASL_tsvRead</em>, <em>xASL_tsvWrite</em></li>
+<li><em>xASL_io_Nifti2Im</em> now detects erroneously extreme high scaling (potential import issue with Philips RescaleSlope)
+  issues a warning and/or tries to fix automatically for FLAIR/T1w images</li>
+</ul>
+<hr />
+<h2 id="work-in-progress_4">Work in progress</h2>
+<ul>
+<li>Docu Crawler for automatic documentation creation </li>
+<li>ExploreASL_Import for different ASL flavors</li>
+<li>BIDS implementation import</li>
+</ul>
+<hr />
+<h2 id="documentation_4">Documentation</h2>
+<ul>
+<li>create new prefix for visualization functions (<em>xASL_vis_*</em> instead of <em>xASL_im_*</em>)</li>
+<li>revamp quantification functions for better headers, comments etc</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v113">ExploreASL v1.1.3</h1>
+<hr />
+<h2 id="bug-fixes_10">Bug Fixes</h2>
+<ul>
+<li>hotfix minor bug in running the import using DCMTK without the Matlab Image Processing Toolbox #30</li>
+</ul>
+<h1 id="exploreasl-v112">ExploreASL v1.1.2</h1>
+<hr />
+<h2 id="bug-fixes_11">Bug Fixes</h2>
+<ul>
+<li>hotfix minor bug in loading NIfTIs containing lesion masks in CAT12 #28</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v111">ExploreASL v1.1.1</h1>
+<hr />
+<h2 id="bug-fixes_12">Bug Fixes</h2>
+<ul>
+<li>hotfix minor bug in creating participants.tsv #23</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v110">ExploreASL v1.1.0</h1>
+<hr />
+<h2 id="versions-included-software_5">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1615 
+LST 2.0.15</p>
+<hr />
+<h2 id="bug-fixes_13">Bug Fixes</h2>
+<ul>
+<li>Bug fixes and overall code improvements related to the BIDS import workflow (#11)</li>
+<li>Registration with poor CBF contrast will not issue an error anymore but correctly switch to control-T1w registration only (#17)</li>
+<li>Unexisting x.Sequence field fixed, now an appropriate warning is issued and this field is defined automatically by <code>xASL_adm_DefineASLSequence.m</code> (#16)</li>
+</ul>
+<hr />
+<h2 id="features_1">Features</h2>
+<ul>
+<li>Quantification can now be fully disabled by: <code>x.ApplyQuantification = [0 0 0 0 0];</code> (#14)</li>
+<li>Insert option to disable M0-ASL registration (#13)</li>
+<li>Update of CAT (Computational Anatomy Toolbox) from version 12.5 to 12.7 (#2)</li>
+</ul>
+<hr />
+<h2 id="work-in-progress_5">Work in progress</h2>
+<ul>
+<li>Minor improvements of custom scripts for BBB-ASL and BIDS (#8)</li>
+<li>Minor improvements regarding unit testing of ExploreASL (#10)</li>
+<li>Additional warnings for ExploreASL users (#12)</li>
+</ul>
+<hr />
+<h2 id="documentation_5">Documentation</h2>
+<ul>
+<li>Recent changes include the improvement of the documentation within the ExploreASL structure using markdown files and the introduction of a new documentation repository (#7)</li>
+<li>Some function headers were added for increased understandability (#19). These can be viewed in Matlab by: <code>help ExploreASL_Master</code> where you can replace ExploreASL_Master by the actual function name</li>
+</ul>
+<hr />
+<h1 id="exploreasl-v100">ExploreASL v1.0.0</h1>
+<hr />
+<p>This is the first release version.</p>
+<hr />
+<h2 id="versions-included-software_6">Versions included software</h2>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<p>SPM12 7219 
+CAT12 r1363
+LST 2.0.15</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Requirements/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Requirements
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../License/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
