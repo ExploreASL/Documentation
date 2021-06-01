@@ -369,8 +369,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-anonymization" class="md-nav__link">
-    Data anonymization
+  <a href="#data-defacing" class="md-nav__link">
+    Data defacing
   </a>
   
 </li>
@@ -578,8 +578,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-anonymization" class="md-nav__link">
-    Data anonymization
+  <a href="#data-defacing" class="md-nav__link">
+    Data defacing
   </a>
   
 </li>
@@ -665,7 +665,7 @@
 <ul>
 <li><code>DCM2NII</code>: Run the DICOM to NIFTI conversion</li>
 <li><code>NII2BIDS</code>: Run the NIFTI to BIDS conversion</li>
-<li><code>ANONYMIZE</code>: Run the defacing (anonymization is still work in progress)</li>
+<li><code>DEFACE</code>: Run the defacing of structural scans</li>
 <li><code>BIDS2LEGACY</code>: Run the BIDS to LEGACY conversion</li>
 </ul>
 <table>
@@ -674,7 +674,7 @@
 <th>ImportModules</th>
 <th align="center">DCM2NII</th>
 <th align="center">NII2BIDS</th>
-<th align="center">ANONYMIZE</th>
+<th align="center">DEFACE</th>
 <th align="center">BIDS2LEGACY</th>
 </tr>
 </thead>
@@ -808,8 +808,8 @@
 </code></pre>
 
 <hr />
-<h2 id="data-anonymization">Data anonymization</h2>
-<p>There's also a new option to anonymize your data. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the <code>DatasetRoot</code> directory to <strong>ExploreASL</strong>.</p>
+<h2 id="data-defacing">Data defacing</h2>
+<p>There's also a new option to deface your structural scans. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the <code>ImportModules</code> to <code>1</code>. Similar to the previous steps, we pass the <code>DatasetRoot</code> directory to <strong>ExploreASL</strong>.</p>
 <pre><code class="matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 1 0], 0, 0, 1, 1);
 </code></pre>
 
