@@ -1,6 +1,10 @@
 
 # FAQ
 
+> I am new to ASL-MRI and I do not know how to import and process data. Where should I start?
+
+We recommend to start with our **ASL-BIDS** and **Basics** tutorials. For more details on the BIDS data format in general, we recommend to read the [BIDS documentation](https://bids-specification.readthedocs.io/en/stable/).
+
 > I would like to use ExploreASL, but I do not have a Matlab license. Can you help me?
 
 ExploreASL is based on a variety of toolboxes that were written in Matlab. We are working on the ExploreASL GUI and the docker integration though, so that everyone can use ExploreASL without Matlab license fees.
