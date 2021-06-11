@@ -9,7 +9,7 @@
 **Format:**
 
 ```matlab
-xASL_module_Import(studyPath, imParPath, studyParPath, bRunSubmodules, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, bClone2Source, x)
+xASL_module_Import(studyPath[, imParPath, studyParPath, bRunSubmodules, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, x])
 ```
 
 **Description:**

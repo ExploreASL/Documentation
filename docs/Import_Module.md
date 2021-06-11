@@ -1,25 +1,6 @@
 # Submodules of the Import Module
 
 ----
-### xASL\_imp\_Anonymize.m
-
-**Format:**
-
-```matlab
-xASL_imp_Anonymize(imPar)
-```
-
-**Description:**
-
-Run defacing.
-
-1. Iterate over list of subjects
-2. Get subject labels
-3. Process all anatomical files (`xASL\_spm\_deface`)
-
-
-
-----
 ### xASL\_imp\_AppendNiftiParameters.m
 
 **Format:**
@@ -163,35 +144,16 @@ Run DCM2NII for one individual subject.
 2. Iterate over visits
 3. Loop through all sessions
 4. Iterate over scans
-- 1. Initialize variables (scanID, summary\_line, first\_match)
-- 2. Convert scan ID to a suitable name and set scan-specific parameters
-- 3. Minimalistic feedback of where we are
-- 4. Now pick the matching one from the folder list
-- 5. Determine input and output paths
-- 6. Start the conversion if this scan should not be skipped
-- 7. Store JSON files
-- 8. In case of a single NII ASL file loaded from PAR/REC, we need to shuffle the dynamics from CCCC...LLLL order to CLCLCLCL... order
-- 9. Make a copy of analysisdir in sourcedir
+-  1. Initialize variables (scanID, summary\_line, first\_match)
+-  2. Convert scan ID to a suitable name and set scan-specific parameters
+-  3. Minimalistic feedback of where we are
+-  4. Now pick the matching one from the folder list
+-  5. Determine input and output paths
+-  6. Start the conversion if this scan should not be skipped
+-  7. Store JSON files
+-  8. In case of a single NII ASL file loaded from PAR/REC, we need to shuffle the dynamics from CCCC...LLLL order to CLCLCLCL... order
+-  9  Copy single dicom as QC placeholder
 - 10. Store the summary info so it can be sorted and printed below
-
-
-
-----
-### xASL\_imp\_DCM2NII\_Subject\_CopyTempDir.m
-
-**Format:**
-
-```matlab
-xASL_imp_DCM2NII_Subject_CopyTempDir(nii_files, bClone2Source)
-```
-
-**Description:**
-
-Make a copy of the temp directory in the source directory.
-
-1. Iterate over the NIfTI files
-2. Copy the NIfTIs
-3. Copy the JSONs
 
 
 
@@ -248,6 +210,25 @@ Store JSON.
 
 
 ----
+### xASL\_imp\_Deface.m
+
+**Format:**
+
+```matlab
+xASL_imp_Deface(imPar)
+```
+
+**Description:**
+
+Run defacing.
+
+1. Iterate over list of subjects
+2. Get subject labels
+3. Process all anatomical files (`xASL\_spm\_deface`)
+
+
+
+----
 ### xASL\_imp\_Import\_UpdateDatasetRoot.m
 
 **Format:**
@@ -285,7 +266,7 @@ Run the NII2BIDS conversion.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, listSubjects, iSubject)
+xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, nameSubject)
 ```
 
 **Description:**
@@ -306,12 +287,15 @@ Run NII to ASL-BIDS for one individual subject.
 **Format:**
 
 ```matlab
-[imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel] = xASL_imp_NII2BIDS_SubjectSession(imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel, kk)
+xASL_imp_NII2BIDS_SubjectSession(imPar, bidsPar, studyPar, listSessions, nameSubject, subjectLabel, iSession)
 ```
 
 **Description:**
 
 NII2BIDS conversion for a single sessions.
+
+1. Make a subject directory
+2. Iterate over runs
 
 
 
@@ -321,12 +305,19 @@ NII2BIDS conversion for a single sessions.
 **Format:**
 
 ```matlab
-[imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject] = xASL_imp_NII2BIDS_SubjectSessionRun(imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject, kk, mm)
+xASL_imp_NII2BIDS_SubjectSessionRun(bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
 ```
 
 **Description:**
 
 NII2BIDS conversion for a single sessions, single run.
+
+1. Define the pathnames
+2. Load the JSONs and NIfTI information
+3. BIDSify ASL
+4. Prepare the link to M0 in ASL.json
+5. BIDSify M0
+6. Save all ASL files (JSON, NIFTI, CONTEXT) to the BIDS directory
 
 
 
@@ -336,12 +327,12 @@ NII2BIDS conversion for a single sessions, single run.
 **Format:**
 
 ```matlab
-[studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel, bJsonLocalM0isFile] = xASL_imp_NII2BIDS_Subject_DefineM0Type(studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel)
+[jsonLocal, bJsonLocalM0isFile] = xASL_imp_NII2BIDS_Subject_DefineM0Type(studyPar, bidsPar, jsonLocal, pathM0, linkM0prefix)
 ```
 
 **Description:**
 
-Define M0 Type.
+Define M0 Type
 
 
 

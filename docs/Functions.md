@@ -561,6 +561,11 @@ in the calling function. If it didnt exist in the memory x
 struct, or bOverwrite was requested, the contents of x.mat
 will be loaded to the memory x struct
 
+1. Admin
+2. Load X-struct from disc
+3. Look for and update deprecated fields
+4. Add fields from disc to the current x-struct
+
 
 ----
 ### xASL\_adm\_MakeStandalone.m
@@ -643,6 +648,21 @@ info =xASL_adm_ParReadHeader(filename)
 Function for reading the header of a Philips Par /
 Rec  MR V4.\* file.
 
+
+
+
+----
+### xASL\_adm\_RemoveDirectories.m
+
+**Format:**
+
+```matlab
+xASL_adm_RemoveDirectories(root)
+```
+
+**Description:**
+
+Script to remove all ExploreASL related paths.
 
 
 
@@ -854,6 +874,90 @@ This function performs the following steps:
 12. Add dataset\_description.json
 13. Clean up
 
+
+
+----
+### xASL\_bids\_BIDSifyASLJSON.m
+
+**Format:**
+
+```matlab
+jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn)
+```
+
+**Description:**
+
+
+It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
+the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition
+
+1. Obtain the dimensions of the ASL data
+2. Take all the manually predefined fields from studyPar
+3. Extract the scaling factors from the JSON header
+4. Convert certain DICOM fields
+5. Prioritize DICOM fields over the manually provided studyPar fields
+6. Field check and name conversion
+7. Check for Hadamard sequence
+8. Merge data from the Phoenix protocol
+9. Background suppression check
+10. SliceTiming check
+11. Check if length of vector fields match the number of volumes
+12. Reformat ASLcontext field
+13. Verify TotalAcquiredPairs against ASLContext
+14. Final field check
+
+
+----
+### xASL\_bids\_BIDSifyASLNII.m
+
+**Format:**
+
+```matlab
+jsonOut = xASL_bids_BIDSifyASLNII(jsonIn, bidsPar, pathIn, pathOutPrefix)
+```
+
+**Description:**
+
+It modifies the NIfTI file to take into account several BIDS specifics. Specifically, it applies the previously calculated scalings, and
+it saves the ASLcontext.tsv file,
+
+
+
+
+----
+### xASL\_bids\_BIDSifyAnatJSON.m
+
+**Format:**
+
+```matlab
+jsonOut = xASL_bids_BIDSifyAnatJSON(jsonIn)
+```
+
+**Description:**
+
+
+It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
+the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition
+
+
+----
+### xASL\_bids\_BIDSifyM0.m
+
+**Format:**
+
+```matlab
+[jsonOutM0, jsonOutASL] = xASL_bids_BIDSifyM0(jsonIn, jsonASL, studyPar, pathM0In, pathM0Out, headerASL)
+```
+
+**Description:**
+
+% It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
+the structure on the output. It works according to the normal BIDS, or ASL-BIDS definitionIt modifies the NIfTI file to take into account several BIDS specifics. Specifically, it
+applies the previously calculated scalings.
+
+1. Check the scaling in DICOMs
+2. Check the JSON parameters
+3. Save or move the NII to the correct location
 
 
 ----
@@ -1369,7 +1473,7 @@ NB: Important to use the same BrainMask as used for converting the
 image matrix to the column!
 See also: xASL\_im\_IM2Column.m
 
-The mask mostly used for xASL\_im\_IM2Column is x.WBmask, which completely
+The mask mostly used for xASL\_im\_IM2Column is x.S.masks.WBmask, which completely
 engulfes pGM, pWM & pCSF.
 
 
@@ -1387,6 +1491,22 @@ engulfes pGM, pWM & pCSF.
 This function checks whether the X, Y and Z resolution of a
 NIfTI with any number of dimensions is equal. It rounds for 2 floating
 points, for both NIfTIs, to ensure that the same precision is compared.
+
+
+----
+### xASL\_im\_CompareNiftis.m
+
+**Format:**
+
+```matlab
+[identical,RMSE] = xASL_im_CompareNiftis(pathA,pathB)
+```
+
+**Description:**
+
+Compare two niftis. Untouched comparison based on copies.
+
+
 
 
 ----
@@ -1696,7 +1816,7 @@ NB: Important to use the same BrainMask for converting the
 column back to an image matrix!
 See also: xASL\_im\_Column2IM.m
 
-The mask mostly used for xASL\_im\_IM2Column is x.WBmask, which completely
+The mask mostly used for xASL\_im\_IM2Column is x.S.masks.WBmask, which completely
 engulfes pGM, pWM & pCSF
 
 
@@ -2332,6 +2452,22 @@ This function exists from the following parts:
 
 
 ----
+### xASL\_init\_DetermineRequiredPaths.m
+
+**Format:**
+
+```matlab
+
+[x] = xASL_init_DetermineRequiredPaths(x)
+```
+
+**Description:**
+
+Check the BIDS dataset root for the metadata JSON files.
+
+
+
+----
 ### xASL\_init\_FileSystem.m
 
 **Format:**
@@ -2499,6 +2635,38 @@ Runs following steps:
 This function defines several visualization settings are
 used throughout ExploreASL's pipeline and tools, assuming a [121 145 121]
 matrix with 1.5 mm isotropic resolution in MNI space.
+
+
+----
+### xASL\_init\_checkDatasetRoot.m
+
+**Format:**
+
+```matlab
+
+[x, SelectParFile] = xASL_init_checkDatasetRoot(x, SelectParFile)
+```
+
+**Description:**
+
+Check the ExploreASL parameter "DatasetRoot".
+
+
+
+----
+### xASL\_init\_checkDatasetRoot\_invalid\_starting\_2\_0.m
+
+**Format:**
+
+```matlab
+
+[x, SelectParFile] = xASL_init_checkDatasetRoot_invalid_starting_2_0(x)
+```
+
+**Description:**
+
+Script for backwards compatibility. This functionality allows loading JSON files instead of the BIDS dataset root.
+
 
 
 ----
@@ -4075,41 +4243,12 @@ bReplaceNonNumerical above.
 
 
 ----
-### xASL\_test\_BIDSConversion.m
+### xASL\_test\_Flavors.m
 
 **Format:**
 
 ```matlab
-xASL_test_BIDSConversion(baseDirImport[, baseDirReference, bImport, bComparison])
-```
-
-**Description:**
-
-
-Runs the DICOM to ASL-BIDS import for all data in the baseDirImport directory. Study directories are supposed to be in, containing a 'sourcedata' folder - this folder
-can contain subject directories and also sourceStructure.json and studyPar.json specifying the directory structure and the additional study parameters, respectively.
-The import creates first the 'analysis' subfolder with data after dcm2nii and with all tags read and saved to JSON. Then it assembles everything with the
-studyParameters and makes sure all is in BIDS format and saves it correctly in the 'rawdata' subdirectory.
-
-This function runs the following sections:
-1.  Initialization
-2. DICOM -> NII+JSON (i.e. dcm2niiX)
-3. Manual curation for certain flavors
-3a. Siemens\_PCASL\_3DGRASE\_vascular
-3b. Philips\_PCASL\_3DGRASE\_R5.4\_TopUp
-3c. Siemens\_PCASL\_volunteer
-3d. Siemens\_PCASL\_multiTI
-4. Convert NII+JSON -> BIDS
-5. Run the comparison with the reference directory
-
-
-----
-### xASL\_test\_BIDSFlavorsFull.m
-
-**Format:**
-
-```matlab
-xASL_test_BIDSFlavorsFull(pathExploreASL,pathTest)
+xASL_test_Flavors(pathExploreASL, pathTest[, bTest, x])
 
 
 ```
@@ -4121,6 +4260,34 @@ path has to be provided with the FlavorsDatabase subdirectory containig the Flav
 subdirectory is read, but not modified. New directories are created for that inside the test
 directory.
 
+
+
+----
+### xASL\_test\_Flavors\_DCM2BIDS.m
+
+**Format:**
+
+```matlab
+xASL_test_Flavors_DCM2BIDS(baseDirImport)
+```
+
+**Description:**
+
+
+Runs the DICOM to ASL-BIDS import for all data in the baseDirImport directory. Study directories are supposed to be in, containing a 'sourcedata' folder - this folder
+can contain subject directories and also sourceStructure.json and studyPar.json specifying the directory structure and the additional study parameters, respectively.
+The import creates first the 'temp' subfolder with data after dcm2nii and with all tags read and saved to JSON. Then it assembles everything with the
+studyParameters and makes sure all is in BIDS format and saves it correctly in the 'rawdata' subdirectory.
+
+This function runs the following sections:
+1.  Initialization
+2. DICOM -> NII+JSON (i.e. dcm2niiX)
+3. Manual curation for certain flavors
+3a. Siemens\_PCASL\_3DGRASE\_vascular
+3b. Philips\_PCASL\_3DGRASE\_R5.4\_TopUp
+3c. Siemens\_PCASL\_volunteer
+3d. Siemens\_PCASL\_multiTI
+4. Convert NII+JSON -> BIDS
 
 
 ----
