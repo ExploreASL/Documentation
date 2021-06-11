@@ -258,13 +258,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_anonymizem" class="md-nav__link">
-    xASL_imp_Anonymize.m
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#xasl_imp_appendniftiparametersm" class="md-nav__link">
     xASL_imp_AppendNiftiParameters.m
   </a>
@@ -321,13 +314,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_copytempdirm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_CopyTempDir.m
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#xasl_imp_dcm2nii_subject_shufflethedynamicsm" class="md-nav__link">
     xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m
   </a>
@@ -344,6 +330,13 @@
         <li class="md-nav__item">
   <a href="#xasl_imp_dcm2nii_subject_storejsonm" class="md-nav__link">
     xASL_imp_DCM2NII_Subject_StoreJSON.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_imp_defacem" class="md-nav__link">
+    xASL_imp_Deface.m
   </a>
   
 </li>
@@ -634,13 +627,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_anonymizem" class="md-nav__link">
-    xASL_imp_Anonymize.m
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#xasl_imp_appendniftiparametersm" class="md-nav__link">
     xASL_imp_AppendNiftiParameters.m
   </a>
@@ -697,13 +683,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_copytempdirm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_CopyTempDir.m
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#xasl_imp_dcm2nii_subject_shufflethedynamicsm" class="md-nav__link">
     xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m
   </a>
@@ -720,6 +699,13 @@
         <li class="md-nav__item">
   <a href="#xasl_imp_dcm2nii_subject_storejsonm" class="md-nav__link">
     xASL_imp_DCM2NII_Subject_StoreJSON.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_imp_defacem" class="md-nav__link">
+    xASL_imp_Deface.m
   </a>
   
 </li>
@@ -784,19 +770,6 @@
                 
                 
                 <h1 id="submodules-of-the-import-module">Submodules of the Import Module</h1>
-<hr />
-<h3 id="xasl_imp_anonymizem">xASL_imp_Anonymize.m</h3>
-<p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_Anonymize(imPar)
-</code></pre>
-
-<p><strong>Description:</strong></p>
-<p>Run defacing.</p>
-<ol>
-<li>Iterate over list of subjects</li>
-<li>Get subject labels</li>
-<li>Process all anatomical files (<code>xASL\_spm\_deface</code>)</li>
-</ol>
 <hr />
 <h3 id="xasl_imp_appendniftiparametersm">xASL_imp_AppendNiftiParameters.m</h3>
 <p><strong>Format:</strong></p>
@@ -942,29 +915,12 @@
 <li>In case of a single NII ASL file loaded from PAR/REC, we need to shuffle the dynamics from CCCC...LLLL order to CLCLCLCL... order</li>
 </ol>
 </li>
-<li>
-<ol>
-<li>Make a copy of analysisdir in sourcedir</li>
-</ol>
-</li>
+<li>9  Copy single dicom as QC placeholder</li>
 <li>
 <ol>
 <li>Store the summary info so it can be sorted and printed below</li>
 </ol>
 </li>
-</ol>
-<hr />
-<h3 id="xasl_imp_dcm2nii_subject_copytempdirm">xASL_imp_DCM2NII_Subject_CopyTempDir.m</h3>
-<p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_DCM2NII_Subject_CopyTempDir(nii_files, bClone2Source)
-</code></pre>
-
-<p><strong>Description:</strong></p>
-<p>Make a copy of the temp directory in the source directory.</p>
-<ol>
-<li>Iterate over the NIfTI files</li>
-<li>Copy the NIfTIs</li>
-<li>Copy the JSONs</li>
 </ol>
 <hr />
 <h3 id="xasl_imp_dcm2nii_subject_shufflethedynamicsm">xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m</h3>
@@ -999,6 +955,19 @@
 <p><strong>Description:</strong></p>
 <p>Store JSON.</p>
 <hr />
+<h3 id="xasl_imp_defacem">xASL_imp_Deface.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_imp_Deface(imPar)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Run defacing.</p>
+<ol>
+<li>Iterate over list of subjects</li>
+<li>Get subject labels</li>
+<li>Process all anatomical files (<code>xASL\_spm\_deface</code>)</li>
+</ol>
+<hr />
 <h3 id="xasl_imp_import_updatedatasetrootm">xASL_imp_Import_UpdateDatasetRoot.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">[x] = xASL_imp_Import_UpdateDatasetRoot(x, studyPath)
@@ -1022,7 +991,7 @@
 <hr />
 <h3 id="xasl_imp_nii2bids_subjectm">xASL_imp_NII2BIDS_Subject.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, listSubjects, iSubject)
+<pre><code class="matlab">xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, nameSubject)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -1045,27 +1014,39 @@
 <hr />
 <h3 id="xasl_imp_nii2bids_subjectsessionm">xASL_imp_NII2BIDS_SubjectSession.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel] = xASL_imp_NII2BIDS_SubjectSession(imPar, bidsPar, studyPar, iSubject, fSes, listSubjects, subjectLabel, kk)
+<pre><code class="matlab">xASL_imp_NII2BIDS_SubjectSession(imPar, bidsPar, studyPar, listSessions, nameSubject, subjectLabel, iSession)
 </code></pre>
 
 <p><strong>Description:</strong></p>
 <p>NII2BIDS conversion for a single sessions.</p>
+<ol>
+<li>Make a subject directory</li>
+<li>Iterate over runs</li>
+</ol>
 <hr />
 <h3 id="xasl_imp_nii2bids_subjectsessionrunm">xASL_imp_NII2BIDS_SubjectSessionRun.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject] = xASL_imp_NII2BIDS_SubjectSessionRun(imPar, bidsPar, studyPar, subjectLabel, sessionLabel, listSubjects, fSes, inSessionPath, outSessionPath, nSes, iSubject, kk, mm)
+<pre><code class="matlab">xASL_imp_NII2BIDS_SubjectSessionRun(bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
 </code></pre>
 
 <p><strong>Description:</strong></p>
 <p>NII2BIDS conversion for a single sessions, single run.</p>
+<ol>
+<li>Define the pathnames</li>
+<li>Load the JSONs and NIfTI information</li>
+<li>BIDSify ASL</li>
+<li>Prepare the link to M0 in ASL.json</li>
+<li>BIDSify M0</li>
+<li>Save all ASL files (JSON, NIFTI, CONTEXT) to the BIDS directory</li>
+</ol>
 <hr />
 <h3 id="xasl_imp_nii2bids_subject_definem0typem">xASL_imp_NII2BIDS_Subject_DefineM0Type.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel, bJsonLocalM0isFile] = xASL_imp_NII2BIDS_Subject_DefineM0Type(studyPar, bidsPar, jsonLocal, inSessionPath, subjectLabel, sessionLabel)
+<pre><code class="matlab">[jsonLocal, bJsonLocalM0isFile] = xASL_imp_NII2BIDS_Subject_DefineM0Type(studyPar, bidsPar, jsonLocal, pathM0, linkM0prefix)
 </code></pre>
 
 <p><strong>Description:</strong></p>
-<p>Define M0 Type.</p>
+<p>Define M0 Type</p>
                 
               
               
