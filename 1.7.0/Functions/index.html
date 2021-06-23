@@ -50,7 +50,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
   
     
     <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -516,6 +516,13 @@
           <li class="md-nav__item">
   <a href="#xasl_adm_getphilipsscalingm" class="md-nav__link">
     xASL_adm_GetPhilipsScaling.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_adm_getpopulationsessionsm" class="md-nav__link">
+    xASL_adm_GetPopulationSessions.m
   </a>
   
 </li>
@@ -1296,6 +1303,13 @@
           <li class="md-nav__item">
   <a href="#xasl_init_printchecksettingsm" class="md-nav__link">
     xASL_init_PrintCheckSettings.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_init_toolboxesm" class="md-nav__link">
+    xASL_init_Toolboxes.m
   </a>
   
 </li>
@@ -2386,6 +2400,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_adm_getpopulationsessionsm" class="md-nav__link">
+    xASL_adm_GetPopulationSessions.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_adm_getusernamem" class="md-nav__link">
     xASL_adm_GetUserName.m
   </a>
@@ -3161,6 +3182,13 @@
           <li class="md-nav__item">
   <a href="#xasl_init_printchecksettingsm" class="md-nav__link">
     xASL_init_PrintCheckSettings.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_init_toolboxesm" class="md-nav__link">
+    xASL_init_Toolboxes.m
   </a>
   
 </li>
@@ -4184,6 +4212,22 @@ Sorts the results at the end.</p>
 that normally has the same scaling as RescaleSlope in DICOM, it checks if dcm2nii (by the info in JSON)
 has already converted the scale slopes to floating point. And if not, the derive the correct
 scaling factor to be applied.</p>
+<hr />
+<h3 id="xasl_adm_getpopulationsessionsm">xASL_adm_GetPopulationSessions.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[nSessions, bSessionsMissing] = xASL_adm_GetPopulationSessions(x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This function looks for the maximum amount of sessions that
+are present in selected processed files present in the Population folder.</p>
+<ol>
+<li>Determine which files to look for in the Population folder</li>
+<li>Obtain list of session files in the Population folder</li>
+<li>Determine unique amount of session numbers present in list</li>
+<li>Set nSessions as highest unique session number</li>
+<li>Check and provide warning of number of sesssions differs per subject</li>
+</ol>
 <hr />
 <h3 id="xasl_adm_getusernamem">xASL_adm_GetUserName.m</h3>
 <p><strong>Format:</strong></p>
@@ -5630,6 +5674,14 @@ Runs following steps:</p>
 <li>Print data/study specific settings</li>
 <li>Print warnings</li>
 </ol>
+<hr />
+<h3 id="xasl_init_toolboxesm">xASL_init_Toolboxes.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">x  = xASL_init_Toolboxes(x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Check &amp; load ancillary toolboxes, versions and paths.</p>
 <hr />
 <h3 id="xasl_init_visualizationsettingsm">xASL_init_VisualizationSettings.m</h3>
 <p><strong>Format:</strong></p>
