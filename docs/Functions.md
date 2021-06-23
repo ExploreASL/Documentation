@@ -470,6 +470,27 @@ scaling factor to be applied.
 
 
 ----
+### xASL\_adm\_GetPopulationSessions.m
+
+**Format:**
+
+```matlab
+[nSessions, bSessionsMissing] = xASL_adm_GetPopulationSessions(x)
+```
+
+**Description:**
+
+This function looks for the maximum amount of sessions that
+are present in selected processed files present in the Population folder.
+
+1. Determine which files to look for in the Population folder
+2. Obtain list of session files in the Population folder
+3. Determine unique amount of session numbers present in list
+4. Set nSessions as highest unique session number
+5. Check and provide warning of number of sesssions differs per subject
+
+
+----
 ### xASL\_adm\_GetUserName.m
 
 **Format:**
@@ -2619,6 +2640,20 @@ Runs following steps:
 1. Set default settings if not defined
 2. Print data/study specific settings
 3. Print warnings
+
+
+----
+### xASL\_init\_Toolboxes.m
+
+**Format:**
+
+```matlab
+x  = xASL_init_Toolboxes(x)
+```
+
+**Description:**
+
+Check & load ancillary toolboxes, versions and paths.
 
 
 ----

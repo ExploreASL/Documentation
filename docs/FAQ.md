@@ -23,7 +23,7 @@ Parameters and settings can change between different versions of ExploreASL. We 
 
 > I have a question that is not in the list above. What should I do now?
 
-Please feel free to contact the developer team, we normally answer to e-mails pretty quickly. There are also bi-weekly meetings of the developer team, so if you feel like you could contribute to our open-source project or you would like to answer a question in person, feel free to ask for an invite.
+Please feel free to contact the developer team, we normally answer to e-mails pretty quickly. There are also bi-weekly meetings of the developer team, so if you feel like you could contribute to our open-source project or you would like to ask a question in person, feel free to ask for an invite.
 
 
 
