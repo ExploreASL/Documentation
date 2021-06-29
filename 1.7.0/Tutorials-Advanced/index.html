@@ -413,6 +413,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atlas-options" class="md-nav__link">
+    Atlas Options
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -542,6 +549,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#atlas-options" class="md-nav__link">
+    Atlas Options
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -606,6 +620,42 @@ xASL_Move('C:\Users\Test_One\fileA.txt', 'C:\Users\Test_One\fileB.txt', 1);
 strRegEx = '^file.+$';
 filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
 </code></pre>
+
+<hr />
+<h2 id="atlas-options">Atlas Options</h2>
+<p>The atlases of the <strong>ExploreASL</strong> population module can be defined in the <code>x.S</code> sub-structure. If you are interested in the <code>TotalGM</code>, <code>TotalWM</code>, <code>DeepWM</code>, <code>Hammers</code>, <code>HOcort_CONN</code>, <code>HOsub_CONN</code>, and <code>Mindboggle_OASIS_DKT31_CMA</code> atlases e.g., you can add the following lines to your <code>dataPar.json</code> file.</p>
+<pre><code class="json">{
+    &quot;x&quot;: [{
+            &quot;name&quot;: &quot;Example&quot;,
+            &quot;subject_regexp&quot;: &quot;Example&quot;,
+            &quot;S&quot;: {&quot;Atlases&quot;: [&quot;TotalGM&quot;,&quot;TotalWM&quot;,&quot;DeepWM&quot;,&quot;Hammers&quot;,&quot;HOcort_CONN&quot;,&quot;HOsub_CONN&quot;,&quot;Mindboggle_OASIS_DKT31_CMA&quot;]}
+        }]
+}
+</code></pre>
+
+<p>Available atlases are:</p>
+<p>Free atlases: </p>
+<ul>
+<li><code>TotalGM</code>: Mask of the entire GM</li>
+<li><code>TotalWM</code>: Mask of the entire WM</li>
+<li><code>DeepWM</code>: Mask of the deep WM</li>
+<li><code>WholeBrain</code>: Mask of the entire brain</li>
+<li><code>MNI_Structural</code>: MNI cortical atlas</li>
+<li><code>Tatu_ACA_MCA_PCA</code>: Original vascular territories by Tatu et al.</li>
+<li><code>Tatu_ICA_PCA</code>: Tatu (only ICA and PCA)</li>
+<li><code>Tatu_ICA_L_ICA_R_PCA</code>: Tatu (L ICA and R PCA)</li>
+<li><code>Tatu_ACA_MCA_PCA_Prox_Med_Dist</code>: Tatu separated to distal/medial/proximal of ACA/MCA/PCA</li>
+<li><code>Mindboggle_OASIS_DKT31_CMA</code>: Mindboggle-101 cortical atlas</li>
+</ul>
+<p>Free for non-commercial use only:</p>
+<ul>
+<li><code>HOcort_CONN</code>: Harvard-Oxford cortical atlas</li>
+<li><code>HOsub_CONN</code>: Harvard-Oxford subcortical atlas</li>
+<li><code>Hammers</code>: Alexander Hammers's brain atlas</li>
+<li><code>HammersCAT12</code>: Hammers atlas adapted to DARTEL template of IXI550 space</li>
+<li><code>Thalamus</code>: Harvad-Oxford thalamus atlas</li>
+</ul>
+<p>In a future <strong>ExploreASL</strong> version we want to add a custom atlases directory, where you can add your own atlas &amp; metadata file including a description of how to do this.</p>
                 
               
               
