@@ -182,6 +182,8 @@ To create a nice visualization, open the T1w NIfTI, and then load the ASL CBF im
 | `(07-Mar-2019)`                     | The date of the analysis                                                                |
 | `PVC(0\|2)`                         | Partial volume correction (PVC) options: 0 (no PVC), 2 (two-compartment, classical PVC) |
 
+In the Stats folder's files, if the same `T1w` is used for multiple runs (`ASL_1`, `ASL_2` etc.), the values concerning the structural derivatives only (e.g. volumetrics and ratio) will be printed only for the first run.
+
 Start by opening ‘mean_qCBF_untreated_MNI_structural_n=1_07-Mar-2019_PVC2.tsv’. Notice that columns A to L are the ‘covariates’, whereas the remaining columns are the results of the ROI analysis. See the names of the MNI_structural atlas (Caudate, Cerebellum, Frontal, etc), and notice how from each of them, 3 columns are created, with the B (bilateral), L (left), or R (right) part of the ROI.
 
 **F) Run an ROI analysis with a custom atlas**
