@@ -1,0 +1,910 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.8.0/Modules/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Modules - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Modules
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-import-module" class="md-nav__link">
+    1. Import Module
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Import Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_import" class="md-nav__link">
+    xASL_module_Import
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-structural-module" class="md-nav__link">
+    2. Structural Module
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Structural Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_structural" class="md-nav__link">
+    xASL_module_Structural
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asl-module" class="md-nav__link">
+    3. ASL Module
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ASL Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_asl" class="md-nav__link">
+    xASL_module_ASL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-population-module" class="md-nav__link">
+    4. Population Module
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Population Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_population" class="md-nav__link">
+    xASL_module_Population
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-ASL-BIDS/" class="md-nav__link">
+        Tutorials (ASL-BIDS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Basics/" class="md-nav__link">
+        Tutorials (Basics)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Advanced/" class="md-nav__link">
+        Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-import-module" class="md-nav__link">
+    1. Import Module
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Import Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_import" class="md-nav__link">
+    xASL_module_Import
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-structural-module" class="md-nav__link">
+    2. Structural Module
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Structural Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_structural" class="md-nav__link">
+    xASL_module_Structural
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asl-module" class="md-nav__link">
+    3. ASL Module
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ASL Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_asl" class="md-nav__link">
+    xASL_module_ASL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-population-module" class="md-nav__link">
+    4. Population Module
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Population Module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xasl_module_population" class="md-nav__link">
+    xASL_module_Population
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Modules.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="modules">Modules</h1>
+<hr />
+<h2 id="1-import-module">1. Import Module</h2>
+<hr />
+<h3 id="xasl_module_import">xASL_module_Import</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_module_Import(studyPath[, imParPath, studyParPath, bRunSubmodules, bCopySingleDicoms, bUseDCMTK, bCheckPermissions, x])
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Import batch <code>T1</code>, <code>T2</code>, <code>FLAIR</code>, <code>DWI</code>, <code>fMRI</code>, <code>M0</code>, <code>ASL</code> data from dicom 2 NIfTI in ASL-BIDS format and structure.
+Uses dcm2niiX for the conversion, and additionally collects important DICOM header data
+and puts them in <code>.json</code> sidecars to be used with the ExploreASL pipeline.
+This function takes any folder input, but the folder input should be
+specified in the imPar definition. Follow the steps below, for study <code>"MyStudy"</code> located on <code>"//MyDisk"</code>:</p>
+<ol>
+<li>Make sure you have your DICOM data. Export them from XNAT, download them, or whatsoever
+Create a root folder with study ID name, and put the DICOMs in any structure in the sourcedata folder within the study ID root folder
+Examples:
+imPar.StudyID: MyStudy
+Dataset Root folder: <code>//MyDisk/MyStudy</code>
+sourcedata folder containing DICOMs: <code>//MyDisk/MyStudy/sourcedata</code></li>
+<li>Make sure that your DICOM data has any structure that can be retrieved
+from the folder and/or file names. This function doesn't yet read the DICOM headers
+For a quick and dirty (but actually slow) function that converts a
+DICOM folder/file structure into readable format, first run
+ConvertDicomFolderStructure_CarefulSlow.m. This will read each DICOM
+individually, and put it in a folder with the name identical to the
+DICOMs SeriesName/ProtocolName.</li>
+<li>Once you have all DICOMs in folderstructure with identifyable names
+inside <code>//MyDisk/MyStudy/sourcedata</code>, set up the folderstructure in
+ExploreASL_ImportConfig.m. This setup uses the SPM form of regular
+expressions, which can be daunting at first, but are very flexible.
+Easiest is to study other examples, before creating your own.
+For this example, let's say we have <code>//MyDisk/MyStudy/sourcedata/ScanType/SubjectName</code>
+because we downloaded our data from XNAT, ordered per ScanType first,
+and then per subject.</li>
+</ol>
+<p>BRIEF EXPLANATION:
+Let's suppose we don't have sessions (only a single structural and functional scan per subject)
+The names of our scans comes out of XNAT as <code>'3D\_FLAIR\_eyesClosed'</code>, <code>'T1w\_MPRAGE'</code> and <code>'PCASL\_10\_min'</code>
+and the subject names are <code>'MyStudy001'</code> .. <code>'MyStudy002'</code> .. etc.</p>
+<ul>
+<li>imPar.folderHierarchy     - contains a a cell array of regular expressions, with each cell specifying a directory layer/level
+the parts within brackets <code>()</code> tell the script that this is a token (i.e. subject, session, ScanType)
+Examples:
+<code>imPar.folderHierarchy = {'^(3D\_FLAIR|T1w|PCASL).*', '^(Sub-\d{3})$'};</code>
+here we say that there are two folder layers '', separated by comma ,
+where the names between brackets are used to define what is what.
+<code>^</code> means that the foldername has to start with the following, $ means that the previous has to be the end of the foldername
+<code>.\*</code> means anything, anylength, <code>\d{3}</code> means three digits</li>
+<li>imPar.tokenOrdering       - defines which tokens are captured by the brackets <code>()</code> in imPar.folderHierarchy: position <code>1==subject</code>, <code>2==visit</code>, <code>3==session</code>, <code>4==ScanType</code>
+Examples:
+<code>imPar.tokenOrdering = [2 3 0 1];</code> stating that subject is the 2nd token, visit is the 3rd token, session has no token (i.e. no session) and ScanType is the 1st token</li>
+<li>imPar.tokenVisitAliases   - cell array that defines the aliases for the Visits, i.e. it tells the script which scans are which timepoint/visit.
+Similar as explained below for ScanAliases.
+First column contains the names that are
+recognized in sourcedata DICOM folders for visits,
+second column how it is named in NIfTI
+structure (should be _1 _2 _3 etc).
+Examples:
+<code>imPar.tokenVisitAliases = {'Screening','\_1'; 'Month\_12','\_2'; 'Month\_24','\_3'; 'Month\_36','\_4'; 'Month\_48','\_5'};</code>
+Note that if you specify tokenVisitAliases, the folders will receive
+the indices (e.g. <code>\_1 \_2 \_3</code>), or even <code>\_1</code> only with a single Visit). If you don't specify
+them, they will not get this postfix.</li>
+<li>imPar.tokenScanAliases    - cell array that defines the aliases for the ScanTypes, i.e. it tells the script which scans are which ScanType.
+First column should contain regular expression corresponding with the matching criteria in imPar.folderHierarchy
+whereas the second column contains the
+alias. Following valid aliases exist:
+<code>'T1'</code> <code>'FLAIR'</code> <code>'ASL4D'</code> <code>'M0'</code> <code>'ASL4D\_RevPE'</code> <code>'func'</code> <code>'func\_NormPE'</code> <code>'func\_RevPE'</code> <code>'dwi'</code> <code>'dwi\_RevPE'</code> <code>'DSC4D'</code>
+Examples:
+<code>imPar.tokenScanAliases = {'^3D\_FLAIR$', 'FLAIR'; '^T1w$', 'T1'; '^PCASL$', 'ASL4D'};</code></li>
+<li>imPar.tokenSessionAliases - same as tokenScanAliases but for sessions
+Examples:
+<code>imPar.tokenSessionAliases = {}; % as we don't have sessions</code></li>
+<li>imPar.bMatchDirectories   - true if the last layer is a folder, false if the last layer is a filename (as e.g. with PAR/REC, enhanced DICOMs)</li>
+</ul>
+<hr />
+<h2 id="2-structural-module">2. Structural Module</h2>
+<hr />
+<h3 id="xasl_module_structural">xASL_module_Structural</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[result, x] = xASL_module_Structural(x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This first ExploreASL module processes the structural
+images, i.e. high-resolution T1w and FLAIR (if present), on an individual (i.e. subject-to-subject) basis.
+If a FLAIR is present, this is processed first to obtain a WMH mask to fill the hypointense lesions on the T1w,
+before segmenting the T1w. For the T1w segmentation this module uses CAT12
+by default but if this fails it falls back to SPM after trying to
+optimize the image contrast. This module has the following steps/submodules/wrappers:</p>
+<ul>
+<li><code>010\_LinearReg\_T1w2MNI</code>         - Ensure the alignment of subjects' anterior commissure (AC) with the AC in MNI &amp; apply this to all images</li>
+<li><code>020\_LinearReg\_FLAIR2T1w</code>       - Align the FLAIR (if present) with T1w</li>
+<li><code>030\_FLAIR\_BiasfieldCorrection</code> - Perform a biasfield correction (if not performed  by LST in following steps)</li>
+<li><code>040\_LST\_Segment\_FLAIR\_WMH</code>     - Segment WMH lesions on FLAIR (if present)</li>
+<li><code>050\_LST\_T1w\_LesionFilling\_WMH</code> - Use WMH segmentation to fill lesions on T1w</li>
+<li><code>060\_Segment\_T1w</code>               - Tissue segmentation on T1w</li>
+<li><code>070\_CleanUpWMH\_SEGM</code>           - Extra WMH cleanup of some over- and under-segmentation</li>
+<li><code>080\_Resample2StandardSpace</code>    - Clone all images to standard space</li>
+<li><code>090\_GetVolumetrics</code>            - Obtain whole-brain volumes of GM, WM, CSF, WMH</li>
+<li><code>100\_VisualQC</code>                  - Obtain QC parameters &amp; save QC Figures</li>
+<li><code>110\_DoWADQCDC</code>                 - QC for WAD-QC DICOM server (OPTIONAL)</li>
+</ul>
+<hr />
+<h2 id="3-asl-module">3. ASL Module</h2>
+<hr />
+<h3 id="xasl_module_asl">xASL_module_ASL</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[result, x] = xASL_module_ASL(x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This ExploreASL module processes the ASL
+images, i.e. ASL4D, M0, etc (if present), on an individual (i.e. session-to-session, where session indicates BIDS "run") basis.
+Both 2D and 3D options are automatially chosen, as well as processing of time-series (if available), such as motion correction and outlier
+exclusion. This module has the following submodules/wrappers:</p>
+<ul>
+<li><code>010\_TopUpASL</code>           - FSL TopUp geometric distortion correction (if M0 images with reversed phase-encoding are present)</li>
+<li><code>020\_RealignASL</code>         - If time-series are present, motion correction and outlier exclusion (ENABLE)</li>
+<li><code>030\_RegisterASL</code>        - Registration of ASL to T1w anatomical images (if lacking, to MNI images)</li>
+<li><code>040\_ResliceASL</code>         - Resample ASL images to standard space</li>
+<li><code>050\_PreparePV</code>          - Create partial volume images in ASL space with ASL resolution</li>
+<li><code>060\_ProcessM0</code>          - M0 image processing</li>
+<li><code>070\_CreateAnalysisMask</code> - Create mask using FoV, vascular outliers &amp; susceptibility atlas</li>
+<li><code>080\_Quantification</code>     - CBF quantification</li>
+<li><code>090\_VisualQC\_ASL</code>       - Generate QC parameters &amp; images</li>
+<li><code>100\_WADQC</code>              - QC for WAD-QC DICOM server (OPTIONAL)</li>
+</ul>
+<hr />
+<h2 id="4-population-module">4. Population Module</h2>
+<hr />
+<h3 id="xasl_module_population">xASL_module_Population</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[result, x] = xASL_module_Population(x)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This ExploreASL module processes all available images on the
+group level. It assumes that all images were adequately processed in the
+previous modules. It will perform the following group-wise processing and
+checks:</p>
+<ul>
+<li><code>010\_CreatePopulationTemplates</code> - Create population average images, to compare scanners, cohorts etc without physiological variance</li>
+<li><code>020\_CreateAnalysisMask</code>        - Generate a group-level mask by combining individuals masks, for ROI-based analysis &amp; VBA</li>
+<li><code>030\_CreateBiasfield</code>           - When there are multiple scanners, create scanner-specific biasfields (uses Site.mat for this)</li>
+<li><code>040\_GetDICOMStatistics</code>        - Create TSV file with overview of DICOM parameters</li>
+<li><code>050\_GetVolumeStatistics</code>       - Create TSV file with overview of volumetric parameters</li>
+<li><code>060\_GetMotionStatistics</code>       - Create TSV file with overview of motion parameters</li>
+<li><code>065\_GetRegistrationStatistics</code> - Create TSV file with overview of the registration statistics</li>
+<li><code>070\_GetROIstatistics</code>          - Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)</li>
+<li><code>080\_SortBySpatialCoV</code>          - Sort ASL_Check QC images by their spatial CoV in quality bins</li>
+<li><code>090\_DeleteAndZip</code>              - Delete temporary files and gzip all NIfTIs</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../Import_Module/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Module Import
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>

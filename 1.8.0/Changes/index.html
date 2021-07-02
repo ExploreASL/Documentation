@@ -1,0 +1,2350 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/1.8.0/Changes/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+    
+    
+      
+        <title>Change Log - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exploreasl-change-log" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Change Log
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-ASL-BIDS/" class="md-nav__link">
+        Tutorials (ASL-BIDS)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Basics/" class="md-nav__link">
+        Tutorials (Basics)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Advanced/" class="md-nav__link">
+        Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Change Log
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Change Log
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v170" class="md-nav__link">
+    ExploreASL v1.7.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.7.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements" class="md-nav__link">
+    Feature improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    Other improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v162" class="md-nav__link">
+    ExploreASL v1.6.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v161" class="md-nav__link">
+    ExploreASL v1.6.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v160" class="md-nav__link">
+    ExploreASL v1.6.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_1" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basil" class="md-nav__link">
+    BASIL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dro-and-qasper" class="md-nav__link">
+    DRO and QASPER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v151" class="md-nav__link">
+    ExploreASL v1.5.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.5.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v150" class="md-nav__link">
+    ExploreASL v1.5.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.5.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_2" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_1" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_1" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_1" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version_1" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_1" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing_1" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v140" class="md-nav__link">
+    ExploreASL v1.4.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.4.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_3" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_2" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_2" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_2" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_2" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v130" class="md-nav__link">
+    ExploreASL v1.3.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_4" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_3" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_3" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_3" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version_2" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_3" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing_2" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v122" class="md-nav__link">
+    ExploreASL v1.2.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v121" class="md-nav__link">
+    ExploreASL v1.2.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids-related-bug-fixes" class="md-nav__link">
+    ASL-BIDS-related bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v120" class="md-nav__link">
+    ExploreASL v1.2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_5" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-feature-improvements-still-backward-compatible" class="md-nav__link">
+    Major feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_4" class="md-nav__link">
+    Work in progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_4" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v113" class="md-nav__link">
+    ExploreASL v1.1.3
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_11" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v112" class="md-nav__link">
+    ExploreASL v1.1.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_12" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v111" class="md-nav__link">
+    ExploreASL v1.1.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_13" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v110" class="md-nav__link">
+    ExploreASL v1.1.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_6" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_14" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_5" class="md-nav__link">
+    Work in progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_5" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v100" class="md-nav__link">
+    ExploreASL v1.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_7" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v170" class="md-nav__link">
+    ExploreASL v1.7.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.7.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements" class="md-nav__link">
+    Feature improvements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    Bug fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    Other improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v162" class="md-nav__link">
+    ExploreASL v1.6.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v161" class="md-nav__link">
+    ExploreASL v1.6.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v160" class="md-nav__link">
+    ExploreASL v1.6.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.6.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_1" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basil" class="md-nav__link">
+    BASIL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dro-and-qasper" class="md-nav__link">
+    DRO and QASPER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v151" class="md-nav__link">
+    ExploreASL v1.5.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.5.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v150" class="md-nav__link">
+    ExploreASL v1.5.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.5.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_2" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_1" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_1" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_1" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version_1" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_1" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing_1" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v140" class="md-nav__link">
+    ExploreASL v1.4.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.4.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_3" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_2" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_2" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_2" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_2" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v130" class="md-nav__link">
+    ExploreASL v1.3.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_4" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-improvements-still-backward-compatible_3" class="md-nav__link">
+    Feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_3" class="md-nav__link">
+    Work in progress
+  </a>
+  
+    <nav class="md-nav" aria-label="Work in progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids_3" class="md-nav__link">
+    ASL-BIDS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilationstand-alone-version_2" class="md-nav__link">
+    Compilation/stand-alone version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_3" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing_2" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v122" class="md-nav__link">
+    ExploreASL v1.2.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v121" class="md-nav__link">
+    ExploreASL v1.2.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_9" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-bids-related-bug-fixes" class="md-nav__link">
+    ASL-BIDS-related bug fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v120" class="md-nav__link">
+    ExploreASL v1.2.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_5" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#major-feature-improvements-still-backward-compatible" class="md-nav__link">
+    Major feature improvements (still backward compatible)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_10" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_4" class="md-nav__link">
+    Work in progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_4" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v113" class="md-nav__link">
+    ExploreASL v1.1.3
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_11" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v112" class="md-nav__link">
+    ExploreASL v1.1.2
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_12" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v111" class="md-nav__link">
+    ExploreASL v1.1.1
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_13" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v110" class="md-nav__link">
+    ExploreASL v1.1.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_6" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_14" class="md-nav__link">
+    Bug Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features_1" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-in-progress_5" class="md-nav__link">
+    Work in progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation_5" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploreasl-v100" class="md-nav__link">
+    ExploreASL v1.0.0
+  </a>
+  
+    <nav class="md-nav" aria-label="ExploreASL v1.0.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions-included-software_7" class="md-nav__link">
+    Versions included software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Changes.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="exploreasl-change-log">ExploreASL Change Log</h1>
+<hr />
+<h2 id="exploreasl-v170">ExploreASL v1.7.0</h2>
+<h3 id="versions-included-software">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see <code>/External/README_SPM.txt</code>):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15 </li>
+</ul>
+<h3 id="feature-improvements">Feature improvements</h3>
+<ul>
+<li>Issue #455: Automatically compare results of TestDataSets with a saved reference results</li>
+<li>Issues #480, #623, #649, #661: Restructure <code>x</code>: <code>x.opts</code> (input arguments and their derivatives), <code>x.dir</code> (directories), <code>x.settings</code> (mostly booleans for pipeline settings), <code>x.dataset</code> (dataset related fields), <code>x.external</code>, ...</li>
+<li>Issue #572: Restructure JSON handling during NiFTI to BIDS import</li>
+<li>Issue #580: Add parsing of Gold Standard Phantoms <strong>ASL-DRO</strong></li>
+<li>Issues #588, #612: <code>ExploreASL</code> reads folders and automatically searches for <strong>sourceStructure</strong>, <strong>studyPar</strong> and <strong>dataPar</strong> JSON files</li>
+<li>Issue #600: Put participants.tsv to the derivatives folder during import to legacy ExploreASL format</li>
+<li>Issue #602: Remove option for cloning the NIfTI output after import as BIDS directory is a read-only archive</li>
+<li>Issue #603: Give ExploreASL version in JSON files after BIDS to Legacy conversion</li>
+<li>Issue #631: Remove repeated warnings</li>
+<li>Issue #632: Add comparison script for untouched NIfTI comparison</li>
+<li>Issue #643: <code>bids.layout</code>: avoid printing the same warning repetitively in case multiple scans in a data set have the same issue</li>
+<li>Issue #656: Improve warnings (data loading)</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>Issue #583: Proper testing of flavors using ExploreASL_Master</li>
+<li>Issue #584: Print the subject name depending on the existence of its definition in <code>x.SUBJECT</code> to avoid crashes for error reporting in the population module</li>
+<li>Issue #586: Avoid crashing <code>xASL_adm_GetPopulationSessions</code> if no sessions are found</li>
+<li>Issue #591: <strong>MultiTE</strong> import puts TE before PLD in the time series and corrects the JSON output</li>
+<li>Issue #618: Add session name to all M0Check and ASLCheck QC files in the Population folder</li>
+<li>Issue #620: <code>xASL_adm_GzipAllFiles</code>: Allow spaces in an input path for macOS/Linux</li>
+<li>Issue #625: Fix bug related to session format</li>
+<li>Issue #627: Remove a BIDS fiels and BIDS2Legacy should crash and show you why it crashed</li>
+<li>Issue #628: Fix parsing sessions and runs for converting rawdata to derivatives</li>
+<li>Issue #630: Move creation of population folder</li>
+<li>Issue #646: Improve BIDS warnings</li>
+<li>Issue #652: <code>xASL_vis_CreateVisualFig</code>: allow empty overlays</li>
+<li>Issue #659: <code>xASL_stat_PrintStats</code>: Fix visits bug (legacy format)</li>
+<li>Issue #655: <code>xASL_adm_GetPopulationSessions</code> gave incorrect warnings</li>
+<li>Issue #666: Warning when multiple <code>dataPar*.json</code> or <code>studyPar*.json</code> or <code>sourcestructure*.json</code> are present</li>
+<li>Issue #670: Fix warnings and behavior of <code>ExploreASL_Initialize</code></li>
+</ul>
+<h3 id="other-improvements">Other improvements</h3>
+<ul>
+<li>Issue #465: Add projects to acknowledgments</li>
+<li>Issue #615: Add change log to documentation</li>
+<li>Issue #637: Restyle ExploreASL change log</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v162">ExploreASL v1.6.2</h2>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
+<ul>
+<li>Issue #589 Fix scaling issues in JSONs in TestDataSet/derivatives</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v161">ExploreASL v1.6.1</h2>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
+<ul>
+<li>Issue #578 Fix incorrect path searching by providing error if no .json-file is inputted</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v160">ExploreASL v1.6.0</h2>
+<h3 id="versions-included-software_1">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see <code>/External/README_SPM.txt</code>):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15 </li>
+</ul>
+<h3 id="feature-improvements-still-backward-compatible">Feature improvements (still backward compatible)</h3>
+<ul>
+<li>Issues #62, #266, #449: JSON i/o unify and use <code>spm_jsonread</code> and <code>spm_jsonwrite</code> for all operations</li>
+<li>Issue #349: Improve screenprint of the current subjects/sessions/modules by xASL_Iteration</li>
+<li>Issue #384: Add method to export image matrices as structured points in VTK format</li>
+<li>Issue #523: Update ExploreASL_ImportConfig to work with JSONs and add alert for users</li>
+<li>Issue #538: Function to user-replace label values in atlas NIfTI, written for the CICERO study</li>
+<li>Issue #559: Add option <code>x.MakeNIfTI4DICOM</code> to create CBF optimized for DICOM creation/PACS export</li>
+</ul>
+<h3 id="work-in-progress">Work in progress</h3>
+<h4 id="basil">BASIL</h4>
+<ul>
+<li>Issue #20: Data pre-processing prepared for BASIL</li>
+<li>Issue #391: Add single-PLD model for BASIL</li>
+</ul>
+<h4 id="asl-bids">ASL-BIDS</h4>
+<ul>
+<li>Issues #290,#483,#484: Initial version of the ASL-BIDS import workflow</li>
+<li>Issue #353: Correct conversion BIDS-&gt;Legacy for M0 with reversed PE direction</li>
+<li>Issues #394,#514,#545: Improve modularity of the ASL-BIDS import module</li>
+<li>Issue #411: Delete temporary folders in DICOM-&gt;BIDS conversion</li>
+<li>Issue #421: Use <code>ImageType</code> DICOM field to detect scan order in GE in DICOM-&gt;BIDS import</li>
+<li>Issue #426: Reading PLD from DICOM for GE in import to BIDS</li>
+<li>Issue #479: ASL-BIDS import for Hadamard encoded FME sequences</li>
+</ul>
+<h4 id="dro-and-qasper">DRO and QASPER</h4>
+<ul>
+<li>Issues #361,#443: Import and import test of DRO</li>
+<li>Issues #467: Improve script to generate ASL-BIDS version of ASL DRO v2.2.0</li>
+</ul>
+<h4 id="compilationstand-alone-version">Compilation/stand-alone version</h4>
+<h3 id="bug-fixes_3">Bug Fixes</h3>
+<ul>
+<li>Issue #184: Skip PVC in Population statistics, when this does not make sense for a given ROI</li>
+<li>Issue #262: Improve GZIP on windows</li>
+<li>Issue #341: Reduce extensive usage of ExploreASL CLI progress tracker</li>
+<li>Issue #368: Fix problem with writing trailing zeros in real numbers in spm_jsonwrite</li>
+<li>Issue #387: Remove graphical waitbar interface from xASL_im_ResampleLinearFair</li>
+<li>Issue #415: xASL_Copy: Allow recursive copying of directories</li>
+<li>Issue #418: Verifies the SliceTiming parameter if timing difference is consistent between slices</li>
+<li>Issue #424,#454: Remove <code>string</code> and <code>contains</code> functions to ensure Matlab compatibility for R2016</li>
+<li>Issue #430: Fix <code>xASL_adm_ReplaceSymbols</code> crash when trying to replace sub-strings in PhoenixProtocol field</li>
+<li>Issues #433,#474,#542: Splitting of ASL and M0 - fix on rerun, split metadata, backup aslcontext.tsv</li>
+<li>Issue #451: Clean unused code and cleaned the development directory</li>
+<li>Issue #466: Warning if the equal sign is used in JSON files instead of colon</li>
+<li>Issue #475: Fix error with studies that have a special character in their name</li>
+<li>Issue #477: Change vascular territory atlases file extensions to .nii.gz</li>
+<li>Issue #496: Fixed session numbers in population module</li>
+<li>Issue #502: Fix smoothing of 4D NIfTIs</li>
+<li>Issue #505: Allow Token Aliases in import to be row vectors in import</li>
+<li>Issue #518: ExploreASL logo and verbose overview shown only once in a single pipeline run</li>
+<li>Issue #520: Stop import workflow from creating Population folder in root directory</li>
+<li>Issue #543: Minor fix of xASL_num2str behavior</li>
+<li>Issue #563: Minor design fix for ExploreASL dataset initialization</li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Issues #403,#423,#457: Improved inline comments and headers</li>
+<li>Issue #452: Provide descriptions of available atlas options</li>
+<li>Issue #463: Remove remaining markdown file to a separate Documentation repository</li>
+<li>Issues #486,#489: Introduce document templates for GitHub QC Workflow</li>
+<li>Issue #499: Make heading in documentation work in dark mode as well</li>
+<li>Issue #515: Added tutorials to documentation</li>
+<li>Issue #536: Create a first version of the QC walkthrough document in markdown</li>
+</ul>
+<h3 id="testing">Testing</h3>
+<ul>
+<li>Issue #156: Make internal error messages more specific by providing subject information</li>
+<li>Issue #352: Improve parsing of errors and warnings from log files</li>
+<li>Issue #395,#416: Improve testing of BIDS import</li>
+<li>Issue #517: Improve unit testing scripts</li>
+<li>Issue #529: TestDataSet is in BIDS derivatives format</li>
+<li>Issue #570: Release testing and minor documentation improvements</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v151">ExploreASL v1.5.1</h2>
+<h3 id="bug-fixes_4">Bug Fixes</h3>
+<ul>
+<li>Issue #439 Fix population module error by correctly renaming <code>MNI_Structural.*</code> files</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v150">ExploreASL v1.5.0</h2>
+<h3 id="versions-included-software_2">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see <code>/External/README_SPM.txt</code>):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15 </li>
+</ul>
+<h3 id="feature-improvements-still-backward-compatible_1">Feature improvements (still backward compatible)</h3>
+<ul>
+<li>Issue #39: Create PV-corrected GM &amp; WM CBF maps in native space</li>
+<li>Issue #56,#410: Add Mindboggle atlas to ExploreASL and restructure general atlas access in population module</li>
+<li>Issue #283: <code>xASL_stat_GetROIstatistics</code> provide more feedback on missing images</li>
+<li>Issue #299: Move <code>CustomScripts</code> with study-specific scripts to a separate repository</li>
+<li>Issue #302: Remove server calls in CAT12 functions</li>
+<li>Issue #313: Move GUI to a separate repository</li>
+<li>Issue #351: T2 and T1c files are now also aligned to the T1w and outputted to standard space</li>
+<li>Issue #354: Added an option <code>x.DummyScanPositionInASL4D</code> that removes marked dummy scans when splitting ASL to ASL+M0+dummy</li>
+<li>Issues #356,#396,#397: Internally restructure SliceTime allowing ExploreASL now to work with multi-band 2D EPI as well or any other SliceTime order</li>
+</ul>
+<h3 id="work-in-progress_1">Work in progress</h3>
+<h4 id="asl-bids_1">ASL-BIDS</h4>
+<ul>
+<li>Issues #163,#189,#357,#373: Conversion from DICOM to BIDS</li>
+<li>Issues #334,#382: Import of PAR-REC to BIDS</li>
+<li>Issue #343: Add separate M0 option to mTrial import</li>
+</ul>
+<h4 id="compilationstand-alone-version_1">Compilation/stand-alone version</h4>
+<ul>
+<li>Issue #335: All input arguments can be passed in the deployed mode</li>
+<li>Issue #380: Enable advanced input parsing for xASL compiled</li>
+</ul>
+<h3 id="bug-fixes_5">Bug Fixes</h3>
+<ul>
+<li>Issue #228: Fix CAT12 warnings with non-existent field cm</li>
+<li>Issue #272: Fix errors in JSON import of ASL sidecars</li>
+<li>Issues #273,#285,#291,#363: Minor fixes in input parameter administration</li>
+<li>Issues #276,#280,#288,#329,#400: Fix error in reading TSV files with unclear number of columns</li>
+<li>Issue #282: Population module is run serially in otherwise parallel mode</li>
+<li>Issue #292: <code>xASL_qc_SortBySpatialCoV</code> now use all subjects without skipping</li>
+<li>Issue #305: <code>xASL_adm_UnixPath</code>: bug with Windows+WSL</li>
+<li>Issues #306,#378: Fix JSON reading with 'i' interpreted as a complex number</li>
+<li>Issue #309: Fix non-linear registration of T1w to standard space with too high T1w values</li>
+<li>Issue #312: <code>xASL_stat_GetROIstatistics</code> fix skipping of actual ROI extraction</li>
+<li>Issue #325: <code>xASL_adm_CleanUpBeforeRerun</code> delete files correctly</li>
+<li>Issue #339: Fix JSON reading of special characters</li>
+<li>Issue #399: Fix special characters in Windows filenames</li>
+<li>Issue #405: Fix range-check error in Background Suppression timing calculation</li>
+<li>Issue #406: Fix <code>xASL_stat_MedianNan</code> for all-NaN input</li>
+<li>Issues #408,#409: Skip missing fields in CAT during reports in compiled ExploreASL</li>
+</ul>
+<h3 id="documentation_1">Documentation</h3>
+<ul>
+<li>Issue #7: Create README files in subfolders and added to interactive documentation </li>
+<li>Issues #279, #345: Move documentation to a separate repository</li>
+<li>Issues #300,#318: Improve ExploreASL tutorial</li>
+<li>Issue #355: Documentation improvements regarding input parameters</li>
+</ul>
+<h3 id="testing_1">Testing</h3>
+<ul>
+<li>Issues #193,#350,#398: Testing DICOM to BIDS conversion against a reference</li>
+<li>Issue #294: Implement initial unit testing framework</li>
+<li>Issue #326: Parse warnings/errors from all log in all subdirectories</li>
+<li>Issue #369: Unit testing of <code>xASL_test_getLogContent</code></li>
+<li>Issues #371,#376,#404: Testing script for the DICOM-&gt;BIDS-&gt;Legacy conversion and processing</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v140">ExploreASL v1.4.0</h2>
+<h3 id="versions-included-software_3">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15 </li>
+</ul>
+<h3 id="feature-improvements-still-backward-compatible_2">Feature improvements (still backward compatible)</h3>
+<ul>
+<li>Issue #20 Implement BASIL -&gt; changed order quantification/masking, and always save resampled PWI4D for quantification, facilitating BASIL</li>
+<li>Issue #35 Calculation background suppression efficiency for pseudo-M0 -&gt; in case of missing separate M0 images but still using background suppressed mean control as pseudo-M0, a single correction value (3D) or slice-wise correction value (2D) are applied to the pseudo-M0 image/slices</li>
+<li>Issue #131 ExploreASL_GUI beta-testing enhancements set 1 -&gt; Aesthetic improvements in certain modules, fixed incorrect removal of Philips-related json-sidecar fields in DCM2BIDS / Import module. Correction of ASL image flickering bug and ability for the user to subset without having to reload the data. Added ability to clarify data type of variables without the need to reload data. Added auto-select / auto-complete functionality in the ParmsMaker module as soon as the user indicates an analysis directory (i.e auto-completion of <code>SliceReadoutTime</code> for pCASL)</li>
+<li>Issue #166 Update ADNI import in ExploreASL_Import</li>
+<li>Issue #179 Finish creation average maps for CICERO -&gt; improvements xASL_wrp_CreatePopulationTemplates</li>
+<li>Issue #190 Hammers atlas option CAT12 -&gt; restored the original Hammers atlas option for a colleague (note it's license though!)</li>
+<li>Issue #225 Create DataPar option for running SPM12 longitudinal registration</li>
+<li>Issue #241 Add warning when loading data without x output structure </li>
+<li>Issue #243 Shorten SPM initialization time -&gt; removed configuration loading of unused toolboxes (check if the SPM DICOM import module is still needed)</li>
+</ul>
+<h3 id="work-in-progress_2">Work in progress</h3>
+<h4 id="asl-bids_2">ASL-BIDS</h4>
+<ul>
+<li>Issue #193 Comparing BIDS folders (for testing purpose)</li>
+<li>Issue #226 Add new DICOM tags to DCMTK import</li>
+</ul>
+<h3 id="bug-fixes_6">Bug Fixes</h3>
+<ul>
+<li>Issue #191 WMH warning when no FLAIR analyzed -&gt; this warning is now removed if no FLAIR was present in the data</li>
+<li>Issue #248 Temporary fix native space processing -&gt; in Population module</li>
+<li>Issue #252 Population modules analysis masks - minor errors</li>
+<li>Issue #267 Error in reading JSONs from EPAD</li>
+</ul>
+<h3 id="documentation_2">Documentation</h3>
+<ul>
+<li>Issue #196 All contributors -&gt; all contributors are now automatically added to the main README.md</li>
+<li>Issue #217 Documentation improvements</li>
+<li>Issue #219 Add user to documentation</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v130">ExploreASL v1.3.0</h2>
+<h3 id="versions-included-software_4">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15 </li>
+</ul>
+<h3 id="feature-improvements-still-backward-compatible_3">Feature improvements (still backward compatible)</h3>
+<ul>
+<li>Issue #59: Assign "weights" to status files, allowing the external Python ExploreASL GUI to provide a better estimate of the progress</li>
+<li>Issue #71 Remove custom lesions <code>(Lesion\_(FLAIR|T1)\_\\d\\.nii)</code> from <code>WMH_SEGM.nii</code></li>
+<li>Issue #76: Improve functionality of ExploreASL through Command Line Interface (CLI), i.e. without using the Graphical User Interface (GUI) of Matlab</li>
+<li>Issue #123 Create status files also for skipped processing parts: this is mainly the case for running the structural module without a FLAIR scan. Having all status files helps third-party tools such as the Python ExploreASL GUI to know that processing has succesfully completed (duplicate issues #137 and #129)</li>
+<li>The same was done for the ASL realignment status file, in case realignment is skipped for a 3D scan</li>
+<li>Issue #145: Improve <code>.nii(.gz)</code> management in <code>xASL_spm_deformations</code>: allow either .nii or .nii.gz as input, treat them equally, and when <code>.nii.gz</code> is provided as output path, zip the resulting deformed image</li>
+</ul>
+<h3 id="work-in-progress_3">Work in progress</h3>
+<ul>
+<li>Issue #32 Docker integration</li>
+<li>Issue #55 ExploreASL GUI, written in Python</li>
+<li>Issue #106 <code>xASL_im_SplitImageLabels</code>: Allow splitting labels, and warping them to standard space.
+This is part of a continuous development on creating average flow territory templates and figures.</li>
+<li>Issue #162 Remove <code>bNativeSpaceProcessing</code> from TestDataSet for now, return this when <code>bNativeSpaceProcess</code> is made more modular</li>
+</ul>
+<h4 id="asl-bids_3">ASL-BIDS</h4>
+<ul>
+<li>Issue #82 Avoid 4D files with nT==1, which is not allowed in the BIDS validator</li>
+</ul>
+<h4 id="compilationstand-alone-version_2">Compilation/stand-alone version</h4>
+<ul>
+<li>Issue #88 <code>xASL_SysMove</code> error in Windows when a path includes whitespaces ' '</li>
+</ul>
+<h3 id="bug-fixes_7">Bug Fixes</h3>
+<ul>
+<li>Issue #85 Improvement ApplyQuantification</li>
+<li>Issue #99 Improve loading of metadata (<code>xASL_str2num</code> &amp; <code>xASL_init_LoadMetaData</code>)</li>
+<li>Issue #105 In case of missing data, fill <code>x.S.SUBJECTID</code> and <code>S.DAT</code> data for the last subject/session</li>
+<li>Issue #119 Create status file for last subject, if it's processing is skipped</li>
+<li>Issue #120 <code>xASL_im_CreateAnalysisMask</code> in native space mode when in parallel execution</li>
+<li>Issue #138 Fix structure TestDataJSON &amp; its JSON files</li>
+<li>Issue #139 Ensure that x fields are not case sensitive, by e.g. replacing <code>strcmp</code> by <code>strcmpi</code></li>
+<li>Issue #141 Solve conflicts between develop and master, these were minor edits that weren't implemented in develop yet</li>
+<li>Issue #143 ensure that VBA masks are also created for a 3D spiral sequence (this was not created yet as the susceptibility masks were missing for this sequence)</li>
+<li>Issue #148 Syncing the ROI/lesion processing of T1w &amp; FLAIR</li>
+<li>Issue #151 Minor bugfixes for TopUp</li>
+<li>Issue #177 Fix <code>xASL_adm_UnzipNifti</code> &amp; <code>xASL_io_SaveNifti</code> when path is incomplete<ul>
+<li>Skip warnings for small populations (in the start of <code>xASL_module_Population</code>)</li>
+<li>Fix regular expression in <code>xASL_init_LoadMetaData</code></li>
+<li><code>iRow</code> counting fix in <code>xASL_bids_Add2ParticipantsTSV</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="documentation_3">Documentation</h3>
+<ul>
+<li>Issue #7 Documentation/revamp <code>xASL_im_ClipExtremes</code></li>
+<li>Issue #159 Ensure that all sequence notations use underscores instead of whitespace, e.g. <code>3D_spiral</code> instead of <code>3D spiral</code></li>
+</ul>
+<h3 id="testing_2">Testing</h3>
+<ul>
+<li>Issue #86 <code>xASL_qc_TestExploreASL</code>: improve Table creation</li>
+<li>Issue #112 Save Tanimoto Coefficient (i.e. a fuzzy overlap/Dice score) of the final ASL-T1w registration</li>
+<li>Issue #128 Improved one internal test dataset</li>
+<li>Issue #130 <code>xASL_qc_TestExploreASL</code>: Complete functionality by allowing Windows parallelization &amp; testing the Windows ExploreASL compilation. Also added unit testing framework in the same issue.</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v122">ExploreASL v1.2.2</h2>
+<h3 id="bug-fixes_8">Bug Fixes</h3>
+<ul>
+<li>Issue #119 xASL_wrp_LinearReg_T1w2MNI.m: ROI .nii files correctly aligned with T1</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v121">ExploreASL v1.2.1</h2>
+<h3 id="bug-fixes_9">Bug Fixes</h3>
+<ul>
+<li>xASL_qc_TestExploreASL: Remove locked folders if rerun</li>
+<li>Issue #90 <code>xASL_io_Nifti2Im</code>: manage the detection of odd scaling</li>
+<li>Issue #93 <code>xASL_SysMove</code>: diz illegal symbols Windows</li>
+<li>Issue #102 <code>xASL_wrp_CreatePopulationTemplates</code>: minor bugfix</li>
+<li>Issue #104 Fix creation ResultsTable for TestCases (also #86)</li>
+<li>Issue #114 Acquiring Matlab version doesn't crash anymore in deployed mode</li>
+<li>Issue #115 Fixing NaNs problem in M0 mask computation</li>
+<li>
+<p>Issue #118 <code>xASL_adm_GzipAllFiles</code> doesn't crash anymore in Windows</p>
+</li>
+<li>
+<p>Issue #116 ExploreASL testing fixes:</p>
+<ul>
+<li>Edit header of saved .tsv-file</li>
+<li>Cosmetic changes\nUnzip before SPM</li>
+<li>Clear variables before loading .mat</li>
+<li>Replace spaces in headers with underscores (which happened automatically apparently upon saving)</li>
+<li>Remove SPM cellstring </li>
+</ul>
+</li>
+</ul>
+<h3 id="asl-bids-related-bug-fixes">ASL-BIDS-related bug fixes</h3>
+<ul>
+<li>Issue #96 Fix order of magnitude in JSON sidecars</li>
+<li>Issue #109 No warning if SliceReadoutTime not provided in DataPar</li>
+<li>Issue #110 <code>xASL_bids_parms2BIDS.m</code> now deals correctly with vectors and <code>SliceReadoutTime = 'shortestTR'</code>: created function for this: <code>xASL_quant_SliceReadoutTime_Shortest_TR</code></li>
+</ul>
+<hr />
+<h2 id="exploreasl-v120">ExploreASL v1.2.0</h2>
+<h3 id="versions-included-software_5">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15</li>
+</ul>
+<h3 id="major-feature-improvements-still-backward-compatible">Major feature improvements (still backward compatible)</h3>
+<ul>
+<li>Add user flexibility for creating average maps, allowing flipping</li>
+<li>
+<p>Provide a lesion or ROI mask, to be used not only for cost function masking but also as standard space ROI for ROI-analysis
+  This use is now easier, by simply adding <code>Lesion_FLAIR_1.nii</code> or <code>Lesion_T1_2.nii</code> etc, and visualization improved. These masks are now automatically created   (where lesion can be any other ROI):</p>
+</li>
+<li>
+<p>Intralesional</p>
+</li>
+<li>Perilesional, pGM+pWM</li>
+<li>Hemisphere (ipsilateral to lesion)</li>
+<li>Contralateral (i)</li>
+<li>Contralateral (ii)</li>
+<li>
+<p>Contralateral (iii)</p>
+</li>
+<li>
+<p>Option x.S.bMasking added, allowing specifying masking separately for:</p>
+</li>
+<li>
+<p>bSusceptibilityMask</p>
+</li>
+<li>bVascularMask</li>
+<li>subject-wise bGMMask (e.g. the <code>pGM&gt;0.7</code>)</li>
+<li>
+<p>brainmasking when loading for lower memory usage</p>
+</li>
+<li>
+<p>Affine registration improved &amp; Discrete Cosine Transform (DCT) non-linear registration option added, including an option with partial volume correction built-in for improved DCT-based registration</p>
+</li>
+</ul>
+<h3 id="bug-fixes_10">Bug Fixes</h3>
+<ul>
+<li>Allow zipping in Unix-based OS without JavaVirtualMachine </li>
+<li>Quantification issue with Philips scale slopes</li>
+<li>DCTMK fix, import parameters</li>
+<li>Use <code>xASL_adm_UnixPath()</code> for Unix system calls, for correct path usage (e.g. for spaces that need escaping)</li>
+<li>Double escaping of backslashes in converting <code>.m</code> to <code>.json</code> for DataPar file - subject-regexp</li>
+<li>Compilation path error</li>
+<li>Correctly concatenate numbers when <em>xASL_num2str</em></li>
+<li>Improvements <code>xASL_adm_LoadParms</code> for converting parameters ASL flavors to BIDS/ExploreASL internally</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>New startup option for starting ExploreASL, loading data, without processing data</li>
+<li>Shortcut <code>ExploreASL</code> for <code>ExploreASL_Master</code></li>
+<li>Now we have <code>xASL_csvWrite, xASL_csvRead, xASL_tsvRead, xASL_tsvWrite</code></li>
+<li><code>xASL_io_Nifti2Im</code> now detects erroneously extreme high scaling (potential import issue with Philips RescaleSlope)
+  issues a warning and/or tries to fix automatically for FLAIR/T1w images</li>
+</ul>
+<h3 id="work-in-progress_4">Work in progress</h3>
+<ul>
+<li>Docu Crawler for automatic documentation creation </li>
+<li><code>ExploreASL_Import</code> for different ASL flavors</li>
+<li>BIDS implementation import</li>
+</ul>
+<h3 id="documentation_4">Documentation</h3>
+<ul>
+<li>create new prefix for visualization functions (<code>xASL_vis\_\*</code> instead of <code>xASL_im\_\*</code>)</li>
+<li>revamp quantification functions for better headers, comments etc</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v113">ExploreASL v1.1.3</h2>
+<h3 id="bug-fixes_11">Bug Fixes</h3>
+<ul>
+<li>hotfix minor bug in running the import using DCMTK without the Matlab Image Processing Toolbox #30</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v112">ExploreASL v1.1.2</h2>
+<h3 id="bug-fixes_12">Bug Fixes</h3>
+<ul>
+<li>hotfix minor bug in loading NIfTIs containing lesion masks in CAT12 #28</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v111">ExploreASL v1.1.1</h2>
+<hr />
+<h3 id="bug-fixes_13">Bug Fixes</h3>
+<ul>
+<li>hotfix minor bug in creating participants.tsv #23</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v110">ExploreASL v1.1.0</h2>
+<h3 id="versions-included-software_6">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see <code>/External/README_SPM.txt</code>):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1615 </li>
+<li>LST 2.0.15</li>
+</ul>
+<h3 id="bug-fixes_14">Bug Fixes</h3>
+<ul>
+<li>Bug fixes and overall code improvements related to the BIDS import workflow (#11)</li>
+<li>Registration with poor CBF contrast will not issue an error anymore but correctly switch to control-T1w registration only (#17)</li>
+<li>Unexisting x.Sequence field fixed, now an appropriate warning is issued and this field is defined automatically by <code>xASL_adm_DefineASLSequence.m</code> (#16)</li>
+</ul>
+<h3 id="features_1">Features</h3>
+<ul>
+<li>Quantification can now be fully disabled by: <code>x.ApplyQuantification = [0 0 0 0 0];</code> (#14)</li>
+<li>Insert option to disable M0-ASL registration (#13)</li>
+<li>Update of CAT (Computational Anatomy Toolbox) from version 12.5 to 12.7 (#2)</li>
+</ul>
+<h3 id="work-in-progress_5">Work in progress</h3>
+<ul>
+<li>Minor improvements of custom scripts for BBB-ASL and BIDS (#8)</li>
+<li>Minor improvements regarding unit testing of ExploreASL (#10)</li>
+<li>Additional warnings for ExploreASL users (#12)</li>
+</ul>
+<h3 id="documentation_5">Documentation</h3>
+<ul>
+<li>Recent changes include the improvement of the documentation within the ExploreASL structure using markdown files and the introduction of a new documentation repository (#7)</li>
+<li>Some function headers were added for increased understandability (#19). These can be viewed in Matlab by: <code>help ExploreASL_Master</code> where you can replace ExploreASL_Master by the actual function name</li>
+</ul>
+<hr />
+<h2 id="exploreasl-v100">ExploreASL v1.0.0</h2>
+<p>This is the first release version.</p>
+<h3 id="versions-included-software_7">Versions included software</h3>
+<p>Versions included &amp; used third-party tools (see /External/README_SPM.txt):</p>
+<ul>
+<li>SPM12 7219 </li>
+<li>CAT12 r1363</li>
+<li>LST 2.0.15</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../Requirements/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Requirements
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../License/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+    
+  </body>
+</html>
