@@ -1835,9 +1835,9 @@ voxels that lie within the BrainMask. This excludes extracranial
 zero-information voxels from computations and memory use.
 NB: Important to use the same BrainMask for converting the
 column back to an image matrix!
-See also: xASL\_im\_Column2IM.m
+See also: `xASL\_im\_Column2IM.m`
 
-The mask mostly used for xASL\_im\_IM2Column is x.S.masks.WBmask, which completely
+The mask mostly used for xASL\_im\_IM2Column is `x.S.masks.WBmask`, which completely
 engulfes pGM, pWM & pCSF
 
 
@@ -1862,7 +1862,7 @@ outside of the bins are counted to the first/last bin.
 **Format:**
 
 ```matlab
-LesionPathOut = xASL_im_Lesion2CAT(PathIn)
+LesionPathOut = xASL_im_Lesion2CAT (PathIn)
 ```
 
 **Description:**
@@ -1891,10 +1891,13 @@ The mask % can be an ROI or lesion, if we assume it is a lesion, the following m
 2. Perilesional (15 mm rim around the lesion)
 3. Hemisphere (ipsilateral to lesion)
 4. Contralateral version of 1
+4a First create separate masks
+4b Check if they are mutually exclusive
+4c Save NIfTI file
 5. Contralateral version of 2
 6. Contralateral version of 3
 
-All these masks are masked by a brainmask (pGM+pWM)>0.5
+All these masks are masked by a brainmask `(pGM+pWM)>0.5`
 
 This function performs the following steps:
 
@@ -1934,8 +1937,8 @@ performs the following steps:
 7. Scale back to the GM M0
 8. Print visual QC figure
 
-A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in 1.5 mm MNI standard space)
-OutputFile = fullfile(x.D.M0regASLdir,['M0\_im\_proc\_' x.P.SubjectID '.jpg']);
+A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in `1.5 mm` MNI standard space)
+`OutputFile = fullfile(x.D.M0regASLdir,['M0\_im\_proc\_' x.P.SubjectID '.jpg']);`
 The original M0 image (a) is masked with a (pGM+pWM)>50% mask (b)
 eroded with a two-voxel sphere to limit the influence of the ventricular and extracranial signal (c)
 and thresholded to exclude significantly high (i.e. median + 3\*mean absolute deviation (MAD)) border region values (d)
@@ -1962,11 +1965,11 @@ vascular signal will be a relatively large region with
 significant median negative value, whereas noise will be
 regions with relatively small negative signal.
 Negative signal from wrong background suppression timing
-(e.g. in the first slice with 2D EPI) can be masked out with
+(e.g. in the first slice with \*\*2D EPI\*\*) can be masked out with
 this as well.
 The procedure works as follows:
 
-1. Obtain mask of negative voxels within pGM>0.5 mask
+1. Obtain mask of negative voxels within `pGM>0.5` mask
 2. Obtain distribution of subzero clusters
 3. Define the negative threshold
 4. Create mask by thresholding whole image
@@ -1977,6 +1980,7 @@ the GM only, but that this threshold is applied to the full image.
 Note that instead of the PWI path input, a CBF image should
 work equally well, as we don't expect a smooth M0 biasfield
 to change the distribution of negative clusters
+
 
 
 ----

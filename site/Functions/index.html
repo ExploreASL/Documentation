@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/1.7.0/Functions/">
+        <link rel="canonical" href="https://github.com/ExploreASL/1.8.0/Functions/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
@@ -5120,8 +5120,8 @@ voxels that lie within the BrainMask. This excludes extracranial
 zero-information voxels from computations and memory use.
 NB: Important to use the same BrainMask for converting the
 column back to an image matrix!
-See also: xASL_im_Column2IM.m</p>
-<p>The mask mostly used for xASL_im_IM2Column is x.S.masks.WBmask, which completely
+See also: <code>xASL\_im\_Column2IM.m</code></p>
+<p>The mask mostly used for xASL_im_IM2Column is <code>x.S.masks.WBmask</code>, which completely
 engulfes pGM, pWM &amp; pCSF</p>
 <hr />
 <h3 id="xasl_im_jointhistm">xASL_im_JointHist.m</h3>
@@ -5136,7 +5136,7 @@ outside of the bins are counted to the first/last bin.</p>
 <hr />
 <h3 id="xasl_im_lesion2catm">xASL_im_Lesion2CAT.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">LesionPathOut = xASL_im_Lesion2CAT(PathIn)
+<pre><code class="matlab">LesionPathOut = xASL_im_Lesion2CAT (PathIn)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -5156,11 +5156,14 @@ The mask % can be an ROI or lesion, if we assume it is a lesion, the following m
 <li>Intralesional</li>
 <li>Perilesional (15 mm rim around the lesion)</li>
 <li>Hemisphere (ipsilateral to lesion)</li>
-<li>Contralateral version of 1</li>
+<li>Contralateral version of 1
+4a First create separate masks
+4b Check if they are mutually exclusive
+4c Save NIfTI file</li>
 <li>Contralateral version of 2</li>
 <li>Contralateral version of 3</li>
 </ol>
-<p>All these masks are masked by a brainmask (pGM+pWM)&gt;0.5</p>
+<p>All these masks are masked by a brainmask <code>(pGM+pWM)&gt;0.5</code></p>
 <p>This function performs the following steps:</p>
 <ol>
 <li>If lesion is empty, skip this &amp; delete the file</li>
@@ -5193,8 +5196,8 @@ performs the following steps:</p>
 <li>Scale back to the GM M0</li>
 <li>Print visual QC figure</li>
 </ol>
-<p>A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in 1.5 mm MNI standard space)
-OutputFile = fullfile(x.D.M0regASLdir,['M0_im_proc_' x.P.SubjectID '.jpg']);
+<p>A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in <code>1.5 mm</code> MNI standard space)
+<code>OutputFile = fullfile(x.D.M0regASLdir,['M0\_im\_proc\_' x.P.SubjectID '.jpg']);</code>
 The original M0 image (a) is masked with a (pGM+pWM)&gt;50% mask (b)
 eroded with a two-voxel sphere to limit the influence of the ventricular and extracranial signal (c)
 and thresholded to exclude significantly high (i.e. median + 3*mean absolute deviation (MAD)) border region values (d)
@@ -5215,11 +5218,11 @@ vascular signal will be a relatively large region with
 significant median negative value, whereas noise will be
 regions with relatively small negative signal.
 Negative signal from wrong background suppression timing
-(e.g. in the first slice with 2D EPI) can be masked out with
+(e.g. in the first slice with **2D EPI**) can be masked out with
 this as well.
 The procedure works as follows:</p>
 <ol>
-<li>Obtain mask of negative voxels within pGM&gt;0.5 mask</li>
+<li>Obtain mask of negative voxels within <code>pGM&gt;0.5</code> mask</li>
 <li>Obtain distribution of subzero clusters</li>
 <li>Define the negative threshold</li>
 <li>Create mask by thresholding whole image</li>
