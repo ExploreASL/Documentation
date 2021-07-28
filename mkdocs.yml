@@ -3,23 +3,24 @@ repo_url: https://github.com/ExploreASL/Documentation
 site_url: https://github.com/ExploreASL/Documentation
 
 nav:
-    - Home:                 index.md
-    - Modules:              Modules.md
-    - Module Import:        Import_Module.md
-    - Module Structural:    Structural_Module.md
-    - Module ASL:           ASL_Module.md
-    - Module Population:    Population_Module.md
-    - Functions:            Functions.md
-    - SPM xASL Functions:   SPMxASL.md
-    - Tutorials (ASL-BIDS): Tutorials-ASL-BIDS.md
-    - Tutorials (Basics):   Tutorials-Basics.md
-    - Tutorials (QC):       Tutorials-QC.md
-    - Tutorials (Advanced): Tutorials-Advanced.md
-    - FAQ:                  FAQ.md
-    - Requirements:         Requirements.md
-    - Change Log:           Changes.md
-    - License:              License.md
-    - About:                About.md
+    - Home:                   index.md
+    - Modules:                Modules.md
+    - Module Import:          Import_Module.md
+    - Module Structural:      Structural_Module.md
+    - Module ASL:             ASL_Module.md
+    - Module Population:      Population_Module.md
+    - Functions:              Functions.md
+    - SPM xASL Functions:     SPMxASL.md
+    - Tutorials (ASL-BIDS):   Tutorials-ASL-BIDS.md
+    - Tutorials (Basics):     Tutorials-Basics.md
+    - Tutorials (QC):         Tutorials-QC.md
+    - Tutorials (Advanced):   Tutorials-Advanced.md
+    - Parameter Descriptions: DataParTemplate.md
+    - FAQ:                    FAQ.md
+    - Requirements:           Requirements.md
+    - Change Log:             Changes.md
+    - License:                License.md
+    - About:                  About.md
 
 plugins:
     - search

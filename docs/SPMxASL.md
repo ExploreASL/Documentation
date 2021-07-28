@@ -603,6 +603,13 @@ xASL_io_SaveNifti(pathOrigNifti, pathNewNifti, imNew[, nBits, bGZip, newMat])
 
 It loads the pathOrigNifti, takes all the parameters from it, and creates a new Nifti file with
 these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.
+It runs the following steps:
+
+1. Unzipping and manage name input file
+2. Determine the bit precision
+3. Create new NIfTI
+4. Remove redundant .mat orientation files
+5. Delete any pre-existing NIfTI files with the same name
 
 
 ----

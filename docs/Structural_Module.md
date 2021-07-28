@@ -196,7 +196,7 @@ longitudinal registration or after creation of a group-wise template.
 **Format:**
 
 ```matlab
-[x] = xASL_wrp_SegmentT1w(x, SegmentSPM12)
+[x] = xASL_wrp_SegmentT1w(x, bSegmentSPM12)
 ```
 
 **Description:**

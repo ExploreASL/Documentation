@@ -99,4 +99,185 @@ docker run -e DATASETROOT=MY-BIDS-DATASET
 - The same notation is used to mount the docker dataset output folder (```/data/outgoing```) to its corresponding real output folder on your drive (```/home/.../outgoing```).
 
 
+----
+## The ExploreASL x structure
+
+The ExploreASL `x` structure is the main object used to define pipeline settings. Besides settings you can also find processing and meta data there.
+
+### Options: x.opts
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.opts.DatasetRoot                   | Dataset root directory of the current BIDS dataset. This is also the first input argument of `ExploreASL`. |
+| x.opts.ImportModules                 | Vector to define which import modules should be executed. This is also the second input argument of `ExploreASL`. |
+| x.opts.ProcessModules                | Vector to define which processing modules should be executed. This is also the third input argument of `ExploreASL`. |
+| x.opts.bPause                        | Boolean to set if you want to pause the pipeline before the processing. This is also the fourth input argument of `ExploreASL`. |
+| x.opts.iWorker                       | This variable defines which of the parallel ExploreASL calls we are. This is also the fifth input argument of `ExploreASL`. |
+| x.opts.nWorkers                      | This variable defines how many ExploreASL calls are made in parallel. This is also the sixth input argument of `ExploreASL`. |
+| x.opts.bImportData                   | Boolean that is true if at least one import module is going to be executed. |
+| x.opts.bProcessData                  | Boolean that is true if at least one processing module is going to be executed. |
+| x.opts.bLoadData                     | Boolean that is true if the current BIDS dataset is going to be loaded. |
+| x.opts.MyPath                        | Path to the `ExploreASL` program. |
+| x.opts.dataParType                   | String describing the type of input argument that was given for the `DatasetRoot`. This parameter is mainly supposed to help with backwards compatibility. |
+
+
+### General settings: x.settings
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.settings.SelectParFile             |  |
+| x.settings.stopAfterErrors           |  |
+| x.settings.dryRun                    |  |
+| x.settings.bOverwrite                |  |
+| x.settings.BILAT_FILTER              |  |
+| x.settings.DELETETEMP                |  |
+| x.settings.Quality                   | Quality setting for `ExploreASL` processing. Set to 1 for normal high-quality processing or to 0 for low-quality test runs. |
+| x.settings.bReproTesting             |  |
+| x.settings.Pediatric_Template        |  |
+| x.settings.bLesionFilling            |  |
+| x.settings.bAutoACPC                 |  |
+| x.settings.bGetControlLabelOrder     |  |
+| x.settings.SkipIfNoFlair             |  |
+| x.settings.SkipIfNoASL               |  |
+| x.settings.SkipIfNoM0                |  |
+
+
+### General dataset parameters: x.dataset
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.dataset.name                       |  |
+| x.dataset.subjectRegexp              |  |
+| x.dataset.exclusion                  |  |
+| x.dataset.ForceInclusionList         |  |
+
+
+### Paths & directories: x.dir, x.P & x.D
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.dir.sourceStructure                |  |
+| x.dir.studyPar                       |  |
+| x.dir.dataset_description            |  |
+| x.dir.dataPar                        |  |
+| x.D.ROOT                             |  |
+
+
+### Sequence & quantification parameters: x.Q
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.Q.M0                               |  |
+| x.Q.BackgroundSuppressionNumberPulses |  |
+| x.Q.BackgroundSuppressionPulseTime   |  |
+| x.Q.PresaturationTime                |  |
+| x.Q.readoutDim                       |  |
+| x.Q.Vendor                           |  |
+| x.Q.Sequence                         |  |
+| x.Q.LabelingType                     |  |
+| x.Q.Initial_PLD                      |  |
+| x.Q.LabelingDuration                 |  |
+| x.Q.SliceReadoutTime                 |  |
+| x.Q.bUseBasilQuantification          |  |
+| x.Q.Lambda                           |  |
+| x.Q.T2art                            |  |
+| x.Q.BloodT1                          |  |
+| x.Q.TissueT1                         |  |
+| x.Q.nCompartments                    |  |
+| x.Q.ApplyQuantification              |  |
+| x.Q.SaveCBF4D                        |  |
+
+
+### Processing parameters: x.modules
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.modules.bRunLongReg                |  |
+| x.modules.bRunDARTEL                 |  |
+
+
+**Import module**: `x.modules.import`
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| ...                                  |  |
+
+
+**Structural module**: `x.modules.structural`
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.modules.structural.bSegmentSPM12   |  |
+| x.modules.structural.bHammersCAT12   |  |
+| x.modules.structural.bFixResolution  |  |
+
+
+**ASL module**: `x.modules.asl`
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.modules.asl.motionCorrection       |  |
+| x.modules.asl.SpikeRemovalThreshold  |  |
+| x.modules.asl.bRegistrationContrast  |  |
+| x.modules.asl.bAffineRegistration    |  |
+| x.modules.asl.bDCTRegistration       |  |
+| x.modules.asl.bRegisterM02ASL        |  |
+| x.modules.asl.bUseMNIasDummyStructural |  |
+| x.modules.asl.bPVCNativeSpace          |  |
+| x.modules.asl.PVCNativeSpaceKernel     |  |
+| x.modules.asl.bPVCGaussianMM           |  |
+| x.modules.asl.bMakeNIfTI4DICOM         |  |
+
+
+**Population module**: `x.modules.population`
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| ...                                  |  |
+
+
+### Masking & atlas parameters: x.S
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.S.bMasking                         |  |
+| x.S.Atlases                          |  |
+| x.S.slices                           |  |
+| x.S.slicesLarge                      |  |
+| x.S.slicesExtraLarge                 |  |
+| x.S.nSlices                          |  |
+| x.S.nSlicesLarge                     |  |
+| x.S.nSlicesExtraLarge                |  |
+| x.S.TransCrop                        |  |
+| x.S.jet256                           |  |
+| x.S.gray                             |  |
+| x.S.red                              |  |
+| x.S.yellow                           |  |
+| x.S.green                            |  |
+| x.S.blue                             |  |
+| x.S.purple                           |  |
+| x.S.turqoise                         |  |
+| x.S.orange                           |  |
+| x.S.colors_ROI                       |  |
+| x.S.cool                             |  |
+| x.S.hot                              |  |
+| x.S.VoxelSize                        |  |
+| x.S.masks                            |  |
+| x.S.LabelClr                         |  |
+
+
+
+### External toolboxes & environment parameters: x.external
+
+| Fieldname                            | Description                                   |
+| ------------------------------------ |:---------------------------------------------:|
+| x.external.SPMVERSION                | String describing the version of SPM. |
+| x.external.bAutomaticallyDetectFSL   |  |
+
+
+
+
+
+
+
 

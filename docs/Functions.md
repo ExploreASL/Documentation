@@ -317,9 +317,9 @@ the educated guess is used for the estimated resolution using previous data and 
 **Description:**
 
 This ExploreASL function tries to check what ASL sequence is
-being processed, if this was not already defined in x.Sequence.
+being processed, if this was not already defined in x.Q.Sequence.
 It does so by checking known combinations of readout dimensionality
-(x.readout\_dim) and vendor, knowing the product sequences of the vendors.
+(x.Q.readoutDim) and Vendor, knowing the product sequences of the Vendors.
 
 
 ----
@@ -419,6 +419,22 @@ INDEX = xASL_adm_FindStrIndex(ARRAY, STRING)
 Similar to find, but then for a cell array filled with strings.
 Only takes 4 dimensions.
 
+
+
+----
+### xASL\_adm\_GetDeprecatedFields.m
+
+**Format:**
+
+```matlab
+nameConversionTable = xASL_adm_GetDeprecatedFields()
+```
+
+**Description:**
+
+This script is mainly used to improve backwards
+compatibility. Check the usage in both xASL\_adm\_LoadX
+and xASL\_io\_ReadDataPar.
 
 
 ----
@@ -616,6 +632,22 @@ This function performs the following steps:
 6. Run SPM compilation
 7. Run ExploreASL compilation
 8. Print done
+
+
+----
+### xASL\_adm\_MergeStructs.m
+
+**Format:**
+
+```matlab
+mergedStruct = xASL_adm_MergeStructs(mainStruct, secondaryStruct)
+```
+
+**Description:**
+
+It merges two structures. It takes everything from the mainStruct and keep it as it is. It adds all fields from the secondaryStructure
+to the main structure while checking for duplicates. It is not overwriting anything, all duplicit content is taken from mainStruct.
+It works iteratively by correctly merging also the substructs.
 
 
 ----
@@ -1354,7 +1386,7 @@ Supports .nii & .nii.gz, Linux, MacOS & Windows (WSL)
 This function finds the FSLdir & puts it out, also in
 x.FSLdir to allow repeating this function without having to repeat
 searching.
-If the FSLdir & RootFSLDir are already defined in x.FSLdir & x.RootFSLDir, this function
+If the FSLdir & RootFSLdir are already defined in x.FSLdir & x.RootFSLdir, this function
 is skipped.
 Supports Linux, MacOS & Windows (WSL), & several different
 default installation folders for different Linux
@@ -1384,7 +1416,7 @@ we apply TopUp to, have the Blip up or down?)
 (registration between blip up/down images is performed by
 TopUp)
 2. Run TopUp estimate (i.e. estimate the geometric distortion field from B0 NIfTI &
-parameters file), this takes quite long. Also has a x.Quality=0 option that is very fast
+parameters file), this takes quite long. Also has a x.settings.Quality=0 option that is very fast
 but inaccurate, to try out this pipeline part. Before
 TopUp, NaNs (e.g. from resampling) are removed from the images
 TopUp is run with default settings
@@ -2357,6 +2389,21 @@ Simple rotation of the first two dimension of a ND image by
 ## Initialization
 
 ----
+### xASL\_init\_DataLoading.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_DataLoading(x)
+```
+
+**Description:**
+
+Load dataset by adding relevant fields to xASL x struct.
+
+
+
+----
 ### xASL\_init\_DefaultEffectiveResolution.m
 
 **Format:**
@@ -2647,6 +2694,55 @@ Runs following steps:
 
 
 ----
+### xASL\_init\_PrintUserFeedback.m
+
+**Format:**
+
+```matlab
+xASL_init_PrintUserFeedback(x)
+```
+
+**Description:**
+
+Print user feedback.
+
+
+
+----
+### xASL\_init\_RemoveLockDirs.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_RemoveLockDirs(x)
+```
+
+**Description:**
+
+Remove 'lock-dir' if present from aborted previous run, for current subjects only.
+
+
+
+----
+### xASL\_init\_SubStructs.m
+
+**Format:**
+
+```matlab
+[x] = xASL_init_SubStructs(x)
+```
+
+**Description:**
+
+Initialize the ExploreASL x structure substructs/fields.
+Only fields which do not exist so far are added.
+This script is supposed to help with the overall modularity of ExploreASL.
+This script is identical to the function ExploreASL\_Initialize\_SubStructs within
+ExploreASL\_Initialize. We can not call this script from ExploreASL\_Initialize,
+since the paths are not initialized at that part of the script yet.
+
+
+----
 ### xASL\_init\_Toolboxes.m
 
 **Format:**
@@ -2683,7 +2779,7 @@ matrix with 1.5 mm isotropic resolution in MNI space.
 
 ```matlab
 
-[x, SelectParFile] = xASL_init_checkDatasetRoot(x, SelectParFile)
+[x] = xASL_init_checkDatasetRoot(x)
 ```
 
 **Description:**
@@ -2699,7 +2795,7 @@ Check the ExploreASL parameter "DatasetRoot".
 
 ```matlab
 
-[x, SelectParFile] = xASL_init_checkDatasetRoot_invalid_starting_2_0(x)
+[x] = xASL_init_checkDatasetRoot_invalid_starting_2_0(x)
 ```
 
 **Description:**
@@ -2723,6 +2819,37 @@ Print chosen settings.
 
 
 ## Input and Output
+
+----
+### xASL\_io\_CheckDeprecatedFieldsX.m
+
+**Format:**
+
+```matlab
+x = xASL_io_CheckDeprecatedFieldsX(x)
+```
+
+**Description:**
+
+Check deprecated fields of x and fix them based on a conversion table.
+This table is used within:
+
+- xASL\_bids\_parms2BIDS
+- xASL\_io\_ReadDataPar
+- xASL\_adm\_LoadParms
+- xASL\_adm\_LoadX
+
+It is not only used to convert deprecated x structure
+fields to fields within up-to-date substructures of x, but
+also to rename fields and to move them back and forwards
+for the comparison with BIDS parameters within
+xASL\_bids\_parms2BIDS e.g., which is why it is important to
+make sure that if a row within the table is used to move &
+rename, that there is also another row where the new
+fieldname is moved to the same substructure.
+
+
+
 
 ----
 ### xASL\_io\_CreateNifti.m
@@ -3590,11 +3717,11 @@ xASL\_wrp\_ProcessM0.m). This function runs the following steps:
 
 1. Correct scale slopes, if Philips
 2. Convert control image with background suppression to pseudo-M0
-3. Skip M0 quantification if ~x.ApplyQuantification(4)
+3. Skip M0 quantification if ~x.Q.ApplyQuantification(4)
 4. Set TR specifically for GE
 5. Check for correct TR values
 6. Quantify the M0, either for single 3D volume or slice-wise
-7. Apply custom scalefactor if requested (x.M0\_GMScaleFactor)
+7. Apply custom scalefactor if requested (x.modules.asl.M0\_GMScaleFactor)
 
 
 
@@ -3613,15 +3740,15 @@ This script performs a multi-step quantification, by
 initializing a ScaleImage that travels through this script & gets changed by the following quantification
 factors:
 
-1.    **PLD scalefactor** (gradient if 2D multi-slice) (if x.ApplyQuantification(3))
+1.    **PLD scalefactor** (gradient if 2D multi-slice) (if x.Q.ApplyQuantification(3))
 2.    **Label decay scale factor** for single (blood T1) - or dual-compartment (blood+tissue T1) model, CASL or PASL
 Single-compartment model: Alsop MRM 2014
-Dual-compartment model: Wang MRM 2002: Gevers JMRI 2012 (if x.ApplyQuantification(3))
+Dual-compartment model: Wang MRM 2002: Gevers JMRI 2012 (if x.Q.ApplyQuantification(3))
 3.    **Scaling to physiological units** [ml/gr/ms =>ml/100gr/min =>(60,000 ms=>min)(1 gr=>100gr)]
-(if x.ApplyQuantification(3))
-4.    **Vendor-specific scalefactor** (if x.ApplyQuantification(1) -> future move to dcm2niiX stage)
+(if x.Q.ApplyQuantification(3))
+4.    **Manufacturer-specific scalefactor** (if x.Q.ApplyQuantification(1) -> future move to dcm2niiX stage)
 Finally, we:
-5.    Divide PWI/M0 (if x.ApplyQuantification(5))
+5.    Divide PWI/M0 (if x.Q.ApplyQuantification(5))
 6.    Print parameters used
 
 Note that the output always goes to the CBF image (in the
@@ -3648,7 +3775,7 @@ SliceTiming = xASL_quant_SliceTiming(x, inputIm)
 This function takes the x.Q.SliceReadoutTime and returns the SliceTiming parameter.
 The function creates a vector (of the relatives timings for each slices) out of it with the correct
 length corresponding to the number of slices in the inputIm
-corresponding to the BIDS definition. It also checks the x.readout\_dim, and for 3D readouts it returns 0.
+corresponding to the BIDS definition. It also checks the x.Q.readoutDim, and for 3D readouts it returns 0.
 It loads the image from inputIm and calculates the SliceTiming according to the number of slices in the third dimension
 If a path is given, it also checks if it can find a JSON sidecar, then it loads the JSON sidecar, and looks for SliceTiming inside it. If
 SliceTiming/SliceReadoutTime is found in the JSON sidecar, it prioritize it over the value in the x-struct
@@ -4372,7 +4499,7 @@ Checks which images already are loaded, and  adds new image.
 **Format:**
 
 ```matlab
-[ImOut, FileName] = xASL_vis_CreateVisualFig(x, ImIn, DirOut, IntScale, NamePrefix, ColorMap, bClip)
+[ImOut, FileName] = xASL_vis_CreateVisualFig(x, ImIn[, DirOut, IntScale, NamePrefix, ColorMap, bClip, MaskIn, bWhite, MaxWindow, bTransparancy, bVerbose, bContour])
 ```
 
 **Description:**

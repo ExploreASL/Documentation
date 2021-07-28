@@ -228,7 +228,7 @@ function the unexisting OtherList NIfTIs are skipped
 - F. native->MNI transformation flow field y\_T1.nii is smoothed to the
 effective ASL resolution y\_ASL.nii
 - G. Registration contrasts are dealth with:
-x.bRegistrationContrast - specifies the image contrast used for
+x.modules.asl.bRegistrationContrast - specifies the image contrast used for
 registration (OPTIONAL, DEFAULT = 2):
 - 0 = Control->T1w
 - 1 = CBF->pseudoCBF from template/pGM+pWM
@@ -248,13 +248,13 @@ mean\_PWI\_Clipped.nii to register with pseudoCBF
 applied if the spatial CoV<0.67. Note that this is usually the case
 for 3D scans because of their lower effective spatial resolution.
 
-x.bAffineRegistration - specifies the ASL-T1w rigid-body registration is followed up by an affine
+x.modules.asl.bAffineRegistration - specifies the ASL-T1w rigid-body registration is followed up by an affine
 registration (OPTIONAL, DEFAULT = 0)
 - 0 = affine registration disabled
 - 1 = affine registration enabled
 - 2 = affine registration automatically chosen based on
 spatial CoV of PWI
-x.bDCTRegistration - Specifies if to include the DCT registration on top of Affine, all other requirements for
+x.modules.asl.bDCTRegistration - Specifies if to include the DCT registration on top of Affine, all other requirements for
 affine are thus also taken into account (OPTIONAL, DEFAULT = 0)
 - 0 = DCT registration disabled
 - 1 = DCT registration enabled if affine enabled and conditions for affine passed
@@ -284,7 +284,7 @@ T1w, and transformation of T1w to standard space. This submodule performs the fo
 4. Resample to native space (applying any motion correction or registration)
 5. Bilateral filter (currently disabled)
 6. Create mean control image, if available, in native & standard space
-7. Clone mean control image to be used as pseudo-M0 (if x.M0==UseControlAsM0)
+7. Clone mean control image to be used as pseudo-M0 (if x.Q.M0==UseControlAsM0)
 8. Pair-wise subtraction & saving PWI & PWI4D in both spaces
 9. Save PWI NIfTI & time-series-related maps (SD, SNR)
 10. Delete temporary files
