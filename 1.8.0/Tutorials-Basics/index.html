@@ -403,6 +403,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-exploreasl-x-structure" class="md-nav__link">
+    The ExploreASL x structure
+  </a>
+  
+    <nav class="md-nav" aria-label="The ExploreASL x structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-xopts" class="md-nav__link">
+    Options: x.opts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-settings-xsettings" class="md-nav__link">
+    General settings: x.settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-dataset-parameters-xdataset" class="md-nav__link">
+    General dataset parameters: x.dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths-directories-xdir-xp-xd" class="md-nav__link">
+    Paths &amp; directories: x.dir, x.P &amp; x.D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-quantification-parameters-xq" class="md-nav__link">
+    Sequence &amp; quantification parameters: x.Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-parameters-xmodules" class="md-nav__link">
+    Processing parameters: x.modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking-atlas-parameters-xs" class="md-nav__link">
+    Masking &amp; atlas parameters: x.S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-toolboxes-environment-parameters-xexternal" class="md-nav__link">
+    External toolboxes &amp; environment parameters: x.external
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -436,6 +505,21 @@
     <li class="md-nav__item">
       <a href="../Tutorials-Advanced/" class="md-nav__link">
         Tutorials (Advanced)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataParTemplate/" class="md-nav__link">
+        Parameter Descriptions
       </a>
     </li>
   
@@ -582,6 +666,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-exploreasl-x-structure" class="md-nav__link">
+    The ExploreASL x structure
+  </a>
+  
+    <nav class="md-nav" aria-label="The ExploreASL x structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options-xopts" class="md-nav__link">
+    Options: x.opts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-settings-xsettings" class="md-nav__link">
+    General settings: x.settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-dataset-parameters-xdataset" class="md-nav__link">
+    General dataset parameters: x.dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paths-directories-xdir-xp-xd" class="md-nav__link">
+    Paths &amp; directories: x.dir, x.P &amp; x.D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-quantification-parameters-xq" class="md-nav__link">
+    Sequence &amp; quantification parameters: x.Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-parameters-xmodules" class="md-nav__link">
+    Processing parameters: x.modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking-atlas-parameters-xs" class="md-nav__link">
+    Masking &amp; atlas parameters: x.S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-toolboxes-environment-parameters-xexternal" class="md-nav__link">
+    External toolboxes &amp; environment parameters: x.external
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -668,6 +821,533 @@ A compiled version of ExploreASL always requires the corresponding Matlab Runtim
 <li><code>/home/.../incoming:/data/incoming</code> is used to mount your dataset folder (<code>/home/.../incoming</code>) to its corresponding docker dataset folder (<code>/data/incoming</code>). </li>
 <li>The same notation is used to mount the docker dataset output folder (<code>/data/outgoing</code>) to its corresponding real output folder on your drive (<code>/home/.../outgoing</code>).</li>
 </ul>
+<hr />
+<h2 id="the-exploreasl-x-structure">The ExploreASL x structure</h2>
+<p>The ExploreASL <code>x</code> structure is the main object used to define pipeline settings. Besides settings you can also find processing and meta data there.</p>
+<h3 id="options-xopts">Options: x.opts</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.opts.DatasetRoot</td>
+<td align="center">Dataset root directory of the current BIDS dataset. This is also the first input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.ImportModules</td>
+<td align="center">Vector to define which import modules should be executed. This is also the second input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.ProcessModules</td>
+<td align="center">Vector to define which processing modules should be executed. This is also the third input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.bPause</td>
+<td align="center">Boolean to set if you want to pause the pipeline before the processing. This is also the fourth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.iWorker</td>
+<td align="center">This variable defines which of the parallel ExploreASL calls we are. This is also the fifth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.nWorkers</td>
+<td align="center">This variable defines how many ExploreASL calls are made in parallel. This is also the sixth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.bImportData</td>
+<td align="center">Boolean that is true if at least one import module is going to be executed.</td>
+</tr>
+<tr>
+<td>x.opts.bProcessData</td>
+<td align="center">Boolean that is true if at least one processing module is going to be executed.</td>
+</tr>
+<tr>
+<td>x.opts.bLoadData</td>
+<td align="center">Boolean that is true if the current BIDS dataset is going to be loaded.</td>
+</tr>
+<tr>
+<td>x.opts.MyPath</td>
+<td align="center">Path to the <code>ExploreASL</code> program.</td>
+</tr>
+<tr>
+<td>x.opts.dataParType</td>
+<td align="center">String describing the type of input argument that was given for the <code>DatasetRoot</code>. This parameter is mainly supposed to help with backwards compatibility.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-settings-xsettings">General settings: x.settings</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.settings.SelectParFile</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.stopAfterErrors</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.dryRun</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.bOverwrite</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.BILAT_FILTER</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.DELETETEMP</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.Quality</td>
+<td align="center">Quality setting for <code>ExploreASL</code> processing. Set to 1 for normal high-quality processing or to 0 for low-quality test runs.</td>
+</tr>
+<tr>
+<td>x.settings.bReproTesting</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.Pediatric_Template</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.bLesionFilling</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.bAutoACPC</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.bGetControlLabelOrder</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoFlair</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoASL</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoM0</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-dataset-parameters-xdataset">General dataset parameters: x.dataset</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.dataset.name</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dataset.subjectRegexp</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dataset.exclusion</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dataset.ForceInclusionList</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="paths-directories-xdir-xp-xd">Paths &amp; directories: x.dir, x.P &amp; x.D</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.dir.sourceStructure</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dir.studyPar</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dir.dataset_description</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.dir.dataPar</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.D.ROOT</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sequence-quantification-parameters-xq">Sequence &amp; quantification parameters: x.Q</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.Q.M0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.BackgroundSuppressionNumberPulses</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.BackgroundSuppressionPulseTime</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.PresaturationTime</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.readoutDim</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.Vendor</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.Sequence</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.LabelingType</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.Initial_PLD</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.LabelingDuration</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.SliceReadoutTime</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.bUseBasilQuantification</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.Lambda</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.T2art</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.BloodT1</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.TissueT1</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.nCompartments</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.ApplyQuantification</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.Q.SaveCBF4D</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="processing-parameters-xmodules">Processing parameters: x.modules</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.bRunLongReg</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.bRunDARTEL</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Import module</strong>: <code>x.modules.import</code></p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Structural module</strong>: <code>x.modules.structural</code></p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.structural.bSegmentSPM12</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.structural.bHammersCAT12</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.structural.bFixResolution</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>ASL module</strong>: <code>x.modules.asl</code></p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.asl.motionCorrection</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.SpikeRemovalThreshold</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bRegistrationContrast</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bAffineRegistration</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bDCTRegistration</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bRegisterM02ASL</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bUseMNIasDummyStructural</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bPVCNativeSpace</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.PVCNativeSpaceKernel</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bPVCGaussianMM</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.modules.asl.bMakeNIfTI4DICOM</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Population module</strong>: <code>x.modules.population</code></p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="masking-atlas-parameters-xs">Masking &amp; atlas parameters: x.S</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.S.bMasking</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.Atlases</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.slices</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.slicesLarge</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.slicesExtraLarge</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.nSlices</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.nSlicesLarge</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.nSlicesExtraLarge</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.TransCrop</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.jet256</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.gray</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.red</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.yellow</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.green</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.blue</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.purple</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.turqoise</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.orange</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.colors_ROI</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.cool</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.hot</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.VoxelSize</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.masks</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>x.S.LabelClr</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-toolboxes-environment-parameters-xexternal">External toolboxes &amp; environment parameters: x.external</h3>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.external.SPMVERSION</td>
+<td align="center">String describing the version of SPM.</td>
+</tr>
+<tr>
+<td>x.external.bAutomaticallyDetectFSL</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
                 
               
               

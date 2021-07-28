@@ -709,6 +709,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../DataParTemplate/" class="md-nav__link">
+        Parameter Descriptions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../FAQ/" class="md-nav__link">
         FAQ
       </a>
@@ -1536,7 +1551,15 @@ Nifti if by any reason the name changed during the function runtime (e.g. unzipp
 
 <p><strong>Description:</strong></p>
 <p>It loads the pathOrigNifti, takes all the parameters from it, and creates a new Nifti file with
-these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.</p>
+these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.
+It runs the following steps:</p>
+<ol>
+<li>Unzipping and manage name input file</li>
+<li>Determine the bit precision</li>
+<li>Create new NIfTI</li>
+<li>Remove redundant .mat orientation files</li>
+<li>Delete any pre-existing NIfTI files with the same name</li>
+</ol>
 <hr />
 <h3 id="xasl_roundm">xASL_round.m</h3>
 <p><strong>Format:</strong></p>
