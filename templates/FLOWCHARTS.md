@@ -45,6 +45,30 @@ graph TD
     J --> F
 ```
 
+### NII2BIDS
+
+```mermaid
+graph TD
+    A[xASL_imp_NII2BIDS] --> B(xASL_bids_Config)
+    B --> C(xASL_io_ReadDataPar)
+    C --> D(xASL_bids_CreateDatasetDescriptionTemplate)
+    D --> |iSubjectSession| E{iSubjectSession <= num of SubjectsSessions}
+    E --> |false| G(xASL_Copy log files)
+    G --> |false| H(xASL_delete temp folder)
+    H --> I(xASL_module_Import)
+    E --> |true| F(xASL_imp_NII2BIDS_Subject)
+    F --> J(xASL_imp_CheckForAliasInVisit)
+    J --> |iSession| K{iSession <= num of Sessions}
+    K --> |true| L(xASL_imp_NII2BIDS_Session)
+    K --> |false| E
+    L --> |iRun| M{iRun <= num of Runs}
+    M --> |true| N(xASL_imp_NII2BIDS_Run)
+    N --> O(xASL_imp_NII2BIDS_RunAnat)
+    O --> P(xASL_imp_NII2BIDS_RunPerf)
+    P --> M
+    M --> |false| K
+```
+
 
 
 
