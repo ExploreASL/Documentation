@@ -75,21 +75,25 @@ graph TD
 graph TD
     A[xASL_imp_BIDS2Legacy] --> B(xASL_bids_BIDS2Legacy)
     B --> C(xASL_bids_Config)
-    C --> |iSubjSess| D{iSubjSess <= num of SubjSessions}
-    D --> |false| E(Run xASL_bids_parseM0 if M0 exists)
-    E --> F(Create dataPar.json if it does not exist)
-    F --> G(Copy participants.tsv if it does exist)
-    G --> H(Add GeneratedBy field to legacy sidecars)
-    H --> I(Clean-up)
-    I --> J(ExploreASL_ImportMaster)
-    D --> |true| K(xASL_TrackProgress)
-    K --> |iVisit| L{iVisit <= num of Visits}
-    L --> |true| M(xASL_adm_CreateDir)
-    M --> |iModality| N{iModality <= num of Modalities}
-    N --> |true| O(...) %% we should really put this functionality in subfunctions
-    N --> |false| L
-    L --> |false| D
-    O --> N
+    C --> D(Define Subject)
+    D --> |iSubjSess| E{iSubjSess<=num of SubjSessions}
+    E --> |false| F(Run xASL_bids_parseM0 if M0 exists)
+    F --> G(Create dataPar.json if it does not exist)
+    G --> H(Copy participants.tsv if it does exist)
+    H --> J(Add GeneratedBy field to legacy sidecars)
+    J --> K(Clean-up)
+    K --> L(ExploreASL_ImportMaster)
+    E --> M(Define SubjectVisit)
+    M --> |SubjectVisit| N(xASL_bids_BIDS2Legacy_ParseModality)
+    N --> |iModality| O{iModality<=num of Modalities}
+    O --> |false| E
+    O --> |true| P(xASL_bids_BIDS2Legacy_ParseScanType)
+    P --> |iType,iRun| Q{iModality<=num of Types, iRun<=num of Runs}
+    Q --> |true| R(xASL_bids_BIDS2Legacy_CompilePathsForCopying)
+    R --> S(xASL_bids_BIDS2Legacy_ManageSidecars)
+    S --> T(xASL_bids_BIDS2xASL_CopyFile)
+    T --> Q
+    Q --> |false| O
 ```
 
 
