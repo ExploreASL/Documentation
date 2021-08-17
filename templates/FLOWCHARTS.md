@@ -82,7 +82,7 @@ graph TD
     G --> H(Copy participants.tsv if it does exist)
     H --> J(Add GeneratedBy field to legacy sidecars)
     J --> K(Clean-up)
-    K --> L(ExploreASL_ImportMaster)
+    K --> L(xASL_module_Import)
     E --> M(Define SubjectVisit)
     M --> |SubjectVisit| N(xASL_bids_BIDS2Legacy_ParseModality)
     N --> |iModality| O{iModality<=num of Modalities}
