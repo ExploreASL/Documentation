@@ -47,9 +47,9 @@ xASL_Move(SrcPath, DstPath[, bOverwrite, bVerbose])
 
 **Description:**
 
-Moves a file to a file, a file to a directory, or a directory to a directory. It keeps the initial extensions, no unzipping or zipping
-after the move. But it makes sure that only one of .nii and .nii.gz exists in the destination directory.
-Bypass inefficient matlab stuff on linux and windows, but
+Moves a file to a file, a file to a directory, or a directory to a directory. It manages the unzipping or zipping according to the extension
+after the move. And it makes sure that only one of .nii and .nii.gz exists in the destination directory.
+Bypass inefficient Matlab stuff on Linux and Windows, but
 can only move on the same file system.
 
 NB: This function calls xASL\_SysMove for the actual moving.

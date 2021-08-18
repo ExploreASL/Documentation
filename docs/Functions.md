@@ -893,41 +893,6 @@ This function runs the following steps:
 8. Write data to participants.tsv
 
 
-----
-### xASL\_bids\_BIDS2Legacy.m
-
-**Format:**
-
-```matlab
-xASL_bids_BIDS2Legacy(pathStudy[, bOverwrite, dataPar])
-```
-
-**Description:**
-
-This function converts BIDS rawdata (in pathStudy/rawdata/)
-to xASL legacy derivative format (e.g. pathStudy/derivatives/ExploreASL/)
-
-Can be updated step-by-step when ExploreASL's derivative structure moves to BIDS
-NB: ask how Visits/session layer is defined in bids-matlab (should be
-separate layer within subjects, but now isn't?)
-
-This function performs the following steps:
-
-1. Parse a folder using bids-matlab
-2. Define Subject
-3. Define SubjectVisit
-4. Parse modality
-5. Parse scantype
-6. Compile paths for copying
-7. Manage sidecars to copy
-8. Copy files
-9. Parse M0
-10. Create DataPar.json
-11. Copy participants.tsv
-12. Add dataset\_description.json
-13. Clean up
-
-
 
 ----
 ### xASL\_bids\_BIDSifyASLJSON.m
@@ -950,7 +915,7 @@ the structure on the output. It works according to the normal BIDS, or ASL-BIDS 
 4. Convert certain DICOM fields
 5. Prioritize DICOM fields over the manually provided studyPar fields
 6. Field check and name conversion
-7. Check for Hadamard sequence
+7. Check for time encoded sequence
 8. Merge data from the Phoenix protocol
 9. Background suppression check
 10. SliceTiming check
@@ -991,6 +956,20 @@ jsonOut = xASL_bids_BIDSifyAnatJSON(jsonIn)
 
 It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
 the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition
+
+
+----
+### xASL\_bids\_BIDSifyCheckTimeEncoded.m
+
+**Format:**
+
+```matlab
+[jsonOut,bTimeEncoded,bTimeEncodedFME] = xASL_bids_BIDSifyCheckTimeEncoded(jsonIn,jsonOut)
+```
+
+**Description:**
+
+Check for time encoded sequence.
 
 
 ----
@@ -1228,6 +1207,33 @@ pathOut = xASL_bids_MergeNifti_SiemensASLFiles(NiftiPaths)
 **Description:**
 
 Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible (Siemens).
+
+
+----
+### xASL\_bids\_MergeStudyPar.m
+
+**Format:**
+
+```matlab
+jsonIn = xASL_bids_MergeStudyPar(jsonIn,studyPar,bidsModality);
+```
+
+**Description:**
+
+Check if required fields exist in studyPar but not in jsonIn or if we can find them in other ways.
+
+The BIDSification of JSON metadata requires at least some basic fields. If dcm2niix can't extract
+fields like Manufacturer from the DICOM data (strict anonymization), we need to be able to read them
+from the studyPar JSON (manually inserted). Alternatively we can check other DICOM tags for information.
+
+This function can potentially be enhanced in future release to fix other fields besides the Manufacturer as well.
+To enable this functionality for different modalities, we introduced the bidsModality parameter.
+
+This function is called by:
+
+- `xASL\_bids\_BIDSifyM0`
+- `xASL\_bids\_BIDSifyASLJSON`
+- `xASL\_bids\_BIDSifyAnatJSON`
 
 
 ----
@@ -1712,14 +1718,19 @@ This function performs the following steps:
 **Format:**
 
 ```matlab
-[QCstruct] = xASL_im_DetermineFlip(x,iS,PathOrientationResults,QCstruct)
+[LR_flip_YesNo] = xASL_im_DetermineFlip(PathOrientationResults)
 ```
 
 **Description:**
 
-Check determinants, should be the same
-before & after registration, otherwise a left-right flip is applied
-This is not visible, but detrimental for image analysis/stats.
+This functions check determinants before and after image processing
+(nii.mat0 vs nii.mat, respectively) to find any potential
+left-right processing. This function performs the following
+steps:
+1. Determine correct row, differs between Matlab versions
+2. If units are printed as second row, the data starts on the third row
+3. Determine column indices
+4. Find left-right flips
 
 
 
@@ -1832,6 +1843,29 @@ It is assumed that for imGM and imWM, the voxel size equals the resolution, and 
 Backwards compatibility for flipping left-right in standard
 space (NB: this can be different than in native space!).
 
+
+
+----
+### xASL\_im\_FlipNifti.m
+
+**Format:**
+
+```matlab
+xASL_im_FlipNifti(pathInput[, flipAxis, bOverwrite])
+```
+
+**Description:**
+
+This function allows correcting an inappropriate flip in the image matrix. It
+will not change the orientation matrix in the header but the image
+itself. So any NifTI program will not be aware of this flip!
+
+This function runs the following steps:
+1. Manage if we overwrite the new NIfTI
+2. Manage if we zip the new NIfTI
+3. Load image from NIfTI
+4. Flip image
+5. Save image to NIfTI
 
 
 ----
@@ -2973,7 +3007,7 @@ Alternative to this function is robust fit (Camille Maumet).
 **Format:**
 
 ```matlab
-[x] = xASL_io_ReadDataPar(pathDataPar)
+[x] = xASL_io_ReadDataPar(pathDataPar[,bStudyPar])
 ```
 
 **Description:**
@@ -3421,18 +3455,32 @@ http://ieeexplore.ieee.org/document/650886/
 **Format:**
 
 ```matlab
-xASL_qc_PrintOrientation(DIR, reg_exp_INPUT,OUTPUT_DIR,Name);
+xASL_qc_PrintOrientation(niftiList, outputDir, outputFile);
 ```
 
 **Description:**
 
-Check orientation of niftis, useful to detect
-accidental left-right flips (all other flips will be visible).
-translations, rotations or shears are not to be worried about,
-only negative zooms. This can be detected by negative determinants.
+This function lists NifTI orientation matrices before and after
+image processing, respectively nii.mat0 and nii.mat. In ExploreASL this
+is used for QC to detect accidental left-right flips, as these can occur
+unnoticed as the brain structure appears relatively symmetrical.
+This can be detected by negative determinants.
+Also, this can be used to detect any significant differences in
+acquisition or image processing.
+
 So orientation parameters and determinants should be similar across
 all scans from single scanner/coil, and registration should not
-give negative determinant.
+give a relatively negative determinant.
+Results are saved in a TSV file
+
+This functions performs the following steps:
+1. Print the header
+2. Load the data
+3. Print original orientation matrix
+4. Print current orientation matrix
+5. Print registration transformation matrix
+6. Print FileName
+7. Get statistics (mean & SD)
 
 
 
