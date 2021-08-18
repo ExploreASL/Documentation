@@ -814,7 +814,7 @@ exclusion. This module has the following submodules/wrappers:</p>
 <li><code>010\_TopUpASL</code>           - FSL TopUp geometric distortion correction (if M0 images with reversed phase-encoding are present)</li>
 <li><code>020\_RealignASL</code>         - If time-series are present, motion correction and outlier exclusion (ENABLE)</li>
 <li><code>030\_RegisterASL</code>        - Registration of ASL to T1w anatomical images (if lacking, to MNI images)</li>
-<li><code>040\_ResliceASL</code>         - Resample ASL images to standard space</li>
+<li><code>040\_ResampleASL</code>        - Resample ASL images to standard space</li>
 <li><code>050\_PreparePV</code>          - Create partial volume images in ASL space with ASL resolution</li>
 <li><code>060\_ProcessM0</code>          - M0 image processing</li>
 <li><code>070\_CreateAnalysisMask</code> - Create mask using FoV, vascular outliers &amp; susceptibility atlas</li>
@@ -845,7 +845,7 @@ checks:</p>
 <li><code>065\_GetRegistrationStatistics</code> - Create TSV file with overview of the registration statistics</li>
 <li><code>070\_GetROIstatistics</code>          - Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)</li>
 <li><code>080\_SortBySpatialCoV</code>          - Sort ASL_Check QC images by their spatial CoV in quality bins</li>
-<li><code>090\_DeleteAndZip</code>              - Delete temporary files and gzip all NIfTIs</li>
+<li><code>090\_DeleteTempFiles</code>           - Delete temporary files</li>
 </ul>
                 
               
