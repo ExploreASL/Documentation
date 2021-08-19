@@ -390,7 +390,7 @@ Initialize DCM2NII.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS(imPar, studyPath, studyParPath)
+xASL_imp_NII2BIDS(x, imPar, studyPath, studyParPath)
 ```
 
 **Description:**

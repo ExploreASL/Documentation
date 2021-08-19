@@ -993,6 +993,21 @@ applies the previously calculated scalings.
 
 
 ----
+### xASL\_bids\_CheckDatasetDescription.m
+
+**Format:**
+
+```matlab
+[bImportedExploreASL, bImportedSameVersion, versionExploreASLBIDS, bImportedBETA] = xASL_bids_CheckDatasetDescription(datasetDescription, versionExploreASL)
+```
+
+**Description:**
+
+Check the dataset\_description.json field contents with special regard to the import version.
+
+
+
+----
 ### xASL\_bids\_CompareStructures.m
 
 **Format:**
@@ -1029,7 +1044,7 @@ Creates several structures necessary for configuring the DICOM to BIDS conversio
 **Format:**
 
 ```matlab
-[json] = xASL_bids_CreateDatasetDescriptionTemplate(draft)
+[json] = xASL_bids_CreateDatasetDescriptionTemplate(draft, versionExploreASL)
 ```
 
 **Description:**
@@ -1124,7 +1139,7 @@ the structure on the output. It works according to the normal BIDS, or ASL-BIDS 
 **Format:**
 
 ```matlab
-NiftiPaths = xASL_bids_MergeNifti(NiftiPaths, seqType)
+NiftiPaths = xASL_bids_MergeNifti(NiftiPaths, seqType[, niiTable])
 ```
 
 **Description:**
@@ -1146,11 +1161,12 @@ This function performs the following steps in subfunctions:
 
 1. xASL\_bids\_MergeNifti\_M0Files Generic merging of M0 files
 2. xASL\_bids\_MergeNifti\_GEASLFiles Merge GE ASL files and extract scan order from DICOM tags
-3. xASL\_bids\_MergeNifti\_SiemensASLFiles Merge Siemens ASL files with specific filename pattern
-4. xASL\_bids\_MergeNifti\_AllASLFiles Merge any ASL files
-5. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
-6. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
-7. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
+3. xASL\_bids\_MergeNifti\_SeriesNumber Merge ASL files by SeriesNumber if different
+4. xASL\_bids\_MergeNifti\_SiemensASLFiles Merge Siemens ASL files with specific filename pattern
+5. xASL\_bids\_MergeNifti\_AllASLFiles Merge any ASL files
+6. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
+7. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
+8. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
 
 
 ----
@@ -1193,6 +1209,20 @@ xASL_bids_MergeNifti_RenameParms(Fpath,Fname);
 **Description:**
 
 Find \*\_parms.m files in directory and shorten to provided name.
+
+
+----
+### xASL\_bids\_MergeNifti\_SeriesNumber.m
+
+**Format:**
+
+```matlab
+pathOut = xASL_bids_MergeNifti_SeriesNumber(NiftiPaths, niiTable)
+```
+
+**Description:**
+
+Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible according to SeriesNumber for niiTable
 
 
 ----
@@ -3167,6 +3197,24 @@ Prepare and run CAT12s QC parameters (also for other images).
 
 
 ----
+### xASL\_qc\_CheckValidityJSON.m
+
+**Format:**
+
+```matlab
+[IsValid] = xASL_qc_CheckValidityJSON(PathJSON)
+```
+
+**Description:**
+
+This function loads a QC JSON (simply JSON file, won't
+take any exotic files) and simply check whether there is any empty value
+after a key. If this is the case, it will throw a warning, which will skip
+reading this JSON by the compiled spm\_jsonread, avoiding the crash that
+this may result in.
+
+
+----
 ### xASL\_qc\_CollectParameters.m
 
 **Format:**
@@ -3482,6 +3530,26 @@ This functions performs the following steps:
 6. Print FileName
 7. Get statistics (mean & SD)
 
+
+
+----
+### xASL\_qc\_ReportLeftRightFlips.m
+
+**Format:**
+
+```matlab
+xASL_qc_ReportLeftRightFlips(dirRoot [, bZip])
+```
+
+**Description:**
+
+This function identifies and reports illegal left-right
+flips for image matrices within a NIfTI. This can be useful as these are
+not readily observed by the human eye, as the left and right hemispheres
+are too symmetrical by default.
+
+All NifTIs are found recursively (i.e. in the folder and its subfolders),
+irregardless of them being .nii or .nii.gz.
 
 
 ----
@@ -4497,10 +4565,10 @@ This function runs the following sections:
 1.  Initialization
 2. DICOM -> NII+JSON (i.e. dcm2niiX)
 3. Manual curation for certain flavors
-3a. Siemens\_PCASL\_3DGRASE\_vascular
-3b. Philips\_PCASL\_3DGRASE\_R5.4\_TopUp
-3c. Siemens\_PCASL\_volunteer
-3d. Siemens\_PCASL\_multiTI
+3a. Siemens\_PCASL\_3DGRASE\_VD13D\_2
+3b. Philips\_PCASL\_3DGRASE\_5.4.1.0\_TopUp\_1
+3c. Siemens\_PCASL\_3DGRASE\_VB17A\_TopUp\_1
+3d. Siemens\_PCASL\_3DGRASE\_VB17A\_multiPLD\_1
 4. Convert NII+JSON -> BIDS
 
 

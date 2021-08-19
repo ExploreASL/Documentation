@@ -8,24 +8,24 @@ Check out [mermaid](https://github.com/mermaid-js/mermaid) and its [live editor]
 ```mermaid
 graph TD
     A[ExploreASL_ImportMaster] --> B{bImportData}
-    D --> |run DCM2NII| E(xASL_module_Import)
-    D --> |run NII2BIDS| E(xASL_module_Import)
-    D --> |run DEFACE| E(xASL_module_Import)
-    D --> |run BIDS2LEGACY| E(xASL_module_Import)
+    B --> |false| C(ExploreASL_Master)
+    B --> |true| E(xASL_module_Import)
     E --> H(xASL_init_SubStructs)
     H --> I(xASL_imp_Initialize)
-    I --> J{bRunSubmodules}
-    J --> |run DCM2NII| K(xASL_imp_DCM2NII)
-    J --> |run NII2BIDS| L(xASL_imp_NII2BIDS)
-    J --> |run DEFACE| M(xASL_imp_Deface)
-    J --> |run BIDS2LEGACY| F(xASL_imp_BIDS2Legacy)
-    L --> N(xASL_imp_Import_UpdateDatasetRoot)
-    K --> A
-    N --> A
-    M --> A
-    F --> A
-    B --> |false| C(ExploreASL_Master)
-    B --> |true| D{ImportModules}
+    I --> J{run DCM2NII}
+    J --> |true| K(xASL_imp_DCM2NII)
+    J --> |false| L
+    K --> L{run NII2BIDS}
+    L --> |true| N(xASL_imp_NII2BIDS)
+    L --> |false| P
+    N --> O(xASL_imp_UpdateDatasetRoot)
+    O --> P{run DEFACE}
+    P --> |true| Q(xASL_imp_Deface)
+    P --> |false| R
+    Q --> R{run BIDS2LEGACY}
+    R --> |true| S(xASL_imp_BIDS2Legacy)
+    R --> |false| A
+    S --> A
 ```
 
 ### DCM2NII

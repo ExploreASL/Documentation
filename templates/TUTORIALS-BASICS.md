@@ -196,14 +196,16 @@ The ExploreASL `x` structure is the main object used to define pipeline settings
 | x.modules.bRunDARTEL                 | Run between-subject registration/create templates. |
 
 
-**Import module**: `x.modules.import`
+### x.modules.import (Import module)
 
 | Fieldname                            | Description                                   |
 | ------------------------------------ |:---------------------------------------------:|
-| ...                                  | n/a |
+| x.modules.import.settings.bCopySingleDicoms | n/a |
+| x.modules.import.settings.bUseDCMTK | n/a |
+| x.modules.import.settings.bCheckPermissions | n/a |
 
 
-**Structural module**: `x.modules.structural`
+### x.modules.structural (Structural module)
 
 | Fieldname                            | Description                                   |
 | ------------------------------------ |:---------------------------------------------:|
@@ -212,7 +214,7 @@ The ExploreASL `x` structure is the main object used to define pipeline settings
 | x.modules.structural.bFixResolution  | Resample to a resolution that CAT12 accepts. |
 
 
-**ASL module**: `x.modules.asl`
+### x.modules.asl (ASL module)
 
 | Fieldname                              | Description                                   |
 | -------------------------------------- |:---------------------------------------------:|
@@ -229,7 +231,7 @@ The ExploreASL `x` structure is the main object used to define pipeline settings
 | x.modules.asl.bMakeNIfTI4DICOM         | Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file. |
 
 
-**Population module**: `x.modules.population`
+### x.modules.population (Population module)
 
 | Fieldname                            | Description                                   |
 | ------------------------------------ |:---------------------------------------------:|
