@@ -730,6 +730,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_checkdatasetdescriptionm" class="md-nav__link">
+    xASL_bids_CheckDatasetDescription.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_comparestructuresm" class="md-nav__link">
     xASL_bids_CompareStructures.m
   </a>
@@ -802,6 +809,13 @@
           <li class="md-nav__item">
   <a href="#xasl_bids_mergenifti_renameparmsm" class="md-nav__link">
     xASL_bids_MergeNifti_RenameParms.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_seriesnumberm" class="md-nav__link">
+    xASL_bids_MergeNifti_SeriesNumber.m
   </a>
   
 </li>
@@ -1523,6 +1537,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_qc_checkvalidityjsonm" class="md-nav__link">
+    xASL_qc_CheckValidityJSON.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_qc_collectparametersm" class="md-nav__link">
     xASL_qc_CollectParameters.m
   </a>
@@ -1609,6 +1630,13 @@
           <li class="md-nav__item">
   <a href="#xasl_qc_printorientationm" class="md-nav__link">
     xASL_qc_PrintOrientation.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_qc_reportleftrightflipsm" class="md-nav__link">
+    xASL_qc_ReportLeftRightFlips.m
   </a>
   
 </li>
@@ -2687,6 +2715,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_checkdatasetdescriptionm" class="md-nav__link">
+    xASL_bids_CheckDatasetDescription.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_comparestructuresm" class="md-nav__link">
     xASL_bids_CompareStructures.m
   </a>
@@ -2759,6 +2794,13 @@
           <li class="md-nav__item">
   <a href="#xasl_bids_mergenifti_renameparmsm" class="md-nav__link">
     xASL_bids_MergeNifti_RenameParms.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_bids_mergenifti_seriesnumberm" class="md-nav__link">
+    xASL_bids_MergeNifti_SeriesNumber.m
   </a>
   
 </li>
@@ -3480,6 +3522,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_qc_checkvalidityjsonm" class="md-nav__link">
+    xASL_qc_CheckValidityJSON.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_qc_collectparametersm" class="md-nav__link">
     xASL_qc_CollectParameters.m
   </a>
@@ -3566,6 +3615,13 @@
           <li class="md-nav__item">
   <a href="#xasl_qc_printorientationm" class="md-nav__link">
     xASL_qc_PrintOrientation.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_qc_reportleftrightflipsm" class="md-nav__link">
+    xASL_qc_ReportLeftRightFlips.m
   </a>
   
 </li>
@@ -4695,6 +4751,14 @@ applies the previously calculated scalings.</p>
 <li>Save or move the NII to the correct location</li>
 </ol>
 <hr />
+<h3 id="xasl_bids_checkdatasetdescriptionm">xASL_bids_CheckDatasetDescription.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[bImportedExploreASL, bImportedSameVersion, versionExploreASLBIDS, bImportedBETA] = xASL_bids_CheckDatasetDescription(datasetDescription, versionExploreASL)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Check the dataset_description.json field contents with special regard to the import version.</p>
+<hr />
 <h3 id="xasl_bids_comparestructuresm">xASL_bids_CompareStructures.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">[identical,results] = xASL_bids_CompareStructures(pathDatasetA,pathDatasetB,[bPrintReport,threshRmseNii]);
@@ -4714,7 +4778,7 @@ We recommend to set bPrintReport to true, because you otherwise can't see signif
 <hr />
 <h3 id="xasl_bids_createdatasetdescriptiontemplatem">xASL_bids_CreateDatasetDescriptionTemplate.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[json] = xASL_bids_CreateDatasetDescriptionTemplate(draft)
+<pre><code class="matlab">[json] = xASL_bids_CreateDatasetDescriptionTemplate(draft, versionExploreASL)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -4773,7 +4837,7 @@ the structure on the output. It works according to the normal BIDS, or ASL-BIDS 
 <hr />
 <h3 id="xasl_bids_mergeniftim">xASL_bids_MergeNifti.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">NiftiPaths = xASL_bids_MergeNifti(NiftiPaths, seqType)
+<pre><code class="matlab">NiftiPaths = xASL_bids_MergeNifti(NiftiPaths, seqType[, niiTable])
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -4794,6 +4858,7 @@ of the last number in the filename (Y) alternating the tags and controls</li>
 <ol>
 <li>xASL_bids_MergeNifti_M0Files Generic merging of M0 files</li>
 <li>xASL_bids_MergeNifti_GEASLFiles Merge GE ASL files and extract scan order from DICOM tags</li>
+<li>xASL_bids_MergeNifti_SeriesNumber Merge ASL files by SeriesNumber if different</li>
 <li>xASL_bids_MergeNifti_SiemensASLFiles Merge Siemens ASL files with specific filename pattern</li>
 <li>xASL_bids_MergeNifti_AllASLFiles Merge any ASL files</li>
 <li>xASL_bids_MergeNifti_Merge Merge NiftiPaths &amp; save to pathMerged</li>
@@ -4824,6 +4889,14 @@ of the last number in the filename (Y) alternating the tags and controls</li>
 
 <p><strong>Description:</strong></p>
 <p>Find *_parms.m files in directory and shorten to provided name.</p>
+<hr />
+<h3 id="xasl_bids_mergenifti_seriesnumberm">xASL_bids_MergeNifti_SeriesNumber.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">pathOut = xASL_bids_MergeNifti_SeriesNumber(NiftiPaths, niiTable)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible according to SeriesNumber for niiTable</p>
 <hr />
 <h3 id="xasl_bids_mergenifti_siemensaslfilesm">xASL_bids_MergeNifti_SiemensASLFiles.m</h3>
 <p><strong>Format:</strong></p>
@@ -6152,6 +6225,18 @@ See builtin num2str for more details</p>
 <p><strong>Description:</strong></p>
 <p>Prepare and run CAT12s QC parameters (also for other images).</p>
 <hr />
+<h3 id="xasl_qc_checkvalidityjsonm">xASL_qc_CheckValidityJSON.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">[IsValid] = xASL_qc_CheckValidityJSON(PathJSON)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This function loads a QC JSON (simply JSON file, won't
+take any exotic files) and simply check whether there is any empty value
+after a key. If this is the case, it will throw a warning, which will skip
+reading this JSON by the compiled spm_jsonread, avoiding the crash that
+this may result in.</p>
+<hr />
 <h3 id="xasl_qc_collectparametersm">xASL_qc_CollectParameters.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">x = xASL_qc_CollectParameters(x, iSubject, ScanType, CollectQCFunction)
@@ -6380,6 +6465,19 @@ Results are saved in a TSV file</p>
 5. Print registration transformation matrix
 6. Print FileName
 7. Get statistics (mean &amp; SD)</p>
+<hr />
+<h3 id="xasl_qc_reportleftrightflipsm">xASL_qc_ReportLeftRightFlips.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_qc_ReportLeftRightFlips(dirRoot [, bZip])
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This function identifies and reports illegal left-right
+flips for image matrices within a NIfTI. This can be useful as these are
+not readily observed by the human eye, as the left and right hemispheres
+are too symmetrical by default.</p>
+<p>All NifTIs are found recursively (i.e. in the folder and its subfolders),
+irregardless of them being .nii or .nii.gz.</p>
 <hr />
 <h3 id="xasl_qc_tanimotocoeffm">xASL_qc_TanimotoCoeff.m</h3>
 <p><strong>Format:</strong></p>
@@ -7097,10 +7195,10 @@ studyParameters and makes sure all is in BIDS format and saves it correctly in t
 1.  Initialization
 2. DICOM -&gt; NII+JSON (i.e. dcm2niiX)
 3. Manual curation for certain flavors
-3a. Siemens_PCASL_3DGRASE_vascular
-3b. Philips_PCASL_3DGRASE_R5.4_TopUp
-3c. Siemens_PCASL_volunteer
-3d. Siemens_PCASL_multiTI
+3a. Siemens_PCASL_3DGRASE_VD13D_2
+3b. Philips_PCASL_3DGRASE_5.4.1.0_TopUp_1
+3c. Siemens_PCASL_3DGRASE_VB17A_TopUp_1
+3d. Siemens_PCASL_3DGRASE_VB17A_multiPLD_1
 4. Convert NII+JSON -&gt; BIDS</p>
 <hr />
 <h3 id="xasl_test_getlogcontentm">xASL_test_GetLogContent.m</h3>
