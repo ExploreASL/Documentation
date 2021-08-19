@@ -422,6 +422,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dataset-parameters" class="md-nav__link">
+    DATASET PARAMETERS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#m0-parameters-and-options" class="md-nav__link">
     M0 PARAMETERS and OPTIONS
   </a>
@@ -606,6 +613,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dataset-parameters" class="md-nav__link">
+    DATASET PARAMETERS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#m0-parameters-and-options" class="md-nav__link">
     M0 PARAMETERS and OPTIONS
   </a>
@@ -703,14 +717,14 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.external.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.external.bAutomaticallyDetectFSL</td>
+<td><code>bAutomaticallyDetectFSL</code></td>
 <td align="center">Boolean to automatically detect the FSL version if disabled, this function will try to use the system-initialized FSL and throw an error if FSL is not initialized.</td>
 <td align="center">OPTIONAL, DEFAULT = disabled</td>
 </tr>
@@ -720,44 +734,56 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.D.ROOT</td>
-<td align="center">Path to analysis root folder where data is stored, example: <code>/home/hjmutsaerts/TestDataSet</code></td>
+<td><code>D.ROOT</code></td>
+<td align="center">Path to analysis root folder where data is stored, example: <code>/home/user/TestDataSet</code></td>
 <td align="center">OPTIONAL, DEFAULT = pwd</td>
 </tr>
 <tr>
-<td>x.SESSIONS</td>
+<td><code>SESSIONS</code></td>
 <td align="center">Use this to define sessions. Specific options: for FEAST: <code>1=crushed</code>, <code>2=not crushed</code>. This used to be other way around, but the crushed image registers better with the pGM image. Example (<code>'.json' file): ["ASL_1","ASL_2"]</code></td>
 <td align="center">OPTIONAL, DEFAULT = <code>{'ASL_1'}</code></td>
 </tr>
 <tr>
-<td>x.session.options</td>
+<td><code>session.options</code></td>
 <td align="center">This is how the sessions will be called, example: <code>{'baseline' 'drug'}</code>. For FEAST, this should be <code>{'non-crushed' 'crushed'}</code>.</td>
 <td align="center">OPTIONAL</td>
 </tr>
+</tbody>
+</table>
+<h2 id="dataset-parameters">DATASET PARAMETERS</h2>
+<table>
+<thead>
 <tr>
-<td>x.dataset.name</td>
+<th><code>x.dataset.[...]</code></th>
+<th align="center">Description</th>
+<th align="center">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
 <td align="center">String for the name of the study, example: <code>AD-study</code></td>
 <td align="center">OPTIONAL</td>
 </tr>
 <tr>
-<td>x.dataset.subjectRegexp</td>
+<td><code>subjectRegexp</code></td>
 <td align="center">String with regular expression for ExploreASL to find subjects by foldername, example: <code>^\d{3}$</code> for three digits</td>
 <td align="center">REQUIRED</td>
 </tr>
 <tr>
-<td>x.dataset.exclusion</td>
+<td><code>exclusion</code></td>
 <td align="center">Cell with list of subjects to exclude, example: <code>{'005' '018'}</code></td>
 <td align="center">OPTIONAL, DEFAULT = empty</td>
 </tr>
 <tr>
-<td>x.dataset.ForceInclusionList</td>
+<td><code>ForceInclusionList</code></td>
 <td align="center">Use this field if you want to use a selection of subjects rather than taking all available subjects from directories. Example: <code>load(fullfile(x.D.ROOT,'LongitudinalList.mat')</code>).</td>
 <td align="center">OPTIONAL, DEFAULT = use all subjects</td>
 </tr>
@@ -767,34 +793,29 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.modules.asl.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.Q.M0</td>
-<td align="center">Choose which M0 option to use: <code>'separate_scan'</code> = for a separate M0 NIfTI (needs to be in the same folder called <code>M0.nii</code>), <code>3.7394*10^6</code> = single M0 value to use, <code>'UseControlAsM0'</code> = will copy the mean control image as M0.nii and process as if it was a separately acquired M0 image (taking TR etc from the <code>ASL4D.nii</code>). Make sure that no background suppression was used, otherwise this option is invalid.</td>
-<td align="center">REQUIRED</td>
-</tr>
-<tr>
-<td>x.modules.asl.M0_conventionalProcessing</td>
+<td><code>M0_conventionalProcessing</code></td>
 <td align="center">Boolean - use the conventional M0 processing (per consensus paper), options: 1 = standard processing, 0 = new image processing (improved masking &amp; smoothing).</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.M0_GMScaleFactor</td>
+<td><code>M0_GMScaleFactor</code></td>
 <td align="center">Add additional scale factor to multiply the M0 image by This can be useful when you have background suppression but no control/M0 image without background suppression. If you then know the M0 scalefactor for the GM, you can use the control image as M0 and use this parameter to scale back what was suppressed by background suppression. Note that there is no option for separate tissue scaling (e.g. WM &amp; GM), because ExploreASL pragmatically smooths the M0 a lot, assuming that head motion and registration between M0 &amp; ASL4D will differ between patients and controls.</td>
 <td align="center">OPTIONAL, default = 1</td>
 </tr>
 <tr>
-<td>x.modules.asl.M0PositionInASL4D</td>
+<td><code>M0PositionInASL4D</code></td>
 <td align="center">A vector of integers that indicates the position of M0 in TimeSeries, if it is integrated by the Vendor in the DICOM export. Will move this from ASL4D.nii to M0.nii Note that the x.modules.asl.M0PositionInASL4D parameter is independent from the x.Q.M0 parameter choice. Example for Philips 3D GRASE = '[1 2]' (first control-label pair). Example for Siemens 3D GRASE = 1 first image. Example for GE 3D spiral = 2 where first image is PWI &amp; last = M0. Empty vector should be given (= [] or = null (in JSON)) if no action is to be taken and nothing is removed.</td>
 <td align="center">OPTIONAL, DEFAULT = <code>[] (no M0 in timeseries)</code></td>
 </tr>
 <tr>
-<td>x.modules.asl.DummyScanPositionInASL4D</td>
+<td><code>DummyScanPositionInASL4D</code></td>
 <td align="center">A vector of integers that indicates the position of Dummy scans in TimeSeries if they are integrated by the Vendor in the DICOM export. This allows to remove the dummy scans or noise scans that are part of the Timeseries. A new ASL4D.nii is saved with dummy scans removed and the original is backed-up. Works in a similar way as M0PositionInASL4D, both can be entered at the same time and both indicate the original position in the Timeseries independend of each other. Example for Siemens 2D EPI = <code>[79 80]</code> Skip the control-label pair used for noise measurements. Example for certain Siemens 3D GRASE = 2 Skip the first dummy control image. Empty vector should be given (= [] or = null (in JSON)) if no action is to be taken and nothing is removed.</td>
 <td align="center">OPTIONAL, DEFAULT = <code>[] (no M0 in timeseries)</code></td>
 </tr>
@@ -804,61 +825,66 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.Q.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.Q.BackgroundSuppressionNumberPulses</td>
+<td><code>M0</code></td>
+<td align="center">Choose which M0 option to use: <code>'separate_scan'</code> = for a separate M0 NIfTI (needs to be in the same folder called <code>M0.nii</code>), <code>3.7394*10^6</code> = single M0 value to use, <code>'UseControlAsM0'</code> = will copy the mean control image as M0.nii and process as if it was a separately acquired M0 image (taking TR etc from the <code>ASL4D.nii</code>). Make sure that no background suppression was used, otherwise this option is invalid.</td>
+<td align="center">REQUIRED</td>
+</tr>
+<tr>
+<td><code>BackgroundSuppressionNumberPulses</code></td>
 <td align="center">Used to estimate decrease of labeling efficiency. Options: 0 = (no background suppression), 2 = labeling efficiency factor <code>0.83</code> (e.g. Philips 2D EPI &amp; Siemens 3D GRASE), 4 = labeling efficiency factor <code>0.81</code> (e.g. Philips 3D GRASE), 5 = labeling efficiency factor <code>0.75</code> (e.g. GE 3D spiral).</td>
 <td align="center">REQUIRED</td>
 </tr>
 <tr>
-<td>x.Q.BackgroundSuppressionPulseTime</td>
-<td align="center">Vector containing timing, in ms, of the background suppression pulses before the start of the readout (per BIDS).</td>
-<td align="center">REQUIRED when x.Q.UseControlAsM0 &amp; x.Q.BackgroundSuppressionNumberPulses&gt;0</td>
+<td><code>BackgroundSuppressionPulseTime</code></td>
+<td align="center">Vector containing timing, in ms, of the background suppression pulses before the start of the readout (per BIDS). REQUIRED when x.Q.UseControlAsM0 &amp; x.Q.BackgroundSuppressionNumberPulses&gt;0.</td>
+<td align="center">Check description</td>
 </tr>
 <tr>
-<td>x.Q.PresaturationTime</td>
-<td align="center">Time in ms before the start of the readout, scalar, when the slice has been saturated (90 degree flip) this has to come before all the bSup pulses, but doesn't need to be always specified.</td>
-<td align="center">OPTIONAL, defaults to PLD (PASL) or PLD+LabDur ((P)CASL)</td>
+<td><code>PresaturationTime</code></td>
+<td align="center">Time in ms before the start of the readout, scalar, when the slice has been saturated (90 degree flip) this has to come before all the bSup pulses, but doesn't need to be always specified. Defaults to PLD (PASL) or PLD+LabDur ((P)CASL).</td>
+<td align="center">OPTIONAL</td>
 </tr>
 <tr>
-<td>x.Q.readoutDim</td>
+<td><code>readoutDim</code></td>
 <td align="center">String specifying the readout type. Options: <code>'2D'</code> for slice-wise readout, <code>'3D'</code> for volumetric readout.</td>
 <td align="center">REQUIRED</td>
 </tr>
 <tr>
-<td>x.Q.Vendor</td>
+<td><code>Vendor</code></td>
 <td align="center">String containing the Vendor used. This parameter is used to apply the Vendor-specific scale factors, options: 'GE_product', 'GE_WIP', 'Philips', 'Siemens'.</td>
 <td align="center">REQUIRED for ASL</td>
 </tr>
 <tr>
-<td>x.Q.Sequence</td>
+<td><code>Sequence</code></td>
 <td align="center">String containing the sequence used. Options: <code>'3D_spiral', '3D_GRASE', '2D_EPI'</code>.</td>
 <td align="center">REQUIRED for ASL</td>
 </tr>
 <tr>
-<td>x.Q.LabelingType</td>
+<td><code>LabelingType</code></td>
 <td align="center">String containing the labeling strategy used. Options: <code>'PASL'</code> (pulsed Q2-TIPS), <code>'CASL'</code> (CASL/PCASL). Note: pulsed without Q2TIPS cannot be reliably quantified because the bolus width cannot be identified CASL &amp; PCASL are both continuous ASL methods, identical quantification.</td>
 <td align="center">REQUIRED for ASL</td>
 </tr>
 <tr>
-<td>x.Q.Initial_PLD</td>
+<td><code>Initial_PLD</code></td>
 <td align="center">Value of PLD (ms), for 3D this is fixed for whole brain, for 2D this is the PLD of first acquired slice, example: 1800.</td>
 <td align="center">REQUIRED for ASL</td>
 </tr>
 <tr>
-<td>x.Q.LabelingDuration</td>
+<td><code>LabelingDuration</code></td>
 <td align="center">Value of labeling duration (ms), example: 1800.</td>
 <td align="center">REQUIRED for ASL</td>
 </tr>
 <tr>
-<td>x.Q.SliceReadoutTime</td>
+<td><code>SliceReadoutTime</code></td>
 <td align="center">Value (ms) of time added to the PLD after reading out each slice, example: 31. Other option = <code>'shortestTR'</code>; shortest TR enabled gives each sequence the minimal TR. This enables calculating slice delay per subject.</td>
-<td align="center">REQUIRED for 2D ASL sequences</td>
+<td align="center">REQUIRED for 2D ASL</td>
 </tr>
 </tbody>
 </table>
@@ -866,49 +892,49 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.Q.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.Q.bUseBasilQuantification</td>
+<td><code>bUseBasilQuantification</code></td>
 <td align="center">True for using BASIL quantification in addition to ExploreASL's quantification.</td>
 <td align="center"></td>
 </tr>
 <tr>
-<td>x.Q.Lambda</td>
+<td><code>Lambda</code></td>
 <td align="center">Brain/blood water coefficient (mL 1H/ mL blood). Example: <code>0.32</code> (for GSP phantom).</td>
 <td align="center">OPTIONAL, DEFAULT = 0.9</td>
 </tr>
 <tr>
-<td>x.Q.T2art</td>
+<td><code>T2art</code></td>
 <td align="center"><code>T2*</code> of arterial blood at 3T, only used when no M0 image (ms).</td>
 <td align="center">OPTIONAL, DEFAULT = 50</td>
 </tr>
 <tr>
-<td>x.Q.BloodT1</td>
+<td><code>BloodT1</code></td>
 <td align="center">T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom.</td>
 <td align="center">OPTIONAL, DEFAULT = 1650 @ 3T, 1350 @ 1.5 T</td>
 </tr>
 <tr>
-<td>x.Q.TissueT1</td>
+<td><code>TissueT1</code></td>
 <td align="center">T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014).</td>
 <td align="center">OPTIONAL, DEFAULT=1240 @ 3T, 920 @ 1.5 T</td>
 </tr>
 <tr>
-<td>x.Q.nCompartments</td>
+<td><code>nCompartments</code></td>
 <td align="center">Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model.</td>
 <td align="center">OPTIONAL, DEFAULT = 1)</td>
 </tr>
 <tr>
-<td>x.Q.ApplyQuantification</td>
+<td><code>ApplyQuantification</code></td>
 <td align="center">A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved. Fields: <strong>1)</strong> Apply ScaleSlopes ASL4D (xASL_wrp_Quantify, future at dcm2niiX stage), <strong>2)</strong> Apply ScaleSlopes M0 (xASL_quant_M0, future at dcm2niiX stage), <strong>3)</strong> Convert PWI a.u. to label (xASL_wrp_Quantify, future at xASL_wrp_Reslice?), <strong>4)</strong> Quantify M0 a.u. (xASL_quant_M0, corrects for incomplete T1 relaxation), <strong>5)</strong> Perform division by M0. Examples: ASL4D is an already quantified CBF image, disable all quantification <code>'[0 0 0 0 0]'</code>. To compare label but not CBF (e.g. label in vessels or sinus vs tissue): <code>[1 1 1 1 0]'</code>. Note that the output always goes to CBF.nii.</td>
 <td align="center">OPTIONAL, DEFAULT = <code>'[1 1 1 1 1]'</code> = all enabled</td>
 </tr>
 <tr>
-<td>x.Q.SaveCBF4D</td>
+<td><code>SaveCBF4D</code></td>
 <td align="center">Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries.</td>
 <td align="center">OPTIONAL, DEFAULT=false</td>
 </tr>
@@ -918,34 +944,34 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.settings.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.settings.Quality</td>
+<td><code>Quality</code></td>
 <td align="center">Boolean specifying on which quality the pipeline should be run, options: <code>1</code> = normal quality, <code>0</code> = lower quality, fewer iterations and lower resolution of processing for a fast try-out.</td>
 <td align="center">OPTIONAL, DEFAULT = 1</td>
 </tr>
 <tr>
-<td>x.settings.DELETETEMP</td>
+<td><code>DELETETEMP</code></td>
 <td align="center">Boolean for removing the temporary files. Options: <code>0</code> = keeping all files, <code>1</code> = delete temporary files created by the pipeline.</td>
 <td align="center">OPTIONAL, DEFAULT = 1</td>
 </tr>
 <tr>
-<td>x.settings.SkipIfNoFlair</td>
+<td><code>SkipIfNoFlair</code></td>
 <td align="center">Boolean to skip processing of subjects that do not have a FLAIR image. These parameters can be useful when some data is still complete, but one would like to start image processing already. Options: <code>1</code> = skip processing of a subject that does not have a FLAIR image <code>0</code> = do not skip anything.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.settings.SkipIfNoASL</td>
+<td><code>SkipIfNoASL</code></td>
 <td align="center">Boolean to skip processing of subjects that do not have a ASL image. Options: <code>1</code> = skip processing of a subject that does not have a ASL image, <code>0</code> = do not skip anything.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.settings.SkipIfNoM0</td>
+<td><code>SkipIfNoM0</code></td>
 <td align="center">Boolean to skip processing of subjects that do not have a M0 image. Options:  <code>1</code> = skip processing of a subject that does not have a M0 image, <code>0</code> = do not skip anything.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
@@ -955,34 +981,34 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.modules.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.modules.bRunLongReg</td>
+<td><code>bRunLongReg</code></td>
 <td align="center">Run longitudinal registration.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.bRunDARTEL</td>
+<td><code>bRunDARTEL</code></td>
 <td align="center">Run between-subject registration/create templates.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.structural.bSegmentSPM12</td>
+<td><code>structural.bSegmentSPM12</code></td>
 <td align="center">Boolean to specify if SPM12 segmentation is run instead of CAT12. Options: 1 = run SPM12, 0 = run CAT12.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.structural.bHammersCAT12</td>
+<td><code>structural.bHammersCAT12</code></td>
 <td align="center">Boolean specifying if CAT12 should provide Hammers volumetric ROI results.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.structural.bFixResolution</td>
+<td><code>structural.bFixResolution</code></td>
 <td align="center">Resample to a resolution that CAT12 accepts.</td>
 <td align="center">OPTIONAL, DEFAULT=false</td>
 </tr>
@@ -992,64 +1018,64 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.modules.asl.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.modules.asl.motionCorrection</td>
+<td><code>motionCorrection</code></td>
 <td align="center">Boolean to perform motion correction in case of timeseries. Options: <code>1</code> = on, <code>0</code> = off.</td>
 <td align="center">OPTIONAL, DEFAULT = 1</td>
 </tr>
 <tr>
-<td>x.modules.asl.SpikeRemovalThreshold</td>
+<td><code>SpikeRemovalThreshold</code></td>
 <td align="center">Minimal t-stat improval needed to remove motion spikes. Examples: <code>1</code> = effectively disabling spike removal.</td>
 <td align="center">OPTIONAL, DEFAULT = 0.01</td>
 </tr>
 <tr>
-<td>x.modules.asl.bRegistrationContrast</td>
+<td><code>bRegistrationContrast</code></td>
 <td align="center">Specifies the image contrast used for registration: <code>0</code> = Control-&gt;T1w, <code>1</code> = CBF-&gt;pseudoCBF from template/pGM+pWM (skip if sCoV&gt;0.667), <code>2</code> = automatic (mix of both), <code>3</code> = option 2 &amp; force CBF-&gt;pseudoCBF irrespective of sCoV.</td>
 <td align="center">OPTIONAL, DEFAULT = 2</td>
 </tr>
 <tr>
-<td>x.modules.asl.bAffineRegistration</td>
+<td><code>bAffineRegistration</code></td>
 <td align="center">Specifies if the ASL-T1w rigid-body registration is followed up by an affine registration: <code>0</code> = affine registration disabled, <code>1</code> = affine registration enabled, <code>2</code> = affine registration automatically chosen based on spatial CoV of PWI.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.bDCTRegistration</td>
+<td><code>bDCTRegistration</code></td>
 <td align="center">Specifies if to include the DCT registration on top of Affine, all other requirements for affine are thus also taken into account the x.modules.asl.bAffineRegistration must be &gt;0 for DCT to run: <code>0</code> = DCT registration disabled <code>1</code> = DCT registration enabled if affine enabled and conditions for affine passed, <code>2</code> = DCT enabled as above, but use PVC on top of it to get the local intensity scaling right.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.bRegisterM02ASL</td>
+<td><code>bRegisterM02ASL</code></td>
 <td align="center">Boolean specifying whether M0 is registered to mean_control image (or T1w if no control image exists). It can be useful to disable M0 registration if the ASL registration is done based on the M0, and little motion is expected between the M0 and ASL acquisition. If no separate M0 image is available, this parameter will have no effect. This option is disabled automatically for 3D spiral: <code>0</code> = M0 registration disabled, <code>1</code> = M0 registration enabled (DEFAULT).</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.bUseMNIasDummyStructural</td>
+<td><code>bUseMNIasDummyStructural</code></td>
 <td align="center">When structural (e.g. T1w) data is missing, copy population-average MNI templates as dummy structural templates. With this option, the ASL module copies the structural templates to fool the pipeline, resulting in ASL registration to these templates. While the rigid-body parameters might still be found somewhat correctly, with this option it is advised to enable affine registration for ASL as well, since ASL and these dummy structural images will differ geometrically. When disabled, an error will be issued instead when the structural image are missing. <code>1</code> = enabled, <code>0</code> = disabled.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.bPVCNativeSpace</td>
+<td><code>bPVCNativeSpace</code></td>
 <td align="center">Performs partial volume correction (PVC) in ASL native space using the GM and WM maps obtained from previously segmented T1-weighted images. Skipped with warning when those maps do not exist and are not resampled to the ASL space. PVC can take several minutes for larger scans (e.g. 128x128x30), so it is deactivated by default. <code>1</code> = enabled, <code>0</code> = disabled.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.PVCNativeSpaceKernel</td>
+<td><code>PVCNativeSpaceKernel</code></td>
 <td align="center">Kernel size for the ASL native space PVC. This is ignored when x.modules.asl.bPVCNativeSpace is set to 0. Equal weighting of all voxels within the kernel is assumed. 3D kernel can be used, but any of the dimension can be also set to 1. Only odd number of voxels can be used in each dimension (e.g. <code>[3 7 5]</code> not <code>[2 3 1]</code>).</td>
 <td align="center">OPTIONAL, DEFAULT = <code>[5 5 1]</code> for bPVCGaussianMM==0, <code>[10 10 4]</code> for bPVCGaussianMM==1</td>
 </tr>
 <tr>
-<td>x.modules.asl.bPVCGaussianMM</td>
+<td><code>bPVCGaussianMM</code></td>
 <td align="center">If set to 1, PV-correction with a Gaussian weighting is used instead of the equal weights of all voxels in the kernel ('flat' kernel) as per Asllani's original method. Ignored when x.modules.asl.bPVCNativeSpace is set to 0. Unlike with the flat kernel when the size is defined in voxels, here the FWHM of the Gaussian in mm is defined in each dimension. The advantage is twofold - continuous values can be added and a single value can be entered which is valid for datasets with different voxel-sizes without having a kernel of different effective size.<code>1</code> = enabled, use Gaussian kernel with FWHM in mm given in PVCNativeSpaceKernel, <code>0</code> = disabled, use 'flat' kernel with voxels given in PVCNativeSpaceKernel.</td>
 <td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
-<td>x.modules.asl.bMakeNIfTI4DICOM</td>
+<td><code>bMakeNIfTI4DICOM</code></td>
 <td align="center">Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file, e.g. for implementation in PACS or other DICOM archives. If set to true, an additional CBF image will be created with modifications that allow it to be easily implemented back into a DICOM for e.g. PACS: 1. Remove peak &amp; valley signal, remove NaNs, rescale to 12 bit integers, apply original orientation (2 copies saved, with original ASL and T1w orientation).</td>
 <td align="center"></td>
 </tr>
@@ -1059,19 +1085,19 @@ This is to allow for valid JSONs. The conversion is carried out internally.</p>
 <table>
 <thead>
 <tr>
-<th></th>
+<th><code>x.S.[...]</code></th>
 <th align="center">Description</th>
 <th align="center">Defaults</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>x.S.bMasking</td>
+<td><code>bMasking</code></td>
 <td align="center">Vector specifying if we should mask a ROI with a subject-specific mask (1 = yes, 0 = no): <code>[1 0 0 0]</code> = susceptibility mask (either population-or subject-wise), <code>[0 1 0 0]</code> = vascular mask (only subject-wise), <code>[0 0 1 0]</code> = subject-specific tissue-masking (e.g. pGM&gt;0.5), <code>[0 0 0 1]</code> = WholeBrain masking (used as memory compression) <code>[0 0 0 0]</code> = no masking at all, <code>[1 1 1 1]</code> = apply all masks, Can also be used as boolean, where 1 = <code>[1 1 1 1]</code>, 0 = <code>[0 0 0 0]</code>. Can be useful for e.g. loading lesion masks outside the GM.</td>
 <td align="center">OPTIONAL, DEFAULT=1</td>
 </tr>
 <tr>
-<td>x.S.Atlases</td>
+<td><code>Atlases</code></td>
 <td align="center">Vector specifying the atlases which should be used within the population module. Default definition within the Population Module: <code>x.S.Atlases = {'TotalGM','DeepWM'}</code>. Available atlases (please check the atlas NIfTI and accompanying files for more information): <strong>Free atlases</strong>: <code>TotalGM</code>: Mask of the entire GM <code>'./External/SPMmodified/MapsAdded/TotalGM.nii'</code>, <code>TotalWM</code>: Mask of the entire WM <code>'./External/SPMmodified/MapsAdded/TotalWM.nii'</code>, <code>DeepWM</code>: Mask of the deep WM <code>'./External/SPMmodified/MapsAdded/DeepWM.nii'</code>, <code>WholeBrain</code>: Mask of the entire brain <code>'./External/SPMmodified/MapsAdded/WholeBrain.nii'</code>, <code>MNI_Structural</code>: MNI cortical atlas '<code>./External/SPMmodified/MapsAdded/MNI_Structural.nii'</code>, <code>Tatu_ACA_MCA_PCA</code>: Original vascular territories by Tatu et al. <code>'./External/SPMmodified/MapsAdded/VascularTerritories/CortVascTerritoriesTatu.nii.nii'</code>, <code>Tatu_ICA_PCA</code>: Tatu - only ICA and PCA <code>'./External/SPMmodified/MapsAdded/VascularTerritories/TatuICA_PCA.nii'</code>, <code>Tatu_ICA_L_ICA_R_PCA</code>: <code>'./External/SPMmodified/MapsAdded/VascularTerritories/LabelingTerritories.nii'</code>, <code>Tatu_ACA_MCA_PCA_Prox_Med_Dist</code>: Tatu separated to distal/medial/proximal of ACA/MCA/PCA <code>'./External/SPMmodified/MapsAdded/VascularTerritories/ATTbasedFlowTerritories.nii.nii'</code>, <code>Mindboggle_OASIS_DKT31_CMA</code>: Mindboggle-101 cortical atlas <code>'./External/Atlases/Mindboggle_OASIS_DKT31_CMA.nii.gz'</code>. <strong>Free for non-commercial use only</strong>: <code>HOcort_CONN</code>: Harvard-Oxford cortical atlas <code>'./External/Atlases/HOcort_CONN.nii.gz'</code>, <code>HOsub_CONN</code>: Harvard-Oxford subcortical atlas <code>'./External/Atlases/HOsub_CONN.nii.gz'</code>, <code>Hammers</code>: Alexander Hammers's brain atlas <code>'./External/Atlases/Hammers.nii.gz'</code>, <code>HammersCAT12</code>: Hammers atlas adapted to DARTEL template of IXI550 space <code>'./External/Atlases/HammersCAT12.nii'</code>, <code>Thalamus</code>: Harvad-Oxford thalamus atlas <code>'./External/Atlases/Thalamus.nii.gz'</code>.</td>
 <td align="center">OPTIONAL, DEFAULT=<code>{'TotalGM','DeepWM'}</code></td>
 </tr>
