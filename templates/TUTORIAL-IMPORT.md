@@ -13,15 +13,15 @@ For the import of the data, the best is to execute
 
 *ExploreASL_Master('/home/username/Path_for_the_root_folder',1,0)*
 
-where 1 here is the whole Import module, which is divided in 4 parts [ 1 1 1 1] (add link to ExploreASL BIDS tutorials)
+where 1 here is the whole Import module, which is divided in 4 parts [ 1 1 1 1] (https://exploreasl.github.io/Documentation/1.8.0/Tutorials-ASL-BIDS/)
 
 The 2D_Sleep study data example has an original directory structure as follows: ROOT\sourcedata\subject\session\scan_ID, and the directories containing the DICOMs. See image below:
 
-![alt text](\\amc.intra\users\B\bestevespadrela\home\My Pictures\2D_Sleep.PNG)
+![image](https://user-images.githubusercontent.com/73699072/131531141-e60a859c-25c0-42b7-a8db-ac6e8de9aa7f.png)
 
 Explore ASL creates the following directory structure ROOT\analysis\subject\ and puts structural images directly and ASL images to directories ASL_1, ASL_2 depending on the session - see below:
 
-![alt text](\\amc.intra\users\B\bestevespadrela\home\My Pictures\2D_Sleep_ExploreASL.PNG)
+![image](https://user-images.githubusercontent.com/73699072/131531392-66288086-9afb-4075-b26b-e5fce951994c.png)
 
 ## sourcestructure.json 
 
@@ -143,11 +143,6 @@ Set to *TRUE* if it should look for directories and DICOMs inside. Set to *FALSE
 
 
 
-.
-
-
-
-.
 
 
 ### Summary of the 2D_Sleep example
