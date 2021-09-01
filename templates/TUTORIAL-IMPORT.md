@@ -18,7 +18,20 @@ where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]`
 
 The 2D_Sleep study data example has an original directory structure as follows: `ROOT\sourcedata\subject\session\scan_ID`, and the directories containing the DICOMs. See image below:
 
-![image](https://user-images.githubusercontent.com/73699072/131531141-e60a859c-25c0-42b7-a8db-ac6e8de9aa7f.png)
+```
+2D_Sleep/
+  analysis/
+  sourcedata/
+    101/
+      Session1/
+        M0/
+        PSEUDO_10_min/
+        T1_weighted
+      Session2/
+      ...
+    102/
+    ...
+```
 
 Explore ASL creates the following directory structure `ROOT\analysis\subject\` and puts structural images directly and ASL images to directories ASL_1, ASL_2 depending on the session - see below:
 
