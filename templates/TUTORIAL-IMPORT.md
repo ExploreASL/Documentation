@@ -3,19 +3,20 @@
 
 A separate import module has been created for two reasons:
 
-1) to perform a DICOM to NIFTI conversion and store ancillary DICOM header information in *.mat files and
-
-2) to restructure an existing arbitrary scan directory structure into a structure that ExploreASL is familiar with.
+1. to perform a DICOM to NIFTI conversion and store ancillary DICOM header information in `*.mat` files and
+2. to restructure an existing arbitrary scan directory structure into a structure that ExploreASL is familiar with.
 
 This import module uses regular expressions and the directory structure can be can be flexibly defined as long as it is fixed per study. The search function then searches across these directories and copies all files to the ExploreASL directory structure, and performs the conversion to NIFTI if necessary.
 
 For the import of the data, the best is to execute
 
-*ExploreASL_Master('/home/username/Path_for_the_root_folder',1,0)*
+```matlab
+ExploreASL_Master('/home/username/Path_for_the_root_folder',1,0)
+```
 
-where 1 here is the whole Import module, which is divided in 4 parts [ 1 1 1 1] (https://exploreasl.github.io/Documentation/1.8.0/Tutorials-ASL-BIDS/)
+where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` (https://exploreasl.github.io/Documentation/1.8.0/Tutorials-ASL-BIDS/)
 
-The 2D_Sleep study data example has an original directory structure as follows: ROOT\sourcedata\subject\session\scan_ID, and the directories containing the DICOMs. See image below:
+The 2D_Sleep study data example has an original directory structure as follows: `ROOT\sourcedata\subject\session\scan_ID`, and the directories containing the DICOMs. See image below:
 
 ![image](https://user-images.githubusercontent.com/73699072/131531141-e60a859c-25c0-42b7-a8db-ac6e8de9aa7f.png)
 
@@ -27,19 +28,21 @@ Explore ASL creates the following directory structure ROOT\analysis\subject\ and
 
 The sourcestructure.json file contains the following code (different for each study):
 
-
-     {  "folderHierarchy" = [^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'],
-
+```
+{  
+       "folderHierarchy" = [^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'],
        "tokenOrdering" = [ 1 2 3],
-
        "tokenSessionAliases" = [ '^1$', 'ASL_1'; '^2$', 'ASL_2' ],
-
        "tokenScanAliases" = [ '^PSEUDO_10_min$', 'ASL4D'; '^M0$', 'M0'; '^T1-weighted$', 'T1' ],
-       
-       "bMatchDirectories" = true; }
+       "bMatchDirectories" = true;
+}
+```
 
+### 1. folderHierarchy
 
-### 1. folderHierarchy = { '^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'}
+```
+folderHierarchy = {'^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'}
+```
 
 
 This specifies the names of all directories at all levels. In this case, we have specified regular expressions for directories at three different levels:
@@ -98,16 +101,20 @@ We use normal characters and metacharacters. Expressions from characters and met
 * .*(T1|ASL).*(PCASL|PASL) -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. 101 or 102), specified by \d{3} as regular expression. This is between brackets ( ) to define that this is the first token.
 
 
-### 2. tokenOrdering = [ 1 2 3];
+### 2. tokenOrdering
+
+```
+tokenOrdering = [1 2 3];
+```
 
 Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.
 
 This is specified by tokenOrdering = [patientName, SessionName, ScanName]
 
-* tokenOrdering = [ 1 2 3]; = first token is used for patient name, second for session name, third for scan name
-* tokenOrdering = [ 1 0 2]; = first token is used for patient name, second for scan name, session name is not assigned
-* tokenOrdering = [ 1 3 2]; = first token is used for patient name, third for session name, second for scan name
-* tokenOrdering = [ 2 1 3]; = second token is used for patient name, first for session name, third for scan name
+* `tokenOrdering = [1 2 3];` = first token is used for patient name, second for session name, third for scan name
+* `tokenOrdering = [1 0 2];` = first token is used for patient name, second for scan name, session name is not assigned
+* `tokenOrdering = [1 3 2];` = first token is used for patient name, third for session name, second for scan name
+* `tokenOrdering = [2 1 3];` = second token is used for patient name, first for session name, third for scan name
 
 ### 3. tokenSessionAliases = { '^1$', 'ASL_1'; '^2$', 'ASL_2' };
 
@@ -136,13 +143,9 @@ The DICOMs in the directory *PSEUDO_10_min* are thus extracted to a NIFTI file c
 
 Note: The names ASL4D, M0, T1, FLAIR and WMH_SEGM are fixed names in the pipeline data structure. ASL4D and T1 are required, whereas M0, FLAIR and WMH_SEGM are optionally. When M0 is available, the pipeline will divide the perfusion-weighted image by the M0 image in the quantification part. When FLAIR and WMH_SEGM are available, tissue misclassification in the T1 gray matter (GM) and white matter (WM) because of white matter hyperintensities (WMH) will be corrected.
 
-### 5. bMatchDirectories = true;
+### 5. bMatchDirectories
 
-Set to *TRUE* if it should look for directories and DICOMs inside. Set to *FALSE* when you will
-
-
-
-
+Set to *true* if it should look for directories and DICOMs inside. Set to *FALSE* when you will
 
 
 ### Summary of the 2D_Sleep example
