@@ -807,7 +807,7 @@
 </table>
 </li>
 </ul>
-<p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.</p>
+<p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the <a href="https://exploreasl.github.io/Documentation/latest/Tutorials-Basics/">basics tutorial</a>.</p>
 <hr />
 <h2 id="dicom-source-data">DICOM source data</h2>
 <p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.7.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>dataset root directory</strong>. This dataset root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file and optionally also a <code>dataPar.json</code> file. Do not forget to set up the source dataset correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>

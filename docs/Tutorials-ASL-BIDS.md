@@ -63,7 +63,7 @@ The `ExploreASL_Master` script will have the following format:
     | **Type**         | `INTEGER`             |
     | **Default**      | `1`                   |
 
-In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now.
+In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the [basics tutorial](https://exploreasl.github.io/Documentation/latest/Tutorials-Basics/).
 
 ----
 ## DICOM source data

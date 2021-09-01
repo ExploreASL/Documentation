@@ -427,7 +427,7 @@ NII2BIDS conversion for a single sessions, single runs.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
+xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, outSessionPath, listRuns, iRun)
 ```
 
 **Description:**
