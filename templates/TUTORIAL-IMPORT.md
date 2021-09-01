@@ -26,16 +26,24 @@ The 2D_Sleep study data example has an original directory structure as follows: 
       Session1/
         M0/
         PSEUDO_10_min/
-        T1_weighted
+        T1_weighted/
       Session2/
-      ...
+        ...
     102/
-    ...
+      ...
 ```
 
 Explore ASL creates the following directory structure `ROOT\analysis\subject\` and puts structural images directly and ASL images to directories ASL_1, ASL_2 depending on the session - see below:
 
-![image](https://user-images.githubusercontent.com/73699072/131531392-66288086-9afb-4075-b26b-e5fce951994c.png)
+```
+2D_Sleep/
+  derivatives/
+    101/
+      ASL_1/
+      ASL_2/
+    102/
+      ...
+```
 
 ## sourcestructure.json 
 
