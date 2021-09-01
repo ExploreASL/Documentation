@@ -20,7 +20,7 @@ The 2D_Sleep study data example has an original directory structure as follows: 
 
 ![image](https://user-images.githubusercontent.com/73699072/131531141-e60a859c-25c0-42b7-a8db-ac6e8de9aa7f.png)
 
-Explore ASL creates the following directory structure ROOT\analysis\subject\ and puts structural images directly and ASL images to directories ASL_1, ASL_2 depending on the session - see below:
+Explore ASL creates the following directory structure `ROOT\analysis\subject\` and puts structural images directly and ASL images to directories ASL_1, ASL_2 depending on the session - see below:
 
 ![image](https://user-images.githubusercontent.com/73699072/131531392-66288086-9afb-4075-b26b-e5fce951994c.png)
 
@@ -163,7 +163,7 @@ Set to `true` if it should look for directories and DICOMs inside. Set to `false
 
 In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions. In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions. This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge. The data structure will be `derivatives\ExploreASL\SubjectName\T1.nii` for the anatomical scans (T1 or FLAIR) and `derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii` and `derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii` for ASL sessions. 
 
-If it concerns a follow-up study, where scan sessions have months or years in between them and brain anatomy is expected to change significantly between the scan sessions, then the data should be set up as a longitudinal study design. In this case, different time points are set up as *derivatives\ExploreASL\SubjectName_1\T1.nii* and `derivatives\ExploreASL\SubjectName_2\T1.nii` for two longitudinal scans of the same subject, where `_1` designates the time point. So a longitudinal study with two ASL scans per scan session (e.g. a medication challenge is repeated with 6 months time difference) would look like:
+If it concerns a follow-up study, where scan sessions have months or years in between them and brain anatomy is expected to change significantly between the scan sessions, then the data should be set up as a longitudinal study design. In this case, different time points are set up as `derivatives\ExploreASL\SubjectName_1\T1.nii` and `derivatives\ExploreASL\SubjectName_2\T1.nii` for two longitudinal scans of the same subject, where `_1` designates the time point. So a longitudinal study with two ASL scans per scan session (e.g. a medication challenge is repeated with 6 months time difference) would look like:
 
 * `derivatives\ExploreASL\SubjectName_1\T1.nii`, `derivatives\ExploreASL\SubjectName_1\ASL_1\ASL4D.nii` & `derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii` for the first time point and
 
