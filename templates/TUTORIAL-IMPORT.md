@@ -14,7 +14,7 @@ For the import of the data, the best is to execute
 ExploreASL_Master('/home/username/Path_for_the_root_folder',1,0)
 ```
 
-where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` (https://exploreasl.github.io/Documentation/1.8.0/Tutorials-ASL-BIDS/)
+where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` [ASL-BIDS Tutorial](https://exploreasl.github.io/Documentation/latest/Tutorials-ASL-BIDS/).
 
 The 2D_Sleep study data example has an original directory structure as follows: `ROOT\sourcedata\subject\session\scan_ID`, and the directories containing the DICOMs. See image below:
 
@@ -51,7 +51,7 @@ This specifies the names of all directories at all levels. In this case, we have
 * ^Session([12])$
 * ^(PSEUDO_10_min|T1-weighted|M0)$
 
-This means that we will identify three directory levels, each with a certain name, following regular expressions (see more here https://de.mathworks.com/help/matlab/ref/regexp.html).
+This means that we will identify three directory levels, each with a certain name, following regular expressions (find more in the [matlab definition of regular expressions](https://de.mathworks.com/help/matlab/ref/regexp.html)).
 
 At each directory level, it first decides if the directory matches the regular expression, then it also decides if it extract tokens from the string or not - typically tokens are in brackets. More below.
 
