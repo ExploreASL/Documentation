@@ -102,7 +102,7 @@ We use normal characters and metacharacters. Expressions from characters and met
 
 *test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR*
 
-* `.*(T1|ASL).*(PCASL|PASL)` -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. 101 or 102), specified by \d{3} as regular expression. This is between brackets ( ) to define that this is the first token.
+* `.*(T1|ASL).*(PCASL|PASL)` -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. `101` or `102`), specified by `\d{3}` as regular expression. This is between brackets `( )` to define that this is the first token.
 
 
 ### 2. tokenOrdering
@@ -130,40 +130,43 @@ The second token defines the name of the session. The token was extracted using 
 
 In the session-aliases, each row represents one session name. The first column is the regular expression for the token, the second column gives the final name.
 
-^1$ ASL_1
+* `^1$ ASL_1`
 
-^2$ ASL_2
+* `^2$ ASL_2`
 
-Here, the token name *^1$* - that is a string equaling to *"1"* is replaced in the analysis folder by the session name *ASL_1*.
+Here, the token name `^1$` - that is a string equaling to `"1"` is replaced in the analysis folder by the session name `ASL_1`.
 
 
-### 4. tokenScanAliases = { '^PSEUDO_10_min$', 'ASL4D'; '^M0$', 'M0'; '^T1-weighted$', 'T1' }
+### 4. tokenScanAliases
+
+```
+tokenScanAliases = {'^PSEUDO_10_min$', 'ASL4D'; '^M0$', 'M0'; '^T1-weighted$', 'T1'};
+```
 
 The third token defines the name of the scan. Each row represents one scan name. The first column is the regular expression for the token, the second column gives the final name of the scan.
 
-^PSEUDO_10_min$ ASL4D
+* `^PSEUDO_10_min$ ASL4D`
 
-^M0$ M0
+* `^M0$ M0`
 
-^T1-weighted$ T1
+* `^T1-weighted$ T1`
 
-The DICOMs in the directory *PSEUDO_10_min* are thus extracted to a NIFTI file called *ASL4D.nii*.
+The DICOMs in the directory `PSEUDO_10_min` are thus extracted to a NIFTI file called `ASL4D.nii`.
 
 Note: The names ASL4D, M0, T1, FLAIR and WMH_SEGM are fixed names in the pipeline data structure. ASL4D and T1 are required, whereas M0, FLAIR and WMH_SEGM are optionally. When M0 is available, the pipeline will divide the perfusion-weighted image by the M0 image in the quantification part. When FLAIR and WMH_SEGM are available, tissue misclassification in the T1 gray matter (GM) and white matter (WM) because of white matter hyperintensities (WMH) will be corrected.
 
 ### 5. bMatchDirectories
 
-Set to *true* if it should look for directories and DICOMs inside. Set to *FALSE* when you will
-
+Set to `true` if it should look for directories and DICOMs inside. Set to `false` when you will.
 
 ### Summary of the 2D_Sleep example
 
-In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions. In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions. This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge. The data structure will be *derivatives\ExploreASL\SubjectName\T1.nii* for the anatomical scans (T1 or FLAIR) and *derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii* and *derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii* for ASL sessions. 
+In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions. In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions. This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge. The data structure will be `derivatives\ExploreASL\SubjectName\T1.nii` for the anatomical scans (T1 or FLAIR) and `derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii` and `derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii` for ASL sessions. 
 
-If it concerns a follow-up study, where scan sessions have months or years in between them and brain anatomy is expected to change significantly between the scan sessions, then the data should be set up as a longitudinal study design. In this case, different time points are set up as *derivatives\ExploreASL\SubjectName_1\T1.nii* and *derivatives\ExploreASL\SubjectName_2\T1.nii* for two longitudinal scans of the same subject, where _1 designates the time point. So a longitudinal study with two ASL scans per scan session (e.g. a medication challenge is repeated with 6 months time difference) would look like:
+If it concerns a follow-up study, where scan sessions have months or years in between them and brain anatomy is expected to change significantly between the scan sessions, then the data should be set up as a longitudinal study design. In this case, different time points are set up as *derivatives\ExploreASL\SubjectName_1\T1.nii* and `derivatives\ExploreASL\SubjectName_2\T1.nii` for two longitudinal scans of the same subject, where `_1` designates the time point. So a longitudinal study with two ASL scans per scan session (e.g. a medication challenge is repeated with 6 months time difference) would look like:
 
-*derivatives\ExploreASL\SubjectName_1\T1.nii*, *derivatives\ExploreASL\SubjectName_1\ASL_1\ASL4D.nii* & *derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii* for the first time point and
+* `derivatives\ExploreASL\SubjectName_1\T1.nii`, `derivatives\ExploreASL\SubjectName_1\ASL_1\ASL4D.nii` & `derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii` for the first time point and
 
-*derivatives\ExploreASL\SubjectName_2\T1.nii*, *derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii* & *derivatives\ExploreASL\SubjectName_2\ASL_2\ASL4D.nii* for the second time point.
+* `derivatives\ExploreASL\SubjectName_2\T1.nii`, `derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii` & `derivatives\ExploreASL\SubjectName_2\ASL_2\ASL4D.nii` for the second time point.
 
 
