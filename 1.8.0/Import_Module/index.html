@@ -370,8 +370,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_shufflethedynamicsm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m
+  <a href="#xasl_imp_dcm2nii_subject_sortaslvolumesm" class="md-nav__link">
+    xASL_imp_DCM2NII_Subject_SortASLVolumes.m
   </a>
   
 </li>
@@ -831,8 +831,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xasl_imp_dcm2nii_subject_shufflethedynamicsm" class="md-nav__link">
-    xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m
+  <a href="#xasl_imp_dcm2nii_subject_sortaslvolumesm" class="md-nav__link">
+    xASL_imp_DCM2NII_Subject_SortASLVolumes.m
   </a>
   
 </li>
@@ -1169,13 +1169,13 @@ separate layer within subjects, but now isn't?)</p>
 </li>
 </ol>
 <hr />
-<h3 id="xasl_imp_dcm2nii_subject_shufflethedynamicsm">xASL_imp_DCM2NII_Subject_ShuffleTheDynamics.m</h3>
+<h3 id="xasl_imp_dcm2nii_subject_sortaslvolumesm">xASL_imp_DCM2NII_Subject_SortASLVolumes.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[x, nii_files, summary_line, globalCounts, ASLContext] = xASL_imp_DCM2NII_Subject_ShuffleTheDynamics(x, globalCounts, scanpath, scan_name, nii_files, iSubject, iSession, iScan)
+<pre><code class="matlab">[x, nii_files, summary_line, globalCounts, ASLContext] = xASL_imp_DCM2NII_Subject_SortASLVolumes(x, globalCounts, scanpath, scan_name, nii_files, iSubject, iSession, iScan)
 </code></pre>
 
 <p><strong>Description:</strong></p>
-<p>Shuffle the dynamics.</p>
+<p>Sort ASL Volumes.</p>
 <ol>
 <li>Fallbacks</li>
 <li>Fill NIfTI Table</li>
@@ -1231,7 +1231,7 @@ separate layer within subjects, but now isn't?)</p>
 <hr />
 <h3 id="xasl_imp_nii2bidsm">xASL_imp_NII2BIDS.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS(x, imPar, studyPath, studyParPath)
+<pre><code class="matlab">x = xASL_imp_NII2BIDS(x, imPar, studyPath, studyParPath)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -1244,7 +1244,7 @@ separate layer within subjects, but now isn't?)</p>
 <hr />
 <h3 id="xasl_imp_nii2bids_runm">xASL_imp_NII2BIDS_Run.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS_Run(bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
+<pre><code class="matlab">x = xASL_imp_NII2BIDS_Run(x, bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -1256,7 +1256,7 @@ separate layer within subjects, but now isn't?)</p>
 <hr />
 <h3 id="xasl_imp_nii2bids_runanatm">xASL_imp_NII2BIDS_RunAnat.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, outSessionPath, listRuns, iRun)
+<pre><code class="matlab">xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, outSessionPath, listRuns, iRun, nameSubjectSession)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -1280,7 +1280,7 @@ separate layer within subjects, but now isn't?)</p>
 <hr />
 <h3 id="xasl_imp_nii2bids_sessionm">xASL_imp_NII2BIDS_Session.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS_Session(imPar, bidsPar, studyPar, listSessions, nameSubjectSession, subjectLabel, iSession)
+<pre><code class="matlab">x = xASL_imp_NII2BIDS_Session(x, imPar, bidsPar, studyPar, listSessions, nameSubjectSession, bidsLabel, iSession)
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -1292,7 +1292,7 @@ separate layer within subjects, but now isn't?)</p>
 <hr />
 <h3 id="xasl_imp_nii2bids_subjectm">xASL_imp_NII2BIDS_Subject.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, nameSubject)
+<pre><code class="matlab">x = xASL_imp_NII2BIDS_Subject(x, imPar, bidsPar, studyPar, nameSubject)
 </code></pre>
 
 <p><strong>Description:</strong></p>
