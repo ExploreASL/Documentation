@@ -424,54 +424,6 @@
     1. folderHierarchy
   </a>
   
-    <nav class="md-nav" aria-label="1. folderHierarchy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#metacharacters" class="md-nav__link">
-    Metacharacters:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantifiers-applied-on-an-expression" class="md-nav__link">
-    Quantifiers (applied on an expression)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grouping-operators-allows-to-capture-tokens" class="md-nav__link">
-    Grouping operators (allows to capture tokens)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#anchors" class="md-nav__link">
-    Anchors
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conditional-operators" class="md-nav__link">
-    Conditional operators
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#some-examples-of-strings" class="md-nav__link">
-    Some examples of strings:
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
@@ -734,54 +686,6 @@
     1. folderHierarchy
   </a>
   
-    <nav class="md-nav" aria-label="1. folderHierarchy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#metacharacters" class="md-nav__link">
-    Metacharacters:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#quantifiers-applied-on-an-expression" class="md-nav__link">
-    Quantifiers (applied on an expression)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grouping-operators-allows-to-capture-tokens" class="md-nav__link">
-    Grouping operators (allows to capture tokens)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#anchors" class="md-nav__link">
-    Anchors
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conditional-operators" class="md-nav__link">
-    Conditional operators
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#some-examples-of-strings" class="md-nav__link">
-    Some examples of strings:
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
@@ -987,48 +891,47 @@ The tokens are numbered by the directory level and can be later used to label pa
 <p>We use normal characters and metacharacters.
 Expressions from characters and metacharacters are then further coupled with quantifiers, grouping operators, and conditional operators.
 Some basic regular expressions are described here with examples - for a full description see the link above:</p>
-<h5 id="metacharacters">Metacharacters:</h5>
+<p><strong>Metacharacters:</strong></p>
 <ul>
 <li><code>.</code> -- any character -- <code>'..ain'</code> == <code>'drain'</code> == <code>'train'</code> != <code>'pain'</code> != <code>'rain'</code></li>
 <li><code>[c1c2]</code> -- any character within the brackets -- <code>'[rp.]ain'</code> == <code>'rain'</code> == <code>'pain'</code> == <code>'.ain'</code> != <code>'wain'</code></li>
 <li><code>\d</code> -- any numeric digit, equivalent to <code>[0-9]</code></li>
 </ul>
-<h5 id="quantifiers-applied-on-an-expression">Quantifiers (applied on an expression)</h5>
+<p><strong>Quantifiers (applied on an expression):</strong></p>
 <ul>
 <li><code>expr*</code> -- repeat 0+ times -- <code>'.*'</code> can give anything</li>
 <li><code>expr?</code> -- repeat 0 or 1 times - <code>'.?'</code> == <code>''</code> == <code>'p'</code> != <code>'pp'</code></li>
 <li><code>expr+</code> -- repeat 1+ times</li>
 <li><code>expr{n}</code> -- repeat n times consecutively</li>
 </ul>
-<h5 id="grouping-operators-allows-to-capture-tokens">Grouping operators (allows to capture tokens)</h5>
+<p><strong>Grouping operators (allows to capture tokens):</strong></p>
 <ul>
 <li><code>expr</code> -- group elements and capture tokens as a part of the text -- <code>'(.)ain'</code> matches * * <code>'rain'</code> or <code>'pain'</code> and returns <code>'r'</code> or <code>'p'</code> as a token</li>
 <li><code>(?:expr)</code> -- group elements but do not capture tokens</li>
 </ul>
-<h5 id="anchors">Anchors</h5>
+<p><strong>Anchors:</strong></p>
 <ul>
 <li><code>^expr</code> -- beginning of a text -- <code>'^M.*'</code> is any string starting with M</li>
 <li><code>expr$</code> -- end of the text -- <code>'.*M$'</code> is any string ending with M</li>
 </ul>
-<h5 id="conditional-operators">Conditional operators</h5>
+<p><strong>Conditional operators:</strong></p>
 <ul>
 <li><code>expr1|expr2</code> -- matches expression 1 or 2</li>
 </ul>
-<h4 id="some-examples-of-strings">Some examples of strings:</h4>
+<p><strong>Some examples of strings:</strong></p>
 <ul>
-<li><code>^(\d{3}).*</code> -- a string starting with 3 digits and any ending, the digits are extracted as tokens.</li>
-</ul>
-<p><em>001a, 212abasd, 231absd</em></p>
-<ul>
-<li><code>^(P\d{2})$</code> -- a string starting with P and ending with two digits, the whole string is taken as a token.</li>
-</ul>
-<p><em>P12, P32</em></p>
-<ul>
-<li><code>.*(T1_MPR|pcasl|M0).*\.PAR$</code> -- a string with any beginning, containing T1_MPR or pcasl or M0 (this is taken as a token), and ending by <code>.PAR</code>.</li>
-</ul>
-<p><em>test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR</em></p>
-<ul>
-<li><code>.*(T1|ASL).*(PCASL|PASL)</code> -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. <code>101</code> or <code>102</code>), specified by <code>\d{3}</code> as regular expression. This is between brackets <code>( )</code> to define that this is the first token.</li>
+<li>
+<p><code>^(\d{3}).*</code> -- a string starting with 3 digits and any ending, the digits are extracted as tokens. <code>001a, 212abasd, 231absd</code>.</p>
+</li>
+<li>
+<p><code>^(P\d{2})$</code> -- a string starting with P and ending with two digits, the whole string is taken as a token. <code>P12, P32</code>.</p>
+</li>
+<li>
+<p><code>.*(T1_MPR|pcasl|M0).*\.PAR$</code> -- a string with any beginning, containing T1_MPR or pcasl or M0 (this is taken as a token), and ending by <code>.PAR</code>. <code>test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR</code>.</p>
+</li>
+<li>
+<p><code>.*(T1|ASL).*(PCASL|PASL)</code> -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. <code>101</code> or <code>102</code>), specified by <code>\d{3}</code> as regular expression. This is between brackets <code>( )</code> to define that this is the first token.</p>
+</li>
 </ul>
 <h4 id="2-tokenordering">2. tokenOrdering</h4>
 <pre><code>tokenOrdering = [1 2 3];

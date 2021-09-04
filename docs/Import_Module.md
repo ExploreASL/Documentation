@@ -293,17 +293,17 @@ Run DCM2NII for one individual subject.
 
 
 ----
-### xASL\_imp\_DCM2NII\_Subject\_ShuffleTheDynamics.m
+### xASL\_imp\_DCM2NII\_Subject\_SortASLVolumes.m
 
 **Format:**
 
 ```matlab
-[x, nii_files, summary_line, globalCounts, ASLContext] = xASL_imp_DCM2NII_Subject_ShuffleTheDynamics(x, globalCounts, scanpath, scan_name, nii_files, iSubject, iSession, iScan)
+[x, nii_files, summary_line, globalCounts, ASLContext] = xASL_imp_DCM2NII_Subject_SortASLVolumes(x, globalCounts, scanpath, scan_name, nii_files, iSubject, iSession, iScan)
 ```
 
 **Description:**
 
-Shuffle the dynamics.
+Sort ASL Volumes.
 
 1. Fallbacks
 2. Fill NIfTI Table
@@ -390,7 +390,7 @@ Initialize DCM2NII.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS(x, imPar, studyPath, studyParPath)
+x = xASL_imp_NII2BIDS(x, imPar, studyPath, studyParPath)
 ```
 
 **Description:**
@@ -409,7 +409,7 @@ Run the NII2BIDS conversion.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_Run(bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
+x = xASL_imp_NII2BIDS_Run(x, bidsPar, studyPar, subjectSessionLabel, inSessionPath, outSessionPath, listRuns, iRun)
 ```
 
 **Description:**
@@ -427,7 +427,7 @@ NII2BIDS conversion for a single sessions, single runs.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, outSessionPath, listRuns, iRun)
+xASL_imp_NII2BIDS_RunAnat(bidsPar, studyPar, subjectSessionLabel, outSessionPath, listRuns, iRun, nameSubjectSession)
 ```
 
 **Description:**
@@ -464,7 +464,7 @@ NII2BIDS conversion for a single sessions, single run.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_Session(imPar, bidsPar, studyPar, listSessions, nameSubjectSession, subjectLabel, iSession)
+x = xASL_imp_NII2BIDS_Session(x, imPar, bidsPar, studyPar, listSessions, nameSubjectSession, bidsLabel, iSession)
 ```
 
 **Description:**
@@ -482,7 +482,7 @@ NII2BIDS conversion for a single sessions.
 **Format:**
 
 ```matlab
-xASL_imp_NII2BIDS_Subject(imPar, bidsPar, studyPar, nameSubject)
+x = xASL_imp_NII2BIDS_Subject(x, imPar, bidsPar, studyPar, nameSubject)
 ```
 
 **Description:**

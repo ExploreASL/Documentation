@@ -1461,6 +1461,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_io_mergetextfilesm" class="md-nav__link">
+    xASL_io_MergeTextFiles.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_io_pairwisesubtractionm" class="md-nav__link">
     xASL_io_PairwiseSubtraction.m
   </a>
@@ -1470,6 +1477,13 @@
           <li class="md-nav__item">
   <a href="#xasl_io_readdataparm" class="md-nav__link">
     xASL_io_ReadDataPar.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_io_readtextfilelinebylinem" class="md-nav__link">
+    xASL_io_ReadTextFileLineByLine.m
   </a>
   
 </li>
@@ -3446,6 +3460,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_io_mergetextfilesm" class="md-nav__link">
+    xASL_io_MergeTextFiles.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_io_pairwisesubtractionm" class="md-nav__link">
     xASL_io_PairwiseSubtraction.m
   </a>
@@ -3455,6 +3476,13 @@
           <li class="md-nav__item">
   <a href="#xasl_io_readdataparm" class="md-nav__link">
     xASL_io_ReadDataPar.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xasl_io_readtextfilelinebylinem" class="md-nav__link">
+    xASL_io_ReadTextFileLineByLine.m
   </a>
   
 </li>
@@ -4789,7 +4817,7 @@ Remaining fields will be validated. Other fields not belonging to dataset_descri
 <hr />
 <h3 id="xasl_bids_dro2bidsm">xASL_bids_DRO2BIDS.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_bids_DRO2BIDS(droTestPatient,[droSubject])
+<pre><code class="matlab">xASL_bids_DRO2BIDS(droTestPatient, [droSubject, deleteGroundTruth, exploreaslVersion])
 </code></pre>
 
 <p><strong>Description:</strong></p>
@@ -6102,6 +6130,14 @@ PACS visualization purposes:</p>
 <li>Zip NIfTI</li>
 </ol>
 <hr />
+<h3 id="xasl_io_mergetextfilesm">xASL_io_MergeTextFiles.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">xASL_io_MergeTextFiles(pathA,pathB,pathOut[,headerText])
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Merge text files A and B and write the output to the pathOut file.</p>
+<hr />
 <h3 id="xasl_io_pairwisesubtractionm">xASL_io_PairwiseSubtraction.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="matlab">xASL_io_PairwiseSubtraction(InputFile,outputPath,do_mask,switch_sign)
@@ -6129,6 +6165,14 @@ only added value to normal json-read is that it detects invalid entries (numbers
 weird arrays), converts them correctly and reports this incorrect entries so that they can be manually
 fixed. Also, if an .m file is provided, it converts and saves it to a JSON file (doesn't overwrite)
 and reports that you should stop using .m files.</p>
+<hr />
+<h3 id="xasl_io_readtextfilelinebylinem">xASL_io_ReadTextFileLineByLine.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">textArray = xASL_io_ReadTextFileLineByLine(pathTextFile)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>Read a text file line by line.</p>
 <hr />
 <h3 id="xasl_io_readthedicomm">xASL_io_ReadTheDicom.m</h3>
 <p><strong>Format:</strong></p>

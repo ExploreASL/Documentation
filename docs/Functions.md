@@ -1062,7 +1062,7 @@ Remaining fields will be validated. Other fields not belonging to dataset\_descr
 **Format:**
 
 ```matlab
-xASL_bids_DRO2BIDS(droTestPatient,[droSubject])
+xASL_bids_DRO2BIDS(droTestPatient, [droSubject, deleteGroundTruth, exploreaslVersion])
 ```
 
 **Description:**
@@ -3012,6 +3012,20 @@ For scaling/visualization:
 
 
 ----
+### xASL\_io\_MergeTextFiles.m
+
+**Format:**
+
+```matlab
+xASL_io_MergeTextFiles(pathA,pathB,pathOut[,headerText])
+```
+
+**Description:**
+
+Merge text files A and B and write the output to the pathOut file.
+
+
+----
 ### xASL\_io\_PairwiseSubtraction.m
 
 **Format:**
@@ -3052,6 +3066,20 @@ fixed. Also, if an .m file is provided, it converts and saves it to a JSON file 
 and reports that you should stop using .m files.
 
 
+
+
+----
+### xASL\_io\_ReadTextFileLineByLine.m
+
+**Format:**
+
+```matlab
+textArray = xASL_io_ReadTextFileLineByLine(pathTextFile)
+```
+
+**Description:**
+
+Read a text file line by line.
 
 
 ----

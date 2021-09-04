@@ -192,46 +192,40 @@ We use normal characters and metacharacters.
 Expressions from characters and metacharacters are then further coupled with quantifiers, grouping operators, and conditional operators.
 Some basic regular expressions are described here with examples - for a full description see the link above:
 
-##### Metacharacters:
+**Metacharacters:**
 
 * `.` -- any character -- `'..ain'` == `'drain'` == `'train'` != `'pain'` != `'rain'`
 * `[c1c2]` -- any character within the brackets -- `'[rp.]ain'` == `'rain'` == `'pain'` == `'.ain'` != `'wain'`
 * `\d` -- any numeric digit, equivalent to `[0-9]`
 
-##### Quantifiers (applied on an expression)
+**Quantifiers (applied on an expression):**
 
 * `expr*` -- repeat 0+ times -- `'.*'` can give anything
 * `expr?` -- repeat 0 or 1 times - `'.?'` == `''` == `'p'` != `'pp'`
 * `expr+` -- repeat 1+ times
 * `expr{n}` -- repeat n times consecutively
 
-##### Grouping operators (allows to capture tokens)
+**Grouping operators (allows to capture tokens):**
 
 * `expr` -- group elements and capture tokens as a part of the text -- `'(.)ain'` matches * * `'rain'` or `'pain'` and returns `'r'` or `'p'` as a token
 * `(?:expr)` -- group elements but do not capture tokens
 
-##### Anchors
+**Anchors:**
 
 * `^expr` -- beginning of a text -- `'^M.*'` is any string starting with M
 * `expr$` -- end of the text -- `'.*M$'` is any string ending with M
 
-##### Conditional operators
+**Conditional operators:**
 
 * `expr1|expr2` -- matches expression 1 or 2
 
-#### Some examples of strings:
+**Some examples of strings:**
 
-* `^(\d{3}).*` -- a string starting with 3 digits and any ending, the digits are extracted as tokens.
+* `^(\d{3}).*` -- a string starting with 3 digits and any ending, the digits are extracted as tokens. `001a, 212abasd, 231absd`.
 
-*001a, 212abasd, 231absd*
+* `^(P\d{2})$` -- a string starting with P and ending with two digits, the whole string is taken as a token. `P12, P32`.
 
-* `^(P\d{2})$` -- a string starting with P and ending with two digits, the whole string is taken as a token.
-
-*P12, P32*
-
-* `.*(T1_MPR|pcasl|M0).*\.PAR$` -- a string with any beginning, containing T1_MPR or pcasl or M0 (this is taken as a token), and ending by `.PAR`.
-
-*test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR*
+* `.*(T1_MPR|pcasl|M0).*\.PAR$` -- a string with any beginning, containing T1_MPR or pcasl or M0 (this is taken as a token), and ending by `.PAR`. `test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR`.
 
 * `.*(T1|ASL).*(PCASL|PASL)` -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. `101` or `102`), specified by `\d{3}` as regular expression. This is between brackets `( )` to define that this is the first token.
 
