@@ -135,7 +135,7 @@ same native space.
 **Format:**
 
 ```matlab
-xASL_wrp_Quantify(x)
+xASL_wrp_Quantify(x [, PWI_Path, pathOutputCBF, M0Path, SliceGradientPath])
 ```
 
 **Description:**
@@ -163,7 +163,7 @@ this NIfTI file may be needed by xASL\_wrp\_VisualQC\_ASL.m
 **Format:**
 
 ```matlab
-xASL_wrp_RealignASL(x[,bSubtraction])
+xASL_wrp_RealignASL(x[, bASL])
 ```
 
 **Description:**

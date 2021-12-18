@@ -16,7 +16,24 @@
 
 Parses the settings and runs the DatabaseLoop sub-function.
 
+
 ## Administration
+
+----
+### xASL\_adm\_BreakString.m
+
+**Format:**
+
+```matlab
+[resultText] = xASL_adm_BreakString(textToPrint,SymbolToFill, bColor, bNewLines, bPrintImmediately)
+```
+
+**Description:**
+
+Pads symbols left and right of a string. By default it adds new lines, and colors, and prints the string, with
+a possibility to turn each of these options off.
+
+
 
 ----
 ### xASL\_adm\_CatchNumbersFromString.m
@@ -343,7 +360,7 @@ given in EXT1, and potentially also EXT2, EXT3...
 **Format:**
 
 ```matlab
-[parms pathDcmDictOut] = xASL_adm_Dicom2Parms(inp[, parmsfile, dcmExtFilter, bUseDCMTK, pathDcmDictIn])
+[parms pathDcmDictOut] = xASL_adm_Dicom2Parms(imPar, inp[, parmsfile, dcmExtFilter, bUseDCMTK, pathDcmDictIn])
 ```
 
 **Description:**
@@ -936,10 +953,9 @@ jsonOut = xASL_bids_BIDSifyASLNII(jsonIn, bidsPar, pathIn, pathOutPrefix)
 
 **Description:**
 
-It modifies the NIfTI file to take into account several BIDS specifics. Specifically, it applies the previously calculated scalings, and
-it saves the ASLcontext.tsv file,
-
-
+It modifies the NIfTI file to take into account several BIDS
+specifics. Specifically, it applies the previously calculated
+scalings, and  it saves the ASLcontext.tsv file,
 
 
 ----
@@ -964,7 +980,7 @@ the structure on the output. It works according to the normal BIDS, or ASL-BIDS 
 **Format:**
 
 ```matlab
-[jsonOut,bTimeEncoded,bTimeEncodedFME] = xASL_bids_BIDSifyCheckTimeEncoded(jsonIn,jsonOut)
+[jsonOut,bTimeEncoded, bTimeEncodedFME] = xASL_bids_BIDSifyCheckTimeEncoded(jsonIn, jsonOut, nVolumes)
 ```
 
 **Description:**
@@ -983,9 +999,11 @@ Check for time encoded sequence.
 
 **Description:**
 
-% It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
-the structure on the output. It works according to the normal BIDS, or ASL-BIDS definitionIt modifies the NIfTI file to take into account several BIDS specifics. Specifically, it
-applies the previously calculated scalings.
+It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS
+fields, removes superfluous fields, checks all the conditions and orders the structure on
+the output. It works according to the normal BIDS, or ASL-BIDS definition. It modifies
+the NIfTI file to take into account several BIDS specifics.
+Specifically, it applies the previously calculated scalings.
 
 1. Check the scaling in DICOMs
 2. Check the JSON parameters
@@ -1008,18 +1026,119 @@ Check the dataset\_description.json field contents with special regard to the im
 
 
 ----
+### xASL\_bids\_CompareStoreDifference.m
+
+**Format:**
+
+```matlab
+[identical,differences,dn] = xASL_bids_CompareStoreDifference(bPrintReport,differences,dn,allFiles,iFile)
+```
+
+**Description:**
+
+Store the difference found in a TEXT file.
+
+
+
+
+----
 ### xASL\_bids\_CompareStructures.m
 
 **Format:**
 
 ```matlab
-[identical,results] = xASL_bids_CompareStructures(pathDatasetA,pathDatasetB,[bPrintReport,threshRmseNii]);
+[identical,results,reportTable] = xASL_bids_CompareStructures(pathDatasetA,pathDatasetB,[bPrintReport,threshRmseNii,detailedOutput,printWarnings,ignoreLogs]);
 ```
 
 **Description:**
 
 Function that compares two BIDS folders with several subfolders and studies and prints the differences.
 We recommend to set bPrintReport to true, because you otherwise can't see significant file content differences.
+
+
+
+
+----
+### xASL\_bids\_CompareStructuresCheckContent.m
+
+**Format:**
+
+```matlab
+[identical,differences] = xASL_bids_CompareStructuresCheckContent(filesDatasetA,filesDatasetB,pathDatasetA,pathDatasetB,identical,bPrintReport,detailedOutput,threshRmseNii)
+```
+
+**Description:**
+
+This script iterates over the provided files (filesDatasetA,filesDatasetB).
+There are different comparisons implemented for JSON, TSV, TEXT, & NIFTI files.
+
+
+
+
+----
+### xASL\_bids\_CompareStructuresJSON.m
+
+**Format:**
+
+```matlab
+[differences,identical,dn] = xASL_bids_CompareStructuresJSON(differences,identical,bPrintReport,allFiles,iFile,dn,currentFileA,currentFileB)
+```
+
+**Description:**
+
+This script compares the content of two JSON files for
+the BIDS flavor testing.
+
+
+
+
+----
+### xASL\_bids\_CompareStructuresNIFTI.m
+
+**Format:**
+
+```matlab
+[differences,identical,dn] = xASL_bids_CompareStructuresNIFTI(differences,identical,bPrintReport,detailedOutput,allFiles,iFile,dn,currentFileA,currentFileB,threshRmseNii)
+```
+
+**Description:**
+
+This script compares the content of two NIFTI files for
+the BIDS flavor testing.
+
+
+
+
+----
+### xASL\_bids\_CompareStructuresTEXT.m
+
+**Format:**
+
+```matlab
+[differences,identical,dn] = xASL_bids_CompareStructuresTEXT(differences,identical,bPrintReport,allFiles,iFile,dn,currentFileA,currentFileB)
+```
+
+**Description:**
+
+This script compares the content of two TEXT files for
+the BIDS flavor testing.
+
+
+
+
+----
+### xASL\_bids\_CompareStructuresTSV.m
+
+**Format:**
+
+```matlab
+[differences,identical,dn] = xASL_bids_CompareStructuresTSV(differences,identical,bPrintReport,allFiles,iFile,dn,currentFileA,currentFileB)
+```
+
+**Description:**
+
+This script compares the content of two TSV files for
+the BIDS flavor testing.
 
 
 
@@ -1314,6 +1433,20 @@ This function is usually called from xASL\_bids\_GetPhoenixProtocol.
 Function to parse the raw phoenix protocol. This function is usually called from xASL\_bids\_GetPhoenixProtocol.
 
 
+
+
+----
+### xASL\_bids\_ValidateNiftiName.m
+
+**Format:**
+
+```matlab
+xASL_bids_ValidateNiftiName(fileName,perfType)
+```
+
+**Description:**
+
+Validate the NIFTI filename based on the regular expressions from bids-matlab.
 
 
 ----
@@ -2293,24 +2426,17 @@ image, by the following steps:
 
 
 ----
-### xASL\_im\_ResampleLinearFair.m
+### xASL\_im\_ResampleLinear.m
 
 **Format:**
 
 ```matlab
-[output_res]=xASL_im_ResampleLinearFair(im_input,newsize)
+imOutput = xASL_im_ResampleLinear(imInput, newSize)
 ```
 
 **Description:**
 
-Downsample (or upsample, works similarly) old\_res image to
-low\_res image, trilinear.
-We recommend using "xASL\_spm\_Resample" instead, because of
-better performance.
-
-**NB:** new\_res should fit exactly integer fold in old\_res
-
-**NB:** all dimensions of new\_res should have equal size
+Downsample or upsample an image from its old to a new resolution.
 
 
 
@@ -2707,27 +2833,27 @@ This function iterates through the following steps for each variable:
 **Format:**
 
 ```matlab
-[SubjectNlist, TimePoint, IsSubject, SubjectID_FirstVolume] = xASL_init_LongitudinalRegistration(x)
+[SubjectNlist, TimePoint, IsSubject, SubjectID_FirstVolume, VolumeList, VolumeN] = xASL_init_LongitudinalRegistration(x)
 ```
 
 **Description:**
 
+
+
 This function initializes the longitudinal registration for ExploreASL,
 which implements the SPM longitudinal registration.
 
-This function recognizes and defines visits (i.e. multiple scans per
-subject) in the initialization of ExploreASL, based on the suffixes \_1 \_2
-\_n in the subject names (identified as foldernames).
+This function recognizes and defines visits (i.e. multiple scans per subject) in the initialization of
+ExploreASL, based on the suffixes \_1 \_2 \_n in the subject names (identified as foldernames).
 
 Specifically, this function is called in the registration modules LongReg and DARTEL,
 the first carrying out within-subject registration and
-the second between-subject registration, based on the first time point
-only.
+the second between-subject registration, based on the first time point only.
+
 For the first function, we specify here a list of visits/timepoints that
 should be registered longitudinally, for the second function we specify a
 list of first visits only, as the between-subject registration in
-ExploreASL is based on the first scan (as opposed to the average
-subject's scan).
+ExploreASL is based on the first scan (as opposed to the average subject's scan).
 
 This function runs the following steps:
 
@@ -3126,7 +3252,7 @@ Some Siemens 3D GRASE puts a second Dummy control image -> iDummy = 2;
 5. Determine ASL indices
 6. Save ASL4D NIfTI
 7. Split relevant JSON parameters/arrays
-8. Split ASL4D\_aslContext.tsv
+8. Split ASL4Dcontext.tsv
 9. Modify JSON fields
 10. Copy sidecars
 
@@ -3149,8 +3275,8 @@ Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
 2. Parse parameters
 3. Locate dcm2nii executable
 4. Set default arguments dcm2nii
-5. Set dcm2niiX initialization loading
-6. Check if we are reading a DICOM folder
+5. Check if we are reading a DICOM folder
+6. Set dcm2niiX initialization loading
 7. Check for existing targets
 8. Create temporary subfolder for converting
 9. Run dcm2nii and move files to final destination using specified series name
@@ -3759,7 +3885,7 @@ T1time and the signal attenuation is calculated for several slices acquired at t
 **Format:**
 
 ```matlab
-[CBF_nocalib] = xASL_quant_Basil(PWI, x)
+[CBF_nocalib, ATT_map, resultFSL] = xASL_quant_Basil(PWI, x)
 ```
 
 **Description:**
@@ -3767,6 +3893,7 @@ T1time and the signal attenuation is calculated for several slices acquired at t
 This script performs quantification of the PWI using the FSL Basil pipeline. Final calibration to
 physiological units is performed by dividing the quantified PWI by the M0 image/value.
 This function performs the following steps:
+
 1. Define paths
 2. Delete previous BASIL output
 3. Write the PWI as Nifti file for Basil to read as input
@@ -3774,6 +3901,7 @@ This function performs the following steps:
 5. Run Basil and retrieve CBF output
 6. Scaling to physiological units
 7. Householding
+
 
 
 ----
@@ -3808,7 +3936,7 @@ This function runs the following steps:
 **Format:**
 
 ```matlab
-[ControlIM, LabelIM, OrderContLabl] = xASL_quant_GetControlLabelOrder(FramesIn, x)
+[ControlIm, LabelIm, OrderContLabl] = xASL_quant_GetControlLabelOrder(ASLTimeSeries)
 ```
 
 **Description:**
@@ -3816,7 +3944,45 @@ This function runs the following steps:
 This function automatically checks (and corrects if required)
 the control and label order of ASL timeseries
 based on the larger signal in control volumes.
-It supposes that data is acquired in pairs.
+It supposes that data is acquired in pairs. Works also for multiPLD but only for sequences
+with alternative control/label or label/control order
+
+
+----
+### xASL\_quant\_GetMeanControl.m
+
+**Format:**
+
+```matlab
+imMeanControl = xASL_quant_GetMeanControl(x, imASLTimeSeries)
+```
+
+**Description:**
+
+This function calculates the mean control image. It automatically checks (and corrects if required)
+the control order of ASL timeseries and takes into account if multiPLD or Hadamard data are provided
+
+
+----
+### xASL\_quant\_HadamardDecoding.m
+
+**Format:**
+
+```matlab
+[imDecoded] = xASL_quant_HadamardDecoding(imPath, xQ)
+```
+
+**Description:**
+
+Hadamard-4 & Hadamard-8 Decoding.
+
+0. Admin: Check inputs, load data
+1. Specify the decoding matrix
+2. Reorder multi-TE data
+3. Decode the Hadamard data
+4. Reorder multi-TE back to the initial order of PLD/TE
+5. Normalization of the decoded data
+
 
 
 ----
@@ -3866,6 +4032,42 @@ xASL\_wrp\_ProcessM0.m). This function runs the following steps:
 5. Check for correct TR values
 6. Quantify the M0, either for single 3D volume or slice-wise
 7. Apply custom scalefactor if requested (x.modules.asl.M0\_GMScaleFactor)
+
+
+
+----
+### xASL\_quant\_MultiPLD.m
+
+**Format:**
+
+```matlab
+[ScaleImage[, CBF, ATT]] = xASL_quant_MultiPLD(PWI, M0_im, imSliceNumber, x[, bUseBasilQuantification])
+```
+
+**Description:**
+
+This script performs a multi-step quantification, by
+initializing a ScaleImage that travels through this script & gets changed by the following quantification
+factors:
+
+1.    **PLD scalefactor** (gradient if 2D multi-slice) (if x.Q.ApplyQuantification(3))
+2.    **Label decay scale factor** for single (blood T1) - or dual-compartment (blood+tissue T1) model, CASL or PASL
+Single-compartment model: Alsop MRM 2014
+Dual-compartment model: Wang MRM 2002: Gevers JMRI 2012 (if x.Q.ApplyQuantification(3))
+3.    **Scaling to physiological units** [ml/gr/ms =>ml/100gr/min =>(60,000 ms=>min)(1 gr=>100gr)]
+(if x.Q.ApplyQuantification(3))
+4.    **Manufacturer-specific scalefactor** (if x.Q.ApplyQuantification(1) -> future move to dcm2niiX stage)
+Finally, we:
+5.    Divide PWI/M0 (if x.Q.ApplyQuantification(5))
+6.    Print parameters used
+
+Note that the output always goes to the CBF image (in the
+future this could go to different stages, e.g. dcm2niiX or
+PWI stage)
+
+Note that BASIL is also implemented, but it doesn't allow a
+standard space quantification yet (it would need to use
+imSliceNumber)
 
 
 
@@ -4550,74 +4752,6 @@ str2num wrapper, which only converts strings to numbers, and allows inputting ce
 Also, it replaces 'n/a' with NaN (BIDS convention). And it
 has some other functionality as described in bKeepCell &
 bReplaceNonNumerical above.
-
-
-----
-### xASL\_test\_Flavors.m
-
-**Format:**
-
-```matlab
-xASL_test_Flavors(pathExploreASL, pathTest[, bTest, x])
-
-
-```
-
-**Description:**
-
-Runs the full testing on import and processing of the FlavorsDatabase. The testing directory
-path has to be provided with the FlavorsDatabase subdirectory containig the Flavors - this
-subdirectory is read, but not modified. New directories are created for that inside the test
-directory.
-
-
-
-----
-### xASL\_test\_Flavors\_DCM2BIDS.m
-
-**Format:**
-
-```matlab
-xASL_test_Flavors_DCM2BIDS(baseDirImport)
-```
-
-**Description:**
-
-
-Runs the DICOM to ASL-BIDS import for all data in the baseDirImport directory. Study directories are supposed to be in, containing a 'sourcedata' folder - this folder
-can contain subject directories and also sourceStructure.json and studyPar.json specifying the directory structure and the additional study parameters, respectively.
-The import creates first the 'temp' subfolder with data after dcm2nii and with all tags read and saved to JSON. Then it assembles everything with the
-studyParameters and makes sure all is in BIDS format and saves it correctly in the 'rawdata' subdirectory.
-
-This function runs the following sections:
-1.  Initialization
-2. DICOM -> NII+JSON (i.e. dcm2niiX)
-3. Manual curation for certain flavors
-3a. Siemens\_PCASL\_3DGRASE\_VD13D\_2
-3b. Philips\_PCASL\_3DGRASE\_5.4.1.0\_TopUp\_1
-3c. Siemens\_PCASL\_3DGRASE\_VB17A\_TopUp\_1
-3d. Siemens\_PCASL\_3DGRASE\_VB17A\_multiPLD\_1
-4. Convert NII+JSON -> BIDS
-
-
-----
-### xASL\_test\_GetLogContent.m
-
-**Format:**
-
-```matlab
-[logContent] = xASL_test_GetLogContent(rootDir, [printContent], [storeRelativePath], [exportTable])
-```
-
-**Description:**
-
-Get warnings and errors from log files.
-
-0. Input check
-1. Load all log files
-2. Iterate over log files
-3. Optional: Print log content
-4. Optional: Export (0 = no export, 1 = TSV export, 2 = XLSX export)
 
 
 ## Visualization

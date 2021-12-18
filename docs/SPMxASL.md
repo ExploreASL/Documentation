@@ -641,9 +641,11 @@ xASL_spm_admin(pathIn[, bPadComma1])
 This SPM admin function takes a NIfTI path and does a few
 checks to make this valid to SPM. It accepts both .nii and .nii.gz.
 It runs the following steps:
+
 1. Unzip .nii.gz
 2. Convert char to cell
 3. Add ',1' suffix
+
 
 
 ----
@@ -714,6 +716,31 @@ y = xASL_stat_MedianNan(x[,dim])
 **Description:**
 
 It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.
+
+
+----
+### xASL\_system.m
+
+**Format:**
+
+```matlab
+
+[result1, result2] = xASL_system(Command[, bVerbose])
+```
+
+**Description:**
+
+
+
+This function allows running a system call from Matlab in an optimized fashion.
+E.g., it will use user-specific CLI initializations, which are in ~/.bashrc
+or ~/.zshrc (depending on the CLI used, Linux by default uses bash, macOS by default uses zsh).
+
+It runs the following steps:
+
+1. Initialize the user-specific startup lines
+2. Run the command
+
 
 
 ----
