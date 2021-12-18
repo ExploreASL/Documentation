@@ -606,6 +606,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#xasl_systemm" class="md-nav__link">
+    xASL_system.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#xasl_tsvreadm" class="md-nav__link">
     xASL_tsvRead.m
   </a>
@@ -1085,6 +1092,13 @@
         <li class="md-nav__item">
   <a href="#xasl_stat_mediannanm" class="md-nav__link">
     xASL_stat_MedianNan.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_systemm" class="md-nav__link">
+    xASL_system.m
   </a>
   
 </li>
@@ -1578,10 +1592,12 @@ but earlier Matlab versions do not support this. For backward compatibility, use
 <p><strong>Description:</strong></p>
 <p>This SPM admin function takes a NIfTI path and does a few
 checks to make this valid to SPM. It accepts both .nii and .nii.gz.
-It runs the following steps:
-1. Unzip .nii.gz
-2. Convert char to cell
-3. Add ',1' suffix</p>
+It runs the following steps:</p>
+<ol>
+<li>Unzip .nii.gz</li>
+<li>Convert char to cell</li>
+<li>Add ',1' suffix</li>
+</ol>
 <hr />
 <h3 id="xasl_spm_reslicem">xASL_spm_reslice.m</h3>
 <p><strong>Format:</strong></p>
@@ -1627,6 +1643,22 @@ Note that smoothnesses combine with Pythagoras' rule (i.e. sum quadratically)</p
 
 <p><strong>Description:</strong></p>
 <p>It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.</p>
+<hr />
+<h3 id="xasl_systemm">xASL_system.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">
+[result1, result2] = xASL_system(Command[, bVerbose])
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This function allows running a system call from Matlab in an optimized fashion.
+E.g., it will use user-specific CLI initializations, which are in ~/.bashrc
+or ~/.zshrc (depending on the CLI used, Linux by default uses bash, macOS by default uses zsh).</p>
+<p>It runs the following steps:</p>
+<ol>
+<li>Initialize the user-specific startup lines</li>
+<li>Run the command</li>
+</ol>
 <hr />
 <h3 id="xasl_tsvreadm">xASL_tsvRead.m</h3>
 <p><strong>Format:</strong></p>
