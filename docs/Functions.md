@@ -917,7 +917,7 @@ This function runs the following steps:
 **Format:**
 
 ```matlab
-jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn)
+jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn, studyPar, headerASL)
 ```
 
 **Description:**
@@ -926,6 +926,7 @@ jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn)
 It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
 the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition
 
+0. Admin
 1. Obtain the dimensions of the ASL data
 2. Take all the manually predefined fields from studyPar
 3. Extract the scaling factors from the JSON header
@@ -1022,6 +1023,23 @@ Specifically, it applies the previously calculated scalings.
 **Description:**
 
 Check the dataset\_description.json field contents with special regard to the import version.
+
+
+
+----
+### xASL\_bids\_CompareFieldLists.m
+
+**Format:**
+
+```matlab
+strError = xASL_bids_CompareFieldLists(jsonStructA, jsonStructB, fieldList, ignoreFields)
+```
+
+**Description:**
+
+This script compares the content of two JSON files for
+the BIDS flavor testing.
+
 
 
 
@@ -3016,7 +3034,7 @@ Print chosen settings.
 **Format:**
 
 ```matlab
-x = xASL_io_CheckDeprecatedFieldsX(x)
+x = xASL_io_CheckDeprecatedFieldsX(x[, bVerbose])
 ```
 
 **Description:**

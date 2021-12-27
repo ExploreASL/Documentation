@@ -632,7 +632,7 @@ NII2BIDS conversion for a single sessions, single run.
 **Format:**
 
 ```matlab
-x = xASL_imp_NII2BIDS_Subject(x, imPar, bidsPar, studyPar, nameSubject)
+x = xASL_imp_NII2BIDS_Subject(x, imPar, bidsPar, studyPar, nameSubjectSession)
 ```
 
 **Description:**

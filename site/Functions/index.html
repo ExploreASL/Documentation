@@ -744,6 +744,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_comparefieldlistsm" class="md-nav__link">
+    xASL_bids_CompareFieldLists.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_comparestoredifferencem" class="md-nav__link">
     xASL_bids_CompareStoreDifference.m
   </a>
@@ -2799,6 +2806,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xasl_bids_comparefieldlistsm" class="md-nav__link">
+    xASL_bids_CompareFieldLists.m
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#xasl_bids_comparestoredifferencem" class="md-nav__link">
     xASL_bids_CompareStoreDifference.m
   </a>
@@ -4836,13 +4850,14 @@ is sorted for participants.</p>
 <hr />
 <h3 id="xasl_bids_bidsifyasljsonm">xASL_bids_BIDSifyASLJSON.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn)
+<pre><code class="matlab">jsonOut = xASL_bids_BIDSifyASLJSON(jsonIn, studyPar, headerASL)
 </code></pre>
 
 <p><strong>Description:</strong></p>
 <p>It makes all the conversions to a proper BIDS structure, checks the existence of all BIDS fields, removes superfluous fields, checks all the conditions and orderes
 the structure on the output. It works according to the normal BIDS, or ASL-BIDS definition</p>
 <ol>
+<li>Admin</li>
 <li>Obtain the dimensions of the ASL data</li>
 <li>Take all the manually predefined fields from studyPar</li>
 <li>Extract the scaling factors from the JSON header</li>
@@ -4910,6 +4925,15 @@ Specifically, it applies the previously calculated scalings.</p>
 
 <p><strong>Description:</strong></p>
 <p>Check the dataset_description.json field contents with special regard to the import version.</p>
+<hr />
+<h3 id="xasl_bids_comparefieldlistsm">xASL_bids_CompareFieldLists.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="matlab">strError = xASL_bids_CompareFieldLists(jsonStructA, jsonStructB, fieldList, ignoreFields)
+</code></pre>
+
+<p><strong>Description:</strong></p>
+<p>This script compares the content of two JSON files for
+the BIDS flavor testing.</p>
 <hr />
 <h3 id="xasl_bids_comparestoredifferencem">xASL_bids_CompareStoreDifference.m</h3>
 <p><strong>Format:</strong></p>
@@ -6221,7 +6245,7 @@ matrix with 1.5 mm isotropic resolution in MNI space.</p>
 <hr />
 <h3 id="xasl_io_checkdeprecatedfieldsxm">xASL_io_CheckDeprecatedFieldsX.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">x = xASL_io_CheckDeprecatedFieldsX(x)
+<pre><code class="matlab">x = xASL_io_CheckDeprecatedFieldsX(x[, bVerbose])
 </code></pre>
 
 <p><strong>Description:</strong></p>
