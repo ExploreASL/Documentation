@@ -4,11 +4,20 @@ site_url: https://github.com/ExploreASL/Documentation
 
 nav:
     - Home:                   index.md
-    - Tutorials (Basics):     Tutorials-Basics.md
-    - Tutorials (ASL-BIDS):   Tutorials-ASL-BIDS.md
+    - Tutorials (Install):     Tutorials-Install.md
+    - Tutorials (Execution):     Tutorials-Execution.md
+    
+    
+    - Tutorials (Import):     Tutorials-Import.md
+    - Tutorials (Processing):     Tutorials-Processing.md
     - Tutorials (QC):         Tutorials-QC.md
+    - Tutorials (Developer):         Tutorials-Developer.md
+    
+    
     - Tutorials (Advanced):   Tutorials-Advanced.md
+    
     - Parameter Descriptions: DataParTemplate.md
+    
     - Modules:                Modules.md
     - Module Import:          Import_Module.md
     - Module Structural:      Structural_Module.md
