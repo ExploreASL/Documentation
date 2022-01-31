@@ -7,15 +7,11 @@ nav:
     - Tutorials (Install):     Tutorials-Install.md
     - Tutorials (Execution):     Tutorials-Execution.md
     - Tutorials (Import):     Tutorials-Import.md
-
+    - Tutorials (Developer):         Tutorials-Developer.md
     
     - Tutorials (Processing):     Tutorials-Processing.md
     - Tutorials (QC):         Tutorials-QC.md
-    - Tutorials (Developer):         Tutorials-Developer.md
-    
-    
-    - Tutorials (Advanced):   Tutorials-Advanced.md
-    
+
     - Parameter Descriptions: DataParTemplate.md
     
     - Modules:                Modules.md

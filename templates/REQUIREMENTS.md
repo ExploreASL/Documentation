@@ -26,4 +26,8 @@ Versions of included & used third-party tools:
 - SPM12 7219 
 - CAT12 r1615 
 - LST 2.0.15 
+- bids-Matlab
+- DCMTK
+- SuperGZip
+- dcm2nii 20190902
 

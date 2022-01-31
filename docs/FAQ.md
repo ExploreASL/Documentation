@@ -7,7 +7,7 @@ We recommend to start with our **ASL-BIDS** and **Basics** tutorials. For more d
 
 > I would like to use ExploreASL, but I do not have a Matlab license. Can you help me?
 
-ExploreASL is based on a variety of toolboxes that were written in Matlab. We are working on the ExploreASL GUI and the docker integration though, so that everyone can use ExploreASL without Matlab license fees.
+ExploreASL is based on a variety of toolboxes that were written in Matlab. We have an ExploreASL GUI, a compiled version, and a docker integration though, so that everyone can use ExploreASL without Matlab license fees - see the [Installation Tutorial](./Tutorials-Installation/).
 
 > Doing **x** worked just fine in ExploreASL version **a** but doesn't work in version **b**. What should I do now?
 
