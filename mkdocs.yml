@@ -4,6 +4,11 @@ site_url: https://github.com/ExploreASL/Documentation
 
 nav:
     - Home:                   index.md
+    - Tutorials (Basics):     Tutorials-Basics.md
+    - Tutorials (ASL-BIDS):   Tutorials-ASL-BIDS.md
+    - Tutorials (QC):         Tutorials-QC.md
+    - Tutorials (Advanced):   Tutorials-Advanced.md
+    - Parameter Descriptions: DataParTemplate.md
     - Modules:                Modules.md
     - Module Import:          Import_Module.md
     - Module Structural:      Structural_Module.md
@@ -11,11 +16,6 @@ nav:
     - Module Population:      Population_Module.md
     - Functions:              Functions.md
     - SPM xASL Functions:     SPMxASL.md
-    - Tutorials (ASL-BIDS):   Tutorials-ASL-BIDS.md
-    - Tutorials (Basics):     Tutorials-Basics.md
-    - Tutorials (QC):         Tutorials-QC.md
-    - Tutorials (Advanced):   Tutorials-Advanced.md
-    - Parameter Descriptions: DataParTemplate.md
     - FAQ:                    FAQ.md
     - Requirements:           Requirements.md
     - Change Log:             Changes.md
