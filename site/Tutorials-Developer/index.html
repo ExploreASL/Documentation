@@ -612,7 +612,7 @@
   
     <li class="md-nav__item">
       <a href="../DataParTemplate/" class="md-nav__link">
-        Parameter Descriptions
+        Parameter description (dataPar.json)
       </a>
     </li>
   
@@ -891,7 +891,7 @@ xASL_Move('C:\Users\Test_Two\fileA.txt', 'C:\Users\Test_One\fileA.txt', 1);
 xASL_Move('C:\Users\Test_One\fileA.txt', 'C:\Users\Test_One\fileB.txt', 1);
 </code></pre>
 <p>Often we need to find a list of files in a certain directory. To do this, we can use <code>xASL_adm_GetFileList</code>. Let's assume there are five files called <code>fileA</code>, <code>fileB</code>, <code>fileC</code>, <code>fileD</code> and <code>fileE</code> in <code>C:\Users\Test_One</code>.  We know that all names start with <code>file</code>, so we can use this for our regular expression. Check out the example below on how you can get a cell array containing the paths of all these files.</p>
-<pre><code>strDirectory = 'C:\Users\Test_One';
+<pre><code class="language-matlab">strDirectory = 'C:\Users\Test_One';
 strRegEx = '^file.+$';
 filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
 </code></pre>
