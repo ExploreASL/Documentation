@@ -125,7 +125,7 @@ The `x.S` subfield contains **masking & atlas** related parameters.
 ## DataPar.json example
 An example configuration file is given below. Note that we include a large number of options and sequence parameters with the purpose of showing the correct formatting of the file and in the praxis no `dataPar.json` or only a couple of parameters are typically provided.
 
-```
+```json
 {"x": {
     "dataset": {
         "name": "ExampleDataSet",
@@ -144,7 +144,7 @@ An example configuration file is given below. Note that we include a large numbe
 	"LabelingDuration": 1800,
 	"SliceReadoutTime": 30,
 	"T2art": 50,
-        "BloodT1": 1650,
+        "BloodT1": 1650},
     "settings":{
         "Quality": 1,
 	"DELETETEMP": 1,
@@ -160,5 +160,4 @@ An example configuration file is given below. Note that we include a large numbe
             "PVCNativeSpaceKernel": [10 10 4],
             "bPVCGaussianMM": 1}}}
 }
-
 ```

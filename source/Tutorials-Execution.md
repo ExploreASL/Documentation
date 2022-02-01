@@ -1,4 +1,4 @@
-(# Tutorials (Execution)
+# Tutorials (Execution)
 
 ----
 ## ExploreASL & ASL-BIDS

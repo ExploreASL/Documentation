@@ -73,7 +73,7 @@ The `sourcestructure.json` file contains the following code (different for each 
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
        "tokenVisitAliases": ["", ""],
        "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
-       "bMatchDirectories": true,
+       "bMatchDirectories": true
 }
 ```
 
@@ -82,7 +82,7 @@ Note that we are using an outdated notation here - Visit/Session/Scan. In BIDS, 
 #### 1. folderHierarchy
 
 ```
-"folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"],
+"folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"]
 ```
 
 This specifies the names of all directories at all levels. In this case, we have specified regular expressions for directories at three different levels:
@@ -229,7 +229,7 @@ So a longitudinal study with two ASL scans per scan session (e.g. a medication c
 The `studyPar.json` file contains information about the data that is supposed to be used in the import and filled into the ASL-BIDS sidecar. It should then contain vital parameters of the sequences that are not available inside the DICOM files on the import. This refers to both modality [agnostic BIDS parameters](https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html) describing the dataset in general, an [modality specific MRI BIDS parameters](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html) describing mostly the ASL data.
 The are both saved in an unstructured JSON file using the original BIDS notation for both tags and their values. See an example below:
 
-```
+```json
 {"Authors":["Alzheimers Disease Neuroimaging Initiative"],
 "DatasetType":"raw",
 "License":"http://adni.loni.usc.edu/terms-of-use/",

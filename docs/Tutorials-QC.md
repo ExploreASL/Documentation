@@ -22,7 +22,7 @@ When you perform this walkthrough on your own data, there are three first main c
 ----
 ## 1. Data inclusion
 
-```
+```matlab
 >>> ExploreASL('/drive/folder/TestDataSet',0,1)
 
 ExploreASL will run the processing pipeline...

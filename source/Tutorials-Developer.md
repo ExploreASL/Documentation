@@ -61,7 +61,7 @@ xASL_Move('C:\Users\Test_One\fileA.txt', 'C:\Users\Test_One\fileB.txt', 1);
 
 Often we need to find a list of files in a certain directory. To do this, we can use `xASL_adm_GetFileList`. Let's assume there are five files called `fileA`, `fileB`, `fileC`, `fileD` and `fileE` in `C:\Users\Test_One`.  We know that all names start with `file`, so we can use this for our regular expression. Check out the example below on how you can get a cell array containing the paths of all these files.
 
-```
+```matlab
 strDirectory = 'C:\Users\Test_One';
 strRegEx = '^file.+$';
 filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);

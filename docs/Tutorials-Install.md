@@ -100,6 +100,6 @@ docker run -e DATASETROOT=MY-BIDS-DATASET
 
 - Here `DATASETROOT` is an environment variable which is a relative path to the `DATASETROOT` directory of your dataset.
 - The `IMPORTMODULES` and `PROCESSMODULES` are the parameters of ExploreASL_Master
-- ```/home/.../incoming:/data/incoming``` is used to mount your dataset folder (```/home/.../incoming```) to its corresponding docker dataset folder (```/data/incoming```). 
-- The same notation is used to mount the docker dataset output folder (```/data/outgoing```) to its corresponding real output folder on your drive (```/home/.../outgoing```).
+- `/home/.../incoming:/data/incoming` is used to mount your dataset folder (`/home/.../incoming`) to its corresponding docker dataset folder (`/data/incoming`). 
+- The same notation is used to mount the docker dataset output folder (`/data/outgoing`) to its corresponding real output folder on your drive (/home/.../outgoing`).
 
