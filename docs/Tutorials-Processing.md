@@ -95,7 +95,7 @@ While partial-volume correction is outputted in the Population module as done pe
             "PVCNativeSpaceKernel": [10 10 4],
             "bPVCGaussianMM": 1
 }}}}
-````
+```
 
 ### Run at lower quality and skip some missing scans
 The general settings allows to run ExploreASL in a faster mode at lower quality, or to not skip certain subjects if they are missing certain scans, or stop the pipeline after too many errors are reported:
