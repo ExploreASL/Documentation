@@ -259,6 +259,6 @@ Within `x.external` you can find parameters related to **external tools** and th
 
 | Fieldname                            | Description                                   |
 | ------------------------------------ |:---------------------------------------------:|
-| x.external.SPMVERSION                | String describing the version of SPM. |
+| x.external.SPMVERSION                | String describing the version of SPM. | 
 | x.external.bAutomaticallyDetectFSL   | Boolean to automatically detect the FSL version if disabled, this function will try to use the system-initialized FSL and throw an error if FSL is not initialized. |
 

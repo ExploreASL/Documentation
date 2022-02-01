@@ -90,7 +90,7 @@ All **ASL module** related parameters are stored within this subfield. Use these
 | `bMakeNIfTI4DICOM`                     | Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file, e.g. for implementation in PACS or other DICOM archives. If set to true, an additional CBF image will be created with modifications that allow it to be easily implemented back into a DICOM for e.g. PACS: 1. Remove peak & valley signal, remove NaNs, rescale to 12 bit integers, apply original orientation (2 copies saved, with original ASL and T1w orientation). |  |
 
 ### STRUCTURAL PROCESSING PARAMETERS
-All **structural module** related parameters are stored within this subfield. Use these to configure processing options of the structural module.
+All **structural module** related parameters are stored within this subfield. Use these to configure processing options of the structural module. Note that some of these settings are directly in the `modules` and some are in `modules.structural`.
 
 | `x.modules.[...]`             | Description                                                                                              | Defaults                |
 | ----------------------------- |:--------------------------------------------------------------------------------------------------------:|:-----------------------:|
@@ -132,18 +132,33 @@ An example configuration file is given below. Note that we include a large numbe
         "subjectRegexp": "^\\d{3}$",
         "exclusion": ""},
     "SESSIONS": ["ASL_1","ASL_2"],
+    "S":{"Atlases": ["Thalamus", "HOcort_CONN", "TotalGM"]},
     "session":{
         "options": ["baseline","drug"]},
+    "external":{
+        "bAutomaticallyDetectFSL": 1},
     "Q":{
 	"BackgroundSuppressionNumberPulses": 2,
 	"LabelingType": "CASL",
 	"Initial_PLD": 1800,
 	"LabelingDuration": 1800,
-	"SliceReadoutTime": 30},
+	"SliceReadoutTime": 30,
+	"T2art": 50,
+        "BloodT1": 1650,
     "settings":{
         "Quality": 1,
-	"DELETETEMP": 1},
-    "modules":{"asl":{
-        "M0PositionInASL4D": [1, 2]}}}
+	"DELETETEMP": 1,
+	"bAutoACPC": false},
+    "modules":{
+        "bRunLongReg": true,
+        "structural": {
+            "bSegmentSPM12": 1},
+        "asl":{
+            "M0PositionInASL4D": [1, 2],
+            "bUseMNIasDummyStructural": 1,
+            "bPVCNativeSpace": 1,
+            "PVCNativeSpaceKernel": [10 10 4],
+            "bPVCGaussianMM": 1}}}
 }
+
 ```
