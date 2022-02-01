@@ -66,14 +66,14 @@ The content of the `sourcestructure.json` and `studypar.json` files is explained
 
 The `sourcestructure.json` file contains the following code (different for each study):
 
-```
+```json
 {  
-       "folderHierarchy" = [^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'],
-       "tokenOrdering" = [ 1 0 2 3],
-       "tokenSessionAliases" = [ '^1$', 'ASL_1'; '^2$', 'ASL_2' ],
-       "tokenVisitAliases":["",""],
-       "tokenScanAliases" = [ '^PSEUDO_10_min$', 'ASL4D'; '^M0$', 'M0'; '^T1-weighted$', 'T1' ],
-       "bMatchDirectories" = true;
+       "folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"],
+       "tokenOrdering": [ 1 0 2 3],
+       "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
+       "tokenVisitAliases": ["", ""],
+       "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
+       "bMatchDirectories": true,
 }
 ```
 
