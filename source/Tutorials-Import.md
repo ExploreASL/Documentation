@@ -21,7 +21,7 @@ ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 
 ## Example dataset for Import with ExploreASL
 
-The 2D_Sleep study data example has an original directory structure as follows: `ROOT\sourcedata\subject\session\scan_ID`, and the directories containing the DICOMs. See image below:
+The 2D_Sleep study data example has an original directory structure as follows: `ROOT/sourcedata/subject/session/scan_ID`, and the directories containing the DICOMs. See image below:
 
 ```
 2D_Sleep/
@@ -37,11 +37,11 @@ The 2D_Sleep study data example has an original directory structure as follows: 
       ...
 ```
 
-Explore ASL first write the temporary NIfTI files to `ROOT\derivatives\ExploreASL\temp\subject\`.
+Explore ASL first write the temporary NIfTI files to `ROOT/derivatives/ExploreASL/temp/subject/`.
 
-In the second step writes the full ASL-BIDS data into `ROOT\rawdata\`.
+In the second step writes the full ASL-BIDS data into `ROOT/rawdata/`.
 
-And at the end, Explore ASL creates the following directory structure `ROOT\derivatives\ExploreASL\subject\` and puts structural images directly and ASL images to directories `ASL_1`, `ASL_2` depending on the session - see below:
+And at the end, Explore ASL creates the following directory structure `ROOT/derivatives/ExploreASL/subject/` and puts structural images directly and ASL images to directories `ASL_1`, `ASL_2` depending on the session - see below:
 
 ```
 2D_Sleep/
@@ -55,9 +55,9 @@ And at the end, Explore ASL creates the following directory structure `ROOT\deri
 ```
 
 Ideally, before running the import, the data contains three configuration files
-`ROOT\sourcestructure.json`
-`ROOT\studyPar.json`
-`ROOT\dataPar.json`
+`ROOT/sourcestructure.json`
+`ROOT/studyPar.json`
+`ROOT/dataPar.json`
 
 The content of the `sourcestructure.json` and `studypar.json` files is explained below. The content of `dataPar.json` is explained in the [Processing Tutorial](./../Tutorials-Processing/).
 
@@ -82,21 +82,21 @@ Note that we are using an outdated notation here - Visit/Session/Scan. In BIDS, 
 #### 1. folderHierarchy
 
 ```
-folderHierarchy = {'^(\d{3}).*', '^Session([12])$','^(PSEUDO_10_min|T1-weighted|M0)$'}
+"folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"],
 ```
 
 This specifies the names of all directories at all levels. In this case, we have specified regular expressions for directories at three different levels:
 
-* `^(\d{3}).*`
+* `^(\\d{3}).*`
 * `^Session([12])$`
 * `^(PSEUDO_10_min|T1-weighted|M0)$`
 
-This means that we will identify three directory levels, each with a certain name, following regular expressions (find more in the [matlab definition](https://de.mathworks.com/help/matlab/ref/regexp.html) of regular expressions).
+This means that we will identify three directory levels, each with a certain name, following regular expressions (find more in the [matlab definition](https://de.mathworks.com/help/matlab/ref/regexp.html) of regular expressions). Note that `\\` is used in the JSON to be correctly read and parsed as a single `\` for the regular expression.
 
 At each directory level, it first decides if the directory matches the regular expression, then it also decides if it extract tokens from the string or not - typically tokens are in brackets. More below.
 
-* Extracting a token: `^(\d{3}).*`
-* Not extracting a token: `^\d{3}.*`
+* Extracting a token: `^(\\d{3}).*`
+* Not extracting a token: `^\\d{3}.*`
 
 Tokens information extracted from the directory name at each directory level. 
 The tokens are numbered by the directory level and can be later used to label patients, sequences etc. See **tokenOrdering** below.
@@ -142,22 +142,23 @@ Some basic regular expressions are described here with examples - for a full des
 
 * `.*(T1|ASL).*(PCASL|PASL)` -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. `101` or `102`), specified by `\d{3}` as regular expression. This is between brackets `( )` to define that this is the first token.
 
+Again, note that the actual strings are given here and all `\` have to be escaped when written to a json-file as `\\`.
 
 #### 2. tokenOrdering
 
 ```
-tokenOrdering = [1 0 2 3];
+"tokenOrdering": [ 1 0 2 3],
 ```
 
 Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.
 
-This is specified by tokenOrdering = `[patientName, SessionName, ScanName]`
+This is specified by "tokenOrdering": `[patientName, SessionName, ScanName]`
 
-* `tokenOrdering = [1 0 2 3];` = first token is used for patient name, second for session name, third for scan name
-* `tokenOrdering = [1 0 0 2];` = first token is used for patient name, second for scan name, session name is not assigned
-* `tokenOrdering = [1 0 3 2];` = first token is used for patient name, third for session name, second for scan name
-* `tokenOrdering = [2 0 1 3];` = second token is used for patient name, first for session name, third for scan name
-* `tokenOrdering = [2 1 0 3];` = second token is used for patient name, first for visit name, third for scan name
+* `"tokenOrdering": [1 0 2 3];` = first token is used for patient name, second for session name, third for scan name
+* `"tokenOrdering": [1 0 0 2];` = first token is used for patient name, second for scan name, session name is not assigned
+* `"tokenOrdering": [1 0 3 2];` = first token is used for patient name, third for session name, second for scan name
+* `"tokenOrdering": [2 0 1 3];` = second token is used for patient name, first for session name, third for scan name
+* `"tokenOrdering": [2 1 0 3];` = second token is used for patient name, first for visit name, third for scan name
 
 #### 3. tokenVisitAliases
 If multiple visits are present - use the following notation to mark them:
@@ -169,7 +170,7 @@ If multiple visits are present - use the following notation to mark them:
 #### 4. tokenSessionAliases
 
 ```
-tokenSessionAliases = {'^1$', 'ASL_1'; '^2$', 'ASL_2'};
+"tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
 ```
 
 The second token defines the name of the session. The token was extracted using a regular expression `*^Session([12])$*`. This can represent a string `Session1` or `Session2`. And either `1` or `2` is taken as the token.
@@ -186,7 +187,7 @@ Here, the token name `^1$` - that is a string equaling to `"1"` is replaced in t
 #### 5. tokenScanAliases
 
 ```
-tokenScanAliases = {'^PSEUDO_10_min$', 'ASL4D'; '^M0$', 'M0'; '^T1-weighted$', 'T1'};
+"tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
 ```
 
 The third token defines the name of the scan. Each row represents one scan name. The first column is the regular expression for the token, the second column gives the final name of the scan.
@@ -262,4 +263,8 @@ in the `studyPar.json` and ExploreASL automatically expands it during the import
 "PostLabelingDelay":[1.0, 1.5, 2.0,1.0, 1.5, 2.0,1.0, 1.5, 2.0]
 ```
 
-Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. ExploreASL import allows to enter it as a field to `studyPar.json` and the automatically writes it into the .tsv file upon the import to ASL-BIDS - also expanding and repeating to the correct number of repetitions.
+Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. ExploreASL import allows to enter it as a field to `studyPar.json` and the automatically writes it into the .tsv file upon the import to ASL-BIDS - also expanding and repeating to the correct number of repetitions. Typically, you would use the following entry:
+
+```
+"ASLContext":"control, label",
+```
