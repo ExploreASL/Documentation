@@ -1,14 +1,12 @@
 
-# Tutorials (QC - Quick Start)
-
-**Attention: Unfortunately, the following tutorial is outdated. We are working on an up-to-date version right now.**
+# Tutorials (QC)
 
 This document provides a “quick start” walk-through for a dataset processed by ExploreASL. This can be either the attached example dataset (n=1) or a clinical study. It is always recommended to first test the compatibility of ExploreASL with the example dataset (Step 0 below), and to create a file report for steps 1-6, to get accustomed to the data and to make sure that ExploreASL runs properly. Note that ExploreASL is in development, so naming conventions may change, especially when we move to a complete BIDS adherence.
 
 ----
 ## 0. Run TestDataSet to check ExploreASL compatibility
 
-First, try to run the test data set. Note that according to good practice, it is important to separate code and data. The user should copy `/ExploreASL/External/TestDataSet` to a directory with read and write permissions outside of the ExploreASL toolbox, and keep the ExploreASL directory structure unchanged. Let’s assume your copy of the TestDataSet is now in the folder `/drive/folder/TestDataSet`. Open Matlab, go to the directory of ExploreASL, run  `ExploreASL(‘drive/folder/TestDataSet/derivatives/ExploreASL/dataPar.json’, 0, 1);` to process the TestDataSet. The `dataPar.json` file in the example dataset contains all image processing and quantification parameters that ExploreASL needs.  (Note that for your own study, you would need to create this parameter file. You can find a list of parameters in `/ExploreASL/DataParTemplate.m`). If you only want to run a quick test, we recommend to  set the `Quality` parameter within dataPar.json to 0. Please note that in the future, the structure of this  test dataset  will be replaced by the BIDS format. Also, you can add the same parameters to the JSON sidecars of the ASL NIfTI files, which will allow processing ASL scans with different parameters within the same study. In the case of a multi-center study, and/or multiple sequences or scanner updates, the JSON sidecars allow to have different ASL parameters within a single study.
+First, try to run the test data set. Note that according to good practice, it is important to separate code and data. The user should copy `//ExploreASL/External/TestDataSet/` to a directory with read and write permissions outside of the ExploreASL toolbox, and keep the ExploreASL directory structure unchanged. Let’s assume your copy of the TestDataSet is now in the folder `/drive/folder/TestDataSet`. Open Matlab, go to the directory of ExploreASL, run  `ExploreASL(‘/drive/folder/TestDataSet’, 0, 1);` to process the TestDataSet. The `dataPar.json` file in the example dataset contains all image processing and quantification parameters that ExploreASL needs.  (Note that for your own study, you would need to create this parameter file. See the [Processing Tutorial](./../Tutorials-Processing/) and [Processing parameters](./../DataParTemplate/). If you only want to run a quick test, we recommend to  set the `Quality` parameter within dataPar.json to 0. Please note that in the future, the structure of this  test dataset  will be replaced by the BIDS format. Also, you can add the same parameters to the JSON sidecars of the ASL NIfTI files, which will allow processing ASL scans with different parameters within the same study. In the case of a multi-center study, and/or multiple sequences or scanner updates, the JSON sidecars allow to have different ASL parameters within a single study.
 
 
 Upon successful completion of the processing, ExploreASL creates a result file (`//Population/Stats/ median_qCBF_(Native|Standard)Space_total_GM_n=1_*_PVC0.tsv`). Verify that the GM CBF here (without partial volume (PV) correction, i.e. PVC0)) is approximately `65 mL/100g/min`. If this file does not exist, then there could be a problem with ExploreASL compatibility. If the file exists and values are the same as reported here, then your software and hardware are ExploreASL compatible. In case ExploreASL processing runs for the example data set and not for other datasets then the problem is probably data related and not compatibility related.
@@ -25,54 +23,46 @@ When you perform this walkthrough on your own data, there are three first main c
 ## 1. Data inclusion
 
 ```
->> dataPar = '\drive\TestDataSet\derivatives\ExploreASL\dataPar.json';
->> [x] = ExploreASL_Master(dataPar,0,1,1);
+>>> ExploreASL('/drive/folder/TestDataSet',0,1)
+
 ExploreASL will run the processing pipeline...
-
-
 ==============================================================================================
- ________                      __                                 ______    ______   __        
-/        |                    /  |                               /      \  /      \ /  |      
-########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |      
-## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |      
-##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |      
-#####/     ##  ##<  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |      
+ ________                      __                                 ______    ______   __          
+/        |                    /  |                               /      \  /      \ /  |       
+########/  __    __   ______  ## |  ______    ______    ______  /######  |/######  |## |         
+## |__    /  \  /  | /      \ ## | /      \  /      \  /      \ ## |__## |## \__##/ ## |   
+##    |   ##  \/##/ /######  |## |/######  |/######  |/######  |##    ## |##      \ ## |       
+#####/     ##  ##<  ## |  ## |## |## |  ## |## |  ##/ ##    ## |######## | ######  |## |         
 ## |_____  /####  \ ## |__## |## |## \__## |## |      ########/ ## |  ## |/  \__## |## |_____ 
-##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |
-########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/ 
-                    ## |                                                                      
-                    ## |                                                                      
-                    ##/  
+##       |/##/ ##  |##    ##/ ## |##    ##/ ## |      ##       |## |  ## |##    ##/ ##       |   
+########/ ##/   ##/ #######/  ##/  ######/  ##/        #######/ ##/   ##/  ######/  ########/    
+                    ## |                                                                         
+                    ## |                                                                         
+                    ##/                                                                          
 
-==================================== ExploreASL Settings =====================================
-DataParPath         \drive\TestDataSet\derivatives\ExploreASL\dataPar.json
-Import Modules         
-Process Modules     Structural ASL Population
-bPause              True
+======================================= ExploreASL Settings ==================================
+Dataset Root        /drive/folder/TestDataSet
+Import Modules      
+Process Modules     STRUCTURAL ASL POPULATION 
+bPause              False
 iWorker             1
 nWorkers            1
 ==============================================================================================
-ExploreASL v1.5.1 initialized ... 
+ExploreASL v1.9.0 initialized ... 
 Automatically defining sessions...
-==================================== Additional Settings =====================================
+======================================= Additional Settings ==================================
 1 scans - 0 exclusions, resulting in 1 scans of: 
 Longitudinal timePoint 1 = 1 scans - 0 exclusions = 1 scans
 ASL sessions: 1
 
-Ancillary data, sets: 3 sets are defined for 1 "SubjectsSessions"
-Set 1 = "LongitudinalTimePoint" options "TimePoint_1", codes for paired data
-Set 2 = "SubjectNList" options "SubjectNList", codes for paired data
-Set 3 = "Site" options "SingleSite", codes for two-sample data
-x.D.ROOT            \drive\TestDataSet\derivatives\ExploreASL
-x.DELETETEMP        1 (delete temporary files)
-x.Quality           1 (0 = fast try-out; 1 = normal high quality)
-
-==============================================================================================
-
-
-Press any key to start processing & analyzing
-Please ensure you have a read-only copy of your original data as they may be overwritten
-Or press CTRL/command-C to cancel... 
+Ancillary data, sets: 4 sets are defined for 1 "SubjectsSessions"
+Set 1 = "session" options "ASL_1", codes for paired data
+Set 2 = "LongitudinalTimePoint" options "TimePoint_1", codes for paired data
+Set 3 = "SubjectNList" options "SubjectNList", codes for paired data
+Set 4 = "Site" options "SingleSite", codes for two-sample data
+x.D.ROOT            /drive/folder/TestDataSet
+x.settings.DELETETEMP 1 (delete temporary files)
+x.settings.Quality    1 (0 = fast try-out; 1 = normal high quality)
 ```
 
 You should obtain a similar initial screen showing which subjects and scans are found to be processed (how many exclusions, how many subjects for each time point etc.), as well as potentially included co-variates (e.g. site, age, cohort, sex). Note that we run the pipeline on low quality (`x.Quality=0`): while this will provide poorer results (segmentation, registration, etc) this will allow us to quickly test the full pipeline. On a relatively new computer, the full pipeline should run either within 5-10 min (`x.Quality=0`) or 30-60 min (`x.Quality=1`). 
