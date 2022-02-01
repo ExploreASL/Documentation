@@ -20,7 +20,7 @@ To fully process data in ASL-BIDS format located in `drive/.../datasetRoot/rawda
 `[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);`
 
 **Importing DICOM to ASL-BIDS:**
-To import DICOM data located in `drive/.../datasetRoot/sourcedata` and convert them to ASL-BIDS format (see more in [Tutorial on Import](./Tutorials-Import.md)):
+To import DICOM data located in `drive/.../datasetRoot/sourcedata` and convert them to ASL-BIDS format (see more in [Tutorial on Import](../Tutorials-Import.md)):
 
 `[x] = ExploreASL('drive/.../datasetRoot', [1 1 0 0],0);`
 
@@ -97,12 +97,12 @@ Below is a complete description of all the options for import and processing. Ex
     | **Type**         | `INTEGER`             |
     | **Default**      | `1`                   |
 
-In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the [Import Tutorial](./Tutorials-Import/).
+In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the [Import Tutorial](../Tutorials-Import/).
 
 ----
 ## DICOM source data
 
-Converting DICOM source data according to the [ASL BIDS](https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html) standard can be done using the new import workflow. For the upcoming release **v1.7.0** we're preparing an exemplary DICOM source dataset based on the [ASL DRO](https://pypi.org/project/asldro/). To run this workflow, you have to use the path to your **dataset root directory**. This dataset root directory should contain a `sourceStructure.json` file, a `studyPar.json` file (see [Import Tutorial](./Tutorials-Import/) for details) and optionally also a `dataPar.json` file (see the Processing Tutorial [Processing Tutorial](./Tutorials-Processing/)). Do not forget to set up the source dataset in `drive/.../datasetRoot/sourcedata` correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.
+Converting DICOM source data according to the [ASL BIDS](https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html) standard can be done using the new import workflow. For the upcoming release **v1.7.0** we're preparing an exemplary DICOM source dataset based on the [ASL DRO](https://pypi.org/project/asldro/). To run this workflow, you have to use the path to your **dataset root directory**. This dataset root directory should contain a `sourceStructure.json` file, a `studyPar.json` file (see [Import Tutorial](../Tutorials-Import/) for details) and optionally also a `dataPar.json` file (see the Processing Tutorial [Processing Tutorial](../Tutorials-Processing/)). Do not forget to set up the source dataset in `drive/.../datasetRoot/sourcedata` correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.
 
 The first step to convert your **DICOM** source data to **NIFTI** source data is to run the following command:
 

@@ -70,7 +70,7 @@ filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
 ----
 ## The ExploreASL x structure
 
-The ExploreASL `x` structure is the main object used to define pipeline settings. Besides pipeline settings you can also find processing parameters and metadata there. This manual contains the complete list of all parameters including those that can only be modified during runtime and by developers. Basic and advanced settings for the users that are modifiable in configuration files are listed in the [Processing Tutorials](./Tutorials-Processing/).
+The ExploreASL `x` structure is the main object used to define pipeline settings. Besides pipeline settings you can also find processing parameters and metadata there. This manual contains the complete list of all parameters including those that can only be modified during runtime and by developers. Basic and advanced settings for the users that are modifiable in configuration files are listed in the [Processing Tutorials](../Tutorials-Processing/).
 
 ### x.opts
 

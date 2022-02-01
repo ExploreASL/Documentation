@@ -17,7 +17,7 @@ For the import of the data, the best is to execute...
 ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 ```
 
-...where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./Tutorials-Execution/).
+...where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](../Tutorials-Execution/).
 
 ## Example dataset for Import with ExploreASL
 
@@ -59,7 +59,7 @@ Ideally, before running the import, the data contains three configuration files
 `ROOT\studyPar.json`
 `ROOT\dataPar.json`
 
-The content of the `sourcestructure.json` and `studypar.json` files is explained below. The content of `dataPar.json` is explained in the [Processing Tutorial](./Tutorials-Processing/).
+The content of the `sourcestructure.json` and `studypar.json` files is explained below. The content of `dataPar.json` is explained in the [Processing Tutorial](../Tutorials-Processing/).
 
 ----
 ### sourcestructure.json 

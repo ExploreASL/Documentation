@@ -12,14 +12,14 @@ nav:
         - 'Tutorials (QC)':         Tutorials-QC.md
         - 'Tutorials (Developer)':         Tutorials-Developer.md    
     - 'Reference manuals':
-        - 'Parameter Descriptions': DataParTemplate.md
         - Modules:                Modules.md
-        - Module Import:          Import_Module.md
-        - Module Structural:      Structural_Module.md
-        - Module ASL:             ASL_Module.md
-        - Module Population:      Population_Module.md
+        - 'Module Import':          Import_Module.md
+        - 'Module Structural':      Structural_Module.md
+        - 'Module ASL':             ASL_Module.md
+        - 'Module Population':      Population_Module.md
         - Functions:              Functions.md
-        - SPM xASL Functions:     SPMxASL.md
+        - 'SPM xASL Functions':     SPMxASL.md
+        - 'Parameter Descriptions': DataParTemplate.md
     - FAQ:                    FAQ.md
     - Requirements:           Requirements.md
     - Change Log:             Changes.md

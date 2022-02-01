@@ -21,7 +21,7 @@ ProcessModules = true;
 [x] = ExploreASL(DatasetRoot, ImportModules, ProcessModules);
 ```
 
-For running ExploreASL full import from DICOM data, please consult the [Tutorial on Import](./Tutorials-Import/).
+For running ExploreASL full import from DICOM data, please consult the [Tutorial on Import](../Tutorials-Import/).
 
 ----
 ## How to run a compiled ExploreASL Version
