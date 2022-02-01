@@ -8,11 +8,10 @@
       
       
       
-      
-        <link rel="canonical" href="https://github.com/ExploreASL/1.9.0/SPMxASL/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.9.0/SPMxASL/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f955dcd.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,13 +32,14 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
     
     
   </head>
@@ -53,7 +53,6 @@
     <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -70,7 +69,16 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
       
@@ -102,19 +110,22 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -131,8 +142,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -144,11 +154,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -173,8 +186,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -209,10 +221,113 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../Modules/" class="md-nav__link">
-        Modules
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        Tutorials (Install)
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        Tutorials (Execution)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Import/" class="md-nav__link">
+        Tutorials (Import)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Processing/" class="md-nav__link">
+        Tutorials (Processing)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Developer/" class="md-nav__link">
+        Tutorials (Developer)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -221,6 +336,62 @@
       
       
 
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataParTemplate/" class="md-nav__link">
+        Parameter Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -231,11 +402,10 @@
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
@@ -246,11 +416,10 @@
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
@@ -261,11 +430,10 @@
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
@@ -276,11 +444,10 @@
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
@@ -291,11 +458,10 @@
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
     
@@ -319,6 +485,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -647,78 +814,10 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tutorials-ASL-BIDS/" class="md-nav__link">
-        Tutorials (ASL-BIDS)
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tutorials-Basics/" class="md-nav__link">
-        Tutorials (Basics)
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tutorials-QC/" class="md-nav__link">
-        Tutorials (QC)
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Tutorials-Advanced/" class="md-nav__link">
-        Tutorials (Advanced)
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DataParTemplate/" class="md-nav__link">
-        Parameter Descriptions
-      </a>
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -810,6 +909,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1143,27 +1243,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/SPMxASL.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="spm-xasl-functions">SPM xASL Functions</h1>
+<a href="https://github.com/ExploreASL/Documentation/edit/master/docs/SPMxASL.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="spm-xasl-functions">SPM xASL Functions</h1>
 <hr />
 <h3 id="corrclusthm">CorrClusTh.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">function [k,Pc] = CorrClusTh(SPM,u,alpha,guess)
+<pre><code class="language-matlab">function [k,Pc] = CorrClusTh(SPM,u,alpha,guess)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Finds the corrected cluster size (spatial extent) threshold for a given
 cluster defining threshold u and FWE-corrected level alpha.</p>
 <hr />
 <h3 id="xasl_copym">xASL_Copy.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_Copy(SrxASL_SysCopyath, DstPath[, bOverwrite, bVerbose)])
+<pre><code class="language-matlab">xASL_Copy(SrxASL_SysCopyath, DstPath[, bOverwrite, bVerbose)])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Copies a file to a file or a directory to a directory. For a file, it zips it in the end if the destination path contains nii.gz.
 It also makes sure that only one of .nii and .nii.gz exists
@@ -1175,9 +1273,8 @@ Run xASL_SysMove instead of xASL_Move if you don't want the
 <hr />
 <h3 id="xasl_movem">xASL_Move.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_Move(SrcPath, DstPath[, bOverwrite, bVerbose])
+<pre><code class="language-matlab">xASL_Move(SrcPath, DstPath[, bOverwrite, bVerbose])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Moves a file to a file, a file to a directory, or a directory to a directory. It manages the unzipping or zipping according to the extension
 after the move. And it makes sure that only one of .nii and .nii.gz exists in the destination directory.
@@ -1189,34 +1286,30 @@ Run xASL_SysMove instead of xASL_Move if you don't want the
 <hr />
 <h3 id="xasl_syscopym">xASL_SysCopy.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_SysCopy(SrcPath, DstPath, bOverwrite, bVerbose)
+<pre><code class="language-matlab">xASL_SysCopy(SrcPath, DstPath, bOverwrite, bVerbose)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Copies a file to a file or a directory to a directory. Bypass inefficient matlab stuff on linux and windows,
 but can only move on the same file system.</p>
 <hr />
 <h3 id="xasl_sysmovem">xASL_SysMove.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_SysMove(SrcPath, DstPath[, bForce, bSourceCheck])
+<pre><code class="language-matlab">xASL_SysMove(SrcPath, DstPath[, bForce, bSourceCheck])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Moves a file to a file, a file to a directory, or a directory to a directory. SBypass inefficient matlab stuff on linux and windows, but can only move on same file system!</p>
 <hr />
 <h3 id="xasl_trackprogressm">xASL_TrackProgress.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_TrackProgress(iCurrent[, iMax])
+<pre><code class="language-matlab">xASL_TrackProgress(iCurrent[, iMax])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Counts the percentage of the work done and display on the screen. Either iCurrent of iMax are given. Or only the percentages are given.</p>
 <hr />
 <h3 id="xasl_adm_convertseconds2timestringm">xASL_adm_ConvertSeconds2TimeString.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">TimeString = xASL_adm_ConvertSeconds2TimeString(Seconds)
+<pre><code class="language-matlab">TimeString = xASL_adm_ConvertSeconds2TimeString(Seconds)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Converts number to time
 input hh (with minutes in fractions/floating point) -&gt; output hhmm
@@ -1224,9 +1317,8 @@ Inverse from xASL_adm_ConvertTime2Nr.</p>
 <hr />
 <h3 id="xasl_adm_convertslashm">xASL_adm_ConvertSlash.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[newString] = xASL_adm_ConvertSlash( StringOriginal,ForceUnix)
+<pre><code class="language-matlab">[newString] = xASL_adm_ConvertSlash( StringOriginal,ForceUnix)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Converts Windows forward slashes to backward slashes
 Prevents confusion file separation &amp; regular expression forward slashes
@@ -1234,21 +1326,19 @@ in Windows.</p>
 <hr />
 <h3 id="xasl_adm_createdirm">xASL_adm_CreateDir.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">status = xASL_adm_CreateDir(strPath)                  create all missing subdirs
+<pre><code class="language-matlab">status = xASL_adm_CreateDir(strPath)                  create all missing subdirs
 status = xASL_adm_CreateDir(strPath, strBranch)       create strBranch (if missing) under existing strPath
 status = xASL_adm_CreateDir(strPath, nMaxNewDirs)     impose limit on the number of new directories
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Recursively creates missing directories at the given path or for given subdirectories, with an option
 to limit the number of newly created directories.</p>
 <hr />
 <h3 id="xasl_adm_deletefilelistm">xASL_adm_DeleteFileList.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">filepaths = xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
+<pre><code class="language-matlab">filepaths = xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
 xASL_adm_DeleteFileList(strDirectory, strRegEx[, bRecurse, nRequired])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Delete the files that match regular expression STRREGEXP in the given directory STRDIRECTORY.
 Deletes recursively if specified in BRECURSE. Deletes all files unless the number is specified
@@ -1256,26 +1346,23 @@ by NREQUIRED, if the number is not met, then does not delete anything and throws
 <hr />
 <h3 id="xasl_adm_getfilelistm">xASL_adm_GetFileList.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">filepaths = xASL_adm_GetFileList(strDirectory[, strRegEx, mode, nRequired, bGetDirNames])
+<pre><code class="language-matlab">filepaths = xASL_adm_GetFileList(strDirectory[, strRegEx, mode, nRequired, bGetDirNames])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>List files or directories from a given path. And optionally uses regular expressions to filter the result
 with option to set a minimal requirement on the number of results.</p>
 <hr />
 <h3 id="xasl_adm_gzipniftim">xASL_adm_GzipNifti.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">pathOut = xASL_adm_GzipNifti(pathIn [,bOverwrite])
+<pre><code class="language-matlab">pathOut = xASL_adm_GzipNifti(pathIn [,bOverwrite])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Take the input file, zips it, overwriting any existing zipped file and return the path of the zipped file.</p>
 <hr />
 <h3 id="xasl_adm_managemocomatm">xASL_adm_ManageMoCoMat.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_adm_ManageMoCoMat(PathIn)
+<pre><code class="language-matlab">xASL_adm_ManageMoCoMat(PathIn)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function manages the orientation matrices that SPM puts
 in an external .mat sidecar file if there are more than 1
@@ -1297,9 +1384,8 @@ with a zero matrix</li>
 <hr />
 <h3 id="xasl_adm_unixpathm">xASL_adm_UnixPath.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[PathIs] = xASL_adm_UnixPath(PathIs[, bTryWSL])
+<pre><code class="language-matlab">[PathIs] = xASL_adm_UnixPath(PathIs[, bTryWSL])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function performs the following steps to convert a path to a path that is compatible with the Unix-filesystem
 as used in e.g. Linux/MacOS. It also has special support for Windows Subsystem for Linux (WSL),
@@ -1318,9 +1404,8 @@ for FSL) - these have to be explicitly specified by the bTryWSL option.</p>
 <hr />
 <h3 id="xasl_adm_unzipniftim">xASL_adm_UnzipNifti.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">pathOut = xASL_adm_UnzipNifti(pathIn[, bOverwrite])
+<pre><code class="language-matlab">pathOut = xASL_adm_UnzipNifti(pathIn[, bOverwrite])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Takes the input file, unzips if needed, delete the zipped file and return the path to the unzipped file.
 If the input is already unzipped, then does nothing, but returns the original filename - so it
@@ -1330,9 +1415,8 @@ If there's a NII and NII.GZ already existing, then return error, or just overwri
 <hr />
 <h3 id="xasl_adm_zipfilenamehandlingm">xASL_adm_ZipFileNameHandling.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[srcOut, dstOut] = xASL_adm_ZipFileNameHandling(srcIn, dstIn)
+<pre><code class="language-matlab">[srcOut, dstOut] = xASL_adm_ZipFileNameHandling(srcIn, dstIn)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Adjusts the source and destination filenames of a nifti file to reflect if NII or NII.GZ exist on the input.
 If either .nii or .nii.gz is corrupt, it automatically deletes the corrupt one and keeps the healthy one,
@@ -1340,9 +1424,8 @@ while reporting a warning. This happens when you restart the pipeline after it c
 <hr />
 <h3 id="xasl_bids_csv2tsvreadwritem">xASL_bids_csv2tsvReadWrite.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[PathTSV, CellContents] = xASL_bids_csv2tsvReadWrite(PathIn[, bDeleteCSV, bWriteTSV])
+<pre><code class="language-matlab">[PathTSV, CellContents] = xASL_bids_csv2tsvReadWrite(PathIn[, bDeleteCSV, bWriteTSV])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function PathIn and loads it, also trying CSV or TSV
 extensions if these exist. It outputs the contents to a cell array. If a
@@ -1356,18 +1439,16 @@ TSV file, per BIDS. This function has the following parts:</p>
 <hr />
 <h3 id="xasl_csvreadm">xASL_csvRead.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[CellContents] = xASL_csvRead(PathCSV)
+<pre><code class="language-matlab">[CellContents] = xASL_csvRead(PathCSV)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function loads a comma-separated value (csv) file - which
 is the format that BIDS prefers - and outputs it to a cell array.</p>
 <hr />
 <h3 id="xasl_csvwritem">xASL_csvWrite.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_csvWrite(InputCell, PathCSV, bOverwrite)
+<pre><code class="language-matlab">xASL_csvWrite(InputCell, PathCSV, bOverwrite)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Rudimentary function, please use xASL_tsvWrite instead.
 For usage, type help xASL_tsvWrite.
@@ -1375,18 +1456,16 @@ This function will still work though.</p>
 <hr />
 <h3 id="xasl_deletem">xASL_delete.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_delete(InputPath)
+<pre><code class="language-matlab">xASL_delete(InputPath)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Delete the file in the given path. If a NIFTI file with extension '.nii' or '.nii.gz' is given,
 Then delete both the .nii and .nii.gz files.</p>
 <hr />
 <h3 id="xasl_existm">xASL_exist.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_exist(PathIn[,Type])
+<pre><code class="language-matlab">xASL_exist(PathIn[,Type])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Check if the given path exists, wrapper around the Matlab
 exist function, to allow checking for either .nii or .nii.gz
@@ -1394,9 +1473,8 @@ Otherwise, exist is used normally.</p>
 <hr />
 <h3 id="xasl_filepartsm">xASL_fileparts.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[Fpath, Ffile, Fext] = xASL_fileparts(InputPath)
+<pre><code class="language-matlab">[Fpath, Ffile, Fext] = xASL_fileparts(InputPath)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Returns the path, file name, and file extension for InputPath using the fileparts.m function.
 If a file ending at nii.gz is given, then the whole nii.gz is returned as the extension.
@@ -1404,9 +1482,8 @@ Does not verify the existence of the file, or existence of .nii or .nii.gz</p>
 <hr />
 <h3 id="xasl_im_convertmap2maskm">xASL_im_ConvertMap2Mask.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[IMout] = xASL_im_ConvertMap2Mask(IMin)
+<pre><code class="language-matlab">[IMout] = xASL_im_ConvertMap2Mask(IMin)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Provides a robust way of conversion of
 a continuous map to a binary mask, which can be used for lesions, ROIs,
@@ -1416,9 +1493,8 @@ automatic segmentations.</p>
 <hr />
 <h3 id="xasl_im_distancetransformm">xASL_im_DistanceTransform.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[dist, x, y, z] = xASL_im_DistanceTransform(im)
+<pre><code class="language-matlab">[dist, x, y, z] = xASL_im_DistanceTransform(im)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Calculates the distance transform in a binary image
 Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
@@ -1426,9 +1502,8 @@ Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
 <hr />
 <h3 id="xasl_im_fillnansm">xASL_im_FillNaNs.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_im_FillNaNs(InputPath[, UseMethod, bQuality])
+<pre><code class="language-matlab">xASL_im_FillNaNs(InputPath[, UseMethod, bQuality])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function fills any NaNs in an image. In SPM, any voxels
 outside the boundary box/field of view are filled by NaNs
@@ -1450,18 +1525,16 @@ This function performs the following 3 steps:</p>
 <hr />
 <h3 id="xasl_im_lesionremoval4catm">xASL_im_LesionRemoval4CAT.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[Ycls, LesionImOut] = xASL_im_LesionRemoval4CAT(Ycls, PathIn)
+<pre><code class="language-matlab">[Ycls, LesionImOut] = xASL_im_LesionRemoval4CAT(Ycls, PathIn)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>For all lesion masks in the anatomical directory, remove
 them from the current segmentations.</p>
 <hr />
 <h3 id="xasl_im_resampleimm">xASL_im_ResampleIM.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[imOut] = xASL_im_ResampleIM(imIn, matIn, matOut, dimOut[, interpolationType])
+<pre><code class="language-matlab">[imOut] = xASL_im_ResampleIM(imIn, matIn, matOut, dimOut[, interpolationType])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Resamples an input image imIn oriented according to the homogeneous matrix matIn to and output
 image imOut that has dimension dimOut and matrix matOut. This allows to resample images between
@@ -1473,17 +1546,15 @@ xASL_im_PreSmooth and xASL_spm_reslice should be used instead.</p>
 <hr />
 <h3 id="xasl_im_saveoriginal4catm">xASL_im_SaveOriginal4CAT.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_im_SaveOriginal4CAT(Ycls, PathIn)
+<pre><code class="language-matlab">xASL_im_SaveOriginal4CAT(Ycls, PathIn)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Save the segmentation before lesion masking.</p>
 <hr />
 <h3 id="xasl_im_conv3dsepm">xASL_im_conv3Dsep.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[imConv] = xASL_mex_conv3Dsep(im,kX,[kY,kZ])
+<pre><code class="language-matlab">[imConv] = xASL_mex_conv3Dsep(im,kX,[kY,kZ])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>3D separable convolution with a supplied kernel
 It converts the results to double
@@ -1493,9 +1564,8 @@ excessive zeros at the ends.</p>
 <hr />
 <h3 id="xasl_im_ndnanfilterm">xASL_im_ndnanfilter.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[Y,fil] = xASL_im_ndnanfilter(X,filterType,F,WNAN)
+<pre><code class="language-matlab">[Y,fil] = xASL_im_ndnanfilter(X,filterType,F,WNAN)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function applies a 3-dimensional convolution of X with given kernel.
 NaNs elements are taken into account (ignored).</p>
@@ -1535,9 +1605,8 @@ as with the 'rect' filter.</li>
 <hr />
 <h3 id="xasl_io_nifti2imm">xASL_io_Nifti2Im.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">imOut = xASL_io_Nifti2Im(niftiIn [, ImageSize])
+<pre><code class="language-matlab">imOut = xASL_io_Nifti2Im(niftiIn [, ImageSize])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function loads a NIfTI image matrix with flexible input
 (as explained under INPUT: niftiIn). It does the following.</p>
@@ -1551,18 +1620,16 @@ as with the 'rect' filter.</li>
 <hr />
 <h3 id="xasl_io_readniftim">xASL_io_ReadNifti.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[NiftiObject, pathIn] = xASL_io_ReadNifti(pathIn)
+<pre><code class="language-matlab">[NiftiObject, pathIn] = xASL_io_ReadNifti(pathIn)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Read Nifti file given by the path. Return the NII object. And also return the actual path to the loaded
 Nifti if by any reason the name changed during the function runtime (e.g. unzipping).</p>
 <hr />
 <h3 id="xasl_io_saveniftim">xASL_io_SaveNifti.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_io_SaveNifti(pathOrigNifti, pathNewNifti, imNew[, nBits, bGZip, newMat])
+<pre><code class="language-matlab">xASL_io_SaveNifti(pathOrigNifti, pathNewNifti, imNew[, nBits, bGZip, newMat])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>It loads the pathOrigNifti, takes all the parameters from it, and creates a new Nifti file with
 these parameters, but new image matrix from imNew. It saves the result in pathNewNifti.
@@ -1577,18 +1644,16 @@ It runs the following steps:</p>
 <hr />
 <h3 id="xasl_roundm">xASL_round.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[OutputN] = xASL_round(InputN[, PrecisionN])
+<pre><code class="language-matlab">[OutputN] = xASL_round(InputN[, PrecisionN])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>Recent Matlab versions support a second input that specifies that number of decimals to round at,
 but earlier Matlab versions do not support this. For backward compatibility, use this wrapper instead of round.</p>
 <hr />
 <h3 id="xasl_spm_adminm">xASL_spm_admin.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_spm_admin(pathIn[, bPadComma1])
+<pre><code class="language-matlab">xASL_spm_admin(pathIn[, bPadComma1])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This SPM admin function takes a NIfTI path and does a few
 checks to make this valid to SPM. It accepts both .nii and .nii.gz.
@@ -1601,9 +1666,8 @@ It runs the following steps:</p>
 <hr />
 <h3 id="xasl_spm_reslicem">xASL_spm_reslice.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_spm_reslice(refPath, srcPath[, srcAffinePath, bInvAffine, bQuality, NewName, InterpolationPar])
+<pre><code class="language-matlab">xASL_spm_reslice(refPath, srcPath[, srcAffinePath, bInvAffine, bQuality, NewName, InterpolationPar])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This wrapper runs SPM's reslice function (a.k.a. coregister: reslice) which resamples a source image into the space of a reference image,
 taking into account any orientation differences between the two images that are defined in the orientation matrix in the NIfTI header.
@@ -1620,9 +1684,8 @@ affine transformation information.</p>
 <hr />
 <h3 id="xasl_spm_smoothm">xASL_spm_smooth.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_spm_smooth(pathIn, fwhmSmooth, pathNew])
+<pre><code class="language-matlab">xASL_spm_smooth(pathIn, fwhmSmooth, pathNew])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This SPM wrapper runs SPM's smooth function, which spatially smooths the input image with a Gaussian kernel.
 In the case of multiple volumes (i.e. a 4D NIfTI), each 3D volume is spatially smoothed separately.
@@ -1630,26 +1693,23 @@ Note that smoothnesses combine with Pythagoras' rule (i.e. sum quadratically)</p
 <hr />
 <h3 id="xasl_stat_meannanm">xASL_stat_MeanNan.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">y = xASL_stat_MeanNan(x[,dim])
+<pre><code class="language-matlab">y = xASL_stat_MeanNan(x[,dim])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>It calculates the sum using the SUM functions and divides by the number of values but ignoring NaNs.</p>
 <hr />
 <h3 id="xasl_stat_mediannanm">xASL_stat_MedianNan.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">y = xASL_stat_MedianNan(x[,dim])
+<pre><code class="language-matlab">y = xASL_stat_MedianNan(x[,dim])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.</p>
 <hr />
 <h3 id="xasl_systemm">xASL_system.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">
+<pre><code class="language-matlab">
 [result1, result2] = xASL_system(Command[, bVerbose])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function allows running a system call from Matlab in an optimized fashion.
 E.g., it will use user-specific CLI initializations, which are in ~/.bashrc
@@ -1662,27 +1722,24 @@ or ~/.zshrc (depending on the CLI used, Linux by default uses bash, macOS by def
 <hr />
 <h3 id="xasl_tsvreadm">xASL_tsvRead.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">[CellContents] = xASL_tsvRead(PathTSV[, bStruct])
+<pre><code class="language-matlab">[CellContents] = xASL_tsvRead(PathTSV[, bStruct])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function loads a tab-separated value (TSV) file - which
 is the format that BIDS prefers - and outputs it to a cell array.</p>
 <hr />
 <h3 id="xasl_tsvwritem">xASL_tsvWrite.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_tsvWrite(InputCell, PathTSV[, bOverwrite, bCSV])
+<pre><code class="language-matlab">xASL_tsvWrite(InputCell, PathTSV[, bOverwrite, bCSV])
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function loads a cell array and prints it to a
 tab-separated value (TSV) file, which is the format that BIDS prefers.</p>
 <hr />
 <h3 id="xasl_wrp_dartelsaveintermedtransm">xASL_wrp_DARTELSaveIntermedTrans.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_wrp_DARTELSaveIntermedTrans(Yy, u, odim, rdim, idim, Mar, mat, M0, M1, nameOut, numIteration)
+<pre><code class="language-matlab">xASL_wrp_DARTELSaveIntermedTrans(Yy, u, odim, rdim, idim, Mar, mat, M0, M1, nameOut, numIteration)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function is called from the CAT12 segmentation function to save the intermediate results
 of the DARTEL transformation. Normally, the registration only saves the final results -
@@ -1693,9 +1750,8 @@ and adds the specified iteration number as postfix.</p>
 <hr />
 <h3 id="xasl_wrp_gssaveintermedtransm">xASL_wrp_GSSaveIntermedTrans.m</h3>
 <p><strong>Format:</strong></p>
-<pre><code class="matlab">xASL_wrp_GSSaveIntermedTrans(y, idim, odim, rdim, M0, M1, R, M1t, M1r, nameOut, numIteration)
+<pre><code class="language-matlab">xASL_wrp_GSSaveIntermedTrans(y, idim, odim, rdim, M0, M1, R, M1t, M1r, nameOut, numIteration)
 </code></pre>
-
 <p><strong>Description:</strong></p>
 <p>This function is called from the CAT12 segmentation function to save the intermediate results
 of the Geodesic shooting transformation. Normally, the registration only saves the final results -
@@ -1703,11 +1759,6 @@ the final transformation field. This function enables to save also the intermedi
 It takes all the internal variables from the transformation and save the field to a sub-directory 'mri'
 that normally contains all the intermediate results of the CAT12 segmentation. It adds a 'y_' prefix
 and adds the specified iteration number as postfix.</p>
-                
-              
-              
-                
-
 
               
             </article>
@@ -1716,12 +1767,12 @@ and adds the specified iteration number as postfix.</p>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Functions/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../Functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Functions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1736,13 +1787,14 @@ and adds the specified iteration number as postfix.</p>
         </a>
       
       
-        <a href="../Tutorials-ASL-BIDS/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Tutorials (ASL-BIDS)
+              FAQ
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1754,14 +1806,15 @@ and adds the specified iteration number as postfix.</p>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1771,10 +1824,10 @@ and adds the specified iteration number as postfix.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
       
     
   </body>

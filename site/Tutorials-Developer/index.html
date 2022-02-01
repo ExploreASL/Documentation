@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.9.0/Tutorials-Developer/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
+    
+    
+      
+        <title>Tutorials (Developer) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials-developer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (Developer)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExploreASL/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        Tutorials (Install)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        Tutorials (Execution)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Import/" class="md-nav__link">
+        Tutorials (Import)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Processing/" class="md-nav__link">
+        Tutorials (Processing)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials (Developer)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tutorials (Developer)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-nifti-input-output" class="md-nav__link">
+    Basic NIFTI Input &amp; Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-file-operations" class="md-nav__link">
+    Basic File Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-exploreasl-x-structure" class="md-nav__link">
+    The ExploreASL x structure
+  </a>
+  
+    <nav class="md-nav" aria-label="The ExploreASL x structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xopts" class="md-nav__link">
+    x.opts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesimport" class="md-nav__link">
+    x.modules.import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xs" class="md-nav__link">
+    x.S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsettings" class="md-nav__link">
+    x.settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdataset" class="md-nav__link">
+    x.dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdir-xp-xd" class="md-nav__link">
+    x.dir, x.P &amp; x.D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xq" class="md-nav__link">
+    x.Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodules-modules" class="md-nav__link">
+    x.modules (Modules)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesstructural" class="md-nav__link">
+    x.modules.structural
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesasl" class="md-nav__link">
+    x.modules.asl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulespopulation" class="md-nav__link">
+    x.modules.population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xexternal" class="md-nav__link">
+    x.external
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataParTemplate/" class="md-nav__link">
+        Parameter Descriptions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-nifti-input-output" class="md-nav__link">
+    Basic NIFTI Input &amp; Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-file-operations" class="md-nav__link">
+    Basic File Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-exploreasl-x-structure" class="md-nav__link">
+    The ExploreASL x structure
+  </a>
+  
+    <nav class="md-nav" aria-label="The ExploreASL x structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xopts" class="md-nav__link">
+    x.opts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesimport" class="md-nav__link">
+    x.modules.import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xs" class="md-nav__link">
+    x.S
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsettings" class="md-nav__link">
+    x.settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdataset" class="md-nav__link">
+    x.dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdir-xp-xd" class="md-nav__link">
+    x.dir, x.P &amp; x.D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xq" class="md-nav__link">
+    x.Q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodules-modules" class="md-nav__link">
+    x.modules (Modules)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesstructural" class="md-nav__link">
+    x.modules.structural
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulesasl" class="md-nav__link">
+    x.modules.asl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmodulespopulation" class="md-nav__link">
+    x.modules.population
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xexternal" class="md-nav__link">
+    x.external
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Tutorials-Developer.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="tutorials-developer">Tutorials (Developer)</h1>
+<p>This tutorial gives an example of useful functions that can be used outside of the pipeline for certain image operations, evaluations, and statistics. More information can be found in the reference manual.</p>
+<p>Moreover, we list here the internal parameters in ExploreASL that can be used either to supply further parameters or to modify certain advanced parameters during ExploreASL runtime.</p>
+<hr />
+<h2 id="basic-nifti-input-output">Basic NIFTI Input &amp; Output</h2>
+<p>Let's assume you want to read in a NIFTI image and apply a mask on it. As a good first step we always recommend to initialize <code>ExploreASL</code> first by running the following command.</p>
+<pre><code class="language-matlab">[x] = ExploreASL();
+</code></pre>
+<p>Now let's read in the image by defining the image path and using the <code>xASL_io_Nifti2Im</code> function.</p>
+<pre><code class="language-matlab">pathNIFTI = fullfile(x.MyPath,'External','TestDataSet','analysis','Sub-001','T1.nii');
+image = xASL_io_Nifti2Im(pathNIFTI);
+</code></pre>
+<p>Maybe we want to mask the image. The image and the mask do not have the same resolution though, which means we need to resample either the mask or the image. The following commands will resample the mask to the image size.</p>
+<pre><code class="language-matlab">pathMask = fullfile(x.MyPath,'External','SPMmodified','MapsAdded','brainmask.nii');
+mask = xASL_io_Nifti2Im(pathMask);
+maskResampled = xASL_im_ResampleLinear(mask, size(image));
+</code></pre>
+<p>To mask the image we multiply the image matrix with the mask matrix. This way all voxels outside of the mask are set to 0.</p>
+<pre><code class="language-matlab">image = image.*maskResampled;
+</code></pre>
+<p>Then we can save the image as a NIFTI again and open it with our favorite NIFTI viewer.</p>
+<pre><code class="language-matlab">xASL_io_CreateNifti(fullfile(x.MyPath,'export.nii'), image);
+</code></pre>
+<p><code>xASL_io_Nifti2Im</code> does unzip your image, so make sure to revert those changes within the ExploreASL directory later using <code>git reset</code> or <code>git revert</code>.</p>
+<hr />
+<h2 id="basic-file-operations">Basic File Operations</h2>
+<p>Matlab offers two functions to copy or move files and folders from a <code>source</code> to a <code>destination</code> within your file system. These functions are <code>copyfile</code> and <code>movefile</code>. To improve speed and multi OS compatibility, we wrote two similar functions, called <code>xASL_Copy</code> and <code>xASL_Move</code>. In the following example we copy a file called <code>fileA</code> from the folder <code>C:\Users\Test_One</code> to <code>C:\Users\Test_Two</code>. We then move the file back to <code>C:\Users\Test_One</code> and overwrite the original <code>fileA</code>. Finally, we rename <code>fileA</code> to <code>fileB</code>.</p>
+<pre><code class="language-matlab">% Copy fileA from Test_One to Test_Two
+xASL_Copy('C:\Users\Test_One\fileA.txt', 'C:\Users\Test_Two\fileA.txt');
+
+% Move fileA back to Test_One and overwrite the original fileA
+xASL_Move('C:\Users\Test_Two\fileA.txt', 'C:\Users\Test_One\fileA.txt', 1);
+
+% Rename fileA to fileB
+xASL_Move('C:\Users\Test_One\fileA.txt', 'C:\Users\Test_One\fileB.txt', 1);
+</code></pre>
+<p>Often we need to find a list of files in a certain directory. To do this, we can use <code>xASL_adm_GetFileList</code>. Let's assume there are five files called <code>fileA</code>, <code>fileB</code>, <code>fileC</code>, <code>fileD</code> and <code>fileE</code> in <code>C:\Users\Test_One</code>.  We know that all names start with <code>file</code>, so we can use this for our regular expression. Check out the example below on how you can get a cell array containing the paths of all these files.</p>
+<pre><code>strDirectory = 'C:\Users\Test_One';
+strRegEx = '^file.+$';
+filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
+</code></pre>
+<hr />
+<h2 id="the-exploreasl-x-structure">The ExploreASL x structure</h2>
+<p>The ExploreASL <code>x</code> structure is the main object used to define pipeline settings. Besides pipeline settings you can also find processing parameters and metadata there. This manual contains the complete list of all parameters including those that can only be modified during runtime and by developers. Basic and advanced settings for the users that are modifiable in configuration files are listed in the <a href="./Tutorials-Processing/">Processing Tutorials</a>.</p>
+<h3 id="xopts">x.opts</h3>
+<p>General <strong>options</strong> can be found in this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.opts.DatasetRoot</td>
+<td align="center">Dataset root directory of the current BIDS dataset. This is also the first input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.ImportModules</td>
+<td align="center">Vector to define which import modules should be executed. This is also the second input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.ProcessModules</td>
+<td align="center">Vector to define which processing modules should be executed. This is also the third input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.bPause</td>
+<td align="center">Boolean to set if you want to pause the pipeline before the processing. This is also the fourth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.iWorker</td>
+<td align="center">This variable defines which of the parallel ExploreASL calls we are. This is also the fifth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.nWorkers</td>
+<td align="center">This variable defines how many ExploreASL calls are made in parallel. This is also the sixth input argument of <code>ExploreASL</code>.</td>
+</tr>
+<tr>
+<td>x.opts.bImportData</td>
+<td align="center">Boolean that is true if at least one import module is going to be executed.</td>
+</tr>
+<tr>
+<td>x.opts.bProcessData</td>
+<td align="center">Boolean that is true if at least one processing module is going to be executed.</td>
+</tr>
+<tr>
+<td>x.opts.bLoadData</td>
+<td align="center">Boolean that is true if the current BIDS dataset is going to be loaded.</td>
+</tr>
+<tr>
+<td>x.opts.MyPath</td>
+<td align="center">Path to the <code>ExploreASL</code> program.</td>
+</tr>
+<tr>
+<td>x.opts.dataParType</td>
+<td align="center">String describing the type of input argument that was given for the <code>DatasetRoot</code>. This parameter is mainly supposed to help with backwards compatibility.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xmodulesimport">x.modules.import</h3>
+<p>All <strong>import module</strong> related parameters are stored within this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.import.settings.bCopySingleDicoms</td>
+<td align="center">Boolean to define if single DICOMs should be copied during the import.</td>
+</tr>
+<tr>
+<td>x.modules.import.settings.bUseDCMTK</td>
+<td align="center">Boolean to define if DCMTK should be used for the import workflow.</td>
+</tr>
+<tr>
+<td>x.modules.import.settings.bCheckPermissions</td>
+<td align="center">Boolean to define if the workflow should check for permission issues.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xs">x.S</h3>
+<p>The <code>x.S</code> subfield contains <strong>masking &amp; atlas</strong> related parameters. </p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.S.bMasking</td>
+<td align="center">Vector specifying if we should mask a ROI with a subject-specific mask.</td>
+</tr>
+<tr>
+<td>x.S.Atlases</td>
+<td align="center">Vector specifying the atlases which should be used within the population module.</td>
+</tr>
+<tr>
+<td>x.S.slices</td>
+<td align="center">Slice numbers: defines which transversal slices to use by default.</td>
+</tr>
+<tr>
+<td>x.S.slicesLarge</td>
+<td align="center">Slice numbers: defines which transversal slices to use by default.</td>
+</tr>
+<tr>
+<td>x.S.slicesExtraLarge</td>
+<td align="center">Slice numbers: defines which transversal slices to use by default.</td>
+</tr>
+<tr>
+<td>x.S.nSlices</td>
+<td align="center">Length of x.S.slices.</td>
+</tr>
+<tr>
+<td>x.S.nSlicesLarge</td>
+<td align="center">Length of x.S.slicesLarge.</td>
+</tr>
+<tr>
+<td>x.S.nSlicesExtraLarge</td>
+<td align="center">Length of x.S.slicesExtraLarge.</td>
+</tr>
+<tr>
+<td>x.S.TransCrop</td>
+<td align="center">Cropping settings: defines default transversal cropping settings.</td>
+</tr>
+<tr>
+<td>x.S.jet256</td>
+<td align="center">Jet 256 colormap.</td>
+</tr>
+<tr>
+<td>x.S.gray</td>
+<td align="center">Grayscale colormap.</td>
+</tr>
+<tr>
+<td>x.S.red</td>
+<td align="center">Red colormap.</td>
+</tr>
+<tr>
+<td>x.S.yellow</td>
+<td align="center">Yellow colormap.</td>
+</tr>
+<tr>
+<td>x.S.green</td>
+<td align="center">Green colormap.</td>
+</tr>
+<tr>
+<td>x.S.blue</td>
+<td align="center">Blue colormap.</td>
+</tr>
+<tr>
+<td>x.S.purple</td>
+<td align="center">Purple colormap.</td>
+</tr>
+<tr>
+<td>x.S.turqoise</td>
+<td align="center">Turqoise colormap.</td>
+</tr>
+<tr>
+<td>x.S.orange</td>
+<td align="center">Orange colormap.</td>
+</tr>
+<tr>
+<td>x.S.colors_ROI</td>
+<td align="center">Cell array containing the colormaps from above.</td>
+</tr>
+<tr>
+<td>x.S.cool</td>
+<td align="center">Cool colorbar.</td>
+</tr>
+<tr>
+<td>x.S.hot</td>
+<td align="center">Hot colorbar.</td>
+</tr>
+<tr>
+<td>x.S.VoxelSize</td>
+<td align="center">Voxel-size in mm of reslicing &amp; DARTEL (default=1.5mm).</td>
+</tr>
+<tr>
+<td>x.S.masks</td>
+<td align="center">Contains skull and WBmask.</td>
+</tr>
+<tr>
+<td>x.S.LabelClr</td>
+<td align="center">64 label colors.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xsettings">x.settings</h3>
+<p>General <strong>settings</strong> can be found in this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.settings.SelectParFile</td>
+<td align="center">Variable which tells the import workflow if we have to ask the user for the study root directory a second time.</td>
+</tr>
+<tr>
+<td>x.settings.stopAfterErrors</td>
+<td align="center">Number of allowed errors before job iteration is stopped (default=inf).</td>
+</tr>
+<tr>
+<td>x.settings.dryRun</td>
+<td align="center">Dry run does not execute the module (default=0).</td>
+</tr>
+<tr>
+<td>x.settings.bOverwrite</td>
+<td align="center">Re-running makes no sense if you're not overwriting existing files.</td>
+</tr>
+<tr>
+<td>x.settings.BILAT_FILTER</td>
+<td align="center">Bilateral filter by Matthan Caan (original=1, more recent=2).</td>
+</tr>
+<tr>
+<td>x.settings.DELETETEMP</td>
+<td align="center">Boolean for removing the temporary files.</td>
+</tr>
+<tr>
+<td>x.settings.Quality</td>
+<td align="center">Quality setting for <code>ExploreASL</code> processing. Set to 1 for normal high-quality processing or to 0 for low-quality test runs.</td>
+</tr>
+<tr>
+<td>x.settings.bReproTesting</td>
+<td align="center">n/a</td>
+</tr>
+<tr>
+<td>x.settings.Pediatric_Template</td>
+<td align="center">n/a</td>
+</tr>
+<tr>
+<td>x.settings.bLesionFilling</td>
+<td align="center">Boolean for lesion filling in structural module (submodule 5).</td>
+</tr>
+<tr>
+<td>x.settings.bAutoACPC</td>
+<td align="center">Boolean whether center of mass alignment should be performed before SPM registration.</td>
+</tr>
+<tr>
+<td>x.settings.bGetControlLabelOrder</td>
+<td align="center">n/a</td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoFlair</td>
+<td align="center">Boolean to skip processing of subjects that do not have a FLAIR image.</td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoASL</td>
+<td align="center">Boolean to skip processing of subjects that do not have a ASL image.</td>
+</tr>
+<tr>
+<td>x.settings.SkipIfNoM0</td>
+<td align="center">Boolean to skip processing of subjects that do not have a M0 image.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xdataset">x.dataset</h3>
+<p><strong>Dataset</strong> related parameters can be found in this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.dataset.name</td>
+<td align="center">String for the name of the study.</td>
+</tr>
+<tr>
+<td>x.dataset.subjectRegexp</td>
+<td align="center">String with regular expression for ExploreASL to find subjects by foldername.</td>
+</tr>
+<tr>
+<td>x.dataset.exclusion</td>
+<td align="center">Cell with list of subjects to exclude.</td>
+</tr>
+<tr>
+<td>x.dataset.ForceInclusionList</td>
+<td align="center">Use this field if you want to use a selection of subjects rather than taking all available subjects from directories.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xdir-xp-xd">x.dir, x.P &amp; x.D</h3>
+<p>In these subfields we store <strong>path</strong> related values.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.dir.sourceStructure</td>
+<td align="center">Path to the sourceStructure.json file.</td>
+</tr>
+<tr>
+<td>x.dir.studyPar</td>
+<td align="center">Path to the studyPar.json file.</td>
+</tr>
+<tr>
+<td>x.dir.dataset_description</td>
+<td align="center">Path to the dataset_description.json file.</td>
+</tr>
+<tr>
+<td>x.dir.dataPar</td>
+<td align="center">Path to the dataPar.json file.</td>
+</tr>
+<tr>
+<td>x.D.ROOT</td>
+<td align="center">Path to the root directory.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xq">x.Q</h3>
+<p>In <code>x.Q</code> you can find <strong>sequence</strong> and <strong>quantification</strong> related parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.Q.M0</td>
+<td align="center">Choose which M0 option to use.</td>
+</tr>
+<tr>
+<td>x.Q.BackgroundSuppressionNumberPulses</td>
+<td align="center">Used to estimate decrease of labeling efficiency.</td>
+</tr>
+<tr>
+<td>x.Q.BackgroundSuppressionPulseTime</td>
+<td align="center">Vector containing timing, in ms, of the background suppression pulses before the start of the readout (per BIDS).</td>
+</tr>
+<tr>
+<td>x.Q.PresaturationTime</td>
+<td align="center">Time in ms before the start of the readout, scalar, when the slice has been saturated (90 degree flip) this has to come before all the bSup pulses, but doesn't need to be always specified.</td>
+</tr>
+<tr>
+<td>x.Q.readoutDim</td>
+<td align="center">String specifying the readout type.</td>
+</tr>
+<tr>
+<td>x.Q.Vendor</td>
+<td align="center">String containing the Vendor used.</td>
+</tr>
+<tr>
+<td>x.Q.Sequence</td>
+<td align="center">String containing the sequence used.</td>
+</tr>
+<tr>
+<td>x.Q.LabelingType</td>
+<td align="center">String containing the labeling strategy used.</td>
+</tr>
+<tr>
+<td>x.Q.Initial_PLD</td>
+<td align="center">Value of PLD (ms), for 3D this is fixed for whole brain, for 2D this is the PLD of first acquired slice.</td>
+</tr>
+<tr>
+<td>x.Q.LabelingDuration</td>
+<td align="center">Value of labeling duration (ms).</td>
+</tr>
+<tr>
+<td>x.Q.SliceReadoutTime</td>
+<td align="center">Value (ms) of time added to the PLD after reading out each slice.</td>
+</tr>
+<tr>
+<td>x.Q.bUseBasilQuantification</td>
+<td align="center">True for using BASIL quantification in addition to ExploreASL's quantification.</td>
+</tr>
+<tr>
+<td>x.Q.Lambda</td>
+<td align="center">Brain/blood water coefficient (mL 1H/ mL blood).</td>
+</tr>
+<tr>
+<td>x.Q.T2art</td>
+<td align="center"><code>T2*</code> of arterial blood at 3T, only used when no M0 image (ms).</td>
+</tr>
+<tr>
+<td>x.Q.BloodT1</td>
+<td align="center">T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom.</td>
+</tr>
+<tr>
+<td>x.Q.TissueT1</td>
+<td align="center">T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014).</td>
+</tr>
+<tr>
+<td>x.Q.nCompartments</td>
+<td align="center">Number of modeled compartments for quantification.</td>
+</tr>
+<tr>
+<td>x.Q.ApplyQuantification</td>
+<td align="center">A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved.</td>
+</tr>
+<tr>
+<td>x.Q.SaveCBF4D</td>
+<td align="center">Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xmodules-modules">x.modules (Modules)</h3>
+<p>Parameters for additional <strong>modules</strong> are stored within the main level of <code>x.modules</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.bRunLongReg</td>
+<td align="center">Run longitudinal registration.</td>
+</tr>
+<tr>
+<td>x.modules.bRunDARTEL</td>
+<td align="center">Run between-subject registration/create templates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xmodulesstructural">x.modules.structural</h3>
+<p>All <strong>structural module</strong> related parameters are stored within this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.structural.bSegmentSPM12</td>
+<td align="center">Boolean to specify if SPM12 segmentation is run instead of CAT12.</td>
+</tr>
+<tr>
+<td>x.modules.structural.bHammersCAT12</td>
+<td align="center">Boolean specifying if CAT12 should provide Hammers volumetric ROI results.</td>
+</tr>
+<tr>
+<td>x.modules.structural.bFixResolution</td>
+<td align="center">Resample to a resolution that CAT12 accepts.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xmodulesasl">x.modules.asl</h3>
+<p>All <strong>ASL module</strong> related parameters are stored within this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.modules.asl.motionCorrection</td>
+<td align="center">Boolean to perform motion correction in case of timeseries.</td>
+</tr>
+<tr>
+<td>x.modules.asl.SpikeRemovalThreshold</td>
+<td align="center">Minimal t-stat improval needed to remove motion spikes.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bRegistrationContrast</td>
+<td align="center">Specifies the image contrast used for registration.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bAffineRegistration</td>
+<td align="center">Specifies if the ASL-T1w rigid-body registration is followed up by an affine registration.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bDCTRegistration</td>
+<td align="center">Specifies if to include the DCT registration on top of Affine.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bRegisterM02ASL</td>
+<td align="center">Boolean specifying whether M0 is registered to mean_control image (or T1w if no control image exists).</td>
+</tr>
+<tr>
+<td>x.modules.asl.bUseMNIasDummyStructural</td>
+<td align="center">When structural (e.g. T1w) data is missing, copy population-average MNI templates as dummy structural templates.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bPVCNativeSpace</td>
+<td align="center">Performs partial volume correction (PVC) in ASL native space using the GM and WM maps obtained from previously segmented T1-weighted images.</td>
+</tr>
+<tr>
+<td>x.modules.asl.PVCNativeSpaceKernel</td>
+<td align="center">Kernel size for the ASL native space PVC.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bPVCGaussianMM</td>
+<td align="center">If set to 1, PV-correction with a Gaussian weighting is used instead of the equal weights of all voxels in the kernel ('flat' kernel) as per Asllani's original method.</td>
+</tr>
+<tr>
+<td>x.modules.asl.bMakeNIfTI4DICOM</td>
+<td align="center">Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xmodulespopulation">x.modules.population</h3>
+<p>All <strong>population module</strong> related parameters are stored within this subfield.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td align="center">n/a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xexternal">x.external</h3>
+<p>Within <code>x.external</code> you can find parameters related to <strong>external tools</strong> and the coding <strong>environment</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Fieldname</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x.external.SPMVERSION</td>
+<td align="center">String describing the version of SPM.</td>
+</tr>
+<tr>
+<td>x.external.bAutomaticallyDetectFSL</td>
+<td align="center">Boolean to automatically detect the FSL version if disabled, this function will try to use the system-initialized FSL and throw an error if FSL is not initialized.</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Tutorials-QC/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorials (QC)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Tutorials (QC)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../DataParTemplate/" class="md-footer__link md-footer__link--next" aria-label="Next: Parameter Descriptions" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Parameter Descriptions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>
