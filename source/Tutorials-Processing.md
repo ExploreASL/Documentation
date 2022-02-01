@@ -172,7 +172,7 @@ All **population module** related parameters are stored within this subfield.
 
 ### x.S
 
-The `x.S` subfield contains **masking & atlas** related parameters. Only a selection of parameters is provided here. A full account is given in the [Developer Tutorial](../Tutorials-Developer/).
+The `x.S` subfield contains **masking & atlas** related parameters. Only a selection of parameters is provided here. A full account is given in the [Developer Tutorial](./../Tutorials-Developer/).
 
 | Fieldname                            | Description                                   |
 | ------------------------------------ |:---------------------------------------------:|
