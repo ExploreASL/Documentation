@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorials-execution" class="md-skip">
+        <a href="#exploreasl-asl-bids" class="md-skip">
           Skip to content
         </a>
       
@@ -270,8 +270,6 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Tutorials (Execution)
@@ -287,8 +285,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -472,20 +468,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../DataParTemplate/" class="md-nav__link">
-        Parameter Descriptions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Modules/" class="md-nav__link">
         Modules
       </a>
@@ -572,6 +554,20 @@
     <li class="md-nav__item">
       <a href="../SPMxASL/" class="md-nav__link">
         SPM xASL Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DataParTemplate/" class="md-nav__link">
+        Parameter Descriptions
       </a>
     </li>
   
@@ -676,8 +672,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -772,7 +766,9 @@
 </a>
 
 
-<h1 id="tutorials-execution">Tutorials (Execution)</h1>
+  <h1>Tutorials (Execution)</h1>
+
+<p>(# Tutorials (Execution)</p>
 <hr />
 <h2 id="exploreasl-asl-bids">ExploreASL &amp; ASL-BIDS</h2>
 <p>Starting with version <strong>v1.7.0</strong>, <strong>ExploreASL</strong> will support an import workflow which allows the user to convert <strong>DICOM</strong> and <strong>NIFTI</strong> data to the <strong>ASL-BIDS</strong> format. Since <strong>ExploreASL</strong> does not fully utilize the <strong>BIDS</strong> format internally, there will also be an automated workflow to convert from <strong>ASL-BIDS</strong> to the <strong>ExploreASL</strong> <strong>legacy format</strong>. In the following subsections we will explain how you can use the automated <strong>ExploreASL</strong> import workflow to convert your input data to <strong>ASL-BIDS</strong> and how you can process it.</p>
@@ -786,7 +782,7 @@ To only initialize the package, you execute:</p>
 To fully process data in ASL-BIDS format located in <code>drive/.../datasetRoot/rawdata</code>:</p>
 <p><code>[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);</code></p>
 <p><strong>Importing DICOM to ASL-BIDS:</strong>
-To import DICOM data located in <code>drive/.../datasetRoot/sourcedata</code> and convert them to ASL-BIDS format (see more in <a href="../Tutorials-Import/">Tutorial on Import</a>):</p>
+To import DICOM data located in <code>drive/.../datasetRoot/sourcedata</code> and convert them to ASL-BIDS format (see more in <a href="./../Tutorials-Import/">Tutorial on Import</a>):</p>
 <p><code>[x] = ExploreASL('drive/.../datasetRoot', [1 1 0 0],0);</code></p>
 <p><strong>Importing DICOM to ASL-BIDS:</strong>
 To import DICOM data located in <code>drive/.../datasetRoot/sourcedata</code> to ASL-BIDS and fully process them:</p>
@@ -957,10 +953,10 @@ To run the Population module on previously processed data stored in <code>drive/
 </table>
 </li>
 </ul>
-<p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the <a href="./Tutorials-Import/">Import Tutorial</a>.</p>
+<p>In the following examples, we want to show how you can use the revised import workflow and how the conventional processing is done now. Another example for the import module is shown in the <a href="./../Tutorials-Import/">Import Tutorial</a>.</p>
 <hr />
 <h2 id="dicom-source-data">DICOM source data</h2>
-<p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.7.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>dataset root directory</strong>. This dataset root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file (see <a href="./Tutorials-Import/">Import Tutorial</a> for details) and optionally also a <code>dataPar.json</code> file (see the Processing Tutorial <a href="./Tutorials-Processing/">Processing Tutorial</a>). Do not forget to set up the source dataset in <code>drive/.../datasetRoot/sourcedata</code> correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>
+<p>Converting DICOM source data according to the <a href="https://bids-specification.readthedocs.io/en/latest/99-appendices/12-arterial-spin-labeling.html">ASL BIDS</a> standard can be done using the new import workflow. For the upcoming release <strong>v1.7.0</strong> we're preparing an exemplary DICOM source dataset based on the <a href="https://pypi.org/project/asldro/">ASL DRO</a>. To run this workflow, you have to use the path to your <strong>dataset root directory</strong>. This dataset root directory should contain a <code>sourceStructure.json</code> file, a <code>studyPar.json</code> file (see <a href="./../Tutorials-Import/">Import Tutorial</a> for details) and optionally also a <code>dataPar.json</code> file (see the Processing Tutorial <a href="./../Tutorials-Processing/">Processing Tutorial</a>). Do not forget to set up the source dataset in <code>drive/.../datasetRoot/sourcedata</code> correctly. We're working on a flavor library, to enable the import and processing of a wide variety of different sequence, vendor, and scanner combinations.</p>
 <p>The first step to convert your <strong>DICOM</strong> source data to <strong>NIFTI</strong> source data is to run the following command:</p>
 <p><code>[x] = ExploreASL('drive/.../datasetRoot', [1 0 0 0],1);</code></p>
 <p>Here we tell <strong>ExploreASL</strong> to run the <code>DCM2NII</code> import module by setting the first boolean variable of the <code>ImportModules</code> to <code>1</code>. The output is save to <code>drive/.../datasetRoot/derivatives/ExploreASL/temp</code></p>
