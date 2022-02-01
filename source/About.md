@@ -2,6 +2,11 @@
 # About
 
 ----
+## Contact 
+
+For any help please contact the lead authors/developers at h.j.mutsaerts@amsterdamumc.nl or j.petr@hzdr.de. To report new issues and follow-up the discussion on new developments, please visit the [GitHub page](https://github.com/ExploreASL/ExploreASL/issues) of the project. Or visit our [Google-forum](https://groups.google.com/forum/#!forum/exploreasl). 
+
+----
 ## ExploreASL Team
 
 * [Henk Mutsaerts](mailto:h.j.mutsaerts@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - Co-creator, [Researcher](https://www.researchgate.net/profile/Henri-Mutsaerts)
@@ -18,6 +23,8 @@
 
 ----
 ## ExploreASL Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -49,5 +56,7 @@
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 
