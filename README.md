@@ -15,3 +15,7 @@ This repository includes the interactive GitHub pages documentation of ExploreAS
 - **No** need to run `mkdocs build` or other commands.
 - Testing can be done using `mike serve`.
 
+### Tutorials
+
+If you plan on modifying the tutorials or other static parts of the documentation, you should modify the files within the source directory. After that you need to follow the normal build workflow, which will integrate those documents into the interactive documentation website.
+
