@@ -14,6 +14,8 @@ To only initialize the package, you execute:
 
 `[x] = ExploreASL();`
 
+Initialization adds paths to all atlases and functions needed for ExploreASL execution. Initialization is also run automatically before any command for processing or importing data.
+
 **Processing ASL-BIDS data:**
 To fully process data in ASL-BIDS format located in `drive/.../datasetRoot/rawdata`:
 

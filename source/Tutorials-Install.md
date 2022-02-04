@@ -8,20 +8,42 @@ This tutorial describes where to download, how to install, and how to run Explor
 ## How to run ExploreASL using Matlab
 
 
-The first thing you have to do, to use **ExploreASL**, is to clone the **ExploreASL** repository. If you want to run **ExploreASL** from Matlab, we recommend to clone the main repository directly from the official [GitHub website](https://github.com/ExploreASL/ExploreASL). You also have the option to download the zipped version or to download an older [release](https://github.com/ExploreASL/ExploreASL/releases).
+The first thing you have to do, to use **ExploreASL**, is to clone the **ExploreASL** repository. If you want to run **ExploreASL** from Matlab, we recommend to clone the main repository directly from the official [GitHub website](https://github.com/ExploreASL/ExploreASL). You also have the option to download the zipped version (click Donwload zip) or clone it with GitHub. Both stable [release](https://github.com/ExploreASL/ExploreASL/releases) and [latest beta](https://github.com/ExploreASL/ExploreASL/tree/develop) version are available.
+
+![ExploreASL Download](./img/ExploreASL_github.png "Downloading ExploreASL")
 
 If you are new to Matlab, we recommend checking out a [Matlab tutorial](https://www.mathworks.com/support/learn-with-matlab-tutorials.html). It can be helpful to add the **ExploreASL** directory to your Matlab paths. Open Matlab, select the **Home** tab, and add the **ExploreASL** directory including its subfolders using the **Set Path** option. Now change your working directory, using the **Current Folder** tab or the **cd** command, to the **ExploreASL** directory.
 
-To run **ExploreASL** you have to type in the following command in the **Command Window**: `ExploreASL`. If you already created an **[ASL-BIDS](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html) dataset** inside *C:\...\MY-BIDS-DATASET\rawdata* , you can run the default **ExploreASL** pipeline like this:
+Running a simple initialization is a good first check that everything is working
+```matlab
+ExploreASL();
+```
+
+![ExploreASL initialization](./img/ExploreASL_initialize.png "Initializing ExploreASL")
+
+To run **ExploreASL** you have to type in the following command in the **Command Window**: `ExploreASL`. You will need an already created **[ASL-BIDS](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html) dataset** and specify the path to it, you can run the default **ExploreASL** pipeline like this:
 
 ```matlab
-DatasetRoot = 'C:\...\MY-BIDS-DATASET';
+DatasetRoot = 'C:\...\MY-BIDS-DATASET'; % Path to the Dataset folder, containing the ASL-BIDS data in C:\...\MY-BIDS_DATASET\rawdata
 ImportModules = [0 0 0 1]; % Import data from ASL-BIDS format to ExploreASL internal format
 ProcessModules = true;
 [x] = ExploreASL(DatasetRoot, ImportModules, ProcessModules);
 ```
 
-For running ExploreASL full import from DICOM data, please consult the [Tutorial on Import](./../Tutorials-Import/).
+For running ExploreASL full import from DICOM data, please consult the [Tutorial on Import](./../Tutorials-Import/). 
+You can also execute a test dataset provided with ExploreASL in the folder ExploreASL/External/TestDataSet:
+
+```matlab
+ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', [0 0 0 1], 1);
+```
+
+or directly start processing the prepared data in ExploreASL internal format
+
+```matlab
+ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', 0, 1);
+```
+
+See more information in the Tutorial [here](./../Tutorials-QC).
 
 ----
 ## How to run a compiled ExploreASL Version

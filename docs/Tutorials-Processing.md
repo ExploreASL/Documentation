@@ -6,8 +6,9 @@ To run processing of ASL-BIDS data located in `drive/.../datasetRoot/rawdata`, y
 ```matlab
 [x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);
 ```
+You can provide additional processing parameters in a file at `drive/.../datasetRoot/dataPar.json`. An example content of the `dataPar.json` file is given below on this page, an example is in the ExploreASL code at *.../ExploreASL/Templates/DataParTemplate.json*, and a full reference manual is provided [here](./../DataParTemplate).
 
-You can provide additional processing parameters in a file at `drive/.../datasetRoot/dataPar.json`. You can alternatively only convert the ASL-BIDS data to ExploreASL internal format by
+You can alternatively only convert the ASL-BIDS data to ExploreASL internal format without executing the processing
 ```matlab
 [x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],0);
 ```
@@ -40,6 +41,8 @@ ExploreASL currently uses BASIL to quantify multi-PLD and Time-encoded data (the
 {"x":{"Q":{"bUseBasilQuantification":1},
 "external":{"bAutomaticallyDetectFSL":true}}}
 ```
+
+Note that this setting will use BASIL for CBF quantification of any provided data, include single-PLD ASL, which is recommended to quantify using internal ExploreASL routines without BASIL.
 
 ### Processing ASL data without structural T1w scans
 ExploreASL uses the structural T1-weighted scans to obtain information about GM and WM tissues used later for evaluation and thresholding the CBF maps. Presence of T1w scans is thus expected for all ASL scans as T1w scans are anyway normally obtained. If a T1-weighted scan is missing, ExporeASL uses internally the average MNI brain instead, but this option needs to be activated explicitly:
