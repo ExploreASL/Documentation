@@ -774,7 +774,8 @@
 <p>To run processing of ASL-BIDS data located in <code>drive/.../datasetRoot/rawdata</code>, you simply execute this command:</p>
 <pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);
 </code></pre>
-<p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. You can alternatively only convert the ASL-BIDS data to ExploreASL internal format by</p>
+<p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. An example content of the <code>dataPar.json</code> file is given below on this page, an example is in the ExploreASL code at <em>.../ExploreASL/Templates/DataParTemplate.json</em>, and a full reference manual is provided <a href="./../DataParTemplate">here</a>.</p>
+<p>You can alternatively only convert the ASL-BIDS data to ExploreASL internal format without executing the processing</p>
 <pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],0);
 </code></pre>
 <p>This creates new data in <code>drive/.../datasetRoot/derivatives/ExploreASL</code>. You can then modify the <code>drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json</code> file for processing options and then execute the processing by </p>
@@ -795,6 +796,7 @@
 <pre><code class="language-json">{&quot;x&quot;:{&quot;Q&quot;:{&quot;bUseBasilQuantification&quot;:1},
 &quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:true}}}
 </code></pre>
+<p>Note that this setting will use BASIL for CBF quantification of any provided data, include single-PLD ASL, which is recommended to quantify using internal ExploreASL routines without BASIL.</p>
 <h3 id="processing-asl-data-without-structural-t1w-scans">Processing ASL data without structural T1w scans</h3>
 <p>ExploreASL uses the structural T1-weighted scans to obtain information about GM and WM tissues used later for evaluation and thresholding the CBF maps. Presence of T1w scans is thus expected for all ASL scans as T1w scans are anyway normally obtained. If a T1-weighted scan is missing, ExporeASL uses internally the average MNI brain instead, but this option needs to be activated explicitly:</p>
 <pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseMNIasDummyStructural&quot;:1}}}}

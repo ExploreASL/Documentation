@@ -718,15 +718,27 @@
 <p>This tutorial describes where to download, how to install, and how to run ExploreASL either directly from Matlab, or using a compiled version or a docker that do not require Matlab license. All external software, like SPM and dcm2niix, is contained in all the downloads and does not need to be downloaded or installed separately. The only exception is the <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation">FSL software</a> that needs to be downloaded and installed manually in case you want to process multi-PLD or time-encoded ASL data using BASIL. Please consult the <a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation">FSL installation guide</a> for installation of Windows Subsystem for Linux (WSL or WSL2) if you want to use FSL on Windows.</p>
 <hr />
 <h2 id="how-to-run-exploreasl-using-matlab">How to run ExploreASL using Matlab</h2>
-<p>The first thing you have to do, to use <strong>ExploreASL</strong>, is to clone the <strong>ExploreASL</strong> repository. If you want to run <strong>ExploreASL</strong> from Matlab, we recommend to clone the main repository directly from the official <a href="https://github.com/ExploreASL/ExploreASL">GitHub website</a>. You also have the option to download the zipped version or to download an older <a href="https://github.com/ExploreASL/ExploreASL/releases">release</a>.</p>
+<p>The first thing you have to do, to use <strong>ExploreASL</strong>, is to clone the <strong>ExploreASL</strong> repository. If you want to run <strong>ExploreASL</strong> from Matlab, we recommend to clone the main repository directly from the official <a href="https://github.com/ExploreASL/ExploreASL">GitHub website</a>. You also have the option to download the zipped version (click Donwload zip) or clone it with GitHub. Both stable <a href="https://github.com/ExploreASL/ExploreASL/releases">release</a> and <a href="https://github.com/ExploreASL/ExploreASL/tree/develop">latest beta</a> version are available.</p>
+<p><img alt="ExploreASL Download" src="../img/ExploreASL_github.png" title="Downloading ExploreASL" /></p>
 <p>If you are new to Matlab, we recommend checking out a <a href="https://www.mathworks.com/support/learn-with-matlab-tutorials.html">Matlab tutorial</a>. It can be helpful to add the <strong>ExploreASL</strong> directory to your Matlab paths. Open Matlab, select the <strong>Home</strong> tab, and add the <strong>ExploreASL</strong> directory including its subfolders using the <strong>Set Path</strong> option. Now change your working directory, using the <strong>Current Folder</strong> tab or the <strong>cd</strong> command, to the <strong>ExploreASL</strong> directory.</p>
-<p>To run <strong>ExploreASL</strong> you have to type in the following command in the <strong>Command Window</strong>: <code>ExploreASL</code>. If you already created an <strong><a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html">ASL-BIDS</a> dataset</strong> inside <em>C:...\MY-BIDS-DATASET\rawdata</em> , you can run the default <strong>ExploreASL</strong> pipeline like this:</p>
-<pre><code class="language-matlab">DatasetRoot = 'C:\...\MY-BIDS-DATASET';
+<p>Running a simple initialization is a good first check that everything is working</p>
+<pre><code class="language-matlab">ExploreASL();
+</code></pre>
+<p><img alt="ExploreASL initialization" src="../img/ExploreASL_initialize.png" title="Initializing ExploreASL" /></p>
+<p>To run <strong>ExploreASL</strong> you have to type in the following command in the <strong>Command Window</strong>: <code>ExploreASL</code>. You will need an already created <strong><a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html">ASL-BIDS</a> dataset</strong> and specify the path to it, you can run the default <strong>ExploreASL</strong> pipeline like this:</p>
+<pre><code class="language-matlab">DatasetRoot = 'C:\...\MY-BIDS-DATASET'; % Path to the Dataset folder, containing the ASL-BIDS data in C:\...\MY-BIDS_DATASET\rawdata
 ImportModules = [0 0 0 1]; % Import data from ASL-BIDS format to ExploreASL internal format
 ProcessModules = true;
 [x] = ExploreASL(DatasetRoot, ImportModules, ProcessModules);
 </code></pre>
-<p>For running ExploreASL full import from DICOM data, please consult the <a href="./../Tutorials-Import/">Tutorial on Import</a>.</p>
+<p>For running ExploreASL full import from DICOM data, please consult the <a href="./../Tutorials-Import/">Tutorial on Import</a>. 
+You can also execute a test dataset provided with ExploreASL in the folder ExploreASL/External/TestDataSet:</p>
+<pre><code class="language-matlab">ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', [0 0 0 1], 1);
+</code></pre>
+<p>or directly start processing the prepared data in ExploreASL internal format</p>
+<pre><code class="language-matlab">ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', 0, 1);
+</code></pre>
+<p>See more information in the Tutorial <a href="./../Tutorials-QC">here</a>.</p>
 <hr />
 <h2 id="how-to-run-a-compiled-exploreasl-version">How to run a compiled ExploreASL Version</h2>
 <p>Precompiled ExploreASL is available for certain ExploreASL versions and OSes <a href="https://drive.google.com/drive/folders/1z6fbW6GnlmPhicXvXcRtGZQxptujN7o1">here</a>. Providing a compiled version for every operating system and corresponding Matlab version is currently not feasible for us. Please feel free to ask the developers for a specific compiled version. </p>
