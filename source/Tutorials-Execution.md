@@ -159,7 +159,8 @@ Basically, the differences between BIDS and ExploreASL naming, can be resumed be
 In ExploreASL, we differenciate visits and sessions by assessing if the time difference between the ASL scans is large enough to expect different structural references. If yes, we call it Visits (sessions in BIDS). In case of different visits, maybe there will be different T1w/FLAIR structural references, because anatomy changes so one will need a different structural reference for registration and partial volume correction for each ASL scan. 
 On the other hand, Sessions (Runs in BIDS) are used when there are multiple ASL scans within the same structural reference (multiple scans done in the same day)
 
-Example:
+Here is an example:
+
 <img width="472" alt="image" src="https://user-images.githubusercontent.com/73699072/153246043-4ca59e7b-f140-41fd-a428-f071d427c092.png">
 
 ----
