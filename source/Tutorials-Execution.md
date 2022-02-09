@@ -151,13 +151,11 @@ To run individual modules, you can set the `ProcessModules` individually. If you
 
 ----
 ## BIDS format vs Legacy format
-Basically, the differences between BIDS and ExploreASL naming, can be resumed below:
+Note that the ASL-BIDS standard was introduced relatively recently and there are still certain differences between BIDS and ExploreASL terminology as shown below:
 
-<img width="368" alt="image" src="https://user-images.githubusercontent.com/73699072/153246299-5de8cf11-c28f-40ea-ba6e-ab2c46a6eb29.png">
+![ASL-BIDS and ExploreASL Legacy difference](./img/BIDS-Legacy-Terminology.png "ASL-BIDS and ExploreASL Legacy difference"){ width="300" }
 
-
-In ExploreASL, we differenciate visits and sessions by assessing if the time difference between the ASL scans is large enough to expect different structural references. If yes, we call it Visits (sessions in BIDS). In case of different visits, maybe there will be different T1w/FLAIR structural references, because anatomy changes so one will need a different structural reference for registration and partial volume correction for each ASL scan. 
-On the other hand, Sessions (Runs in BIDS) are used when there are multiple ASL scans within the same structural reference (multiple scans done in the same day)
+In ExploreASL, we differentiate visits and sessions mostly by the fact that within a single session a single structural scan (for each contrast) and one or more ASL scans are acquired (typically during the same scanning session and with or without repositioning). Different visits are separated by days/months or in special case several hours and the whole scanning protocol is acquired on each Visit including one or more ASL scan. So across sessions, the same structural images are used. Across Visits, the structural scans are newly acquired. In BIDS-ASL, we use the terms Sessions and Runs instead of Visits and Sessions in ExploreASL.
 
 Here is an example:
 
