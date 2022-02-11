@@ -158,6 +158,7 @@ Note that the ASL-BIDS standard was introduced relatively recently and there are
 In ExploreASL, we differentiate visits and sessions mostly by the fact that within a single session a single structural scan (for each contrast) and one or more ASL scans are acquired (typically during the same scanning session and with or without repositioning). Different visits are separated by days/months or in special case several hours and the whole scanning protocol is acquired on each Visit including one or more ASL scan. So across sessions, the same structural images are used. Across Visits, the structural scans are newly acquired. In BIDS-ASL, we use the terms Sessions and Runs instead of Visits and Sessions in ExploreASL.
 
 Here is an example:
+
 <img width="570" alt="image" src="https://user-images.githubusercontent.com/73699072/153681215-5f932ab8-93e1-42da-b5e8-51ecd738cb51.png">
 
 
