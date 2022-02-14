@@ -159,7 +159,9 @@ In ExploreASL, we differentiate visits and sessions mostly by the fact that with
 
 Here is an example:
 
-<img width="570" alt="image" src="https://user-images.githubusercontent.com/73699072/153681215-5f932ab8-93e1-42da-b5e8-51ecd738cb51.png">
+<img width="637" alt="image" src="https://user-images.githubusercontent.com/73699072/153832348-c1e3f0ff-e34b-41dd-bc3c-4201279d46df.png">
+
+
 
 
 ----
