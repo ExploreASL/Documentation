@@ -150,6 +150,19 @@ To run individual modules, you can set the `ProcessModules` individually. If you
 `[x] = ExploreASL('drive/.../datasetRoot', 0, [1 1 1]);`
 
 ----
+## BIDS format vs Legacy format
+Note that the ASL-BIDS standard was introduced relatively recently and there are still certain differences between BIDS and ExploreASL terminology as shown below:
+
+![ASL-BIDS vs. ExploreASL Legacy - Terminology difference](./img/BIDS-Legacy-Terminology.png "ASL-BIDS vs. ExploreASL Legacy - Terminology difference"){ width="300" }
+
+In ExploreASL, we differentiate visits and sessions mostly by the fact that within a single session a single structural scan (for each contrast) and one or more ASL scans are acquired (typically during the same scanning session and with or without repositioning). Different visits are separated by days/months or in special case several hours and the whole scanning protocol is acquired on each Visit including one or more ASL scan. So across sessions, the same structural images are used. Across Visits, the structural scans are newly acquired. In BIDS-ASL, we use the terms Sessions and Runs instead of Visits and Sessions in ExploreASL.
+
+Here is an example:
+
+![ASL-BIDS vs. ExploreASL Legacy - Example](./img/BIDS-Legacy-Example.png "ASL-BIDS vs. ExploreASL Legacy - Example"){ width="630" }
+
+
+----
 ## Full pipeline
 
 Running the full pipeline including both import workflow and processing pipeline, can be done by setting both `ImportModules` and `ProcessModules` to `1`. 
