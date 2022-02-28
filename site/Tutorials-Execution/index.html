@@ -354,6 +354,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bids-format-vs-legacy-format" class="md-nav__link">
+    BIDS format vs Legacy format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#full-pipeline" class="md-nav__link">
     Full pipeline
   </a>
@@ -742,6 +749,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bids-format-vs-legacy-format" class="md-nav__link">
+    BIDS format vs Legacy format
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#full-pipeline" class="md-nav__link">
     Full pipeline
   </a>
@@ -985,6 +999,13 @@ To run the Population module on previously processed data stored in <code>drive/
 <p>To run individual modules, you can set the <code>ProcessModules</code> individually. If you only want to the <code>Structural Module</code> for example, you can use a <code>[1 0 0]</code> vector. To run all modules, you can use a single <code>1</code> or a vector of ones, which should look like this <code>[1 1 1]</code>. Running the just the structural module or the full processing pipeline can therefore be done like this as well:</p>
 <p><code>[x] = ExploreASL('drive/.../datasetRoot', 0, [1 0 0]);</code>
 <code>[x] = ExploreASL('drive/.../datasetRoot', 0, [1 1 1]);</code></p>
+<hr />
+<h2 id="bids-format-vs-legacy-format">BIDS format vs Legacy format</h2>
+<p>Note that the ASL-BIDS standard was introduced relatively recently and there are still certain differences between BIDS and ExploreASL terminology as shown below:</p>
+<p><img alt="ASL-BIDS vs. ExploreASL Legacy - Terminology difference" src="../img/BIDS-Legacy-Terminology.png" title="ASL-BIDS vs. ExploreASL Legacy - Terminology difference" width="300" /></p>
+<p>In ExploreASL, we differentiate visits and sessions mostly by the fact that within a single session a single structural scan (for each contrast) and one or more ASL scans are acquired (typically during the same scanning session and with or without repositioning). Different visits are separated by days/months or in special case several hours and the whole scanning protocol is acquired on each Visit including one or more ASL scan. So across sessions, the same structural images are used. Across Visits, the structural scans are newly acquired. In BIDS-ASL, we use the terms Sessions and Runs instead of Visits and Sessions in ExploreASL.</p>
+<p>Here is an example:</p>
+<p><img alt="ASL-BIDS vs. ExploreASL Legacy - Example" src="../img/BIDS-Legacy-Example.png" title="ASL-BIDS vs. ExploreASL Legacy - Example" width="630" /></p>
 <hr />
 <h2 id="full-pipeline">Full pipeline</h2>
 <p>Running the full pipeline including both import workflow and processing pipeline, can be done by setting both <code>ImportModules</code> and <code>ProcessModules</code> to <code>1</code>. </p>
