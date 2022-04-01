@@ -187,7 +187,7 @@ Here, the token name `^1$` - that is a string equaling to `"1"` is replaced in t
 #### 5. tokenScanAliases
 
 ```
-"tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
+"tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
 ```
 
 The third token defines the name of the scan. Each row represents one scan name. The first column is the regular expression for the token, the second column gives the final name of the scan.
@@ -196,7 +196,7 @@ The third token defines the name of the scan. Each row represents one scan name.
 
 * `^M0$ M0`
 
-* `^T1-weighted$ T1`
+* `^T1-weighted$ T1w`
 
 The DICOMs in the directory `PSEUDO_10_min` are thus extracted to a NIFTI file called `ASL4D.nii`.
 
