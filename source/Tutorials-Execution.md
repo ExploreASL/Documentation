@@ -3,7 +3,7 @@
 ----
 ## ExploreASL & ASL-BIDS
 
-Starting with version **v1.7.0**, **ExploreASL** will support an import workflow which allows the user to convert **DICOM** and **NIFTI** data to the **ASL-BIDS** format. Since **ExploreASL** does not fully utilize the **BIDS** format internally, there will also be an automated workflow to convert from **ASL-BIDS** to the **ExploreASL** **legacy format**. In the following subsections we will explain how you can use the automated **ExploreASL** import workflow to convert your input data to **ASL-BIDS** and how you can process it.
+Starting with version **v1.7.0**, **ExploreASL** will support an import workflow which allows the user to convert **DICOM** and **NIFTI** data to the **ASL-BIDS** format. Since **ExploreASL** does not fully utilize the **BIDS** format internally, there will also be an automated workflow to convert from **ASL-BIDS** to the **ExploreASL** **legacy format** (starting with version **v1.10.0**, this will be done automatically if needed). In the following subsections we will explain how you can use the automated **ExploreASL** import workflow to convert your input data to **ASL-BIDS** and how you can process it.
 
 ----
 ## Basic ExploreASL Execution
@@ -17,29 +17,29 @@ To only initialize the package, you execute:
 Initialization adds paths to all atlases and functions needed for ExploreASL execution. Initialization is also run automatically before any command for processing or importing data.
 
 **Processing ASL-BIDS data:**
-To fully process data in ASL-BIDS format located in `drive/.../datasetRoot/rawdata`:
+To fully process data in ASL-BIDS format located in `drive/.../datasetRoot/rawdata` (note that since version **v1.10.0**, the `rawdata` are converted to the Legacy format in `derivatives` automatically without needing to call the import:
 
-`[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);`
+`[x] = ExploreASL('drive/.../datasetRoot', 0, 1);`
 
 **Importing DICOM to ASL-BIDS:**
 To import DICOM data located in `drive/.../datasetRoot/sourcedata` and convert them to ASL-BIDS format (see more in [Tutorial on Import](./../Tutorials-Import/)):
 
-`[x] = ExploreASL('drive/.../datasetRoot', [1 1 0 0],0);`
+`[x] = ExploreASL('drive/.../datasetRoot', [1 1 0], 0);`
 
 **Importing DICOM to ASL-BIDS:**
 To import DICOM data located in `drive/.../datasetRoot/sourcedata` to ASL-BIDS and fully process them:
 
-`[x] = ExploreASL('drive/.../datasetRoot', [1 1 0 1],1);`
+`[x] = ExploreASL('drive/.../datasetRoot', [1 1 0], 1);`
 
 **Structural and ASL processing of ASL-BIDS data:**
 To run the Structural and ASL processing on data in ASL-BIDS format located in `drive/.../datasetRoot/rawdata`:
 
-`[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],[1 1 0]);`
+`[x] = ExploreASL('drive/.../datasetRoot', 0, [1 1 0]);`
 
 **Population module on pre-processed data:**
 To run the Population module on previously processed data stored in `drive/.../datasetRoot/derivatives/ExploreASL`:
 
-`[x] = ExploreASL('drive/.../datasetRoot', 0,[0 0 1]);`
+`[x] = ExploreASL('drive/.../datasetRoot', 0, [0 0 1]);`
 
 ----
 ## ExploreASL Execution - full input description
@@ -57,16 +57,16 @@ Below is a complete description of all the options for import and processing. Ex
     | **Type**         | `CHAR ARRAY`          |
     | **Default**      | Prompting user input  |
 
-- `ImportModules`: Multi-step import workflow. Note that either a vector is provided or a scalar (which is then translated as `[1 1 0 1]`, i.e. skipping the deface module unless explicitly turned on) (`OPTIONAL`)
+- `ImportModules`: Multi-step import workflow. Note that either a vector is provided or a scalar (which is then translated as `[1 1 0]`, i.e. skipping the deface module unless explicitly turned on) (`OPTIONAL`). Note that the BIDS to LEGACY conversion from the ASL-BIDS in `rawdata` to ExploreASL format in `derivatives\ExploreASL` is now run automatically when needed as part of the Processing Module
     - `DCM2NII`: Run the DICOM to NIFTI conversion from `sourcedata` subfolder and saves to `derivatives\ExploreASL\temp` subfolder
     - `NII2BIDS`: Run the NIFTI to BIDS conversion from subfolder `derivatives\ExploreASL\temp` and saves the complete ASL-BIDS data to a `rawdata` subfolder
     - `DEFACE`: Run the defacing of structural scans with input and output to the `rawdata` subfolder
-    - `BIDS2LEGACY`: Run the BIDS to LEGACY conversion from the ASL-BIDS in `rawdata` to ExploreASL format in `derivatives\ExploreASL`
 
-    | ImportModules    | DCM2NII       | NII2BIDS      | DEFACE        | BIDS2LEGACY   |
-    | ---------------- |:-------------:|:-------------:|:-------------:|:-------------:|
-    | **Type**         | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`     |
-    | **Default**      | `false`       | `false`       | `false`       | `false`       |
+
+    | ImportModules    | DCM2NII       | NII2BIDS      | DEFACE           |
+    | ---------------- |:-------------:|:-------------:|:-------------:|
+    | **Type**         | `BOOLEAN`     | `BOOLEAN`     | `BOOLEAN`|
+    | **Default**      | `false`       | `false`       | `false` |
     
 - `ProcessModules`: Multi-step processing pipeline. Either a full vector, or scalar turning all options either on or off, can be used (`OPTIONAL`)
     - `STRUCTURAL`: Run the Structural Module
@@ -108,7 +108,7 @@ Converting DICOM source data according to the [ASL BIDS](https://bids-specificat
 
 The first step to convert your **DICOM** source data to **NIFTI** source data is to run the following command:
 
-`[x] = ExploreASL('drive/.../datasetRoot', [1 0 0 0],1);`
+`[x] = ExploreASL('drive/.../datasetRoot', [1 0 0],1);`
 
 Here we tell **ExploreASL** to run the `DCM2NII` import module by setting the first boolean variable of the `ImportModules` to `1`. The output is save to `drive/.../datasetRoot/derivatives/ExploreASL/temp`
 
@@ -117,7 +117,7 @@ Here we tell **ExploreASL** to run the `DCM2NII` import module by setting the fi
 
 Let's assume we have intermediate **NIFTI** data now in `drive/.../datasetRoot/derivatives/ExploreASL/temp`. To convert this intermediate data to **ASL-BIDS** raw data, we have to run the second part of the import workflow. To run the second step, we set the second variable of the `ImportModules` to `1`. Similar to the previous step, we pass the `datasetRoot` directory to **ExploreASL**. The output is then written to `drive/.../datasetRoot/rawdata`.
 
-`[x] = ExploreASL('drive/.../datasetRoot', [0 1 0 0], 0);`
+`[x] = ExploreASL('drive/.../datasetRoot', [0 1 0], 0);`
 
 
 ----
@@ -125,17 +125,15 @@ Let's assume we have intermediate **NIFTI** data now in `drive/.../datasetRoot/d
 
 There's also a new option to deface your structural scans. To do this, you can run the third step of the import workflow. This is done by setting the third variable of the `ImportModules` to `1`. Similar to the previous steps, we pass the `DatasetRoot` directory to **ExploreASL**. Both input and output directory is `drive/.../datasetRoot/rawdata`
 
-`[x] = ExploreASL('drive/.../datasetRoot', [0 0 1 0], 0);`
+`[x] = ExploreASL('drive/.../datasetRoot', [0 0 1], 0);`
 
 
 ----
 ## Data in ExploreASL legacy format
 
-Right now, **ExploreASL** still uses the conventional data structure. To convert our **ASL-BIDS** rawdata to the **ExploreASL** legacy format, we run the last step of the import workflow. This is done by setting the fourth variable of the `ImportModules` to `1`. Like in the steps before, we pass the `DatasetRoot` directory to **ExploreASL**. The input ASL-BIDS data from `drive/.../datasetRoot/rawdata` are converted to `drive/.../datasetRoot/derivatives/ExploreASL/`
+Right now, **ExploreASL** still uses the conventional data structure. The conversion from our **ASL-BIDS** rawdata to the **ExploreASL** legacy format is done (since version **v1.10.0**) automatically as the first step of the Processing Module if needed. The input ASL-BIDS data from `drive/.../datasetRoot/rawdata` are converted to `drive/.../datasetRoot/derivatives/ExploreASL/`
 
-`[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1], 0);`
-
-The import workflow will also copy and adapt your provided `drive/.../datasetRoot/rawdata/dataPar.json` file to `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` or creates a default one if `drive/.../datasetRoot/rawdata/dataPar.json` is missing. To adapt your pipeline, you can edit the `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` file before running the Structural and ASL modules.
+This step will also copy and adapt your provided `drive/.../datasetRoot/rawdata/dataPar.json` file to `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` or create a default one if `drive/.../datasetRoot/rawdata/dataPar.json` is missing. To adapt your pipeline, you can edit the `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` file before running the Structural and ASL modules.
 
 ----
 ## ExploreASL processing pipeline
@@ -177,3 +175,7 @@ Any sensible combinations of import and processing submodules are of course also
 Compared to versions before v1.7.0, we changed both name and behavior of the `SkipPause` variable. The variable is called `bPause` now. Setting it to `true` or `1`, will result in the pipeline being paused before the processing. We removed the `iModules`, but the functionality of `ProcessModules` is basically the same. We use boolean notation now, so instead of `[1 2 3]` you have to use `[1 1 1]` now.
 
 The overall import functionality is a work in progress right now. We expect stable behavior in release `v1.7.0` though. If you plan on using the `develop` branch until then, you have to live with more or less unstable import behavior.
+
+## Changes in v1.10.0
+
+BIDS to Legacy conversion is now not done as the last step of import, but it is run automatically when needed (i.e. BIDS data existing and Legacy data not present) as the first step of the Processing Module.

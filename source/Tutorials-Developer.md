@@ -201,7 +201,6 @@ In `x.Q` you can find **sequence** and **quantification** related parameters.
 | x.Q.BloodT1                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. |
 | x.Q.TissueT1                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). |
 | x.Q.nCompartments                     | Number of modeled compartments for quantification. |
-| x.Q.ApplyQuantification               | A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved. |
 | x.Q.SaveCBF4D                         | Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries. |
 
 
@@ -243,6 +242,7 @@ All **ASL module** related parameters are stored within this subfield.
 | x.modules.asl.PVCNativeSpaceKernel     | Kernel size for the ASL native space PVC. |
 | x.modules.asl.bPVCGaussianMM           | If set to 1, PV-correction with a Gaussian weighting is used instead of the equal weights of all voxels in the kernel ('flat' kernel) as per Asllani's original method. |
 | x.modules.asl.bMakeNIfTI4DICOM         | Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file. |
+| x.modules.asl.ApplyQuantification               | A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved. |
 
 
 ### x.modules.population

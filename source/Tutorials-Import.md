@@ -17,7 +17,7 @@ For the import of the data, the best is to execute...
 ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 ```
 
-...where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
+...where 1 here is the whole Import module, which is divided in 3 parts `[1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
 
 ## Example dataset for Import with ExploreASL
 
@@ -72,7 +72,7 @@ The `sourcestructure.json` file contains the following code (different for each 
        "tokenOrdering": [ 1 0 2 3],
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
        "tokenVisitAliases": ["", ""],
-       "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
+       "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
        "bMatchDirectories": true
 }
 ```
