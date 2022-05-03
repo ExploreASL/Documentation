@@ -1,22 +1,5 @@
 # Functions
 
-----
-## General Functions
-
-----
-### xASL\_Iteration.m
-
-**Format:**
-
-```matlab
-[bAborted, xOut] = xASL_Iteration(x, moduleName[, dryRun, stopAfterErrors])
-```
-
-**Description:**
-
-Parses the settings and runs the DatabaseLoop sub-function.
-
-
 ## Administration
 
 ----
@@ -371,43 +354,6 @@ replaces with default value, it also checks if the parameters are consistent acr
 
 
 ----
-### xASL\_adm\_DocCrawler.m
-
-**Format:**
-
-```matlab
-xASL_adm_DocCrawler(inputPath)
-```
-
-**Description:**
-
-This function checks each individual file header and
-extracts the information. The results is saved as a
-markdown file.
-
-If you want to use star symbols (\*testFile.m e.g.) we
-recommend not to use them in the same line with bold text
-(which is written like this: **bold text**).
-
-
-
-----
-### xASL\_adm\_DocInitialize.m
-
-**Format:**
-
-```matlab
-xASL_adm_DocInitialize
-```
-
-**Description:**
-
-This function generates all markdown files, which are
-necessary for the mkdocs documentation.
-
-
-
-----
 ### xASL\_adm\_FindByRegExp.m
 
 **Format:**
@@ -619,36 +565,6 @@ will be loaded to the memory x struct
 2. Load X-struct from disc
 3. Look for and update deprecated fields
 4. Add fields from disc to the current x-struct
-
-
-----
-### xASL\_adm\_MakeStandalone.m
-
-**Format:**
-
-```matlab
-xASL_adm_MakeStandalone(outputPath, bCompileSPM, importDCM, markAsLatest);
-```
-
-**Description:**
-
-This function creates an output folder including a
-standalone version of ExploreASL, which can be used with the Matlab
-Runtime outside of Matlab itself.
-
-A quick fix to solve path dependencies etc. is to first
-compile SPM (but this can be turned off for speed).
-
-This function performs the following steps:
-
-1. Manage ExploreASL and compiler code folders
-2. Capture version/date/time
-3. File management output folder & starting diary
-4. Handle SPM Specific Options
-5. Manage compilation paths
-6. Run SPM compilation
-7. Run ExploreASL compilation
-8. Print done
 
 
 ----
@@ -1536,6 +1452,75 @@ splitting of ASL and M0 NIFTIes if needed. Note that the sidecars are in BIDS, b
 is already expected to be in Legacy format
 
 
+## Development
+
+----
+### xASL\_dev\_DocCrawler.m
+
+**Format:**
+
+```matlab
+xASL_dev_DocCrawler(inputPath)
+```
+
+**Description:**
+
+This function checks each individual file header and
+extracts the information. The results is saved as a
+markdown file.
+
+If you want to use star symbols (\*testFile.m e.g.) we
+recommend not to use them in the same line with bold text
+(which is written like this: **bold text**).
+
+
+
+----
+### xASL\_dev\_DocInitialize.m
+
+**Format:**
+
+```matlab
+xASL_dev_DocInitialize
+```
+
+**Description:**
+
+This function generates all markdown files, which are
+necessary for the mkdocs documentation.
+
+
+
+----
+### xASL\_dev\_MakeStandalone.m
+
+**Format:**
+
+```matlab
+xASL_dev_MakeStandalone(outputPath, bCompileSPM, importDCM, markAsLatest);
+```
+
+**Description:**
+
+This function creates an output folder including a
+standalone version of ExploreASL, which can be used with the Matlab
+Runtime outside of Matlab itself.
+
+A quick fix to solve path dependencies etc. is to first
+compile SPM (but this can be turned off for speed).
+
+This function performs the following steps:
+
+1. Manage ExploreASL and compiler code folders
+2. Capture version/date/time
+3. File management output folder & starting diary
+4. Handle SPM Specific Options
+5. Manage compilation paths
+6. Run SPM compilation
+7. Run ExploreASL compilation
+8. Print done
+
+
 ## FSL
 
 ----
@@ -1610,7 +1595,7 @@ TopUp is run with default settings
 3. Apply TopUp
 
 
-## Imaging
+## Imaging Processing
 
 ----
 ### xASL\_im\_BilateralFilter.m
@@ -2163,35 +2148,39 @@ This function performs the following steps:
 **Format:**
 
 ```matlab
-[ImOut] = xASL_im_M0ErodeSmoothExtrapolate(ImIn, x)
+[ImOut, VisualQC] = xASL_im_M0ErodeSmoothExtrapolate(ImIn, DirOutput, NameOutput, pvGM, pvWM, brainCentralityMap[, LowThreshold])
 ```
 
 **Description:**
 
-This function erodes, smooths & extrapolates M0 in standard space.
+This function erodes, smooths & extrapolates M0 in MNI standard space (tested at 1.5x1.5x1.5mm as used in ExploreASL).
 It assumes that the M0 image is in standard space & that the GM & WM probability maps
 are aligned. Here, we mask the M0, to remove high CSF signal and low extracranial signal,
 enabling us to smooth the image without inserting wrong signal. See also
-the ExploreASL manuscript for a more extensive explanation. This function
-performs the following steps:
-
-1. Mask: Load segmentations, create structural mask
-2. Mask: Create intensity-based mask to remove extracranial signal
-3. Mask: Erode the combined masks
-4. Mask: Determine any odd borders
-5. Smoothing
-6. Extrapolating only
-7. Scale back to the GM M0
-8. Print visual QC figure
+the ExploreASL manuscript for a more extensive explanation.
 
 A visual QC figure is created, showing the M0 image processing steps for a single transversal slice (slice 53 in `1.5 mm` MNI standard space)
-`OutputFile = fullfile(x.D.M0regASLdir,['M0\_im\_proc\_' x.P.SubjectID '.jpg']);`
+`OutputFile = fullfile(DirOutput,['M0\_im\_proc\_' NameOutput '.jpg']);`
 The original M0 image (a) is masked with a (pGM+pWM)>50% mask (b)
 eroded with a two-voxel sphere to limit the influence of the ventricular and extracranial signal (c)
 and thresholded to exclude significantly high (i.e. median + 3\*mean absolute deviation (MAD)) border region values (d)
 This masked M0 image is smoothed with a 16x16x16 mm full- width-half-maximum Gaussian filter (Mutsaerts et al., 2018) (e)
 after which the signal at the border is smoothly extrapolated until the full image is filled (f).
 Whereas the masking avoids mixing with cerebrospinal fluid or extracranial signal, the extrapolation avoids M0 division artifacts
+
+This function performs the following steps:
+
+1.  Mask 1: structural mask
+2.  Mask 2: intensity-based mask to remove extracranial signal
+2.a Multiplication with brain mask centrality map
+2.b Mask the "dummy image" from 2.a based on intensities
+2.c Enforce to include the eroded brain in the mask
+3.  Mask 3: Erode the combined masks
+4.  Mask 4: Determine any odd borders
+5.  Smoothing
+6.  Extrapolating only
+7.  Scale back to the GM M0
+8.  Print visual QC figure
 
 
 ----
@@ -2794,6 +2783,20 @@ steps:
 
 
 ----
+### xASL\_init\_Iteration.m
+
+**Format:**
+
+```matlab
+[bAborted, xOut] = xASL_Iteration(x, moduleName[, dryRun, stopAfterErrors])
+```
+
+**Description:**
+
+Parses the settings and runs the DatabaseLoop sub-function.
+
+
+----
 ### xASL\_init\_LoadDataParameterFile.m
 
 **Format:**
@@ -3301,24 +3304,6 @@ Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
 10. Cleanup temp
 11. Optionally return the used input file
 
-
-
-----
-### xASL\_num2str.m
-
-**Format:**
-
-```matlab
-[DataOut] = xASL_num2str(DataIn[, f, bConcatenate, strDelimiter])
-```
-
-**Description:**
-
-When the provided data is numeric, this function will convert the number to string/characters,
-rewriting NaN into 'n/a' (BIDS convention) but otherwise preserving the Matlab builtin functionality, also for the second argument "f".
-If non-numeric data is provided, it is bypassed (avoiding any issues "num2str" will have with non-numeric data).
-It can concatenate an array/matrix of strings, taking first the columns in the first row, and then going across the rows.
-See builtin num2str for more details
 
 
 ## QC
@@ -4755,23 +4740,6 @@ Performs a unpaired t-test that the distribution of the input data X has a mean 
 A normal distribution of the data with an unknown variance is assumed.
 
 
-----
-### xASL\_str2num.m
-
-**Format:**
-
-```matlab
-[DataOut] = xASL_str2num(DataIn[, bKeepCell, bReplaceNonNumerical])
-```
-
-**Description:**
-
-str2num wrapper, which only converts strings to numbers, and allows inputting cells.
-Also, it replaces 'n/a' with NaN (BIDS convention). And it
-has some other functionality as described in bKeepCell &
-bReplaceNonNumerical above.
-
-
 ## Visualization
 
 ----
@@ -4956,19 +4924,5 @@ xASL_vis_VisualizeROIs(x, ROI_list)
 Creates for each subject a JPEG image containing
 the original T1w, WMH\_SEGM and T1w after lesion-filling.
 
-
-
-----
-### xASL\_wrp\_LinearReg\_Others2T1w.m
-
-**Format:**
-
-```matlab
-xASL_wrp_LinearReg_Others2T1w(x[, bAutoACPC])
-```
-
-**Description:**
-
-This submodule registers T1c and T2 linearly to the T1w
 
 

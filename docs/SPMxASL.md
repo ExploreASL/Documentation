@@ -416,7 +416,7 @@ Uses Borgefors Chamfers computation of Euclidean distance in 3D using a
 **Format:**
 
 ```matlab
-xASL_im_FillNaNs(InputPath[, UseMethod, bQuality])
+xASL_im_FillNaNs(InputPath[, UseMethod, bQuality, VoxelSize])
 ```
 
 **Description:**
@@ -613,6 +613,27 @@ It runs the following steps:
 
 
 ----
+### xASL\_num2str.m
+
+**Format:**
+
+```matlab
+[DataOut] = xASL_num2str(DataIn[, stringFormat, bConcatenate, stringDelimiter])
+```
+
+**Description:**
+
+When the provided data is numeric, this function will convert the number to
+string/characters, rewriting NaN into 'n/a' (BIDS convention) but otherwise
+preserving the Matlab builtin functionality, also for the second argument "f".
+If non-numeric data is provided, it is bypassed (avoiding any issues "num2str"
+will have with non-numeric data).
+It can concatenate an array/matrix of strings, taking first the columns in the
+first row, and then going across the rows. See builtin num2str for more details.
+Column vectors are converted to row vectors.
+
+
+----
 ### xASL\_round.m
 
 **Format:**
@@ -716,6 +737,23 @@ y = xASL_stat_MedianNan(x[,dim])
 **Description:**
 
 It calculates the MEDIAN along the given dimension, but it sets all the NaNs to zero before calling it.
+
+
+----
+### xASL\_str2num.m
+
+**Format:**
+
+```matlab
+[DataOut] = xASL_str2num(DataIn[, bKeepCell, bReplaceNonNumerical])
+```
+
+**Description:**
+
+str2num wrapper, which only converts strings to numbers, and allows inputting cells.
+Also, it replaces 'n/a' with NaN (BIDS convention). And it
+has some other functionality as described in bKeepCell &
+bReplaceNonNumerical above.
 
 
 ----

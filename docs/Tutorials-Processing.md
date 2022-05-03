@@ -4,21 +4,9 @@
 To run processing of ASL-BIDS data located in `drive/.../datasetRoot/rawdata`, you simply execute this command:
 
 ```matlab
-[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);
+[x] = ExploreASL('drive/.../datasetRoot', 0, 1);
 ```
 You can provide additional processing parameters in a file at `drive/.../datasetRoot/dataPar.json`. An example content of the `dataPar.json` file is given below on this page, an example is in the ExploreASL code at *.../ExploreASL/Templates/DataParTemplate.json*, and a full reference manual is provided [here](./../DataParTemplate).
-
-You can alternatively only convert the ASL-BIDS data to ExploreASL internal format without executing the processing
-```matlab
-[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],0);
-```
-
-This creates new data in `drive/.../datasetRoot/derivatives/ExploreASL`. You can then modify the `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` file for processing options and then execute the processing by 
-```matlab
-[x] = ExploreASL('drive/.../datasetRoot', 0,1);
-```
-
-In case that something crashes, you can further edit the config `drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json` and re-run using the same command.
 
 Further options to import DICOM data are specified in the [Import Tutorial](./../Tutorials-Import), and different modes to execute ExploreASL are described in the [Execution Tutorial](./../Tutorials-Execution). Below, you can find examples how to set-up the processing options.
 

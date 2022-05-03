@@ -17,7 +17,7 @@ For the import of the data, the best is to execute...
 ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 ```
 
-...where 1 here is the whole Import module, which is divided in 4 parts `[1 1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
+...where 1 here is the whole Import module, which is divided in 3 parts `[1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
 
 ## Example dataset for Import with ExploreASL
 
@@ -72,7 +72,7 @@ The `sourcestructure.json` file contains the following code (different for each 
        "tokenOrdering": [ 1 0 2 3],
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
        "tokenVisitAliases": ["", ""],
-       "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
+       "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
        "bMatchDirectories": true
 }
 ```
@@ -187,7 +187,7 @@ Here, the token name `^1$` - that is a string equaling to `"1"` is replaced in t
 #### 5. tokenScanAliases
 
 ```
-"tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1"],
+"tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
 ```
 
 The third token defines the name of the scan. Each row represents one scan name. The first column is the regular expression for the token, the second column gives the final name of the scan.
@@ -196,7 +196,7 @@ The third token defines the name of the scan. Each row represents one scan name.
 
 * `^M0$ M0`
 
-* `^T1-weighted$ T1`
+* `^T1-weighted$ T1w`
 
 The DICOMs in the directory `PSEUDO_10_min` are thus extracted to a NIFTI file called `ASL4D.nii`.
 

@@ -198,5 +198,6 @@ checks:
 - `070\_GetROIstatistics`          - Create TSV file with overview of regional values (e.g. qCBF, mean control, pGM etc)
 - `080\_SortBySpatialCoV`          - Sort ASL\_Check QC images by their spatial CoV in quality bins
 - `090\_DeleteTempFiles`           - Delete temporary files
+- `100\_GZipAllFiles`              - Zip files to reduce disc space usage of temporary and non-temporay NIfTI files
 
 

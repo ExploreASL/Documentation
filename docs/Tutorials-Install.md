@@ -34,12 +34,6 @@ For running ExploreASL full import from DICOM data, please consult the [Tutorial
 You can also execute a test dataset provided with ExploreASL in the folder ExploreASL/External/TestDataSet:
 
 ```matlab
-ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', [0 0 0 1], 1);
-```
-
-or directly start processing the prepared data in ExploreASL internal format
-
-```matlab
 ExploreASL('/home/user/.../ExploreASL/External/TestDataSet', 0, 1);
 ```
 

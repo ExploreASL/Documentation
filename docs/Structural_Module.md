@@ -150,6 +150,20 @@ and vice versa (e.g. WMH lesion-filling).
 
 
 ----
+### xASL\_wrp\_LinearReg\_Others2T1w.m
+
+**Format:**
+
+```matlab
+xASL_wrp_LinearReg_Others2T1w(x[, bAutoACPC])
+```
+
+**Description:**
+
+This submodule registers T1c and T2 linearly to the T1w
+
+
+----
 ### xASL\_wrp\_LinearReg\_T1w2MNI.m
 
 **Format:**
