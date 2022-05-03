@@ -1465,14 +1465,17 @@ xASL_dev_DocCrawler(inputPath)
 
 **Description:**
 
-This function checks each individual file header and
-extracts the information. The results is saved as a
-markdown file.
+This function checks each individual file header from the ExploreASL source coude and
+extracts the information. The results is saved as a markdown file to be used for
+Deploying the documentation web.
 
-If you want to use star symbols (\*testFile.m e.g.) we
-recommend not to use them in the same line with bold text
-(which is written like this: **bold text**).
+If you want to use star symbols (\*testFile.m e.g.) we recommend not to use them in the same
+line with bold text (which is written like this: **bold text**).
 
+1. Define defaults and admin
+2. Iterate over files
+3. Extract header information from each file
+4. Final formatting
 
 
 ----
@@ -1486,9 +1489,14 @@ xASL_dev_DocInitialize
 
 **Description:**
 
-This function generates all markdown files, which are
-necessary for the mkdocs documentation.
+This function generates all markdown files, which are necessary for the mkdocs documentation - i.e. it initializes the MD files needed
+for deploying the documentation. It copies the manually edited MD files and crawls through function headers to ready everything for the
+deployment
 
+1. Administration
+2. Copy MD-files from ExploreASL source-code
+3. Copy the manually edited MD-files
+4. Crawl through function headers to generate reference manual
 
 
 ----
