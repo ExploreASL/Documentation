@@ -6,12 +6,12 @@ To run processing of ASL-BIDS data located in `drive/.../datasetRoot/rawdata`, y
 ```matlab
 [x] = ExploreASL('drive/.../datasetRoot', 0, 1);
 ```
-You can provide additional processing parameters in a file at `drive/.../datasetRoot/dataPar.json`. An example content of the `dataPar.json` file is given below on this page, an example is in the ExploreASL code at *.../ExploreASL/Templates/DataParTemplate.json*, and a full reference manual is provided [here](./../DataParTemplate).
+You can provide additional processing parameters in a file at `drive/.../datasetRoot/dataPar.json`. An example content of the `dataPar.json` file is given below on this page. A full reference manual is provided [here](./../ProcessingParameters).
 
 Further options to import DICOM data are specified in the [Import Tutorial](./../Tutorials-Import), and different modes to execute ExploreASL are described in the [Execution Tutorial](./../Tutorials-Execution). Below, you can find examples how to set-up the processing options.
 
 ## Configuring the pipeline using dataPar.json
-Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Data Parameters](./../DataParTemplate).
+Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Processing Parameters](./../ProcessingParameters).
 
 ### Evaluate Population module using different atlases
 The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `TotalGM`, `TotalWM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file.

@@ -1,5 +1,5 @@
 
-# Parameter description (dataPar.json)
+# Processing parameters (dataPar.json)
 
 This document describes the ExploreASL internal x-structure that contains processing settings and also sequence parameters. Normally, you do not have to modifies the processing paramaters and the default values are recommended for most studies. Also, you do not have to insert of modify the sequence parameters as these are normally all obtained from the JSON-files for data saved in ASL-BIDS. However, you can change both the processing settings and sequence parameters by providing them in a `dataPar.json` file in the `ROOT\derivatives\ExploreASL\dataPar.json`. Alternatively, you can provide the file at `ROOT\dataPar.json` during the import and it will be automatically copied to the `ROOT\derivatives\ExploreASL\dataPar.json` location. Note that for missing parameters, default will be used. Provided sequence parameters will be ignored if they will be already contained in individual subject's JSON sidecars, and will only be considered when missing for each particular subject.
 
@@ -128,7 +128,6 @@ An example configuration file is given below. Note that we include a large numbe
 ```json
 {"x": {
     "dataset": {
-        "name": "ExampleDataSet",
         "subjectRegexp": "^\\d{3}$",
         "exclusion": ""},
     "SESSIONS": ["ASL_1","ASL_2"],
