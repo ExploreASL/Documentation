@@ -19,7 +19,7 @@ nav:
         - 'Module Population':      Population_Module.md
         - 'Functions':              Functions.md
         - 'SPM xASL Functions':     SPMxASL.md
-        - 'Parameter description (dataPar.json)': DataParTemplate.md
+        - 'Processing Parameters (dataPar.json)': ProcessingParameters.md
     - FAQ:                    FAQ.md
     - Requirements:           Requirements.md
     - Change Log:             Changes.md
