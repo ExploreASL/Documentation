@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.9.0/Tutorials-Developer/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0beta/Tutorials-Developer/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
@@ -1297,10 +1297,6 @@ filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
 <td align="center">Number of modeled compartments for quantification.</td>
 </tr>
 <tr>
-<td>x.Q.ApplyQuantification</td>
-<td align="center">A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved.</td>
-</tr>
-<tr>
 <td>x.Q.SaveCBF4D</td>
 <td align="center">Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries.</td>
 </tr>
@@ -1403,6 +1399,10 @@ filepaths = xASL_adm_GetFileList(strDirectory, strRegEx);
 <tr>
 <td>x.modules.asl.bMakeNIfTI4DICOM</td>
 <td align="center">Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file.</td>
+</tr>
+<tr>
+<td>x.modules.asl.ApplyQuantification</td>
+<td align="center">A vector of 1x5 logical values specifying which types on quantified images should be calculated and saved.</td>
 </tr>
 </tbody>
 </table>

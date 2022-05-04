@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.9.0/Tutorials-Processing/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0beta/Tutorials-Processing/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
@@ -772,19 +772,12 @@
 
 <h1 id="tutorials-processing">Tutorials (Processing)</h1>
 <p>To run processing of ASL-BIDS data located in <code>drive/.../datasetRoot/rawdata</code>, you simply execute this command:</p>
-<pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],1);
+<pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', 0, 1);
 </code></pre>
-<p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. An example content of the <code>dataPar.json</code> file is given below on this page, an example is in the ExploreASL code at <em>.../ExploreASL/Templates/DataParTemplate.json</em>, and a full reference manual is provided <a href="./../DataParTemplate">here</a>.</p>
-<p>You can alternatively only convert the ASL-BIDS data to ExploreASL internal format without executing the processing</p>
-<pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', [0 0 0 1],0);
-</code></pre>
-<p>This creates new data in <code>drive/.../datasetRoot/derivatives/ExploreASL</code>. You can then modify the <code>drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json</code> file for processing options and then execute the processing by </p>
-<pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', 0,1);
-</code></pre>
-<p>In case that something crashes, you can further edit the config <code>drive/.../datasetRoot/derivatives/ExploreASL/dataPar.json</code> and re-run using the same command.</p>
+<p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. An example content of the <code>dataPar.json</code> file is given below on this page. A full reference manual is provided <a href="./../ProcessingParameters">here</a>.</p>
 <p>Further options to import DICOM data are specified in the <a href="./../Tutorials-Import">Import Tutorial</a>, and different modes to execute ExploreASL are described in the <a href="./../Tutorials-Execution">Execution Tutorial</a>. Below, you can find examples how to set-up the processing options.</p>
 <h2 id="configuring-the-pipeline-using-dataparjson">Configuring the pipeline using dataPar.json</h2>
-<p>Here, we present how to setup the most basic things for the ExploreASL processing using the <code>dataPar.json</code>. Note that you can combine the examples below and concatenate the content of given examples to a single <code>dataPar.json</code> to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for <a href="./../DataParTemplate">Data Parameters</a>.</p>
+<p>Here, we present how to setup the most basic things for the ExploreASL processing using the <code>dataPar.json</code>. Note that you can combine the examples below and concatenate the content of given examples to a single <code>dataPar.json</code> to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for <a href="./../ProcessingParameters">Processing Parameters</a>.</p>
 <h3 id="evaluate-population-module-using-different-atlases">Evaluate Population module using different atlases</h3>
 <p>The atlases used in the <strong>ExploreASL</strong> population module can be defined in the <code>x.S</code> sub-structure. If you are interested in the <code>TotalGM</code>, <code>TotalWM</code>, <code>DeepWM</code>, <code>Hammers</code>, <code>HOcort_CONN</code>, <code>HOsub_CONN</code>, and <code>Mindboggle_OASIS_DKT31_CMA</code> atlases e.g., you can add the following lines to your <code>dataPar.json</code> file.</p>
 <pre><code class="language-json">{&quot;x&quot;:{
