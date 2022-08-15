@@ -96,6 +96,7 @@ All **structural module** related parameters are stored within this subfield. Us
 | ----------------------------- |:--------------------------------------------------------------------------------------------------------:|:-----------------------:|
 | `bRunLongReg`                 | Run longitudinal registration.                                                                           | OPTIONAL, DEFAULT = 0   |
 | `bRunDARTEL`                  | Run between-subject registration/create templates.                                                       | OPTIONAL, DEFAULT = 0   |
+| `WMHsegmAlg`                  | Choose the LST algorithm 'LGA'/'LPA' for WMH segmentation                                        | OPTIONAL, DEFAULT = 'LPA'   |
 | `structural.bSegmentSPM12`    | Boolean to specify if SPM12 segmentation is run instead of CAT12. Options: 1 = run SPM12, 0 = run CAT12. | OPTIONAL, DEFAULT = 0   |
 | `structural.bHammersCAT12`    | Boolean specifying if CAT12 should provide Hammers volumetric ROI results.                               | OPTIONAL, DEFAULT = 0   |
 | `structural.bFixResolution`   | Resample to a resolution that CAT12 accepts.                                                             | OPTIONAL, DEFAULT=false |
