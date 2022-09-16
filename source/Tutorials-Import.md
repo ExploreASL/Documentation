@@ -268,3 +268,36 @@ Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. Explor
 ```
 "ASLContext":"control, label",
 ```
+
+----
+### studyPar.json for multi-sequence study
+
+The `studyPar.json` can be modified so that you can import different sequences with different parameters in a single run. Essentially, studyPar.json structure contains a list of contexts according to the standard definition, each context has a keyword that defines to what kind of data it should be applied. When a dataset fits to several contexts, the results of each context are taken into account and overwritten with the first context having the lowest priority.
+
+The following applies
+1. The list of context is in a field called `ImportContexts`.
+2. The list is processed top to bottom and the matching fields are always overwritten.
+3. An extra added keyword `AliasHierarchy` that defines a list of strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
+4. Missing `AliasHierarchy` or missing any its subfield means that the condition is fulfilled. The conditions are written in regexp format.
+
+```json
+{"ImportContexts":[
+{"DatasetType":"raw",
+"ArterialSpinLabelingType":"PCASL",
+"PostLabelingDelay": [2],
+"BackgroundSuppression":true,
+}
+{"AliasHierarchy":["","","3"],
+"BackgroundSuppression":false,
+}
+{"AliasHierarchy":["alpha.*|beta.*","1",""],
+"PostLabelingDelay": [3],
+}
+{"AliasHierarchy":["","2",""],
+"PostLabelingDelay": [4],
+}]}
+```
+The following cases will obtain the following parameters:
+1. Subject gamma, session 1, run 1: Fits only to the first context. PostLabelingDelay 2, BSup true.
+2. Subject gamma, session 1, run 3: Fits to the first and third context. PostLabelingDelay 2, BSup false.
+3. Subject alpha1, session 1, run '': First to the first, second, and third context. PostLabeling delay 3, BSup false.

@@ -19,12 +19,12 @@ Import batch `T1`, `T2`, `FLAIR`, `DWI`, `fMRI`, `M0`, `ASL` data from dicom 2 N
 Uses dcm2niiX for the conversion, and additionally collects important DICOM header data
 and puts them in `.json` sidecars to be used with the ExploreASL pipeline.
 This function takes any folder input, but the folder input should be
-specified in the imPar definition. Follow the steps below, for study `"MyStudy"` located on `"//MyDisk"`:
+specified in the x.modules.import.imPar definition. Follow the steps below, for study `"MyStudy"` located on `"//MyDisk"`:
 
 1. Make sure you have your DICOM data. Export them from XNAT, download them, or whatsoever
 Create a root folder with study ID name, and put the DICOMs in any structure in the sourcedata folder within the study ID root folder
 Examples:
-imPar.StudyID: MyStudy
+x.modules.import.imPar.StudyID: MyStudy
 Dataset Root folder: `//MyDisk/MyStudy`
 sourcedata folder containing DICOMs: `//MyDisk/MyStudy/sourcedata`
 2. Make sure that your DICOM data has any structure that can be retrieved
@@ -47,6 +47,7 @@ BRIEF EXPLANATION:
 Let's suppose we don't have sessions (only a single structural and functional scan per subject)
 The names of our scans comes out of XNAT as `'3D\_FLAIR\_eyesClosed'`, `'T1w\_MPRAGE'` and `'PCASL\_10\_min'`
 and the subject names are `'MyStudy001'` .. `'MyStudy002'` .. etc.
+imPar is now contained inside x.modules.import.imPar
 
 - imPar.folderHierarchy     - contains a a cell array of regular expressions, with each cell specifying a directory layer/level
 the parts within brackets `()` tell the script that this is a token (i.e. subject, session, ScanType)

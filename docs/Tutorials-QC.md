@@ -213,7 +213,7 @@ Recommendable software
 
 Free software that is recommendable, includes:
 
-- [ExploreASL GUI](https://github.com/MauricePasternak/ExploreASL_GUI) to work with ExploreASL using a graphical user interface
+- [ExploreASL GUI](https://github.com/MauricePasternak/ExploreASLJS) to work with ExploreASL using a graphical user interface
 - [MRIcron](https://www.nitrc.org/projects/mricron), to open NIfTIs outside of Matlab/ExploreASL
 - [bids-matlab](https://github.com/ExploreASL/bids-matlab) to work with files in BIDS format
 

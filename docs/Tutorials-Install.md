@@ -4,6 +4,8 @@
 
 This tutorial describes where to download, how to install, and how to run ExploreASL either directly from Matlab, or using a compiled version or a docker that do not require Matlab license. All external software, like SPM and dcm2niix, is contained in all the downloads and does not need to be downloaded or installed separately. The only exception is the [FSL software](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation) that needs to be downloaded and installed manually in case you want to process multi-PLD or time-encoded ASL data using BASIL. Please consult the [FSL installation guide](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation) for installation of Windows Subsystem for Linux (WSL or WSL2) if you want to use FSL on Windows.
 
+[ExploreASL GUI](https://github.com/MauricePasternak/ExploreASLJS) is a standalone wrapper around ExploreASL that provides a modern and user-friendly interface for importing, processing, analyzing, and visualizing ASL data with ExploreASL.
+
 ----
 ## How to run ExploreASL using Matlab
 

@@ -6,9 +6,9 @@
 
 ## Description
 
-**ExploreASL** is a pipeline and toolbox for image processing and statistics of arterial spin labeling perfusion **MR** images. It is designed as a **multi-OS**, open source, collaborative framework that facilitates cross-pollination between image processing method developers and clinical investigators.
+**ExploreASL** is a pipeline and toolbox for image processing and statistics of arterial spin labeling perfusion **MR** images. It is designed as a **multi-OS**, open-source, collaborative framework that facilitates cross-pollination between image processing method developers and clinical investigators.
 
-The software provides a complete head-to-tail approach that runs fully automatically, encompassing all necessary tasks from data import and structural segmentation, registration and normalization, up to **CBF** quantification. In addition, the software package includes and quality control (**QC**) procedures and region-of-interest (**ROI**) as well as voxel-wise analysis on the extracted data. To-date, **ExploreASL** has been used for processing ~10000 **ASL** datasets from all major **MRI** vendors and **ASL** sequences, and a variety of patient populations, representing ~30 studies. The ultimate goal of **ExploreASL** is to combine data from multiple studies to identify disease related perfusion patterns that may prove crucial in using **ASL** as a diagnostic tool and enhance our understanding of the interplay of perfusion and structural changes in neurodegenerative pathophysiology.
+The software provides a complete head-to-tail approach that runs fully automatically, encompassing all necessary tasks from data import and structural segmentation, registration, and normalization, up to **CBF** quantification. In addition, the software package includes quality control (**QC**) procedures and region-of-interest (**ROI**) as well as voxel-wise analysis of the extracted data. To date, **ExploreASL** has been used for processing ~10000 **ASL** datasets from all major **MRI** vendors and **ASL** sequences and a variety of patient populations, representing ~30 studies. The ultimate goal of **ExploreASL** is to combine data from multiple studies to identify disease-related perfusion patterns that may prove crucial in using **ASL** as a diagnostic tool and enhance our understanding of the interplay of perfusion and structural changes in neurodegenerative pathophysiology.
 
 Additionally, this (semi-)automatic pipeline allows us to minimize manual intervention, which increases the reproducibility of studies.
 
@@ -28,30 +28,13 @@ ExploreASL
 
 ![ExploreASL Workflow](./img/ExploreASL_Workflow.png "Workflow ExploreASL")
 
-## ExploreASL team
-
-* [Henk Mutsaerts](mailto:h.j.mutsaerts@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - Co-creator, [Researcher](https://www.researchgate.net/profile/Henri-Mutsaerts)
-* [Jan Petr](mailto:j.petr@hzdr.de?subject=[GitHub]%20ExploreASL) - Co-creator, [Researcher](https://www.researchgate.net/profile/Jan-Petr-2)
-* [Michael Stritt](mailto:m.stritt@mediri.com?subject=[GitHub]%20ExploreASL) - Software developer, Research Associate, [ASPIRE](http://aspire-mri.eu/)
-* [Paul Groot](mailto:p.f.c.groot@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - Software developer, IT specialist, [Researcher](https://www.researchgate.net/profile/Paul-Groot)
-* [Pieter Vandemaele](mailto:pieter.vandemaele@gmail.com?subject=[GitHub]%20ExploreASL) - Developer Matlab [BIDS app](https://github.com/bids-standard)
-* [Luigi Lorenzini](mailto:l.lorenzini@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - Developer [ExploreQC](https://www.hzdr.de/publications/Publ-31929)
-* [Maurice Pasternak](mailto:maurice.pasternak@mail.utoronto.ca?subject=[GitHub]%20ExploreASL) - Developer [ExploreASL GUI](https://github.com/MauricePasternak/ExploreASL_GUI)
-* [Mathijs Dijsselhof](mailto:m.b.dijsselhof@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - PhD student, [Cerebrovascular Age](https://sites.google.com/view/exploreasl/projects)
-* [Beatriz Padrela](mailto:b.estevespadrela@amsterdamumc.nl?subject=[GitHub]%20ExploreASL) - PhD student, [BBB-ASL](https://sites.google.com/view/exploreasl/projects)
-* [Sandeep Ganji](mailto:Sandeep.g.bio@gmail.com?subject=[GitHub]%20ExploreASL) - Developer integration Philips ISD, [Researcher](https://www.researchgate.net/profile/Sandeep-Ganji-3)
-* [Patricia Clement](mailto:Patricia.Clement@ugent.be?subject=[GitHub]%20ExploreASL) - Developer ASL-BIDS & organizer, [Researcher](https://www.researchgate.net/profile/Patricia-Clement)
-
-
 ## Acknowledgments
 This project is supported by the Dutch Heart Foundation (2020T049), the Eurostars-2 joint programme with co-funding from the European Union Horizon 2020 research and innovation programme ([ASPIRE E!113701](http://aspire-mri.eu/), including the Netherlands Enterprise Agency (RvO), and by the EU Joint Program for Neurodegenerative Disease Research, including the Netherlands Organisation for health Research and Development and Alzheimer Nederland ([DEBBIE JPND2020-568-106](https://www.neurodegenerationresearch.eu/wp-content/uploads/2021/03/Project-DEBBIE.pdf).
 
 This project has previously received support from the following EU/EFPIA Innovative Medicines Initiatives (1 and 2) Joint Undertakings: [EPAD](http://ep-ad.org/) grant no. 115736, [AMYPAD](https://amypad.eu/) grant no. 115952 and [Amsterdam Neuroscience](https://www.amsterdamresearch.org/web/neuroscience/home.htm). The authors wish to thank the [COST-AID](https://asl-network.org/) (European Cooperation in Science and Technology - Arterial spin labeling Initiative in Dementia) Action BM1103 and the Open Source Initiative for Perfusion Imaging [(OSIPI)](https://www.osipi.org/) and the [ISMRM Perfusion Study groups](https://www.ismrm.org/study-groups/perfusion-mr/) for facilitating meetings for researchers to discuss the implementation of ExploreASL. The authors acknowledge Guillaume Flandin, Robert Dahnke, and Paul Schmidt for reviewing the structural module for its implementation of [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/), [CAT12](http://www.neuro.uni-jena.de/cat/), and [LST](https://www.applied-statistics.de/lst.html), respectively; Krzysztof Gorgolewksi for his advice on the [BIDS](https://bids.neuroimaging.io/) implementation; Jens Maus for help with MEX compilation; Cyril Pernet for providing the [SPM Univariate Plus](https://osf.io/wn3h8/) QC scripts.
 
 ## How to cite
-The bare minimum of references is the [ExploreASL manuscript](https://www.sciencedirect.com/science/article/pii/S1053811920305176) and the used ExploreASL release, which you can find on Zenodo (e.g. [version 1.8.0](https://zenodo.org/record/5504194)).
-
-The following provides an example as how to correctly cite ExploreASL and its third-party tools. The versions of the included third-party tools are described in [CHANGES.md](https://github.com/ExploreASL/ExploreASL/blob/master/CHANGES.md) for each ExploreASL release.
+The following provides an example as how to correctly cite ExploreASL and its third-party tools. The versions of the included third-party tools are described in [CHANGES.md](https://github.com/ExploreASL/ExploreASL/blob/main/CHANGES.md) for each ExploreASL release. The bare minimum of references (`refs`) are `ref1` and `ref2`.
 
 >The data were analysed using ExploreASL `ref1` version x.x.x `ref2`, including SPM12 version xxxx `ref3`, CAT12 version xxxx`ref4`, and LST version x.x.x`ref5`. This Matlab-based software was used with Matlab (MathWorks, MA, USA) version x.x (yearx)`ref6`.
 
@@ -60,7 +43,7 @@ The following provides an example as how to correctly cite ExploreASL and its th
 The release numbers of ExploreASL (e.g. `1.9.0`) follow [semantic versioning](https://semver.org/).
 
 1. The [ExploreASL paper](https://www.sciencedirect.com/science/article/pii/S1053811920305176), describing the full pipeline and decisions for processing steps.
-2. The Zenodo DOI for the actual ExploreASL release used to analyse the data (e.g. the [up-to-date release](https://doi.org/10.5281/zenodo.3905262)).
+2. The Zenodo DOI for the actual ExploreASL release used to analyse the data, e.g. the [latest release](https://doi.org/10.5281/zenodo.3905262)).
 3. The SPM12 references [Ashburner, 2012](https://doi.org/10.1016/j.neuroimage.2011.10.025) & [Flandin and Friston, 2008](https://doi.org/10.4249/scholarpedia.6232). Note that the SPM version (e.g. `7219`) is adapted and extended for use with ExploreASL.
 4. The CAT12 reference [Gaser, 2009](https://doi.org/10.1016/S1053-8119(09)71151-6). Note that the CAT12 version (e.g. `1364`) is adapted for use with ExploreASL.
 5. The LST references [Schmidt, 2017](https://www.statistical-modelling.de/LST_documentation.pdf) & [de Sitter, 2017](https://doi.org/10.1016/j.neuroimage.2017.09.011). Note that the LST version (e.g. `2.0.15`) is adapted for use with ExploreASL.
