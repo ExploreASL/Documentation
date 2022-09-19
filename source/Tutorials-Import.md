@@ -275,25 +275,28 @@ Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. Explor
 The `studyPar.json` can be modified so that you can import different sequences with different parameters in a single run. Essentially, studyPar.json structure contains a list of contexts according to the standard definition, each context has a keyword that defines to what kind of data it should be applied. When a dataset fits to several contexts, the results of each context are taken into account and overwritten with the first context having the lowest priority.
 
 The following applies
-1. The list of context is in a field called `ImportContexts`.
+1. The list of context is in a field called `StudyPars`.
 2. The list is processed top to bottom and the matching fields are always overwritten.
-3. An extra added keyword `AliasHierarchy` that defines a list of strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
-4. Missing `AliasHierarchy` or missing any its subfield means that the condition is fulfilled. The conditions are written in regexp format.
+3. An extra added keywords `SubjectRegexp`, `VisitRegexp`, or `SessionRegexp` that define strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
+4. Missing any of tohse strings or an empty string means that the condition is fulfilled. The conditions are written in regexp format.
 
 ```json
-{"ImportContexts":[
+{"StudyPars":[
 {"DatasetType":"raw",
 "ArterialSpinLabelingType":"PCASL",
 "PostLabelingDelay": [2],
 "BackgroundSuppression":true,
 }
-{"AliasHierarchy":["","","3"],
+{"SubjectRegexp":"",
+"SessionRegexp":"3",
 "BackgroundSuppression":false,
 }
-{"AliasHierarchy":["alpha.*|beta.*","1",""],
+{"SubjectRegexp":"alpha.*|beta.*",
+"VisitRegexp":"1",
 "PostLabelingDelay": [3],
 }
-{"AliasHierarchy":["","2",""],
+{"VisitRegexp":"2",
+"SessionRegexp":"",
 "PostLabelingDelay": [4],
 }]}
 ```
