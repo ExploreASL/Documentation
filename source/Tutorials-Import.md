@@ -277,7 +277,7 @@ The `studyPar.json` can be modified so that you can import different sequences w
 The following applies
 1. The list of context is in a field called `StudyPars`.
 2. The list is processed top to bottom and the matching fields are always overwritten.
-3. An extra added keywords `SubjectRegexp`, `VisitRegexp`, or `SessionRegexp` that define strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
+3. An extra added keywords `SubjectRegExp`, `VisitRegExp`, or `SessionRegExp` that define strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
 4. Missing any of tohse strings or an empty string means that the condition is fulfilled. The conditions are written in regexp format.
 
 ```json
@@ -287,16 +287,16 @@ The following applies
 "PostLabelingDelay": [2],
 "BackgroundSuppression":true,
 }
-{"SubjectRegexp":"",
-"SessionRegexp":"3",
+{"SubjectRegExp":"",
+"SessionRegExp":"3",
 "BackgroundSuppression":false,
 }
-{"SubjectRegexp":"alpha.*|beta.*",
-"VisitRegexp":"1",
+{"SubjectRegExp":"alpha.*|beta.*",
+"VisitRegExp":"1",
 "PostLabelingDelay": [3],
 }
-{"VisitRegexp":"2",
-"SessionRegexp":"",
+{"VisitRegExp":"2",
+"SessionRegExp":"",
 "PostLabelingDelay": [4],
 }]}
 ```
