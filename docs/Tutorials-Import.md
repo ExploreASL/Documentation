@@ -73,7 +73,8 @@ The `sourcestructure.json` file contains the following code (different for each 
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
        "tokenVisitAliases": ["", ""],
        "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
-       "bMatchDirectories": true
+       "bMatchDirectories": true,
+       "dcm2nii_version":"20220720",
 }
 ```
 
@@ -206,6 +207,9 @@ Note: The names ASL4D, M0, T1, FLAIR and WMH_SEGM are fixed names in the pipelin
 
 Set to `true` if it should look for directories and DICOM files inside them. Set to `false` when directly separate files are identified by the folder-hierarchy string.
 
+#### 7. dcm2nii_version
+
+This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default `20220720`. This is exceptionally needed when the new dcm2nii version does not work well with the data. A reasonable alternative is `20190902`. Other possible, but discouraged versions are `20181125`, `20130606`, or `20101105`.
 
 ----
 ### Summary of the 2D_Sleep example
