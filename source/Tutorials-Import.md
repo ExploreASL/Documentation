@@ -209,7 +209,7 @@ Set to `true` if it should look for directories and DICOM files inside them. Set
 
 #### 7. dcm2nii_version
 
-This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default `20220720`. This is exceptionally needed when the new dcm2nii version does not work well with the data. A reasonable alternative is `20190902`. Other possible, but discouraged versions are `20181125`, `20130606`, or `20101105`.
+This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default `20220720`. This is exceptionally needed when the new dcm2nii version does not work well with the data. An alternative is `20190902`. 
 
 ----
 ### Summary of the 2D_Sleep example
