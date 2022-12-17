@@ -452,7 +452,7 @@ Obtains single number from string.
 **Format:**
 
 ```matlab
-scaleFactor = xASL_adm_GetPhilipsScaling(pathParmsMat,pathNifti)
+scaleFactor = xASL_adm_GetPhilipsScaling(parms, header)
 ```
 
 **Description:**
@@ -461,6 +461,13 @@ This script provides the correct scaling factors for a NIfTI file. It checks the
 that normally has the same scaling as RescaleSlope in DICOM, it checks if dcm2nii (by the info in JSON)
 has already converted the scale slopes to floating point. And if not, the derive the correct
 scaling factor to be applied.
+The function works with Philips-specific scale-slopes:
+RWVSlope = Real world value slope (0040,9225)
+MRScaleSlope (2005,100e), (2005,110e), (2005,120e)
+RescaleSlopeOriginal (2005,0x140a), (2005,110a)
+These are different from the standard slopes in DICOM that are used as display slopes in Philips:
+RescaleSlope (0028,1053)
+With new version of dcm2niix-20220720 and ExploreASL-1.10.0, dcm2niix does RWVSlope scalings correctly and we do not have to fix that.
 
 
 ----
@@ -1315,6 +1322,9 @@ and 3 other specific Siemens scenarios are implemented:
 - iii) Multiple files with each containing a single volume are sorted to tags ASL4D\_x\_x\_Y and controls ASL4D\_Y and merged in the order
 of the last number in the filename (Y) alternating the tags and controls
 
+dcm2nii outputs GEs deltaM and M0scan separately, even though they are scanned in a single sequence and should belong together
+Siemens sometimes stores all controls and labels separately, which need to be reordered according their acquisition order
+
 This function performs the following steps in subfunctions:
 
 1. xASL\_bids\_MergeNifti\_M0Files Generic merging of M0 files
@@ -1325,76 +1335,6 @@ This function performs the following steps in subfunctions:
 6. xASL\_bids\_MergeNifti\_Merge Merge NiftiPaths & save to pathMerged
 7. xASL\_bids\_MergeNifti\_Delete Delete NiftiPaths and associated JSONs
 8. xASL\_bids\_MergeNifti\_RenameParms Find \*\_parms.m files in directory and shorten to provided name
-
-
-----
-### xASL\_bids\_MergeNifti\_Delete.m
-
-**Format:**
-
-```matlab
-xASL_bids_MergeNifti_Delete(NiftiPaths);
-```
-
-**Description:**
-
-Delete NiftiPaths and associated JSONs.
-
-
-----
-### xASL\_bids\_MergeNifti\_Merge.m
-
-**Format:**
-
-```matlab
-pathOut = xASL_bids_MergeNifti_Merge(NiftiPaths,indexSortedFile,nameMerged,bAlternatingControlLabel)
-```
-
-**Description:**
-
-Merge NiftiPaths & save to pathOut.
-
-
-----
-### xASL\_bids\_MergeNifti\_RenameParms.m
-
-**Format:**
-
-```matlab
-xASL_bids_MergeNifti_RenameParms(Fpath,Fname);
-```
-
-**Description:**
-
-Find \*\_parms.m files in directory and shorten to provided name.
-
-
-----
-### xASL\_bids\_MergeNifti\_SeriesNumber.m
-
-**Format:**
-
-```matlab
-pathOut = xASL_bids_MergeNifti_SeriesNumber(NiftiPaths, niiTable)
-```
-
-**Description:**
-
-Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible according to SeriesNumber for niiTable
-
-
-----
-### xASL\_bids\_MergeNifti\_SiemensASLFiles.m
-
-**Format:**
-
-```matlab
-pathOut = xASL_bids_MergeNifti_SiemensASLFiles(NiftiPaths)
-```
-
-**Description:**
-
-Take a list of NIfTI files and concatenates 3D/4D files into a 4D sequence if possible (Siemens).
 
 
 ----
@@ -1647,7 +1587,7 @@ This function performs the following steps:
 **Format:**
 
 ```matlab
-[x] = xASL_adm_RunFSL(FSLCommand, x[, OutputZipping])
+[x] = xASL_adm_RunFSL(FSLCommand, x[, OutputZipping, NicenessValue, bVerbose])
 ```
 
 **Description:**
@@ -2792,6 +2732,21 @@ Check directories and permissions.
 
 
 ----
+### xASL\_imp\_CheckIfFME.m
+
+**Format:**
+
+```matlab
+bTimeEncodedFME = xASL_imp_CheckIfFME(jsonIn[, jsonOut, bTimeEncoded])
+```
+
+**Description:**
+
+Check if the sequence, based on its JSON structure, is a FME (Fraunhofer Mevis) time encoded sequence.
+
+
+
+----
 ### xASL\_imp\_CheckImportSettings.m
 
 **Format:**
@@ -2900,7 +2855,7 @@ Run DCM2NII for one individual scan.
 **Format:**
 
 ```matlab
-xASL_imp_DCM2NII_ReorderTimeEncoded(nii_files, bTimeEncoded, resultJSON)
+xASL_imp_DCM2NII_ReorderTimeEncoded(nii_files, bTimeEncoded, timeEncodedMatrixSize, vectorPLD, resultJSON)
 ```
 
 **Description:**
@@ -2915,7 +2870,7 @@ Reorder TEs and PLDs accordingly for time encoded sequences.
 **Format:**
 
 ```matlab
-xASL_imp_DCM2NII_SanityChecks(x)
+xASL_imp_DCM2NII_SanityChecks(x, thisSubject, thisVisit)
 ```
 
 **Description:**
@@ -3004,8 +2959,8 @@ x = xASL_imp_DetermineSubjectStructure(x)
 
 Determine subject/session/run structure from sourcedata or temp data.
 
-The main goal is to create a sub-structure of x called x.overview.
-x.overview does include a separate field for each subject.
+The main goal is to create a sub-structure of x called x.importOverview.
+x.importOverview does include a separate field for each subject.
 Each subject has visit fields and visits have run fields.
 All of this is used to track the number of subjects, number of visits, number of runs,
 number of scans, etc. reliably. Within later parts of the pipeline it is also possible
@@ -3112,7 +3067,7 @@ Define M0 Type
 **Format:**
 
 ```matlab
-x = xASL_imp_PreallocateGlobalCounts(x)
+x = xASL_imp_PreallocateGlobalCounts(nSubjects, subject, visit)
 ```
 
 **Description:**
@@ -3142,14 +3097,14 @@ Read source data.
 **Format:**
 
 ```matlab
-studyParSpecific = xASL_imp_StudyParPriority(studyParFull[, subjectName, sessionName, runName])
+studyParSpecificSubjVisitSess = xASL_imp_StudyParPriority(studyParAll[, subjectName, sessionName, runName, bVerbose])
 ```
 
 **Description:**
 
-Takes studyPar with possibly several contexts and resolves the priority and saves the individual studyPar.
-First context has the lowest priority, following ones are more important and review previous variables.
-The alias hierarchy within each context contains a list of regexp to be matched against subject/session/run.
+Takes studyPar with possibly several studyPar instances and resolves the priority and saves the individual studyPar.
+First studyPar instance has the lowest priority, following ones are more important and review previous variables.
+The alias hierarchy within each studyPar instance contains a list of regexp to be matched against subject/session/run.
 If subject doesn't exist or regexp doesn't exist or aliasHierarchy doesn't exist, it allows it.
 
 
@@ -3924,14 +3879,13 @@ Convert DICOM NIfTI/BIDS format using the dcm2nii command line utility.
 1. Initial settings
 2. Parse parameters
 3. Locate dcm2nii executable
-4. Set default arguments dcm2nii
-5. Check if we are reading a DICOM folder
-6. Set dcm2niiX initialization loading
-7. Check for existing targets
-8. Create temporary subfolder for converting
-9. Run dcm2nii and move files to final destination using specified series name
-10. Cleanup temp
-11. Optionally return the used input file
+4. Check if we are reading a DICOM folder
+5. Set dcm2niiX initialization loading
+6. Check for existing targets
+7. Create temporary subfolder for converting
+8. Run dcm2nii and move files to final destination using specified series name
+9. Cleanup temp
+10. Optionally return the used input file
 
 
 
@@ -4517,19 +4471,21 @@ T1time and the signal attenuation is calculated for several slices acquired at t
 **Format:**
 
 ```matlab
-[CBF_nocalib, ATT_map, resultFSL] = xASL_quant_Basil(PWI, x)
+[CBF_nocalib, ATT_map, Tex_map, resultFSL] = xASL_quant_Basil(PWI, x)
 ```
 
 **Description:**
 
-This script performs quantification of the PWI using the FSL Basil pipeline. Final calibration to
+This script performs quantification of the PWI using the FSL Basil/Fabber pipeline. Final calibration to
 physiological units is performed by dividing the quantified PWI by the M0 image/value.
+Fabber is used instead of Basil for multiTE data.
+
 This function performs the following steps:
 
 1. Define paths
-2. Delete previous BASIL output
-3. Write the PWI as Nifti file for Basil to read as input
-4. Create option\_file that contains options which are passed to Fabber
+2. Delete previous BASIL/Fabber output
+3. Write the PWI as Nifti file for Basil/Fabber to read as input
+4. Create option\_file that contains options which are passed to the FSL command
 5. Run Basil and retrieve CBF output
 6. Scaling to physiological units
 7. Householding
@@ -4673,7 +4629,7 @@ xASL\_wrp\_ProcessM0.m). This function runs the following steps:
 **Format:**
 
 ```matlab
-[ScaleImage[, CBF, ATT]] = xASL_quant_MultiPLD(PWI, M0_im, imSliceNumber, x[, bUseBasilQuantification])
+[ScaleImage[, CBF, ATT, Tex]] = xASL_quant_MultiPLD(PWI, M0_im, imSliceNumber, x[, bUseBasilQuantification])
 ```
 
 **Description:**

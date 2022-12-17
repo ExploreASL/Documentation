@@ -85,7 +85,7 @@ Run the NII2BIDS conversion.
 **Format:**
 
 ```matlab
-x = xASL_wrp_NII2BIDS_Subject(x, bidsPar, studyParFull, nameSubjectSession)
+x = xASL_wrp_NII2BIDS_Subject(x, bidsPar, studyParAll, nameSubjectSession)
 ```
 
 **Description:**

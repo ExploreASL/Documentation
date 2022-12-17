@@ -321,14 +321,13 @@ is the format that BIDS prefers - and outputs it to a cell array.
 **Format:**
 
 ```matlab
-xASL_csvWrite(InputCell, PathCSV, bOverwrite)
+xASL_csvWrite(InputCell, PathCSV[, bOverwrite])
 ```
 
 **Description:**
 
-Rudimentary function, please use xASL\_tsvWrite instead.
+Legacy function, please use xASL\_tsvWrite instead, as this function might be discontinued in the future.
 For usage, type help xASL\_tsvWrite.
-This function will still work though.
 
 
 ----
