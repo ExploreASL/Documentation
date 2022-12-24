@@ -1,6 +1,10 @@
 
 # Tutorials (Processing)
 
+The main task of the processing module is to take BIDS input data located in `rawdata` folder, convert them to ExploreASL internal (Legacy) structure in `derivatives` subfolder and run processing with extra parameters set in the `dataPar.json` file.
+
+## Executing the processing
+
 To run processing of ASL-BIDS data located in `drive/.../datasetRoot/rawdata`, you simply execute this command:
 
 ```matlab
@@ -60,20 +64,6 @@ Correct scaling between the M0 and ASL scans is still an issue for certain ASL i
 }}}}
 ```
 
-### Supply missing ASL parameters and set quantification parameters
-In the rare case that a sequence parameter would be missing in the ASL-BIDS format of data, and that it wouldn't be added in the Import or later, this parameter can be supplied as part of the `dataPar.json` (although adding it directly to subject's JSON-sidecars is better). Similarly, we can alter the CBF quantification parameters and constants either for the whole study by adding it in `dataPar.json` (or better adding the same parameters listed here directly to the subject's JSON-sidecar). Note that in dataPar.json, unlike in ASL-BIDS, most values are given in [ms] instead of [s]:
-
-```json
-{"x":{
-    "Q":{
-        "BackgroundSuppressionNumberPulses": 2,
-        "BackgroundSuppressionPulseTime": [100, 500, 1500],
-        "Initial_PLD": 1800,
-        "T2art": 50,
-        "TissueT1": 1240
-}}}
-```
-
 ### Turn on Partial volume correction and other ASL-processing parameters
 While partial-volume correction is outputted in the Population module as done per region, you can also activate standard Partial-volume correction in the ASL-native space and produce GM-CBF maps in native space (which are later converted to standard space). Additionally, you can switch ON/OFF certain ASL-processing steps:
 
@@ -98,5 +88,20 @@ The general settings allows to run ExploreASL in a faster mode at lower quality,
         "SkipIfNoM0": 1,
         "SkipIfNoFlair": 1,
         "stopAfterErrors": 5
+}}}
+```
+
+### Supply missing ASL parameters and set quantification parameters
+Sequence parameters should be specified in the Import part that converts DICOMs to BIDS -- see [Import Tutorial](./../Tutorials-Import).
+In the rare case where a sequence parameter would be missing in the ASL-BIDS format of data, and that it wouldn't be added in the Import or later, this parameter can be supplied as part of the `dataPar.json` (although adding it directly to subject's JSON-sidecars is better). Similarly, we can alter the CBF quantification parameters and constants either for the whole study by adding it in `dataPar.json` (or better adding the same parameters listed here directly to the subject's JSON-sidecar). Note that in dataPar.json, unlike in ASL-BIDS, most values are given in [ms] instead of [s]. Also, the parameters' name can differ slightly from the ASL-BIDS definition - more info is in [Processing Parameters](./../ProcessingParameters).
+
+```json
+{"x":{
+    "Q":{
+        "BackgroundSuppressionNumberPulses": 2,
+        "BackgroundSuppressionPulseTime": [100, 500, 1500],
+        "Initial_PLD": 1800,
+        "T2art": 50,
+        "TissueT1": 1240
 }}}
 ```
