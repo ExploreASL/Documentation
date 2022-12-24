@@ -42,14 +42,29 @@ ExploreASL uses the structural T1-weighted scans to obtain information about GM 
 {"x":{"modules":{"asl":{"bUseMNIasDummyStructural":1}}}}
 ```
 
-### Combine previous settings
-You can freely combine all the given examples unless they are obvious conflicts between parameters. The three examples above can be combined into a single `dataPar.json` file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:
+### Calculating output values in native space
+By default, the regional values in the population module are calculated in the MNI space. Additionally, it is also possible to calculate the values in the native space of each subject. This is then done for all specified atlases that are converted for this purpose to the native space of each subject. If activated, both MNI and native space results are calculated.
+```json
+{"x":{"modules":{"population":{"bNativeSpaceAnalysis":true}}}}
+```
+
+### Evaluate Population module on different parameters
+By default **ExploreASL** population module evaluates the regional values of CBF. Additionally, it is possible the automatically evaluate values of other parameters if appropriate parameter maps are/can be calculated such as the CBF (qCBF), arterial transit time (ATT), M0, Tex (Time of Exchange across BBB in BBB-ASL. CBF is done by default, but if specifying an own list of parameters, do not forget to add CBF 
+
 ```json
 {"x":{
-    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"]},
+    "S": {"DataTypes": ["qCBF", "ATT", "M0", "Tex"]}
+}}
+```
+
+### Combine previous settings
+You can freely combine all the given examples unless they are obvious conflicts between parameters. The five examples above can be combined into a single `dataPar.json` file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:
+```json
+{"x":{
+    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], "DataTypes": ["qCBF", "ATT", "M0", "Tex"]},
     "Q":{"bUseBasilQuantification":1},
     "external":{"bAutomaticallyDetectFSL":true},
-    "modules":{"asl":{"bUseMNIasDummyStructural":1}}
+    "modules":{"asl":{"bUseMNIasDummyStructural":1},"population":{"bNativeSpaceAnalysis":true}}
 }}
 ```
 
