@@ -1,0 +1,1179 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/Tutorials-Import/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Tutorials (Import) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-run-the-import-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (Import)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        Tutorials (Install)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        Tutorials (Execution)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials (Import)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tutorials (Import)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-import-module" class="md-nav__link">
+    How to run the import module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-dataset-for-import-with-exploreasl" class="md-nav__link">
+    Example dataset for Import with ExploreASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Example dataset for Import with ExploreASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcestructurejson" class="md-nav__link">
+    sourcestructure.json
+  </a>
+  
+    <nav class="md-nav" aria-label="sourcestructure.json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-folderhierarchy" class="md-nav__link">
+    1. folderHierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tokenordering" class="md-nav__link">
+    2. tokenOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tokenvisitaliases" class="md-nav__link">
+    3. tokenVisitAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tokensessionaliases" class="md-nav__link">
+    4. tokenSessionAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tokenscanaliases" class="md-nav__link">
+    5. tokenScanAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-bmatchdirectories" class="md-nav__link">
+    6. bMatchDirectories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dcm2nii_version" class="md-nav__link">
+    7. dcm2nii_version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-the-2d_sleep-example" class="md-nav__link">
+    Summary of the 2D_Sleep example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#studyparjson" class="md-nav__link">
+    studyPar.json
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#studyparjson-for-multi-sequence-study" class="md-nav__link">
+    studyPar.json for multi-sequence study
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Processing/" class="md-nav__link">
+        Tutorials (Processing)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Developer/" class="md-nav__link">
+        Tutorials (Developer)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProcessingParameters/" class="md-nav__link">
+        Processing Parameters (dataPar.json)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-import-module" class="md-nav__link">
+    How to run the import module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-dataset-for-import-with-exploreasl" class="md-nav__link">
+    Example dataset for Import with ExploreASL
+  </a>
+  
+    <nav class="md-nav" aria-label="Example dataset for Import with ExploreASL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcestructurejson" class="md-nav__link">
+    sourcestructure.json
+  </a>
+  
+    <nav class="md-nav" aria-label="sourcestructure.json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-folderhierarchy" class="md-nav__link">
+    1. folderHierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tokenordering" class="md-nav__link">
+    2. tokenOrdering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tokenvisitaliases" class="md-nav__link">
+    3. tokenVisitAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tokensessionaliases" class="md-nav__link">
+    4. tokenSessionAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-tokenscanaliases" class="md-nav__link">
+    5. tokenScanAliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-bmatchdirectories" class="md-nav__link">
+    6. bMatchDirectories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dcm2nii_version" class="md-nav__link">
+    7. dcm2nii_version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-the-2d_sleep-example" class="md-nav__link">
+    Summary of the 2D_Sleep example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#studyparjson" class="md-nav__link">
+    studyPar.json
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#studyparjson-for-multi-sequence-study" class="md-nav__link">
+    studyPar.json for multi-sequence study
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Tutorials-Import.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Tutorials (Import)</h1>
+
+<hr />
+<p>Main function of the import module is to convert input DICOM data to the BIDS format in <code>rawdata</code> subfolder. Sequence parameters missing in the DICOMs are supplied in the <code>studyPar.json</code> file.</p>
+<h2 id="how-to-run-the-import-module">How to run the import module</h2>
+<p>A separate import module has been created to:</p>
+<ol>
+<li>to perform a DICOM to NIfTI conversion and store ancillary DICOM header information in <code>*.json</code> files,</li>
+<li>to further processed the NIfTI files and create full ASL-BIDS data from it,</li>
+<li>to deface the structural images in the ASL-BIDS data,</li>
+<li>to restructure ASL-BIDS data to an internal structure that ExploreASL is familiar with and to further process these data.</li>
+</ol>
+<p>This import module uses regular expressions and the directory structure can be can be flexibly defined as long as it is fixed per study.
+The search function then searches across these directories and copies all files to the ExploreASL directory structure, and performs the conversion to NIFTI if necessary.</p>
+<p>For the import of the data, the best is to execute...</p>
+<pre><code class="language-matlab">ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
+</code></pre>
+<p>...where 1 here is the whole Import module, which is divided in 3 parts <code>[1 1 1]</code> - more details are provided in the <a href="./../Tutorials-Execution/">Tutorial on ExploreASL Execution</a>.</p>
+<h2 id="example-dataset-for-import-with-exploreasl">Example dataset for Import with ExploreASL</h2>
+<p>The 2D_Sleep study data example has an original directory structure as follows: <code>ROOT/sourcedata/subject/session/scan_ID</code>, and the directories containing the DICOMs. See image below:</p>
+<pre><code>2D_Sleep/
+  sourcedata/
+    101/
+      Session1/
+        M0/
+        PSEUDO_10_min/
+        T1_weighted/
+      Session2/
+        ...
+    102/
+      ...
+</code></pre>
+<p>Explore ASL first write the temporary NIfTI files to <code>ROOT/derivatives/ExploreASL/temp/subject/</code>.</p>
+<p>In the second step writes the full ASL-BIDS data into <code>ROOT/rawdata/</code>.</p>
+<p>And at the end, Explore ASL creates the following directory structure <code>ROOT/derivatives/ExploreASL/subject/</code> and puts structural images directly and ASL images to directories <code>ASL_1</code>, <code>ASL_2</code> depending on the session - see below:</p>
+<pre><code>2D_Sleep/
+  derivatives/
+    ExploreASL/
+      101/
+        ASL_1/
+        ASL_2/
+      102/
+        ...
+</code></pre>
+<p>Ideally, before running the import, the data contains three configuration files
+<code>ROOT/sourcestructure.json</code>
+<code>ROOT/studyPar.json</code>
+<code>ROOT/dataPar.json</code></p>
+<p>The content of the <code>sourcestructure.json</code> and <code>studypar.json</code> files is explained below. The content of <code>dataPar.json</code> is explained in the <a href="./../Tutorials-Processing/">Processing Tutorial</a>.</p>
+<hr />
+<h3 id="sourcestructurejson">sourcestructure.json</h3>
+<p>The <code>sourcestructure.json</code> file contains the following code (different for each study):</p>
+<pre><code class="language-json">{  
+       &quot;folderHierarchy&quot;: [&quot;^(\\d{3}).*&quot;, &quot;^Session([12])$&quot;,&quot;^(PSEUDO_10_min|T1-weighted|M0)$&quot;],
+       &quot;tokenOrdering&quot;: [ 1 0 2 3],
+       &quot;tokenSessionAliases&quot;: [&quot;^1$&quot;, &quot;ASL_1&quot;, &quot;^2$&quot;, &quot;ASL_2&quot;],
+       &quot;tokenVisitAliases&quot;: [&quot;&quot;, &quot;&quot;],
+       &quot;tokenScanAliases&quot;: [ &quot;^PSEUDO_10_min$&quot;, &quot;ASL4D&quot;, &quot;^M0$&quot;, &quot;M0&quot;, &quot;^T1-weighted$&quot;, &quot;T1w&quot;],
+       &quot;bMatchDirectories&quot;: true,
+       &quot;dcm2nii_version&quot;:&quot;20220720&quot;,
+}
+</code></pre>
+<p>Note that we are using an outdated notation here - Visit/Session/Scan. In BIDS, this corresponds to Sessions/Runs/Scans - this will be updated in the future.</p>
+<h4 id="1-folderhierarchy">1. folderHierarchy</h4>
+<pre><code>&quot;folderHierarchy&quot;: [&quot;^(\\d{3}).*&quot;, &quot;^Session([12])$&quot;,&quot;^(PSEUDO_10_min|T1-weighted|M0)$&quot;]
+</code></pre>
+<p>This specifies the names of all directories at all levels. In this case, we have specified regular expressions for directories at three different levels:</p>
+<ul>
+<li><code>^(\\d{3}).*</code></li>
+<li><code>^Session([12])$</code></li>
+<li><code>^(PSEUDO_10_min|T1-weighted|M0)$</code></li>
+</ul>
+<p>This means that we will identify three directory levels, each with a certain name, following regular expressions (find more in the <a href="https://de.mathworks.com/help/matlab/ref/regexp.html">matlab definition</a> of regular expressions). Note that <code>\\</code> is used in the JSON to be correctly read and parsed as a single <code>\</code> for the regular expression.</p>
+<p>At each directory level, it first decides if the directory matches the regular expression, then it also decides if it extract tokens from the string or not - typically tokens are in brackets. More below.</p>
+<ul>
+<li>Extracting a token: <code>^(\\d{3}).*</code></li>
+<li>Not extracting a token: <code>^\\d{3}.*</code></li>
+</ul>
+<p>Tokens information extracted from the directory name at each directory level. 
+The tokens are numbered by the directory level and can be later used to label patients, sequences etc. See <strong>tokenOrdering</strong> below.</p>
+<p>We use normal characters and metacharacters.
+Expressions from characters and metacharacters are then further coupled with quantifiers, grouping operators, and conditional operators.
+Some basic regular expressions are described here with examples - for a full description see the link above:</p>
+<p><strong>Metacharacters:</strong></p>
+<ul>
+<li><code>.</code> -- any character -- <code>'..ain'</code> == <code>'drain'</code> == <code>'train'</code> != <code>'pain'</code> != <code>'rain'</code></li>
+<li><code>[c1c2]</code> -- any character within the brackets -- <code>'[rp.]ain'</code> == <code>'rain'</code> == <code>'pain'</code> == <code>'.ain'</code> != <code>'wain'</code></li>
+<li><code>\d</code> -- any numeric digit, equivalent to <code>[0-9]</code></li>
+</ul>
+<p><strong>Quantifiers (applied on an expression):</strong></p>
+<ul>
+<li><code>expr*</code> -- repeat 0+ times -- <code>'.*'</code> can give anything</li>
+<li><code>expr?</code> -- repeat 0 or 1 times - <code>'.?'</code> == <code>''</code> == <code>'p'</code> != <code>'pp'</code></li>
+<li><code>expr+</code> -- repeat 1+ times</li>
+<li><code>expr{n}</code> -- repeat n times consecutively</li>
+</ul>
+<p><strong>Grouping operators (allows to capture tokens):</strong></p>
+<ul>
+<li><code>expr</code> -- group elements and capture tokens as a part of the text -- <code>'(.)ain'</code> matches * * <code>'rain'</code> or <code>'pain'</code> and returns <code>'r'</code> or <code>'p'</code> as a token</li>
+<li><code>(?:expr)</code> -- group elements but do not capture tokens</li>
+</ul>
+<p><strong>Anchors:</strong></p>
+<ul>
+<li><code>^expr</code> -- beginning of a text -- <code>'^M.*'</code> is any string starting with M</li>
+<li><code>expr$</code> -- end of the text -- <code>'.*M$'</code> is any string ending with M</li>
+</ul>
+<p><strong>Conditional operators:</strong></p>
+<ul>
+<li><code>expr1|expr2</code> -- matches expression 1 or 2</li>
+</ul>
+<p><strong>Some examples of strings:</strong></p>
+<ul>
+<li>
+<p><code>^(\d{3}).*</code> -- a string starting with 3 digits and any ending, the digits are extracted as tokens. <code>001a, 212abasd, 231absd</code>.</p>
+</li>
+<li>
+<p><code>^(P\d{2})$</code> -- a string starting with P and ending with two digits, the whole string is taken as a token. <code>P12, P32</code>.</p>
+</li>
+<li>
+<p><code>.*(T1_MPR|pcasl|M0).*\.PAR$</code> -- a string with any beginning, containing T1_MPR or pcasl or M0 (this is taken as a token), and ending by <code>.PAR</code>. <code>test_T1_MPR_testtest.PAR, another_pcasl.PAR, M0_test_.PAR</code>.</p>
+</li>
+<li>
+<p><code>.*(T1|ASL).*(PCASL|PASL)</code> -- extracts string containing T1 or ASL and PCASL and PASL. Two tokens are extracted. In the above example, the first level is subject, which has three digits (e.g. <code>101</code> or <code>102</code>), specified by <code>\d{3}</code> as regular expression. This is between brackets <code>( )</code> to define that this is the first token.</p>
+</li>
+</ul>
+<p>Again, note that the actual strings are given here and all <code>\</code> have to be escaped when written to a json-file as <code>\\</code>.</p>
+<h4 id="2-tokenordering">2. tokenOrdering</h4>
+<pre><code>&quot;tokenOrdering&quot;: [ 1 0 2 3],
+</code></pre>
+<p>Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.</p>
+<p>This is specified by "tokenOrdering": <code>[patientName, SessionName, ScanName]</code></p>
+<ul>
+<li><code>"tokenOrdering": [1 0 2 3];</code> = first token is used for patient name, second for session name, third for scan name</li>
+<li><code>"tokenOrdering": [1 0 0 2];</code> = first token is used for patient name, second for scan name, session name is not assigned</li>
+<li><code>"tokenOrdering": [1 0 3 2];</code> = first token is used for patient name, third for session name, second for scan name</li>
+<li><code>"tokenOrdering": [2 0 1 3];</code> = second token is used for patient name, first for session name, third for scan name</li>
+<li><code>"tokenOrdering": [2 1 0 3];</code> = second token is used for patient name, first for visit name, third for scan name</li>
+</ul>
+<h4 id="3-tokenvisitaliases">3. tokenVisitAliases</h4>
+<p>If multiple visits are present - use the following notation to mark them:</p>
+<pre><code>&quot;tokenVisitAliases&quot;:[&quot;session_1&quot;,&quot;1&quot;,&quot;session_2&quot;,&quot;2&quot;,&quot;session_3&quot;,&quot;3&quot;,&quot;session_4&quot;,&quot;4&quot;,&quot;session_5&quot;,&quot;5&quot;,&quot;session_6&quot;,&quot;6&quot;,&quot;session_7&quot;,&quot;7&quot;],`
+</code></pre>
+<h4 id="4-tokensessionaliases">4. tokenSessionAliases</h4>
+<pre><code>&quot;tokenSessionAliases&quot;: [&quot;^1$&quot;, &quot;ASL_1&quot;, &quot;^2$&quot;, &quot;ASL_2&quot;],
+</code></pre>
+<p>The second token defines the name of the session. The token was extracted using a regular expression <code>*^Session([12])$*</code>. This can represent a string <code>Session1</code> or <code>Session2</code>. And either <code>1</code> or <code>2</code> is taken as the token.</p>
+<p>In the session-aliases, each row represents one session name. The first column is the regular expression for the token, the second column gives the final name.</p>
+<ul>
+<li>
+<p><code>^1$ ASL_1</code></p>
+</li>
+<li>
+<p><code>^2$ ASL_2</code></p>
+</li>
+</ul>
+<p>Here, the token name <code>^1$</code> - that is a string equaling to <code>"1"</code> is replaced in the analysis folder by the session name <code>ASL_1</code>.</p>
+<h4 id="5-tokenscanaliases">5. tokenScanAliases</h4>
+<pre><code>&quot;tokenScanAliases&quot;: [ &quot;^PSEUDO_10_min$&quot;, &quot;ASL4D&quot;, &quot;^M0$&quot;, &quot;M0&quot;, &quot;^T1-weighted$&quot;, &quot;T1w&quot;],
+</code></pre>
+<p>The third token defines the name of the scan. Each row represents one scan name. The first column is the regular expression for the token, the second column gives the final name of the scan.</p>
+<ul>
+<li>
+<p><code>^PSEUDO_10_min$ ASL4D</code></p>
+</li>
+<li>
+<p><code>^M0$ M0</code></p>
+</li>
+<li>
+<p><code>^T1-weighted$ T1w</code></p>
+</li>
+</ul>
+<p>The DICOMs in the directory <code>PSEUDO_10_min</code> are thus extracted to a NIFTI file called <code>ASL4D.nii</code>.</p>
+<p>Note: The names ASL4D, M0, T1, FLAIR and WMH_SEGM are fixed names in the pipeline data structure. ASL4D and T1 are required, whereas M0, FLAIR and WMH_SEGM are optionally. When M0 is available, the pipeline will divide the perfusion-weighted image by the M0 image in the quantification part. When FLAIR and WMH_SEGM are available, tissue misclassification in the T1 gray matter (GM) and white matter (WM) because of white matter hyperintensities (WMH) will be corrected.</p>
+<h4 id="6-bmatchdirectories">6. bMatchDirectories</h4>
+<p>Set to <code>true</code> if it should look for directories and DICOM files inside them. Set to <code>false</code> when directly separate files are identified by the folder-hierarchy string.</p>
+<h4 id="7-dcm2nii_version">7. dcm2nii_version</h4>
+<p>This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default <code>20220720</code>. This is exceptionally needed when the new dcm2nii version does not work well with the data. An alternative is <code>20190902</code>. </p>
+<hr />
+<h3 id="summary-of-the-2d_sleep-example">Summary of the 2D_Sleep example</h3>
+<p>In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions.
+In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions.
+This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge.
+The data structure will be <code>derivatives\ExploreASL\SubjectName\T1.nii</code> for the anatomical scans (T1 or FLAIR) and <code>derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii</code> and <code>derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii</code> for ASL sessions. </p>
+<p>If it concerns a follow-up study, where scan sessions have months or years in between them and brain anatomy is expected to change significantly between the scan sessions, then the data should be set up as a longitudinal study design.
+In this case, different time points are set up as <code>derivatives\ExploreASL\SubjectName_1\T1.nii</code> and <code>derivatives\ExploreASL\SubjectName_2\T1.nii</code> for two longitudinal scans of the same subject, where <code>_1</code> designates the time point.
+So a longitudinal study with two ASL scans per scan session (e.g. a medication challenge is repeated with 6 months time difference) would look like:</p>
+<ul>
+<li>
+<p><code>derivatives\ExploreASL\SubjectName_1\T1.nii</code>, <code>derivatives\ExploreASL\SubjectName_1\ASL_1\ASL4D.nii</code> &amp; <code>derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii</code> for the first time point and</p>
+</li>
+<li>
+<p><code>derivatives\ExploreASL\SubjectName_2\T1.nii</code>, <code>derivatives\ExploreASL\SubjectName_1\ASL_2\ASL4D.nii</code> &amp; <code>derivatives\ExploreASL\SubjectName_2\ASL_2\ASL4D.nii</code> for the second time point.</p>
+</li>
+</ul>
+<hr />
+<h3 id="studyparjson">studyPar.json</h3>
+<p>The <code>studyPar.json</code> file contains information about the data that is supposed to be used in the import and filled into the ASL-BIDS sidecar. It should then contain vital parameters of the sequences that are not available inside the DICOM files on the import. This refers to both modality <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html">agnostic BIDS parameters</a> describing the dataset in general, an <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html">modality specific MRI BIDS parameters</a> describing mostly the ASL data.
+The are both saved in an unstructured JSON file using the original BIDS notation for both tags and their values. See an example below:</p>
+<pre><code class="language-json">{&quot;Authors&quot;:[&quot;Alzheimers Disease Neuroimaging Initiative&quot;],
+&quot;DatasetType&quot;:&quot;raw&quot;,
+&quot;License&quot;:&quot;http://adni.loni.usc.edu/terms-of-use/&quot;,
+&quot;Acknowledgements&quot;:&quot;http://adni.loni.usc.edu/data-samples/access-data/groups-acknowledgements-journal-format/&quot;,
+&quot;HowToAcknowledge&quot;:&quot;ADNI website: http://adni.loni.usc.edu/&quot;,
+&quot;Funding&quot;:[&quot;Alzheimers Disease Neuroimaging Initiative&quot;],
+&quot;ReferencesAndLinks&quot;:[&quot;http://adni.loni.usc.edu/&quot;],
+&quot;DatasetDOI&quot;:&quot;http://adni.loni.usc.edu/&quot;,
+&quot;VascularCrushing&quot;:false,
+&quot;LabelingType&quot;:&quot;PCASL&quot;,
+&quot;BackgroundSuppression&quot;:true,
+&quot;M0&quot;:true,
+&quot;ASLContext&quot;:&quot;m0scan,deltam&quot;,
+&quot;Manufacturer&quot;:&quot;GE&quot;,
+&quot;ArterialSpinLabelingType&quot;:&quot;PCASL&quot;,
+&quot;PostLabelingDelay&quot;:2.025,
+&quot;LabelingDuration&quot;:1.45,
+&quot;BackgroundSuppressionNumberPulses&quot;:4,
+&quot;BackgroundSuppressionPulseTime&quot;:[1.465,2.1,2.6,2.88]}
+</code></pre>
+<p>Note that many of these parameters do not have to be provided (describing the dataset in general). And many of them can be automatically extracted from DICOMs. ExploreASL during import reports which are the missing REQUIRED and RECOMMENDED parameters to help with that. It also checks for the basic logic and validity of these parameters and also reports if provided values differ from the retrieved DICOM values. Note that several fields (PLD, labelingDuration etc.) can be provided both as vectors and scalars and in ASL-BIDS should either be a scalar or the vector dimension should match to the volume number. ExploreASL automatically corrects for this. E.g. for a multi-PLD sequence with 3 different PLDs and 9 volumes, you can provide only</p>
+<pre><code>&quot;PostLabelingDelay&quot;:[1.0, 1.5, 2.0]
+</code></pre>
+<p>in the <code>studyPar.json</code> and ExploreASL automatically expands it during the import:</p>
+<pre><code>&quot;PostLabelingDelay&quot;:[1.0, 1.5, 2.0,1.0, 1.5, 2.0,1.0, 1.5, 2.0]
+</code></pre>
+<p>Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. ExploreASL import allows to enter it as a field to <code>studyPar.json</code> and the automatically writes it into the .tsv file upon the import to ASL-BIDS - also expanding and repeating to the correct number of repetitions. Typically, you would use the following entry:</p>
+<pre><code>&quot;ASLContext&quot;:&quot;control, label&quot;,
+</code></pre>
+<hr />
+<h3 id="studyparjson-for-multi-sequence-study">studyPar.json for multi-sequence study</h3>
+<p>The <code>studyPar.json</code> can be modified so that you can import different sequences with different parameters in a single run. Essentially, studyPar.json structure contains a list of contexts according to the standard definition, each context has a keyword that defines to what kind of data it should be applied. When a dataset fits to several contexts, the results of each context are taken into account and overwritten with the first context having the lowest priority.</p>
+<p>The following applies
+1. The list of context is in a field called <code>StudyPars</code>.
+2. The list is processed top to bottom and the matching fields are always overwritten.
+3. An extra added keywords <code>SubjectRegExp</code>, <code>VisitRegExp</code>, or <code>SessionRegExp</code> that define strings Subject\Session\Run that sets required conditions to be fulfilled for each context.
+4. Missing any of tohse strings or an empty string means that the condition is fulfilled. The conditions are written in regexp format.</p>
+<pre><code class="language-json">{&quot;StudyPars&quot;:[
+{&quot;DatasetType&quot;:&quot;raw&quot;,
+&quot;ArterialSpinLabelingType&quot;:&quot;PCASL&quot;,
+&quot;PostLabelingDelay&quot;: [2],
+&quot;BackgroundSuppression&quot;:true,
+}
+{&quot;SubjectRegExp&quot;:&quot;&quot;,
+&quot;SessionRegExp&quot;:&quot;3&quot;,
+&quot;BackgroundSuppression&quot;:false,
+}
+{&quot;SubjectRegExp&quot;:&quot;alpha.*|beta.*&quot;,
+&quot;VisitRegExp&quot;:&quot;1&quot;,
+&quot;PostLabelingDelay&quot;: [3],
+}
+{&quot;VisitRegExp&quot;:&quot;2&quot;,
+&quot;SessionRegExp&quot;:&quot;&quot;,
+&quot;PostLabelingDelay&quot;: [4],
+}]}
+</code></pre>
+<p>The following cases will obtain the following parameters:
+1. Subject gamma, session 1, run 1: Fits only to the first context. PostLabelingDelay 2, BSup true.
+2. Subject gamma, session 1, run 3: Fits to the first and third context. PostLabelingDelay 2, BSup false.
+3. Subject alpha1, session 1, run '': First to the first, second, and third context. PostLabeling delay 3, BSup false.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Tutorials-Execution/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorials (Execution)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Tutorials (Execution)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Tutorials-Processing/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials (Processing)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tutorials (Processing)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
