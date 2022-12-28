@@ -113,36 +113,32 @@ An example configuration file is given below. Note that we include a large numbe
 ```json
 {"x": {
     "dataset": {
-        "subjectRegexp": "^\\d{3}$",
-        "exclusion": ""},
+	"subjectRegexp": "^\\d{3}$",
+	"exclusion": ""},
     "SESSIONS": ["ASL_1","ASL_2"],
     "S":{"Atlases": ["Thalamus", "HOcort_CONN", "TotalGM"]},
     "session":{
-        "options": ["baseline","drug"]},
+	"options": ["baseline","drug"]},
     "external":{
-        "bAutomaticallyDetectFSL": 1},
+	"bAutomaticallyDetectFSL": 1},
     "Q":{
-	"BackgroundSuppressionNumberPulses": 2,
-	"LabelingType": "CASL",
-	"Initial_PLD": 1800,
-	"LabelingDuration": 1800,
 	"SliceReadoutTime": 30,
 	"T2art": 50,
-        "BloodT1": 1650},
+	"BloodT1": 1650},
     "settings":{
-        "Quality": 1,
+	"Quality": 1,
 	"DELETETEMP": 1,
 	"bAutoACPC": false},
     "modules":{
-        "bRunLongReg": true,
-        "structural": {
-            "bSegmentSPM12": 1},
-        "asl":{
-            "M0PositionInASL4D": [1, 2],
-            "bUseMNIasDummyStructural": 1,
-            "bPVCNativeSpace": 1,
-            "PVCNativeSpaceKernel": [10 10 4],
-            "bPVCGaussianMM": 1}}}
+	"bRunLongReg": true,
+	"structural": {
+		"bSegmentSPM12": 1},
+	"asl":{
+		"M0PositionInASL4D": [1, 2],
+		"bUseMNIasDummyStructural": 1,
+		"bPVCNativeSpace": 1,
+		"PVCNativeSpaceKernel": [10 10 4],
+		"bPVCGaussianMM": 1}}}
 }
 ```
 
