@@ -46,11 +46,6 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
-| `BasilSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = true |
-| `BasilInferT1`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
-| `BasilInferATT`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = false | 
-| `BasilExch`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = mix |
-| `BasilDisp`                         | True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal | OPTIONAL, DEFAULT = none |
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
 | `T2art`                             | `T2*` of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 50 @ 3T|
 | `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |

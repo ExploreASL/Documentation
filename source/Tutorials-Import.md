@@ -275,7 +275,7 @@ Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. Explor
 "ASLContext":"control, label",
 ```
 
-For a multi-PLD sequence with 3 different PLDs and 7 volumes, including an M0 as the first volume, one should provide the 'PLD' and 'LD' for the M0 by setting them to 0 and matching all volumes with their PLD and LD:
+For a multi-PLD sequence with 7 volumes including an M0 as the first volume and then 3 pairs of control/label with different PLDs, the `PLD` and `LD` for the M0 should be set to 0 and for the remaining volumes set accordingly:
 
 ```
 "PostLabelingDelay":[0, 1.0, 1.0, 1.5, 1.5, 2.0, 2.0],
