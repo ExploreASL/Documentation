@@ -46,7 +46,7 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
-| `BASIL.bSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = true |
+| `BASIL.bSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
 | `BASIL.bInferT1`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
 | `BASIL.bInferATT`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 
 | `BASIL.Exch`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = simple |
