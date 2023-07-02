@@ -1,11 +1,13 @@
 
 # Tutorials (Processing)
 
-The main task of the processing module is to take BIDS input data located in `rawdata` folder, convert them to ExploreASL internal (Legacy) structure in `derivatives` subfolder and run processing with extra parameters set in the `dataPar.json` file.
+The main task of the processing module is to take BIDS input data located in `rawdata` folder, convert them to ExploreASL internal (Legacy) structure in `derivatives` subfolder and run processing with the processing parameters defined in the `dataPar.json` file.
 
 ## Executing the processing
 
-To run processing of ASL-BIDS data located in `drive/.../datasetRoot/rawdata`, you simply execute this command:
+Before running the processing, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found [HERE](https://bids-standard.github.io/bids-validator/). The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.
+
+To run processing of BIDS data located in `drive/.../datasetRoot/rawdata`, you simply execute this command:
 
 ```matlab
 [x] = ExploreASL('drive/.../datasetRoot', 0, 1);

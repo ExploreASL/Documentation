@@ -20,6 +20,8 @@ ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 
 ...where 1 here is the whole Import module, which is divided in 3 parts `[1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
 
+After running the import module, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found [HERE](https://bids-standard.github.io/bids-validator/). The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.
+
 ## Example dataset for Import with ExploreASL
 
 The ExampleStudy has an original directory structure as follows: `ExampleStudy/sourcedata/subject/session/scan_ID`, and the directories containing the DICOMs. See image below:
