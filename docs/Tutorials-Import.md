@@ -3,12 +3,11 @@ Main function of the import module is to convert input DICOM data to the BIDS fo
 
 ## How to run the import module
 
-A separate import module has been created to:
+A separate import module has been created to convert DICOM data to BIDS:
 
 1. to perform a DICOM to NIfTI conversion and store ancillary DICOM header information in `*.json` files,
 2. to further processed the NIfTI files and create full ASL-BIDS data from it,
-3. to deface the structural images in the ASL-BIDS data,
-4. to restructure ASL-BIDS data to an internal structure that ExploreASL is familiar with and to further process these data.
+3. to deface the structural images in the ASL-BIDS data (OPTIONAL, not tested).
 
 This import module uses regular expressions and the directory structure can be can be flexibly defined as long as it is fixed per study.
 The search function then searches across these directories and copies all files to the ExploreASL directory structure, and performs the conversion to NIFTI if necessary.
@@ -21,12 +20,14 @@ ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 
 ...where 1 here is the whole Import module, which is divided in 3 parts `[1 1 1]` - more details are provided in the [Tutorial on ExploreASL Execution](./../Tutorials-Execution/).
 
+After running the import module, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found [HERE](https://bids-standard.github.io/bids-validator/). The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.
+
 ## Example dataset for Import with ExploreASL
 
-The 2D_Sleep study data example has an original directory structure as follows: `ROOT/sourcedata/subject/session/scan_ID`, and the directories containing the DICOMs. See image below:
+The ExampleStudy has an original directory structure as follows: `ExampleStudy/sourcedata/subject/session/scan_ID`, and the directories containing the DICOMs. See image below:
 
 ```
-2D_Sleep/
+ExampleStudy/
   sourcedata/
     101/
       Session1/
@@ -39,29 +40,34 @@ The 2D_Sleep study data example has an original directory structure as follows: 
       ...
 ```
 
-Explore ASL first write the temporary NIfTI files to `ROOT/derivatives/ExploreASL/temp/subject/`.
+ExploreASL first write the temporary NIfTI files to `ExampleStudy/derivatives/ExploreASL/temp/subject/`.
 
-In the second step writes the full ASL-BIDS data into `ROOT/rawdata/`.
-
-And at the end, Explore ASL creates the following directory structure `ROOT/derivatives/ExploreASL/subject/` and puts structural images directly and ASL images to directories `ASL_1`, `ASL_2` depending on the session - see below:
+And finally writes the BIDS data into `ExampleStudy/rawdata/`:
 
 ```
-2D_Sleep/
-  derivatives/
-    ExploreASL/
-      101/
-        ASL_1/
-        ASL_2/
-      102/
-        ...
+ExampleStudy/
+  rawdata/
+    sub-101/
+        perf/sub-101_run-1_asl.nii.gz
+        perf/sub-101_run-1_asl.json
+        perf/sub-101_run-1_asl_context.tsv
+        perf/sub-101_run-1_m0.nii.gz
+        perf/sub-101_run-1_m0.json        
+        perf/sub-101_run-2_asl.nii.gz
+        perf/sub-101_run-2_asl.json
+        perf/sub-101_run-2_asl_context.tsv
+        perf/sub-101_run-2_m0.nii.gz
+        perf/sub-101_run-2_m0.json        
+        anat/sub-101_t1w.nii.gz
+    sub-102/
+      ...
 ```
 
-Ideally, before running the import, the data contains three configuration files
-`ROOT/sourcestructure.json`
-`ROOT/studyPar.json`
-`ROOT/dataPar.json`
+Ideally, before running the import, the data are accompanied by two configuration files
+`ExampleStudy/sourcestructure.json`
+`ExampleStudy/studyPar.json`
 
-The content of the `sourcestructure.json` and `studypar.json` files is explained below. The content of `dataPar.json` is explained in the [Processing Tutorial](./../Tutorials-Processing/).
+The content of the `sourcestructure.json` and `studypar.json` files is explained below.
 
 ----
 ### sourcestructure.json 
@@ -214,9 +220,9 @@ Set to `true` if it should look for directories and DICOM files inside them. Set
 This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default `20220720`. This is exceptionally needed when the new dcm2nii version does not work well with the data. An alternative is `20190902`. 
 
 ----
-### Summary of the 2D_Sleep example
+### Summary of the ExampleStudy example
 
-In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions.
+In the current example of ExampleStudy, we have two subjects: 101 and 102 with each two ASL sessions.
 In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions.
 This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge.
 The data structure will be `derivatives\ExploreASL\SubjectName\T1.nii` for the anatomical scans (T1 or FLAIR) and `derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii` and `derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii` for ASL sessions. 
@@ -273,6 +279,13 @@ Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. Explor
 
 ```
 "ASLContext":"control, label",
+```
+
+For a multi-PLD sequence with 7 volumes including an M0 as the first volume and then 3 pairs of control/label with different PLDs, the `PLD` and `LD` for the M0 should be set to 0 and for the remaining volumes set accordingly:
+
+```
+"PostLabelingDelay":[0, 1.0, 1.0, 1.5, 1.5, 2.0, 2.0],
+"LabelingDuration":[0, 1.45, 1.45, 1.45, 1.45, 1.45, 1.45]
 ```
 
 ----
