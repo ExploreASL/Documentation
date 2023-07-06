@@ -46,6 +46,7 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
+| `BASIL.bMasking`                    | For for BASIL/FABBER to quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
 | `BASIL.bSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
 | `BASIL.bInferT1`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
 | `BASIL.bInferATT`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 

@@ -46,6 +46,14 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
+| `BASIL.bMasking`                    | For for BASIL/FABBER to quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
+| `BASIL.bSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
+| `BASIL.bInferT1`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
+| `BASIL.bInferATT`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 
+| `BASIL.Exch`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = simple |
+| `BASIL.Disp`                         | True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal | OPTIONAL, DEFAULT = none |
+| `BASIL.ATTSD`                     | Set parameter standard deviation of ATT for BASIL fitting | OPTIONAL, DEFAULT = 1.0 | 
+| `BASIL.bCleanUp`                     | Delete temporary files creates for FSL quantification | OPTIONAL, DEFAULT = true | 
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
 | `T2art`                             | `T2*` of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 50 @ 3T|
 | `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
@@ -60,6 +68,7 @@ All **ASL module** related parameters are stored within this subfield. Use these
 | -------------------------------------- |:---------------------------------------------:|:------------------:|
 | `motionCorrection`                     | Boolean to perform motion correction in case of timeseries. Options: `1` = on, `0` = off. | OPTIONAL, DEFAULT = 1 |
 | `SpikeRemovalThreshold`                | Minimal t-stat improval needed to remove motion spikes. Examples: `1` = effectively disabling spike removal. | OPTIONAL, DEFAULT = 0.01 |
+| `SpikeRemovalAbsoluteThreshold`        | Motion threshold in mm for removing motion spike volumes. Examples: `0.05`, `0` = disabling spike removal. | OPTIONAL, DEFAULT = 0 |
 | `bRegistrationContrast`                | Specifies the image contrast used for registration: `0` = Control->T1w, `1` = CBF->pseudoCBF from template/pGM+pWM (skip if sCoV>0.667), `2` = automatic (mix of both), `3` = option 2 & force CBF->pseudoCBF irrespective of sCoV. | OPTIONAL, DEFAULT = 2 |
 | `bAffineRegistration`                  | Specifies if the ASL-T1w rigid-body registration is followed up by an affine registration: `0` = affine registration disabled, `1` = affine registration enabled, `2` = affine registration automatically chosen based on spatial CoV of PWI. | OPTIONAL, DEFAULT = 0 |
 | `bDCTRegistration`                     | Specifies if to include the DCT registration on top of Affine, all other requirements for affine are thus also taken into account the x.modules.asl.bAffineRegistration must be >0 for DCT to run: `0` = DCT registration disabled `1` = DCT registration enabled if affine enabled and conditions for affine passed, `2` = DCT enabled as above, but use PVC on top of it to get the local intensity scaling right. | OPTIONAL, DEFAULT = 0 |
