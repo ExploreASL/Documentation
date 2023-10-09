@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/Population_Module/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.11.0/Population_Module/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -467,6 +467,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#xasl_adm_getpopulationsessionsm" class="md-nav__link">
+    xASL_adm_GetPopulationSessions.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#xasl_adm_gzipallfilesm" class="md-nav__link">
     xASL_adm_GzipAllFiles.m
   </a>
@@ -511,6 +518,13 @@
         <li class="md-nav__item">
   <a href="#xasl_stat_getmotionstatisticsm" class="md-nav__link">
     xASL_stat_GetMotionStatistics.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_getroistatisticsm" class="md-nav__link">
+    xASL_stat_GetROIstatistics.m
   </a>
   
 </li>
@@ -716,6 +730,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#xasl_adm_getpopulationsessionsm" class="md-nav__link">
+    xASL_adm_GetPopulationSessions.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#xasl_adm_gzipallfilesm" class="md-nav__link">
     xASL_adm_GzipAllFiles.m
   </a>
@@ -760,6 +781,13 @@
         <li class="md-nav__item">
   <a href="#xasl_stat_getmotionstatisticsm" class="md-nav__link">
     xASL_stat_GetMotionStatistics.m
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xasl_stat_getroistatisticsm" class="md-nav__link">
+    xASL_stat_GetROIstatistics.m
   </a>
   
 </li>
@@ -827,6 +855,21 @@
 </code></pre>
 <p><strong>Description:</strong></p>
 <p>This function removes as many files as possible.</p>
+<hr />
+<h3 id="xasl_adm_getpopulationsessionsm">xASL_adm_GetPopulationSessions.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="language-matlab">[nSessions, bSessionsMissing] = xASL_adm_GetPopulationSessions(x)
+</code></pre>
+<p><strong>Description:</strong></p>
+<p>This function looks for the maximum amount of sessions that
+are present in selected processed files present in the Population folder.</p>
+<ol>
+<li>Determine which files to look for in the Population folder</li>
+<li>Obtain list of session files in the Population folder</li>
+<li>Determine unique amount of session numbers present in list</li>
+<li>Set nSessions as highest unique session number</li>
+<li>Check and provide warning of number of sesssions differs per subject</li>
+</ol>
 <hr />
 <h3 id="xasl_adm_gzipallfilesm">xASL_adm_GzipAllFiles.m</h3>
 <p><strong>Format:</strong></p>
@@ -941,6 +984,50 @@ This function carries out the following steps:</p>
 <li>Add motion data to participants.tsv</li>
 </ol>
 <hr />
+<h3 id="xasl_stat_getroistatisticsm">xASL_stat_GetROIstatistics.m</h3>
+<p><strong>Format:</strong></p>
+<pre><code class="language-matlab">[x] = xASL_stat_GetROIstatistics(x)
+</code></pre>
+<p><strong>Description:</strong></p>
+<p>This function computes mean and spatial CoV for each ROI,
+in a [1.5 1.5 1.5] mm MNI space,
+with several ASL-specific adaptions:</p>
+<ol>
+<li>Administration
+0.a Manage masking
+0.b Obtain ASL sequence
+0.c Determine whether group mask exists</li>
+<li>Skip ROI masks that are smaller than 1 mL
+as this would be too noisy for ASL (ignored when x.S.IsASL==false)</li>
+<li>Expand each ROI mask such that it has sufficient WM
+content (skipped when IsASL==false)</li>
+<li>Create for each ROI mask a left, right and bilateral copy</li>
+<li>Iterate over all subjects:</li>
+<li>a) Load partial volume maps</li>
+<li>b) Correct for WMH SEGM -&gt; IS THIS STILL REQUIRED???</li>
+<li>c) Load data</li>
+<li>d) Show ROIs projected on ASL image</li>
+<li>e) Actual data computations
+Partial Volume Correction (PVC) options:
+PVC==0 -&gt; perform masking only, no regression
+PVC==1 -&gt; single compartment regression, for pGM
+PVC==2 -&gt; dual compartment regression for pGM &amp; pWM (i.e. normal
+PVC)
+Here we mask out susceptibility artifacts (including
+outside FoV) for all ASL computations, and also mask
+out vascular artifacts for computing the mean.</li>
+<li>Housekeeping</li>
+</ol>
+<p>While other artifacts/FoV can be masked out on population
+level (i.e. &gt;0.95 subjects need to have a valid signal in a
+certain voxel), vascular artifacts differ too much in their
+location between subjects, so we mask this on subject-level.</p>
+<p>Note that the words "mask" and "ROI" are used
+interchangeably throughout this function, where they can
+have a different or the same meaning</p>
+<p>PM: WE COULD CHANGE THIS, INTO MASK BEING USED TO EXCLUDE
+VOXELS AND ROI FOR INCLUDING VOXELS</p>
+<hr />
 <h3 id="xasl_stat_getregistrationstatisticsm">xASL_stat_GetRegistrationStatistics.m</h3>
 <p><strong>Format:</strong></p>
 <pre><code class="language-matlab">xASL_stat_GetRegistrationStatistics(x)
@@ -984,6 +1071,22 @@ but rather fits them both. Global scaling it performed to GM CBF == 60 mL/100g/m
 taken in account before creating these biasfields
 PM: add normalization of between-subjects SD as well.
 PM: are there other things we can normalize?</p>
+<p>Note that NaNs in the images are ignored (so for each voxel
+only the subjects without a NaN in the voxel are considered)</p>
+<p>This function has the following sections:</p>
+<ol>
+<li>Admin</li>
+<li>Load images &amp; store site-average CBF images</li>
+<li>Smooth the site-average CBF images to biasfields</li>
+<li>Create average biasfield</li>
+<li>Create new bias-fields, masked &amp; expand</li>
+<li>Save biasfields</li>
+<li>Create backup of each CBF image before applying biasfields</li>
+<li>Print QC reference images</li>
+<li>Rescale CBF images (apply the biasfield correction)</li>
+<li>Re-load &amp; store site-average CBF images</li>
+<li>Perform site-wise SD correction &amp; save new CBF images</li>
+</ol>
 <hr />
 <h3 id="xasl_wrp_createpopulationtemplatesm">xASL_wrp_CreatePopulationTemplates.m</h3>
 <p><strong>Format:</strong></p>

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/ProcessingParameters/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.11.0/ProcessingParameters/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -980,6 +980,46 @@
 <td align="center"></td>
 </tr>
 <tr>
+<td><code>BASIL.bMasking</code></td>
+<td align="center">For for BASIL/FABBER to quantify only over a mask provided by ExploreASL</td>
+<td align="center">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
+<td><code>BASIL.bSpatial</code></td>
+<td align="center">True for BASIL to use automated spatial smoothing</td>
+<td align="center">OPTIONAL, DEFAULT = false</td>
+</tr>
+<tr>
+<td><code>BASIL.bInferT1</code></td>
+<td align="center">True for BASIL to infer variable T1 values</td>
+<td align="center">OPTIONAL, DEFAULT = false</td>
+</tr>
+<tr>
+<td><code>BASIL.bInferATT</code></td>
+<td align="center">True for BASIL to infer arterial component and quantify ATT</td>
+<td align="center">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
+<td><code>BASIL.Exch</code></td>
+<td align="center">True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes &amp; Tofts, spa = Single pass approximation from St. Lawrence</td>
+<td align="center">OPTIONAL, DEFAULT = simple</td>
+</tr>
+<tr>
+<td><code>BASIL.Disp</code></td>
+<td align="center">True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal</td>
+<td align="center">OPTIONAL, DEFAULT = none</td>
+</tr>
+<tr>
+<td><code>BASIL.ATTSD</code></td>
+<td align="center">Set parameter standard deviation of ATT for BASIL fitting</td>
+<td align="center">OPTIONAL, DEFAULT = 1.0</td>
+</tr>
+<tr>
+<td><code>BASIL.bCleanUp</code></td>
+<td align="center">Delete temporary files creates for FSL quantification</td>
+<td align="center">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
 <td><code>Lambda</code></td>
 <td align="center">Brain/blood water coefficient (mL 1H/ mL blood). Example: <code>0.32</code> (for GSP phantom).</td>
 <td align="center">OPTIONAL, DEFAULT = 0.9</td>
@@ -1031,6 +1071,11 @@
 <td><code>SpikeRemovalThreshold</code></td>
 <td align="center">Minimal t-stat improval needed to remove motion spikes. Examples: <code>1</code> = effectively disabling spike removal.</td>
 <td align="center">OPTIONAL, DEFAULT = 0.01</td>
+</tr>
+<tr>
+<td><code>SpikeRemovalAbsoluteThreshold</code></td>
+<td align="center">Motion threshold in mm for removing motion spike volumes. Examples: <code>0.05</code>, <code>0</code> = disabling spike removal.</td>
+<td align="center">OPTIONAL, DEFAULT = 0</td>
 </tr>
 <tr>
 <td><code>bRegistrationContrast</code></td>

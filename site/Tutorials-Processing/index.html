@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/Tutorials-Processing/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.11.0/Tutorials-Processing/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -818,9 +818,10 @@
 
 
 <h1 id="tutorials-processing">Tutorials (Processing)</h1>
-<p>The main task of the processing module is to take BIDS input data located in <code>rawdata</code> folder, convert them to ExploreASL internal (Legacy) structure in <code>derivatives</code> subfolder and run processing with extra parameters set in the <code>dataPar.json</code> file.</p>
+<p>The main task of the processing module is to take BIDS input data located in <code>rawdata</code> folder, convert them to ExploreASL internal (Legacy) structure in <code>derivatives</code> subfolder and run processing with the processing parameters defined in the <code>dataPar.json</code> file.</p>
 <h2 id="executing-the-processing">Executing the processing</h2>
-<p>To run processing of ASL-BIDS data located in <code>drive/.../datasetRoot/rawdata</code>, you simply execute this command:</p>
+<p>Before running the processing, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found <a href="https://bids-standard.github.io/bids-validator/">HERE</a>. The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.</p>
+<p>To run processing of BIDS data located in <code>drive/.../datasetRoot/rawdata</code>, you simply execute this command:</p>
 <pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', 0, 1);
 </code></pre>
 <p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. An example content of the <code>dataPar.json</code> file is given below on this page. A full reference manual is provided <a href="./../ProcessingParameters">here</a>.</p>
@@ -834,11 +835,17 @@
 }}
 </code></pre>
 <h3 id="processing-multi-pld-and-time-encoded-data">Processing multi-PLD and Time-encoded data</h3>
-<p>ExploreASL currently uses BASIL to quantify multi-PLD and Time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Note that you need to install FSL on you computer for this. Use the following <code>dataPar.json</code> to automatically locate installed FSL and to activate CBF quantification using BASIL:</p>
+<p>ExploreASL currently uses BASIL to quantify multi-PLD, multi-TE and time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Multi-TE sequences execute directly FABBER from FSL. Note that you need to install FSL on you computer for this. Use the following <code>dataPar.json</code> to automatically locate installed FSL and to activate CBF quantification using BASIL:</p>
 <pre><code class="language-json">{&quot;x&quot;:{&quot;Q&quot;:{&quot;bUseBasilQuantification&quot;:1},
 &quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:true}}}
 </code></pre>
-<p>Note that this setting will use BASIL for CBF quantification of any provided data, include single-PLD ASL, which is recommended to quantify using internal ExploreASL routines without BASIL.</p>
+<p>In case that FSL is not detected automatically, or if there's a prefered FSL version, you can directly provide path to the FSL directory like this:</p>
+<pre><code class="language-json">{&quot;x&quot;:{&quot;Q&quot;:{&quot;bUseBasilQuantification&quot;:1},
+&quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:true},
+&quot;FSLdir&quot;:&quot;/home/XASLuser/fsl/&quot;,
+&quot;RootFSLdir&quot;:&quot;/home/XASLuser/fsl/&quot;}}
+</code></pre>
+<p>Note that Tex estimation of BBB permeability from multi-TE data is supported starting at FSL version 6.0.7.1. </p>
 <h3 id="processing-asl-data-without-structural-t1w-scans">Processing ASL data without structural T1w scans</h3>
 <p>ExploreASL uses the structural T1-weighted scans to obtain information about GM and WM tissues used later for evaluation and thresholding the CBF maps. Presence of T1w scans is thus expected for all ASL scans as T1w scans are anyway normally obtained. If a T1-weighted scan is missing, ExporeASL uses internally the average MNI brain instead, but this option needs to be activated explicitly:</p>
 <pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseMNIasDummyStructural&quot;:1}}}}

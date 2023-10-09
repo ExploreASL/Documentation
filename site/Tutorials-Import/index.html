@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/Tutorials-Import/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.11.0/Tutorials-Import/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -387,8 +387,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-the-2d_sleep-example" class="md-nav__link">
-    Summary of the 2D_Sleep example
+  <a href="#summary-of-the-examplestudy-example" class="md-nav__link">
+    Summary of the ExampleStudy example
   </a>
   
 </li>
@@ -792,8 +792,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-the-2d_sleep-example" class="md-nav__link">
-    Summary of the 2D_Sleep example
+  <a href="#summary-of-the-examplestudy-example" class="md-nav__link">
+    Summary of the ExampleStudy example
   </a>
   
 </li>
@@ -842,12 +842,11 @@
 <hr />
 <p>Main function of the import module is to convert input DICOM data to the BIDS format in <code>rawdata</code> subfolder. Sequence parameters missing in the DICOMs are supplied in the <code>studyPar.json</code> file.</p>
 <h2 id="how-to-run-the-import-module">How to run the import module</h2>
-<p>A separate import module has been created to:</p>
+<p>A separate import module has been created to convert DICOM data to BIDS:</p>
 <ol>
 <li>to perform a DICOM to NIfTI conversion and store ancillary DICOM header information in <code>*.json</code> files,</li>
 <li>to further processed the NIfTI files and create full ASL-BIDS data from it,</li>
-<li>to deface the structural images in the ASL-BIDS data,</li>
-<li>to restructure ASL-BIDS data to an internal structure that ExploreASL is familiar with and to further process these data.</li>
+<li>to deface the structural images in the ASL-BIDS data (OPTIONAL, not tested).</li>
 </ol>
 <p>This import module uses regular expressions and the directory structure can be can be flexibly defined as long as it is fixed per study.
 The search function then searches across these directories and copies all files to the ExploreASL directory structure, and performs the conversion to NIFTI if necessary.</p>
@@ -855,9 +854,10 @@ The search function then searches across these directories and copies all files 
 <pre><code class="language-matlab">ExploreASL('/home/username/Path_for_the_root_folder', 1, 0);
 </code></pre>
 <p>...where 1 here is the whole Import module, which is divided in 3 parts <code>[1 1 1]</code> - more details are provided in the <a href="./../Tutorials-Execution/">Tutorial on ExploreASL Execution</a>.</p>
+<p>After running the import module, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found <a href="https://bids-standard.github.io/bids-validator/">HERE</a>. The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.</p>
 <h2 id="example-dataset-for-import-with-exploreasl">Example dataset for Import with ExploreASL</h2>
-<p>The 2D_Sleep study data example has an original directory structure as follows: <code>ROOT/sourcedata/subject/session/scan_ID</code>, and the directories containing the DICOMs. See image below:</p>
-<pre><code>2D_Sleep/
+<p>The ExampleStudy has an original directory structure as follows: <code>ExampleStudy/sourcedata/subject/session/scan_ID</code>, and the directories containing the DICOMs. See image below:</p>
+<pre><code>ExampleStudy/
   sourcedata/
     101/
       Session1/
@@ -869,23 +869,29 @@ The search function then searches across these directories and copies all files 
     102/
       ...
 </code></pre>
-<p>Explore ASL first write the temporary NIfTI files to <code>ROOT/derivatives/ExploreASL/temp/subject/</code>.</p>
-<p>In the second step writes the full ASL-BIDS data into <code>ROOT/rawdata/</code>.</p>
-<p>And at the end, Explore ASL creates the following directory structure <code>ROOT/derivatives/ExploreASL/subject/</code> and puts structural images directly and ASL images to directories <code>ASL_1</code>, <code>ASL_2</code> depending on the session - see below:</p>
-<pre><code>2D_Sleep/
-  derivatives/
-    ExploreASL/
-      101/
-        ASL_1/
-        ASL_2/
-      102/
-        ...
+<p>ExploreASL first write the temporary NIfTI files to <code>ExampleStudy/derivatives/ExploreASL/temp/subject/</code>.</p>
+<p>And finally writes the BIDS data into <code>ExampleStudy/rawdata/</code>:</p>
+<pre><code>ExampleStudy/
+  rawdata/
+    sub-101/
+        perf/sub-101_run-1_asl.nii.gz
+        perf/sub-101_run-1_asl.json
+        perf/sub-101_run-1_asl_context.tsv
+        perf/sub-101_run-1_m0.nii.gz
+        perf/sub-101_run-1_m0.json        
+        perf/sub-101_run-2_asl.nii.gz
+        perf/sub-101_run-2_asl.json
+        perf/sub-101_run-2_asl_context.tsv
+        perf/sub-101_run-2_m0.nii.gz
+        perf/sub-101_run-2_m0.json        
+        anat/sub-101_t1w.nii.gz
+    sub-102/
+      ...
 </code></pre>
-<p>Ideally, before running the import, the data contains three configuration files
-<code>ROOT/sourcestructure.json</code>
-<code>ROOT/studyPar.json</code>
-<code>ROOT/dataPar.json</code></p>
-<p>The content of the <code>sourcestructure.json</code> and <code>studypar.json</code> files is explained below. The content of <code>dataPar.json</code> is explained in the <a href="./../Tutorials-Processing/">Processing Tutorial</a>.</p>
+<p>Ideally, before running the import, the data are accompanied by two configuration files
+<code>ExampleStudy/sourcestructure.json</code>
+<code>ExampleStudy/studyPar.json</code></p>
+<p>The content of the <code>sourcestructure.json</code> and <code>studypar.json</code> files is explained below.</p>
 <hr />
 <h3 id="sourcestructurejson">sourcestructure.json</h3>
 <p>The <code>sourcestructure.json</code> file contains the following code (different for each study):</p>
@@ -1015,8 +1021,8 @@ Some basic regular expressions are described here with examples - for a full des
 <h4 id="7-dcm2nii_version">7. dcm2nii_version</h4>
 <p>This optional parameter can be used to perform import with an older version of dcm2nii rather than the latest default <code>20220720</code>. This is exceptionally needed when the new dcm2nii version does not work well with the data. An alternative is <code>20190902</code>. </p>
 <hr />
-<h3 id="summary-of-the-2d_sleep-example">Summary of the 2D_Sleep example</h3>
-<p>In the current example of 2D_Sleep, we have two subjects: 101 and 102 with each two ASL sessions.
+<h3 id="summary-of-the-examplestudy-example">Summary of the ExampleStudy example</h3>
+<p>In the current example of ExampleStudy, we have two subjects: 101 and 102 with each two ASL sessions.
 In ExploreASL, each subject has a single T1 scan and can have multiple ASL sessions.
 This is the case when the anatomy is not expected to change for the different ASL sessions, e.g. when scans are repeated before and after a CO2 or treatment challenge.
 The data structure will be <code>derivatives\ExploreASL\SubjectName\T1.nii</code> for the anatomical scans (T1 or FLAIR) and <code>derivatives\ExploreASL\SubjectName\ASL_1\ASL4D.nii</code> and <code>derivatives\ExploreASL\SubjectName\ASL_2\ASL4D.nii</code> for ASL sessions. </p>
@@ -1063,6 +1069,10 @@ The are both saved in an unstructured JSON file using the original BIDS notation
 </code></pre>
 <p>Also, the field ASLContext should be provided in a .TSV file in ASL-BIDS. ExploreASL import allows to enter it as a field to <code>studyPar.json</code> and the automatically writes it into the .tsv file upon the import to ASL-BIDS - also expanding and repeating to the correct number of repetitions. Typically, you would use the following entry:</p>
 <pre><code>&quot;ASLContext&quot;:&quot;control, label&quot;,
+</code></pre>
+<p>For a multi-PLD sequence with 7 volumes including an M0 as the first volume and then 3 pairs of control/label with different PLDs, the <code>PLD</code> and <code>LD</code> for the M0 should be set to 0 and for the remaining volumes set accordingly:</p>
+<pre><code>&quot;PostLabelingDelay&quot;:[0, 1.0, 1.0, 1.5, 1.5, 2.0, 2.0],
+&quot;LabelingDuration&quot;:[0, 1.45, 1.45, 1.45, 1.45, 1.45, 1.45]
 </code></pre>
 <hr />
 <h3 id="studyparjson-for-multi-sequence-study">studyPar.json for multi-sequence study</h3>

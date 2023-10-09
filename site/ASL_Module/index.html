@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.10.0/ASL_Module/">
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.11.0/ASL_Module/">
       
       <link rel="icon" href="../img/favicon/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
@@ -774,12 +774,14 @@
 0. Create FoV mask (native &amp; MNI spaces)
 1. Detect negative vascular signal (native &amp; MNI spaces, within pGM&gt;0.5)
 2. Detect peak vascular signal (native &amp; MNI spaces, within pGM==80% percentile on ASL image)
-3. Brainmasking &amp; FoV-masking (A) native &amp; B) MNI spaces)
+3A. Brainmasking &amp; FoV-masking native space
+3B. Brainmasking &amp; FoV-masking standard space
+3C. Save brain mask for image processing (e.g., BASIL)
+4. Save vascular masks
 - Add WM vascular parts back to the mask (defined as pWM&gt;0.8) &amp; remove extracranial signal
 In the WM, negative or peak signal is more expected from
 noise rather than from intra-vascular signal, not many
 big vessels exist in the WM
-4. Save vascular masks
 5. Create susceptibility mask (standard space only)
 Here, we combine manually segmented susceptibility artifact regions in which
 a population-based susceptibility probability map is created
