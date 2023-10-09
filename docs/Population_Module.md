@@ -16,6 +16,27 @@ This function removes as many files as possible.
 
 
 ----
+### xASL\_adm\_GetPopulationSessions.m
+
+**Format:**
+
+```matlab
+[nSessions, bSessionsMissing] = xASL_adm_GetPopulationSessions(x)
+```
+
+**Description:**
+
+This function looks for the maximum amount of sessions that
+are present in selected processed files present in the Population folder.
+
+1. Determine which files to look for in the Population folder
+2. Obtain list of session files in the Population folder
+3. Determine unique amount of session numbers present in list
+4. Set nSessions as highest unique session number
+5. Check and provide warning of number of sesssions differs per subject
+
+
+----
 ### xASL\_adm\_GzipAllFiles.m
 
 **Format:**
@@ -181,6 +202,60 @@ This functions collects motion stats, with the following steps:
 
 
 ----
+### xASL\_stat\_GetROIstatistics.m
+
+**Format:**
+
+```matlab
+[x] = xASL_stat_GetROIstatistics(x)
+```
+
+**Description:**
+
+This function computes mean and spatial CoV for each ROI,
+in a [1.5 1.5 1.5] mm MNI space,
+with several ASL-specific adaptions:
+
+0. Administration
+0.a Manage masking
+0.b Obtain ASL sequence
+0.c Determine whether group mask exists
+1. Skip ROI masks that are smaller than 1 mL
+as this would be too noisy for ASL (ignored when x.S.IsASL==false)
+2. Expand each ROI mask such that it has sufficient WM
+content (skipped when IsASL==false)
+3. Create for each ROI mask a left, right and bilateral copy
+4. Iterate over all subjects:
+- a) Load partial volume maps
+- b) Correct for WMH SEGM -> IS THIS STILL REQUIRED???
+- c) Load data
+- d) Show ROIs projected on ASL image
+- e) Actual data computations
+Partial Volume Correction (PVC) options:
+PVC==0 -> perform masking only, no regression
+PVC==1 -> single compartment regression, for pGM
+PVC==2 -> dual compartment regression for pGM & pWM (i.e. normal
+PVC)
+Here we mask out susceptibility artifacts (including
+outside FoV) for all ASL computations, and also mask
+out vascular artifacts for computing the mean.
+5. Housekeeping
+
+While other artifacts/FoV can be masked out on population
+level (i.e. >0.95 subjects need to have a valid signal in a
+certain voxel), vascular artifacts differ too much in their
+location between subjects, so we mask this on subject-level.
+
+Note that the words "mask" and "ROI" are used
+interchangeably throughout this function, where they can
+have a different or the same meaning
+
+PM: WE COULD CHANGE THIS, INTO MASK BEING USED TO EXCLUDE
+VOXELS AND ROI FOR INCLUDING VOXELS
+
+
+
+----
 ### xASL\_stat\_GetRegistrationStatistics.m
 
 **Format:**
@@ -244,6 +319,23 @@ NB: make sure that sequence resolution differences have been
 taken in account before creating these biasfields
 PM: add normalization of between-subjects SD as well.
 PM: are there other things we can normalize?
+
+Note that NaNs in the images are ignored (so for each voxel
+only the subjects without a NaN in the voxel are considered)
+
+This function has the following sections:
+
+0. Admin
+1. Load images & store site-average CBF images
+2. Smooth the site-average CBF images to biasfields
+3. Create average biasfield
+4. Create new bias-fields, masked & expand
+5. Save biasfields
+6. Create backup of each CBF image before applying biasfields
+7. Print QC reference images
+8. Rescale CBF images (apply the biasfield correction)
+9. Re-load & store site-average CBF images
+10. Perform site-wise SD correction & save new CBF images
 
 
 

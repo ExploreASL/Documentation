@@ -81,7 +81,11 @@ Examples:
 - imPar.tokenSessionAliases - same as tokenScanAliases but for sessions
 Examples:
 `imPar.tokenSessionAliases = {}; % as we don't have sessions`
-- imPar.bMatchDirectories   - true if the last layer is a folder, false if the last layer is a filename (as e.g. with PAR/REC, enhanced DICOMs)
+- imPar.bMatchDirectories   - true if the last layer is a folder, false if the last layer is a filename (e.g., \.PAR, \.nii, \.nii\.gz, or \.dcm for enhanced DICOM)
+
+Any (X|Y|Z) expression is referred to as a "captured group"
+All captured groups defined in tokenOrdering, scanAliases, visitAliases, and sessionAliases are "tokens"
+While it is simplest if all captured groups in folderHierarchy represent tokens (for the user and bugfixing), this is not required
 
 
 ----

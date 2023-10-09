@@ -29,14 +29,23 @@ The atlases used in the **ExploreASL** population module can be defined in the `
 ```
 
 ### Processing multi-PLD and Time-encoded data
-ExploreASL currently uses BASIL to quantify multi-PLD and Time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Note that you need to install FSL on you computer for this. Use the following `dataPar.json` to automatically locate installed FSL and to activate CBF quantification using BASIL:
+ExploreASL currently uses BASIL to quantify multi-PLD, multi-TE and time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Multi-TE sequences execute directly FABBER from FSL. Note that you need to install FSL on you computer for this. Use the following `dataPar.json` to automatically locate installed FSL and to activate CBF quantification using BASIL:
 
 ```json
 {"x":{"Q":{"bUseBasilQuantification":1},
 "external":{"bAutomaticallyDetectFSL":true}}}
 ```
 
-Note that this setting will use BASIL for CBF quantification of any provided data, include single-PLD ASL, which is recommended to quantify using internal ExploreASL routines without BASIL.
+In case that FSL is not detected automatically, or if there's a prefered FSL version, you can directly provide path to the FSL directory like this:
+
+```json
+{"x":{"Q":{"bUseBasilQuantification":1},
+"external":{"bAutomaticallyDetectFSL":true},
+"FSLdir":"/home/XASLuser/fsl/",
+"RootFSLdir":"/home/XASLuser/fsl/"}}
+```
+
+Note that Tex estimation of BBB permeability from multi-TE data is supported starting at FSL version 6.0.7.1. 
 
 ### Processing ASL data without structural T1w scans
 ExploreASL uses the structural T1-weighted scans to obtain information about GM and WM tissues used later for evaluation and thresholding the CBF maps. Presence of T1w scans is thus expected for all ASL scans as T1w scans are anyway normally obtained. If a T1-weighted scan is missing, ExporeASL uses internally the average MNI brain instead, but this option needs to be activated explicitly:
