@@ -5,7 +5,6 @@ This tutorial gives an example of useful functions that can be used outside of t
 
 Moreover, we list here the internal parameters in ExploreASL that can be used either to supply further parameters or to modify certain advanced parameters during ExploreASL runtime.
 
-----
 ## Basic NIFTI Input & Output
 
 Let's assume you want to read in a NIFTI image and apply a mask on it. As a good first step we always recommend to initialize `ExploreASL` first by running the following command.

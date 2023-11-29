@@ -9,6 +9,7 @@ nav:
         - 'Tutorials (Execution)':     Tutorials-Execution.md
         - 'Tutorials (Import)':     Tutorials-Import.md
         - 'Tutorials (Processing)':     Tutorials-Processing.md
+        - 'Tutorials (Report)':     Tutorials-Report.md
         - 'Tutorials (QC)':         Tutorials-QC.md
         - 'Tutorials (Developer)':         Tutorials-Developer.md    
     - 'Reference manuals':

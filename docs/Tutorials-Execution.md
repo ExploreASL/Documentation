@@ -1,6 +1,6 @@
 # Tutorials (Execution)
 
-----
+
 ## ExploreASL & ASL-BIDS
 
 Starting with version **v1.7.0**, **ExploreASL** will support an import workflow which allows the user to convert **DICOM** and **NIFTI** data to the **ASL-BIDS** format. Since **ExploreASL** does not fully utilize the **BIDS** format internally, there will also be an automated workflow to convert from **ASL-BIDS** to the **ExploreASL** **legacy format** (starting with version **v1.10.0**, this will be done automatically if needed). In the following subsections we will explain how you can use the automated **ExploreASL** import workflow to convert your input data to **ASL-BIDS** and how you can process it.

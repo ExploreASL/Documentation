@@ -1,4 +1,3 @@
-----
 Main function of the import module is to convert input DICOM data to the BIDS format in `rawdata` subfolder. Sequence parameters missing in the DICOMs are supplied in the `studyPar.json` file.
 
 ## How to run the import module
