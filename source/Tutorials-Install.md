@@ -2,7 +2,7 @@
 # Tutorials (Installation)
 
 
-This tutorial describes where to download, how to install, and how to run ExploreASL either directly from Matlab, or using a compiled version or a docker that do not require Matlab license. All external software, like SPM and dcm2niix, is contained in all the downloads and does not need to be downloaded or installed separately. The only exception is the [FSL software](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation) that needs to be downloaded and installed manually in case you want to process multi-PLD or time-encoded ASL data using BASIL. Please consult the [FSL installation guide](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation) for installation of Windows Subsystem for Linux (WSL or WSL2) if you want to use FSL on Windows.
+This tutorial describes where to download, how to install, and how to run ExploreASL either directly from Matlab, or using a compiled version or a docker that do not require Matlab license. All external software, like SPM and dcm2niix, is contained in all the downloads and does not need to be downloaded or installed separately. The only exception is the [FSL software](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation) that needs to be downloaded and installed manually in case you want to process multi-PLD or time-encoded ASL data using BASIL or use TOP-UP. The installation guide is at the end of this page.
 
 [ExploreASL GUI](https://github.com/MauricePasternak/ExploreASLJS) is a standalone wrapper around ExploreASL that provides a modern and user-friendly interface for importing, processing, analyzing, and visualizing ASL data with ExploreASL.
 
@@ -121,3 +121,10 @@ docker run -e DATASETROOT=MY-BIDS-DATASET
 - `/home/.../incoming:/data/incoming` is used to mount your dataset folder (`/home/.../incoming`) to its corresponding docker dataset folder (`/data/incoming`). 
 - The same notation is used to mount the docker dataset output folder (`/data/outgoing`) to its corresponding real output folder on your drive (/home/.../outgoing`).
 
+----
+## How to install and run FSL in ExploreASL
+
+Please install the standard compiled version of FSL. FSL version >= 6 is recommended for most applications. Version >= 6.0.7.6 is needed if you want to use FABBER to process BBB-permeability images with multi-TE ASL.
+
+Please consult the [FSL installation guide](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation). For use on Windows, you need to install Windows Subsystem for Linux (WSL or WSL2). The default WSL Linux version Ubuntu should be fine, 
+though use the version WSL2 that is recommended in the [FSL installation instructions](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Windows).
