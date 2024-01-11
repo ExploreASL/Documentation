@@ -45,27 +45,27 @@ Please use these fields to modify the quantification model parameters for the en
 
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
-| `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
-| `BASIL.bMasking`                    | For for BASIL/FABBER to quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
-| `BASIL.bSpatial`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
-| `BASIL.bInferT1`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
-| `BASIL.bInferATT`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 
-| `BASIL.Exch`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = simple |
-| `BASIL.Disp`                         | True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal | OPTIONAL, DEFAULT = none |
-| `BASIL.ATTSD`                     | Set parameter standard deviation of ATT for BASIL fitting | OPTIONAL, DEFAULT = 1.0 | 
-| `BASIL.bCleanUp`                     | Delete temporary files creates for FSL quantification | OPTIONAL, DEFAULT = true | 
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
 | `T2art`                             | `T2*` of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 50 @ 3T|
 | `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
 | `TissueT1`                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=1240 @ 3T |
 | `nCompartments`                     | Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model. | OPTIONAL, DEFAULT = 1) |
-| `SaveCBF4D`                         | Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries. | OPTIONAL, DEFAULT=false |
 
 ### ASL PROCESSING PARAMETERS
 All **ASL module** related parameters are stored within this subfield. Use these for extra ASL-processing options or to turn OFF/ON certain steps. Note that these parameters can be added either to the general `dataPar.json` but also to the `ASL4D.json` of each subject to affect the processing of this subject only.
 
 | `x.modules.asl.[...]`                  | Description                                   | Defaults           |
 | -------------------------------------- |:---------------------------------------------:|:------------------:|
+| `SaveCBF4D`                         | Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries. | OPTIONAL, DEFAULT=false |
+| `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
+| `bMaskingBASIL`                    | For for BASIL/FABBER to quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
+| `bSpatialBASIL`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
+| `bInferT1BASIL`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
+| `bInferATTBASIL`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 
+| `ExchBASIL`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = simple |
+| `DispBASIL`                         | True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal | OPTIONAL, DEFAULT = none |
+| `ATTSDBASIL`                     | Set parameter standard deviation of ATT for BASIL fitting | OPTIONAL, DEFAULT = 1.0 | 
+| `bCleanUpBASIL`                     | Delete temporary files creates for FSL quantification | OPTIONAL, DEFAULT = true | 
 | `motionCorrection`                     | Boolean to perform motion correction in case of timeseries. Options: `1` = on, `0` = off. | OPTIONAL, DEFAULT = 1 |
 | `SpikeRemovalThreshold`                | Minimal t-stat improval needed to remove motion spikes. Examples: `1` = effectively disabling spike removal. | OPTIONAL, DEFAULT = 0.01 |
 | `SpikeRemovalAbsoluteThreshold`        | Motion threshold in mm for removing motion spike volumes. Examples: `0.05`, `0` = disabling spike removal. | OPTIONAL, DEFAULT = 0 |
