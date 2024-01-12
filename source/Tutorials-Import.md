@@ -160,7 +160,7 @@ Again, note that the actual strings are given here and all `\` have to be escape
 
 Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.
 
-This is specified by "tokenOrdering": `[patientName, SessionName, ScanName]`
+This is specified by "tokenOrdering": `[patientName, VisitName, SessionName, ScanName]`
 
 * `"tokenOrdering": [1 0 2 3];` = first token is used for patient name, second for session name, third for scan name
 * `"tokenOrdering": [1 0 0 2];` = first token is used for patient name, second for scan name, session name is not assigned
