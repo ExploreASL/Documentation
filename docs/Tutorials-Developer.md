@@ -187,9 +187,9 @@ In `x.Q` you can find **sequence** and **quantification** related parameters.
 | x.Q.BackgroundSuppressionNumberPulses | Used to estimate decrease of labeling efficiency. |
 | x.Q.BackgroundSuppressionPulseTime    | Vector containing timing, in ms, of the background suppression pulses before the start of the readout (per BIDS). |
 | x.Q.PresaturationTime                 | Time in ms before the start of the readout, scalar, when the slice has been saturated (90 degree flip) this has to come before all the bSup pulses, but doesn't need to be always specified. |
-| x.Q.readoutDim                        | String specifying the readout type. |
+| x.Q.MRAcquisitionType                        | String specifying the readout type. A BIDS field, can be '2D' or '3D' |
 | x.Q.Vendor                            | String containing the Vendor used. |
-| x.Q.Sequence                          | String containing the sequence used. |
+| x.Q.PulseSequenceType                          | String containing the sequence used. A BIDS field (e.g. 'spiral', 'GRASE', 'EPI')|
 | x.Q.LabelingType                      | String containing the labeling strategy used. |
 | x.Q.Initial_PLD                       | Value of PLD (ms), for 3D this is fixed for whole brain, for 2D this is the PLD of first acquired slice. |
 | x.Q.LabelingDuration                  | Value of labeling duration (ms). |
