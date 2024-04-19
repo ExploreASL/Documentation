@@ -78,7 +78,6 @@ The `sourcestructure.json` file contains the following code (different for each 
        "folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"],
        "tokenOrdering": [ 1 0 2 3],
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
-       "tokenVisitAliases": ["", ""],
        "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
        "bMatchDirectories": true,
        "dcm2nii_version":"20220720",
@@ -174,6 +173,8 @@ If multiple visits are present - use the following notation to mark them:
 ```
 "tokenVisitAliases":["session_1","1","session_2","2","session_3","3","session_4","4","session_5","5","session_6","6","session_7","7"],`
 ```
+
+Alternatively, you can skip Visit renaming by not specifying the `tokenVisitAliases` parameter. Then the Visit names will be created by directly using the Visit token. Any alphanumerical string will then be used as the visit name and saved like that in BIDS and also used in the processing. This is useful when dates or specific names are used for sessions (e.g. 20240101, first, baseline).
 
 #### 4. tokenSessionAliases
 
