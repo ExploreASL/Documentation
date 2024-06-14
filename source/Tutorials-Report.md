@@ -2,8 +2,10 @@ This tutorial describes the settings of the PDF generator used to create Explore
 
 ## Introduction
 
-This is an example of how to use the function `[x, config] =  xASL_qc_GenerateReport(x[, subject])` to generate a completely custom PDF within ExploreASL. If `subject` isn't given, it will assume `subject = x.SUBJECT`.
-This function will use the JSON template in `ConfigReportPDF.json` in the `<root>/Derivatives/ExploreASL` folder. If this doesn't exist, it defaults to the example located at `<ExploreASL>/Functions/QualityControl/templateConfigReportPDF.json`.
+This is an example of how to use the function `[x] =  xASL_qc_GenerateReport(x[, subject])` to generate a completely custom PDF within ExploreASL. If `subject` isn't given, it will assume `subject = x.SUBJECT`.
+This function will use the JSON template in `configReportPDF.json` in the `<root>/Derivatives/ExploreASL` folder. If this doesn't exist, it will generate a default pdf containing all qc parameters of each module/session. The default configuration will generate a seperate report for each ASL session.
+
+An example PDF configuration is provided in `/ExploreASL/Functions/QualityControl/exampleConfigReportPDF.json` if you would like to use this copy it to `<data-root>/derivatives/ExploreASL/configReportPDF.json` and run `xASL_GenerateReport(x)` or `xASL_GenerateReport(x, subject)` if you want to specify the subject (it will default to currently loaded subject in x). 
 
 ### Standard Layout.
 
@@ -12,25 +14,31 @@ The PDF generator prints Page by Page, top to bottom in a line by line approach.
 ```json
 {   
     "Global_Settings" : {
-        "type" : "settings",
+        "type" : "textSettings",
     }, 
     "Page_one" : {
+    "category" : "metadata",
         "type" : "page", 
         "pageIdentifier" : "1", 
         "content" : {[
-            {   "type" : "text",
+            {	"category" : "content",
+		"type" : "text",
                 "text" : "something"},
-            {   "type" : "image",
+            {   "category" : "content",
+		"type" : "image",
                 "path" : "<path to image>"}
         ]}
     }, 
     "Page_two" : {
+    	"category" : "content",
         "type" : "page", 
         "pageIdentifier" : "2", 
         "content" : {[
-            {   "type" : "text",
+            {	"category" : "content",
+		"type" : "text",
                 "text" : "something"},
-            {   "type" : "image",
+            {   "category" : "content",
+		"type" : "image",
                 "path" : "<path to image>"}
         ]}
     }
@@ -44,30 +52,34 @@ The `page` object is Meta Object used to create a new page of whatever you want 
 
 ```json
 {
-    "type" : "page", 
-    "pageIdentifier" : "numerical - REQUIRED", 
+    "type" : "page",
+    "category" : "metadata",
+    "identifier" : "string - REQUIRED", 
     "content" : {[
-            {   "type" : "text",
+            {	"category" : "content",
+		"type" : "text",
                 "text" : "something"},
-            {   "type" : "image",
+            {   "category" : "content",
+		"type" : "image",
                 "path" : "<path to image>"}
     ]}
 }
 ```
 
-`type` is used to define the object as a page object. 
+`content` and `type` are used to define the object as a page object. 
 
-`pageIdentifier` defines the page name of the final pdf. 
+`identifier` defines the page name of the final pdf. 
 
 `content` is an array of Content objects defined below, printed in order top to bottom. 
 
-### Settings
-The `settings` object can be called as a Meta Object, to set print settings globally. It can also be called as a Content object to change the settings of a page or block. It can also be called withing a Content object to change the settings of just that specific object.  
+### textSettings
+The `textSettings` object can be called as a Meta Object, to set print settings globally. It can also be called as a Content object to change the settings of a page or block. It can also be called withing a Content object to change the settings of just that specific object.  
 This object has the following properties and value types : 
 
 ```json
 {
-    "type" : "settings", 
+    "category" : "metadata",
+    "type" : "textSettings", 
     "fontSize" : "numercal", 
     "fontName" : "string", 
     "fontWeight" : "string", 
@@ -75,12 +87,13 @@ This object has the following properties and value types :
     "axesVisible" : "string", 
     "HorizontalAlignment" : "string", 
     "lineSpacing" : "numerical"
+    "numberFormat": "string"
 }
 ```
 
-`type` is used to define the object as a settings object.
+`content` and `type` are used to define the object as a settings object.
 
- `fontSize, lineSpacing` need numerical values and determine fontSize in px and lineSpacing in % of the full page.
+`fontSize, lineSpacing` need numerical values and determine fontSize in px and lineSpacing in % of the full page.
 
 `fontName` can be any MATLAB accepted font. 
 
@@ -95,6 +108,8 @@ This object has the following properties and value types :
 
 `axesVisible` can be use to see where your text will be printed for debugging purposes, accepted values are `off, on`. 
 
+`numberFormat` can take any matlab designe number format, eg. `'%.2f'` for 2 decimal floating point operators
+
 If a property is not defined, the (previously defined) default will be used.
 
 
@@ -103,8 +118,9 @@ If a property is not defined, the (previously defined) default will be used.
 ### Text
 ```json
  {
+    "category" : "content",
     "type" : "text", 
-    "settings" : {
+    "textSettings" : {
         "fontSize" : "numercal", 
         "fontWeight" : "string"
     }, 
@@ -112,16 +128,50 @@ If a property is not defined, the (previously defined) default will be used.
 }
 ```
 
-`type` is used to define the object as a printable text object.  
+`content` and `type` used to define the object as a printable text object.  
 
-`settings` can be used to change the print settings for this line only. 
+`settings` can be used to change the print settings for this line only, all parameters defined in the settings object can be adjusted here.
 
-`text` contains the string to be printed.
+`text` contains the string to be printed on the report.
 
-### Image
+### ExploreASL quality parameter
+```json
+ {
+    "category" : "content",
+    "type" : "QCValues",
+    "parameter" : "string REQUIRED",
+    "module"    : "string REQUIRED",
+    "session"   : "string REQUIRED for ASL",
+    "range"     : "numerical - numerical OPTIONAL",
+    "unit"      : "string OPTIONAL",
+    "textSettings" : {
+        "fontSize" : "numercal", 
+        "fontWeight" : "string"
+    }, 
+    "text" : "string REQUIRED"
+}
+```
+Quality parameters are taken from the x.Output structure, this is mirrored to the file `QC_collection_<subject>.json` in the /derivatives/<subject> directory. These parameters use the same structure as this json file, and you can look at this file to see which parameters are available. 
+
+`content` and `type` are used to define the object as a printable text object.  
+
+`settings` can be used to change the print settings for this line only, all parameters defined in the settings object can be adjusted here.
+
+`parameter` contains the x.output parameter used for printing, to check which parameters exits you can also read the `QC_collection_<subject>.json` in the subject derivatives folder an example would be `T1w_GM_vol_ml` for the GM volume measure in the T1w scan.
+
+`module` contains which module the qc parameter belongs to  either `Structural` or  `ASL`
+
+`session` contains which session the qc parameter belongs to left blank when module = `Structural` but for module = `ASL` you need to define `ASL_1` or `ASL_2` etc.
+
+`range` optional parameter to denote ranges behind the quality parameter, eg. `100-200` sometimes a default exists in `ExploreASL/ExploreASL/blob/develop/Functions/QualityControl/qc_glossary.tsv`
+
+`unit` optional parameter to denote unit behind the quality parameter, eg. `mm` or `mL` sometimes a default exists in `ExploreASL/ExploreASL/blob/develop/Functions/QualityControl/qc_glossary.tsv`
+
+### image2D
 ```json
 {
-    "type" : "image", , 
+    "category" : "content",
+    "type" : "image2D", , 
     "absolutePath" : "string Semi-REQUIRED", 
     "popPath" : "string Semi-REQUIRED",
     "subjPath" : "string Semi-REQUIRED",
@@ -129,7 +179,7 @@ If a property is not defined, the (previously defined) default will be used.
     "size" : "[x y] REQUIRED"    
 }
 ```
-`type` is used to define the object as a printable image object. 
+`content` and `type` are used to define the object as a printable image object. 
 
 `absolutePath`, `popPath` and `subjPath` define the location of the image you want to print to page. 
 
@@ -142,12 +192,13 @@ For all three of these you can use wildcards (formatted as`<string>`)to replace 
 
 `position` needs a 2 element array with values between 0 and 1 of print location relative to the page. (eg. `[0.5 0.5]` would be the center of the page). 
 
-`size` needs a similar 2 element array defining the size of the printed image.
+`size` needs a similar 2 element array defining the size of the printed image .
 
-### Scan
+### Image3D
 ```json
 {
-    "type" : "scan", 
+    "category" : "content",
+    "type" : "image3D", 
     "name" : "string REQUIRED", 
     "position" : "[x y] REQUIRED", 
     "size" : "[x y] REQUIRED", 
@@ -164,7 +215,7 @@ For all three of these you can use wildcards (formatted as`<string>`)to replace 
     }
 }
 ```
-`type` is used to define the object as a printable scan object. 
+`content` and `type` are used to define the object as a printable image3d (Nifti) object. 
 
 `name` is used to identify the scan to be used, any NIfTI file in the x.P module can be used. (eg. `Pop_Path_rT1` for the rT1 scan in the population module)
 
@@ -177,17 +228,20 @@ For all three of these you can use wildcards (formatted as`<string>`)to replace 
 ### Block
 ```json
 {
+    "category" : "metadata",
     "type" : "block", 
     "position" : "[0.2 0.11]", 
     "size" : "[0.8 0.33]", 
-    "settings": {
-	      "type" : "settings",
-			  "<any setting seen in the previous section>" : "parameter"
+    "textSettings": {
+	      	"type" : "textSettings",
+	  	"fontSize" : "numerical"
 },
 "content" : {[
-            {   "type" : "text",
+            {	"category" : "content",
+		"type" : "text",
                 "text" : "something"},
-            {   "type" : "image",
+            {   "category" : "content",
+		"type" : "image",
                 "path" : "<path to image>"}
    ]}
 }
@@ -195,7 +249,7 @@ For all three of these you can use wildcards (formatted as`<string>`)to replace 
 
 A block object creates a subfigure, saves it as an image, and prints the image in your predefined position, you can print anything you want here. works identical to a `page` object in that you can add any number of printable objects or settings objects. 
 
-`type` is used to define the object as a printable block object. 
+`content` and `type` are used to define the object as a printable block object. 
 
 `position` needs a 2 element array with values between 0 and 1 of print location relative to the page. (eg. `[0.5 0.5]` would be the center of the page). `size` needs a similar 2 element array defining the size of the printed image.
 
