@@ -5,7 +5,7 @@ This tutorial describes the settings of the PDF generator used to create Explore
 This is an example of how to use the function `[x] =  xASL_qc_GenerateReport(x[, subject])` to generate a completely custom PDF within ExploreASL. If `subject` isn't given, it will assume `subject = x.SUBJECT`.
 This function will use the JSON template in `configReportPDF.json` in the `<root>/Derivatives/ExploreASL` folder. If this doesn't exist, it will generate a default pdf containing all qc parameters of each module/session. The default configuration will generate a seperate report for each ASL session.
 
-An example PDF configuration is provided in `/ExploreASL/Functions/QualityControl/exampleConfigReportPDF.json` if you would like to use this copy it to `<data-root>/derivatives/ExploreASL/configReportPDF.json` and run `xASL_GenerateReport(x)` or `xASL_GenerateReport(x, subject)` if you want to specify the subject (it will default to currently loaded subject in x). 
+An example PDF configuration is provided in `/ExploreASL/Functions/QualityControl/exampleConfigReportPDF.json` if you would like to use this, copy this .json file to `<data-root>/derivatives/ExploreASL/configReportPDF.json` and run `xASL_GenerateReport(x)`.
 
 ### Standard Layout.
 
