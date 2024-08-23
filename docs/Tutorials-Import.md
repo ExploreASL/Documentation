@@ -288,6 +288,8 @@ For a multi-PLD sequence with 7 volumes including an M0 as the first volume and 
 "LabelingDuration":[0, 1.45, 1.45, 1.45, 1.45, 1.45, 1.45]
 ```
 
+Additional fields for M0-scan import are `M0PositionInASL4D`, `DummyScanPositionInASL4D`, and `RepetitionTimePreparationM0`. Their syntax is provided in the definition of [Processing parameters](./../ProcessingParameters/)
+
 ----
 ### studyPar.json for multi-sequence study
 
