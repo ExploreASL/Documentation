@@ -20,11 +20,12 @@ Further options to import DICOM data are specified in the [Import Tutorial](./..
 Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Processing Parameters](./../ProcessingParameters).
 
 ### Evaluate Population module using different atlases
-The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `TotalGM`, `TotalWM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file.
+The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `TotalGM`, `TotalWM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. In case of an absence of this parameter, default type of `GM` is assumed, unless the atlas name contains `WB` or `WM` substring.
 
 ```json
 {"x":{
-    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"]}
+    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
+             "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]}   
 }}
 ```
 
@@ -72,7 +73,8 @@ By default **ExploreASL** population module evaluates the regional values of CBF
 You can freely combine all the given examples unless they are obvious conflicts between parameters. The five examples above can be combined into a single `dataPar.json` file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:
 ```json
 {"x":{
-    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], "DataTypes": ["qCBF", "ATT", "M0", "Tex"]},
+    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], 
+            "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]"DataTypes": ["qCBF", "ATT", "M0", "Tex"]},
     "Q":{"bUseBasilQuantification":1},
     "external":{"bAutomaticallyDetectFSL":true},
     "modules":{"asl":{"bUseMNIasDummyStructural":1},"population":{"bNativeSpaceAnalysis":true}}
