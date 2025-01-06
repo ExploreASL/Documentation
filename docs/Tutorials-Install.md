@@ -121,6 +121,39 @@ docker run -e DATASETROOT=MY-BIDS-DATASET
 - `/home/.../incoming:/data/incoming` is used to mount your dataset folder (`/home/.../incoming`) to its corresponding docker dataset folder (`/data/incoming`). 
 - The same notation is used to mount the docker dataset output folder (`/data/outgoing`) to its corresponding real output folder on your drive (/home/.../outgoing`).
 
+If your system admin blocks docker due to root requirements you can run singularity or podman described below:
+
+### Singularity
+For versions before **ExploreASL v1.12.0** you will need to use fakeroot in singularity due to the location of file transfers inside of the container.
+```console
+singularity run
+       --fakeroot
+       --writable-tmpfs
+       --env DATAROOT=TestDataSet
+       --env IMPORTMODULES=0
+       --env PROCESSMODULES=1
+       --bind /home/.../incoming-data/:/data/incoming,/home/.../outgoing-data/:/data/outgoing  xasl_latest.sif 
+```
+
+Due to a difference in docker design `--fakeroot` is no longer necessary starting from the image **ExploreASL v1.12.0**
+
+```console
+singularity run
+       --writable-tmpfs
+       --env DATAROOT=TestDataSet
+       --env IMPORTMODULES=0
+       --env PROCESSMODULES=1
+       --bind /home/.../incoming-data/:/data/incoming,/home/.../outgoing-data/:/data/outgoing  xasl_latest.sif
+```
+
+### Podman
+If your system uses podman and SELinux you can run and mount the container using the following command:
+```console
+podman run -e DATAROOT=TestDataSet
+       --mount type=bind,source=/home/.../incoming-data,target=/data/incoming,Z
+       --mount type=bind,source=/home/.../outgoing-data,target=/data/outgoing,Z xasl:latest
+```
+
 ----
 ## How to install and run FSL in ExploreASL
 

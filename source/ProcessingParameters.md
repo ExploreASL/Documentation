@@ -11,7 +11,8 @@ Within `x.external` you can find parameters related to **external tools** and th
 
 | `x.external.[...]`         | Description                                                                                                                                                         | Defaults                     |
 | -------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------:|
-| `bAutomaticallyDetectFSL`  | Boolean to automatically detect the FSL version if disabled, this function will try to use the system-initialized FSL and throw an error if FSL is not initialized. | OPTIONAL, DEFAULT = false |
+| `bAutomaticallyDetectFSL`  | Boolean to automatically detect the FSL version. If disabled, this function will try to use the system-initialized FSL or the provided path and throw an error if FSL is not initialized. | OPTIONAL, DEFAULT = false |
+| `bAutomaticallyDetectVABY`  | Boolean to automatically detect the VABY version. If disabled, this function will try to use the provided path for VABY and throw an error if VABY is not initialized. | OPTIONAL, DEFAULT = false |
 
 ### STUDY PARAMETERS
 Basic information about the session names within a study.
@@ -59,15 +60,16 @@ All **ASL module** related parameters are stored within this subfield. Use these
 | `x.modules.asl.[...]`                  | Description                                   | Defaults           |
 | -------------------------------------- |:---------------------------------------------:|:------------------:|
 | `SaveCBF4D`                         | Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries. | OPTIONAL, DEFAULT=false |
-| `bUseBasilQuantification`           | True for using BASIL quantification in addition to ExploreASL's quantification. |  |
-| `bMaskingBASIL`                    | For for BASIL/FABBER to quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
+| `bUseExternalQuantification`           | True for using external quantification instead of the ExploreASL's quantification. Set the ExternalQuantificationType as well. | OPTIONAL, DEFAULT=false |
+| `ExternalQuantificationType`           | Set the type of the external quantification as 'BASIL', 'FABBER', 'VABY'. Note that only FABBER and VABY can handle multi-TE data. | OPTIONAL, DEFAULT='BASIL' |
+| `bMaskingExternal`                    | For external quantification (e.g., with BASIL/VABY/FABBER), quantify only over a mask provided by ExploreASL | OPTIONAL, DEFAULT = true |
 | `bSpatialBASIL`                      | True for BASIL to use automated spatial smoothing |  OPTIONAL, DEFAULT = false |
 | `bInferT1BASIL`                      | True for BASIL to infer variable T1 values| OPTIONAL, DEFAULT = false |
 | `bInferATTBASIL`                     | True for BASIL to infer arterial component and quantify ATT | OPTIONAL, DEFAULT = true | 
 | `ExchBASIL`                         | True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes & Tofts, spa = Single pass approximation from St. Lawrence | OPTIONAL, DEFAULT = simple |
 | `DispBASIL`                         | True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal | OPTIONAL, DEFAULT = none |
 | `ATTSDBASIL`                     | Set parameter standard deviation of ATT for BASIL fitting | OPTIONAL, DEFAULT = 1.0 | 
-| `bCleanUpBASIL`                     | Delete temporary files creates for FSL quantification | OPTIONAL, DEFAULT = true | 
+| `bCleanUpExternal`                     | Delete temporary files creates for external quantification | OPTIONAL, DEFAULT = true | 
 | `motionCorrection`                     | Boolean to perform motion correction in case of timeseries. Options: `1` = on, `0` = off. | OPTIONAL, DEFAULT = 1 |
 | `SpikeRemovalThreshold`                | Minimal t-stat improval needed to remove motion spikes. Examples: `1` = effectively disabling spike removal. | OPTIONAL, DEFAULT = 0.01 |
 | `SpikeRemovalAbsoluteThreshold`        | Motion threshold in mm for removing motion spike volumes. Examples: `0.05`, `0` = disabling spike removal. | OPTIONAL, DEFAULT = 0 |

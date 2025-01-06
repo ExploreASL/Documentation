@@ -20,11 +20,11 @@ Further options to import DICOM data are specified in the [Import Tutorial](./..
 Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Processing Parameters](./../ProcessingParameters).
 
 ### Evaluate Population module using different atlases
-The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `TotalGM`, `TotalWM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. In case of an absence of this parameter, default type of `GM` is assumed, unless the atlas name contains `WB` or `WM` substring.
+The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `Total-GM`, `Total-WM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. In case of an absence of this parameter, default type of `GM` is assumed, unless the atlas name contains `WB` or `WM` substring.
 
 ```json
 {"x":{
-    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
+    "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
              "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]}   
 }}
 ```
@@ -33,17 +33,17 @@ The atlases used in the **ExploreASL** population module can be defined in the `
 ExploreASL currently uses BASIL to quantify multi-PLD, multi-TE and time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Multi-TE sequences execute directly FABBER from FSL. Note that you need to install FSL on you computer for this. Use the following `dataPar.json` to automatically locate installed FSL and to activate CBF quantification using BASIL:
 
 ```json
-{"x":{"Q":{"bUseBasilQuantification":1},
+{"x":{"modules":{"asl":{"bUseExternalQuantification":1, "ExternalQuantificationType":"BASIL"}},
 "external":{"bAutomaticallyDetectFSL":true}}}
 ```
 
 In case that FSL is not detected automatically, or if there's a prefered FSL version, you can directly provide path to the FSL directory like this:
 
 ```json
-{"x":{"Q":{"bUseBasilQuantification":1},
-"external":{"bAutomaticallyDetectFSL":true},
+{"x":{"modules":{"asl":{"bUseExternalQuantification":1}},
+"external":{"bAutomaticallyDetectFSL":false,
 "FSLdir":"/home/XASLuser/fsl/",
-"RootFSLdir":"/home/XASLuser/fsl/"}}
+"RootFSLdir":"/home/XASLuser/fsl/"}}}
 ```
 
 Note that Tex estimation of BBB permeability from multi-TE data is supported starting at FSL version 6.0.7.1. 
@@ -73,7 +73,7 @@ By default **ExploreASL** population module evaluates the regional values of CBF
 You can freely combine all the given examples unless they are obvious conflicts between parameters. The five examples above can be combined into a single `dataPar.json` file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:
 ```json
 {"x":{
-    "S": {"Atlases": ["TotalGM","TotalWM","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], 
+    "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], 
             "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]"DataTypes": ["qCBF", "ATT", "M0", "Tex"]},
     "Q":{"bUseBasilQuantification":1},
     "external":{"bAutomaticallyDetectFSL":true},

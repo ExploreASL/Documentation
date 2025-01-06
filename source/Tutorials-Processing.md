@@ -33,17 +33,17 @@ The atlases used in the **ExploreASL** population module can be defined in the `
 ExploreASL currently uses BASIL to quantify multi-PLD, multi-TE and time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Multi-TE sequences execute directly FABBER from FSL. Note that you need to install FSL on you computer for this. Use the following `dataPar.json` to automatically locate installed FSL and to activate CBF quantification using BASIL:
 
 ```json
-{"x":{"Q":{"bUseBasilQuantification":1},
+{"x":{"modules":{"asl":{"bUseExternalQuantification":1, "ExternalQuantificationType":"BASIL"}},
 "external":{"bAutomaticallyDetectFSL":true}}}
 ```
 
 In case that FSL is not detected automatically, or if there's a prefered FSL version, you can directly provide path to the FSL directory like this:
 
 ```json
-{"x":{"Q":{"bUseBasilQuantification":1},
-"external":{"bAutomaticallyDetectFSL":true},
+{"x":{"modules":{"asl":{"bUseExternalQuantification":1}},
+"external":{"bAutomaticallyDetectFSL":false,
 "FSLdir":"/home/XASLuser/fsl/",
-"RootFSLdir":"/home/XASLuser/fsl/"}}
+"RootFSLdir":"/home/XASLuser/fsl/"}}}
 ```
 
 Note that Tex estimation of BBB permeability from multi-TE data is supported starting at FSL version 6.0.7.1. 

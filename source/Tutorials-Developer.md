@@ -194,7 +194,6 @@ In `x.Q` you can find **sequence** and **quantification** related parameters.
 | x.Q.Initial_PLD                       | Value of PLD (ms), for 3D this is fixed for whole brain, for 2D this is the PLD of first acquired slice. |
 | x.Q.LabelingDuration                  | Value of labeling duration (ms). |
 | x.Q.SliceReadoutTime                  | Value (ms) of time added to the PLD after reading out each slice. |
-| x.Q.bUseBasilQuantification           | True for using BASIL quantification in addition to ExploreASL's quantification. |
 | x.Q.Lambda                            | Brain/blood water coefficient (mL 1H/ mL blood). |
 | x.Q.T2art                             | `T2*` of arterial blood at 3T, only used when no M0 image (ms). |
 | x.Q.BloodT1                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. |
@@ -231,6 +230,8 @@ All **ASL module** related parameters are stored within this subfield.
 | Fieldname                              | Description                                   |
 | -------------------------------------- |:---------------------------------------------:|
 | x.modules.asl.motionCorrection         | Boolean to perform motion correction in case of timeseries. |
+| x.modules.asl.bUseExternalQuantification           | True for using external quantification (e.g., BASIL) instead of the ExploreASL's quantification. |
+| x.modules.asl.ExternalQuantificationType           | Set the external quantification (e.g., BASIL, VABY, FABBER) with BASIL being the default. |
 | x.modules.asl.SpikeRemovalThreshold    | Minimal t-stat improval needed to remove motion spikes. |
 | x.modules.asl.bRegistrationContrast    | Specifies the image contrast used for registration. |
 | x.modules.asl.bAffineRegistration      | Specifies if the ASL-T1w rigid-body registration is followed up by an affine registration. |
