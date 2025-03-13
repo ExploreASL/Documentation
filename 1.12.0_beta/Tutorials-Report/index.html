@@ -1,0 +1,1118 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.12.0_beta/Tutorials-Report/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Tutorials (Report) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (Report)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        Tutorials (Install)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        Tutorials (Execution)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Import/" class="md-nav__link">
+        Tutorials (Import)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Processing/" class="md-nav__link">
+        Tutorials (Processing)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tutorials (Report)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tutorials (Report)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-layout" class="md-nav__link">
+    Standard Layout.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-objects" class="md-nav__link">
+    Meta Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Meta Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page" class="md-nav__link">
+    Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textsettings" class="md-nav__link">
+    textSettings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-objects" class="md-nav__link">
+    Content Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    Text
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploreasl-quality-parameter" class="md-nav__link">
+    ExploreASL quality parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image2d" class="md-nav__link">
+    image2D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image3d" class="md-nav__link">
+    Image3D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Developer/" class="md-nav__link">
+        Tutorials (Developer)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProcessingParameters/" class="md-nav__link">
+        Processing Parameters (dataPar.json)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-layout" class="md-nav__link">
+    Standard Layout.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta-objects" class="md-nav__link">
+    Meta Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Meta Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page" class="md-nav__link">
+    Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textsettings" class="md-nav__link">
+    textSettings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-objects" class="md-nav__link">
+    Content Objects
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    Text
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploreasl-quality-parameter" class="md-nav__link">
+    ExploreASL quality parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image2d" class="md-nav__link">
+    image2D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image3d" class="md-nav__link">
+    Image3D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/Tutorials-Report.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Tutorials (Report)</h1>
+
+<p>This tutorial describes the settings of the PDF generator used to create ExploreASL reports.</p>
+<h2 id="introduction">Introduction</h2>
+<p>This is an example of how to use the function <code>[x] =  xASL_qc_GenerateReport(x[, subject])</code> to generate a completely custom PDF within ExploreASL. If <code>subject</code> isn't given, it will assume <code>subject = x.SUBJECT</code>.
+This function will use the JSON template in <code>configReportPDF.json</code> in the <code>&lt;root&gt;/Derivatives/ExploreASL</code> folder. If this doesn't exist, it will generate a default pdf containing all qc parameters of each module/session. The default configuration will generate a seperate report for each ASL session.</p>
+<p>An example PDF configuration is provided in <code>/ExploreASL/Functions/QualityControl/exampleConfigReportPDF.json</code> if you would like to use this, copy this .json file to <code>&lt;data-root&gt;/derivatives/ExploreASL/configReportPDF.json</code> and run <code>xASL_GenerateReport(x)</code>.</p>
+<h3 id="standard-layout">Standard Layout.</h3>
+<p>The PDF generator prints Page by Page, top to bottom in a line by line approach.  For everything it will only print something if it actually exists in your derivatives directory. The standard layout of JSON-objects as follows. On the top level there is one settings meta-object where you can define settings that apply globally to your Report. Other than that there is one other meta-object that define the pages. </p>
+<pre><code class="language-json">{   
+    &quot;Global_Settings&quot; : {
+    &quot;category&quot;  : &quot;metadata&quot;,
+        &quot;type&quot;      : &quot;textSettings&quot;,
+    }, 
+    &quot;Page_one&quot; : {
+        &quot;category&quot;  : &quot;metadata&quot;,
+        &quot;type&quot;      : &quot;page&quot;, 
+        &quot;identifier&quot;    : &quot;string&quot;, 
+        &quot;content&quot;   : {[
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;text&quot;,
+                &quot;text&quot;      : &quot;something&quot;},
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;image2D&quot;,
+                &quot;path&quot;      : &quot;&lt;path to image&gt;&quot;}
+        ]}
+    }, 
+    &quot;Page_two&quot; : {
+        &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;page&quot;, 
+        &quot;identifier&quot;    : &quot;string&quot;, 
+        &quot;content&quot; : {[
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;text&quot;,
+                &quot;text&quot;      : &quot;something&quot;},
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;image2D&quot;,
+                &quot;path&quot;      : &quot;&lt;path to image&gt;&quot;}
+        ]}
+    }
+}
+</code></pre>
+<p>For all objects in the content array a "type" is needed that defines what kind of object it pertains. Currently the following objects are recognized : <code>textSettings, page, image2D, image3D, text, QCValues &amp; block</code>. The options for the contents of each object will be discussed below.</p>
+<h2 id="meta-objects">Meta Objects</h2>
+<h3 id="page">Page</h3>
+<p>The <code>page</code> object is Meta Object used to create a new page of whatever you want to print. Without page elements nothing will be printed. A page element cannot contain other pages itself.</p>
+<pre><code class="language-json">{
+    &quot;type&quot; : &quot;page&quot;,
+    &quot;category&quot; : &quot;metadata&quot;,
+    &quot;identifier&quot; : &quot;string - REQUIRED&quot;, 
+    &quot;content&quot; : {[
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;text&quot;,
+                &quot;text&quot;      : &quot;something&quot;},
+            {   &quot;category&quot;  : &quot;content&quot;,
+        &quot;type&quot;      : &quot;image2D&quot;,
+                &quot;path&quot;      : &quot;&lt;path to image&gt;&quot;}
+    ]}
+}
+</code></pre>
+<p><code>category</code> and <code>type</code> are used to define the object as a page object. </p>
+<p><code>identifier</code> is used to create the file name of the final pdf, eg. <code>"identifier" : "ASL_1"</code> will print to the file <code>xASL_Report_ASL_1.pdf</code>. </p>
+<p><code>content</code> is an array of content objects defined below, printed in order top to bottom. </p>
+<h3 id="textsettings">textSettings</h3>
+<p>The <code>textSettings</code> object can be called as a Meta Object, to set print settings globally. It can also be called as a Content object to change the settings of a page or block. It can also be called withing a Content object to change the settings of just that specific object.<br />
+This object has the following properties and value types : </p>
+<pre><code class="language-json">{
+    &quot;category&quot;  : &quot;metadata&quot;,
+    &quot;type&quot;  : &quot;textSettings&quot;, 
+    &quot;fontSize&quot;  : &quot;numercal&quot;, 
+    &quot;fontName&quot;  : &quot;string&quot;, 
+    &quot;fontWeight&quot; : &quot;string&quot;, 
+    &quot;color&quot;     : &quot;string&quot;, 
+    &quot;axesVisible&quot; : &quot;string&quot;, 
+    &quot;HorizontalAlignment&quot; : &quot;string&quot;, 
+    &quot;lineSpacing&quot; : &quot;numerical&quot;
+    &quot;numberFormat&quot; : &quot;string&quot;
+}
+</code></pre>
+<p><code>category</code> and <code>type</code> are used to define the object as a settings object.</p>
+<p><code>fontSize, lineSpacing</code> need numerical values and determine fontSize in px and lineSpacing in % of the full page.</p>
+<p><code>fontName</code> can be any MATLAB accepted font. </p>
+<p><code>fontWeight</code> can be <code>normal, bold</code> and determines bolding of text. </p>
+<p><code>color</code> can take any matlab supported color format:
+- long names <code>red, blue, green ...</code> 
+- short names <code>r, g, b, k, w ...</code> 
+- hex values <code>#FF000</code></p>
+<p><code>HorizontalAlignment</code> can be set to <code>left, right, center</code>. </p>
+<p><code>axesVisible</code> can be use to see where your text will be printed for debugging purposes, accepted values are <code>off, on</code>. </p>
+<p><code>numberFormat</code> can take any matlab designe number format, eg. <code>'%.2f'</code> for 2 decimal floating point operators</p>
+<p>If a property is not defined, the (previously defined) default will be used.</p>
+<h2 id="content-objects">Content Objects</h2>
+<h3 id="text">Text</h3>
+<pre><code class="language-json"> {
+    &quot;category&quot;  : &quot;content&quot;,
+    &quot;type&quot;  : &quot;text&quot;, 
+    &quot;textSettings&quot; : {
+        &quot;fontSize&quot; : &quot;numercal&quot;, 
+        &quot;fontWeight&quot; : &quot;string&quot;
+    }, 
+    &quot;text&quot;  : &quot;string REQUIRED&quot;
+}
+</code></pre>
+<p><code>category</code> and <code>type</code> used to define the object as a printable text object.  </p>
+<p><code>settings</code> can be used to change the print settings for this line only, all parameters defined in the settings object can be adjusted here.</p>
+<p><code>text</code> contains the string to be printed on the report.</p>
+<h3 id="exploreasl-quality-parameter">ExploreASL quality parameter</h3>
+<pre><code class="language-json"> {
+    &quot;category&quot;  : &quot;content&quot;,
+    &quot;type&quot;  : &quot;QCValues&quot;,
+    &quot;parameter&quot; : &quot;string REQUIRED&quot;,
+    &quot;module&quot;    : &quot;string REQUIRED&quot;,
+    &quot;session&quot;   : &quot;string REQUIRED for ASL&quot;,
+    &quot;range&quot;     : &quot;numerical - numerical OPTIONAL&quot;,
+    &quot;unit&quot;      : &quot;string OPTIONAL&quot;,
+    &quot;textSettings&quot; : {
+        &quot;fontSize&quot; : &quot;numercal&quot;, 
+        &quot;fontWeight&quot; : &quot;string&quot;
+    }, 
+    &quot;text&quot; : &quot;string REQUIRED&quot;
+}
+</code></pre>
+<p>Quality parameters are taken from the x.Output structure, this is mirrored to the file <code>QC_collection_&lt;subject&gt;.json</code> in the /derivatives/<subject> directory. These parameters use the same structure as this json file, and you can look at this file to see which parameters are available. </p>
+<p><code>category</code> and <code>type</code> are used to define the object as a printable text object.  </p>
+<p><code>settings</code> can be used to change the print settings for this line only, all parameters defined in the settings object can be adjusted here.</p>
+<p><code>parameter</code> contains the x.output parameter used for printing, to check which parameters exits you can also read the <code>QC_collection_&lt;subject&gt;.json</code> in the subject derivatives folder an example would be <code>T1w_GM_vol_ml</code> for the GM volume measure in the T1w scan.</p>
+<p><code>module</code> contains which module the qc parameter belongs to  either <code>Structural</code> or  <code>ASL</code></p>
+<p><code>session</code> contains which session the qc parameter belongs to left blank when module = <code>Structural</code> but for module = <code>ASL</code> you need to define <code>ASL_1</code> or <code>ASL_2</code> etc.</p>
+<p><code>range</code> optional parameter to denote ranges behind the quality parameter, eg. <code>100-200</code> sometimes a default exists in <code>ExploreASL/ExploreASL/blob/develop/Functions/QualityControl/qc_glossary.tsv</code></p>
+<p><code>unit</code> optional parameter to denote unit behind the quality parameter, eg. <code>mm</code> or <code>mL</code> sometimes a default exists in <code>ExploreASL/ExploreASL/blob/develop/Functions/QualityControl/qc_glossary.tsv</code></p>
+<h3 id="image2d">image2D</h3>
+<pre><code class="language-json">{
+    &quot;category&quot;  : &quot;content&quot;,
+    &quot;type&quot;  : &quot;image2D&quot;, , 
+    &quot;absolutePath&quot; : &quot;string Semi-REQUIRED&quot;, 
+    &quot;popPath&quot;   : &quot;string Semi-REQUIRED&quot;,
+    &quot;subjPath&quot;  : &quot;string Semi-REQUIRED&quot;,
+    &quot;position&quot;  : &quot;[x y] REQUIRED&quot;, 
+    &quot;size&quot;  : &quot;[x y] REQUIRED&quot;    
+}
+</code></pre>
+<p><code>category</code> and <code>type</code> are used to define the object as a printable image object. </p>
+<p><code>absolutePath</code>, <code>popPath</code> and <code>subjPath</code> define the location of the image you want to print to page. </p>
+<p><strong>Exactly <em>one</em> of these three must be given.</strong>
+- Use <code>absolutePath</code> if the file is on a fixed location, e.g. <code>~/images/example.jpg</code>). 
+- Use <code>popPath</code> if the file is located in the population section e.g. <code>M0/M0check.jpg</code>).
+- Use <code>subjPath</code> if the file is located in the population section e.g. <code>M0/M0check.jpg</code>).</p>
+<p>For all three of these you can use wildcards (formatted as<code>&lt;string&gt;</code>)to replace strings from the x-struct (eg. <code>M0Check/Cor_M0_&lt;SUBJECT&gt;_&lt;SESSION&gt;</code> would translate to <code>M0Check/Cor_M0_1_ASL_1</code> if <code>x.SUBJECT = '1'</code> &amp; <code>x.SESSION ='ASL_1'</code>.</p>
+<p><code>position</code> needs a 2 element array with values between 0 and 1 of print location relative to the page. (eg. <code>[0.5 0.5]</code> would be the center of the page). </p>
+<p><code>size</code> needs a similar 2 element array defining the size of the printed image .</p>
+<h3 id="image3d">Image3D</h3>
+<pre><code class="language-json">{
+    &quot;category&quot;  : &quot;content&quot;,
+    &quot;type&quot;  : &quot;image3D&quot;, 
+    &quot;name&quot;  : &quot;string REQUIRED&quot;, 
+    &quot;position&quot;  : &quot;[x y] REQUIRED&quot;, 
+    &quot;size&quot;  : &quot;[x y] REQUIRED&quot;, 
+    &quot;slice&quot;     : {
+        &quot;TraSlice&quot; : &quot;[n1 n2 n3 ...] REQUIRED&quot;, 
+        &quot;CorSlice&quot; : &quot;[n1 n2 n3 ...] REQUIRED&quot;, 
+        &quot;SagSlice&quot; : &quot;[n1 n2 n3 ...] REQUIRED&quot;}, 
+    &quot;overlay&quot;   : {
+        &quot;string&quot; : {
+            &quot;contour&quot;   : &quot;bool&quot;, 
+            &quot;opacity&quot;   : &quot;numerical&quot;, 
+            &quot;color&quot;     : &quot;string&quot;
+        }
+    }
+}
+</code></pre>
+<p><code>category</code> and <code>type</code> are used to define the object as a printable image3d (Nifti) object. </p>
+<p><code>name</code> is used to identify the scan to be used, any NIfTI file in the x.P module can be used. (eg. <code>Pop_Path_rT1</code> for the rT1 scan in the population module)</p>
+<p><code>slice</code> has three elements, one for each scan orientation, you can define any amount of slices to be printed, <code>"TraSlice" : "[25 75], CorSlice" : "[50], "SagSlice" : "[]"</code> would print the transversal slices at 25% and 75% position, the central coronal slice and no saggital slices for exmple.</p>
+<p><code>position</code> needs a 2 element array with values between 0 and 1 of print location relative to the page. (eg. <code>[0.5 0.5]</code> would be the center of the page). <code>size</code> needs a similar 2 element array defining the size of the printed image.</p>
+<p><code>overlay</code> is an optional property to be used to overlay any other scan over the original. The <code>string</code> used as property can be any NIfTI file in the population module, just like the <code>name</code> property above. <code>contour</code> can take values <code>true, false</code>. <code>opacity</code> takes a value between 0 and 1. <code>color</code> uses any MATLAB defined color just like the settings object defined above. Example overlay : <code>"SliceGradient" : { "contour" : "true", "opacity" : "0.3", "color" : "r" }</code> </p>
+<h3 id="block">Block</h3>
+<pre><code class="language-json">{
+    &quot;category&quot; : &quot;metadata&quot;,
+    &quot;type&quot; : &quot;block&quot;, 
+    &quot;position&quot; : &quot;[0.2 0.11]&quot;, 
+    &quot;size&quot; : &quot;[0.8 0.33]&quot;, 
+    &quot;textSettings&quot;: {
+            &quot;type&quot; : &quot;textSettings&quot;,
+        &quot;fontSize&quot; : &quot;numerical&quot;
+},
+&quot;content&quot; : {[
+            {   &quot;category&quot; : &quot;content&quot;,
+        &quot;type&quot; : &quot;text&quot;,
+                &quot;text&quot; : &quot;something&quot;},
+            {   &quot;category&quot; : &quot;content&quot;,
+        &quot;type&quot; : &quot;image&quot;,
+                &quot;path&quot; : &quot;&lt;path to image&gt;&quot;}
+   ]}
+}
+</code></pre>
+<p>A block object creates a subfigure, saves it as an image, and prints the image in your predefined position, you can print anything you want here. works identical to a <code>page</code> object in that you can add any number of printable objects or settings objects. </p>
+<p><code>category</code> and <code>type</code> are used to define the object as a printable block object. </p>
+<p><code>position</code> needs a 2 element array with values between 0 and 1 of print location relative to the page. (eg. <code>[0.5 0.5]</code> would be the center of the page). <code>size</code> needs a similar 2 element array defining the size of the printed image.</p>
+<p><code>content</code> is an array of content objects, printed in order top to bottom. Functions identical to the implementation of <code>content</code> in <code>page</code>. As <code>block</code> is a content object itself you can recursively put blocks inside one another.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Tutorials-Processing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tutorials (Processing)" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Tutorials (Processing)
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Tutorials-QC/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials (QC)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tutorials (QC)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
