@@ -1,5 +1,4 @@
-The **ExploreASL** Software is distributed under the license described below, designed
-to encourage collabortion while at the same time aiming to reuse commercial profit for academical purpose (e.g. hire an **ExploreASL** developer). All contents, except for those in the folder //External, are proprietary of **ExploreASL**. The content in the folder //External is not subject to this license.
+The **ExploreASL** Software is distributed under the open-source Apache 2.0 license described below, and can be freely used by anyone provided you cite the creators. You can even implement ExploreASL in your code, provided you abide by the Apache 2.0 license stated below. We do this to actively encourage collaboration, and to standardize image analysis and quantification between all kinds of research. Note that all contents in the folder //External are not subject to this license.
 
                                  Apache License
                            Version 2.0, January 2004
