@@ -76,7 +76,7 @@ The `sourcestructure.json` file contains the following code (different for each 
 ```json
 {  
        "folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"],
-       "tokenOrdering": [ 1 0 2 3],
+       "tokenOrdering": [ 1, 0, 2, 3],
        "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
        "tokenScanAliases": [ "^PSEUDO_10_min$", "ASL4D", "^M0$", "M0", "^T1-weighted$", "T1w"],
        "bMatchDirectories": true,
@@ -154,18 +154,18 @@ Again, note that the actual strings are given here and all `\` have to be escape
 #### 2. tokenOrdering
 
 ```
-"tokenOrdering": [ 1 0 2 3],
+"tokenOrdering": [ 1, 0, 2, 3],
 ```
 
 Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.
 
 This is specified by "tokenOrdering": `[patientName, VisitName, SessionName, ScanName]`
 
-* `"tokenOrdering": [1 0 2 3];` = first token is used for patient name, second for session name, third for scan name
-* `"tokenOrdering": [1 0 0 2];` = first token is used for patient name, second for scan name, session name is not assigned
-* `"tokenOrdering": [1 0 3 2];` = first token is used for patient name, third for session name, second for scan name
-* `"tokenOrdering": [2 0 1 3];` = second token is used for patient name, first for session name, third for scan name
-* `"tokenOrdering": [2 1 0 3];` = second token is used for patient name, first for visit name, third for scan name
+* `"tokenOrdering": [1, 0, 2, 3];` = first token is used for patient name, second for session name, third for scan name
+* `"tokenOrdering": [1, 0, 0, 2];` = first token is used for patient name, second for scan name, session name is not assigned
+* `"tokenOrdering": [1, 0, 3, 2];` = first token is used for patient name, third for session name, second for scan name
+* `"tokenOrdering": [2, 0, 1, 3];` = second token is used for patient name, first for session name, third for scan name
+* `"tokenOrdering": [2, 1, 0, 3];` = second token is used for patient name, first for visit name, third for scan name
 
 #### 3. tokenVisitAliases
 If multiple visits are present - use the following notation to mark them:
