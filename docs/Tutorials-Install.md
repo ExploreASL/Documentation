@@ -44,7 +44,7 @@ See more information in the Tutorial [here](./../Tutorials-QC).
 ----
 ## How to run a compiled ExploreASL Version
 
-Precompiled ExploreASL is available for certain ExploreASL versions and OSes [here](https://drive.google.com/drive/folders/1z6fbW6GnlmPhicXvXcRtGZQxptujN7o1). Providing a compiled version for every operating system and corresponding Matlab version is currently not feasible for us. Please feel free to ask the developers for a specific compiled version. 
+Precompiled ExploreASL is available for certain ExploreASL versions and OSes [here](https://drive.google.com/drive/folders/1z6fbW6GnlmPhicXvXcRtGZQxptujN7o1) - the latest version is compiled for **Matlab 2019b, V97**. Providing a compiled version for every operating system and corresponding Matlab version readily available is currently not feasible for us, but please feel free to ask the developers for a specific version. 
 
 A compiled version of ExploreASL always requires the corresponding Matlab Runtime. Please checkout the official [Matlab Documentation](https://mathworks.com/products/compiler/matlab-runtime.html). Download the Matlab Runtime of the Matlab Version which was used for the compilation. Make sure to install the Matlab Runtime correctly. If you're using Windows, it is important that the path to the Matlab Runtime is added to Windows **PATH** during the installation. To compile ExploreASL yourself, you have to run the `xASL_adm_MakeStandalone.m` script.
 
@@ -78,10 +78,10 @@ xASL_latest.exe "" "0" "0"
 
 ### Linux
 
-On Linux you can basically do the same as above. We can run the ExploreASL shell script with a specified Matlab MCR (here we use **version 96** e.g.) using the following command:
+On Linux you can basically do the same as above. We can run the ExploreASL shell script with a specified Matlab MCR (here we use **version 97** e.g.) using the following command:
 
 ```console
-./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v96/ "" "0" "0"
+./run_xASL_latest.sh /usr/local/MATLAB/MATLAB_Runtime/v97/ "" "0" "0"
 ```
 
 Using the options `"" "0" "0"` we initialize **ExploreASL**, but do not process a dataset. To run a dataset, we have to switch the `ImportModules` and/or the `ProcessModules` parameter from `0` to `1` and pass a path for the `DatasetRoot` directory. This could look something like this:
