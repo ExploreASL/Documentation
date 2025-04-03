@@ -1,0 +1,1522 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/1.12.0_beta/ProcessingParameters/">
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Processing Parameters (dataPar.json) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#processing-parameters-dataparjson" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Processing Parameters (dataPar.json)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        Tutorials (Install)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        Tutorials (Execution)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Import/" class="md-nav__link">
+        Tutorials (Import)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Processing/" class="md-nav__link">
+        Tutorials (Processing)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Report/" class="md-nav__link">
+        Tutorials (Report)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        Tutorials (QC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Developer/" class="md-nav__link">
+        Tutorials (Developer)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Reference manuals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference manuals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Reference manuals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        Module Import
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        Module Structural
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        Module ASL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        Module Population
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        SPM xASL Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Processing Parameters (dataPar.json)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Processing Parameters (dataPar.json)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-parameters" class="md-nav__link">
+    List of parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="List of parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-parameters" class="md-nav__link">
+    ENVIRONMENT PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#study-parameters" class="md-nav__link">
+    STUDY PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset-parameters" class="md-nav__link">
+    DATASET PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m0-parameters-and-options" class="md-nav__link">
+    M0 PARAMETERS and OPTIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantification-parameters" class="md-nav__link">
+    QUANTIFICATION PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-processing-parameters" class="md-nav__link">
+    ASL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-processing-parameters" class="md-nav__link">
+    STRUCTURAL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-processing-parameters" class="md-nav__link">
+    GENERAL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking-atlas-parameters" class="md-nav__link">
+    MASKING &amp; ATLAS PARAMETERS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataparjson-example" class="md-nav__link">
+    DataPar.json example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-additional-sequence-parameters" class="md-nav__link">
+    List of additional sequence parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="List of additional sequence parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-parameters" class="md-nav__link">
+    SEQUENCE PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataparjson-example-for-sequence-parameters" class="md-nav__link">
+    DataPar.json example for sequence parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        Change Log
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-parameters" class="md-nav__link">
+    List of parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="List of parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-parameters" class="md-nav__link">
+    ENVIRONMENT PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#study-parameters" class="md-nav__link">
+    STUDY PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset-parameters" class="md-nav__link">
+    DATASET PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m0-parameters-and-options" class="md-nav__link">
+    M0 PARAMETERS and OPTIONS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantification-parameters" class="md-nav__link">
+    QUANTIFICATION PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asl-processing-parameters" class="md-nav__link">
+    ASL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-processing-parameters" class="md-nav__link">
+    STRUCTURAL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-processing-parameters" class="md-nav__link">
+    GENERAL PROCESSING PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking-atlas-parameters" class="md-nav__link">
+    MASKING &amp; ATLAS PARAMETERS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataparjson-example" class="md-nav__link">
+    DataPar.json example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-additional-sequence-parameters" class="md-nav__link">
+    List of additional sequence parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="List of additional sequence parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-parameters" class="md-nav__link">
+    SEQUENCE PARAMETERS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataparjson-example-for-sequence-parameters" class="md-nav__link">
+    DataPar.json example for sequence parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/ExploreASL/Documentation/edit/master/docs/ProcessingParameters.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="processing-parameters-dataparjson">Processing parameters (dataPar.json)</h1>
+<p>This document describes the ExploreASL internal x-structure that contains processing settings and also sequence parameters. Normally, you do not have to modifies the processing paramaters and the default values are recommended for most studies. Also, you do not have to insert of modify the sequence parameters as these are normally all obtained from the JSON-files for data saved in ASL-BIDS. However, you can change both the processing settings and sequence parameters by providing them in a <code>dataPar.json</code> file in the <code>ROOT\derivatives\ExploreASL\dataPar.json</code>. Alternatively, you can provide the file at <code>ROOT\dataPar.json</code> during the import and it will be automatically copied to the <code>ROOT\derivatives\ExploreASL\dataPar.json</code> location. Note that for missing parameters, default will be used. Provided sequence parameters will be ignored if they will be already contained in individual subject's JSON sidecars, and will only be considered when missing for each particular subject.</p>
+<h2 id="list-of-parameters">List of parameters</h2>
+<p>Below, we list all useful parameters that can be set by users for both basic and advanced processing. See a full list of parameters in <a href="./../Tutorials-Developer/">Developer Tutorial</a>. Note that the parameters are grouped to several groups by their function - do not forget to add the full hierarchy when creating the <code>DataPar.json</code> - see the example at the end of this page. Note that the tables below use <strong>Matlab</strong> notation and the example file is in <strong>JSON</strong> notation</p>
+<h3 id="environment-parameters">ENVIRONMENT PARAMETERS</h3>
+<p>Within <code>x.external</code> you can find parameters related to <strong>external tools</strong> and the coding <strong>environment</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.external.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bAutomaticallyDetectFSL</code></td>
+<td style="text-align: center;">Boolean to automatically detect the FSL version. If disabled, this function will try to use the system-initialized FSL or the provided path and throw an error if FSL is not initialized.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = false</td>
+</tr>
+<tr>
+<td><code>bAutomaticallyDetectVABY</code></td>
+<td style="text-align: center;">Boolean to automatically detect the VABY version. If disabled, this function will try to use the provided path for VABY and throw an error if VABY is not initialized.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="study-parameters">STUDY PARAMETERS</h3>
+<p>Basic information about the session names within a study.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SESSIONS</code></td>
+<td style="text-align: center;">Use this to define sessions. Example (<code>'.json' file): ["ASL_1","ASL_2"]</code></td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>{'ASL_1'}</code></td>
+</tr>
+<tr>
+<td><code>session.options</code></td>
+<td style="text-align: center;">This is how the sessions will be called, example: <code>{'baseline' 'drug'}</code>. For FEAST, this should be <code>{'crushed' 'non-crushed'}</code>.</td>
+<td style="text-align: center;">OPTIONAL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataset-parameters">DATASET PARAMETERS</h3>
+<p><strong>Dataset</strong> related parameters can be found in this subfield.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.dataset.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subjectRegexp</code></td>
+<td style="text-align: center;">String with regular expression for ExploreASL to find subjects by foldername, example: <code>^\d{3}$</code> for three digits</td>
+<td style="text-align: center;">REQUIRED</td>
+</tr>
+<tr>
+<td><code>exclusion</code></td>
+<td style="text-align: center;">Cell with list of subjects to exclude, example: <code>{'005' '018'}</code></td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = empty</td>
+</tr>
+<tr>
+<td><code>ForceInclusionList</code></td>
+<td style="text-align: center;">Use this field if you want to use a selection of subjects rather than taking all available subjects from directories. Example: <code>load(fullfile(x.D.ROOT,'LongitudinalList.mat')</code>).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = use all subjects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="m0-parameters-and-options">M0 PARAMETERS and OPTIONS</h3>
+<p>Parameters to define M0-processing choices and also extra information about M0-scan position within the ASL series if not specified in the ASLcontext.tsv already. Note that these parameters can be added either to the general <code>dataPar.json</code> but also to the <code>ASL4D.json</code> of each subject to affect the processing of this subject only.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.modules.asl.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M0_conventionalProcessing</code></td>
+<td style="text-align: center;">Boolean - use the conventional M0 processing (per consensus paper), options: 1 = standard processing, 0 = new image processing (improved masking &amp; smoothing).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>M0_GMScaleFactor</code></td>
+<td style="text-align: center;">Add additional scale factor to multiply the M0 image by This can be useful when you have background suppression but no control/M0 image without background suppression. If you then know the M0 scalefactor for the GM, you can use the control image as M0 and use this parameter to scale back what was suppressed by background suppression. Note that there is no option for separate tissue scaling (e.g. WM &amp; GM), because ExploreASL pragmatically smooths the M0 a lot, assuming that head motion and registration between M0 &amp; ASL4D will differ between patients and controls.</td>
+<td style="text-align: center;">OPTIONAL, default = 1</td>
+</tr>
+<tr>
+<td><code>M0PositionInASL4D</code></td>
+<td style="text-align: center;">Note that this parameter should be better provided in a studyPar.json. A vector of integers that indicates the position of M0 in TimeSeries, if it is integrated by the Vendor in the DICOM export. Will move this from ASL4D.nii to M0.nii Note that the x.modules.asl.M0PositionInASL4D parameter is independent from the x.Q.M0 parameter choice. Example for Philips 3D GRASE = '[1 2]' (first control-label pair). Example for Siemens 3D GRASE = 1 first image. Example for GE 3D spiral = 2 where first image is PWI &amp; last = M0. Empty vector should be given (= [] or = null (in JSON)) if no action is to be taken and nothing is removed.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>[] (no M0 in timeseries)</code></td>
+</tr>
+<tr>
+<td><code>DummyScanPositionInASL4D</code></td>
+<td style="text-align: center;">Note that this parameter should be better provided in a studyPar.json. A vector of integers that indicates the position of Dummy scans in TimeSeries if they are integrated by the Vendor in the DICOM export. This allows to remove the dummy scans or noise scans that are part of the Timeseries. A new ASL4D.nii is saved with dummy scans removed and the original is backed-up. Works in a similar way as M0PositionInASL4D, both can be entered at the same time and both indicate the original position in the Timeseries independend of each other. Example for Siemens 2D EPI = <code>[79 80]</code> Skip the control-label pair used for noise measurements. Example for certain Siemens 3D GRASE = 2 Skip the first dummy control image. Empty vector should be given (= [] or = null (in JSON)) if no action is to be taken and nothing is removed.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>[] (no M0 in timeseries)</code></td>
+</tr>
+<tr>
+<td><code>RepetitionTimePreparationM0</code></td>
+<td style="text-align: center;">Note that this parameter should be better provided in a studyPar.json. A vector of integers that provides the repetition time (or the inversion time) for the M0scans if this differs from TR for ASL. This can be provided as an integer or as a vector and is especially useful for definining the parameters of m0scan acquired as a multi-TI inversion recovery</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="quantification-parameters">QUANTIFICATION PARAMETERS</h3>
+<p>Please use these fields to modify the quantification model parameters for the entire study. Note that normally, the default values are used for each field-strength and these values do not have to be provided. Note that these parameters can be added either to the general <code>dataPar.json</code> but also to the <code>ASL4D.json</code> of each subject to affect the processing of this subject only.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.Q.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Lambda</code></td>
+<td style="text-align: center;">Brain/blood water coefficient (mL 1H/ mL blood). Example: <code>0.32</code> (for GSP phantom).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0.9</td>
+</tr>
+<tr>
+<td><code>T2art</code></td>
+<td style="text-align: center;"><code>T2*</code> of arterial blood, only used when no M0 image (ms).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 50 @ 3T</td>
+</tr>
+<tr>
+<td><code>BloodT1</code></td>
+<td style="text-align: center;">T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1650 @ 3T</td>
+</tr>
+<tr>
+<td><code>TissueT1</code></td>
+<td style="text-align: center;">T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=1240 @ 3T</td>
+</tr>
+<tr>
+<td><code>nCompartments</code></td>
+<td style="text-align: center;">Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="asl-processing-parameters">ASL PROCESSING PARAMETERS</h3>
+<p>All <strong>ASL module</strong> related parameters are stored within this subfield. Use these for extra ASL-processing options or to turn OFF/ON certain steps. Note that these parameters can be added either to the general <code>dataPar.json</code> but also to the <code>ASL4D.json</code> of each subject to affect the processing of this subject only.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.modules.asl.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SaveCBF4D</code></td>
+<td style="text-align: center;">Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=false</td>
+</tr>
+<tr>
+<td><code>bHct2BloodT1</code></td>
+<td style="text-align: center;">Boolean, that converts hematocrit values to blood T1 to use for quantification. Options: <code>0</code> = off, <code>1</code> = use provided Hct, <code>2</code> = use provided age &amp; sex to derive Hct and blood-T1</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=use hct if exist, use age&amp;sex if exist, otherwise disabled (in this order)</td>
+</tr>
+<tr>
+<td><code>bUseExternalQuantification</code></td>
+<td style="text-align: center;">True for using external quantification instead of the ExploreASL's quantification. Set the ExternalQuantificationType as well.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=false</td>
+</tr>
+<tr>
+<td><code>ExternalQuantificationType</code></td>
+<td style="text-align: center;">Set the type of the external quantification as 'BASIL', 'FABBER', 'VABY'. Note that only FABBER and VABY can handle multi-TE data.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT='BASIL'</td>
+</tr>
+<tr>
+<td><code>bMaskingExternal</code></td>
+<td style="text-align: center;">For external quantification (e.g., with BASIL/VABY/FABBER), quantify only over a mask provided by ExploreASL</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
+<td><code>bSpatialBASIL</code></td>
+<td style="text-align: center;">True for BASIL to use automated spatial smoothing</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = false</td>
+</tr>
+<tr>
+<td><code>bInferT1BASIL</code></td>
+<td style="text-align: center;">True for BASIL to infer variable T1 values</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = false</td>
+</tr>
+<tr>
+<td><code>bInferATTBASIL</code></td>
+<td style="text-align: center;">True for BASIL to infer arterial component and quantify ATT</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
+<td><code>ExchBASIL</code></td>
+<td style="text-align: center;">True for BASIL to model of the exchange of labeled water in the capilliary bed . Options : mix = Well-mixed single compartment, simple = Simple single compartment of T1 of blood, 2cpt = A two compartment exchange model following Parkes &amp; Tofts, spa = Single pass approximation from St. Lawrence</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = simple</td>
+</tr>
+<tr>
+<td><code>DispBASIL</code></td>
+<td style="text-align: center;">True for BASIL to model label dispersion. Options : none = No dispersion, gamma = Gamma dispersion kernal (vascular transport function), gauss = Temporal gaussian dispersion kernal, sgauss = Spatial gaussian dispersion kernal</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = none</td>
+</tr>
+<tr>
+<td><code>ATTSDBASIL</code></td>
+<td style="text-align: center;">Set parameter standard deviation of ATT for BASIL fitting</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1.0</td>
+</tr>
+<tr>
+<td><code>bCleanUpExternal</code></td>
+<td style="text-align: center;">Delete temporary files creates for external quantification</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = true</td>
+</tr>
+<tr>
+<td><code>motionCorrection</code></td>
+<td style="text-align: center;">Boolean to perform motion correction in case of timeseries. Options: <code>1</code> = on, <code>0</code> = off.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1</td>
+</tr>
+<tr>
+<td><code>SpikeRemovalThreshold</code></td>
+<td style="text-align: center;">Minimal t-stat improval needed to remove motion spikes. Examples: <code>1</code> = effectively disabling spike removal.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0.01</td>
+</tr>
+<tr>
+<td><code>SpikeRemovalAbsoluteThreshold</code></td>
+<td style="text-align: center;">Motion threshold in mm for removing motion spike volumes. Examples: <code>0.05</code>, <code>0</code> = disabling spike removal.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bRegistrationContrast</code></td>
+<td style="text-align: center;">Specifies the image contrast used for registration: <code>0</code> = Control-&gt;T1w, <code>1</code> = CBF-&gt;pseudoCBF from template/pGM+pWM (skip if sCoV&gt;0.667), <code>2</code> = automatic (mix of both), <code>3</code> = option 2 &amp; force CBF-&gt;pseudoCBF irrespective of sCoV.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 2</td>
+</tr>
+<tr>
+<td><code>bAffineRegistration</code></td>
+<td style="text-align: center;">Specifies if the ASL-T1w rigid-body registration is followed up by an affine registration: <code>0</code> = affine registration disabled, <code>1</code> = affine registration enabled, <code>2</code> = affine registration automatically chosen based on spatial CoV of PWI.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bDCTRegistration</code></td>
+<td style="text-align: center;">Specifies if to include the DCT registration on top of Affine, all other requirements for affine are thus also taken into account the x.modules.asl.bAffineRegistration must be &gt;0 for DCT to run: <code>0</code> = DCT registration disabled <code>1</code> = DCT registration enabled if affine enabled and conditions for affine passed, <code>2</code> = DCT enabled as above, but use PVC on top of it to get the local intensity scaling right.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bRegisterM02ASL</code></td>
+<td style="text-align: center;">Boolean specifying whether M0 is registered to mean_control image (or T1w if no control image exists). It can be useful to disable M0 registration if the ASL registration is done based on the M0, and little motion is expected between the M0 and ASL acquisition. If no separate M0 image is available, this parameter will have no effect. This option is disabled automatically for 3D spiral: <code>0</code> = M0 registration disabled, <code>1</code> = M0 registration enabled (DEFAULT).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bUseMNIasDummyStructural</code></td>
+<td style="text-align: center;">When structural (e.g. T1w) data is missing, copy population-average MNI templates as dummy structural templates. With this option, the ASL module copies the structural templates to fool the pipeline, resulting in ASL registration to these templates. While the rigid-body parameters might still be found somewhat correctly, with this option it is advised to enable affine registration for ASL as well, since ASL and these dummy structural images will differ geometrically. When disabled, an error will be issued instead when the structural image are missing. <code>1</code> = enabled, <code>0</code> = disabled.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bPVCNativeSpace</code></td>
+<td style="text-align: center;">Performs partial volume correction (PVC) in ASL native space using the GM and WM maps obtained from previously segmented T1-weighted images. Skipped with warning when those maps do not exist and are not resampled to the ASL space. PVC can take several minutes for larger scans (e.g. 128x128x30), so it is deactivated by default. <code>1</code> = enabled, <code>0</code> = disabled.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>PVCNativeSpaceKernel</code></td>
+<td style="text-align: center;">Kernel size for the ASL native space PVC. This is ignored when x.modules.asl.bPVCNativeSpace is set to 0. Equal weighting of all voxels within the kernel is assumed. 3D kernel can be used, but any of the dimension can be also set to 1. Only odd number of voxels can be used in each dimension (e.g. <code>[3 7 5]</code> not <code>[2 3 1]</code>).</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>[5 5 1]</code> for bPVCGaussianMM==0, <code>[10 10 4]</code> for bPVCGaussianMM==1</td>
+</tr>
+<tr>
+<td><code>bPVCGaussianMM</code></td>
+<td style="text-align: center;">If set to 1, PV-correction with a Gaussian weighting is used instead of the equal weights of all voxels in the kernel ('flat' kernel) as per Asllani's original method. Ignored when x.modules.asl.bPVCNativeSpace is set to 0. Unlike with the flat kernel when the size is defined in voxels, here the FWHM of the Gaussian in mm is defined in each dimension. The advantage is twofold - continuous values can be added and a single value can be entered which is valid for datasets with different voxel-sizes without having a kernel of different effective size.<code>1</code> = enabled, use Gaussian kernel with FWHM in mm given in PVCNativeSpaceKernel, <code>0</code> = disabled, use 'flat' kernel with voxels given in PVCNativeSpaceKernel.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bMakeNIfTI4DICOM</code></td>
+<td style="text-align: center;">Boolean to output CBF native space maps resampled and/or registered to the original T1w/ASL, and contrast adapted and in 12 bit range allowing to convert the NIfTI to a DICOM file, e.g. for implementation in PACS or other DICOM archives. If set to true, an additional CBF image will be created with modifications that allow it to be easily implemented back into a DICOM for e.g. PACS: 1. Remove peak &amp; valley signal, remove NaNs, rescale to 12 bit integers, apply original orientation (2 copies saved, with original ASL and T1w orientation).</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td><code>ApplyQuantification</code></td>
+<td style="text-align: center;">A vector of 1x6 logical values specifying which types on quantified images should be calculated and saved. Fields: <strong>1)</strong> Apply ScaleSlopes ASL4D (xASL_wrp_Quantify, future at dcm2niiX stage), <strong>2)</strong> Apply ScaleSlopes M0 (xASL_quant_M0, future at dcm2niiX stage), <strong>3)</strong> Convert PWI a.u. to label (xASL_wrp_Quantify, future at xASL_wrp_Reslice?), <strong>4)</strong> Quantify M0 a.u. (xASL_quant_M0, corrects for incomplete T1 relaxation), <strong>5)</strong> Perform division by M0. <strong>6)</strong> Apply all scaling. Examples: ASL4D is an already quantified CBF image, disable all quantification <code>'[0 0 0 0 0 0]'</code>. To compare label but not CBF (e.g. label in vessels or sinus vs tissue): <code>[1 1 1 1 0 1]'</code>. Note that the output always goes to CBF.nii.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>'[1 1 1 1 1 1]'</code> = all enabled</td>
+</tr>
+<tr>
+<td><code>SessionMergingList</code></td>
+<td style="text-align: center;">A list of lists of sessions to merge. One or several lists can be provided. Each of these lists contain sessions that are concatenated in the given order and quantified together. All individual sessions from that list are pre-processed separately. When processing the last session in the list, all previous sessions including the current one are concatenated and then quantified together and the result is written for this current session. Example: [["ASL_1", "ASL_2"],["ASL_1","ASL_3"]] merges session 1 and 2 and provides the output in session 2, and then merges session 1 and 3 and provides them in the session 3.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = empty</td>
+</tr>
+<tr>
+<td><code>SessionMergingScaling</code></td>
+<td style="text-align: center;">A list of lists of scaling parameter to adjust possible differences in scalings between different sessions to be merged. It corresponds to the list provided in <code>SessionMerginList</code>. Data from each session are divided by the corresponding number. Example provided with [["ASL_1", "ASL_2"],["ASL_1","ASL_3"]] is [[1 1], [1 1.5]]. It will divided session 3 by 1.5 when merging with session one.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = scaling by 1 of all sessions</td>
+</tr>
+<tr>
+<td><code>bQuantifyMultiTE</code></td>
+<td style="text-align: center;">If set to 1, multi-TE quantification is enabled in case that multi-TE data are present. It is enabled by default when mutli-TE data are detected.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="structural-processing-parameters">STRUCTURAL PROCESSING PARAMETERS</h3>
+<p>All <strong>structural module</strong> related parameters are stored within this subfield. Use these to configure processing options of the structural module. Note that some of these settings are directly in the <code>modules</code> and some are in <code>modules.structural</code>.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.modules.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bRunLongReg</code></td>
+<td style="text-align: center;">Run longitudinal registration.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>bRunDARTEL</code></td>
+<td style="text-align: center;">Run between-subject registration/create templates.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>WMHsegmAlg</code></td>
+<td style="text-align: center;">Choose the LST algorithm 'LGA'/'LPA' for WMH segmentation</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 'LPA'</td>
+</tr>
+<tr>
+<td><code>structural.bSegmentSPM12</code></td>
+<td style="text-align: center;">Boolean to specify if SPM12 segmentation is run instead of CAT12. Options: 1 = run SPM12, 0 = run CAT12.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>structural.bHammersCAT12</code></td>
+<td style="text-align: center;">Boolean specifying if CAT12 should provide Hammers volumetric ROI results.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>structural.bFixResolution</code></td>
+<td style="text-align: center;">Resample to a resolution that CAT12 accepts.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=false</td>
+</tr>
+<tr>
+<td><code>population.bNativeSpaceAnalysis</code></td>
+<td style="text-align: center;">Output final results calculated also in the subject's native space.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-processing-parameters">GENERAL PROCESSING PARAMETERS</h3>
+<p>General <strong>settings</strong> can be found in this subfield.</p>
+<table>
+<thead>
+<tr>
+<th><code>x.settings.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Quality</code></td>
+<td style="text-align: center;">Boolean specifying on which quality the pipeline should be run, options: <code>1</code> = normal quality, <code>0</code> = lower quality, fewer iterations and lower resolution of processing for a fast try-out.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1</td>
+</tr>
+<tr>
+<td><code>DELETETEMP</code></td>
+<td style="text-align: center;">Boolean for removing the temporary files. Options: <code>0</code> = keeping all files, <code>1</code> = delete temporary files created by the pipeline.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 1</td>
+</tr>
+<tr>
+<td><code>SkipIfNoFlair</code></td>
+<td style="text-align: center;">Boolean to skip processing of subjects that do not have a FLAIR image. These parameters can be useful when some data is still complete, but one would like to start image processing already. Options: <code>1</code> = skip processing of a subject that does not have a FLAIR image <code>0</code> = do not skip anything.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>SkipIfNoASL</code></td>
+<td style="text-align: center;">Boolean to skip processing of subjects that do not have a ASL image. Options: <code>1</code> = skip processing of a subject that does not have a ASL image, <code>0</code> = do not skip anything.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>SkipIfNoM0</code></td>
+<td style="text-align: center;">Boolean to skip processing of subjects that do not have a M0 image. Options:  <code>1</code> = skip processing of a subject that does not have a M0 image, <code>0</code> = do not skip anything.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = 0</td>
+</tr>
+<tr>
+<td><code>stopAfterErrors</code></td>
+<td style="text-align: center;">Number of allowed errors before job iteration is stopped</td>
+<td style="text-align: center;">(OPTIONAL, DEFAULT = inf)</td>
+</tr>
+<tr>
+<td><code>bLesionFilling</code></td>
+<td style="text-align: center;">Boolean for lesion filling in structural module (submodule 5).</td>
+<td style="text-align: center;">(OPTIONAL, DEFAULT = true)</td>
+</tr>
+<tr>
+<td><code>bAutoACPC</code></td>
+<td style="text-align: center;">Boolean whether center of mass alignment should be performed before SPM registration.</td>
+<td style="text-align: center;">(OPTIONAL, DEFAULT = true)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="masking-atlas-parameters">MASKING &amp; ATLAS PARAMETERS</h3>
+<p>The <code>x.S</code> subfield contains <strong>masking &amp; atlas</strong> related parameters. </p>
+<table>
+<thead>
+<tr>
+<th><code>x.S.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bMasking</code></td>
+<td style="text-align: center;">Vector specifying if we should mask a ROI with a subject-specific mask (1 = yes, 0 = no): <code>[1 0 0 0]</code> = susceptibility mask (either population-or subject-wise), <code>[0 1 0 0]</code> = vascular mask (only subject-wise), <code>[0 0 1 0]</code> = subject-specific tissue-masking (e.g. pGM&gt;0.5), <code>[0 0 0 1]</code> = WholeBrain masking (used as memory compression) <code>[0 0 0 0]</code> = no masking at all, <code>[1 1 1 1]</code> = apply all masks, Can also be used as boolean, where 1 = <code>[1 1 1 1]</code>, 0 = <code>[0 0 0 0]</code>. Can be useful for e.g. loading lesion masks outside the GM.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=1</td>
+</tr>
+<tr>
+<td><code>MinimalROIVolume</code></td>
+<td style="text-align: center;">Specifies the minimal ROI volume in mL that is considered when calculation population statistics. All ROIs smaller than this volume are evaluated as N/A.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=1</td>
+</tr>
+<tr>
+<td><code>bWMH</code></td>
+<td style="text-align: center;">Boolean, TRUE = including WMH in the WM mask, FALSE = excluding WMH from the WM mask by subtracting the pvWMH (on ASL resolution) from the pvWM (on ASL resolution). It also subtracts from the GM mask but this likely doesn’t affect the GM mask. With the deep WM mask, effects are only expected with large WMH volume.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = FALSE</td>
+</tr>
+<tr>
+<td><code>DataTypes</code></td>
+<td style="text-align: center;">Vector of cells specifying which images to take data from, in the ROI analysis. E.g., <code>["Tex", "ATT", "SD", "M0", "pvGM", "qCBF"]</code></td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>["qCBF"]</code></td>
+</tr>
+<tr>
+<td><code>Atlases</code></td>
+<td style="text-align: center;">Vector specifying the atlases which should be used within the population module. Default definition within the Population Module: <code>x.S.Atlases = {'Total','DeepWM','Tatu_ACA_MCA_PCA'}</code>. Available atlases (please check the atlas NIfTI and accompanying files for more information): <strong>Free atlases</strong>: <code>Total</code>: Mask of the entire GM and WM <code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Total.nii.cz'</code>, <code>AAL3v1</code>: Automated anatomical labeling atlas AAL3 version 3 by GIN-IMN <code>'./External/Atlases4ROIs/LicensePermissive/AAL3v1.nii.gz'</code>, <code>DeepWM</code>: Mask of the deep WM <code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/DeepWM.nii.gz'</code>, <code>WholeBrain</code>: Mask of the entire brain <code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/WholeBrain.nii.gz'</code>, <code>Supratentorial_GM_WM</code>: GM and WM in the supratentorial region <code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'</code>, <code>Supratentorial_GM_WM_CoW</code>: GM and WM in the supratentorial region including the Circle of Willis<code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM_CoW.nii.gz'</code>, <code>Supratentorial_GM_WM</code>: GM and WM in the supratentorial region excluding the subcortical structures <code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'</code>, <code>Supratentorial_GM_WM</code>: GM and WM in the supratentorial region<code>'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'</code>, <code>MNI_Structural</code>: MNI cortical atlas '<code>./External/Atlases4ROIs/LicenseLimited/MNI_Structural.nii.gz'</code>, <code>Tatu_ACA_MCA_PCA</code>: Original vascular territories by Tatu et al. <code>'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ACA_MCA_PCA.nii.gz'</code>, <code>Tatu_ICA_PCA</code>: Tatu - only ICA and PCA <code>'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ICA_PCA.nii'</code>, <code>Tatu_ICA_L_ICA_R_PCA</code>: <code>'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ICA_L_ICA_R_PCA.nii.gz'</code>, <code>Tatu_ACA_MCA_PCA_Prox_Med_Dist</code>: Tatu separated to distal/medial/proximal of ACA/MCA/PCA <code>'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ACA_MCA_PCA_Prox_Med_Dist.nii.gz'</code>, <code>Mindboggle_OASIS_DKT31_CMA</code>: Mindboggle-101 cortical atlas <code>'./External/Atlases4ROIs/LicensePermissive/Mindboggle_OASIS_DKT31_CMA.nii.gz'</code>. <strong>Free for non-commercial use only</strong>: <code>Desikan_Killiany_MNI_SPM12</code>: Desikan-Killiany atlas <code>'./External/Atlases4ROIs/LicenseLimited/Desikan_Killiany_MNI_SPM12.nii.gz'</code>, <code>HOcort_CONN</code>: Harvard-Oxford cortical atlas <code>'./External/Atlases4ROIs/LicenseLimited/HOcort_CONN.nii.gz'</code>, <code>HOsub_CONN</code>: Harvard-Oxford subcortical atlas <code>'./External/Atlases4ROIs/LicenseLimited/HOsub_CONN.nii.gz'</code>, <code>Hammers</code>: Alexander Hammers's brain atlas <code>'./External/Atlases4ROIs/LicenseLimited/Hammers.nii.gz'</code>, <code>HammersCAT12</code>: Hammers atlas adapted to DARTEL template of IXI550 space <code>'./External/Atlases4ROIs/LicenseLimited/HammersCAT12.nii'</code>, <code>Thalamus</code>: Harvad-Oxford thalamus atlas <code>'./External/Atlases4ROIs/LicenseLimited/Thalamus.nii.gz'</code>, <code>WMPM_Type_III</code>: WM atlas by JHU based on ICBM-DTI-81 <code>'./External/Atlases4ROIs/LicenseLimited/WMPM_Type_III.nii.gz'</code>,</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT=<code>["Total", "DeepWM"]</code></td>
+</tr>
+<tr>
+<td><code>TissueMasking</code></td>
+<td style="text-align: center;">ExploreASL's population module produces ROI values that are obtained by a combination of an MNI ROI atlas with subject-specific GM and WM segmentations. The subject-specific tissue masking is specified by the user with this <code>TissueMasking</code> parameter with options <code>"GM"</code>, <code>"WM"</code>, or <code>"WB"</code> (GM+WM), which should ideally have the same length as <code>x.S.Atlases</code>. In case this parameter is missing or has shorter length, the values are determined based on the Atlas - by default, GM is assumed, and WM or WB type is used if this substring is present in the atlas name. When the <code>TissueMasking</code> parameter is provided, it won't check or alter it based on the Atlas name.</td>
+<td style="text-align: center;">OPTIONAL, DEFAULT = <code>["GM", "WM"]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dataparjson-example">DataPar.json example</h2>
+<p>An example configuration file is given below. Note that we include a large number of options and sequence parameters with the purpose of showing the correct formatting of the file and in the praxis no <code>dataPar.json</code> or only a couple of parameters are typically provided.</p>
+<pre><code class="language-json">{&quot;x&quot;: {
+    &quot;dataset&quot;: {
+    &quot;subjectRegexp&quot;: &quot;^\\d{3}$&quot;,
+    &quot;exclusion&quot;: &quot;&quot;},
+    &quot;SESSIONS&quot;: [&quot;ASL_1&quot;,&quot;ASL_2&quot;],
+    &quot;S&quot;:{&quot;Atlases&quot;: [&quot;Thalamus&quot;, &quot;HOcort_CONN&quot;, &quot;Total&quot;],&quot;TissueMasking&quot;:[&quot;GM&quot;,&quot;GM&quot;,&quot;GM&quot;]},
+    &quot;session&quot;:{
+    &quot;options&quot;: [&quot;baseline&quot;,&quot;drug&quot;]},
+    &quot;external&quot;:{
+    &quot;bAutomaticallyDetectFSL&quot;: 1},
+    &quot;Q&quot;:{
+    &quot;SliceReadoutTime&quot;: 30,
+    &quot;T2art&quot;: 50,
+    &quot;BloodT1&quot;: 1650},
+    &quot;settings&quot;:{
+    &quot;Quality&quot;: 1,
+    &quot;DELETETEMP&quot;: 1,
+    &quot;bAutoACPC&quot;: false},
+    &quot;modules&quot;:{
+    &quot;bRunLongReg&quot;: true,
+    &quot;structural&quot;: {
+        &quot;bSegmentSPM12&quot;: 1},
+    &quot;asl&quot;:{
+        &quot;M0PositionInASL4D&quot;: [1, 2],
+        &quot;bUseMNIasDummyStructural&quot;: 1,
+        &quot;bPVCNativeSpace&quot;: 1,
+        &quot;PVCNativeSpaceKernel&quot;: [10 10 4],
+        &quot;bPVCGaussianMM&quot;: 1}}}
+}
+</code></pre>
+<h2 id="list-of-additional-sequence-parameters">List of additional sequence parameters</h2>
+<p>Note that sequence parameters should always be defined during the Import through <code>studyPar.json</code>. Only in rare cases when DICOM files are not available for the initial import, extra sequence parameters can be supplemented just for the processing. This should only be done in rare cases and otherwise is this practice discouraged.</p>
+<h3 id="sequence-parameters">SEQUENCE PARAMETERS</h3>
+<p>Parameters of the ASL sequence. Note that these parameters should have been defined in the ASL-BIDS format for each subject and saved in its JSON-sidecar. These fields, when provided in a <code>dataPar.json</code> file are only used if the corresponding ASL-BIDS field is missing. Use of these parameters is thus discouraged unless really needed. </p>
+<table>
+<thead>
+<tr>
+<th><code>x.Q.[...]</code></th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Defaults</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M0</code></td>
+<td style="text-align: center;">Choose which M0 option to use: <code>'separate_scan'</code> = for a separate M0 NIfTI (needs to be in the same folder called <code>M0.nii</code>), <code>3.7394*10^6</code> = (or any other value) single M0 value to use, <code>'UseControlAsM0'</code> = will copy the mean control image as M0.nii and process as if it was a separately acquired M0 image (taking TR etc from the <code>ASL4D.nii</code>). In case the Background Suppression is used, it will automatically try to compensate for it, <code>'Absent'</code> = will skip any M0 processing; this requires an already quantified CBF image</td>
+<td style="text-align: center;">REQUIRED</td>
+</tr>
+<tr>
+<td><code>BackgroundSuppressionNumberPulses</code></td>
+<td style="text-align: center;">Used to estimate decrease of labeling efficiency. Options: 0 = (no background suppression), 2 = labeling efficiency factor <code>0.83</code> (e.g. Philips 2D EPI &amp; Siemens 3D GRASE), 4 = labeling efficiency factor <code>0.81</code> (e.g. Philips 3D GRASE), 5 = labeling efficiency factor <code>0.75</code> (e.g. GE 3D spiral).</td>
+<td style="text-align: center;">REQUIRED</td>
+</tr>
+<tr>
+<td><code>BackgroundSuppressionPulseTime</code></td>
+<td style="text-align: center;">Vector containing timing, in ms, of the background suppression pulses before the start of the readout (per BIDS). REQUIRED when x.Q.UseControlAsM0 &amp; x.Q.BackgroundSuppressionNumberPulses&gt;0.</td>
+<td style="text-align: center;">Check description</td>
+</tr>
+<tr>
+<td><code>PresaturationTime</code></td>
+<td style="text-align: center;">Time in ms before the start of the readout, scalar, when the slice has been saturated (90 degree flip) this has to come before all the bSup pulses, but doesn't need to be always specified. Defaults to PLD (PASL) or PLD+LabDur ((P)CASL).</td>
+<td style="text-align: center;">OPTIONAL</td>
+</tr>
+<tr>
+<td><code>MRAcquisitionType</code></td>
+<td style="text-align: center;">String specifying the readout type. Options: <code>'2D'</code> for slice-wise readout, <code>'3D'</code> for volumetric readout.</td>
+<td style="text-align: center;">REQUIRED</td>
+</tr>
+<tr>
+<td><code>Vendor</code></td>
+<td style="text-align: center;">String containing the Vendor used. This parameter is used to apply the Vendor-specific scale factors, options: 'GE_product', 'GE_WIP', 'Philips', 'Siemens'.</td>
+<td style="text-align: center;">REQUIRED for ASL</td>
+</tr>
+<tr>
+<td><code>PulseSequenceType</code></td>
+<td style="text-align: center;">String containing the sequence used. Options: <code>'spiral', 'GRASE', 'EPI'</code>.</td>
+<td style="text-align: center;">REQUIRED for ASL</td>
+</tr>
+<tr>
+<td><code>LabelingType</code></td>
+<td style="text-align: center;">String containing the labeling strategy used. Options: <code>'PASL'</code> (pulsed Q2-TIPS), <code>'CASL'</code> (CASL/PCASL). Note: pulsed without Q2TIPS cannot be reliably quantified because the bolus width cannot be identified CASL &amp; PCASL are both continuous ASL methods, identical quantification.</td>
+<td style="text-align: center;">REQUIRED for ASL</td>
+</tr>
+<tr>
+<td><code>Initial_PLD</code></td>
+<td style="text-align: center;">Value of PLD (ms), for 3D this is fixed for whole brain, for 2D this is the PLD of first acquired slice, example: 1800.</td>
+<td style="text-align: center;">REQUIRED for ASL</td>
+</tr>
+<tr>
+<td><code>LabelingDuration</code></td>
+<td style="text-align: center;">Value of labeling duration (ms), example: 1800.</td>
+<td style="text-align: center;">REQUIRED for ASL</td>
+</tr>
+<tr>
+<td><code>SliceReadoutTime</code></td>
+<td style="text-align: center;">Value (ms) of time added to the PLD after reading out each slice, example: 31. Other option = <code>'shortestTR'</code>; shortest TR enabled gives each sequence the minimal TR. This enables calculating slice delay per subject.</td>
+<td style="text-align: center;">REQUIRED for 2D ASL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataparjson-example-for-sequence-parameters">DataPar.json example for sequence parameters</h3>
+<p>An example configuration file is given below for the sequence parameters. Please combine these with the configuration file above.</p>
+<pre><code class="language-json">{&quot;x&quot;: {
+    &quot;Q&quot;:{
+    &quot;BackgroundSuppressionNumberPulses&quot;: 2,
+    &quot;LabelingType&quot;: &quot;CASL&quot;,
+    &quot;Initial_PLD&quot;: 1800,
+    &quot;LabelingDuration&quot;: 1800,
+    &quot;SliceReadoutTime&quot;: 30,
+    &quot;T2art&quot;: 50,
+        &quot;BloodT1&quot;: 1650},
+}
+}
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../SPMxASL/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SPM xASL Functions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              SPM xASL Functions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
