@@ -27,8 +27,8 @@ To run **ExploreASL** you have to type in the following command in the **Command
 
 ```matlab
 DatasetRoot = 'C:\...\MY-BIDS-DATASET'; % Path to the Dataset folder, containing the ASL-BIDS data in C:\...\MY-BIDS_DATASET\rawdata
-ImportModules = [0 0 0 1]; % Import data from ASL-BIDS format to ExploreASL internal format
-ProcessModules = true;
+ImportModules = 0; % Import is only about DICOM to BIDS import. Conversion of data from ASL-BIDS format to ExploreASL internal format is done automatically.
+ProcessModules = 1;
 [x] = ExploreASL(DatasetRoot, ImportModules, ProcessModules);
 ```
 

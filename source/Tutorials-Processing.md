@@ -88,7 +88,7 @@ Correct scaling between the M0 and ASL scans is still an issue for certain ASL i
     "modules":{
         "asl":{
             "M0_GMScaleFactor": 10,
-            "DummyScanPositionInASL4D": [2,3]
+            "DummyScanPositionInASL4D": [2, 3]
 }}}}
 ```
 
@@ -101,7 +101,7 @@ While partial-volume correction is outputted in the Population module as done pe
         "asl":{
             "motionCorrection": 0,
             "bPVCNativeSpace": 1,
-            "PVCNativeSpaceKernel": [10 10 4],
+            "PVCNativeSpaceKernel": [10, 10, 4],
             "bPVCGaussianMM": 1
 }}}}
 ```

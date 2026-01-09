@@ -87,12 +87,13 @@ The `sourcestructure.json` file contains the following code (different for each 
 Note that we are using an outdated notation here - Visit/Session/Scan. In BIDS, this corresponds to Sessions/Runs/Scans - this will be updated in the future.
 
 #### 1. folderHierarchy
+The parameter `folderHierarchy` enables to parse the directory path with the data and extract several strings from the path as tokens, which describe patient/visit/session/scan names.
 
 ```
 "folderHierarchy": ["^(\\d{3}).*", "^Session([12])$","^(PSEUDO_10_min|T1-weighted|M0)$"]
 ```
 
-This specifies the names of all directories at all levels. In this case, we have specified regular expressions for directories at three different levels:
+Essentially, commas `,` separate different directory levels and strings inbetween `(` and `)` brackets are treated as tokens and extracted and numbered consecutively left to right. In this case, we have specified regular expressions for directories at three different levels:
 
 * `^(\\d{3}).*`
 * `^Session([12])$`
@@ -105,10 +106,19 @@ At each directory level, it first decides if the directory matches the regular e
 * Extracting a token: `^(\\d{3}).*`
 * Not extracting a token: `^\\d{3}.*`
 
-Tokens information extracted from the directory name at each directory level. 
-The tokens are numbered by the directory level and can be later used to label patients, sequences etc. See **tokenOrdering** below.
+The tokens are numbered by the directory level and can be later used to label patients, sequences etc. See **tokenOrdering** below. We therefore extract three tokens at three different directory levels:
+* `\\d{3}`
+* `[12]`
+* `(PSEUDO_10_min|T1-weighted|M0)`
 
-We use normal characters and metacharacters.
+For a directory `./sourcedata/115/Session2/M0` we would extract the three following tokens:
+* `115`
+* `2`
+* `M0`
+
+Note that multiple tokens can be extracted at a single directory level and there can be directory levels without tokens as well.
+
+To define the `folderHierarchy` string, we use normal characters and metacharacters.
 Expressions from characters and metacharacters are then further coupled with quantifiers, grouping operators, and conditional operators.
 Some basic regular expressions are described here with examples - for a full description see the link above:
 
@@ -152,15 +162,22 @@ Some basic regular expressions are described here with examples - for a full des
 Again, note that the actual strings are given here and all `\` have to be escaped when written to a json-file as `\\`.
 
 #### 2. tokenOrdering
+Token ordering helps us to take the ordered tokens and assign meaning to them. That is identify individual tokens as names of patients, visits, sessions, and scans:
 
 ```
 "tokenOrdering": [ 1, 0, 2, 3],
 ```
 
-Tokens (parts of the directory names) were extracted according to the regular expressions above. Here we decide how the tokens are used.
+`tokenOrdering` specific provides an array with four numbers that give the token number for the following parameters in this exact order: `[patientName, VisitName, SessionName, ScanName]`
+Therefore, `tokenOrdering` being `[1, 0, 2, 3]` and our example of extracted tokens would mean that
+* `patientName` is `115`
+* `VisitName` is undefined
+* `SessionName` is `2`
+* `ScanName` is `M0`
 
-This is specified by "tokenOrdering": `[patientName, VisitName, SessionName, ScanName]`
+Notably, data are typically stored in several subdirectories. `folderHierarchy` and `tokenOrdering` enables to identify and label all different subdirectories that are then and label them as containing data from a specific subject and scan etc.
 
+Examples of other was of token ordering:
 * `"tokenOrdering": [1, 0, 2, 3];` = first token is used for patient name, second for session name, third for scan name
 * `"tokenOrdering": [1, 0, 0, 2];` = first token is used for patient name, second for scan name, session name is not assigned
 * `"tokenOrdering": [1, 0, 3, 2];` = first token is used for patient name, third for session name, second for scan name
@@ -168,16 +185,18 @@ This is specified by "tokenOrdering": `[patientName, VisitName, SessionName, Sca
 * `"tokenOrdering": [2, 1, 0, 3];` = second token is used for patient name, first for visit name, third for scan name
 
 #### 3. tokenVisitAliases
-If multiple visits are present - use the following notation to mark them:
+This parameter provides guidance how extracted string from the directory path `VisitName` can be renamed to an internal label for particular visit. Any visit labels can be used.
 
+If multiple visits are present - use the following notation to mark them:
 ```
 "tokenVisitAliases":["session_1","1","session_2","2","session_3","3","session_4","4","session_5","5","session_6","6","session_7","7"],`
 ```
+This array contains alternating strings of "directory name" (previously extracted as token and labeled as `VisitName`) and the corresponding "visit name" to be used internally.
 
 Alternatively, you can skip Visit renaming by not specifying the `tokenVisitAliases` parameter. Then the Visit names will be created by directly using the Visit token. Any alphanumerical string will then be used as the visit name and saved like that in BIDS and also used in the processing. This is useful when dates or specific names are used for sessions (e.g. 20240101, first, baseline).
 
 #### 4. tokenSessionAliases
-
+In a similar way, the session tokens are renamed to session labels. Currently, we use session labels `ASL_1`, `ASL_2`, etc.
 ```
 "tokenSessionAliases": ["^1$", "ASL_1", "^2$", "ASL_2"],
 ```
