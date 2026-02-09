@@ -20,12 +20,12 @@ Further options to import DICOM data are specified in the [Import Tutorial](./..
 Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Processing Parameters](./../ProcessingParameters).
 
 ### Evaluate Population module using different atlases
-The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `Total-GM`, `Total-WM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. In case of an absence of this parameter, default type of `GM` is assumed, unless the atlas name contains `WB` or `WM` substring.
+The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `Total-GM`, `Total-WM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. If `Atlases` are provided, then `TissueMasking` is required. Tissue types `GM`, `WM`, and `CSF` are allowed and any of their combinations:
 
 ```json
 {"x":{
     "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
-             "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]}   
+             "TissueMasking": ["GM", "WM", "WM", "GM+CSF", "GM+WM+CSF", "GM", "GM+WM"]}   
 }}
 ```
 
