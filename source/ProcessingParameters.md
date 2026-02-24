@@ -49,9 +49,10 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
-| `T2art`                             | `T2*` of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 50 @ 3T|
+| `T2art`                             | T2 of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 165 @ 3T|
 | `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
 | `TissueT1`                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=1240 @ 3T |
+| `TissueT2`                          | T2 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=85 @ 3T |
 | `nCompartments`                     | Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model. | OPTIONAL, DEFAULT = 1) |
 
 ### ASL PROCESSING PARAMETERS
@@ -145,7 +146,8 @@ An example configuration file is given below. Note that we include a large numbe
 	"bAutomaticallyDetectFSL": 1},
     "Q":{
 	"SliceReadoutTime": 30,
-	"T2art": 50,
+	"T2art": 165,
+	"TissueT2": 85,
 	"BloodT1": 1650},
     "settings":{
 	"Quality": 1,
@@ -195,7 +197,8 @@ An example configuration file is given below for the sequence parameters. Please
 	"Initial_PLD": 1800,
 	"LabelingDuration": 1800,
 	"SliceReadoutTime": 30,
-	"T2art": 50,
+	"T2art": 165,
+	"TissueT2": 85,
         "BloodT1": 1650},
 }
 }

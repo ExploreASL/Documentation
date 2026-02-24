@@ -129,7 +129,8 @@ In the rare case where a sequence parameter would be missing in the ASL-BIDS for
         "BackgroundSuppressionNumberPulses": 2,
         "BackgroundSuppressionPulseTime": [100, 500, 1500],
         "Initial_PLD": 1800,
-        "T2art": 50,
+        "T2art": 165,
+        "TissueT2": 85,
         "TissueT1": 1240
 }}}
 ```
