@@ -20,12 +20,13 @@ Further options to import DICOM data are specified in the [Import Tutorial](./..
 Here, we present how to setup the most basic things for the ExploreASL processing using the `dataPar.json`. Note that you can combine the examples below and concatenate the content of given examples to a single `dataPar.json` to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for [Processing Parameters](./../ProcessingParameters).
 
 ### Evaluate Population module using different atlases
-The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `Total-GM`, `Total-WM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. If `Atlases` are provided, then `TissueMasking` is required. Tissue types `GM`, `WM`, and `CSF` are allowed and any of their combinations:
+The atlases used in the **ExploreASL** population module can be defined in the `x.S` sub-structure. If you are interested in the `Total-GM`, `Total-WM`, `DeepWM`, `Hammers`, `HOcort_CONN`, `HOsub_CONN`, and `Mindboggle_OASIS_DKT31_CMA` atlases e.g., you can add the following lines to your `dataPar.json` file. You can specify the type of tissue for the given atlas using `TissueMasking` parameter. If `Atlases` are provided, then `TissueMasking` is required. Tissue types `GM`, `WM`, and `CSF` are allowed and any of their combinations. You can also for each atlas set the PV-threshold for evaluation using `TissueThreshold`. If not provided, it is set to 0.7 automatically:
 
 ```json
 {"x":{
     "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
-             "TissueMasking": ["GM", "WM", "WM", "GM+CSF", "GM+WM+CSF", "GM", "GM+WM"]}   
+             "TissueMasking": ["GM", "WM", "WM", "GM+CSF", "GM+WM+CSF", "GM", "GM+WM"],
+             "TissueThreshold": [0.7, 0.7, 0.5, 0.9, 0.9, 0.7, 0.7]}   
 }}
 ```
 
