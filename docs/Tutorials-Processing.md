@@ -106,6 +106,16 @@ While partial-volume correction is outputted in the Population module as done pe
 }}}}
 ```
 
+### Evaluate CBF in user-defined regions of interest (ROI)
+It is possible to provide two types of user-defined ROIs - called `Lesions` and `ROIs`. ASL-derived parameters are evaluated in both and equally so, but `ROIs` only serve for evaluation and `Lesions` might have an additional function. The ROIs are provided coregistered with structural images such as `T1` or `FLAIR` by adding the NIfTI file directly in the derivatives folder in the subject directory next to the structural images. Several ROIs and lesions can be added with naming convention: `Lesion_T1_1.nii`, `Lesion_T1_2.nii`, `ROI_T1_1.nii`, `ROI_FLAIR_1.nii`. These should be provided before running the structural module and they are automatically identified and processed. In the population module, a table is provided for each ROI with each ROI evaluated in the corresponding subject. You can activate Native-space-analysis or adjust the threshold for the ROI evaluation. ROIs are automatically downsampled to the ASL resolution in the ASL native space and the partial volume of the ROI can then be thresholded for evaluation - see the example code to add to set the native space analysis and thresholds:
+
+```json
+{"x":{
+    "S": {"LesionROIThreshold":0.7},
+    "modules":{"population":{"bNativeSpaceAnalysis":true}}
+}}
+```
+
 ### Run at lower quality and skip some missing scans
 The general settings allows to run ExploreASL in a faster mode at lower quality, or to not skip certain subjects if they are missing certain scans, or stop the pipeline after too many errors are reported:
 ```json
@@ -129,7 +139,8 @@ In the rare case where a sequence parameter would be missing in the ASL-BIDS for
         "BackgroundSuppressionNumberPulses": 2,
         "BackgroundSuppressionPulseTime": [100, 500, 1500],
         "Initial_PLD": 1800,
-        "T2art": 50,
+        "T2art": 165,
+        "TissueT2": 85,
         "TissueT1": 1240
 }}}
 ```

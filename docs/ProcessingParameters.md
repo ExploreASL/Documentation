@@ -49,9 +49,10 @@ Please use these fields to modify the quantification model parameters for the en
 | `x.Q.[...]`                       | Description                                   | Defaults           |
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
-| `T2art`                             | `T2*` of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 50 @ 3T|
+| `T2art`                             | T2 of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 165 @ 3T|
 | `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
 | `TissueT1`                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=1240 @ 3T |
+| `TissueT2`                          | T2 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=85 @ 3T |
 | `nCompartments`                     | Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model. | OPTIONAL, DEFAULT = 1) |
 
 ### ASL PROCESSING PARAMETERS
@@ -128,7 +129,8 @@ The `x.S` subfield contains **masking & atlas** related parameters.
 | `DataTypes`                        | Vector of cells specifying which images to take data from, in the ROI analysis. E.g., `["Tex", "ATT", "SD", "M0", "pvGM", "qCBF"]` | OPTIONAL, DEFAULT = `["qCBF"]` |
 | `Atlases`                             | Vector specifying the atlases which should be used within the population module. Default definition within the Population Module: `x.S.Atlases = {'Total','DeepWM','Tatu_ACA_MCA_PCA'}`. Available atlases (please check the atlas NIfTI and accompanying files for more information): **Free atlases**: `Total`: Mask of the entire GM and WM `'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Total.nii.cz'`, `AAL3v1`: Automated anatomical labeling atlas AAL3 version 3 by GIN-IMN `'./External/Atlases4ROIs/LicensePermissive/AAL3v1.nii.gz'`, `DeepWM`: Mask of the deep WM `'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/DeepWM.nii.gz'`, `WholeBrain`: Mask of the entire brain `'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/WholeBrain.nii.gz'`, `Supratentorial_GM_WM`: GM and WM in the supratentorial region `'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'`, `Supratentorial_GM_WM_CoW`: GM and WM in the supratentorial region including the Circle of Willis`'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM_CoW.nii.gz'`, `Supratentorial_GM_WM`: GM and WM in the supratentorial region excluding the subcortical structures `'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'`, `Supratentorial_GM_WM`: GM and WM in the supratentorial region`'./External/Atlases4ROIs/LicensePermissive/SPM_CAT_GPL/Supratentorial_GM_WM.nii.gz'`, `MNI_Structural`: MNI cortical atlas '`./External/Atlases4ROIs/LicenseLimited/MNI_Structural.nii.gz'`, `Tatu_ACA_MCA_PCA`: Original vascular territories by Tatu et al. `'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ACA_MCA_PCA.nii.gz'`, `Tatu_ICA_PCA`: Tatu - only ICA and PCA `'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ICA_PCA.nii'`, `Tatu_ICA_L_ICA_R_PCA`: `'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ICA_L_ICA_R_PCA.nii.gz'`, `Tatu_ACA_MCA_PCA_Prox_Med_Dist`: Tatu separated to distal/medial/proximal of ACA/MCA/PCA `'./External/Atlases4ROIs/LicensePermissive/VascularTerritories/Tatu_ACA_MCA_PCA_Prox_Med_Dist.nii.gz'`, `Mindboggle_OASIS_DKT31_CMA`: Mindboggle-101 cortical atlas `'./External/Atlases4ROIs/LicensePermissive/Mindboggle_OASIS_DKT31_CMA.nii.gz'`, `FreesurferBrainstem`: Freesurfer Brainstem atlas '`./External/Atlases4ROIs/LicensePermissive/FreesurferBrainstem.nii.gz'`, `FreesurferThalamus`: Freesurfer Thalamus atlas '`./External/Atlases4ROIs/LicensePermissive/FreesurferThalamus.nii.gz'`, `FreesurferThalamusHistological`: Freesurfer Thalamus atlas histologically-based larger regions '`./External/Atlases4ROIs/LicensePermissive/FreesurferThalamusHistological.nii.gz'`, `FreesurferThalamusFunctional`: Freesurfer Thalamus atlas functionally-based larger regions '`./External/Atlases4ROIs/LicensePermissive/FreesurferThalamusFunctional.nii.gz'`, `Schaefer_100Parcels_7Networks`: Schaefer's atlas with 100 parcels and 7 networks '`./External/Atlases4ROIs/LicensePermissive/Schaefer_100Parcels_7Networks.nii.gz'`, `Schaefer_100Parcels_17Networks`: Schaefer's atlas with 100 parcels and 17 networks '`./External/Atlases4ROIs/LicensePermissive/Schaefer_100Parcels_17Networks.nii.gz'`. **Free for non-commercial use only**: `Desikan_Killiany_MNI_SPM12`: Desikan-Killiany atlas `'./External/Atlases4ROIs/LicenseLimited/Desikan_Killiany_MNI_SPM12.nii.gz'`, `HOcort_CONN`: Harvard-Oxford cortical atlas `'./External/Atlases4ROIs/LicenseLimited/HOcort_CONN.nii.gz'`, `HOsub_CONN`: Harvard-Oxford subcortical atlas `'./External/Atlases4ROIs/LicenseLimited/HOsub_CONN.nii.gz'`, `Hammers`: Alexander Hammers's brain atlas `'./External/Atlases4ROIs/LicenseLimited/Hammers.nii.gz'`, `HammersCAT12`: Hammers atlas adapted to DARTEL template of IXI550 space `'./External/Atlases4ROIs/LicenseLimited/HammersCAT12.nii'`, `Thalamus`: Harvad-Oxford thalamus atlas `'./External/Atlases4ROIs/LicenseLimited/Thalamus.nii.gz'`, `WMPM_Type_III`: WM atlas by JHU based on ICBM-DTI-81 `'./External/Atlases4ROIs/LicenseLimited/WMPM_Type_III.nii.gz'`, | OPTIONAL, DEFAULT=`["Total", "DeepWM"]` |
 | `TissueMasking`                        | ExploreASL's population module produces ROI values that are obtained by a combination of an MNI ROI atlas with subject-specific GM and WM segmentations. The subject-specific tissue masking is specified by the user with this `TissueMasking` parameter with options `"GM"`, `"WM"`, or `"CSF"`, which should ideally have the same length as `x.S.Atlases`. Any combinations are also allowed, such as `"GM+WM"`, `"WM+CSF"`, or `"GM+WM+CSF"`. In case this parameter is missing or has shorter length, the values are determined based on the Atlas - by default, GM is assumed, and WM or WB type is used if this substring is present in the atlas name. When the `TissueMasking` parameter is provided, it won't check or alter it based on the Atlas name. | OPTIONAL, DEFAULT = `["GM", "WM"]` |
-
+| `TissueThreshold`                        | Threshold applied to the tissue provided in `TissueMasking` - only voxels exceeding this threshold are used for the analysis. Vector length should correspond to `x.S.TissueMasking` and `x.S.Atlases`  | OPTIONAL, DEFAULT = 0.7 (vector length corresponding to x.S.TissueMasking |
+| `LesionROIThreshold`                        | Threshold applied to masks in Lesion_T1_1.nii or ROI_T1_1.nii etc. These Lesions and ROIs are evaluated irrespective of the underlying tissue within these Lesions and ROIs.  | OPTIONAL, DEFAULT = 0.5 (single value is applied to all Lesions and ROIs |
 ## DataPar.json example
 An example configuration file is given below. Note that we include a large number of options and sequence parameters with the purpose of showing the correct formatting of the file and in the praxis no `dataPar.json` or only a couple of parameters are typically provided.
 
@@ -145,7 +147,8 @@ An example configuration file is given below. Note that we include a large numbe
 	"bAutomaticallyDetectFSL": 1},
     "Q":{
 	"SliceReadoutTime": 30,
-	"T2art": 50,
+	"T2art": 165,
+	"TissueT2": 85,
 	"BloodT1": 1650},
     "settings":{
 	"Quality": 1,
@@ -195,7 +198,8 @@ An example configuration file is given below for the sequence parameters. Please
 	"Initial_PLD": 1800,
 	"LabelingDuration": 1800,
 	"SliceReadoutTime": 30,
-	"T2art": 50,
+	"T2art": 165,
+	"TissueT2": 85,
         "BloodT1": 1650},
 }
 }
