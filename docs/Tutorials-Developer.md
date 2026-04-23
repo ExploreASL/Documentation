@@ -196,9 +196,9 @@ In `x.Q` you can find **sequence** and **quantification** related parameters.
 | x.Q.SliceReadoutTime                  | Value (ms) of time added to the PLD after reading out each slice. |
 | x.Q.Lambda                            | Brain/blood water coefficient (mL 1H/ mL blood). |
 | x.Q.T2art                             | T2 of arterial blood at 3T, only used when no M0 image (ms). |
-| x.Q.BloodT1                           | T1 relaxation time of arterial blood (ms). Defaults to 1650 ms (Alsop MRM 2014), 1800 for GSP phantom. |
-| x.Q.TissueT1                          | T1 relaxation time of GM tissue (ms). Defaults to 1240 ms (Alsop MRM 2014). |
-| x.Q.TissueT2                          | T2 relaxation time of GM tissue (ms). Defaults to 85 ms (Alsop MRM 2014). |
+| x.Q.T1blood                           | T1 relaxation time of arterial blood (ms). Defaults to 1650 ms (Alsop MRM 2014), 1800 for GSP phantom. |
+| x.Q.T1GM                          | T1 relaxation time of GM tissue (ms). Defaults to 1240 ms (Alsop MRM 2014). |
+| x.Q.T2GM                          | T2 relaxation time of GM tissue (ms). Defaults to 85 ms (Alsop MRM 2014). |
 | x.Q.nCompartments                     | Number of modeled compartments for quantification. |
 | x.Q.SaveCBF4D                         | Boolean, true to also save 4D CBF timeseries, if ASL4D had timeseries. |
 

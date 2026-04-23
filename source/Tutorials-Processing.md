@@ -74,8 +74,9 @@ By default **ExploreASL** population module evaluates the regional values of CBF
 You can freely combine all the given examples unless they are obvious conflicts between parameters. The five examples above can be combined into a single `dataPar.json` file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:
 ```json
 {"x":{
-    "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"], 
-            "TissueMasking": ["GM", "WM", "WM", "GM", "GM", "GM", "GM"]"DataTypes": ["qCBF", "ATT", "M0", "Tex"]},
+    "S": {"Atlases": ["Total","Total","DeepWM","Hammers","HOcort_CONN","HOsub_CONN","Mindboggle_OASIS_DKT31_CMA"],
+             "TissueMasking": ["GM", "WM", "WM", "GM+CSF", "GM+WM+CSF", "GM", "GM+WM"],
+             "TissueThreshold": [0.7, 0.7, 0.5, 0.9, 0.9, 0.7, 0.7]},
     "Q":{"bUseBasilQuantification":1},
     "external":{"bAutomaticallyDetectFSL":true},
     "modules":{"asl":{"bUseMNIasDummyStructural":1},"population":{"bNativeSpaceAnalysis":true}}
@@ -141,7 +142,7 @@ In the rare case where a sequence parameter would be missing in the ASL-BIDS for
         "BackgroundSuppressionPulseTime": [100, 500, 1500],
         "Initial_PLD": 1800,
         "T2art": 165,
-        "TissueT2": 85,
-        "TissueT1": 1240
+        "T2GM": 85,
+        "T1GM": 1240
 }}}
 ```

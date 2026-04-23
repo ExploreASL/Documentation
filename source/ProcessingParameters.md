@@ -50,9 +50,12 @@ Please use these fields to modify the quantification model parameters for the en
 | ------------------------------------- |:---------------------------------------------:|:------------------:|
 | `Lambda`                            | Brain/blood water coefficient (mL 1H/ mL blood). Example: `0.32` (for GSP phantom). | OPTIONAL, DEFAULT = 0.9 |
 | `T2art`                             | T2 of arterial blood, only used when no M0 image (ms). | OPTIONAL, DEFAULT = 165 @ 3T|
-| `BloodT1`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
-| `TissueT1`                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=1240 @ 3T |
-| `TissueT2`                          | T2 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=85 @ 3T |
+| `T1blood`                           | T1 relaxation time of arterial blood (ms). Defaults (Alsop MRM 2014), 1800 for GSP phantom. | OPTIONAL, DEFAULT = 1650 @ 3T |
+| `T1GM`                          | T1 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=1240 @ 3T |
+| `T1WM`                          | T1 relaxation time of WM tissue (ms).  | OPTIONAL, DEFAULT=800 @ 3T |
+| `T2GM`                          | T2 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=85 @ 3T |
+| `T2WM`                          | T2 relaxation time of GM tissue (ms). Defaults (Alsop MRM 2014). | OPTIONAL, DEFAULT=76 @ 3T |
+| `T2tissueMultiTE`                          | T2 relaxation time of extravascular tissue used for two-compartment modelling in multi-TE ASL acquisition (ms). Defaults to GM (Mahroo et al. 2024) | OPTIONAL, DEFAULT=85 @ 3T |
 | `nCompartments`                     | Number of modeled compartments for quantification. Options: 1 = a single-compartment quantification model (default by concensus paper), 2 = a dual-compartment quantification model. | OPTIONAL, DEFAULT = 1) |
 
 ### ASL PROCESSING PARAMETERS
