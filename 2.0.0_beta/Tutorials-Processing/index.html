@@ -1,0 +1,1476 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/ExploreASL/Documentation/2.0.0_beta/Tutorials-Processing/">
+      
+      
+        <link rel="prev" href="../Tutorials-Import/">
+      
+      
+        <link rel="next" href="../Tutorials-Report/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/favicon/favicon-96x96.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Tutorials (Processing) - ExploreASL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ExploreASL" class="md-header__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExploreASL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorials (Processing)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ExploreASL" class="md-nav__button md-logo" aria-label="ExploreASL" data-md-component="logo">
+      
+  <img src="../img/favicon/brain_icon_500x500.png" alt="logo">
+
+    </a>
+    ExploreASL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExploreASL/Documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Install)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Execution)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Import)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Processing)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Processing)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executing-the-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing the processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-pipeline-using-dataparjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the pipeline using dataPar.json
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring the pipeline using dataPar.json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-population-module-using-different-atlases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate Population module using different atlases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-multi-pld-and-time-encoded-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing multi-PLD and Time-encoded data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-asl-data-without-structural-t1w-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing ASL data without structural T1w scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-output-values-in-native-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculating output values in native space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-population-module-on-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate Population module on different parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-previous-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combine previous settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-m0-scaling-factor-and-skip-dummy-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set M0-scaling factor and skip dummy scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-on-partial-volume-correction-and-other-asl-processing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn on Partial volume correction and other ASL-processing parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-cbf-in-user-defined-regions-of-interest-roi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate CBF in user-defined regions of interest (ROI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-at-lower-quality-and-skip-some-missing-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run at lower quality and skip some missing scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supply-missing-asl-parameters-and-set-quantification-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply missing ASL parameters and set quantification parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Report)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-QC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (QC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials-Developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials (Developer)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference manuals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference manuals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import_Module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Import
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structural_Module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Structural
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASL_Module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module ASL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Population_Module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Population
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SPMxASL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SPM xASL Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProcessingParameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Processing Parameters (dataPar.json)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../License/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executing-the-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing the processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-the-pipeline-using-dataparjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the pipeline using dataPar.json
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring the pipeline using dataPar.json">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-population-module-using-different-atlases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate Population module using different atlases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-multi-pld-and-time-encoded-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing multi-PLD and Time-encoded data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-asl-data-without-structural-t1w-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processing ASL data without structural T1w scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-output-values-in-native-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculating output values in native space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-population-module-on-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate Population module on different parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-previous-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combine previous settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-m0-scaling-factor-and-skip-dummy-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set M0-scaling factor and skip dummy scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-on-partial-volume-correction-and-other-asl-processing-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn on Partial volume correction and other ASL-processing parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate-cbf-in-user-defined-regions-of-interest-roi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate CBF in user-defined regions of interest (ROI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-at-lower-quality-and-skip-some-missing-scans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run at lower quality and skip some missing scans
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supply-missing-asl-parameters-and-set-quantification-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply missing ASL parameters and set quantification parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tutorials-processing">Tutorials (Processing)</h1>
+<p>The main task of the processing module is to take BIDS input data located in <code>rawdata</code> folder, convert them to ExploreASL internal (Legacy) structure in <code>derivatives</code> subfolder and run processing with the processing parameters defined in the <code>dataPar.json</code> file.</p>
+<h2 id="executing-the-processing">Executing the processing</h2>
+<p>Before running the processing, it is important to validate that your data are complete and in proper BIDS, using the BIDS validator, which can be found <a href="https://bids-standard.github.io/bids-validator/">HERE</a>. The BIDS validator will also give you hints if your data or metadata differ between scans, which can occur if a scanner is updated.</p>
+<p>To run processing of BIDS data located in <code>drive/.../datasetRoot/rawdata</code>, you simply execute this command:</p>
+<pre><code class="language-matlab">[x] = ExploreASL('drive/.../datasetRoot', 0, 1);
+</code></pre>
+<p>You can provide additional processing parameters in a file at <code>drive/.../datasetRoot/dataPar.json</code>. An example content of the <code>dataPar.json</code> file is given below on this page. A full reference manual is provided <a href="./../ProcessingParameters">here</a>.</p>
+<p>Further options to import DICOM data are specified in the <a href="./../Tutorials-Import">Import Tutorial</a>, and different modes to execute ExploreASL are described in the <a href="./../Tutorials-Execution">Execution Tutorial</a>. Below, you can find examples how to set-up the processing options.</p>
+<h2 id="configuring-the-pipeline-using-dataparjson">Configuring the pipeline using dataPar.json</h2>
+<p>Here, we present how to setup the most basic things for the ExploreASL processing using the <code>dataPar.json</code>. Note that you can combine the examples below and concatenate the content of given examples to a single <code>dataPar.json</code> to have all the functionalities at once. Here, we only provide examples and full list of all options to set is given in this reference manual for <a href="./../ProcessingParameters">Processing Parameters</a>.</p>
+<h3 id="evaluate-population-module-using-different-atlases">Evaluate Population module using different atlases</h3>
+<p>The atlases used in the <strong>ExploreASL</strong> population module can be defined in the <code>x.S</code> sub-structure. If you are interested in the <code>Total-GM</code>, <code>Total-WM</code>, <code>DeepWM</code>, <code>Hammers</code>, <code>HOcort_CONN</code>, <code>HOsub_CONN</code>, and <code>Mindboggle_OASIS_DKT31_CMA</code> atlases e.g., you can add the following lines to your <code>dataPar.json</code> file. You can specify the type of tissue for the given atlas using <code>TissueMasking</code> parameter. If <code>Atlases</code> are provided, then <code>TissueMasking</code> is required. Tissue types <code>GM</code>, <code>WM</code>, and <code>CSF</code> are allowed and any of their combinations. You can also for each atlas set the PV-threshold for evaluation using <code>TissueThreshold</code>. If not provided, it is set to 0.7 automatically:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;S&quot;: {&quot;Atlases&quot;: [&quot;Total&quot;,&quot;Total&quot;,&quot;DeepWM&quot;,&quot;Hammers&quot;,&quot;HOcort_CONN&quot;,&quot;HOsub_CONN&quot;,&quot;Mindboggle_OASIS_DKT31_CMA&quot;],
+             &quot;TissueMasking&quot;: [&quot;GM&quot;, &quot;WM&quot;, &quot;WM&quot;, &quot;GM+CSF&quot;, &quot;GM+WM+CSF&quot;, &quot;GM&quot;, &quot;GM+WM&quot;],
+             &quot;TissueThreshold&quot;: [0.7, 0.7, 0.5, 0.9, 0.9, 0.7, 0.7]}   
+}}
+</code></pre>
+<h3 id="processing-multi-pld-and-time-encoded-data">Processing multi-PLD and Time-encoded data</h3>
+<p>ExploreASL currently uses BASIL to quantify multi-PLD, multi-TE and time-encoded data (the rest of the processing is done using ExploreASL, BASIL is only used for the quantification itself). Multi-TE sequences execute directly FABBER from FSL. Note that you need to install FSL on you computer for this. Use the following <code>dataPar.json</code> to automatically locate installed FSL and to activate CBF quantification using BASIL:</p>
+<pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseExternalQuantification&quot;:1, &quot;ExternalQuantificationType&quot;:&quot;BASIL&quot;}},
+&quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:true}}}
+</code></pre>
+<p>In case that FSL is not detected automatically, or if there's a prefered FSL version, you can directly provide path to the FSL directory like this:</p>
+<pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseExternalQuantification&quot;:1}},
+&quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:false,
+&quot;FSLdir&quot;:&quot;/home/XASLuser/fsl/&quot;,
+&quot;RootFSLdir&quot;:&quot;/home/XASLuser/fsl/&quot;}}}
+</code></pre>
+<p>Note that Tex estimation of BBB permeability from multi-TE data is supported starting at FSL version 6.0.7.1. </p>
+<h3 id="processing-asl-data-without-structural-t1w-scans">Processing ASL data without structural T1w scans</h3>
+<p>ExploreASL uses the structural T1-weighted scans to obtain information about GM and WM tissues used later for evaluation and thresholding the CBF maps. Presence of T1w scans is thus expected for all ASL scans as T1w scans are anyway normally obtained. If a T1-weighted scan is missing, ExporeASL uses internally the average MNI brain instead, but this option needs to be activated explicitly:</p>
+<pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseMNIasDummyStructural&quot;:1}}}}
+</code></pre>
+<h3 id="calculating-output-values-in-native-space">Calculating output values in native space</h3>
+<p>By default, the regional values in the population module are calculated in the MNI space. Additionally, it is also possible to calculate the values in the native space of each subject. This is then done for all specified atlases that are converted for this purpose to the native space of each subject. If activated, both MNI and native space results are calculated.</p>
+<pre><code class="language-json">{&quot;x&quot;:{&quot;modules&quot;:{&quot;population&quot;:{&quot;bNativeSpaceAnalysis&quot;:true}}}}
+</code></pre>
+<h3 id="evaluate-population-module-on-different-parameters">Evaluate Population module on different parameters</h3>
+<p>By default <strong>ExploreASL</strong> population module evaluates the regional values of CBF. Additionally, it is possible the automatically evaluate values of other parameters if appropriate parameter maps are/can be calculated such as the CBF (qCBF), arterial transit time (ATT), M0, Tex (Time of Exchange across BBB in BBB-ASL. CBF is done by default, but if specifying an own list of parameters, do not forget to add CBF </p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;S&quot;: {&quot;DataTypes&quot;: [&quot;qCBF&quot;, &quot;ATT&quot;, &quot;M0&quot;, &quot;Tex&quot;]}
+}}
+</code></pre>
+<h3 id="combine-previous-settings">Combine previous settings</h3>
+<p>You can freely combine all the given examples unless they are obvious conflicts between parameters. The five examples above can be combined into a single <code>dataPar.json</code> file that will process multi-PLD file wit BASIL, even in the absence of a T1w scan and will use several atlases in the Population module:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;S&quot;: {&quot;Atlases&quot;: [&quot;Total&quot;,&quot;Total&quot;,&quot;DeepWM&quot;,&quot;Hammers&quot;,&quot;HOcort_CONN&quot;,&quot;HOsub_CONN&quot;,&quot;Mindboggle_OASIS_DKT31_CMA&quot;],
+             &quot;TissueMasking&quot;: [&quot;GM&quot;, &quot;WM&quot;, &quot;WM&quot;, &quot;GM+CSF&quot;, &quot;GM+WM+CSF&quot;, &quot;GM&quot;, &quot;GM+WM&quot;],
+             &quot;TissueThreshold&quot;: [0.7, 0.7, 0.5, 0.9, 0.9, 0.7, 0.7]},
+    &quot;Q&quot;:{&quot;bUseBasilQuantification&quot;:1},
+    &quot;external&quot;:{&quot;bAutomaticallyDetectFSL&quot;:true},
+    &quot;modules&quot;:{&quot;asl&quot;:{&quot;bUseMNIasDummyStructural&quot;:1},&quot;population&quot;:{&quot;bNativeSpaceAnalysis&quot;:true}}
+}}
+</code></pre>
+<h3 id="set-m0-scaling-factor-and-skip-dummy-scans">Set M0-scaling factor and skip dummy scans</h3>
+<p>Correct scaling between the M0 and ASL scans is still an issue for certain ASL implementations. While for most vendors and sequences, this is automatically detected, you might need to add a manual scaling of the M0-scans. Furthermore, in case that dummy scans are part of the ASL sequence, you can indicate their position in the ASL timeseries, so that they are skipped:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;modules&quot;:{
+        &quot;asl&quot;:{
+            &quot;M0_GMScaleFactor&quot;: 10,
+            &quot;DummyScanPositionInASL4D&quot;: [2, 3]
+}}}}
+</code></pre>
+<h3 id="turn-on-partial-volume-correction-and-other-asl-processing-parameters">Turn on Partial volume correction and other ASL-processing parameters</h3>
+<p>While partial-volume correction is outputted in the Population module as done per region, you can also activate standard Partial-volume correction in the ASL-native space and produce GM-CBF maps in native space (which are later converted to standard space). Additionally, you can switch ON/OFF certain ASL-processing steps:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;modules&quot;:{
+        &quot;asl&quot;:{
+            &quot;motionCorrection&quot;: 0,
+            &quot;bPVCNativeSpace&quot;: 1,
+            &quot;PVCNativeSpaceKernel&quot;: [10, 10, 4],
+            &quot;bPVCGaussianMM&quot;: 1
+}}}}
+</code></pre>
+<h3 id="evaluate-cbf-in-user-defined-regions-of-interest-roi">Evaluate CBF in user-defined regions of interest (ROI)</h3>
+<p>It is possible to provide two types of user-defined ROIs - called <code>Lesions</code> and <code>ROIs</code>. ASL-derived parameters are evaluated in both and equally so, but <code>ROIs</code> only serve for evaluation and <code>Lesions</code> might have an additional function. The ROIs are provided coregistered with structural images such as <code>T1</code> or <code>FLAIR</code> by adding the NIfTI file directly in the derivatives folder in the subject directory next to the structural images. Several ROIs and lesions can be added with naming convention: <code>Lesion_T1_1.nii</code>, <code>Lesion_T1_2.nii</code>, <code>ROI_T1_1.nii</code>, <code>ROI_FLAIR_1.nii</code>. These should be provided before running the structural module and they are automatically identified and processed. In the population module, a table is provided for each ROI with each ROI evaluated in the corresponding subject. You can activate Native-space-analysis or adjust the threshold for the ROI evaluation. ROIs are automatically downsampled to the ASL resolution in the ASL native space and the partial volume of the ROI can then be thresholded for evaluation - see the example code to add to set the native space analysis and thresholds:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;S&quot;: {&quot;LesionROIThreshold&quot;:0.7},
+    &quot;modules&quot;:{&quot;population&quot;:{&quot;bNativeSpaceAnalysis&quot;:true}}
+}}
+</code></pre>
+<h3 id="run-at-lower-quality-and-skip-some-missing-scans">Run at lower quality and skip some missing scans</h3>
+<p>The general settings allows to run ExploreASL in a faster mode at lower quality, or to not skip certain subjects if they are missing certain scans, or stop the pipeline after too many errors are reported:</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;settings&quot;:{
+        &quot;Quality&quot;: 1,
+        &quot;SkipIfNoASL&quot;: 1,
+        &quot;SkipIfNoM0&quot;: 1,
+        &quot;SkipIfNoFlair&quot;: 1,
+        &quot;stopAfterErrors&quot;: 5
+}}}
+</code></pre>
+<h3 id="supply-missing-asl-parameters-and-set-quantification-parameters">Supply missing ASL parameters and set quantification parameters</h3>
+<p>Sequence parameters should be specified in the Import part that converts DICOMs to BIDS -- see <a href="./../Tutorials-Import">Import Tutorial</a>.
+In the rare case where a sequence parameter would be missing in the ASL-BIDS format of data, and that it wouldn't be added in the Import or later, this parameter can be supplied as part of the <code>dataPar.json</code> (although adding it directly to subject's JSON-sidecars is better). Similarly, we can alter the CBF quantification parameters and constants either for the whole study by adding it in <code>dataPar.json</code> (or better adding the same parameters listed here directly to the subject's JSON-sidecar). Note that in dataPar.json, unlike in ASL-BIDS, most values are given in [ms] instead of [s]. Also, the parameters' name can differ slightly from the ASL-BIDS definition - more info is in <a href="./../ProcessingParameters">Processing Parameters</a>.</p>
+<pre><code class="language-json">{&quot;x&quot;:{
+    &quot;Q&quot;:{
+        &quot;BackgroundSuppressionNumberPulses&quot;: 2,
+        &quot;BackgroundSuppressionPulseTime&quot;: [100, 500, 1500],
+        &quot;Initial_PLD&quot;: 1800,
+        &quot;T2art&quot;: 165,
+        &quot;T2GM&quot;: 85,
+        &quot;T1GM&quot;: 1240
+}}}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
